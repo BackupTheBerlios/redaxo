@@ -8,7 +8,7 @@
 // Version 3.0 developed by Mihai Bazon for InteractiveTools.
 //	     http://students.infoiasi.ro/~mishoo
 //
-// $Id: htmlarea.js,v 1.2 2004/07/14 09:33:38 vscope Exp $
+// $Id: htmlarea.js,v 1.3 2004/08/13 16:38:04 vscope Exp $
 
 // Creates a new HTMLArea object.  Tries to replace the textarea with the given
 // ID with it.
@@ -652,7 +652,7 @@ HTMLArea.prototype.generate = function () {
 		html += "<head>\n";
 		html += "<style>" + editor.config.pageStyle + "</style>\n";
 		html += "</head>\n";
-		html += "<body>\n";
+		html += "<body class=htmlarea>\n";
 		html += editor._textArea.value;
 		html += "</body>\n";
 		html += "</html>";
@@ -1046,8 +1046,12 @@ HTMLArea.prototype.surroundHTML = function(startTag, endTag) {
 HTMLArea.prototype.removeF = function() {
 	var html = this.getSelectedHTML();
 	html = html.replace(/<br\s\/>/gi, "##br##");
-	html = html.replace(/<[\!]*?[^<>]*?>/g, "");
+	html = html.replace(/<p>/gi, "##p####p##");
+	html = html.replace(/<\/p>/gi, "##ep####ep##");
+	html = html.replace(/(<([^>]+)>)/ig, "");
 	html = html.replace(/##br##/g, "<br />");
+	html = html.replace(/##p##/g, "<p>");
+	html = html.replace(/##ep##/g, "<\/p>");
 	this.insertHTML(html);
 };
 
