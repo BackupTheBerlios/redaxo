@@ -1,4 +1,9 @@
 <?php
+/**
+* $Id: index.php,v 1.19 2005/10/09 21:45:15 koala_s Exp $
+* $Date: 2005/10/09 21:45:15 $
+* $Revision: 1.19 $
+*/
 
 // ----- caching start für output filter
 
