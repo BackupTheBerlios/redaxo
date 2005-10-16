@@ -1,7 +1,12 @@
 <?php
-/**
-* $Id: index.php,v 1.20 2005/10/09 21:47:17 koala_s Exp $
-*/
+/** 
+ * <Beschreibung> 
+ * @author REDAXO-Group 
+ * @author $Author: koala_s $ 
+ * @package redaxo3 
+ * @version $Id: index.php,v 1.21 2005/10/16 18:57:50 koala_s Exp $ 
+ */ 
+
 
 // ----- caching start für output filter
 
