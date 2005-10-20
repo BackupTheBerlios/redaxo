@@ -1,12 +1,19 @@
 <?php
 
 /**
+ * Zur Ausgabe des redaxo Headers im Backend
+ * 
+ * @package redaxo3 
+ * @version $Id: function_rex_title.inc.php,v 1.10 2005/10/20 19:09:55 kills Exp $
+ *  
  * @example
  * 
  * $subpages = array(
  *  array( '', 'Index'),
  *  array( 'lang', 'Sprachen'),
+ *  array( 'groups', 'Gruppen')
  * );
+ * 
  * title( 'Headline', $subpages)
  */
 function title($head,$subline = '',$styleclass="grey", $width = '770px')
@@ -26,6 +33,13 @@ function title($head,$subline = '',$styleclass="grey", $width = '770px')
             
             $link = $subpage[0];
             $label = $subpage[1];
+            
+            // Falls im Link parameter enthalten sind, diese Abschneiden
+            if (($pos = strpos( $link, '&')) !== false) 
+            {
+              $link = substr( $link, 0, $pos);
+            }
+            
             $active = (empty( $_REQUEST['subpage']) && $link == '') || (!empty( $_REQUEST['subpage'])&& $_REQUEST['subpage'] == $link);
 
             // Auf der aktiven Seite den Link nicht anzeigen            
