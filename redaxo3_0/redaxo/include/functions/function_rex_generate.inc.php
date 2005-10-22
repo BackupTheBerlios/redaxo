@@ -1,5 +1,12 @@
 <?php
 
+/** 
+ * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
+ * @package redaxo3 
+ * @version $Id: function_rex_generate.inc.php,v 1.35 2005/10/22 16:38:45 kristinus Exp $ 
+ */ 
+
+
 // ----------------------------------------- Alles generieren
 
 function rex_generateAll()
