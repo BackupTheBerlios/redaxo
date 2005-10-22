@@ -2,9 +2,9 @@
 /** 
  * <Beschreibung> 
  * @author REDAXO-Group 
- * @author $Author: koala_s $ 
+ * @author $Author: kristinus $ 
  * @package redaxo3 
- * @version $Id: index.php,v 1.21 2005/10/16 18:57:50 koala_s Exp $ 
+ * @version $Id: index.php,v 1.22 2005/10/22 13:15:19 kristinus Exp $ 
  */ 
 
 
@@ -84,10 +84,10 @@ if ($SHOWARTICLE)
   $REX_ARTICLE->setCLang($clang);
   if ($REX_ARTICLE->setArticleId($article_id))
   {
-    $REX_ARTICLE->getArticleTemplate();
+    echo $REX_ARTICLE->getArticleTemplate();
   }elseif($REX_ARTICLE->setArticleId($REX['STARTARTIKEL_ID']))
   {   
-    $REX_ARTICLE->getArticleTemplate();
+    echo $REX_ARTICLE->getArticleTemplate();
   }else
   {
     echo 'Kein Startartikel selektiert / No starting Article selected. Please click here to enter <a href="redaxo/index.php">redaxo</a>';
