@@ -1,5 +1,11 @@
 <?php
 
+/** 
+ * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template 
+ * @package redaxo3 
+ * @version $Id: class.article.inc.php,v 1.37 2005/10/22 13:17:29 kristinus Exp $ 
+ */ 
+
 class article
 {
 
