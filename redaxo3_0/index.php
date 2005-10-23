@@ -1,10 +1,8 @@
 <?php
 /** 
- * <Beschreibung> 
- * @author REDAXO-Group 
- * @author $Author: kristinus $ 
+ * 
  * @package redaxo3 
- * @version $Id: index.php,v 1.22 2005/10/22 13:15:19 kristinus Exp $ 
+ * @version $Id: index.php,v 1.23 2005/10/23 20:04:05 koala_s Exp $ 
  */ 
 
 
