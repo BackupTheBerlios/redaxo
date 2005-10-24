@@ -1,4 +1,10 @@
 <?php
+/** 
+ * Klasse zum prüfen ob Addons installiert/aktiviert sind
+ * @package redaxo3 
+ * @version $Id: class.ooaddon.inc.php,v 1.2 2005/10/24 22:07:17 koala_s Exp $ 
+ */ 
+
 class OOAddon
 {
   function isAvailable($addon)
