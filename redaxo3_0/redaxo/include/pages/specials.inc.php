@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: specials.inc.php,v 1.22 2005/10/24 14:35:47 kills Exp $ 
+ * @version $Id: specials.inc.php,v 1.23 2005/10/24 14:39:17 kills Exp $ 
  */ 
 
 $ERRMSG = "";
@@ -326,7 +326,7 @@ if ($subpage == '')
           <input type="hidden" name="page" value="specials">
           <input type="hidden" name="subpage" value="lang">
           <input type="hidden" name="func" value="addclangsave">';
-    echo '<td>add</td>';
+    echo '<td></td>';
     echo '<td>'.$sel->out().'</td>';
     echo '<td><input type="text" size="10" class="inp100" name="clang_name" value="'.htmlspecialchars($clang_name).'"></td>';
     echo '<td><input type="submit" value="submit"></td>';
