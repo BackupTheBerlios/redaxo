@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: specials.inc.php,v 1.23 2005/10/24 14:39:17 kills Exp $ 
+ * @version $Id: specials.inc.php,v 1.24 2005/10/25 14:13:24 kills Exp $ 
  */ 
 
 $ERRMSG = "";
@@ -194,13 +194,14 @@ if ($subpage == '')
   }
   echo '</select></td></tr>';
 
-  if ($REX['MOD_REWRITE']) {
-    $modcheck = 'selected'; 
-    $modcheck_false = '';
-  } else {
+  if ($REX['MOD_REWRITE'] === false) {
     $modcheck = '';
     $modcheck_false = 'selected';
+  } else {
+    $modcheck = 'selected'; 
+    $modcheck_false = '';
   }
+  
   echo '<tr><td>$REX[\'MOD_REWRITE\']:</td><td><img src="pics/leer.gif" width="10" height="20"></td><td><select name="neu_modrewrite" size="1"><option '.$modcheck.'>TRUE</option><option '.$modcheck_false.'>FALSE</option></select></td></tr>';
 
 
