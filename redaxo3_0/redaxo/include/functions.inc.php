@@ -2,7 +2,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.34 2005/10/24 15:29:41 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.35 2005/10/25 08:18:14 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -48,7 +48,6 @@ include_once $REX['INCLUDE_PATH']."/classes/class.sql.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.select.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.article.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.login.inc.php";
-include_once $REX['INCLUDE_PATH']."/classes/class.cache.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.ooredaxo.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.oocategory.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.ooarticle.inc.php";
