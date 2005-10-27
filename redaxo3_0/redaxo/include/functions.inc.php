@@ -2,7 +2,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.35 2005/10/25 08:18:14 kristinus Exp $ 
+ * @version $Id: functions.inc.php,v 1.36 2005/10/27 16:02:45 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -41,6 +41,7 @@ $REX['PERM'][] = "user[]";
 $REX['EXTPERM'][] = "advancedMode[]";
 $REX['EXTPERM'][] = "caching[]";
 $REX['EXTPERM'][] = "moveslice[]";
+$REX['EXTPERM'][] = "copyContent[]";
 
 // ----------------- REDAXO INCLUDES
 include_once $REX['INCLUDE_PATH']."/classes/class.i18n.inc.php";
