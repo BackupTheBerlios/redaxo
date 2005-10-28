@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.39 2005/10/27 17:22:00 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.40 2005/10/28 08:46:12 kristinus Exp $ 
  */ 
 
 
@@ -553,17 +553,6 @@ if ($article->getRows() == 1)
         $meta_sql->setValue("teaser",$meta_teaser);
         $meta_sql->setValue("updatedate",time());
         $meta_sql->setValue("updateuser",$REX_USER->getValue("login"));
-            
-        // cache
-        $Cache = new Cache($article_id);
-        if($caching!=1){
-          $Cache->removeCacheConf($article_id);
-        } else {
-          $Cache->insertCacheConf($article_id);
-        }
-        if($recaching==1){
-          $Cache->removeCacheFiles($article_id);
-        }
 
         // -------------------------- FILE UPLOAD META BILD/FILE
 
