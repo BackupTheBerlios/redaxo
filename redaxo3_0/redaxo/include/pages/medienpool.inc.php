@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.70 2005/10/28 09:11:37 kristinus Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.71 2005/10/28 21:33:37 kristinus Exp $ 
  */ 
 
 // TODOS
@@ -398,7 +398,7 @@ function saveMedia($FILE,$rex_file_category,$FILEINFOS){
   $message = '';
   
   // ----- neuer filename und extension holen
-  $NFILENAME = strtolower(preg_replace("/[^a-zA-Z0-9.-]/","_",$FILENAME));
+  $NFILENAME = strtolower(preg_replace("/[^a-zA-Z0-9.\-\$\+]/","_",$FILENAME));
   if (strrpos($NFILENAME,".") != "")
   {
     $NFILE_NAME = substr($NFILENAME,0,strlen($NFILENAME)-(strlen($NFILENAME)-strrpos($NFILENAME,".")));
