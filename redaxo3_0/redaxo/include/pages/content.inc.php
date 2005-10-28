@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.41 2005/10/28 10:58:52 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.42 2005/10/28 11:44:49 kristinus Exp $ 
  */ 
 
 
@@ -45,6 +45,9 @@ if ($article->getRows() == 1)
   // ----- Sprachenblock
   $sprachen_add = "&category_id=$category_id&article_id=$article_id";
   include $REX['INCLUDE_PATH']."/functions/function_rex_languages.inc.php";
+
+  if (isset($_REQUEST["mode"])) $mode = $_REQUEST["mode"];
+  else $mode = "";
 
 
   // ----- mode defs
