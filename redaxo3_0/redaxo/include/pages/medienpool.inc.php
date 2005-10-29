@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.71 2005/10/28 21:33:37 kristinus Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.72 2005/10/29 12:22:17 koala_s Exp $ 
  */ 
 
 // TODOS
@@ -347,7 +347,7 @@ $cat_out .= "<tr>
       <td class=grey>";
 
 $sel_media = new select;
-$sel_media->set_style("'; onChange=\"location.href='index.php?page=medienpool&rex_file_category='+this[this.selectedIndex].value;\" class='inp100");
+$sel_media->set_style('" onChange="location.href=\'index.php?page=medienpool&amp;rex_file_category=\'+this[this.selectedIndex].value;" class="inp100');
 $sel_media->set_size(1);
 $sel_media->set_name("rex_file_category");
 $sel_media->add_option($I18N->msg('pool_kats_no'),"0");
