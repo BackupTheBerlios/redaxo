@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.43 2005/10/28 21:27:20 koala_s Exp $ 
+ * @version $Id: content.inc.php,v 1.44 2005/10/30 14:58:43 kristinus Exp $ 
  */ 
 
 
@@ -332,12 +332,12 @@ if ($article->getRows() == 1)
               $ga->next();
             }
             // ----- / POST ACTION
-            if (isset($update) and $update != 1){
+            if (!(isset($update) and $update == 1)){
               $slice_id = "";
               $function = "";
             }
             $save = "";
-                    
+            
             $EA = new sql;
             $EA->setTable("rex_article");
             $EA->where("id='$article_id' and clang=$clang");
