@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: top.php,v 1.27 2005/10/31 19:03:44 koala_s Exp $
+ * @version $Id: top.php,v 1.28 2005/10/31 19:20:11 kills Exp $
  */ 
 
 if (!isset($page_name)) $page_name = ''; 
@@ -26,6 +26,11 @@ if ( $page_name != '') {
   //-->
   </script>
 </head>
+<?php
+if ( isset( $open_header_only) && $open_header_only == true) {
+  return;
+}
+?>
 <body onunload="closeAll();">
 <table class="rexHeader" cellpadding="5" cellspacing="0">
   <tr>
