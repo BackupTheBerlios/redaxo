@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: index.inc.php,v 1.25 2005/10/30 10:52:47 kills Exp $ 
+ * @version $Id: index.inc.php,v 1.26 2005/10/31 19:03:04 koala_s Exp $ 
  */ 
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -45,7 +45,7 @@ if (isset($function) and $function == "delete")
   // noch checken das nicht alle tabellen geloescht werden
   // install/temp.sql aendern
     
-  if($_FILES['FORM']['size']['importfile'] < 1 && $impname == "")
+  if (isset($_FILES['FORM']) and $_FILES['FORM']['size']['importfile'] < 1 && $impname == "")
     $msg = $I18N_IM_EXPORT->msg("no_import_file_chosen_or_wrong_version")."<br>";
   else {
     if ($impname != "") $file_temp = $REX['INCLUDE_PATH']."/addons/$page/files/$impname";
