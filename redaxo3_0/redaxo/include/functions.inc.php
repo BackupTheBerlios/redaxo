@@ -2,7 +2,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.36 2005/10/27 16:02:45 kristinus Exp $ 
+ * @version $Id: functions.inc.php,v 1.37 2005/10/31 19:31:18 kills Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -56,6 +56,7 @@ include_once $REX['INCLUDE_PATH']."/classes/class.ooarticleslice.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.oomediacategory.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.oomedia.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.ooaddon.inc.php";
+include_once $REX['INCLUDE_PATH']."/classes/class.oostructure.inc.php";
 
 if (!$REX['GG'])
 {
