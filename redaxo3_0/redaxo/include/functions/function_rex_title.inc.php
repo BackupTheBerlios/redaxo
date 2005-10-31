@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.11 2005/10/31 19:29:30 kills Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.12 2005/10/31 20:03:22 koala_s Exp $
  */ 
  
 /**
@@ -135,5 +135,3 @@ function rex_get_subtitle($subline, $attr = '')
   return $subtitle."\n" ;
 }
 ?>
-
-
