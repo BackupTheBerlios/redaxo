@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.34 2005/10/28 14:43:36 kills Exp $ 
+ * @version $Id: user.inc.php,v 1.35 2005/10/31 15:37:35 kills Exp $ 
  */ 
 
 /*
@@ -35,7 +35,7 @@ mulselect module
 if (isset($user_id) and $user_id != '')
 {
   $sql = new sql;
-  $sql->setQuery("SELECT * FROM rex_user WHERE user_id = '$user_id'");
+  $sql->setQuery("SELECT * FROM rex_user WHERE user_id = '$user_id' LIMIT 2");
   if ($sql->getRows()!= 1) unset($user_id);
 }
 
