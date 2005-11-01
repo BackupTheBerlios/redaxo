@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.23 2005/10/31 19:02:42 koala_s Exp $
+ * @version $Id: index.php,v 1.24 2005/11/01 15:15:50 kills Exp $
  */ 
 
 // ----- caching start für output filter
@@ -101,7 +101,7 @@ if ($REX['SETUP'])
     $dl = true;
   }elseif ($page == "linkmap")
   {
-    $dl = true;
+    $open_header_only = true;
   }elseif ($page == "content")
   {
     $page_name = $I18N->msg("content");
