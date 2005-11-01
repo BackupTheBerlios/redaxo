@@ -1,4 +1,9 @@
 <?php
+/**
+ * Klasse zur Abbiludung der Struktur
+ * @package redaxo3 
+ * @version $Id: class.oostructure.inc.php,v 1.2 2005/11/01 15:18:28 kills Exp $
+ */
 class OOStructure
 {
   /*
