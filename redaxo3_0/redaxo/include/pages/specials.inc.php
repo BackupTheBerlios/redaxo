@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: specials.inc.php,v 1.24 2005/10/25 14:13:24 kills Exp $ 
+ * @version $Id: specials.inc.php,v 1.25 2005/11/03 14:08:56 kristinus Exp $ 
  */ 
 
 $ERRMSG = "";
@@ -114,15 +114,8 @@ if ($subpage == '')
     fwrite($h,$cont,strlen($cont));
     fclose($h);
   
-    if ($neu_caching != "TRUE") $REX['CACHING'] = false;
-    else $REX['CACHING'] = true;
-    
-    if ($neu_caching_debug != "TRUE") $REX['CACHING_DEBUG'] = false;
-    else $REX['CACHING_DEBUG'] = true;
-    
     if ($neu_modrewrite != "TRUE") $REX['MOD_REWRITE'] = false;
     else $REX['MOD_REWRITE'] = true;
-  
   
     $REX['STARTARTIKEL_ID'] = $neu_startartikel;
     $REX['EMAIL'] = $neu_error_emailaddress;
