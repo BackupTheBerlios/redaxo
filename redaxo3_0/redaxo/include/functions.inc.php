@@ -2,7 +2,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.37 2005/10/31 19:31:18 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.38 2005/11/04 02:59:18 kills Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -71,6 +71,7 @@ include_once $REX['INCLUDE_PATH']."/classes/class.wysiwyg.inc.php";
 
 // ----- FUNCTIONS
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_modrewrite.inc.php";
+include_once $REX['INCLUDE_PATH']."/functions/function_rex_extension.inc.php";
 
 // ----- EXTRA FUNCTIONS
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_wysiwyg.inc.php";
