@@ -4,7 +4,7 @@
 /** 
  * Funktionen zur Registrierung von Schnittstellen 
  * @package redaxo3 
- * @version $Id: function_rex_extension.inc.php,v 1.1 2005/11/04 03:03:12 kills Exp $ 
+ * @version $Id: function_rex_extension.inc.php,v 1.2 2005/11/07 15:14:32 kristinus Exp $ 
  */
 
 /**
@@ -14,7 +14,7 @@
 * @param $subject Objekt/Variable die beeinflusst werden soll
 * @param $params Parameter für die Callback-Funktion
 */
-function rex_register_extension_point($extension, $subject, $params = array ())
+function rex_register_extension_point($extension, $subject = NULL, $params = array ())
 {
   global $REX;
   $result = $subject;
