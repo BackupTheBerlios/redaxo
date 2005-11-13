@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.36 2005/11/13 13:03:13 koala_s Exp $ 
+ * @version $Id: structure.inc.php,v 1.37 2005/11/13 14:58:37 kills Exp $ 
  */ 
 
 /*
@@ -316,7 +316,7 @@ if (isset($function) and $function == "offline_article" && $article_id != "" && 
   rex_generateArticle($article_id);
 
   // ----- EXTENSION POINT
-  rex_register_extension_point('ART_UPDATED','',array ("id" => $id, "name" => $article_name, "prior" => $Position_Article, "path" => $KATPATH));
+  rex_register_extension_point('ART_UPDATED','',array ("id" => $article_id, "name" => $article_name, "prior" => $Position_Article, "path" => $KATPATH));
 
 
 
