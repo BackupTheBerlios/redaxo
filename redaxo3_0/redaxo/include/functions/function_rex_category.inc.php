@@ -1,11 +1,12 @@
 <?php
 
-/**
-* todos: regelt die Rechte an den einzelnen Kategorien und gibt den Pfad aus
-* Kategorien = Startartikel und Bezüge
-*
-**/
-
+/** 
+ * Regelt die Rechte an den einzelnen Kategorien und gibt den Pfad aus
+ * Kategorien = Startartikel und Bezüge  
+ * @package redaxo3 
+ * @version $Id: function_rex_category.inc.php,v 1.11 2005/11/13 15:04:19 kills Exp $ 
+ */
+  
 $KATebene = 0; // aktuelle Ebene: default
 $KATPATH = "|"; // Standard für path Eintragungen in DB
 if (!isset($KATout)) $KATout = ''; // Variable definiert und vorbelegt wenn nicht existent

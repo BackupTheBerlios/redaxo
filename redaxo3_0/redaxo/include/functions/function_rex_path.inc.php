@@ -1,4 +1,10 @@
 <?php
+/** 
+ * Pfad Funktionen  
+ * @package redaxo3 
+ * @version $Id: function_rex_path.inc.php,v 1.2 2005/11/13 15:05:23 kills Exp $ 
+ */ 
+ 
 /**
  * Berechnet aus einem Relativen Pfad einen Absoluten 
  */

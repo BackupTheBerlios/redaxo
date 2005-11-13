@@ -1,5 +1,10 @@
 <?php
 
+/** 
+ * URL Funktionen  
+ * @package redaxo3 
+ * @version $Id: function_rex_modrewrite.inc.php,v 1.23 2005/11/13 15:05:03 kills Exp $ 
+ */ 
 
 // ----------------------------------------- Redaxo 2.* functions
 

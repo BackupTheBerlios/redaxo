@@ -1,5 +1,11 @@
 <?php
 
+/** 
+ * Funktionen zum handeln von magic_quotes=off  
+ * @package redaxo3 
+ * @version $Id: function_rex_mquotes.inc.php,v 1.5 2005/11/13 15:05:14 kills Exp $ 
+ */
+  
 function addSlashesOnArray(&$theArray)
 {
 	if (is_array($theArray))

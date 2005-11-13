@@ -1,5 +1,11 @@
 <?php
 
+/** 
+ * Dient zur Ausgabe des Sprachen-blocks  
+ * @package redaxo3 
+ * @version $Id: function_rex_languages.inc.php,v 1.2 2005/11/13 15:04:48 kills Exp $ 
+ */
+  
 // rechte einbauen
 // admin[]
 // developer[]

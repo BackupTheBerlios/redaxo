@@ -1,7 +1,10 @@
 <?php
 
-
-// Scripttime for debugging
+/** 
+ * Zeit Funktionen  
+ * @package redaxo3 
+ * @version $Id: function_rex_time.inc.php,v 1.2 2005/11/13 15:06:01 kills Exp $ 
+ */ 
 
 function showScripttime()
 {

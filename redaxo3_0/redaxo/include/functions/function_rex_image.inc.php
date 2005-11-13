@@ -1,5 +1,11 @@
 <?php
 
+/** 
+ * Erweiterte GD-Funktionen   
+ * @package redaxo3 
+ * @version $Id: function_rex_image.inc.php,v 1.2 2005/11/13 15:04:40 kills Exp $ 
+ */
+  
 function createImage($text,$ttfpath,$imagepath,$fontsize,$wordwrap,$height,$width,$posy=22,$bgcolor='white',$fontcolor='grey',$posx=0)
 {
 	global $REX;
