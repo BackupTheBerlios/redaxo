@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.35 2005/11/07 16:42:53 kristinus Exp $ 
+ * @version $Id: structure.inc.php,v 1.36 2005/11/13 13:03:13 koala_s Exp $ 
  */ 
 
 /*
@@ -174,12 +174,12 @@ if (isset($catedit_function) and $catedit_function != "" && $edit_id != "" && $K
     // ### erstelle neue prioliste wenn noetig  
     
     $template_id = 0;
-    if ($TMP[$key]!="") $template_id = $TMP[$key];
+    if (isset($TMP[$key]) && $TMP[$key]!="") $template_id = $TMP[$key];
         
     $AART = new sql;
     // $AART->debugsql = 1;
     $AART->setTable("rex_article");
-    if (!$id) $id = $AART->setNewId("id");
+    if (!isset($id) or !$id) $id = $AART->setNewId("id");
     else $AART->setValue("id",$id);
     $AART->setValue("clang",$key);
     $AART->setValue("template_id",$template_id);
@@ -567,7 +567,7 @@ if($category_id > -1)
 
     // --------------------- ARTIKEL EDIT FORM
 
-    if (isset($function) and $function == "edit" && $sql->getValue("id") == $article_id && $KATPERM){
+    if (isset($function) and $function == "edit" && isset($article_id) && $sql->getValue("id") == $article_id && $KATPERM){
 
       $TMPL_SEL->set_selected($sql->getValue("template_id"));
 
