@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: index.inc.php,v 1.26 2005/10/31 19:03:04 koala_s Exp $ 
+ * @version $Id: index.inc.php,v 1.27 2005/11/14 16:17:20 kristinus Exp $ 
  */ 
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -174,7 +174,7 @@ if (isset($function) and $function == "delete")
       
       for($i=0;$i<$tabs->rows;$i++,$tabs->next())
       {
-                $tab = $tabs->getvalue("Tables_in_".$DB[1]['NAME']);
+        $tab = $tabs->getvalue("Tables_in_".$DB[1]['NAME']);
         if( strstr($tab, $REX['TABLE_PREFIX']) == $tab && $tab != "rex_user"){
           $cols = new sql;
           $cols->setquery("SHOW COLUMNS FROM ". $tab);
@@ -201,7 +201,7 @@ if (isset($function) and $function == "delete")
             $query .= ")";
           }
           $query .= ")TYPE=MyISAM;";
-          $dump = $query."\n";
+          $dump .= $query."\n";
           $cont = new sql;
           $cont->setquery("SELECT * FROM ". $tab);
           for($j=0;$j<$cont->rows;$j++,$cont->next()){
