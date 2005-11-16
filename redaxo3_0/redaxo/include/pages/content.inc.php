@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.44 2005/10/30 14:58:43 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.45 2005/11/16 08:50:46 kristinus Exp $ 
  */ 
 
 
@@ -244,10 +244,10 @@ if ($article->getRows() == 1)
     
                 // ----- file
                 $FILENAME = $REX_ACTION['FILE'][$fi];
-                if (isset($CHECK_FILE[$fi]) and $FILENAME == "" && $CHECK_FILE[$fi] != 1)
+                if ($FILENAME == "")
                 {
                   $newsql->setValue("file".$fi,"");
-                }elseif ($FILENAME != "" && $CHECK_FILE[$fi] != 1)
+                }else
                 {
                   $checkfile = new sql;
                   $checkfile->setQuery("select * from rex_file where filename='".$FILENAME."'");
