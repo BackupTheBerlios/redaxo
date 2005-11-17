@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.75 2005/11/08 15:34:11 kristinus Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.76 2005/11/17 20:12:11 kristinus Exp $ 
  */ 
 
 // TODOS
@@ -30,7 +30,7 @@ if(isset($_GET["opener_input_field"])) $_SESSION["media[opener_input_field]"] = 
 
 // *************************************** PERMS
 $PERMALL = false;
-if ($REX_USER->isValueOf("rights","admin[]") or $REX_USER->isValueOf("rights","dev[]") or $REX_USER->isValueOf("rights","media[0]")) $PERMALL = true;
+if ($REX_USER->isValueOf("rights","admin[]") or $REX_USER->isValueOf("rights","media[0]")) $PERMALL = true;
 
 
 
