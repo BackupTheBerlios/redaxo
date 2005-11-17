@@ -4,7 +4,7 @@
 /** 
  * Funktionen zur Registrierung von Schnittstellen 
  * @package redaxo3 
- * @version $Id: function_rex_extension.inc.php,v 1.5 2005/11/13 01:56:18 kills Exp $ 
+ * @version $Id: function_rex_extension.inc.php,v 1.6 2005/11/17 20:32:20 kills Exp $ 
  */
 
 /**
@@ -56,6 +56,17 @@ function rex_register_extension($extension, $function)
 {
   global $REX;
   $REX['EXTENSIONS'][$extension][] = $function;
+}
+
+/**
+ * Prüft ob eine extension für den angegebenen Extension point definiert ist
+ *
+ * @param $extension Name der Extension
+ */
+function rex_extension_is_registered($extension)
+{
+  global $REX;
+  return !empty ($REX['EXTENSIONS'][$extension]);
 }
 
 /**

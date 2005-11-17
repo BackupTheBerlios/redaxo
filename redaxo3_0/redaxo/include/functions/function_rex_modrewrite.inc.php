@@ -3,7 +3,7 @@
 /** 
  * URL Funktionen  
  * @package redaxo3 
- * @version $Id: function_rex_modrewrite.inc.php,v 1.23 2005/11/13 15:05:03 kills Exp $ 
+ * @version $Id: function_rex_modrewrite.inc.php,v 1.24 2005/11/17 20:32:20 kills Exp $ 
  */ 
 
 // ----------------------------------------- Redaxo 2.* functions
@@ -61,7 +61,9 @@ function rex_getUrl($id = '', $clang = '', $params = '')
   }
 
   // ----- get clang
-  if (strlen($clang) == 0 && count($REX['CLANG']) > 1)
+  // Wenn eine rexExtension vorhanden ist, immer die clang mitgeben!
+  // Die rexExtension muss selbst entscheiden was sie damit macht 
+  if (strlen($clang) == 0 && (count($REX['CLANG']) > 1 || rex_extension_is_registered( 'URL_REWRITE')))
   {
     $clang = $REX['CUR_CLANG'];
   }
