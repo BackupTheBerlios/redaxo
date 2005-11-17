@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.36 2005/11/03 15:34:30 kristinus Exp $ 
+ * @version $Id: user.inc.php,v 1.37 2005/11/17 19:57:11 kills Exp $ 
  */ 
 
 /*
@@ -17,7 +17,7 @@ allgemeine zugriffe (array + addons)
   mediapool[]templates[] ...
 
 optionen
-  advancedMode[]expertMode[]
+  advancedMode[]
 
 zugriff auf folgende categorien
   csw[2] write 
