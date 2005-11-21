@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.26 2005/11/07 17:26:07 kills Exp $
+ * @version $Id: index.php,v 1.27 2005/11/21 19:51:16 kills Exp $
  */ 
 
 // ----- caching start für output filter
@@ -32,7 +32,7 @@ if ($REX['SETUP'])
   $REX['LANG'] = $lang;
   
   // ----------------- CREATE LANG OBJ
-  rex_create_lang( $REX['LANG']);
+  $I18N = rex_create_lang( $REX['LANG']);
   setlocale(LC_ALL,trim($I18N->msg("setlocale")));
   header('Content-Type: text/html; charset='.$I18N->msg("htmlcharset"));
   
@@ -70,7 +70,7 @@ if ($REX['SETUP'])
   if ($REX_USER->isValueOf("rights","be_lang[de_de]")) $REX[LANG] = "de_de";
   else if ($REX_USER->isValueOf("rights","be_lang[en_gb]")) $REX[LANG] = "en_gb";
   */
-  rex_create_lang( $REX['LANG']);
+  $I18N = rex_create_lang( $REX['LANG']);
   setlocale(LC_ALL,trim($I18N->msg("setlocale")));
   header('Content-Type: text/html; charset='.$I18N->msg("htmlcharset"));
 
