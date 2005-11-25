@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.38 2005/11/14 10:32:59 kristinus Exp $ 
+ * @version $Id: structure.inc.php,v 1.39 2005/11/25 00:54:56 kristinus Exp $ 
  */ 
 
 /*
@@ -466,7 +466,7 @@ echo "</table>";
 if($category_id > -1)
 {
   $TEMPLATES = new sql;
-  $TEMPLATES->setQuery("select * from rex_template");
+  $TEMPLATES->setQuery("select * from rex_template order by name");
   $TMPL_SEL = new select;
   $TMPL_SEL->set_name("template_id");
   $TMPL_SEL->set_size(1);
