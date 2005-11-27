@@ -2,7 +2,7 @@
 /** 
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template 
  * @package redaxo3 
- * @version $Id: class.article.inc.php,v 1.43 2005/11/27 14:33:36 kills Exp $ 
+ * @version $Id: class.article.inc.php,v 1.44 2005/11/27 14:36:22 kills Exp $ 
  */ 
 
 class article
@@ -519,12 +519,6 @@ class article
     return $slice_content;
   }
 
-
-  function getArticleContent()
-  {
-    return $this->getArticle();
-  }
-   
   // ----- allgemeines suchen und ersetzen
   function sliceIn($slice_content)
   {
