@@ -2,14 +2,12 @@
 /** 
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template 
  * @package redaxo3 
- * @version $Id: class.article.inc.php,v 1.44 2005/11/27 14:36:22 kills Exp $ 
+ * @version $Id: class.article.inc.php,v 1.45 2005/11/29 17:03:48 kills Exp $ 
  */ 
 
 class article
 {
 
-  var $mediafolder;
-  var $mediafolder_www;
   var $slice_id;
   var $article_id;
   var $mode;
