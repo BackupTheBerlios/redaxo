@@ -2,7 +2,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.39 2005/11/17 19:42:20 kristinus Exp $ 
+ * @version $Id: functions.inc.php,v 1.40 2005/11/29 23:24:08 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -39,7 +39,6 @@ $REX['PERM'][] = "user[]";
 
 // ----- optionen
 $REX['EXTPERM'][] = "advancedMode[]";
-$REX['EXTPERM'][] = "caching[]";
 $REX['EXTPERM'][] = "moveslice[]";
 $REX['EXTPERM'][] = "copyContent[]";
 
