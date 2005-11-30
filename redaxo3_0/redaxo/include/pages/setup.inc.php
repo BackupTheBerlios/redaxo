@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.21 2005/11/30 00:51:04 kristinus Exp $
+ * @version $Id: setup.inc.php,v 1.22 2005/11/30 01:56:04 kristinus Exp $
  */ 
 
 echo "
@@ -124,8 +124,6 @@ if($checkmodus == 1)
          $REX['INCLUDE_PATH']."/generated/articles",
          $REX['INCLUDE_PATH']."/generated/templates",
          $REX['INCLUDE_PATH']."/addons/stats/logs",
-         $REX['INCLUDE_PATH']."/generated/cache/",
-         $REX['INCLUDE_PATH']."/generated/cache/cache.php",
          $REX['INCLUDE_PATH']."/generated/files/",
          $REX['INCLUDE_PATH']."/addons/import_export/files",
          $REX['INCLUDE_PATH']."/../../files/");
