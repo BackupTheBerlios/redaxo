@@ -1,5 +1,11 @@
 <?php
 
+/** 
+ * 
+ * @package redaxo3 
+ * @version $Id: master.inc.php,v 1.15 2005/11/30 00:23:26 kristinus Exp $ 
+ */
+
 // -----------------
 
 if (!$REX) $REX = array();
