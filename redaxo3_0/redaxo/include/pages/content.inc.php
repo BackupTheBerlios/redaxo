@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.47 2005/12/01 15:11:44 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.48 2005/12/24 10:27:51 koala_s Exp $ 
  */ 
 
 
@@ -179,7 +179,7 @@ if ($article->getRows() == 1)
             }
 
             eval("?>".$iaction);
-            if ($REX_ACTION['MSG']!="") $message .= $REX_ACTION['MSG']." | ";
+            if (isset($REX_ACTION['MSG']) and $REX_ACTION['MSG'] != "" ) $message .= $REX_ACTION['MSG']." | ";
             $ga->next();
           }
 
@@ -327,7 +327,7 @@ if ($article->getRows() == 1)
                 $iaction = str_replace("REX_MEDIALIST[$j]",$REX_ACTION['MEDIALIST'][$j],$iaction);
               }
               eval("?>".$iaction);
-              if ($REX_ACTION['MSG']!="") $message .= " | ".$REX_ACTION['MSG'];
+              if (isset($REX_ACTION['MSG']) and $REX_ACTION['MSG'] != "") $message .= " | ".$REX_ACTION['MSG'];
               $REX_ACTION['MSG'] = "";
               $ga->next();
             }
