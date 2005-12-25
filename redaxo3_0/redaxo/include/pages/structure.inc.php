@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.39 2005/11/25 00:54:56 kristinus Exp $ 
+ * @version $Id: structure.inc.php,v 1.40 2005/12/25 20:46:34 koala_s Exp $ 
  */ 
 
 /*
@@ -207,6 +207,7 @@ if (isset($catedit_function) and $catedit_function != "" && $edit_id != "" && $K
   rex_generateArticle($id);
   
   // ----- EXTENSION POINT
+  if (!isset ($edit_id)) $edit_id = 0;
   rex_register_extension_point('CAT_ADDED','',array ("id" => $edit_id, "name" => $category_name, "prio" => $Position_New_Category, "path" => $KATPATH));
 
  
