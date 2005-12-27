@@ -1,8 +1,9 @@
 <?php
+
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.22 2005/11/30 01:56:04 kristinus Exp $
+ * @version $Id: setup.inc.php,v 1.23 2005/12/27 14:37:19 kristinus Exp $
  */ 
 
 echo "
