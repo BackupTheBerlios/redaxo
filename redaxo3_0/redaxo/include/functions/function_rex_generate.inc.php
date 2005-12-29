@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.43 2005/12/29 11:11:35 kills Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.44 2005/12/29 15:08:58 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -685,6 +685,8 @@ function rex_copyContent($from_id, $to_id, $from_clang = 0, $to_clang = 0, $from
  */
 function rex_deleteDir($file, $delete_folders = false, $exceptions = true)
 {
+  $state = true;
+    
   if (file_exists($file))
   {
     // Fehler unterdrücken, falls keine Berechtigung
