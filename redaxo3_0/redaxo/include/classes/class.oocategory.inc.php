@@ -1,11 +1,11 @@
 <?php
 
 /** 
- *  
+ * Object Oriented Framework: Bildet eine Kategorie der Struktur ab
  * @package redaxo3
- * @version $Id: class.oocategory.inc.php,v 1.18 2005/12/27 14:38:24 kristinus Exp $
- */ 
- 
+ * @version $Id: class.oocategory.inc.php,v 1.19 2005/12/29 10:19:23 kills Exp $
+ */
+
 class OOCategory extends OORedaxo
 {
 
@@ -13,7 +13,7 @@ class OOCategory extends OORedaxo
   {
     parent :: OORedaxo($params, $clang);
   }
-  
+
   /*
    * CLASS Function:
    * Return an OORedaxo object based on an id
@@ -216,10 +216,10 @@ class OOCategory extends OORedaxo
     }
     return null;
   }
-  
-   function isValid($category)
-   {
-      return is_object($category) && is_a($category, 'oocategory');
-   }
+
+  function isValid($category)
+  {
+    return is_object($category) && is_a($category, 'oocategory');
+  }
 }
 ?>
