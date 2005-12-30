@@ -4,7 +4,7 @@
 /**
  * Addon Funktionen 
  * @package redaxo3
- * @version $Id: function_rex_addons.inc.php,v 1.1 2005/12/29 11:12:40 kills Exp $
+ * @version $Id: function_rex_addons.inc.php,v 1.2 2005/12/30 09:34:47 kills Exp $
  */
 
 function rex_install_addon($addons, $addonname)
@@ -157,7 +157,7 @@ function rex_delete_addon($addons, $addonname)
   if ($state === true)
   {
     // bei erfolg, komplett löschen
-    rex_deleteDir($REX['INCLUDE_PATH']."/addons/$addonname", true, false);
+    rex_deleteDir($REX['INCLUDE_PATH']."/addons/$addonname", true);
     // regenerate Addons file
     $state = rex_generateAddons($addons);
   }
