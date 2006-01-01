@@ -3,7 +3,7 @@
 /**
  * Setup Funktionen
  * @package redaxo3
- * @version $Id: function_rex_setup.inc.php,v 1.1 2005/12/29 11:08:37 kills Exp $
+ * @version $Id: function_rex_setup.inc.php,v 1.2 2006/01/01 21:20:40 koala_s Exp $
  */
 
 /**
@@ -20,7 +20,7 @@ function rex_is_writable($item)
   {
     if (!@ is_writable($item."/."))
     {
-      $state = $I18N->msg("setup_012", absPath($item));
+      $state = $I18N->msg("setup_012", rex_absPath($item));
     }
   }
   // Fehler unterdrücken, falls keine Berechtigung
@@ -28,12 +28,12 @@ function rex_is_writable($item)
   {
     if (!@ is_writable($item))
     {
-      $state = $I18N->msg("setup_014", absPath($item));
+      $state = $I18N->msg("setup_014", rex_absPath($item));
     }
   }
   else
   {
-    $state = $I18N->msg("setup_015", absPath($item));
+    $state = $I18N->msg("setup_015", rex_absPath($item));
   }
   
   return $state;

@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: index.inc.php,v 1.28 2005/12/29 11:25:29 kills Exp $ 
+ * @version $Id: index.inc.php,v 1.29 2006/01/01 21:21:16 koala_s Exp $ 
  */ 
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -131,7 +131,7 @@ if (isset($function) and $function == "delete")
           reset($tar->message);
           for ($fol=0;$fol<count($tar->message);$fol++)
           {
-            $msg .= absPath( str_replace( "'", "", key( $tar->message)))."<br>";
+            $msg .= rex_absPath( str_replace( "'", "", key( $tar->message)))."<br>";
             
             next($tar->message);
           }
