@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.25 2005/12/29 11:08:37 kills Exp $
+ * @version $Id: setup.inc.php,v 1.26 2006/01/03 10:09:32 kills Exp $
  */ 
 
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_setup.inc.php";
@@ -48,7 +48,8 @@ if ($checkmodus=="0.5")
   echo "<br><br>";
   echo "<div id=lizenz style='width:500px; height:200px; overflow:auto; background-color:#ffffff; text-align:left; font-size:9px;'>";
   
-  $license_file = $REX['HTDOCS_PATH'] .'/_lizenz.txt';
+  $Basedir = dirname( __FILE__);
+  $license_file = $Basedir .'/../../../_lizenz.txt';
   $hdl = fopen( $license_file, 'r');
   $license = nl2br( fread ( $hdl, filesize( $license_file)));
   fclose( $hdl);
