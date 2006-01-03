@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: class.i18n.inc.php,v 1.12 2005/11/21 19:51:16 kills Exp $ 
+ * @version $Id: class.i18n.inc.php,v 1.13 2006/01/03 08:10:55 kills Exp $ 
  */
 
 // class.i18n.inc.php
@@ -61,6 +61,8 @@ class i18n
    */
   function loadTexts()
   {
+    global $I18N;
+    
     if (is_readable($this->filename))
     {
       $f = fopen($this->filename, "r");
@@ -73,6 +75,14 @@ class i18n
         }
       }
       fclose($f);
+    }
+    elseif(file_exists( $this->filename))
+    {
+      trigger_error( $I18N->msg('lang_file_not_readable', $this->filename), E_USER_ERROR);
+    }
+    else
+    {
+      trigger_error( $I18N->msg('lang_file_not_found', $this->filename), E_USER_ERROR);
     }
   }
 
