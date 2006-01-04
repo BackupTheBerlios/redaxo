@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.15 2006/01/04 18:49:19 kills Exp $
+ @version $Id: standard.js,v 1.16 2006/01/04 18:59:24 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -190,7 +190,7 @@ function deleteREXMedia(id)
 
 function addREXMedia(id,cat_id)
 {
-        newPoolWindow('	index.php?page=medienpool&action=media_upload&subpage=add_file&cat_id='+cat_id+'&opener_input_field=REX_MEDIA_'+id);
+        newPoolWindow('index.php?page=medienpool&action=media_upload&subpage=add_file&cat_id='+cat_id+'&opener_input_field=REX_MEDIA_'+id);
 }
 
 function openLinkMap(id)
