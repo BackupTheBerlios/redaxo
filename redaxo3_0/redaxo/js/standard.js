@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.14 2006/01/04 18:43:44 kills Exp $
+ @version $Id: standard.js,v 1.15 2006/01/04 18:49:19 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -165,7 +165,7 @@ function newPoolWindow( link)
 
 function openMediaPool(id)
 {
-    newPoolWindow('index.php?page=medienpool&opener_input_field=');
+    newPoolWindow('index.php?page=medienpool&opener_input_field='+ id);
 }
 
 function openREXMedia(id)
