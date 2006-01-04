@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.13 2005/11/01 15:17:22 kills Exp $
+ @version $Id: standard.js,v 1.14 2006/01/04 18:43:44 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -197,6 +197,13 @@ function openLinkMap(id)
 {
         newWindow('linkmappopup','index.php?page=linkmap&opener_input_field='+id+'',660,500,',status=yes,resizable=yes');
 }
+
+function setValue(id,value)
+{
+	var field = new getObj(id);
+	field.obj.value = value;
+}
+
 function deleteREXLink(id)
 {
         var a = new getObj("LINK["+id+"]");
