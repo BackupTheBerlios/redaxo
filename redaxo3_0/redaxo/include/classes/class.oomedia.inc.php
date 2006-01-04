@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.42 2005/12/29 10:20:05 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.43 2006/01/04 18:28:49 kills Exp $
  */
 
 class OOMedia
@@ -137,17 +137,7 @@ class OOMedia
    */
   function & getMediaByName($filename)
   {
-    $query = 'SELECT file_id FROM '.OOMedia :: _getTableName().' WHERE filename = "'.$filename.'"';
-    $sql = new sql();
-    //$sql->debugsql = true;
-    $result = $sql->get_array($query);
-
-    if (count($result) == 0)
-    {
-      return null;
-    }
-
-    return OOMedia :: getMediaById($result[0]['file_id']);
+    return OOMedia::getMediaByFileName($filename);
   }
 
   /**
