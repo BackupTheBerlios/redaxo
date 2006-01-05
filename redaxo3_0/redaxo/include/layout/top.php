@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: top.php,v 1.32 2005/11/17 20:04:19 kristinus Exp $
+ * @version $Id: top.php,v 1.33 2006/01/05 17:20:21 kills Exp $
  */ 
 
 if (!isset($page_name)) $page_name = ''; 
@@ -55,6 +55,8 @@ if ( isset( $open_header_only) && $open_header_only == true) {
         if (isset($REX['ADDON']['perm'][$apage])) { $perm = $REX['ADDON']['perm'][$apage]; } else { $perm = ''; }
         if (isset($REX['ADDON']['name'][$apage])) { $name = $REX['ADDON']['name'][$apage]; } else { $name = ''; }
         if (isset($REX['ADDON']['popup'][$apage])) { $popup = $REX['ADDON']['popup'][$apage]; } else { $popup = ''; }
+        // Leerzeichen durch &nbsp; ersetzen, damit Addonnamen immer in einer Zeile stehen
+        $name = str_replace( ' ', '&nbsp;', $name);
         if (current($REX['ADDON']['status']) == 1 && $name != '' && ($REX_USER->isValueOf("rights",$perm) || $perm == "" || $REX_USER->isValueOf("rights","admin[]")) )
         {
           if ($popup == 1) echo " | <a href=javascript:newPoolWindow('index.php?page=$apage'); class=white>$name</a>";
