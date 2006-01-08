@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.48 2005/12/24 10:27:51 koala_s Exp $ 
+ * @version $Id: content.inc.php,v 1.49 2006/01/08 22:36:03 koala_s Exp $ 
  */ 
 
 
@@ -559,6 +559,7 @@ if ($article->getRows() == 1)
         $meta_sql->setValue("description",$meta_description);
         $meta_sql->setValue("name",$meta_article_name);
         $meta_sql->setValue("type_id",$type_id);
+        if (!isset ($meta_teaser)) $meta_teaser = 0;
         $meta_sql->setValue("teaser",$meta_teaser);
         $meta_sql->setValue("updatedate",time());
         $meta_sql->setValue("updateuser",$REX_USER->getValue("login"));
@@ -572,6 +573,7 @@ if ($article->getRows() == 1)
         $meta_sql->update();
 
         $article->setQuery("select * from rex_article where id='$article_id' and clang='$clang'");
+        if (!isset ($message)) $message = '';
         $err_msg = $I18N->msg("metadata_updated").$message;
 
         rex_generateArticle($article_id);
