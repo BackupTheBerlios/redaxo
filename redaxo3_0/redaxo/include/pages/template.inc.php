@@ -1,4 +1,9 @@
 <?php
+/** 
+ *  
+ * @package redaxo3 
+ * @version $Id: template.inc.php,v 1.21 2006/01/08 22:39:41 koala_s Exp $ 
+ */
 
 title($I18N->msg("title_templates"),"");
 
@@ -74,7 +79,7 @@ if (isset($function) and ($function == "add" or $function == "edit")){
     }
   }
   
-  if ( $save != "ja") 
+  if (!isset($save) or $save != "ja")
   {
     echo '<a name="edit"><table class="rex" style="table-layout:auto;" cellpadding="5" cellspacing="1">';
   
