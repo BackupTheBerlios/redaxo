@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet eine Kategorie im Medienpool ab
  * @package redaxo3
- * @version $Id: class.oomediacategory.inc.php,v 1.23 2005/12/29 10:20:38 kills Exp $
+ * @version $Id: class.oomediacategory.inc.php,v 1.24 2006/01/11 13:44:35 kills Exp $
  */
 
 class OOMediaCategory
@@ -72,8 +72,9 @@ class OOMediaCategory
 
     if (count($result) == 0)
     {
-      //trigger_error('No OOMediaCategory found with id "'.$id.'"', E_USER_ERROR);
-      return null;
+      // Zuerst einer Variable zuweisen, da RETURN BY REFERENCE
+      $return = null;
+      return $return;
     }
 
     $cat = & new OOMediaCategory();
