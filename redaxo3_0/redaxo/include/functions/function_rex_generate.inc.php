@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.45 2005/12/30 09:34:47 kills Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.46 2006/01/17 15:53:57 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -681,7 +681,6 @@ function rex_copyContent($from_id, $to_id, $from_clang = 0, $to_clang = 0, $from
  * 
  * @param $file Zu löschender Ordner/Datei 
  * @param $delete_folders Ordner auch löschen? false => nein, true => ja 
- * @param $exceptions Lösche auch '_readme.txt' und '.cvsignore' Dateien? false => nein, true => ja
  */
 function rex_deleteDir($file, $delete_folders = false)
 {
