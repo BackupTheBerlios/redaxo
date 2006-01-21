@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.44 2006/01/21 14:13:57 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.45 2006/01/21 14:54:09 kills Exp $
  */
 
 class OOMedia
@@ -537,7 +537,7 @@ class OOMedia
       $additional .= $name.'="'.$value.'" ';
     }
 
-    return '<img src="'.$path.$file.'" '.$additional.' />';
+    return '<img src="'.$path.$file.'"'.$additional.' />';
   }
 
   /**
@@ -866,15 +866,25 @@ class OOMedia
   }
   
   // allowed filetypes
-  function getAllowedDocTypes()
+  function getDocTypes()
   {
     return array ('bmp','css','doc','gif','gz','jpg','mov','mp3','ogg','pdf','png','ppt','rar','rtf','swf','tar','tif','txt','wma','xls','zip'); 
   }
   
-  // allowed image upload types 
-  function getAllowedImageTypes()
+  function isDocType( $type)
   {
-    return array ('gif','jpg','jpeg','png','pjpeg','bmp');
+    return in_array( $type, OOMedia::getDocTypes());
+  }
+  
+  // allowed image upload types 
+  function getImageTypes()
+  {
+    return array ('image/gif','image/jpg','image/jpeg','image/png','image/pjpeg','image/bmp');
+  }
+  
+  function isImageType( $type)
+  {
+    return in_array( $type, OOMedia::getImageTypes());
   }
 }
 ?>
