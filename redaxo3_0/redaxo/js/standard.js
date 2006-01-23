@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.17 2006/01/21 14:51:04 kills Exp $
+ @version $Id: standard.js,v 1.18 2006/01/23 14:47:14 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -161,6 +161,15 @@ var winObjCounter = -1;
 function newPoolWindow( link) 
 {
     newWindow( 'rexmediapopup', link, 660,500,',status=yes,resizable=yes');
+}
+
+function openMediaDetails(id, file_id, file_category_id)
+{
+	if ( typeof(id) == 'undefined')
+	{
+		id = '';	
+	}
+  newPoolWindow('index.php?page=medienpool&opener_input_field='+ id + '&file_id=' + file_id + '&file_category_id=' + file_category_id);
 }
 
 function openMediaPool(id)
