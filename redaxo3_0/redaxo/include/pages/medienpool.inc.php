@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.82 2006/01/21 14:55:02 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.83 2006/01/26 15:39:00 kills Exp $ 
  */ 
 
 // TODOS
@@ -24,11 +24,10 @@
 // ----- opener_input_field setzen
 if(isset($_GET["opener_input_field"])) $_SESSION["media[opener_input_field]"] = $_GET["opener_input_field"];
 // ----- opener_form setzen
-if(isset($_GET["opener_form"])) 
-{
-  $_SESSION["media[opener_form]"] = $_GET["opener_form"];
-}
-else
+if(isset($_GET["opener_form"])) $_SESSION["media[opener_form]"] = $_GET["opener_form"];
+
+// default value setzen, falls nicht übergeben
+if (empty( $_SESSION["media[opener_form]"]))
 {
   $_SESSION["media[opener_form]"] = 'REX_FORM';
 }
