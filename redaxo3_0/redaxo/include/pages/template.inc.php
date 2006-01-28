@@ -2,10 +2,10 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: template.inc.php,v 1.21 2006/01/08 22:39:41 koala_s Exp $ 
+ * @version $Id: template.inc.php,v 1.22 2006/01/28 14:29:17 kills Exp $ 
  */
 
-title($I18N->msg("title_templates"),"");
+rex_title($I18N->msg("title_templates"),"");
 
 $OUT = TRUE;
 

@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.40 2005/12/25 20:46:34 koala_s Exp $ 
+ * @version $Id: structure.inc.php,v 1.41 2006/01/28 14:29:17 kills Exp $ 
  */ 
 
 /*
@@ -44,7 +44,7 @@ include $REX['INCLUDE_PATH']."/functions/function_rex_category.inc.php";
 
 // --------------------------------------------- TITLE
 
-title($I18N->msg("title_structure"),"$KATout");
+rex_title($I18N->msg("title_structure"),"$KATout");
 
 $sprachen_add = "&category_id=$category_id";
 include $REX['INCLUDE_PATH']."/functions/function_rex_languages.inc.php";

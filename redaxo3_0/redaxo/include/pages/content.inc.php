@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.49 2006/01/08 22:36:03 koala_s Exp $ 
+ * @version $Id: content.inc.php,v 1.50 2006/01/28 14:29:17 kills Exp $ 
  */ 
 
 
@@ -40,7 +40,7 @@ if ($article->getRows() == 1)
   }
 
   // ----- Titel anzeigen
-  title("Artikel",$KATout);
+  rex_title("Artikel",$KATout);
 
   // ----- Sprachenblock
   $sprachen_add = "&category_id=$category_id&article_id=$article_id";

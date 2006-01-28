@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: index.inc.php,v 1.29 2006/01/01 21:21:16 koala_s Exp $ 
+ * @version $Id: index.inc.php,v 1.30 2006/01/28 14:29:17 kills Exp $ 
  */ 
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -334,7 +334,7 @@ if (isset($function) and $function == "delete")
 
 
 include $REX['INCLUDE_PATH']."/layout/top.php";
-title($I18N_IM_EXPORT->msg("importexport"),"");
+rex_title($I18N_IM_EXPORT->msg("importexport"),"");
 if ($msg != '') echo "<table border=0 cellpadding=5 cellspacing=1 width=770><tr><td class=warning>$msg</td></tr></table><br>";
 
 ?>

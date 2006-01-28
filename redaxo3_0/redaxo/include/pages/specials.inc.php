@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: specials.inc.php,v 1.27 2005/12/29 15:06:04 kills Exp $ 
+ * @version $Id: specials.inc.php,v 1.28 2006/01/28 14:29:17 kills Exp $ 
  */ 
 
 $ERRMSG = "";
@@ -14,7 +14,7 @@ $subline = array(
   array( 'lang', $I18N->msg("languages")),
   array( 'type', $I18N->msg("types")),
 );
-title($I18N->msg("specials_title"),$subline);
+rex_title($I18N->msg("specials_title"),$subline);
 
 
 if ($subpage == '')

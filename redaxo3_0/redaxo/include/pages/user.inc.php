@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.37 2005/11/17 19:57:11 kills Exp $ 
+ * @version $Id: user.inc.php,v 1.38 2006/01/28 14:29:17 kills Exp $ 
  */ 
 
 /*
@@ -199,7 +199,7 @@ if (isset($REX['EXTRAPERM'])) {
 
 // --------------------------------- Title
 
-title($I18N->msg("title_user"),"");
+rex_title($I18N->msg("title_user"),"");
 
 // --------------------------------- FUNCTIONS
 
