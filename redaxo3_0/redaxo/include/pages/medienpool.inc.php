@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.83 2006/01/26 15:39:00 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.84 2006/01/30 16:52:19 kristinus Exp $ 
  */ 
 
 // TODOS
@@ -935,7 +935,9 @@ if (isset($subpage) and $subpage == "detail")
 
     }else
     {
+      $catname = $I18N->msg('pool_kats_no');
       $Cat = OOMediaCategory::getCategoryById($rex_file_category);
+      if ($Cat) $catname = $Cat->getName();
 
       print "<table border=0 cellpadding=5 cellspacing=1 width=100%>\n";
       print "<tr><th align=left colspan=4>Detailinformationen | $opener_link</th></tr>";
@@ -949,7 +951,7 @@ if (isset($subpage) and $subpage == "detail")
       }
 
       print "</tr>\n";
-      print "<tr><td class=grey>".$I18N->msg('pool_category').":</td><td class=grey colspan=2>".$Cat->getName()."</td></tr>\n";
+      print "<tr><td class=grey>".$I18N->msg('pool_category').":</td><td class=grey colspan=2>".$catname."</td></tr>\n";
       print "<tr><td class=grey valign=top>".$I18N->msg('pool_description').":</td><td class=grey colspan=2>".(stripslashes($fdescription))."</td></tr>\n";
       print "<tr><td class=grey>".$I18N->msg('pool_copyright').":</td><td class=grey colspan=2>".(stripslashes($fcopyright))."</td></tr>\n";
       print "<tr><td class=grey>".$I18N->msg('pool_filename').":</td><td class=grey colspan=2><a href=../files/$fname target=_blank>$fname</a></td></tr>\n";
