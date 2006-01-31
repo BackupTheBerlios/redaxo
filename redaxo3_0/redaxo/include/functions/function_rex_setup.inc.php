@@ -3,7 +3,7 @@
 /**
  * Setup Funktionen
  * @package redaxo3
- * @version $Id: function_rex_setup.inc.php,v 1.2 2006/01/01 21:20:40 koala_s Exp $
+ * @version $Id: function_rex_setup.inc.php,v 1.3 2006/01/31 13:32:34 tbaddade Exp $
  */
 
 /**
@@ -44,7 +44,7 @@ function rex_is_writable($item)
  */
 function rex_setuptitle($title)
 {
-  title($title,"");
+  rex_title($title,"");
 
   echo "
   <table border=0 cellpadding=5 cellspacing=1 width=770>
