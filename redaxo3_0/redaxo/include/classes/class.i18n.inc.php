@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: class.i18n.inc.php,v 1.13 2006/01/03 08:10:55 kills Exp $ 
+ * @version $Id: class.i18n.inc.php,v 1.14 2006/02/07 09:34:26 tbaddade Exp $ 
  */
 
 // class.i18n.inc.php
@@ -118,7 +118,7 @@ class i18n
       }
       else
       {
-        trigger_error('Schluessel "'.$key.'" konnte weder in der ausgew&auml;lten noch in der Fallbacksprache gefunden werden!', E_USER_ERROR);
+        trigger_error('Schl&uuml;ssel "'.$key.'" konnte weder in der ausgew&auml;hlten noch in der Fallbacksprache gefunden werden!', E_USER_ERROR);
       }
     }
 
