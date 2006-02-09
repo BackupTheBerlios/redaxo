@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.53 2006/02/09 15:44:05 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.54 2006/02/09 16:23:41 kills Exp $ 
  */ 
 
 
@@ -357,7 +357,7 @@ if ($article->getRows() == 1)
     // ------------------------------------------ START: Slice move up/down
     if (isset($function) and $function == "moveup" || $function == "movedown")
     {
-      if ($REX_USER->isValueOf("rights","moveslice[]"))
+      if ($REX_USER->isValueOf("rights","moveSlice[]"))
       {
         // modul und rechte vorhanden ?
         

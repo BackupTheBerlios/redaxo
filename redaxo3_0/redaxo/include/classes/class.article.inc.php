@@ -2,7 +2,7 @@
 /** 
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template 
  * @package redaxo3 
- * @version $Id: class.article.inc.php,v 1.47 2006/02/09 15:44:58 kristinus Exp $ 
+ * @version $Id: class.article.inc.php,v 1.48 2006/02/09 16:23:41 kills Exp $ 
  */ 
 
 class article
@@ -300,7 +300,7 @@ class article
                 <td class=blue width=380><b>$RE_MODUL_NAME[$I_ID]</b></td>
                 <td class=llblue align=center><a href=index.php?page=content&article_id=$this->article_id&mode=edit&slice_id=$RE_CONTS[$I_ID]&function=edit&clang=".$this->clang."&ctype=".$this->ctype."#slice$RE_CONTS[$I_ID] class=green12b>".$I18N->msg('edit')."</a></td>
                 <td class=llblue align=center><a href=index.php?page=content&article_id=$this->article_id&mode=edit&slice_id=$RE_CONTS[$I_ID]&function=delete&clang=".$this->clang."&ctype=".$this->ctype."&save=1#slice$RE_CONTS[$I_ID] class=red12b onclick='return confirm(\"".$I18N->msg('delete')." ?\")'>".$I18N->msg('delete')."</a></td>";
-              if ($REX_USER->isValueOf("rights","moveslice[]"))
+              if ($REX_USER->isValueOf("rights","moveSlice[]"))
               {
                 $mne  .= "<td class=llblue><a href=index.php?page=content&article_id=$this->article_id&mode=edit&slice_id=$RE_CONTS[$I_ID]&function=moveup&clang=".$this->clang."&ctype=".$this->ctype."&upd=".time()."#slice$RE_CONTS[$I_ID] class=green12b><img src=pics/file_up.gif width=16 height=16 border=0 hspace=5></a><a href=index.php?page=content&article_id=$this->article_id&mode=edit&slice_id=$RE_CONTS[$I_ID]&function=movedown&clang=".$this->clang."&ctype=".$this->ctype."&upd=".time()."#slice$RE_CONTS[$I_ID] class=green12b><img src=pics/file_down.gif width=16 height=16 border=0></a></td>";
               }

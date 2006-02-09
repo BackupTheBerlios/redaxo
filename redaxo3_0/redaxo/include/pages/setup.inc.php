@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.26 2006/01/03 10:09:32 kills Exp $
+ * @version $Id: setup.inc.php,v 1.27 2006/02/09 16:23:41 kills Exp $
  */ 
 
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_setup.inc.php";
@@ -408,7 +408,7 @@ if ($checkmodus == 4 && $send == 1)
         $err_msg = $I18N->msg("setup_042");
       }else
       {
-        $insert = "INSERT INTO rex_user (name,login,psw,rights) VALUES ('Administrator','$redaxo_user_login','$redaxo_user_pass','admin[]dev[]import[]stats[]moveslice[]')";
+        $insert = "INSERT INTO rex_user (name,login,psw,rights) VALUES ('Administrator','$redaxo_user_login','$redaxo_user_pass','admin[]dev[]import[]stats[]moveSlice[]')";
         $link = @mysql_connect($DB[1]['HOST'],$DB[1]['LOGIN'],$DB[1]['PSW']);
         if(!@mysql_db_query($DB[1]['NAME'],$insert,$link))
         {
