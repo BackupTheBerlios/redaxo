@@ -2,7 +2,7 @@
 /** 
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template 
  * @package redaxo3 
- * @version $Id: class.article.inc.php,v 1.46 2005/12/06 16:39:50 kristinus Exp $ 
+ * @version $Id: class.article.inc.php,v 1.47 2006/02/09 15:44:58 kristinus Exp $ 
  */ 
 
 class article
@@ -430,7 +430,7 @@ class article
       $template_name = $REX['INCLUDE_PATH']."/generated/templates/".$this->getTemplateId().".template";
       if ($fd = fopen ($template_name, "r"))
       {
-        $template_content = fread ($fd, filesize ($template_name));
+        $template_content = @fread ($fd, filesize ($template_name));
         fclose ($fd);
       }else
       {
