@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.21 2005/12/29 10:21:11 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.22 2006/02/16 20:29:56 kills Exp $
  */
 
 class OORedaxo
@@ -341,6 +341,35 @@ class OORedaxo
     return $return;
   }
 
+  /**
+   *  Accessor Method:
+   * returns true if this Article is the Startpage for the category.
+   * @deprecated
+   */
+  function isStartPage()
+  {
+    return $this->isStartArticle();
+  }
+
+  /**
+   *  Accessor Method:
+   * returns true if this Article is the Startpage for the category.
+   */
+  function isStartArticle()
+  {
+    return $this->_startpage;
+  }
+
+  /**
+   *  Accessor Method:
+   * returns true if this Article is the Startpage for the entire site.
+   */
+  function isSiteStartArticle()
+  {
+    global $REX;
+    return $this->_id == $REX['STARTARTIKEL_ID'];
+  }
+  
   /*
    * Object Helper Function:
    * Returns a String representation of this object
