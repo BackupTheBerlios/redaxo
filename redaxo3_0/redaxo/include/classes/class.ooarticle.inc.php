@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.17 2005/12/29 10:18:48 kills Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.18 2006/02/17 14:25:15 kills Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -203,35 +203,6 @@ class OOArticle extends OORedaxo
   function getCategory()
   {
     return OOCategory :: getCategoryById($this->getCategoryId());
-  }
-
-  /**
-   *  Accessor Method:
-   * returns true if this Article is the Startpage for the category.
-   * @deprecated
-   */
-  function isStartPage()
-  {
-    return $this->isStartArticle();
-  }
-
-  /**
-   *  Accessor Method:
-   * returns true if this Article is the Startpage for the category.
-   */
-  function isStartArticle()
-  {
-    return $this->_startpage;
-  }
-
-  /**
-   *  Accessor Method:
-   * returns true if this Article is the Startpage for the entire site.
-   */
-  function isSiteStartArticle()
-  {
-    global $REX;
-    return $this->_id == $REX['STARTARTIKEL_ID'];
   }
 
   function isValid($article)
