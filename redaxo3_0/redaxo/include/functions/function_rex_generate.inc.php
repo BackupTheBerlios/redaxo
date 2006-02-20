@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.51 2006/02/20 16:34:33 kristinus Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.52 2006/02/20 17:48:02 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -484,12 +484,11 @@ function rex_moveCategory($from_cat, $to_cat)
 			{
 				// zielkategorie ist in quellkategorie -> nicht verschiebbar
 				return false;
-				exit;
 			}
 		}
 		
 		// ----- folgende cats regenerate
-		unset($RC);
+		$RC = array();
 		$RC[$fcat->getValue("re_id")] = 1;
 		$RC[$from_cat] = 1;
 		$RC[$to_cat] = 1;
