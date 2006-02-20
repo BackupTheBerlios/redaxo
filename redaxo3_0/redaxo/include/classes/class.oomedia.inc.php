@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.46 2006/02/12 15:20:08 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.47 2006/02/20 14:47:36 kills Exp $
  */
 
 class OOMedia
@@ -139,15 +139,6 @@ class OOMedia
 
   /**
    * @access public
-   * @see #getMediaByExtension
-   */
-  function & searchMediaByExtension($extension)
-  {
-    return OOMedia :: getMediaByExtension($extension);
-  }
-
-  /**
-   * @access public
    * 
    * @example OOMedia::getMediaByExtension('css');
    * @example OOMedia::getMediaByExtension('gif');
@@ -170,15 +161,6 @@ class OOMedia
     }
 
     return $media;
-  }
-
-  /**
-   * @access public
-   * @see #getMediaByFileName
-   */
-  function & searchMediaByFileName($name)
-  {
-    return OOMedia :: getMediaByFileName($name);
   }
 
   /**
