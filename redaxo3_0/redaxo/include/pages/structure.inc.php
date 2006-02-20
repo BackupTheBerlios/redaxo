@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.43 2006/02/15 13:51:29 kristinus Exp $ 
+ * @version $Id: structure.inc.php,v 1.44 2006/02/20 09:14:03 kristinus Exp $ 
  */ 
 
 /*
@@ -557,7 +557,7 @@ if($category_id > -1)
     if ($REX_USER->isValueOf("rights","advancedMode[]")) echo "<td class=grey>&nbsp;</td>";
     echo "        
         <td><input type=text name=article_name size=20></td>
-        <td>&nbsp;<input type=text name=Position_New_Article value=\"1\" style='width:30px'></td>
+        <td>&nbsp;<input type=text name=Position_New_Article value=\"100\" style='width:30px'></td>
         <td>".$TMPL_SEL->out()."</td>
         <td>".strftime($I18N->msg("adateformat"))."&nbsp;</td>
         <td><b>".$I18N->msg("article")."</b></td>
