@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.43 2006/02/09 16:23:41 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.44 2006/02/20 09:40:31 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -43,6 +43,8 @@ $REX['EXTPERM'][] = "moveSlice[]";
 $REX['EXTPERM'][] = "copyContent[]";
 $REX['EXTPERM'][] = "moveArticle[]";
 $REX['EXTPERM'][] = "copyArticle[]";
+$REX['EXTPERM'][] = "moveCategory[]";
+
 
 // ----------------- REDAXO INCLUDES
 include_once $REX['INCLUDE_PATH']."/classes/class.i18n.inc.php";
