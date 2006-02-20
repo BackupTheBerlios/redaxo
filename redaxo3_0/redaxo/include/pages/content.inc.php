@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.56 2006/02/20 14:57:43 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.57 2006/02/20 15:33:44 kills Exp $ 
  */ 
 
 
@@ -871,7 +871,8 @@ if ($article->getRows() == 1)
 				$move_a->set_name("category_copy_id_new");
 				$move_a->set_style("width:100%;");
 				$move_a->set_size(1);
-			
+                $move_a->set_selected($article_id);
+      
 				if ($cats = OOCategory::getRootCategories()) {
 					foreach( $cats as $cat) {
 						add_cat_options( $move_a, $cat, $cat_ids);
@@ -909,6 +910,7 @@ if ($article->getRows() == 1)
 				$move_a->set_name("category_id_new");
 				$move_a->set_style("width:100%;");
 				$move_a->set_size(1);
+                $move_a->set_selected($article_id);
 		
 				if ($cats = OOCategory::getRootCategories()) {
 					foreach( $cats as $cat) {
