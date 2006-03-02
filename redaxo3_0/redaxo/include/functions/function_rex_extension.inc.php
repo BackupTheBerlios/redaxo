@@ -4,7 +4,7 @@
 /** 
  * Funktionen zur Registrierung von Schnittstellen 
  * @package redaxo3 
- * @version $Id: function_rex_extension.inc.php,v 1.7 2006/03/02 15:06:26 kills Exp $ 
+ * @version $Id: function_rex_extension.inc.php,v 1.8 2006/03/02 15:09:26 kills Exp $ 
  */
 
 /**
@@ -43,7 +43,6 @@ function rex_register_extension_point($extension, $subject = '', $params = array
         // damit $params['subject'] nicht verfälscht wird 
         if($temp !== null)
         {
-        var_dump($temp);
           $result = $temp; 
           $params['subject'] = $result;
         }
