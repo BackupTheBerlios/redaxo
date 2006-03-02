@@ -4,7 +4,7 @@
 /** 
  * Funktionen zur Registrierung von Schnittstellen 
  * @package redaxo3 
- * @version $Id: function_rex_extension.inc.php,v 1.6 2005/11/17 20:32:20 kills Exp $ 
+ * @version $Id: function_rex_extension.inc.php,v 1.7 2006/03/02 15:06:26 kills Exp $ 
  */
 
 /**
@@ -38,8 +38,15 @@ function rex_register_extension_point($extension, $subject = '', $params = array
     {
       foreach ($REX['EXTENSIONS'][$extension] as $ext)
       {
-        $result = rex_call_func($ext, $params);
-        $params['subject'] = $result;
+        $temp = rex_call_func($ext, $params);
+        // RÜckgabewert nur auswerten wenn auch einer vorhanden ist
+        // damit $params['subject'] nicht verfälscht wird 
+        if($temp !== null)
+        {
+        var_dump($temp);
+          $result = $temp; 
+          $params['subject'] = $result;
+        }
       }
     }
   }
