@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.17 2006/02/19 14:10:01 kills Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.18 2006/03/02 15:10:38 kills Exp $
  */ 
  
 /**
@@ -46,7 +46,7 @@ function rex_title($head, $subtitle = '', $styleclass = "grey", $width = '770px'
     
         <tr style="height: 30px">
             <td class="<?php echo $styleclass ?>">&nbsp;&nbsp;<b class="head"><?php echo $head ?></b></td>
-            <td rowspan="3" style="width: 153px"><img src="pics/logo.gif" style="width: 153px; height: 61px;"/></td>
+            <td rowspan="3" style="width: 153px"><img src="pics/logo.gif" alt="REDAXO" style="width: 153px; height: 61px;"/></td>
         </tr>
         
         <tr style="height: 1px">
