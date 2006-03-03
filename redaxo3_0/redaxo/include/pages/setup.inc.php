@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.27 2006/02/09 16:23:41 kills Exp $
+ * @version $Id: setup.inc.php,v 1.28 2006/03/03 15:35:14 kristinus Exp $
  */ 
 
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_setup.inc.php";
@@ -70,7 +70,7 @@ if($checkmodus == 1)
 
   // -------------------------- VERSIONSCHECK
 
-  if(version_compare(phpversion(), "4.1.0", "<") == 1)
+  if(version_compare(phpversion(), "4.2.0", "<") == 1)
   {
     $MSG['err'] .= $I18N->msg("setup_010")."<br>";
   }
