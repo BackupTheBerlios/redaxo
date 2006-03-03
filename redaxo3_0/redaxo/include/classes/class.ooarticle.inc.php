@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.18 2006/02/17 14:25:15 kills Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.19 2006/03/03 21:12:07 kristinus Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -205,9 +205,25 @@ class OOArticle extends OORedaxo
     return OOCategory :: getCategoryById($this->getCategoryId());
   }
 
+  /*
+   * Object Function:
+   * Returns boolean if is article
+   */
   function isValid($article)
   {
     return is_object($article) && is_a($article, 'ooarticle');
   }
+
+
+  /*
+   * Object Function:
+   * Returns boolean if teaser
+   */
+  function isTeaser()
+  {
+    if ($this->_teaser == 1) return true;
+    else return false;
+  }
+
 }
 ?>
