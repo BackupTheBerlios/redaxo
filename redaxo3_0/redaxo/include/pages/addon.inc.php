@@ -3,10 +3,10 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: addon.inc.php,v 1.11 2006/01/28 14:29:17 kills Exp $ 
+ * @version $Id: addon.inc.php,v 1.12 2006/03/03 22:10:48 kristinus Exp $ 
  */
 
-include_once $REX['INCLUDE_PATH']."/functions/function_rex_setup.inc.php";
+include_once $REX['INCLUDE_PATH']."/functions/function_rex_other.inc.php";
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_addons.inc.php";
 
 rex_title($I18N->msg("addon"), "");
