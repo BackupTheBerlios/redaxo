@@ -2,15 +2,12 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: index.inc.php,v 1.30 2006/01/28 14:29:17 kills Exp $ 
+ * @version $Id: index.inc.php,v 1.31 2006/03/06 08:34:43 kristinus Exp $ 
  */ 
 
 // Für größere Exports den Speicher für PHP erhöhen.
 
 @ini_set('memory_limit', '32M');
-
-// ------- REDAXO Includes
-include_once $REX['INCLUDE_PATH'].'/functions/function_rex_setup.inc.php';
 
 // ------- Addon Includes
 include_once $REX['INCLUDE_PATH']. '/addons/'. $page .'/classes/class.tar.inc.php';
