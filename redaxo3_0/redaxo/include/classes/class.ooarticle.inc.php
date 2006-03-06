@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.19 2006/03/03 21:12:07 kristinus Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.20 2006/03/06 11:36:57 tbaddade Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -75,7 +75,7 @@ class OOArticle extends OORedaxo
     $artlist = array ();
     $sql = new sql;
     //              $sql->debugsql = true;
-    $sql->setQuery("select ".implode(',', OORedaxo :: getClassVars())." from rex_article where name like '$article_name' AND clang='$clang' $offline $cats");
+    $sql->setQuery("select ".implode(',', OORedaxo :: getClassVars())." from ".$REX['TABLE_PREFIX']."article where name like '$article_name' AND clang='$clang' $offline $cats");
     for ($i = 0; $i < $sql->getRows(); $i ++)
     {
       foreach (OORedaxo :: getClassVars() as $var)
@@ -102,7 +102,7 @@ class OOArticle extends OORedaxo
     $offline = $ignore_offlines ? " and status = 1 " : "";
     $artlist = array ();
     $sql = new sql;
-    $sql->setQuery("select ".implode(',', OORedaxo :: getClassVars())." FROM rex_article WHERE type_id = '$article_type_id' AND clang='$clang' $offline");
+    $sql->setQuery("select ".implode(',', OORedaxo :: getClassVars())." FROM ".$REX['TABLE_PREFIX']."article WHERE type_id = '$article_type_id' AND clang='$clang' $offline");
     for ($i = 0; $i < $sql->getRows(); $i ++)
     {
       foreach (OORedaxo :: getClassVars() as $var)

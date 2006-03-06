@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: class.login.inc.php,v 1.9 2006/03/06 10:45:52 kristinus Exp $
+ * @version $Id: class.login.inc.php,v 1.11 2006/03/06 11:36:56 tbaddade Exp $
  */ 
 
 // class login 1.0
@@ -109,7 +109,7 @@ class login{
   
   function checkLogin()
   {
-    
+    global $REX;
     // wenn logout dann header schreiben und auf error seite verweisen
     // message schreiben
     
@@ -138,7 +138,7 @@ class login{
                     
           // Erfolgreicher Login in der DB vermerken
           $sql = new sql();
-          $sql->setQuery( 'UPDATE rex_user SET lasttrydate ="'. time() .'", login_tries=0 WHERE login ="'. $this->usr_login .'"');
+          $sql->setQuery( 'UPDATE '.$REX['TABLE_PREFIX'].'user SET lasttrydate ="'. time() .'", login_tries=0 WHERE login ="'. $this->usr_login .'"');
 
         }else
         {
@@ -208,7 +208,7 @@ class login{
 
   function encryptPassword($psw)
   {
-  	if ($this->passwordfunction != "") return $psw;
+  	if ($this->passwordfunction == "") return $psw;
   	return call_user_func($this->passwordfunction,$psw);
   }
   

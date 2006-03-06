@@ -4,7 +4,7 @@
  * Regelt die Rechte an den einzelnen Kategorien und gibt den Pfad aus
  * Kategorien = Startartikel und Bezüge  
  * @package redaxo3 
- * @version $Id: function_rex_category.inc.php,v 1.11 2005/11/13 15:04:19 kills Exp $ 
+ * @version $Id: function_rex_category.inc.php,v 1.12 2006/03/06 11:39:40 tbaddade Exp $ 
  */
   
 $KATebene = 0; // aktuelle Ebene: default
@@ -15,7 +15,7 @@ $KATPERM = false;
 if ($REX_USER->isValueOf("rights","csw[0]") || $REX_USER->isValueOf("rights","admin[]") || $REX_USER->isValueOf("rights","dev[]")) $KATPERM = true;
 
 $KAT = new sql;
-$KAT->setQuery("select * from rex_article where id=$category_id and startpage=1 and clang=$clang");
+$KAT->setQuery("select * from ".$REX['TABLE_PREFIX']."article where id=$category_id and startpage=1 and clang=$clang");
 
 if ($KAT->getRows()!=1)
 {
@@ -32,7 +32,7 @@ if ($KAT->getRows()!=1)
 	{
 		
 		$SKAT = new sql;
-		$SKAT->setQuery("select * from rex_article where id=".$KPATH[$ii]." and startpage=1 and clang=$clang");
+		$SKAT->setQuery("select * from ".$REX['TABLE_PREFIX']."article where id=".$KPATH[$ii]." and startpage=1 and clang=$clang");
 
 		if ($SKAT->getRows()==1)
 		{
