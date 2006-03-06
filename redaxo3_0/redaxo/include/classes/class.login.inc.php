@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: class.login.inc.php,v 1.8 2006/03/06 10:44:31 kristinus Exp $
+ * @version $Id: class.login.inc.php,v 1.9 2006/03/06 10:45:52 kristinus Exp $
  */ 
 
 // class login 1.0
@@ -208,7 +208,7 @@ class login{
 
   function encryptPassword($psw)
   {
-  	if (!$this->passwordfunction) return $psw;
+  	if ($this->passwordfunction != "") return $psw;
   	return call_user_func($this->passwordfunction,$psw);
   }
   
