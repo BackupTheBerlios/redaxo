@@ -2,7 +2,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.52 2006/03/06 11:11:19 tbaddade Exp $
+ * @version $Id: class.article.inc.php,v 1.53 2006/03/06 11:29:36 tbaddade Exp $
  */
 
 class article
@@ -529,6 +529,7 @@ class article
   // ----- allgemeines suchen und ersetzen
   function sliceIn($slice_content)
   {
+  	global $REX;
     for ($i=1;$i<11;$i++)
     {
       // ----------------------------- LIST BUTTONS
@@ -638,7 +639,7 @@ class article
   function sliceClear($slice_content)
   {
 
-    global $REX_ACTION;
+    global $REX, $REX_ACTION;
 
     for ($i=1;$i<11;$i++)
     {
