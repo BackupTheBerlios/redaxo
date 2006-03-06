@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.31 2006/03/04 12:08:54 kristinus Exp $
+ * @version $Id: setup.inc.php,v 1.32 2006/03/06 10:44:18 kristinus Exp $
  */ 
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -459,6 +459,8 @@ if ($checkmodus == 4 && $send == 1)
         $err_msg = $I18N->msg("setup_042");
       }else
       {
+      	if ($REX['PSWFUNC'] != "") $redaxo_user_pass = call_user_func($REX['PSWFUNC'],$redaxo_user_pass);
+      	
         $insert = "INSERT INTO rex_user (name,login,psw,rights) VALUES ('Administrator','$redaxo_user_login','$redaxo_user_pass','admin[]dev[]import[]stats[]moveSlice[]')";
         $link = @mysql_connect($DB[1]['HOST'],$DB[1]['LOGIN'],$DB[1]['PSW']);
         if(!@mysql_db_query($DB[1]['NAME'],$insert,$link))
