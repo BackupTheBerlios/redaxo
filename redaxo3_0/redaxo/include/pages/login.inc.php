@@ -3,17 +3,8 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: login.inc.php,v 1.1 2006/03/03 21:50:57 kristinus Exp $
+ * @version $Id: login.inc.php,v 1.2 2006/03/06 09:43:32 kristinus Exp $
  */ 
-
-// ----------------- CREATE LANG OBJ
-$I18N = rex_create_lang( $REX['LANG']);
-setlocale(LC_ALL,trim($I18N->msg("setlocale")));
-header('Content-Type: text/html; charset='.$I18N->msg("htmlcharset"));
-
-$LOGIN = FALSE;
-
-include $REX['INCLUDE_PATH']."/layout/top.php";
 
 rex_title("Login","");
 
@@ -55,7 +46,5 @@ echo '<script type="text/javascript">
    //--> 
 </script>
 '."\n";
-
-include $REX['INCLUDE_PATH']."/layout/bottom.php";
 
 ?>
