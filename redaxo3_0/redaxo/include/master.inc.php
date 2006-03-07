@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: master.inc.php,v 1.17 2006/03/07 15:04:08 kristinus Exp $ 
+ * @version $Id: master.inc.php,v 1.18 2006/03/07 16:53:20 kristinus Exp $ 
  */
 
 // -----------------
@@ -14,7 +14,7 @@ if (!isset($page)) $page = '';
 
 // ----------------- SERVER VARS
 
-$REX['SETUP'] = true; 			// Setupservicestatus - if everything ok -> false; if problem set to true;
+$REX['SETUP'] = false; 			// Setupservicestatus - if everything ok -> false; if problem set to true;
 $REX['SERVER'] = "redaxo.de";
 $REX['SERVERNAME'] = "REDAXO";
 $REX['error_emailaddress'] = "jan.kristinus@pergopa.de";
