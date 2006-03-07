@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.32 2006/03/06 10:44:18 kristinus Exp $
+ * @version $Id: setup.inc.php,v 1.33 2006/03/07 17:54:11 kristinus Exp $
  */ 
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -19,39 +19,6 @@ function rex_setuptitle($title)
   <table border=0 cellpadding=5 cellspacing=1 width=770>
   <tr><td class=lgrey><font class=content>";
 
-}
-
-/**
- * Prüfen ob ein/e Datei/Ordner beschreibbar ist 
- */
-function rex_is_writable($item)
-{
-  global $I18N;
-  
-  $state = true;
-  
-  // Fehler unterdrücken, falls keine Berechtigung
-  if (@is_dir($item))
-  {
-    if (!@ is_writable($item."/."))
-    {
-      $state = $I18N->msg("setup_012", rex_absPath($item));
-    }
-  }
-  // Fehler unterdrücken, falls keine Berechtigung
-  elseif (@is_file($item))
-  {
-    if (!@ is_writable($item))
-    {
-      $state = $I18N->msg("setup_014", rex_absPath($item));
-    }
-  }
-  else
-  {
-    $state = $I18N->msg("setup_015", rex_absPath($item));
-  }
-  
-  return $state;
 }
 
 // --------------------------------------------- END: SETUP FUNCTIONS
