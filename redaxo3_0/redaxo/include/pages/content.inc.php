@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.59 2006/03/06 12:35:26 tbaddade Exp $ 
+ * @version $Id: content.inc.php,v 1.60 2006/03/07 18:18:43 kristinus Exp $ 
  */ 
 
 
@@ -473,6 +473,12 @@ if ($article->getRows() == 1)
       if (rex_moveArticle($article_id, $category_id_old, $category_id_new))
       {
         $message = $I18N->msg('content_articlemoved');
+        
+        ob_end_clean();
+
+		header("Location: index.php?page=content&article_id=".$article_id."&mode=meta&clang=".$clang."&ctype=".$ctype);
+		exit;
+        
       }else
       {
         $message = $I18N->msg('content_errormovearticle');
