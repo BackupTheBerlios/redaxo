@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: master.inc.php,v 1.16 2006/03/06 10:52:08 kristinus Exp $ 
+ * @version $Id: master.inc.php,v 1.17 2006/03/07 15:04:08 kristinus Exp $ 
  */
 
 // -----------------
@@ -32,6 +32,7 @@ $REX['TABLE_PREFIX'] = "rex_";
 $REX['FILEPERM'] = octdec(775); // oktaler wert
 $REX['INSTNAME'] = "rex20060101010101";
 $REX['PSWFUNC'] = ""; // wenn erwünscht: md5 / mcrypt ...
+$REX['MAXLOGINS'] = 20; // maximale loginversuche
 
 // ----------------- DB1
 $DB['1']['HOST'] = "localhost";
