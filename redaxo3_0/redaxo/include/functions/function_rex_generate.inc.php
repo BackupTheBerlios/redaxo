@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.54 2006/03/06 12:36:12 tbaddade Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.55 2006/03/07 18:18:25 kristinus Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -530,7 +530,7 @@ function rex_moveCategory($from_cat, $to_cat)
 			$gcats->next();
 		}		
 
-		// ----- clang holen, max carprio holen und entsprechen updaten
+		// ----- clang holen, max catprio holen und entsprechen updaten
 		$CL = $REX['CLANG'];
 		reset($CL);
 		for ($i = 0; $i < count($CL); $i ++)
@@ -552,6 +552,15 @@ function rex_moveCategory($from_cat, $to_cat)
 		foreach($RC as $id => $key)
 		{
 			rex_generateArticle($id,false);
+		}
+		
+		$CL = $REX['CLANG'];
+		reset($CL);
+		for ($j=0;$j<count($CL);$j++)
+		{
+			$mlang = key($CL);
+			rex_newCatPrio($fcat->getValue("re_id"),$mlang,0,1);
+			next($CL);
 		}
 		
 		return true;
