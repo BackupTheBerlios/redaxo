@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_other.inc.php,v 1.1 2006/03/03 22:11:27 kristinus Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.2 2006/03/07 17:53:47 kristinus Exp $
  */ 
  
 /**
@@ -31,6 +31,39 @@ function rex_absPath( $rel_path)
     
     
     return implode('/',$stack);
+}
+
+/**
+ * Prüfen ob ein/e Datei/Ordner beschreibbar ist 
+ */
+function rex_is_writable($item)
+{
+  global $I18N;
+  
+  $state = true;
+  
+  // Fehler unterdrücken, falls keine Berechtigung
+  if (@is_dir($item))
+  {
+    if (!@ is_writable($item."/."))
+    {
+      $state = $I18N->msg("setup_012", rex_absPath($item));
+    }
+  }
+  // Fehler unterdrücken, falls keine Berechtigung
+  elseif (@is_file($item))
+  {
+    if (!@ is_writable($item))
+    {
+      $state = $I18N->msg("setup_014", rex_absPath($item));
+    }
+  }
+  else
+  {
+    $state = $I18N->msg("setup_015", rex_absPath($item));
+  }
+  
+  return $state;
 }
 
 ?>
