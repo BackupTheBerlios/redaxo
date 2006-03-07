@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.33 2006/03/07 15:28:29 kristinus Exp $
+ * @version $Id: index.php,v 1.34 2006/03/07 16:43:28 kristinus Exp $
  */ 
 
 // ----- caching start für output filter
@@ -56,6 +56,8 @@ if ($REX['SETUP'])
   $I18N = rex_create_lang( $REX['LANG']);
   setlocale(LC_ALL,trim($I18N->msg("setlocale")));
   header('Content-Type: text/html; charset='.$I18N->msg("htmlcharset"));
+  header("Cache-Control: no-cache");
+  header("Pragma: no-cache");
 
   // ----------------- CREATE LANG OBJ
   if (!isset($REX_ULOGIN)) { $REX_ULOGIN = ''; }
