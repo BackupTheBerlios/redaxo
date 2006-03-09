@@ -8,7 +8,7 @@
  * This framework can be used in Modules, Templates and PHP-Slices!
  *
  * @package redaxo3
- * @version $Id: class.ooarticleslice.inc.php,v 1.6 2006/03/06 11:36:57 tbaddade Exp $
+ * @version $Id: class.ooarticleslice.inc.php,v 1.7 2006/03/09 13:36:16 kristinus Exp $
  */  
  
 class OOArticleSlice {
@@ -269,8 +269,7 @@ EOD;
   }
   
   function getLinkUrl($index) {
-    global $REX;
-    return $REX['WWW_PATH']."index.php?article_id=".$this->getLink($index);
+    return "index.php?article_id=".$this->getLink($index);
   }
 
   function getFile($index) {

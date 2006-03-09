@@ -3,7 +3,7 @@
 /** 
  * URL Funktionen  
  * @package redaxo3 
- * @version $Id: function_rex_modrewrite.inc.php,v 1.25 2006/02/12 15:20:39 kills Exp $ 
+ * @version $Id: function_rex_modrewrite.inc.php,v 1.26 2006/03/09 13:36:26 kristinus Exp $ 
  */ 
 
 // ----------------------------------------- Redaxo 2.* functions
@@ -141,19 +141,18 @@ function rexrewrite_no_rewrite($id, $name, $clang, $param_string)
     $url .= '&amp;clang='.$clang;
   }
 
-  return $REX['WWW_PATH'].$url.$param_string;
+  return $url.$param_string;
 }
 
 // Rewrite für mod_rewrite
 function rexrewrite_apache_rewrite($id, $name, $clang, $params)
 {
-  global $REX;
   if ($params != '')
   {
     // strip first "&amp;"
     $params = '?'.substr($params, strpos($params, '&amp;') + 5);
   }
 
-  return $REX['WWW_PATH'].$id.'-'.$clang.'-'.$name.'.html'.$params;
+  return $id.'-'.$clang.'-'.$name.'.html'.$params;
 }
 ?>

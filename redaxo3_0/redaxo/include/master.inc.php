@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: master.inc.php,v 1.18 2006/03/07 16:53:20 kristinus Exp $ 
+ * @version $Id: master.inc.php,v 1.19 2006/03/09 13:36:04 kristinus Exp $ 
  */
 
 // -----------------
@@ -24,9 +24,7 @@ $REX['MYSQL_VERSION'] = ""; // Is set first time SQL Object ist initialised
 $REX['STARTARTIKEL_ID'] = 1; // FIRST ARTICLE
 $REX['LANG'] = "de_de"; // select default language
 $REX['MOD_REWRITE'] = false; // activate mod_rewrite support
-$REX['WWW_PATH'] = ""; //
-$REX['DOC_ROOT'] = ""; // 
-$REX['INCLUDE_PATH'] = $REX['DOC_ROOT'].$REX['HTDOCS_PATH']."redaxo/include"; // 
+$REX['INCLUDE_PATH'] = $REX['HTDOCS_PATH']."redaxo/include"; // 
 $REX['MEDIAFOLDER'] = $REX['HTDOCS_PATH']."files"; //
 $REX['TABLE_PREFIX'] = "rex_";
 $REX['FILEPERM'] = octdec(775); // oktaler wert
