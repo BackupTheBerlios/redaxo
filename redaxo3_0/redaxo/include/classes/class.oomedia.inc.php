@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.48 2006/03/06 11:36:57 tbaddade Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.49 2006/03/09 14:24:52 kristinus Exp $
  */
 
 class OOMedia
@@ -886,6 +886,13 @@ class OOMedia
   function isImageType( $type)
   {
     return in_array( $type, OOMedia::getImageTypes());
+  }
+  
+  function compareImageTypes($type1, $type2)
+  {
+  	$jpg = array('image/jpg','image/jpeg','image/pjpeg');
+  	if (in_array($type1,$jpg) && in_array($type2,$jpg)) return true;
+  	return false;
   }
 }
 ?>
