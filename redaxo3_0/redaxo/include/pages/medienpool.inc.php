@@ -2,13 +2,11 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.87 2006/03/06 12:35:26 tbaddade Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.88 2006/03/09 14:25:27 kristinus Exp $ 
  */ 
 
 // TODOS
-// - thumbnails - einstellbar über specials
 // - mediensuche
-// - rechte einbauen
 // - wysiwyg image pfade anschauen und kontrollieren
 // - import checken
 // - mehrere ebenen in kategorienedit  einbauen
@@ -767,7 +765,7 @@ if (isset($subpage) and $subpage=="detail" && isset($media_method) && $media_met
         $ffiletype = $_FILES['file_new']['type'];
         $ffilesize = $_FILES['file_new']['size'];
 
-        if ($ffiletype == $filetype)
+        if ($ffiletype == $filetype || OOMedia::compareImageTypes($ffiletype,$filetype))
         {
           // unlink($REX['MEDIAFOLDER']."/".$filename);
           $upload = false;
