@@ -2,7 +2,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.53 2006/03/06 11:29:36 tbaddade Exp $
+ * @version $Id: class.article.inc.php,v 1.54 2006/03/09 16:10:41 kristinus Exp $
  */
 
 class article
@@ -812,7 +812,7 @@ class article
     static $search = array(
        'REX_ARTICLE_ID',
        'REX_CATEGORY_ID',
-       'REX_CUR_CLANG',
+       'REX_CLANG_ID',
     );
 
     $replace = array(
