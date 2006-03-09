@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.56 2006/03/09 12:18:39 kristinus Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.57 2006/03/09 13:14:29 kristinus Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -507,7 +507,7 @@ function rex_moveCategory($from_cat, $to_cat)
 		$from_path = $fcat->getValue("path").$from_cat."|";
 
 		$gcats = new sql;
-		$gcats->debugsql = 1;
+		// $gcats->debugsql = 1;
 		$gcats->setQuery("select * from ".$REX['TABLE_PREFIX']."article where path like '".$from_path."%' and clang=0");
 
 		for($i=0;$i<$gcats->getRows();$i++)
@@ -519,6 +519,7 @@ function rex_moveCategory($from_cat, $to_cat)
 			
 			// path aendern und speichern
 			$up = new sql;
+			// $up->debugsql = 1;
 			$up->setTable($REX['TABLE_PREFIX']."article");
 			$up->where("id=$icid");
 			$up->setValue("path",$new_path);
@@ -540,12 +541,14 @@ function rex_moveCategory($from_cat, $to_cat)
 			$gmax->setQuery("select max(catprior) from ".$REX['TABLE_PREFIX']."article where re_id=$to_cat and clang=$clang");
 			$catprior = (int) $gmax->getValue("max(catprior)");
 			$up = new sql;
+			// $up->debugsql = 1;
 			$up->setTable($REX['TABLE_PREFIX']."article");
 			$up->where("id=$from_cat and clang=$clang ");
 			$up->setValue("path",$to_path);
 			$up->setValue("re_id",$to_cat);
 			$up->setValue("catprior",($catprior+1));
 			$up->update();
+			next($CL);
 		}
 
 		// ----- generiere artikel neu - ohne neue inhaltsgenerierung
