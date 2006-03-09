@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: index.php,v 1.27 2006/03/06 16:14:59 kristinus Exp $ 
+ * @version $Id: index.php,v 1.28 2006/03/09 15:10:59 kristinus Exp $ 
  */ 
 
 
@@ -20,15 +20,6 @@ ob_start();
 // --------------------------- globals
 
 unset($REX);
-
-// Übernahme von FormularImagePosition
-
-if (!isset($x)) $x = '';
-if (!isset($y)) $y = '';
-
-$REX['x'] = $x;
-$REX['y'] = $y;
-
 
 // Flag ob Inhalte mit Redaxo aufgerufen oder
 // von der Webseite aus
