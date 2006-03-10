@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.50 2006/03/10 09:07:20 kristinus Exp $ 
+ * @version $Id: functions.inc.php,v 1.51 2006/03/10 16:02:47 kills Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -50,7 +50,7 @@ $REX['EXTPERM'][] = "copyContent[]";
 $REX['EXTPERM'][] = "moveArticle[]";
 $REX['EXTPERM'][] = "copyArticle[]";
 $REX['EXTPERM'][] = "moveCategory[]";
-$REX['EXTPERM'][] = "onlyCatEdit[]";
+$REX['EXTPERM'][] = "contentEditor[]";
 $REX['EXTPERM'][] = "publishArticle[]";
 $REX['EXTPERM'][] = "publishCategory[]";
 
