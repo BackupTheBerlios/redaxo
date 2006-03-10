@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.49 2006/03/10 08:54:47 kristinus Exp $ 
+ * @version $Id: functions.inc.php,v 1.50 2006/03/10 09:07:20 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -18,13 +18,13 @@ if (!ini_get('register_globals'))
 {
         // register_globals = off;
         
-        if (isset($_COOKIE) and $_COOKIE) extract($_COOKIE);
-        if (isset($_ENV) and $_ENV) extract($_ENV);
-        if (isset($_FILES) and $_FILES) extract($_FILES);
-        if (isset($_GET) and $_GET) extract($_GET);
-        if (isset($_POST) and $_POST) extract($_POST);
-        if (isset($_SERVER) and $_SERVER) extract($_SERVER);
-        if (isset($_SESSION) and $_SESSION) extract($_SESSION);
+        if (isset($_COOKIE) and $_COOKIE) extract($_COOKIE,EXTR_SKIP);
+        if (isset($_ENV) and $_ENV) extract($_ENV,EXTR_SKIP);
+        if (isset($_FILES) and $_FILES) extract($_FILES,EXTR_SKIP);
+        if (isset($_GET) and $_GET) extract($_GET,EXTR_SKIP);
+        if (isset($_POST) and $_POST) extract($_POST,EXTR_SKIP);
+        if (isset($_SERVER) and $_SERVER) extract($_SERVER,EXTR_SKIP);
+        if (isset($_SESSION) and $_SESSION) extract($_SESSION,EXTR_SKIP);
 }else
 {
         // register_globals = on;
