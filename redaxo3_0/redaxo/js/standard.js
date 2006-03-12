@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.20 2006/01/26 15:39:00 kills Exp $
+ @version $Id: standard.js,v 1.21 2006/03/12 11:18:04 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -398,4 +398,32 @@ function moveItem(arr, from, to)
 	}
 	arr[to] = tmp;
 	return arr;
+}
+
+// Checkbox mit der ID <id> anhaken
+function checkInput(id)
+{
+  if(id)
+  {
+    var result = new getObj(id);
+    var input = result.obj;
+    if(input != null)
+    {
+      input.checked = 'checked'; 
+    }
+  }
+}
+
+// Inputfield (Checkbox/Radio) mit der ID <id> Haken entfernen
+function uncheckInput(id)
+{
+  if(id)
+  {
+    var result = new getObj(id);
+    var input = result.obj;
+    if(input != null)
+    {
+      input.checked = ''; 
+    }
+  }
 }
