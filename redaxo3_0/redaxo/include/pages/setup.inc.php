@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.35 2006/03/10 13:14:18 kristinus Exp $
+ * @version $Id: setup.inc.php,v 1.36 2006/03/12 11:25:41 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -407,6 +407,7 @@ if ($checkmodus == 3)
   $sel_export = new select();
   $sel_export->set_name('import_name');
   $sel_export->set_style('width: 300px;');
+  $sel_export->set_selectextra('onchange="checkInput(\'dbanlegen[3]\')"');
   $export_dir = $export_addon_dir. '/files';
   $exports_found = false;
 
