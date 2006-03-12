@@ -3,7 +3,7 @@
 /** 
  * URL Funktionen  
  * @package redaxo3 
- * @version $Id: function_rex_modrewrite.inc.php,v 1.26 2006/03/09 13:36:26 kristinus Exp $ 
+ * @version $Id: function_rex_modrewrite.inc.php,v 1.27 2006/03/12 19:56:57 kills Exp $ 
  */ 
 
 // ----------------------------------------- Redaxo 2.* functions
@@ -94,7 +94,7 @@ function rex_getUrl($id = '', $clang = '', $params = '')
 
   if ($id != 0)
   {
-    $ooa = OOArticle :: getArticleById($id);
+    $ooa = OOArticle :: getArticleById($id, $clang);
     if ($ooa)
     {
       $name = rex_parseArticleName($ooa->getName());
