@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.49 2006/03/09 14:24:52 kristinus Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.50 2006/03/12 18:38:46 kills Exp $
  */
 
 class OOMedia
@@ -538,7 +538,7 @@ class OOMedia
       $additional .= ' '. $name.'="'.$value.'"';
     }
 
-    return sprintf('<img src="%s"%s />', $file, $additional);
+    return sprintf('<img src="%s"%s />', $path.$file, $additional);
   }
 
   /**
