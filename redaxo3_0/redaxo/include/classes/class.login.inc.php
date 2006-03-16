@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: class.login.inc.php,v 1.13 2006/03/16 09:35:34 kristinus Exp $
+ * @version $Id: class.login.inc.php,v 1.14 2006/03/16 20:05:31 kills Exp $
  */ 
 
 // class login 1.0
@@ -26,6 +26,11 @@ class rex_login_sql extends sql{
     {
       return strpos($this->getValue( $feld), "#".$prop) !== false;
     }
+  }
+  
+  function hasPerm($perm)
+  {
+    return $this->isValueOf("rights",$perm);
   }
 }
 
