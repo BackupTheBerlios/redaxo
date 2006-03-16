@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.12 2006/03/16 10:29:45 kristinus Exp $
+ * @version $Id: module.modules.inc.php,v 1.13 2006/03/16 20:20:30 kills Exp $
  */
 
 $OUT = TRUE;
@@ -271,8 +271,6 @@ if ($OUT)
         <td class="icon"><a href="index.php?page=module&amp;modul_id='.$sql->getValue("id").'&amp;function=edit"><img src="pics/modul.gif" width="16" height="16" border="0"></a></td>
         <td class="icon">'.$sql->getValue("id").'</td>
         <td><a href="index.php?page=module&amp;modul_id='.$sql->getValue("id").'&amp;function=edit">'.htmlspecialchars($sql->getValue("name")).'</a>'."\n";
-    
-    if ($REX_USER->isValueOf("rights","expertMode[]")) echo ' ['.$sql->getValue("id").']';
     
     echo '</td>
         <td><a href="index.php?page=module&amp;modul_id='.$sql->getValue("id").'&amp;function=delete" onclick="return confirm(\''.$I18N->msg('delete').' ?\')">'.$I18N->msg("delete_module").'</a></td>
