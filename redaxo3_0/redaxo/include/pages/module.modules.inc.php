@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.11 2006/03/15 11:24:01 kristinus Exp $
+ * @version $Id: module.modules.inc.php,v 1.12 2006/03/16 10:29:45 kristinus Exp $
  */
 
 $OUT = TRUE;
@@ -47,6 +47,8 @@ if (isset($function) and $function == 'delete')
   } else
   {
     $del->query("DELETE FROM ".$REX['TABLE_PREFIX']."modultyp WHERE id='$modul_id'");
+    $del->query("DELETE FROM ".$REX['TABLE_PREFIX']."module_action WHERE module_id='$modul_id'");
+  
     $message = $I18N->msg("module_deleted");
   }
 }
