@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.51 2006/03/10 16:02:47 kills Exp $ 
+ * @version $Id: structure.inc.php,v 1.52 2006/03/16 19:31:39 kills Exp $ 
  */
 
 /*
@@ -441,7 +441,7 @@ if (isset ($function) and $function == "add_cat" && $KATPERM && !$REX_USER->isVa
     $echo .= "<td class=dgrey align=center>-</td>";
   $echo .= "
         <td><input type=text size=30 name=category_name></td>
-        <td>&nbsp;<input type=text name=Position_New_Category value=\"1\" style='width:30px'></td>
+        <td>&nbsp;<input type=text name=Position_New_Category value=\"100\" style='width:30px'></td>
         <td><input type=submit value='".$I18N->msg("add_category")."'></td>
         <td>&nbsp;</td>
         </form>
