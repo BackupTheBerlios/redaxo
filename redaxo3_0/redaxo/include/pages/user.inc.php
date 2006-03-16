@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.43 2006/03/16 09:53:08 kristinus Exp $ 
+ * @version $Id: user.inc.php,v 1.44 2006/03/16 12:49:21 kristinus Exp $ 
  */ 
 
 /*
@@ -255,7 +255,7 @@ if (isset($FUNC_UPDATE) and $FUNC_UPDATE != '')
   if (isset($userperm_cat)) {
     for ($i=0;$i<count($userperm_cat);$i++)
     {
-      $ccat = "#".current($userperm_cat);
+      $ccat = current($userperm_cat);
       $gp = new sql;
       $gp->setQuery("select * from ".$REX['TABLE_PREFIX']."article where id='$ccat' and clang=0");
       if ($gp->getRows()==1)
