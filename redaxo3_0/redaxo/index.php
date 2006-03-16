@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.34 2006/03/07 16:43:28 kristinus Exp $
+ * @version $Id: index.php,v 1.35 2006/03/16 09:36:23 kristinus Exp $
  */ 
 
 // ----- caching start für output filter
@@ -62,7 +62,7 @@ if ($REX['SETUP'])
   // ----------------- CREATE LANG OBJ
   if (!isset($REX_ULOGIN)) { $REX_ULOGIN = ''; }
   if (!isset($REX_UPSW)) { $REX_UPSW = ''; }
-  $REX_LOGIN = new login();
+  $REX_LOGIN = new rex_login();
   $REX_LOGIN->setSqlDb(1);
   $REX_LOGIN->setSysID($REX['INSTNAME']);
   $REX_LOGIN->setSessiontime(3000);
