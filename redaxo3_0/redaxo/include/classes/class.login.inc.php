@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: class.login.inc.php,v 1.14 2006/03/16 20:05:31 kills Exp $
+ * @version $Id: class.login.inc.php,v 1.15 2006/03/17 10:06:25 kristinus Exp $
  */ 
 
 // class login 1.0
@@ -24,7 +24,8 @@ class rex_login_sql extends sql{
     }
     else 
     {
-      return strpos($this->getValue( $feld), "#".$prop) !== false;
+      if ($feld == "rights") return strpos($this->getValue( $feld), "#".$prop."#") !== false;
+      else return strpos($this->getValue( $feld), $prop) !== false;
     }
   }
   
