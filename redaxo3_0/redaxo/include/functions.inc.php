@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.54 2006/03/12 19:46:46 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.55 2006/03/18 17:17:43 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -54,7 +54,7 @@ $REX['EXTPERM'][] = "publishArticle[]";
 $REX['EXTPERM'][] = "publishCategory[]";
 
 // ----- extras
-$REX['EXTRAPERM'][] = "contentEditor[]";
+$REX['EXTRAPERM'][] = "contentEditorOnly[]";
 
 // ----------------- REDAXO INCLUDES
 include_once $REX['INCLUDE_PATH']."/classes/class.i18n.inc.php";
