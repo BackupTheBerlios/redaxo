@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: index.inc.php,v 1.34 2006/03/12 11:24:09 kills Exp $ 
+ * @version $Id: index.inc.php,v 1.35 2006/03/22 20:55:49 kills Exp $ 
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -32,7 +32,7 @@ if (isset ($impname) && $impname != '')
 }
 
 if (!isset ($exportfilename) || $exportfilename == '')
-  $exportfilename = 'rex_'.$REX['version'].'_'.date("Ymd");
+  $exportfilename = 'rex_'.$REX['VERSION'].'_'.date("Ymd");
 
 if (isset ($function) && $function == "delete")
 {
