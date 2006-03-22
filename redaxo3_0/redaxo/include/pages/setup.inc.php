@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.38 2006/03/16 09:24:45 kristinus Exp $
+ * @version $Id: setup.inc.php,v 1.39 2006/03/22 09:57:58 kristinus Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -194,7 +194,7 @@ if ($checkmodus == 2 && $send == 1)
   $cont = ereg_replace("(REX\['SERVERNAME'\].?\=.?\")[^\"]*", "\\1".$serverbezeichnung, $cont);
   $cont = ereg_replace("(REX\['LANG'\].?\=.?\")[^\"]*", "\\1".$lang, $cont);
   $cont = ereg_replace("(REX\['INSTNAME'\].?\=.?\")[^\"]*", "\\1"."rex".date("YmdHis"), $cont);
-  $cont = ereg_replace("(REX\['error_emailaddress'\].?\=.?\")[^\"]*", "\\1".$error_email, $cont);
+  $cont = ereg_replace("(REX\['ERROR_EMAIL'\].?\=.?\")[^\"]*", "\\1".$error_email, $cont);
   $cont = ereg_replace("(REX\['DB'\]\['1'\]\['HOST'\].?\=.?\")[^\"]*", "\\1".$mysql_host, $cont);
   $cont = ereg_replace("(REX\['DB'\]\['1'\]\['LOGIN'\].?\=.?\")[^\"]*", "\\1".$redaxo_db_user_login, $cont);
   $cont = ereg_replace("(REX\['DB'\]\['1'\]\['PSW'\].?\=.?\")[^\"]*", "\\1".$redaxo_db_user_pass, $cont);
@@ -240,7 +240,7 @@ else
 {
   $serveraddress = $REX['SERVER'];
   $serverbezeichnung = $REX['SERVERNAME'];
-  $error_email = $REX['error_emailaddress'];
+  $error_email = $REX['ERROR_EMAIL'];
   $dbname = $REX['DB']['1']['NAME'];
   $redaxo_db_user_login = $REX['DB']['1']['LOGIN'];
   $redaxo_db_user_pass = $REX['DB']['1']['PSW'];

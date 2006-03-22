@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.22 2006/02/16 20:29:56 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.23 2006/03/22 09:57:12 kristinus Exp $
  */
 
 class OORedaxo
@@ -367,7 +367,7 @@ class OORedaxo
   function isSiteStartArticle()
   {
     global $REX;
-    return $this->_id == $REX['STARTARTIKEL_ID'];
+    return $this->_id == $REX['START_ARTICLE_ID'];
   }
   
   /*

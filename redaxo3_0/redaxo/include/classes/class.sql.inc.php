@@ -12,7 +12,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.sql.inc.php,v 1.26 2006/03/10 08:49:22 kristinus Exp $ 
+ * @version $Id: class.sql.inc.php,v 1.27 2006/03/22 09:57:12 kristinus Exp $ 
  */
 class sql
 {
@@ -63,7 +63,7 @@ class sql
 
     if (!@ mysql_select_db($REX['DB'][$this->DBID]['NAME']))
     {
-      echo "<font style='color:red; font-family:verdana,arial; font-size:11px;'>Class SQL 1.1 | Database down. | Please contact <a href=mailto:".$REX['error_emailaddress'].">".$REX['error_emailaddress']."</a>\n | Thank you!\n</font>";
+      echo "<font style='color:red; font-family:verdana,arial; font-size:11px;'>Class SQL 1.1 | Database down. | Please contact <a href=mailto:".$REX['ERROR_EMAIL'].">".$REX['ERROR_EMAIL']."</a>\n | Thank you!\n</font>";
       exit;
     }
   }
