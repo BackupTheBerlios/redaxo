@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.47 2006/03/22 09:57:58 kristinus Exp $ 
+ * @version $Id: user.inc.php,v 1.48 2006/03/22 21:16:49 kills Exp $ 
  */ 
 
 /*
@@ -698,8 +698,8 @@ if (isset($FUNC_ADD) and $FUNC_ADD)
       ';
     if ($REX['MAXLOGINS'] < $sql->getValue("login_tries"))
     {
-      echo '<td align=right><input type=checkbox name=logintriesreset value=1></td><td class=warning>';
-      echo $I18N->msg("user_reset_tries",$REX['MAXLOGINS']);
+      echo '<td align=right><input type=checkbox name=logintriesreset id=logintriesreset value=1></td><td class=warning>';
+      echo '<label for="logintriesreset">'. $I18N->msg("user_reset_tries",$REX['MAXLOGINS']) .'</label>';
 	  echo '</td>';
     }else
     {
