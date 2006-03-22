@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: index.php,v 1.28 2006/03/09 15:10:59 kristinus Exp $ 
+ * @version $Id: index.php,v 1.29 2006/03/22 09:55:01 kristinus Exp $ 
  */ 
 
 
@@ -46,14 +46,14 @@ include "./redaxo/include/master.inc.php";
 // artikel id. wenn nicht vorhanden, nimm einen
 // speziellen artikel. z.b. fehler seite oder home seite
 
-if (!isset($article_id) or $article_id == '') $article_id = $REX['STARTARTIKEL_ID'];
+if (!isset($article_id) or $article_id == '') $article_id = $REX['START_ARTICLE_ID'];
 
 $REX_ARTICLE = new article;
 $REX_ARTICLE->setCLang($clang);
 if ($REX_ARTICLE->setArticleId($article_id))
 {
   echo $REX_ARTICLE->getArticleTemplate();
-}elseif($REX_ARTICLE->setArticleId($REX['STARTARTIKEL_ID']))
+}elseif($REX_ARTICLE->setArticleId($REX['START_ARTICLE_ID']))
 {   
   echo $REX_ARTICLE->getArticleTemplate();
 }else
