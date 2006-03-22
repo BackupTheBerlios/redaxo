@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.20 2006/03/06 11:36:57 tbaddade Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.21 2006/03/22 09:56:43 kristinus Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -124,7 +124,7 @@ class OOArticle extends OORedaxo
     global $REX;
     if ($clang === false)
       $clang = $REX['CUR_CLANG'];
-    return OOArticle :: getArticleById($REX['STARTARTIKEL_ID'], $clang);
+    return OOArticle :: getArticleById($REX['START_ARTICLE_ID'], $clang);
   }
 
   /**
