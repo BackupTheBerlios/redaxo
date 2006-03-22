@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: class.login.inc.php,v 1.15 2006/03/17 10:06:25 kristinus Exp $
+ * @version $Id: class.login.inc.php,v 1.16 2006/03/22 09:56:29 kristinus Exp $
  */ 
 
 // class login 1.0
@@ -65,18 +65,19 @@ class rex_login{
   
   function setLanguage($lang = "en")
   {
+  	global $REX;
     if ($lang == "de")
     {
       $this->text[10] = "Session beendet.";
       $this->text[20] = "ID nicht gefunden.";
-      $this->text[30] = "Fehler beim Login.";
+      $this->text[30] = "Fehler beim Login. Bitte noch ".$REX['RELOGINDELAY']." Sekunden vor dem nächsten Version warten.";
       $this->text[40] = "Bitte einloggen.";
       $this->text[50] = "Ausgeloggt.";
     }else
     {
       $this->text[10] = "your session is expired !";
       $this->text[20] = "uid not found";
-      $this->text[30] = "login wrong";
+      $this->text[30] = "login wrong. please wait ".$REX['RELOGINDELAY']." seconds before you try again.";
       $this->text[40] = "login please";
       $this->text[50] = "You logged out.";
     }   
@@ -157,10 +158,6 @@ class rex_login{
           $ok = true;
           $_SESSION['UID'][$this->system_id] = $this->USER->getValue($this->uid);
                     
-          // Erfolgreicher Login in der DB vermerken
-          $sql = new sql();
-          $sql->setQuery( 'UPDATE '.$REX['TABLE_PREFIX'].'user SET lasttrydate ="'. time() .'", login_tries=0 WHERE login ="'. $this->usr_login .'"');
-
         }else
         {
           $this->message = $this->text[30];
