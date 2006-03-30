@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.36 2006/03/22 09:55:20 kristinus Exp $
+ * @version $Id: index.php,v 1.37 2006/03/30 10:13:50 kristinus Exp $
  */ 
 
 // ----- caching start für output filter
@@ -95,6 +95,8 @@ if ($REX['SETUP'])
     {
         $fvs = new sql;
         $fvs->query("update ".$REX['TABLE_PREFIX']."user set login_tries=0,lasttrydate='".time()."' where login='".$REX_ULOGIN."'");
+  		header("Location:index.php?page=structure");
+  		exit;
     }
     	
   	// login ok 
