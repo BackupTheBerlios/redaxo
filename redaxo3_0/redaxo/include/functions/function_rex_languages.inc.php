@@ -3,7 +3,7 @@
 /** 
  * Dient zur Ausgabe des Sprachen-blocks  
  * @package redaxo3 
- * @version $Id: function_rex_languages.inc.php,v 1.2 2005/11/13 15:04:48 kills Exp $ 
+ * @version $Id: function_rex_languages.inc.php,v 1.3 2006/03/30 08:25:05 kristinus Exp $ 
  */
   
 // rechte einbauen
@@ -30,7 +30,7 @@ if (count($REX['CLANG'])>1)
 			echo "<strike>$val</strike> | ";
 			if ($clang == $key)	$stop = true;
 		}elseif ($key==$clang) echo "$val | ";
-		else echo "<a href=index.php?page=$page&clang=$key$sprachen_add>$val</a> | "; 
+		else echo "<a href=index.php?page=$page&clang=$key$sprachen_add&ctype=$ctype>$val</a> | "; 
 	}
 	echo "</b></td></tr></table><br>";
 	if ($stop)
