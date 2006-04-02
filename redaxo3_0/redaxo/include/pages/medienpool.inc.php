@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.88 2006/03/09 14:25:27 kristinus Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.89 2006/04/02 15:07:19 koala_s Exp $ 
  */ 
 
 // TODOS
@@ -168,6 +168,7 @@ function insertHTMLArea(html,filename){
   <td class="greenwhite"><b>
 <?php
 
+if (!isset ($rex_file_category)) $rex_file_category = '';
 echo '<a href="index.php?page=medienpool&amp;rex_file_category='.$rex_file_category.'" class="white">'.$I18N->msg('pool_file_list').'</a>';
 echo ' | <a href="index.php?page=medienpool&amp;subpage=add_file&amp;rex_file_category='.$rex_file_category.'" class="white">'.$I18N->msg('pool_file_insert').'</a>';
 // if ($PERMALL) echo " | <a href=index.php?page=medienpool&subpage=search class=white>Mediensuche</a>";
