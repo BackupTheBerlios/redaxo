@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: index.inc.php,v 1.35 2006/03/22 20:55:49 kills Exp $ 
+ * @version $Id: index.inc.php,v 1.36 2006/04/05 13:12:11 kills Exp $ 
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -349,7 +349,7 @@ echo "<tr><td class=grey>&nbsp;</td><td class=lgrey><table width=100%>"."\n";
 // FILE EXPORT LIST
 // all folders of the webpage except the cms dir
 
-$dir = $REX['INCLUDE_PATH']."/../..";
+$dir = $REX['INCLUDE_PATH']."/../../";
 $folders = readSubFolders($dir);
 
 foreach ($folders as $file)
