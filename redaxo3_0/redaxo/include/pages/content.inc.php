@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.66 2006/03/30 08:42:25 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.67 2006/04/07 14:05:23 kristinus Exp $ 
  */ 
 
 
@@ -802,7 +802,7 @@ if ($article->getRows() == 1)
       	}
 
       	$cat_ids[] = $cat->getId();
-      	if( $REX_USER->isValueOf("rights","admin[]") || $REX_USER->isValueOf("rights","csr[".$cat->getId()."]") || $REX_USER->isValueOf("rights","csw[".$cat->getId()."]") ) {
+      	if( $REX_USER->isValueOf("rights","admin[]") || $REX_USER->isValueOf("rights","csw[0]") || $REX_USER->isValueOf("rights","csr[".$cat->getId()."]") || $REX_USER->isValueOf("rights","csw[".$cat->getId()."]") ) {
       		$select->add_option($nbsp.$cat->getName(),$cat->getId());
       		$childs = $cat->getChildren();
       		if (is_array($childs)) {
