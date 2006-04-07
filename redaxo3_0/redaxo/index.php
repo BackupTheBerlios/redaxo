@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.37 2006/03/30 10:13:50 kristinus Exp $
+ * @version $Id: index.php,v 1.38 2006/04/07 13:12:52 kristinus Exp $
  */ 
 
 // ----- caching start für output filter
@@ -110,15 +110,18 @@ if ($REX['SETUP'])
     }
     
     // --- addon page check
-    $as = array_search($page,$REX['ADDON']['page']);
-    if ($as !== false)
+    if (is_array($REX['ADDON']['page']))
     {
-      // --- addon gefunden 
-      $perm = $REX['ADDON']['perm'][$as];
-      if($REX_USER->isValueOf("rights",$perm) or $perm == "" or $REX_USER->isValueOf("rights","admin[]"))
+      $as = array_search($page,$REX['ADDON']['page']);
+      if ($as !== false)
       {
-        $withheader = false;
-        $REX['PAGEPATH'] = $REX['INCLUDE_PATH']."/addons/$page/pages/index.inc.php";
+        // --- addon gefunden 
+        $perm = $REX['ADDON']['perm'][$as];
+        if($REX['ADDON']['status'][$page] == 1 && ($REX_USER->isValueOf("rights",$perm) or $perm == "" or $REX_USER->isValueOf("rights","admin[]")))
+        {
+          $withheader = false;
+          $REX['PAGEPATH'] = $REX['INCLUDE_PATH']."/addons/$page/pages/index.inc.php";
+        }
       }
     }
     
