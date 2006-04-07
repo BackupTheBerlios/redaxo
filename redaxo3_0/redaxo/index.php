@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.38 2006/04/07 13:12:52 kristinus Exp $
+ * @version $Id: index.php,v 1.39 2006/04/07 13:23:54 kristinus Exp $
  */ 
 
 // ----- caching start für output filter
@@ -66,6 +66,7 @@ if ($REX['SETUP'])
   $REX_LOGIN->setSqlDb(1);
   $REX_LOGIN->setSysID($REX['INSTNAME']);
   $REX_LOGIN->setSessiontime(3000);
+  $REX_LOGIN->setLanguage($I18N->msg("htmllang"));
   if ($REX['PSWFUNC'] != "") $REX_LOGIN->setPasswordFunction($REX['PSWFUNC']);
   $REX_LOGIN->setLogin($REX_ULOGIN, $REX_UPSW);
   if (isset($FORM['logout']) and $FORM['logout'] == 1) $REX_LOGIN->setLogout(true);
