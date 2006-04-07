@@ -2,7 +2,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.54 2006/03/09 16:10:41 kristinus Exp $
+ * @version $Id: class.article.inc.php,v 1.55 2006/04/07 16:12:31 kristinus Exp $
  */
 
 class article
@@ -251,7 +251,7 @@ class article
         {
 
       // ----- ctype unterscheidung
-      if ($i==0 && $this->mode != "edit") $this->article_content = "<?php if (\$".$this->ctype_var." == '".$RE_CONTS_CTYPE[$I_ID]."' || (\$".$this->ctype_var." == '-1' && !\$REX['SLICEMODE']) || \$REX['SLICEMODE']) { ?>";
+      if ($i==0 && $this->mode != "edit") $this->article_content = "<?php if (\$".$this->ctype_var." == '".$RE_CONTS_CTYPE[$I_ID]."' || (\$".$this->ctype_var." == '-1')) { ?>";
 
           // ------------- EINZELNER SLICE - AUSGABE
           $this->CONT->counter = $RE_C[$I_ID];
