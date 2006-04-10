@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.21 2006/03/22 09:56:43 kristinus Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.22 2006/04/10 15:21:45 kristinus Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -23,7 +23,7 @@ class OOArticle extends OORedaxo
     global $REX;
     if ($clang === false)
       $clang = $REX['CUR_CLANG'];
-    $article_path = $REX['HTDOCS_PATH']."redaxo/include/generated/articles/".$article_id.".".$clang.".article";
+    $article_path = $REX['INCLUDE_PATH']."/generated/articles/".$article_id.".".$clang.".article";
     if (file_exists($article_path))
     {
       include ($article_path);
@@ -148,7 +148,7 @@ class OOArticle extends OORedaxo
     global $REX;
     if ($clang === false)
       $clang = $GLOBALS['REX']['CUR_CLANG'];
-    $articlelist = $REX['HTDOCS_PATH']."redaxo/include/generated/articles/".$a_category_id.".".$clang.".alist";
+    $articlelist = $REX['INCLUDE_PATH']."/generated/articles/".$a_category_id.".".$clang.".alist";
     $artlist = array ();
     if (file_exists($articlelist))
     {
