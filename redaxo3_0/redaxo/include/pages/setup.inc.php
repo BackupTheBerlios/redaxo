@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.43 2006/03/30 08:02:11 kristinus Exp $
+ * @version $Id: setup.inc.php,v 1.44 2006/04/10 11:08:51 kristinus Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -98,7 +98,7 @@ if (!($checkmodus > 0 && $checkmodus < 10))
   echo "<center><table><tr><td>";
   echo "<br><br><b><a href=index.php?checkmodus=0.5&lang=de_de class=head>&gt;&nbsp;DEUTSCH</a></b>";
   echo "<br><br><b><a href=index.php?checkmodus=0.5&lang=en_gb class=head>&gt;&nbsp;ENGLISH</a></b>";
-  echo "<br><br><b><a href=index.php?checkmodus=0.5&lang=es_es class=head>&gt;&nbsp;ESPANIOL</a></b>";
+  echo "<br><br><b><a href=index.php?checkmodus=0.5&lang=es_es class=head>&gt;&nbsp;ESPA&Ntilde;IOL</a></b>";
   echo "<br><br><b><a href=index.php?checkmodus=0.5&lang=pl_pl class=head>&gt;&nbsp;POLSKI</a></b>";
   echo "<br><br><b><a href=index.php?checkmodus=0.5&lang=tr_tr class=head>&gt;&nbsp;TURKYE</a></b>";
   echo "<br><br>";
