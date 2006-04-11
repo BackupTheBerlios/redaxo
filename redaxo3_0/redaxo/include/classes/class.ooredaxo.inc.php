@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.23 2006/03/22 09:57:12 kristinus Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.24 2006/04/11 18:50:43 kills Exp $
  */
 
 class OORedaxo
@@ -280,8 +280,8 @@ class OORedaxo
    */
   function toLink($params = '', $attributes = null, $sorround_tag = null, $sorround_attributes = null)
   {
-
-    $link = '<a href="'.$this->getUrl($params).'"'.$this->_toAttributeString($attributes).' title="'.htmlspecialchars($this->getName()).'">'.$this->getName().'</a>';
+    $name = htmlspecialchars($this->getName());
+    $link = '<a href="'.$this->getUrl($params).'"'.$this->_toAttributeString($attributes).' title="'.$name.'">'.$name.'</a>';
 
     if ($sorround_tag !== null && is_string($sorround_tag))
     {
