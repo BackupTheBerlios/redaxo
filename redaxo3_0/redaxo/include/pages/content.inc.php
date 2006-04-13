@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.67 2006/04/07 14:05:23 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.68 2006/04/13 22:57:03 kills Exp $ 
  */ 
 
 
@@ -105,7 +105,6 @@ if ($article->getRows() == 1)
 
         // ----- RECHTE AM MODUL ?
         if ( !($REX_USER->isValueOf("rights","admin[]") || 
-            $REX_USER->isValueOf("rights","dev[]") || 
             $REX_USER->isValueOf("rights","module[$module_id]") || 
             $REX_USER->isValueOf("rights","module[0]"))
           )
