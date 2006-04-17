@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.24 2006/04/11 18:50:43 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.25 2006/04/17 18:31:09 kills Exp $
  */
 
 class OORedaxo
@@ -163,13 +163,22 @@ class OORedaxo
 
   /*
    * Accessor Method:
-   * returns the id of the article
+   * returns the parent_id of the article
    */
   function getParentId()
   {
     return $this->_re_id;
   }
 
+  /*
+   * Accessor Method:
+   * returns the parent object of the article
+   */
+  function getParent()
+  {
+    return OOArticle::getArticleById($this->_re_id);
+  }
+  
   /*
    * Accessor Method:
    * returns the name of the article
