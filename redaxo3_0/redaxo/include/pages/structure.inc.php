@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.56 2006/03/23 12:32:08 tbaddade Exp $ 
+ * @version $Id: structure.inc.php,v 1.57 2006/04/29 13:19:02 kills Exp $ 
  */
 
 /*
@@ -609,12 +609,13 @@ if ($category_id > -1)
   {
     if (!isset ($template_id) or $template_id == '')
     {
-      if (!isset ($re_id))
-        $re_id = '';
       $sql = new sql;
-      $sql->setQuery("SELECT template_id FROM ".$REX['TABLE_PREFIX']."article WHERE re_id=$re_id and clang=$clang and startpage=1");
+      // $sql->debugsql = true;
+      $sql->setQuery("SELECT template_id FROM ".$REX['TABLE_PREFIX']."article WHERE id=$category_id and clang=$clang and startpage=1");
       if ($sql->getRows() == 1)
+      {
         $TMPL_SEL->set_selected($sql->getValue("template_id"));
+      }
     }
     echo "<tr>
             <form action=index.php method=post name=art_add_form>
