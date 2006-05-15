@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.49 2006/04/07 14:00:37 kristinus Exp $ 
+ * @version $Id: user.inc.php,v 1.50 2006/05/15 17:38:51 kristinus Exp $ 
  */ 
 
 /*
@@ -31,6 +31,8 @@ mulselect module
   module[2]module[3]
 
 */
+
+$user_id = (int) $_REQUEST["user_id"];
 
 if (isset($user_id) and $user_id != '')
 {
