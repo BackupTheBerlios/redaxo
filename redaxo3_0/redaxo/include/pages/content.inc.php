@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.69 2006/04/28 16:46:36 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.70 2006/05/23 13:41:35 kills Exp $ 
  */ 
 
 
@@ -797,14 +797,14 @@ if ($article->getRows() == 1)
         $out
          ";
 
+        // ----- EXTENSION POINT
+        echo rex_register_extension_point('ART_META_FORM');
+        
       echo "
         <tr>
           <td class=grey>&nbsp;</td>
           <td class=grey><input type=submit value='".$I18N->msg("update_metadata")."' size=8></td>
         </tr>";
-        
-        // ----- EXTENSION POINT
-        echo rex_register_extension_point('ART_META_FORM');
         
         echo "</form>
         </table>";
