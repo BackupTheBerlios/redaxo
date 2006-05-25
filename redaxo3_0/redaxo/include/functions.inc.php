@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.57 2006/05/02 16:32:56 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.58 2006/05/25 18:04:24 kills Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -91,7 +91,6 @@ include_once $REX['INCLUDE_PATH']."/functions/function_rex_other.inc.php";
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_wysiwyg.inc.php";
 
 // ----- CONFIG FILES
-include_once $REX['INCLUDE_PATH']."/addons.inc.php";
 include_once $REX['INCLUDE_PATH']."/ctype.inc.php";
 include_once $REX['INCLUDE_PATH']."/clang.inc.php";
 
@@ -113,5 +112,8 @@ if (!isset($ctype)) {
   $ctype = $ctype + 0;
 }
 if (!isset($REX['CTYPE'][$ctype])) $ctype = 0;
+
+// ----- INCLUDE ADDONS
+include_once $REX['INCLUDE_PATH']."/addons.inc.php";
 
 ?>
