@@ -12,7 +12,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.sql.inc.php,v 1.28 2006/04/22 13:08:40 tbaddade Exp $ 
+ * @version $Id: class.sql.inc.php,v 1.29 2006/06/03 21:21:38 kills Exp $ 
  */
 class sql
 {
@@ -52,6 +52,21 @@ class sql
       preg_match('/([0-9]+\.([0-9\.])+)/', $res[0]['VERSION'], $arr);
       $REX['MYSQL_VERSION'] = $arr[1];
     }
+  }
+  /**
+   * Statische Funktion zur Abfrage der Serverversion
+   */
+  function getServerVersion()
+  {
+    global $REX;
+    
+    if(empty($REX['MYSQL_VERSION']))
+    {
+      // Die Version wird im Konstrukor abgefragt
+      $tmp = new sql();
+    }
+    
+    return $REX['MYSQL_VERSION'];
   }
 
   /**
