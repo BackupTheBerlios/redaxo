@@ -3,7 +3,7 @@
 /**
  * 
  * @package redaxo3
- * @version $Id: function_rex_variables.inc.php,v 1.2 2006/05/02 16:42:13 kills Exp $
+ * @version $Id: function_rex_variables.inc.php,v 1.3 2006/06/06 11:11:38 kristinus Exp $
  */
 
 // rex_replace_variables als Extension anfügen
@@ -28,7 +28,7 @@ function rex_register_variable($variable, $function)
 function rex_get_registered_variables()
 {
   global $REX;
-  if (is_array($REX['VARIABLES']))
+  if (isset($REX['VARIABLES']) && is_array($REX['VARIABLES']))
   {
     return $REX['VARIABLES'];
   }
