@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.22 2006/04/10 15:21:45 kristinus Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.23 2006/06/06 12:11:02 kristinus Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -23,6 +23,7 @@ class OOArticle extends OORedaxo
     global $REX;
     if ($clang === false)
       $clang = $REX['CUR_CLANG'];
+    elseif(!isset($REX['CLANG'][$clang])) $clang = 0;
     $article_path = $REX['INCLUDE_PATH']."/generated/articles/".$article_id.".".$clang.".article";
     if (file_exists($article_path))
     {
