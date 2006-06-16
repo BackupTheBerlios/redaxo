@@ -4,7 +4,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.53 2006/05/18 08:50:25 tbaddade Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.54 2006/06/16 10:58:43 kills Exp $
  */
 
 class OOMedia
@@ -437,6 +437,11 @@ class OOMedia
   function toImage($params = array ())
   {
     global $REX;
+    
+    if(!is_array($params))
+    {
+      $params = array();
+    }
 
     $path = $REX['HTDOCS_PATH'];
     if (isset ($params['path']))
