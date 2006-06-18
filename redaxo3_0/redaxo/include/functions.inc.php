@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.58 2006/05/25 18:04:24 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.59 2006/06/18 01:54:07 kills Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -82,6 +82,7 @@ include_once $REX['INCLUDE_PATH']."/classes/class.phpmailer.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.wysiwyg.inc.php";
 
 // ----- FUNCTIONS
+include_once $REX['INCLUDE_PATH']."/functions/function_rex_globals.inc.php";
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_modrewrite.inc.php";
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_extension.inc.php";
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_variables.inc.php";
