@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.51 2006/06/19 23:04:24 kills Exp $ 
+ * @version $Id: user.inc.php,v 1.52 2006/06/19 23:09:40 kills Exp $ 
  */ 
 
 /*
@@ -324,6 +324,7 @@ if ((isset($FUNC_UPDATE) && $FUNC_UPDATE != '') || (isset($FUNC_APPLY) and $FUNC
     $deleteuser = new sql;
     $deleteuser->query("DELETE FROM ".$REX['TABLE_PREFIX']."user WHERE user_id = '$user_id' LIMIT 1");
     $message = $I18N->msg("user_deleted");
+    unset($user_id);
   }else
   {
     $message = $I18N->msg("user_notdeleteself");
