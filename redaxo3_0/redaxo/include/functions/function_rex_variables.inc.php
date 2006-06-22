@@ -3,11 +3,11 @@
 /**
  * 
  * @package redaxo3
- * @version $Id: function_rex_variables.inc.php,v 1.3 2006/06/06 11:11:38 kristinus Exp $
+ * @version $Id: function_rex_variables.inc.php,v 1.4 2006/06/22 11:43:54 kills Exp $
  */
 
 // rex_replace_variables als Extension anfügen
-rex_register_extension('OUTPUT_FILTER', 'rex_replace_variables');
+rex_register_extension('GENERATE_FILTER', 'rex_replace_variables');
 
 /**
  * Registriert für die Variable $variable die Callback-Funktion $function
