@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.20 2006/06/14 13:37:41 kills Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.21 2006/06/22 11:59:07 kills Exp $
  */ 
  
 /**
@@ -67,8 +67,8 @@ function rex_title($head, $subtitle = '', $styleclass = "grey", $width = '770px'
  * <code>  
  * $subpages = array(
  *  array( '', 'Index', 'index_perm'),
- *  array( 'lang', 'lang_perm'),
- *  array( 'groups', 'group_perm')
+ *  array( 'lang', 'Sprachen verwalten', 'lang_perm'),
+ *  array( 'groups', 'Gruppen verwalten', 'group_perm')
  * );
  * 
  * small_title( 'Headline', $subpages)
