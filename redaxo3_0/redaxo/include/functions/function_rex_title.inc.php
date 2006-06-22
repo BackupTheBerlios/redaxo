@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.21 2006/06/22 11:59:07 kills Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.22 2006/06/22 12:00:11 kills Exp $
  */ 
  
 /**
@@ -59,7 +59,7 @@ function rex_title($head, $subtitle = '', $styleclass = "grey", $width = '770px'
  *  array( 'groups', 'Gruppen')
  * );
  * 
- * small_title( 'Headline', $subpages)
+ * rex_small_title( 'Headline', $subpages)
  * </code>
  * 
  * Beispiel für einen Seitentitel mit Rechteprüfung
@@ -71,7 +71,7 @@ function rex_title($head, $subtitle = '', $styleclass = "grey", $width = '770px'
  *  array( 'groups', 'Gruppen verwalten', 'group_perm')
  * );
  * 
- * small_title( 'Headline', $subpages)
+ * rex_small_title( 'Headline', $subpages)
  * </code>
  */
 function rex_small_title($title, $subtitle) {
