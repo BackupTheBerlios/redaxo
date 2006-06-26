@@ -12,7 +12,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.sql.inc.php,v 1.30 2006/06/14 13:35:10 kills Exp $ 
+ * @version $Id: class.sql.inc.php,v 1.31 2006/06/26 08:48:16 kills Exp $ 
  */
 class sql
 {
@@ -370,17 +370,17 @@ class sql
    */
   function printError($select)
   {
-    echo '<hr>'."\n";
-    echo 'Query: '.htmlspecialchars($select)."<br/>\n";
+    echo '<hr />'."\n";
+    echo 'Query: '.htmlspecialchars($select)."<br />\n";
 
     if (strlen($this->getRows()) > 0)
     {
-      echo 'Affected Rows: '.$this->getRows()."<br/>\n";
+      echo 'Affected Rows: '.$this->getRows()."<br />\n";
     }
     if (strlen($this->getError()) > 0)
     {
-      echo 'Error Message: '.htmlspecialchars($this->getError())."<br/>\n";
-      echo 'Error Code: '.$this->getErrno()."<br/>\n";
+      echo 'Error Message: '.htmlspecialchars($this->getError())."<br />\n";
+      echo 'Error Code: '.$this->getErrno()."<br />\n";
     }
   }
   
