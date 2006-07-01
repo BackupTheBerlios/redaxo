@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.74 2006/06/14 13:39:23 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.75 2006/07/01 16:06:11 kristinus Exp $ 
  */ 
 
 
@@ -667,10 +667,9 @@ if ($article->getRows() == 1)
       $CONT->setSliceId($slice_id);
       $CONT->setMode($mode);
       $CONT->setCLang($clang);
-      $CONT->setCType($ctype);
       $CONT->setEval(TRUE);
       $CONT->setFunction($function);
-      eval("?>".$CONT->getArticle());
+      eval("?>".$CONT->getArticle($ctype));
       
       echo'
       </div>

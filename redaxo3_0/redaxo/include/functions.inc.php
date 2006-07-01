@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.59 2006/06/18 01:54:07 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.60 2006/07/01 16:07:09 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -56,6 +56,12 @@ $REX['EXTPERM'][] = "publishCategory[]";
 // ----- extras
 $REX['EXTRAPERM'][] = "editContentOnly[]";
 
+// ----- standard variables
+$REX["VARIABLES"][] = "rex_var_globals";
+$REX["VARIABLES"][] = "rex_var_value";
+$REX["VARIABLES"][] = "rex_var_link";
+$REX["VARIABLES"][] = "rex_var_media";
+
 // ----------------- REDAXO INCLUDES
 include_once $REX['INCLUDE_PATH']."/classes/class.i18n.inc.php";
 include_once $REX['INCLUDE_PATH']."/classes/class.sql.inc.php";
@@ -74,6 +80,11 @@ if (!$REX['GG'])
 {
   include_once $REX['INCLUDE_PATH']."/functions/function_rex_title.inc.php";
   include_once $REX['INCLUDE_PATH']."/functions/function_rex_generate.inc.php";
+  include_once $REX['INCLUDE_PATH']."/classes/class.rex_var.inc.php";
+  foreach($REX["VARIABLES"] as $key => $value)
+  {
+    require_once ($REX['INCLUDE_PATH'].'/classes/variables/class.'.$value.'.inc.php');
+  }
 }
 
 // ----- EXTRA CLASSES
@@ -85,7 +96,6 @@ include_once $REX['INCLUDE_PATH']."/classes/class.wysiwyg.inc.php";
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_globals.inc.php";
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_modrewrite.inc.php";
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_extension.inc.php";
-include_once $REX['INCLUDE_PATH']."/functions/function_rex_variables.inc.php";
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_other.inc.php";
 
 // ----- EXTRA FUNCTIONS
