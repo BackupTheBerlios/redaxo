@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: specials.inc.php,v 1.37 2006/06/14 13:39:23 kills Exp $ 
+ * @version $Id: specials.inc.php,v 1.38 2006/07/03 12:50:33 kills Exp $ 
  */ 
 
 // -------------- Defaults
@@ -39,10 +39,10 @@ if ($subpage == '')
     $h = @fopen($REX['INCLUDE_PATH']."/master.inc.php","w+");
     if (fwrite($h,$cont,strlen($cont)) > 0)
     {
-      $MSG = $I18N->msg("setup_error1");
+      $message = $I18N->msg("setup_error1");
     }else
     {
-      $MSG = $I18N->msg("setup_error2");
+      $message = $I18N->msg("setup_error2");
     }
     fclose($h);
   
@@ -50,7 +50,7 @@ if ($subpage == '')
   {
     
     // generate all articles,cats,templates,caches
-    $MSG = rex_generateAll();
+    $message = rex_generateAll();
   
   } elseif (isset($func) and $func == "linkchecker")
   {
