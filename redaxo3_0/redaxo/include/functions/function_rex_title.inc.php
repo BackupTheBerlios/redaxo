@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.22 2006/06/22 12:00:11 kills Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.23 2006/07/03 12:50:44 kills Exp $
  */ 
  
 /**
@@ -76,21 +76,16 @@ function rex_title($head, $subtitle = '', $styleclass = "grey", $width = '770px'
  */
 function rex_small_title($title, $subtitle) {
   $subtitle = rex_get_subtitle( $subtitle, ' class="white"');
-  $subtitle = $subtitle != '' ? '<b>'. $subtitle .'</b>' : ''; 
 ?>
-  <table border="0" cellpadding="5" cellspacing="1" width="100%">
-    <tr>
-      <td colspan="3" class="grey" align="right"><?php echo $title ?></td>
-    </tr>
-    <tr>
-      <td class="greenwhite">
-        <?php echo $subtitle ?>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3"></td>
-    </tr>
-  </table>
+<div id="rex-hdr">
+
+  <p class="rex-hdr-top"><?php echo $title ?></p>
+  
+  <div>
+    <?php echo $subtitle ?>
+  </div>
+</div>
+
 <?php  
 }
 

@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.40 2006/06/04 16:34:13 kills Exp $
+ * @version $Id: index.php,v 1.41 2006/07/03 12:52:00 kills Exp $
  */ 
 
 // ----- caching start für output filter
@@ -148,7 +148,8 @@ else
       $page_name = $I18N->msg("user");
     }elseif ($REX['PAGEPATH'] == '' && $page == "medienpool")
     {
-      $withheader = false;
+      $page_name = $I18N->msg('pool_media');
+      $open_header_only = true;
     }elseif ($REX['PAGEPATH'] == '' && $page == "linkmap")
     {
       $open_header_only = true;
