@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.8 2006/06/14 13:39:23 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.9 2006/07/04 15:46:22 tbaddade Exp $
  */
 
 $OUT = TRUE;
@@ -179,7 +179,7 @@ if ($OUT)
   // ausgabe actionsliste !
   echo '
   <table class="rex-table" summary="'.$I18N->msg("action_summary").'">
-  	<caption>'.$I18N->msg("action_caption").'</caption>
+  	<caption class="rex-hide">'.$I18N->msg("action_caption").'</caption>
     <colgroup>
       <col width="5%" />
       <col width="5%" />

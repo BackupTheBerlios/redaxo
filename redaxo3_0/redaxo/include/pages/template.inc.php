@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: template.inc.php,v 1.26 2006/07/03 12:50:33 kills Exp $ 
+ * @version $Id: template.inc.php,v 1.27 2006/07/04 15:46:22 tbaddade Exp $ 
  */
 
 rex_title($I18N->msg("title_templates"),"");
@@ -148,7 +148,7 @@ if ($OUT)
   // ausgabe templateliste !
   echo '
   <table class="rex-table" summary="'.$I18N->msg("header_template_summary").'">
-  	<caption>'.$I18N->msg("header_template_caption").'</caption>
+  	<caption class="rex-hide">'.$I18N->msg("header_template_caption").'</caption>
   	<colgroup>
       <col width="5%" />
       <col width="6%" />

@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.94 2006/06/30 13:05:29 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.95 2006/07/04 15:46:21 tbaddade Exp $ 
  */ 
 
 // TODOS
@@ -633,7 +633,7 @@ if ($PERMALL && $subpage == "categories")
   }
   
   echo '<table class="rex-table" summary="'.$I18N->msg('pool_kat_summary').'">
-          <caption>'.$I18N->msg('pool_kat_caption').'</caption>
+          <caption class="rex-hide">'.$I18N->msg('pool_kat_caption').'</caption>
           <colgroup>
             <col width="5%" />
             <col width="5%" />
@@ -1415,7 +1415,7 @@ if ($subpage == '')
             <input type="hidden" id="media_method" name="media_method" value="" />
   
             <table class="rex-table" summary="'. $I18N->msg('pool_file_summary', $rex_file_category_name) .'">
-              <caption>'. $I18N->msg('pool_file_caption', $rex_file_category_name) .'</caption>
+              <caption class="rex-hide">'. $I18N->msg('pool_file_caption', $rex_file_category_name) .'</caption>
               <colgroup>
                 <col width="5%" />
                 <col width="12%" />

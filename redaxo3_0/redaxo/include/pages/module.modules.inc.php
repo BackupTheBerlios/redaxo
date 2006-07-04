@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.14 2006/06/14 13:39:23 kills Exp $
+ * @version $Id: module.modules.inc.php,v 1.15 2006/07/04 15:46:22 tbaddade Exp $
  */
 
 $OUT = TRUE;
@@ -263,7 +263,7 @@ if ($OUT)
   // ausgabe modulliste !
   echo '
   <table class="rex-table" summary="'.$I18N->msg("module_summary").'">
-  	<caption>'.$I18N->msg("module_caption").'</caption>
+  	<caption class="rex-hide">'.$I18N->msg("module_caption").'</caption>
     <colgroup>
       <col width="5%" />
       <col width="5%" />

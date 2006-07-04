@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: specials.inc.php,v 1.38 2006/07/03 12:50:33 kills Exp $ 
+ * @version $Id: specials.inc.php,v 1.39 2006/07/04 15:46:22 tbaddade Exp $ 
  */ 
 
 // -------------- Defaults
@@ -355,7 +355,7 @@ elseif ($subpage == "lang")
   
   echo '
     <table class="rex-table" summary="'.$I18N->msg('clang_summary').'">
-      <caption>'.$I18N->msg('clang_caption').'</caption>
+      <caption class="rex-hide">'.$I18N->msg('clang_caption').'</caption>
       <colgroup>
         <col width="5%" />
         <col width="6%" />
@@ -527,7 +527,7 @@ else
   }
   
   echo '<table class="rex-table" summary="'.$I18N->msg('article_type_summary').'">
-        <caption>'.$I18N->msg('article_type_caption').'</caption>
+        <caption class="rex-hide">'.$I18N->msg('article_type_caption').'</caption>
         <colgroup>
           <col width="5%" />
           <col width="6%" />

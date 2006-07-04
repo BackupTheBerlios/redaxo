@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.61 2006/06/14 13:39:23 kills Exp $ 
+ * @version $Id: structure.inc.php,v 1.62 2006/07/04 15:46:22 tbaddade Exp $ 
  */
 
 /*
@@ -494,7 +494,7 @@ if($function == 'add_cat' || $function == 'edit_cat')
 
 echo '
       <table class="rex-table" summary="'. $I18N->msg('structure_categories_summary', $cat_name) .'">
-        <caption>'.$I18N->msg('structure_categories_caption', $cat_name).'</caption>
+        <caption class="rex-hide">'.$I18N->msg('structure_categories_caption', $cat_name).'</caption>
         <colgroup>
           <col width="5%" />
           '. $add_col .'
@@ -735,7 +735,7 @@ if ($category_id > -1)
   
   echo '  
       <table class="rex-table" summary="'. $I18N->msg('structure_articles_summary', $cat_name) .'">
-        <caption>'.$I18N->msg('structure_articles_caption', $cat_name).'</caption>
+        <caption class="rex-hide">'.$I18N->msg('structure_articles_caption', $cat_name).'</caption>
         <colgroup>
           <col width="5%" />
           '. $add_col .'
