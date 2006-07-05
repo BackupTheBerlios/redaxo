@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.24 2006/07/05 07:45:42 vscope Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.25 2006/07/05 17:06:50 vscope Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -159,7 +159,7 @@ class OOArticle extends OORedaxo
         foreach ($REX['RE_ID'][$a_category_id] as $var)
         {
           $article = OOArticle :: getArticleById($var, $clang);
-          if (!$ignore_offlines)
+          if ($ignore_offlines)
           {
             if ($article->isOnline())
             {
