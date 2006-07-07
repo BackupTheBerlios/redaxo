@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.54 2006/07/04 15:46:22 tbaddade Exp $ 
+ * @version $Id: user.inc.php,v 1.55 2006/07/07 13:01:34 kills Exp $ 
  */ 
 
 /*
@@ -817,6 +817,18 @@ if (isset($SHOW) and $SHOW)
     {
       $add_td = '<td>'.$sql->getValue('user_id').'</td>';
     }
+    
+    $delete_func = $I18N->msg("user_delete");
+    // man kann sich selbst nicht löschen..
+    if ($REX_USER->getValue("user_id")!=$sql->getValue("user_id"))
+    {
+      $delete_func = '<a href="index.php?page=user&amp;user_id='.$sql->getValue("user_id").'&amp;FUNC_DELETE=1" onclick="return confirm(\''.$I18N->msg('delete').' ?\')">'.$delete_func.'</a>';
+    }
+    else
+    {
+      $delete_func = '<span class="rex-strike">'. $delete_func .'</span>';
+    }
+    
     echo '
       <tr>
         <td><a href="index.php?page=user&amp;user_id='.$sql->getValue("user_id").'"><img src="pics/user.gif" width="16" height="16" alt="'. $username .'" title="'. $username .'" /></a></td>
@@ -824,7 +836,7 @@ if (isset($SHOW) and $SHOW)
         <td><a href="index.php?page=user&amp;user_id='.$sql->getValue("user_id").'">'.$username.'</a></td>
         <td>'.$sql->getValue("login").'</td>
         <td>'.$last_login.'</td>
-        <td><a href="index.php?page=user&amp;user_id='.$sql->getValue("user_id").'&amp;FUNC_DELETE=1" onclick="return confirm(\''.$I18N->msg('delete').' ?\')">'.$I18N->msg("user_delete").'</a></td>
+        <td>'. $delete_func .'</td>
       </tr>';
     $sql->counter++;
   }
