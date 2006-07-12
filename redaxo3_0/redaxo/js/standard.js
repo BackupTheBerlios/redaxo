@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.23 2006/07/09 13:07:19 kills Exp $
+ @version $Id: standard.js,v 1.24 2006/07/12 14:59:55 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -40,6 +40,11 @@ function getObj(name)
                 this.obj = document.layers[name];
                 this.style = document.layers[name];
         }
+}
+
+function getObjArray(name)
+{
+	return document.getElementsByName(name);
 }
 
 // -------------------------------------------------------------------------------------------------------------------
