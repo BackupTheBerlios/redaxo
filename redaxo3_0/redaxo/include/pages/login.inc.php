@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: login.inc.php,v 1.3 2006/06/14 13:39:23 kills Exp $
+ * @version $Id: login.inc.php,v 1.4 2006/07/14 07:23:16 tbaddade Exp $
  */ 
 
 rex_title("Login","");
@@ -33,9 +33,7 @@ echo '
     <p>
       <label for="REX_UPSW">'.$I18N->msg('password').':</label>
       <input type="password" name="REX_UPSW" id="REX_UPSW" />
-    </p>
-    <p>
-      <input class="rex-fsubmit" type="submit" value="'.$I18N->msg('login').'" />
+			<input class="rex-fsubmit" type="submit" value="'.$I18N->msg('login').'" />
     </p>
   </fieldset>
 </form>
