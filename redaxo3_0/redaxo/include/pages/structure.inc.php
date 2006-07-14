@@ -3,11 +3,7 @@
 /** 
  *  
  * @package redaxo3 
-<<<<<<< structure.inc.php
- * @version $Id: structure.inc.php,v 1.65 2006/07/14 07:23:05 tbaddade Exp $ 
-=======
- * @version $Id: structure.inc.php,v 1.65 2006/07/14 07:23:05 tbaddade Exp $ 
->>>>>>> 1.64
+ * @version $Id: structure.inc.php,v 1.66 2006/07/14 11:49:06 kills Exp $ 
  */
 
 /*
