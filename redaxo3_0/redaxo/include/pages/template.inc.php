@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: template.inc.php,v 1.27 2006/07/04 15:46:22 tbaddade Exp $ 
+ * @version $Id: template.inc.php,v 1.28 2006/07/14 09:09:52 tbaddade Exp $ 
  */
 
 rex_title($I18N->msg("title_templates"),"");
@@ -158,7 +158,7 @@ if ($OUT)
   	</colgroup>
   	<thead>
       <tr>
-        <th><a href="index.php?page=template&amp;function=add"><img src="pics/template_plus.gif" width="16" height="16" alt="'.$I18N->msg("create_template").'" title="'.$I18N->msg("create_template").'" /></a></th>
+        <th class="rex-icon"><a href="index.php?page=template&amp;function=add"><img src="pics/template_plus.gif" width="16" height="16" alt="'.$I18N->msg("create_template").'" title="'.$I18N->msg("create_template").'" /></a></th>
         <th>'.$I18N->msg("header_template_id").'</th>
         <th>'.$I18N->msg("header_template_description").'</th>
         <th>'.$I18N->msg("header_template_active").'</th>
@@ -177,7 +177,7 @@ if ($OUT)
     
     echo '
       <tr>
-        <td><a href="index.php?page=template&amp;template_id='.$sql->getValue('id').'&amp;function=edit"><img src="pics/template.gif" alt="'.htmlspecialchars($sql->getValue('name')).'" title="'.htmlspecialchars($sql->getValue('name')).'" width="16" height="16" /></a></td>
+        <td class="rex-icon"><a href="index.php?page=template&amp;template_id='.$sql->getValue('id').'&amp;function=edit"><img src="pics/template.gif" alt="'.htmlspecialchars($sql->getValue('name')).'" title="'.htmlspecialchars($sql->getValue('name')).'" width="16" height="16" /></a></td>
         <td>'.$sql->getValue('id').'</td>
         <td><a href="index.php?page=template&amp;template_id='.$sql->getValue('id').'&amp;function=edit">'.htmlspecialchars($sql->getValue('name')) . '<span class="rex-hide"> ['.$I18N->msg('header_template_id').' '.$sql->getValue('id').']</span></a></td>
         <td>'. $active .'</td>
