@@ -12,7 +12,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.sql.inc.php,v 1.32 2006/07/05 17:11:06 kills Exp $ 
+ * @version $Id: class.sql.inc.php,v 1.33 2006/07/15 10:45:40 kills Exp $ 
  */
 class sql
 {
@@ -370,7 +370,7 @@ class sql
   function printError($select)
   {
     echo '<hr />'."\n";
-    echo 'Query: '.htmlspecialchars($select)."<br />\n";
+    echo 'Query: '.nl2br(htmlspecialchars($select))."<br />\n";
 
     if (strlen($this->getRows()) > 0)
     {
@@ -411,6 +411,15 @@ class sql
       $fields[] = mysql_field_name($this->result, $i);
     }
     return $fields;
+  }
+  
+  function escape($value)
+  {
+    // Quote if not a number or a numeric string
+    if (!is_numeric($value)) {
+        $value = "'" . mysql_real_escape_string($value) . "'";
+    }
+    return $value;
   }
 }
 ?>
