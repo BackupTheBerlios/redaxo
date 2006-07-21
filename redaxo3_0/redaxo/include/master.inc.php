@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: master.inc.php,v 1.24 2006/05/25 18:06:41 kills Exp $ 
+ * @version $Id: master.inc.php,v 1.25 2006/07/21 13:30:00 kills Exp $ 
  */
 
 // -----------------
@@ -28,6 +28,7 @@ $REX['MOD_REWRITE'] = false; // activate mod_rewrite support
 $REX['INCLUDE_PATH'] = $REX['HTDOCS_PATH']."redaxo/include"; // 
 $REX['MEDIAFOLDER'] = $REX['HTDOCS_PATH']."files"; //
 $REX['TABLE_PREFIX'] = "rex_";
+$REX['TEMP_PREFIX'] = "tmp_";
 $REX['FILEPERM'] = octdec(775); // oktaler wert
 $REX['INSTNAME'] = "rex20060101010101";
 $REX['PSWFUNC'] = ""; // wenn erwünscht: md5 / mcrypt ...

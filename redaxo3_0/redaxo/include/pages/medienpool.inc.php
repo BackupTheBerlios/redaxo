@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.96 2006/07/12 14:59:51 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.97 2006/07/21 13:29:27 kills Exp $ 
  */ 
 
 // TODOS
@@ -1191,7 +1191,7 @@ if($PERMALL && isset($subpage) and $subpage == 'sync')
       if(!is_file($REX['MEDIAFOLDER'] .'/'. $file)) continue;
       
       // Tempfiles nicht synchronisieren
-      if(substr($file, 0, 4) != 'tmp_')
+      if(substr($file, 0, strlen($REX['TEMP_PREFIX'])) != $REX['TEMP_PREFIX'])
       {
         $folder_files[] = $file;
       }
