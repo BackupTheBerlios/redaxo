@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.61 2006/07/23 18:06:23 kills Exp $
+ * @version $Id: class.article.inc.php,v 1.62 2006/07/23 18:12:20 kills Exp $
  */
 
 class article
@@ -565,10 +565,10 @@ class article
   			$tmp = $var->getFEOutput($sql,$content);
   		}
       
-      // hier mit TMP Variable arbeiten, 
-      // falls in einer der Vars kein RETURN Value gesetzt wurde,
-      // damit nicht die Ausgabe davon beschädigt wird.
-      if($tmp != '')
+      // Rückgabewert nur auswerten wenn auch einer vorhanden ist
+      // damit $content nicht verfälscht wird
+      // null ist default Rückgabewert, falls kein RETURN in einer Funktion ist 
+      if($tmp !== null)
       {
         $content = $tmp;
       }
