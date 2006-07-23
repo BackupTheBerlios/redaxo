@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.42 2006/07/10 12:38:03 kills Exp $
+ * @version $Id: index.php,v 1.43 2006/07/23 18:15:28 kills Exp $
  */ 
 
 // ----- caching start für output filter
@@ -136,7 +136,7 @@ else
       $page_name = $I18N->msg("specials");
     }elseif ($REX['PAGEPATH'] == '' && $page == "module" && ($REX_USER->isValueOf("rights","module[]") || $REX_USER->isValueOf("rights","admin[]")))
     {
-      $page_name = $I18N->msg("module");
+      $page_name = $I18N->msg("modules");
     }elseif ($REX['PAGEPATH'] == '' && $page == "template" && ($REX_USER->isValueOf("rights","template[]") || $REX_USER->isValueOf("rights","admin[]")))
     {
       $page_name = $I18N->msg("template");
