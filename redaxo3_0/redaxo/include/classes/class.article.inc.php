@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.59 2006/07/10 12:32:41 kills Exp $
+ * @version $Id: class.article.inc.php,v 1.60 2006/07/23 18:01:55 kills Exp $
  */
 
 class article
@@ -27,7 +27,7 @@ class article
   var $getSlice;
 
   // ----- Konstruktor
-  function article( $article_id = null)
+  function article($article_id = null)
   {
     $this->article_id = 0;
     $this->template_id = 0;
@@ -479,7 +479,6 @@ class article
             <input type="hidden" name="save" value="1" />
             <input type="hidden" name="clang" value="'. $this->clang .'" />
             <input type="hidden" name="ctype" value="'.$this->ctype .'" />
-            <h2>'. $I18N->msg('add_block').'</h2>
             <p>
               Modul: '. $MOD->getValue("name") .'
             </p>
@@ -633,7 +632,8 @@ class rex_dummy_sql extends sql
 	function getValue($name)
 	{
 		if (isset($this->dummyvalues[$name])) return $this->dummyvalues[$name];
-		return '';
+    // hier null, damit man daran in den REX_VARS zwischen edit/add unterscheiden kann
+		return null;
 	}
 	
 	function setValue($name,$value)
