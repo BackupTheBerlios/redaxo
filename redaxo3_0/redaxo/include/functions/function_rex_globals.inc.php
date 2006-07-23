@@ -3,7 +3,7 @@
  * Getter Funktionen zum Handling von Superglobalen Variablen 
  * 
  * @package redaxo3
- * @version $Id: function_rex_globals.inc.php,v 1.1 2006/06/18 01:54:07 kills Exp $
+ * @version $Id: function_rex_globals.inc.php,v 1.2 2006/07/23 18:14:24 kills Exp $
  */
 
 /**
@@ -62,6 +62,18 @@ function rex_session($varname, $vartype = '', $default = '')
   }
   
   return $default;
+}
+
+/**
+ * Setzt den Wert einer Session Variable.
+ * 
+ * Variablen werden Instanzabhängig gespeichert.
+ */
+function rex_set_session($varname, $value)
+{
+  global $REX;
+
+  $_SESSION[$varname][$REX['INSTNAME']] = $value;
 }
 
 /**
