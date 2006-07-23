@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.60 2006/07/23 18:01:55 kills Exp $
+ * @version $Id: class.article.inc.php,v 1.61 2006/07/23 18:06:23 kills Exp $
  */
 
 class article
@@ -480,7 +480,7 @@ class article
             <input type="hidden" name="clang" value="'. $this->clang .'" />
             <input type="hidden" name="ctype" value="'.$this->ctype .'" />
             <p>
-              Modul: '. $MOD->getValue("name") .'
+              '. $I18N->msg("module") .': '. $MOD->getValue("name") .'
             </p>
             <div class="rex-mdl-inp">
               '. $MOD->getValue("eingabe") .'

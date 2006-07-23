@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: top.php,v 1.36 2006/07/11 08:54:11 tbaddade Exp $
+ * @version $Id: top.php,v 1.37 2006/07/23 18:06:24 kills Exp $
  */ 
 
 if (!isset($page_name)) $page_name = ''; 
@@ -62,7 +62,7 @@ if ( isset( $open_header_only) && $open_header_only == true) {
 		
 		if ($REX_USER->hasPerm("module[]") || $REX_USER->hasPerm("admin[]")) 
 		{
-			echo '<li> | <a href="index.php?page=module">'.$I18N->msg("module").'</a></li>'."\n"; 
+			echo '<li> | <a href="index.php?page=module">'.$I18N->msg("modules").'</a></li>'."\n"; 
 		}
 		
 		if ($REX_USER->hasPerm("user[]") || $REX_USER->hasPerm("admin[]")) 
