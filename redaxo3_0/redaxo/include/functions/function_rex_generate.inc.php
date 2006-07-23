@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.61 2006/07/03 12:49:36 kills Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.62 2006/07/23 11:19:45 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -1126,9 +1126,9 @@ function rex_generateTemplate($template_id)
  */
 function rex_addslashes($string)
 {
-
   $string = str_replace("\\", "\\\\", $string);
   $string = str_replace("\"", "\\\"", $string);
+  $string = str_replace("'", "\'", $string);
 
   return $string;
 
