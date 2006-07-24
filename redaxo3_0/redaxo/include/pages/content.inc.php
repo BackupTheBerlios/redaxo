@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.76 2006/07/14 08:29:48 tbaddade Exp $ 
+ * @version $Id: content.inc.php,v 1.77 2006/07/24 18:05:35 tbaddade Exp $ 
  */ 
 
 
@@ -767,7 +767,7 @@ if ($article->getRows() == 1)
       }
 
       echo '
-	  <div class="rex-cnt-metaform">
+	  <div class="rex-cnt-metamode">
       <form action="index.php" method="post" enctype="multipart/form-data" id="REX_FORM">
         <fieldset>
           <legend>'.$I18N->msg('general').'</legend>
