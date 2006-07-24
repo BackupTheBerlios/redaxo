@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.61 2006/07/03 12:48:24 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.62 2006/07/24 10:53:28 kills Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -90,7 +90,6 @@ if (!$REX['GG'])
 // ----- EXTRA CLASSES
 include_once $REX['INCLUDE_PATH'].'/classes/class.textile.inc.php';
 include_once $REX['INCLUDE_PATH'].'/classes/class.phpmailer.inc.php';
-include_once $REX['INCLUDE_PATH'].'/classes/class.wysiwyg.inc.php';
 
 // ----- FUNCTIONS
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_globals.inc.php';
@@ -99,7 +98,6 @@ include_once $REX['INCLUDE_PATH'].'/functions/function_rex_extension.inc.php';
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_other.inc.php';
 
 // ----- EXTRA FUNCTIONS
-include_once $REX['INCLUDE_PATH'].'/functions/function_rex_wysiwyg.inc.php';
 
 // ----- CONFIG FILES
 include_once $REX['INCLUDE_PATH'].'/ctype.inc.php';
