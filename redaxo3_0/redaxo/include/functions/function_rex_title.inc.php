@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.23 2006/07/03 12:50:44 kills Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.24 2006/07/24 13:10:18 kills Exp $
  */ 
  
 /**
@@ -124,7 +124,7 @@ function rex_get_subtitle($subline, $attr = '')
       if (!empty( $subpage[2]))
       {
         // Hat der User das Recht für die aktuelle Subpage?
-        if (!$REX_USER->isValueOf('rights', $subpage[2]))
+        if (!$REX_USER->hasPerm('admin[]') && !$REX_USER->hasPerm($subpage[2]))
         {
           // Wenn der User kein Recht hat, und diese Seite öffnen will -> Fehler
           if ($cur_subpage == $link)
