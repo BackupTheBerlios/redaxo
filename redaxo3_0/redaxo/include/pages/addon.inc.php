@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: addon.inc.php,v 1.14 2006/07/04 15:45:56 tbaddade Exp $ 
+ * @version $Id: addon.inc.php,v 1.15 2006/07/25 06:53:22 tbaddade Exp $ 
  */
 
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_other.inc.php";
@@ -19,7 +19,7 @@ $SP = true; // SHOW PAGE ADDON LIST
 if (isset ($spage) && $spage == 'help' && $addonname != '')
 {
   echo '<p class="rex-hdl">'.$I18N->msg("addon_help").' '.$addonname.'</p>
-  		<div class="rex-cnt">';
+  		<div class="rex-adn-hlp">';
   if (!is_file($REX['INCLUDE_PATH']."/addons/$addonname/help.inc.php"))
   {
     echo $I18N->msg("addon_no_help_file");
@@ -29,7 +29,7 @@ if (isset ($spage) && $spage == 'help' && $addonname != '')
     include $REX['INCLUDE_PATH']."/addons/$addonname/help.inc.php";
   }
   echo '</div>
-  		<p><a href="index.php?page=addon">'.$I18N->msg("addon_back").'</a></p>';
+  		<p class="rex-hdl"><a href="index.php?page=addon">'.$I18N->msg("addon_back").'</a></p>';
   $SP = false;
 }
 
