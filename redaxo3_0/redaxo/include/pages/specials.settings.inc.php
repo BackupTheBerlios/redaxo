@@ -3,26 +3,26 @@
 /**
  * 
  * @package redaxo3
- * @version $Id: specials.settings.inc.php,v 1.2 2006/07/25 06:53:23 tbaddade Exp $
+ * @version $Id: specials.settings.inc.php,v 1.3 2006/07/26 11:37:17 kills Exp $
  */
 
-if ($func == "setup")
+if ($func == 'setup')
 {
   // REACTIVATE SETUP
 
-  $h = @ fopen($REX['INCLUDE_PATH']."/master.inc.php", "r");
-  $cont = fread($h, filesize($REX['INCLUDE_PATH']."/master.inc.php"));
-  $cont = ereg_replace("(REX\['SETUP'\].?\=.?)[^;]*", "\\1"."true", $cont);
+  $h = @ fopen($REX['INCLUDE_PATH'].'/master.inc.php', 'r');
+  $cont = fread($h, filesize($REX['INCLUDE_PATH'].'/master.inc.php'));
+  $cont = ereg_replace("(REX\['SETUP'\].?\=.?)[^;]*", '\\1true', $cont);
   fclose($h);
   // echo nl2br(htmlspecialchars($cont));
-  $h = @ fopen($REX['INCLUDE_PATH']."/master.inc.php", "w+");
+  $h = @ fopen($REX['INCLUDE_PATH'].'/master.inc.php', 'w+');
   if (fwrite($h, $cont, strlen($cont)) > 0)
   {
-    $message = $I18N->msg("setup_error1");
+    $message = $I18N->msg('setup_error1', '<a href="index.php">', '</a>');
   }
   else
   {
-    $message = $I18N->msg("setup_error2");
+    $message = $I18N->msg('setup_error2');
   }
   fclose($h);
 
