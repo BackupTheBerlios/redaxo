@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.48 2006/07/26 11:37:16 kills Exp $
+ * @version $Id: setup.inc.php,v 1.49 2006/07/27 10:14:10 tbaddade Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -162,7 +162,7 @@ if ($MSG['err'] == '' && $checkmodus == 1)
 {
   rex_setuptitle($I18N->msg('setup_step1'));
 
-  echo '<p>'.$I18N->msg('setup_016', '<h2>', '</h2>', '<span class="rex-ok">', '</span>') .'</p>
+  echo $I18N->msg('setup_016', '<h2>', '</h2>', '<span class="rex-ok">', '</span>').'
         <p><a href="index.php?page=setup&amp;checkmodus=2&amp;lang='.$lang.'">&raquo; '.$I18N->msg('setup_017').'</a></p>';
 
 }
@@ -651,7 +651,7 @@ if ($checkmodus == 5)
   }
 
   rex_setuptitle($I18N->msg('setup_step5'));
-  echo '<p>'.$I18N->msg('setup_051', '<h2>', '</h2>', '<a href="index.php">', '</a>') .'</p>';
+  echo $I18N->msg('setup_051', '<h2>', '</h2>', '<a href="index.php">', '</a>');
 
 }
 echo '</div>';
