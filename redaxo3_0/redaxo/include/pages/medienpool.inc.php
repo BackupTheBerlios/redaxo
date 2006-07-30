@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.100 2006/07/30 16:54:12 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.101 2006/07/30 16:55:45 kills Exp $ 
  */ 
 
 // TODOS
@@ -1287,7 +1287,8 @@ if($PERMALL && isset($subpage) and $subpage == 'sync')
   }
   
   echo '</fieldset>
-  		</form>';
+  		</form>
+    </div>';
 }
 
 
