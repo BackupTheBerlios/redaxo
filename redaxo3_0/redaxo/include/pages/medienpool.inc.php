@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.99 2006/07/26 08:46:33 tbaddade Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.100 2006/07/30 16:54:12 kills Exp $ 
  */ 
 
 // TODOS
@@ -1281,7 +1281,9 @@ if($PERMALL && isset($subpage) and $subpage == 'sync')
   }
   else
   {
+    echo '<p>';
     echo '<strong>'. $I18N->msg('pool_sync_no_diffs') .'</strong>';
+    echo '</p>';
   }
   
   echo '</fieldset>
