@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: class.login.inc.php,v 1.17 2006/03/22 21:04:57 kills Exp $
+ * @version $Id: class.login.inc.php,v 1.18 2006/08/02 07:56:16 kristinus Exp $
  */ 
 
 // class login 1.0
@@ -51,6 +51,8 @@ class rex_login{
   var $USER;
   var $text;
   var $passwordfunction;
+  var $cache;
+  var $login_status;
   
   function rex_login()
   {
@@ -60,8 +62,11 @@ class rex_login{
     $this->system_id = "default";
     $this->cryptFunction = false;
     $this->setLanguage();
+	$this->cache = false;
+	$this->login_status = 0; // 0 = nochchecken, 1 = ok, -1 = notok
     
   }
+
   
   function setLanguage($lang = "en")
   {
@@ -82,7 +87,13 @@ class rex_login{
       $this->text[50] = "You logged out.";
     }   
   }
+
   
+  function setCache($status = true)
+  {
+    $this->cache = $status;
+  }
+ 
   function setSqlDb($DB)
   {
     $this->DB = $DB;
@@ -139,6 +150,10 @@ class rex_login{
     
     if (!$this->logout)
     {
+      
+      // checkLogin schonmal ausgeführt ? gecachte ausgabe erlaubt ?
+      if ($this->cache && $this->login_status>0) return true;
+      elseif ($this->cache && $this->login_status<0) return false;
       
       if ($this->usr_login != "")
       {
@@ -211,6 +226,10 @@ class rex_login{
       $_SESSION['ST'][$this->system_id] = "";
       $_SESSION['UID'][$this->system_id] = "";
     }
+    
+    if ($ok) $this->login_status = 1;
+    else $this->login_status = -1;
+
     return $ok;       
   }
   
