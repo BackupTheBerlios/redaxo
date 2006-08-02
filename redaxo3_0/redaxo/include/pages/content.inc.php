@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.81 2006/08/02 15:29:37 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.82 2006/08/02 16:21:31 kills Exp $ 
  */ 
 
 
@@ -816,7 +816,7 @@ if ($article->getRows() == 1)
      </fieldset>';
         
      // ----- EXTENSION POINT
-     echo rex_register_extension_point('ART_META_FORM_SECTION');
+     echo rex_register_extension_point('ART_META_FORM_SECTION', '', array ("id" => $article_id,"clang" => $clang));
         
       // --------------------------------------------------- START - FUNKTION ZUM AUSLESEN DER KATEGORIEN  	
       function add_cat_options( &$select, &$cat, &$cat_ids, $groupName = '', $nbsp = '')
