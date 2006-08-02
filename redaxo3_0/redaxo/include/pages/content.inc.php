@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.80 2006/08/01 14:27:42 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.81 2006/08/02 15:29:37 kristinus Exp $ 
  */ 
 
 
@@ -807,7 +807,7 @@ if ($article->getRows() == 1)
         '. $out;
 
      // ----- EXTENSION POINT
-     echo rex_register_extension_point('ART_META_FORM');
+     echo rex_register_extension_point('ART_META_FORM', '', array ("id" => $article_id,"clang" => $clang));
         
      echo '
         <p>
