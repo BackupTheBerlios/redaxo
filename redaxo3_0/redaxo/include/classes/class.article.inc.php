@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.63 2006/07/24 18:53:18 tbaddade Exp $
+ * @version $Id: class.article.inc.php,v 1.64 2006/08/07 15:36:48 kristinus Exp $
  */
 
 class article
@@ -552,13 +552,18 @@ class article
   	global $REX;
     
     $tmp = '';
-  	foreach($REX['VARIABLES'] as $key => $value)
+  	foreach($REX['VARIABLES'] as $var)
   	{
-  		$var = new $value();
+  		
   		if ($this->mode == 'edit')
   		{
   		  if (($this->function == 'add' && $sql->getValue($REX['TABLE_PREFIX'].'article_slice.id') == '') || ($this->function == 'edit' && $sql->getValue($REX['TABLE_PREFIX'].'article_slice.id') == $this->slice_id))
   		  {
+  		  	if (!$REX["ACTION"]["SAVE"])
+  		  	{
+  		  		$sql = new rex_dummy_sql();
+  		  		$var->setACValues($sql,$REX["ACTION"]);
+  		  	}
   		  	$tmp = $var->getBEInput($sql,$content);
   		  }else
   		  {

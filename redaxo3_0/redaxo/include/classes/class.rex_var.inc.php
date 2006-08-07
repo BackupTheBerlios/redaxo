@@ -3,7 +3,7 @@
 /**
  * Abtrackte Basisklasse für REX_VARS innerhalb der Module
  * @package redaxo3
- * @version $Id: class.rex_var.inc.php,v 1.2 2006/07/04 13:52:41 kills Exp $
+ * @version $Id: class.rex_var.inc.php,v 1.3 2006/08/07 15:37:27 kristinus Exp $
  */
 
 class rex_var
@@ -59,7 +59,12 @@ class rex_var
   function getValue(&$sql, $value)
   {
     global $REX;
-    return $sql->getValue($REX['TABLE_PREFIX'].'article_slice.'.$value);
+    $tmp = $sql->getValue($value);
+    if ($tmp == '')
+    {
+      $tmp = $sql->getValue($REX['TABLE_PREFIX'].'article_slice.'.$value);
+    }
+    return $tmp;
   }
   
   /**
@@ -185,5 +190,34 @@ class rex_var
     }
     return $result;
   }
+  
+  /**
+   * Actionmethode:
+   * Zum füllen des $REX_ACTION Arrays aus den Input Formularwerten
+   */
+  function getACRequestValues($REX_ACTION)
+  {
+	return $REX_ACTION;
+  }
+
+  /**
+   * Actionmethode:
+   * Ersetzen der Werte in dem Aktionsscript
+   */
+  function getACOutput($REX_ACTION, $content)
+  {
+  	$sql = new rex_dummy_sql();
+  	$this->setACValues(& $sql,$REX_ACTION);
+    return $this->getBEOutput(& $sql, $content);
+  }
+
+  /**
+   * Actionmethode:
+   * Zum füllen des sql aus dem $REX_ACTION Array
+   */
+  function setACValues(& $sql, $REX_ACTION, $escape=false)
+  {
+  }
+  
 }
 ?>

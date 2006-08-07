@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.62 2006/07/24 10:53:28 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.63 2006/08/07 15:38:18 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -84,6 +84,7 @@ if (!$REX['GG'])
   foreach($REX['VARIABLES'] as $key => $value)
   {
     require_once ($REX['INCLUDE_PATH'].'/classes/variables/class.'.$value.'.inc.php');
+    $REX['VARIABLES'][$key] = new $value;
   }
 }
 
