@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.63 2006/08/07 15:38:18 kristinus Exp $ 
+ * @version $Id: functions.inc.php,v 1.64 2006/08/07 17:22:16 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -89,8 +89,6 @@ if (!$REX['GG'])
 }
 
 // ----- EXTRA CLASSES
-include_once $REX['INCLUDE_PATH'].'/classes/class.textile.inc.php';
-include_once $REX['INCLUDE_PATH'].'/classes/class.phpmailer.inc.php';
 
 // ----- FUNCTIONS
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_globals.inc.php';
