@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.56 2006/07/25 06:53:23 tbaddade Exp $ 
+ * @version $Id: user.inc.php,v 1.57 2006/08/08 17:12:22 kristinus Exp $ 
  */ 
 
 /*
@@ -494,7 +494,7 @@ if (!empty($message))
 
 $SHOW = true;
 
-if (isset($FUNC_ADD) && $FUNC_ADD || $user_id != '')
+if (isset($FUNC_ADD) && $FUNC_ADD || isset($user_id))
 {
   $SHOW = false;
 
