@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.25 2006/04/17 18:31:09 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.26 2006/08/09 11:55:29 kills Exp $
  */
 
 class OORedaxo
@@ -32,8 +32,6 @@ class OORedaxo
   var $_prior = "";
   var $_path = "";
   var $_status = "";
-  var $_online_from = "";
-  var $_online_to = "";
   var $_createdate = "";
   var $_updatedate = "";
   var $_keywords = "";
@@ -106,9 +104,7 @@ class OORedaxo
       foreach ($class_vars as $name => $value)
       {
         // 1. Zeichen == '_'
-        if ($name {
-          0 }
-        == '_')
+        if ($name{0} == '_')
         {
           $vars[] = substr($name, 1);
         }
