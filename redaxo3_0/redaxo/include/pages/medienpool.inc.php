@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.101 2006/07/30 16:55:45 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.102 2006/08/13 11:31:37 kills Exp $ 
  */ 
 
 // TODOS
@@ -50,9 +50,13 @@ if (isset($_REQUEST["rex_file_category"]))
 {
   $rex_file_category = (int) $_REQUEST["rex_file_category"];
 }
+elseif (isset($_SESSION["rex_file_category"])) 
+{
+  $rex_file_category = $_SESSION['rex_file_category']; 
+}
 else
 {
-  if (isset($_SESSION["rex_file_category"])) $rex_file_category = $_SESSION['rex_file_category'];
+  $rex_file_category = 0;
 }
 
 $gc = new sql;
