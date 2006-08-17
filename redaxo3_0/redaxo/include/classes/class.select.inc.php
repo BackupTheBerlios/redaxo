@@ -3,7 +3,7 @@
 /** 
  * Klasse zur Erstellung eines HTML-Pulldown-Menues (Select-Box)  
  * @package redaxo3 
- * @version $Id: class.select.inc.php,v 1.19 2006/03/12 11:25:07 kills Exp $ 
+ * @version $Id: class.select.inc.php,v 1.20 2006/08/17 11:44:32 kills Exp $ 
  */
 
 ################ Class Select
@@ -31,11 +31,11 @@ class select
   {
     if ($mul == 1)
     {
-      $this->select_multiple = " multiple";
+      $this->select_multiple = ' multiple="multiple"';
     }
     else
     {
-      $this->select_multiple = "";
+      $this->select_multiple = '';
     }
   }
 
