@@ -3,7 +3,7 @@
  * Getter Funktionen zum Handling von Superglobalen Variablen 
  * 
  * @package redaxo3
- * @version $Id: function_rex_globals.inc.php,v 1.2 2006/07/23 18:14:24 kills Exp $
+ * @version $Id: function_rex_globals.inc.php,v 1.3 2006/08/24 13:43:50 kills Exp $
  */
 
 /**
@@ -57,7 +57,7 @@ function rex_session($varname, $vartype = '', $default = '')
 
   if(isset($_SESSION[$varname][$REX['INSTNAME']]))
   {
-    $var = $_SESSION[$varname][$REX['INSTNAME']];
+    $var = unserialize($_SESSION[$varname][$REX['INSTNAME']]);
     return _rex_cast_var($var, $vartype);
   }
   
@@ -73,7 +73,19 @@ function rex_set_session($varname, $value)
 {
   global $REX;
 
-  $_SESSION[$varname][$REX['INSTNAME']] = $value;
+  $_SESSION[$varname][$REX['INSTNAME']] = serialize($value);
+}
+
+/**
+ * Löscht den Wert einer Session Variable.
+ * 
+ * Variablen werden Instanzabhängig gelöscht.
+ */
+function rex_unset_session($varname)
+{
+  global $REX;
+
+  unset($_SESSION[$varname][$REX['INSTNAME']]);
 }
 
 /**
