@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet eine Kategorie im Medienpool ab
  * @package redaxo3
- * @version $Id: class.oomediacategory.inc.php,v 1.24 2006/01/11 13:44:35 kills Exp $
+ * @version $Id: class.oomediacategory.inc.php,v 1.25 2006/08/28 08:20:56 kills Exp $
  */
 
 class OOMediaCategory
@@ -101,7 +101,7 @@ class OOMediaCategory
   /**
    * @access public
    */
-  function & getRootCategories($ignore_offlines = true)
+  function & getRootCategories()
   {
     $qry = 'SELECT id FROM '.OOMediaCategory :: _getTableName().' WHERE re_id = 0 order by name';
     $sql = new sql();

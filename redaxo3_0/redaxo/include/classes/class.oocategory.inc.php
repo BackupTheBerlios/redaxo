@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet eine Kategorie der Struktur ab
  * @package redaxo3
- * @version $Id: class.oocategory.inc.php,v 1.20 2006/04/10 15:21:45 kristinus Exp $
+ * @version $Id: class.oocategory.inc.php,v 1.21 2006/08/28 08:20:56 kills Exp $
  */
 
 class OOCategory extends OORedaxo
@@ -164,7 +164,7 @@ class OOCategory extends OORedaxo
    * all articles with status 0 will be
    * excempt from this list!
    */
-  function getArticles($ignore_offlines = true, $clang = false)
+  function getArticles($ignore_offlines = false, $clang = false)
   {
     return OOArticle :: getArticlesOfCategory($this->_id, $ignore_offlines, $clang);
   }

@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.26 2006/08/09 11:55:29 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.27 2006/08/28 08:20:56 kills Exp $
  */
 
 class OORedaxo
@@ -315,10 +315,6 @@ class OORedaxo
    * Object Function:
    * Return a array of all parentCategories for an Breadcrumb for instance
    * Returns an array of OORedaxo objects sorted by $prior.
-   *
-   * If $ignore_offlines is set to TRUE,
-   * all categories with status 0 will be
-   * excempt from this list!
    */
   function getParentTree()
   {
