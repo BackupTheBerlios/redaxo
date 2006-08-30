@@ -3,7 +3,7 @@
 /** 
  * Klasse zur Erstellung eines HTML-Pulldown-Menues (Select-Box)  
  * @package redaxo3 
- * @version $Id: class.select.inc.php,v 1.20 2006/08/17 11:44:32 kills Exp $ 
+ * @version $Id: class.select.inc.php,v 1.21 2006/08/30 12:45:34 kills Exp $ 
  */
 
 ################ Class Select
@@ -110,6 +110,26 @@ class select
   function add_option($name, $value, $id = 0, $re_id = 0)
   {
     $this->options[$re_id][] = array ($name, $value, $id);
+  }
+  
+  function add_sql_options($qry)
+  {
+    $sql = new sql;
+    // $sql->debugsql = true;
+    $options = $sql->get_array($qry, MYSQL_NUM);
+    $grouped = isset ($option[2]) && isset ($option[3]);
+  
+    foreach ($options as $option)
+    {
+      if ($grouped)
+      {
+        $select->add_option($option[0], $option[1], $option[2], $option[3]);
+      }
+      else
+      {
+        $select->add_option($option[0], $option[1]);
+      }
+    }
   }
 
   ############### show select
