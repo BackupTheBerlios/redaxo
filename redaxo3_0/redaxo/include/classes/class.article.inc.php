@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.65 2006/08/07 17:42:02 kills Exp $
+ * @version $Id: class.article.inc.php,v 1.66 2006/08/31 08:48:30 kills Exp $
  */
 
 class article
@@ -608,7 +608,7 @@ class article
     global $REX;
     
     // -- preg match redaxo://[ARTICLEID]-[CLANG] --
-    preg_match_all("/redaxo:\/\/([0-9]*)\-([0-9]*)\/?/im",$content,$matches=array(),PREG_SET_ORDER);
+    preg_match_all("/redaxo:\/\/([0-9]*)\-([0-9]*)\/?/im",$content,$matches,PREG_SET_ORDER);
     foreach($matches as $match)
     {
       if(empty($match)) continue;
@@ -618,7 +618,7 @@ class article
     }
     
     // -- preg match redaxo://[ARTICLEID] --
-    preg_match_all("/redaxo:\/\/([0-9]*)\/?/im",$content,$matches=array(),PREG_SET_ORDER);
+    preg_match_all("/redaxo:\/\/([0-9]*)\/?/im",$content,$matches,PREG_SET_ORDER);
     foreach($matches as $match)
     {
       if(empty($match)) continue;
