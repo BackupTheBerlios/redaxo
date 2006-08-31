@@ -4,7 +4,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.55 2006/07/28 07:42:07 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.56 2006/08/31 08:07:38 kills Exp $
  */
 
 class OOMedia
@@ -523,11 +523,9 @@ class OOMedia
     // Alternativtext hinzufügen    
     if (!isset($params['alt']))
     {
-      if (($desc = $this->getDescription()) != '')
-      {
-        $params['alt'] = htmlspecialchars($desc);
-      }
+      $params['alt'] = htmlspecialchars($this->getDescription());
     }
+    
     // Titel hinzufügen    
     if (!isset($params['title']))
     {
