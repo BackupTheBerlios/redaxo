@@ -12,7 +12,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.sql.inc.php,v 1.36 2006/08/31 09:07:10 kills Exp $ 
+ * @version $Id: class.sql.inc.php,v 1.37 2006/08/31 12:07:31 kills Exp $ 
  */
 class sql
 {
@@ -425,6 +425,15 @@ class sql
       $value = "'" . mysql_real_escape_string($value) . "'";
     }
     return $value;
+  }
+  
+  /**
+   * Gibt die Serverversion zurück
+   */
+  function getServerVersion()
+  {
+    global $REX;
+    return $REX['MYSQL_VERSION']; 
   }
 
   /**
