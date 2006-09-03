@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.66 2006/08/31 08:48:30 kills Exp $
+ * @version $Id: class.article.inc.php,v 1.67 2006/09/03 15:36:13 kills Exp $
  */
 
 class article
@@ -27,7 +27,7 @@ class article
   var $getSlice;
 
   // ----- Konstruktor
-  function article($article_id = null)
+  function article($article_id = null, $clang = null)
   {
     $this->article_id = 0;
     $this->template_id = 0;
@@ -44,9 +44,11 @@ class article
     // action=index.php#1212 problem
     if (strpos($_SERVER["HTTP_USER_AGENT"],"Mac") and strpos($_SERVER["HTTP_USER_AGENT"],"MSIE") ) $this->setanker = FALSE;
 
-    if ( $article_id !== null) {
-      $this->setArticleId( $article_id);
-    }
+    if($clang !== null)
+      $this->setCLang($clang);
+      
+    if ($article_id !== null) 
+      $this->setArticleId($article_id);
   }
 
   // ----- Slice Id setzen für Editiermodus
@@ -66,12 +68,10 @@ class article
   {
     global $REX;
 
-    $article_id = (int) $article_id;
     $this->article_id = (int) $article_id;
 
     if (!$REX['GG'])
     {
-
       // ---------- select article
       $this->ARTICLE = new sql;
       // $this->ARTICLE->debugsql = 1;
