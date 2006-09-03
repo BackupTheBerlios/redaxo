@@ -3,7 +3,7 @@
 /**
  * Abtrackte Basisklasse für REX_VARS innerhalb der Module
  * @package redaxo3
- * @version $Id: class.rex_var.inc.php,v 1.4 2006/08/31 08:44:19 kills Exp $
+ * @version $Id: class.rex_var.inc.php,v 1.5 2006/09/03 17:24:16 kills Exp $
  */
 
 class rex_var
@@ -53,18 +53,13 @@ class rex_var
   
   /**
    * GetValue Wrapper, da hier immer auf die gleiche Tabelle gearbeitet wird und 
-   * mit MySQL 3.x mit Tabellenprefix angegeben werden muss, da der gleichnamige
+   * mit MySQL 3.x mit Tabellenprefix angegeben werden muss, da der SQL gleichnamige
    * Spalten unterschiedlicher Tabellen enthält. 
    */
   function getValue(&$sql, $value)
   {
     global $REX;
-    $tmp = $sql->getValue($value);
-    if ($tmp == '')
-    {
-      $tmp = $sql->getValue($REX['TABLE_PREFIX'].'article_slice.'.$value);
-    }
-    return $tmp;
+    return $sql->getValue($REX['TABLE_PREFIX'].'article_slice.'.$value);
   }
   
   /**
