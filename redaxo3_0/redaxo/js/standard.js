@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.24 2006/07/12 14:59:55 kills Exp $
+ @version $Id: standard.js,v 1.25 2006/09/04 08:52:48 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -64,26 +64,6 @@ var pageloaded = false;
 function init()
 {
         pageloaded = true;
-}
-
-// -------------------------------------------------------------------------------------------------------------------
-// Vorraussetzung ist, das zuvor eine height per CSS gesetzt wurde!
-function alter_box_height(boxid, pixelvalue)
-{
-    if ( typeof( boxid) == "object") {
-       for (var i = 0; i < boxid.length; i++) {
-          alter_box_height(boxid[i], pixelvalue);
-       }
-       return false;
-    }
-	var box = new getObj( boxid);
-	var boxheight = parseInt(box.style.height);
-	var newheight = boxheight + pixelvalue;
-	if (newheight > 0)
-	{
-		box.style.height = newheight + "px";
-	}
-	return false;
 }
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -430,4 +410,20 @@ function uncheckInput(id)
       input.checked = ''; 
     }
   }
+}
+
+// Wenn der 2. Parameter angegeben wird, wird die style.display Eigenschaft auf den entsprechenden wert gesetzt,
+// Sonst wird der wert getoggled
+function toggleElement(id,display)
+{
+   var needle = new getObj(id);
+   
+   if (typeof(display) == 'undefined')
+   {
+     needle.style.display = needle.style.display == '' ? 'none' : '';
+   }
+   else
+   {
+     needle.style.display = display;
+   }
 }
