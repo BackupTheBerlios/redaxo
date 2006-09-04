@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.article.inc.php,v 1.69 2006/09/04 08:22:41 kills Exp $
+ * @version $Id: class.article.inc.php,v 1.70 2006/09/04 08:30:39 kills Exp $
  */
 
 class article
@@ -584,7 +584,18 @@ class article
 
   // ---- Artikelweite globale variablen werden ersetzt
   function replaceCommonVars($content) {
-    global $REX_USER;
+    
+    static $user_id = null;
+    
+    // UserId gibts nur im Backend
+    if($user_id === null)
+    {
+      global $REX_USER;
+      if($REX_USER)
+        $user_id = $REX_USER->getValue('login');
+      else
+        $user_id = '';
+    }
     
     static $search = array(
        'REX_ARTICLE_ID',
@@ -599,7 +610,7 @@ class article
       $this->category_id,
       $this->clang,
       $this->getTemplateId(),
-      $REX_USER->getValue('login')
+      $user_id      
     );
     
     return str_replace($search, $replace,$content);
