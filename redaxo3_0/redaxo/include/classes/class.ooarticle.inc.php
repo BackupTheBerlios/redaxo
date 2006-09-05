@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.25 2006/07/05 17:06:50 vscope Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.26 2006/09/05 09:33:32 kristinus Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -74,7 +74,7 @@ class OOArticle extends OORedaxo
     }
 
     $artlist = array ();
-    $sql = new sql;
+    $sql = new rex_sql;
     //              $sql->debugsql = true;
     $sql->setQuery("select ".implode(',', OORedaxo :: getClassVars())." from ".$REX['TABLE_PREFIX']."article where name like '$article_name' AND clang='$clang' $offline $cats");
     for ($i = 0; $i < $sql->getRows(); $i ++)
@@ -102,7 +102,7 @@ class OOArticle extends OORedaxo
       $clang = $REX['CUR_CLANG'];
     $offline = $ignore_offlines ? " and status = 1 " : "";
     $artlist = array ();
-    $sql = new sql;
+    $sql = new rex_sql;
     $sql->setQuery("select ".implode(',', OORedaxo :: getClassVars())." FROM ".$REX['TABLE_PREFIX']."article WHERE type_id = '$article_type_id' AND clang='$clang' $offline");
     for ($i = 0; $i < $sql->getRows(); $i ++)
     {

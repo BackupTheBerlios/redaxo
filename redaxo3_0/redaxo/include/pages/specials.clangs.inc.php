@@ -3,7 +3,7 @@
 /**
  * Verwaltung der Content Sprachen 
  * @package redaxo3
- * @version $Id: specials.clangs.inc.php,v 1.3 2006/07/31 08:56:31 kills Exp $
+ * @version $Id: specials.clangs.inc.php,v 1.4 2006/09/05 09:36:23 kristinus Exp $
  */
  
 // -------------- Defaults
@@ -65,7 +65,7 @@ elseif (!empty ($edit_clang_save))
 }
 
 // seltype
-$sel = new select;
+$sel = new rex_select;
 $sel->set_name('clang_id');
 $sel->set_id('clang_id');
 $sel->set_size(1);

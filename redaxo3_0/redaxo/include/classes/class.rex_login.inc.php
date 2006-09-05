@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: class.rex_login.inc.php,v 1.1 2006/09/05 09:04:40 kristinus Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.2 2006/09/05 09:33:32 kristinus Exp $
  */ 
 
 // class login 1.0
@@ -14,7 +14,7 @@
 // www.pergopa.de
 // ersteller: j.kristinus
 
-class rex_login_sql extends sql{
+class rex_login_sql extends rex_sql{
 
   function isValueOf($feld, $prop)
   {

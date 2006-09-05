@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet eine Kategorie im Medienpool ab
  * @package redaxo3
- * @version $Id: class.oomediacategory.inc.php,v 1.25 2006/08/28 08:20:56 kills Exp $
+ * @version $Id: class.oomediacategory.inc.php,v 1.26 2006/09/05 09:33:32 kristinus Exp $
  */
 
 class OOMediaCategory
@@ -65,7 +65,7 @@ class OOMediaCategory
 
     $query = 'SELECT * FROM '.OOMediaCategory :: _getTableName().' WHERE id = '.$id;
 
-    $sql = new sql();
+    $sql = new rex_sql();
     //        $sql->debugsql = true;
     $result = $sql->get_array($query);
     $result = $result[0];
@@ -104,7 +104,7 @@ class OOMediaCategory
   function & getRootCategories()
   {
     $qry = 'SELECT id FROM '.OOMediaCategory :: _getTableName().' WHERE re_id = 0 order by name';
-    $sql = new sql();
+    $sql = new rex_sql();
     $sql->setQuery($qry);
     $result = $sql->get_array();
 
@@ -130,7 +130,7 @@ class OOMediaCategory
   function & getCategoryByName($name)
   {
     $query = 'SELECT id FROM '.OOMediaCategory :: _getTableName().' WHERE name = "'.$name.'"';
-    $sql = new sql();
+    $sql = new rex_sql();
     //$sql->debugsql = true;
     $result = $sql->get_array($query);
 
@@ -213,7 +213,7 @@ class OOMediaCategory
     {
       $this->_children = array ();
       $qry = 'SELECT id FROM '.OOMediaCategory :: _getTableName().' WHERE re_id = '.$this->getId().' ORDER BY name ';
-      $sql = new sql();
+      $sql = new rex_sql();
       $sql->setQuery($qry);
       $result = $sql->get_array();
       if (is_array($result))
@@ -242,7 +242,7 @@ class OOMediaCategory
     {
       $this->_files = array ();
       $qry = 'SELECT file_id FROM '.OOMedia :: _getTableName().' WHERE category_id = '.$this->getId();
-      $sql = new sql();
+      $sql = new rex_sql();
       $sql->setQuery($qry);
       $result = $sql->get_array();
       if (is_array($result))
@@ -326,7 +326,7 @@ class OOMediaCategory
   {
     $qry = 'INSERT INTO '.$this->_getTableName();
     $qry .= $this->_getSQLSetString();
-    $sql = new sql(); //        $sql->debugsql = true;
+    $sql = new rex_sql(); //        $sql->debugsql = true;
     //        echo $qry;
     //        return;
     $sql->query($qry);
@@ -340,7 +340,7 @@ class OOMediaCategory
     $qry = 'UPDATE '.$this->_getTableName();
     $qry .= $this->_getSQLSetString();
     $qry .= ' WHERE id = "'.$this->getId().'" LIMIT 1';
-    $sql = new sql(); //        $sql->debugsql = true;
+    $sql = new rex_sql(); //        $sql->debugsql = true;
     //        echo $qry;
     //        return;
     $sql->query($qry);
@@ -387,7 +387,7 @@ class OOMediaCategory
     }
 
     $qry = 'DELETE FROM '.$this->_getTableName().' WHERE id = '.$this->getId().' LIMIT 1';
-    $sql = new sql(); //        $sql->debugsql = true;
+    $sql = new rex_sql(); //        $sql->debugsql = true;
     //        echo $qry;
     //        return;
     $sql->query($qry);

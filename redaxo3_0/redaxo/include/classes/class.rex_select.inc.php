@@ -3,7 +3,7 @@
 /** 
  * Klasse zur Erstellung eines HTML-Pulldown-Menues (Select-Box)  
  * @package redaxo3 
- * @version $Id: class.rex_select.inc.php,v 1.1 2006/09/05 08:58:33 kristinus Exp $ 
+ * @version $Id: class.rex_select.inc.php,v 1.2 2006/09/05 09:33:32 kristinus Exp $ 
  */
 
 ################ Class Select
@@ -114,7 +114,7 @@ class rex_select
   
   function add_sql_options($qry)
   {
-    $sql = new sql;
+    $sql = new rex_sql;
     // $sql->debugsql = true;
     $options = $sql->get_array($qry, MYSQL_NUM);
   
