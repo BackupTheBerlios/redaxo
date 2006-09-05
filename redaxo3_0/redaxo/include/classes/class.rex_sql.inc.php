@@ -12,9 +12,9 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.sql.inc.php,v 1.37 2006/08/31 12:07:31 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.1 2006/09/05 08:58:33 kristinus Exp $ 
  */
-class sql
+class rex_sql
 {
   var $values; // Werte von setValue
 
@@ -32,7 +32,7 @@ class sql
   var $error; // Fehlertext
   var $errno; // Fehlernummer
 
-  function sql($DBID = 1)
+  function rex_sql($DBID = 1)
   {
     global $REX;
 
