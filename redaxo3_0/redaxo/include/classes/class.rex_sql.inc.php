@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.3 2006/09/05 09:33:32 kristinus Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.4 2006/09/05 10:06:49 kristinus Exp $ 
  */
 
 class rex_sql
@@ -358,7 +358,7 @@ class rex_sql
    */
   function printError($select)
   {
-    if ($this->debugsql === 2 && strlen($this->getError()) > 0 || $this->debugsql === true)
+    if ($this->debugsql === 2 && strlen($this->getError()) > 0 || $this->debugsql == true)
     {
       echo '<hr />' . "\n";
       echo 'Query: ' . nl2br(htmlspecialchars($select)) . "<br />\n";
