@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: class.login.inc.php,v 1.18 2006/08/02 07:56:16 kristinus Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.1 2006/09/05 09:04:40 kristinus Exp $
  */ 
 
 // class login 1.0

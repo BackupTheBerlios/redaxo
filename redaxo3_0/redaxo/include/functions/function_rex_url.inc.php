@@ -3,15 +3,8 @@
 /** 
  * URL Funktionen  
  * @package redaxo3 
- * @version $Id: function_rex_url.inc.php,v 1.2 2006/09/05 08:42:06 kristinus Exp $ 
+ * @version $Id: function_rex_url.inc.php,v 1.3 2006/09/05 09:05:11 kristinus Exp $ 
  */ 
-
-// ----------------------------------------- Redaxo 2.* functions
-
-function getUrlByid($id, $clang = "", $params = "")
-{
-  return rex_getUrl($id, $clang, $params);
-}
 
 // ----------------------------------------- Parse Article Name for Url
 

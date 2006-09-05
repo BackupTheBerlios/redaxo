@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.compat.inc.php,v 1.1 2006/09/05 08:58:33 kristinus Exp $ 
+ * @version $Id: class.compat.inc.php,v 1.2 2006/09/05 09:04:40 kristinus Exp $ 
  */
 
 class sql extends rex_sql{
@@ -17,9 +17,18 @@ class select extends rex_select{
 
   function select()
   {
-    parent:select();
+    parent::select();
   }
 }
+
+class article extends rex_article{
+
+  function article($article_id = null, $clang = null)
+  {
+    parent::rex_article($article_id, $clang);
+  }
+}
+
 
 // ----------------------------------------- Redaxo 2.* functions
 
