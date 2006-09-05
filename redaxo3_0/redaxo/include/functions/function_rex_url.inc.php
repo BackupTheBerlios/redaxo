@@ -3,7 +3,7 @@
 /** 
  * URL Funktionen  
  * @package redaxo3 
- * @version $Id: function_rex_url.inc.php,v 1.1 2006/09/05 08:34:08 kristinus Exp $ 
+ * @version $Id: function_rex_url.inc.php,v 1.2 2006/09/05 08:42:06 kristinus Exp $ 
  */ 
 
 // ----------------------------------------- Redaxo 2.* functions
@@ -74,6 +74,13 @@ function rex_getUrl($id = '', $clang = '', $params = '')
   {
     $clang = $REX['CUR_CLANG'];
   }
+
+  // ----- Backend
+  if ($REX['REDAXO'])
+  {
+    return 'index.php?page=content&amp;article_id='.$id.'&amp;clang='.$clang;	
+  }
+
 
   // ----- get params
   $param_string = '';
