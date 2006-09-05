@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet eine Kategorie im Medienpool ab
  * @package redaxo3
- * @version $Id: class.oomediacategory.inc.php,v 1.26 2006/09/05 09:33:32 kristinus Exp $
+ * @version $Id: class.oomediacategory.inc.php,v 1.27 2006/09/05 15:39:19 kristinus Exp $
  */
 
 class OOMediaCategory
@@ -17,8 +17,6 @@ class OOMediaCategory
   var $_name = "";
   // path
   var $_path = "";
-  // hide
-  var $_hide = "";
 
   // createdate
   var $_createdate = "";
@@ -84,7 +82,6 @@ class OOMediaCategory
 
     $cat->_name = $result['name'];
     $cat->_path = $result['path'];
-    $cat->_hide = $result['hide'];
 
     $cat->_createdate = $result['createdate'];
     $cat->_updatedate = $result['updatedate'];
