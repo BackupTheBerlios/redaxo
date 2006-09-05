@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.65 2006/08/31 08:59:08 kills Exp $ 
+ * @version $Id: functions.inc.php,v 1.66 2006/09/05 08:37:45 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -92,7 +92,7 @@ if (!$REX['GG'])
 
 // ----- FUNCTIONS
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_globals.inc.php';
-include_once $REX['INCLUDE_PATH'].'/functions/function_rex_modrewrite.inc.php';
+include_once $REX['INCLUDE_PATH'].'/functions/function_rex_url.inc.php';
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_extension.inc.php';
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_other.inc.php';
 

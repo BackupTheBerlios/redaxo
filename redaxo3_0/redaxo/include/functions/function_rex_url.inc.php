@@ -3,7 +3,7 @@
 /** 
  * URL Funktionen  
  * @package redaxo3 
- * @version $Id: function_rex_modrewrite.inc.php,v 1.27 2006/03/12 19:56:57 kills Exp $ 
+ * @version $Id: function_rex_url.inc.php,v 1.1 2006/09/05 08:34:08 kristinus Exp $ 
  */ 
 
 // ----------------------------------------- Redaxo 2.* functions
