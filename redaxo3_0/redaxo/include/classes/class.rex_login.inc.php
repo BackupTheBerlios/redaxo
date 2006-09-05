@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: class.rex_login.inc.php,v 1.3 2006/09/05 10:06:49 kristinus Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.4 2006/09/05 10:44:38 kristinus Exp $
  */ 
 
 // class login 1.0
@@ -33,6 +33,7 @@ class rex_login_sql extends rex_sql{
   {
     return $this->isValueOf("rights",$perm);
   }
+  
 }
 
 class rex_login{

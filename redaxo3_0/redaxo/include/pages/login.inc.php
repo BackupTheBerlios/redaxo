@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: login.inc.php,v 1.5 2006/07/25 06:53:22 tbaddade Exp $
+ * @version $Id: login.inc.php,v 1.6 2006/09/05 10:44:51 kristinus Exp $
  */ 
 
 rex_title("Login","");
@@ -25,6 +25,7 @@ echo '
 <form action="index.php" method="post" id="loginformular">
   <fieldset>
     <legend class="rex-lgnd">Login</legend>
+    <input type="hidden" name="javascript" value="0" id="javascript" />
     <input type="hidden" name="page" value="structure" />
     <p>
       <label for="REX_ULOGIN">'.$I18N->msg('login_name').':</label>
@@ -42,6 +43,9 @@ echo '
    <!-- 
    var needle = new getObj("REX_ULOGIN");
    needle.obj.focus();
+
+   var needle = new getObj("javascript");
+   needle.obj.value = 1;
    //--> 
 </script>
 <!-- *** OUTPUT OF LOGIN-FORM - END *** -->
