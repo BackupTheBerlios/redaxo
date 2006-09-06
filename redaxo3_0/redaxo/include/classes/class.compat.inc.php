@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.compat.inc.php,v 1.2 2006/09/05 09:04:40 kristinus Exp $ 
+ * @version $Id: class.compat.inc.php,v 1.3 2006/09/06 07:22:24 kills Exp $ 
  */
 
 class sql extends rex_sql{
@@ -35,6 +35,11 @@ class article extends rex_article{
 function getUrlByid($id, $clang = "", $params = "")
 {
   return rex_getUrl($id, $clang, $params);
+}
+
+function title($head, $subtitle = '', $styleclass = "grey", $width = '770px')
+{
+  return rex_title($head, $subtitle, $styleclass, $width);
 }
 
 
