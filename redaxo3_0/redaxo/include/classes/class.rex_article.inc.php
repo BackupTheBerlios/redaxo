@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.3 2006/09/05 15:39:19 kristinus Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.4 2006/09/08 14:43:57 kills Exp $
  */
 
 class rex_article
@@ -223,7 +223,6 @@ class rex_article
 
           $MODULESELECT = new rex_select;
           $MODULESELECT->set_name("module_id");
-          $MODULESELECT->set_id("module_id");
           $MODULESELECT->set_size("1");
           $MODULESELECT->set_selectextra("onchange='this.form.submit();'");
           $MODULESELECT->add_option("----------------------------  ".$I18N->msg("add_block"),'');
@@ -267,6 +266,8 @@ class rex_article
             }else
             {
               // ----- BLOCKAUSWAHL - SELECT
+              $MODULESELECT->set_id("module_id". $I_ID);
+              
               $slice_content .= '
               <form action="'. $form_url .'" method="get">
                 <fieldset>
@@ -389,6 +390,8 @@ class rex_article
           }else
           {
             // ----- BLOCKAUSWAHL - SELECT
+            $MODULESELECT->set_id("module_id". $I_ID);
+              
             $slice_content = '
             <form action="'. $form_url .'" method="get">
               <fieldset>
