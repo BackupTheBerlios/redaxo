@@ -3,7 +3,7 @@
 /**
  * 
  * @package redaxo3
- * @version $Id: specials.articletypes.inc.php,v 1.3 2006/09/05 09:36:23 kristinus Exp $
+ * @version $Id: specials.articletypes.inc.php,v 1.4 2006/09/08 12:00:39 kills Exp $
  */
  
 // -------------- Defaults
@@ -41,7 +41,7 @@ elseif (!empty ($delete_article_type))
   if ($type_id != 1)
   {
     $delete = new rex_sql;
-    $result = $delete->get_array("SELECT name,id FROM ".$REX['TABLE_PREFIX']."article WHERE type_id = $type_id");
+    $result = $delete->getArray("SELECT name,id FROM ".$REX['TABLE_PREFIX']."article WHERE type_id = $type_id");
     if (is_array($result))
     {
       $message = $I18N->msg("article_type_still_used")."<br>";

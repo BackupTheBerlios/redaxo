@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.compat.inc.php,v 1.3 2006/09/06 07:22:24 kills Exp $ 
+ * @version $Id: class.compat.inc.php,v 1.4 2006/09/08 11:59:48 kills Exp $ 
  */
 
 class sql extends rex_sql{
@@ -10,6 +10,11 @@ class sql extends rex_sql{
   function sql($DBID = 1)
   {
     parent::rex_sql($DBID);
+  }
+  
+  function getArray($sql = "", $fetch_type = MYSQL_ASSOC)
+  {
+    return $this->getArray($sql, $fetch_type);
   }
 }
 

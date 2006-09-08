@@ -4,7 +4,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.57 2006/09/05 09:33:32 kristinus Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.58 2006/09/08 11:59:48 kills Exp $
  */
 
 class OOMedia
@@ -93,7 +93,7 @@ class OOMedia
     $query = 'SELECT '.OOMedia :: _getTableName().'.*, '.OOMediaCategory :: _getTableName().'.name catname  FROM '.OOMedia :: _getTableJoin().' WHERE file_id = '.$id;
     $sql = new rex_sql();
     //        $sql->debugsql = true;
-    $result = $sql->get_array($query);
+    $result = $sql->getArray($query);
     if (count($result) == 0)
     {
       //trigger_error('No OOMediaCategory found with id "'.$id.'"', E_USER_NOTICE);
@@ -149,7 +149,7 @@ class OOMedia
     $query = 'SELECT file_id FROM '.OOMedia :: _getTableName().' WHERE SUBSTRING(filename,LOCATE( ".",filename)+1) = "'.$extension.'"';
     $sql = new rex_sql();
     //              $sql->debugsql = true;
-    $result = $sql->get_array($query);
+    $result = $sql->getArray($query);
 
     $media = array ();
 
@@ -171,7 +171,7 @@ class OOMedia
   {
     $query = 'SELECT file_id FROM '.OOMedia :: _getTableName().' WHERE filename = "'.$name.'"';
     $sql = new rex_sql();
-    $result = $sql->get_array($query);
+    $result = $sql->getArray($query);
 
     if (is_array($result))
     {
