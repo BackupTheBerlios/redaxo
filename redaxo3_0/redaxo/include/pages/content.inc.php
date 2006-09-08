@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.84 2006/09/05 09:36:23 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.85 2006/09/08 15:23:14 kills Exp $ 
  */ 
 
 
@@ -274,7 +274,9 @@ if ($article->getRows() == 1)
             }
             // ----- / POST ACTION
             
-            if (!(isset($update) and $update == 1)){
+            // Update Button wurde gedrückt?
+            $btn_update = rex_post('btn_update');
+            if ($btn_update != ''){
               $slice_id = "";
               $function = "";
             }
