@@ -4,23 +4,24 @@
 /**
  * REX_VALUE[1], REX_HTML_VALUE[1], REX_PHP, REX_PHP_VALUE[1], REX_HTML, REX_IS_VALUE
  * @package redaxo3
- * @version $Id: class.rex_var_value.inc.php,v 1.5 2006/09/04 08:22:41 kills Exp $
+ * @version $Id: class.rex_var_value.inc.php,v 1.6 2006/09/11 14:32:49 kills Exp $
  */
 
 class rex_var_value extends rex_var
 {
-
+  // --------------------------------- Actions
+  
   function getACRequestValues($REX_ACTION)
   {
-    $values = rex_request("VALUE", "array");
+    $values = rex_request('VALUE', 'array');
     for ($i = 1; $i < 21; $i++)
     {
       if (!isset ($values[$i]))
         $values[$i] = '';
 
-      $REX_ACTION["VALUE"][$i] = stripslashes($values[$i]);
+      $REX_ACTION['VALUE'][$i] = stripslashes($values[$i]);
     }
-    $REX_ACTION["PHP"] = stripslashes(rex_request("INPUT_PHP", "string"));
+    $REX_ACTION['PHP'] = stripslashes(rex_request('INPUT_PHP', 'string'));
     
     return $REX_ACTION;
   }
@@ -31,13 +32,15 @@ class rex_var_value extends rex_var
     for ($i = 1; $i < 21; $i++)
     {
       if ($escape)
-        $sql->setValue('value' . $i, addslashes($REX_ACTION["VALUE"][$i]));
+        $sql->setValue('value' . $i, addslashes($REX_ACTION['VALUE'][$i]));
       else
-        $sql->setValue('value' . $i, $REX_ACTION["VALUE"][$i]);
+        $sql->setValue('value' . $i, $REX_ACTION['VALUE'][$i]);
     }
-    $sql->setValue("php", $REX_ACTION["PHP"]);
+    $sql->setValue('php', $REX_ACTION['PHP']);
   }
 
+  // --------------------------------- Output
+  
   function getBEOutput(& $sql, $content)
   {
     $content = $this->getOutput($sql, $content, true);
