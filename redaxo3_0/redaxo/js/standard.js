@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.25 2006/09/04 08:52:48 kills Exp $
+ @version $Id: standard.js,v 1.26 2006/09/11 10:35:20 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -426,4 +426,6 @@ function toggleElement(id,display)
    {
      needle.style.display = display;
    }
+   
+   return false;
 }
