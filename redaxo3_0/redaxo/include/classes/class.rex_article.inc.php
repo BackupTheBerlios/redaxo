@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.6 2006/09/14 14:46:00 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.7 2006/09/14 14:48:14 kills Exp $
  */
 
 class rex_article
@@ -292,8 +292,15 @@ class rex_article
             // ----- EDIT/DELETE BLOCK - Wenn Rechte vorhanden
             if($REX_USER->hasPerm("module[".$RE_MODUL_ID[$I_ID]."]") || $REX_USER->hasPerm("admin[]"))
             {
+              $msg = '';
+              if($this->slice_id == $RE_CONTS[$I_ID] && $this->message != '')
+              {
+                $msg = '<p class="rex-warning">'. $this->message .'</p>';
+              }
+              
               $mne = '
 			       	<div class="rex-cnt-editmode-slc">
+                '. $msg .'
                 <p class="rex-flLeft" id="slice'. $RE_CONTS[$I_ID] .'">'. $RE_MODUL_NAME[$I_ID] .'</p>
                 <ul class="rex-flRight">
                   <li><a href="index.php?page=content&amp;article_id='. $this->article_id .'&amp;mode=edit&amp;slice_id='. $RE_CONTS[$I_ID] .'&amp;function=edit&amp;clang='. $this->clang .'&amp;ctype='. $this->ctype .'#slice'. $RE_CONTS[$I_ID] .'" class="rex-clr-grn">'. $I18N->msg('edit') .' <span class="rex-hide">'. $RE_MODUL_NAME[$I_ID] .'</span></a></li>
@@ -518,14 +525,7 @@ class rex_article
   {
     global $REX, $REX_ACTION, $FORM, $I18N;
     
-    $msg = '';
-    if($this->message != '')
-    {
-      $msg = '<p class="rex-warning">'. $this->message .'</p>';
-    }
-    
     $slice_content = '
-      '. $msg .'
       <a name="editslice"></a>
       <form enctype="multipart/form-data" action="index.php#slice'.$RE_CONTS.'" method="post" id="REX_FORM">
         <fieldset>
