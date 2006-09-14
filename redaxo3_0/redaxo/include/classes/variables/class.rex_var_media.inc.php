@@ -6,7 +6,7 @@
  * 
  * Alle Variablen die mit REX_FILE beginnnen sind als deprecated anzusehen!
  * @package redaxo3
- * @version $Id: class.rex_var_media.inc.php,v 1.4 2006/09/11 14:32:49 kills Exp $
+ * @version $Id: class.rex_var_media.inc.php,v 1.5 2006/09/14 18:03:23 kills Exp $
  */
 
 class rex_var_media extends rex_var
@@ -32,9 +32,9 @@ class rex_var_media extends rex_var
     for ($i = 1; $i < 11; $i++)
     {
       if ($escape)
-        $sql->setValue('file' . $i, addslashes($REX_ACTION['MEDIA'][$i]));
+        $this->setValue($sql, 'file'. $i, addslashes($REX_ACTION['MEDIA'][$i]));
       else
-        $sql->setValue('file' . $i, $REX_ACTION['MEDIA'][$i]);
+        $this->setValue($sql, 'file'. $i, $REX_ACTION['MEDIA'][$i]);
     }
   }
   

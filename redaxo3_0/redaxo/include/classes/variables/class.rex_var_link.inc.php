@@ -4,7 +4,7 @@
 /**
  * REX_LINK_BUTTON, REX_LINKLIST_BUTTON, REX_LINKLIST
  * @package redaxo3
- * @version $Id: class.rex_var_link.inc.php,v 1.4 2006/09/11 14:35:56 kills Exp $
+ * @version $Id: class.rex_var_link.inc.php,v 1.5 2006/09/14 18:03:23 kills Exp $
  */
 
 class rex_var_link extends rex_var
@@ -30,9 +30,9 @@ class rex_var_link extends rex_var
     for ($i = 1; $i < 11; $i++)
     {
       if ($escape)
-        $sql->setValue('link' . $i, addslashes($REX_ACTION['LINK'][$i]));
+        $this->setValue($sql, 'link'. $i, addslashes($REX_ACTION['LINK'][$i]));
       else
-        $sql->setValue('link' . $i, $REX_ACTION['LINK'][$i]);
+        $this->setValue($sql, 'link'. $i, $REX_ACTION['LINK'][$i]);
     }
   }
   

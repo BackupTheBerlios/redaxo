@@ -4,7 +4,7 @@
 /**
  * REX_VALUE[1], REX_HTML_VALUE[1], REX_PHP, REX_PHP_VALUE[1], REX_HTML, REX_IS_VALUE
  * @package redaxo3
- * @version $Id: class.rex_var_value.inc.php,v 1.6 2006/09/11 14:32:49 kills Exp $
+ * @version $Id: class.rex_var_value.inc.php,v 1.7 2006/09/14 18:03:23 kills Exp $
  */
 
 class rex_var_value extends rex_var
@@ -32,11 +32,11 @@ class rex_var_value extends rex_var
     for ($i = 1; $i < 21; $i++)
     {
       if ($escape)
-        $sql->setValue('value' . $i, addslashes($REX_ACTION['VALUE'][$i]));
+        $this->setValue($sql, 'value' . $i, addslashes($REX_ACTION['VALUE'][$i]));
       else
-        $sql->setValue('value' . $i, $REX_ACTION['VALUE'][$i]);
+        $this->setValue($sql, 'value' . $i, $REX_ACTION['VALUE'][$i]);
     }
-    $sql->setValue('php', $REX_ACTION['PHP']);
+    $this->setValue($sql, 'php', $REX_ACTION['PHP']);
   }
 
   // --------------------------------- Output
@@ -112,6 +112,7 @@ class rex_var_value extends rex_var
   function _matchValue(& $sql, $content, $var, $escape = false, $nl2br = false, $stripPHP = false, $booleanize = false)
   {
     $matches = $this->getInputParams($content, $var);
+    
 
     foreach ($matches as $match)
     {

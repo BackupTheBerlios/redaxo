@@ -3,7 +3,7 @@
 /**
  * Abtrackte Basisklasse für REX_VARS innerhalb der Module
  * @package redaxo3
- * @version $Id: class.rex_var.inc.php,v 1.7 2006/09/11 14:32:49 kills Exp $
+ * @version $Id: class.rex_var.inc.php,v 1.8 2006/09/14 18:05:10 kills Exp $
  */
 
 class rex_var
@@ -95,6 +95,16 @@ class rex_var
   {
     global $REX;
     return $sql->getValue($REX['TABLE_PREFIX'].'article_slice.'.$value);
+  }
+  /**
+   * setValue Wrapper, da hier immer auf die gleiche Tabelle gearbeitet wird und 
+   * mit MySQL 3.x mit Tabellenprefix angegeben werden muss, da der SQL gleichnamige
+   * Spalten unterschiedlicher Tabellen enthält. 
+   */
+  function setValue(&$sql, $fieldname, $value)
+  {
+    global $REX;
+    return $sql->setValue($REX['TABLE_PREFIX'].'article_slice.'.$fieldname, $value);
   }
   
   /**
