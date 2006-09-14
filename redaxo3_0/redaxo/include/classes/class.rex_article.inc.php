@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.7 2006/09/14 14:48:14 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.8 2006/09/14 17:00:08 kills Exp $
  */
 
 class rex_article
@@ -148,7 +148,7 @@ class rex_article
   // ----- 
   function getArticle($curctype = -1)
   {
-    global $module_id,$FORM,$REX_USER,$REX,$REX_SESSION,$REX_ACTION,$I18N;
+    global $module_id,$REX_USER,$REX,$REX_SESSION,$I18N;
 
     $this->ctype = $curctype;
 
@@ -443,7 +443,7 @@ class rex_article
   // ----- Template inklusive Artikel zurückgeben
   function getArticleTemplate()
   {
-    global $FORM,$REX;
+    global $REX;
     ob_start();
     if ($this->getTemplateId() == 0 and $this->article_id != 0)
     {
@@ -473,7 +473,8 @@ class rex_article
   // ----- ADD Slice
   function addSlice($I_ID,$module_id)
   {
-    global $REX,$REX_ACTION,$FORM,$I18N;
+    global $REX,$I18N;
+    
     $MOD = new rex_sql;
     $MOD->setQuery("SELECT * FROM ".$REX['TABLE_PREFIX']."modultyp WHERE id=$module_id");
     if ($MOD->getRows() != 1)
@@ -523,7 +524,7 @@ class rex_article
   // ----- EDIT Slice
   function editSlice($RE_CONTS, $RE_MODUL_IN, $RE_CTYPE)
   {
-    global $REX, $REX_ACTION, $FORM, $I18N;
+    global $REX, $I18N;
     
     $slice_content = '
       <a name="editslice"></a>
