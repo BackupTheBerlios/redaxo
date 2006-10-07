@@ -3,7 +3,7 @@
 /**
  * Artikel Objekt. Zuständig für die Ausgabe eines Artikel mit/ohne Template
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.9 2006/09/14 18:05:10 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.10 2006/10/07 16:12:02 kills Exp $
  */
 
 class rex_article
@@ -693,7 +693,7 @@ class rex_article
     {
       if(empty($match)) continue;
       
-      $url = rex_getURL($match[1]);
+      $url = rex_getURL($match[1], $REX['CUR_CLANG']);
       $content = str_replace($match[0],$url,$content);
     }
 
