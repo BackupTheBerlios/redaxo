@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.67 2006/09/05 09:36:23 kristinus Exp $ 
+ * @version $Id: functions.inc.php,v 1.68 2006/10/17 12:30:06 kills Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -58,15 +58,19 @@ $REX['EXTRAPERM'][] = 'editContentOnly[]';
 
 // ----- standard variables
 $REX['VARIABLES'][] = 'rex_var_globals';
+$REX['VARIABLES'][] = 'rex_var_article';
+$REX['VARIABLES'][] = 'rex_var_template';
 $REX['VARIABLES'][] = 'rex_var_value';
 $REX['VARIABLES'][] = 'rex_var_link';
 $REX['VARIABLES'][] = 'rex_var_media';
+
 
 // ----------------- REDAXO INCLUDES
 include_once $REX['INCLUDE_PATH'].'/classes/class.i18n.inc.php';
 include_once $REX['INCLUDE_PATH'].'/classes/class.rex_sql.inc.php';
 include_once $REX['INCLUDE_PATH'].'/classes/class.rex_select.inc.php';
 include_once $REX['INCLUDE_PATH'].'/classes/class.rex_article.inc.php';
+include_once $REX['INCLUDE_PATH'].'/classes/class.rex_template.inc.php';
 include_once $REX['INCLUDE_PATH'].'/classes/class.rex_login.inc.php';
 include_once $REX['INCLUDE_PATH'].'/classes/class.ooredaxo.inc.php';
 include_once $REX['INCLUDE_PATH'].'/classes/class.oocategory.inc.php';
