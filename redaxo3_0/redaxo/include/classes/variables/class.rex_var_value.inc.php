@@ -2,9 +2,15 @@
 
 
 /**
- * REX_VALUE[1], REX_HTML_VALUE[1], REX_PHP, REX_PHP_VALUE[1], REX_HTML, REX_IS_VALUE
+ * REX_VALUE[1],
+ * REX_HTML_VALUE[1],
+ * REX_PHP_VALUE[1],
+ * REX_PHP,
+ * REX_HTML,
+ * REX_IS_VALUE
+ * 
  * @package redaxo3
- * @version $Id: class.rex_var_value.inc.php,v 1.7 2006/09/14 18:03:23 kills Exp $
+ * @version $Id: class.rex_var_value.inc.php,v 1.8 2006/10/17 12:25:53 kills Exp $
  */
 
 class rex_var_value extends rex_var

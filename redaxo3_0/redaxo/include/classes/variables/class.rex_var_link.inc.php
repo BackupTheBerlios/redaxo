@@ -1,10 +1,12 @@
 <?php
 
-
 /**
- * REX_LINK_BUTTON, REX_LINKLIST_BUTTON, REX_LINKLIST
+ * REX_LINK_BUTTON,
+ * REX_LINKLIST_BUTTON,
+ * REX_LINKLIST
+ * 
  * @package redaxo3
- * @version $Id: class.rex_var_link.inc.php,v 1.5 2006/09/14 18:03:23 kills Exp $
+ * @version $Id: class.rex_var_link.inc.php,v 1.6 2006/10/17 12:24:18 kills Exp $
  */
 
 class rex_var_link extends rex_var
