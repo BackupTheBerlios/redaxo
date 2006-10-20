@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.68 2006/10/19 21:06:07 kills Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.69 2006/10/20 17:57:17 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -145,7 +145,7 @@ function rex_generateArticle($id, $refreshall = true)
       $params[$field] = $CONT->getValue($field);
 
     // ----- Extension Point    
-    $params = rex_register_extension_point('GENERATE_ART_META', $params);
+    $params = rex_register_extension_point('ART_META_PARAMS', $params);
     
     $content = '<?php'."\n";
     
