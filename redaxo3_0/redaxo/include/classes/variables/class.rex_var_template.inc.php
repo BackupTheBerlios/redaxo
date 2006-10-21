@@ -4,7 +4,7 @@
  * REX_TEMPLATE[2]
  * 
  * @package redaxo3
- * @version $Id: class.rex_var_template.inc.php,v 1.1 2006/10/17 12:25:32 kills Exp $
+ * @version $Id: class.rex_var_template.inc.php,v 1.2 2006/10/21 10:53:45 kills Exp $
  */
 
 class rex_var_template extends rex_var
@@ -20,7 +20,6 @@ class rex_var_template extends rex_var
   {
     $matches = array ();
     $id = '';
-    $clang = '';
 
     $match = $this->matchVar($content, $varname);
     foreach ($match as $param_str)
