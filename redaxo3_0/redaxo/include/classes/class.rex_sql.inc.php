@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.6 2006/09/14 18:59:33 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.7 2006/10/21 17:44:40 kills Exp $ 
  */
 
 class rex_sql
@@ -37,6 +37,7 @@ class rex_sql
     // MySQL Version bestimmen
     if ($REX['MYSQL_VERSION'] == '')
     {
+      $this->setQuery('SET SQL_MODE=""');
       $res = $this->getArray('SELECT VERSION() as VERSION');
       if(preg_match('/([0-9]+\.([0-9\.])+)/', $res[0]['VERSION'], $matches))
       {
