@@ -3,7 +3,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.90 2006/09/14 19:00:21 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.91 2006/10/21 17:39:10 kills Exp $ 
  */ 
 
 
@@ -207,7 +207,7 @@ if ($article->getRows() == 1)
               {
                 $obj->setACValues($newsql,$REX_ACTION,true);
               }
-    
+                  
               if ($function == 'edit')
               {
                 $newsql->setValue('updatedate',time());
@@ -282,7 +282,6 @@ if ($article->getRows() == 1)
             $btn_update = rex_post('btn_update');
             if ($btn_update == '')
             {
-              $slice_id = '';
               $function = '';
             }
             
@@ -580,15 +579,10 @@ if ($article->getRows() == 1)
     // ------------------------------------------ WARNING
     if(!isset($message))
       $message = '';
-    
+      
     if ($mode != 'edit' && $message != '')
     {
        echo '<p class="rex-warning">'. $message .'</p>';
-    }
-    if (isset($_REQUEST["msg"]) and $_REQUEST["msg"] != "")
-    {
-      var_dump("<h2>gibts ja gar nicht</h2>");
-       echo '<p class="rex-warning">'. $_REQUEST["msg"] .'</p>';
     }
     
     echo'
