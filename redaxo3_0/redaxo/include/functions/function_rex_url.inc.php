@@ -3,7 +3,7 @@
 /** 
  * URL Funktionen  
  * @package redaxo3 
- * @version $Id: function_rex_url.inc.php,v 1.3 2006/09/05 09:05:11 kristinus Exp $ 
+ * @version $Id: function_rex_url.inc.php,v 1.4 2006/10/23 06:17:32 kills Exp $ 
  */ 
 
 // ----------------------------------------- Parse Article Name for Url
@@ -54,6 +54,9 @@ function rex_getUrl($id = '', $clang = '', $params = '')
 {
   global $REX, $article_id;
 
+  $id = (int) $id;
+  $clang = (int) $clang;
+  
   // ----- get id
   if (strlen($id) == 0 || $id == 0)
   {
