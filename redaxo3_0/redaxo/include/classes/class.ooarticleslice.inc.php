@@ -9,7 +9,7 @@
  * This framework can be used in Modules, Templates and PHP-Slices!
  *
  * @package redaxo3
- * @version $Id: class.ooarticleslice.inc.php,v 1.10 2006/09/05 09:33:32 kristinus Exp $
+ * @version $Id: class.ooarticleslice.inc.php,v 1.11 2006/10/24 12:24:22 kills Exp $
  */
 
 class OOArticleSlice
@@ -194,17 +194,6 @@ EOD;
       return new OOArticleSlice($sql->getValue("id"), $sql->getValue("re_article_slice_id"), $sql->getValue("value1"), $sql->getValue("value2"), $sql->getValue("value3"), $sql->getValue("value4"), $sql->getValue("value5"), $sql->getValue("value6"), $sql->getValue("value7"), $sql->getValue("value8"), $sql->getValue("value9"), $sql->getValue("value10"), $sql->getValue("file1"), $sql->getValue("file2"), $sql->getValue("file3"), $sql->getValue("file4"), $sql->getValue("file5"), $sql->getValue("file6"), $sql->getValue("file7"), $sql->getValue("file8"), $sql->getValue("file9"), $sql->getValue("file10"), $sql->getValue("link1"), $sql->getValue("link2"), $sql->getValue("link3"), $sql->getValue("link4"), $sql->getValue("link5"), $sql->getValue("link6"), $sql->getValue("link7"), $sql->getValue("link8"), $sql->getValue("link9"), $sql->getValue("link10"), $sql->getValue("php"), $sql->getValue("html"), $sql->getValue("article_id"), $sql->getValue("modultyp_id"), $sql->getValue("clang"));
     }
     return null;
-  }
-
-  /*
-   * CLASS function:
-   * Return all slices that match the search string
-   * Returns an array of OOArticleSlice objects
-   */
-  function fullTextSearch($searchstring)
-  {
-    // TODO
-    return array ();
   }
 
   /*
