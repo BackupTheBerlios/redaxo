@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.7 2006/10/21 17:44:40 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.8 2006/10/26 16:38:09 kills Exp $ 
  */
 
 class rex_sql
@@ -156,7 +156,7 @@ class rex_sql
   /**
    * Setzt die WHERE Bedienung der Abfrage
    */
-  function where($where)
+  function setWhere($where)
   {
     $this->wherevar = "WHERE $where";
   }
@@ -309,8 +309,7 @@ class rex_sql
    */
   function query($qry)
   {
-    $this->setQuery($qry);
-    return $this->getError() === '';
+    return $this->setQuery($qry);
   }
 
   /**

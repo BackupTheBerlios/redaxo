@@ -3,7 +3,7 @@
 /**
  * Klassen zum erhalten der Rückwärtskompatibilität
  * Dieser werden beim nächsten Versionssprung entfallen
- * @version $Id: class.compat.inc.php,v 1.6 2006/10/17 12:12:38 kills Exp $ 
+ * @version $Id: class.compat.inc.php,v 1.7 2006/10/26 16:38:09 kills Exp $ 
  */
 
 // rex_sql -> sql alias
@@ -22,7 +22,12 @@ class sql extends rex_sql{
   function getLastID()
   {
     return $this->getLastId();
-  } 
+  }
+  
+  function where($where)
+  {
+    $this->setWhere($where);
+  }
 }
 
 // rex_select -> select alias
