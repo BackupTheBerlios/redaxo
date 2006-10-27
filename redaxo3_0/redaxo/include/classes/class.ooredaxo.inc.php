@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.30 2006/10/20 17:57:17 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.31 2006/10/27 09:21:47 kristinus Exp $
  */
 
 class OORedaxo
@@ -25,7 +25,6 @@ class OORedaxo
   var $_url = "";
   var $_file = "";
   var $_type_id = "";
-  var $_teaser = "";
   var $_keywords = "";
   var $_description = "";
   var $_attributes = "";

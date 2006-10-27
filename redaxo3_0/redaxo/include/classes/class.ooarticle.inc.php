@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.27 2006/10/17 12:15:16 kills Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.28 2006/10/27 09:21:47 kristinus Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -208,16 +208,6 @@ class OOArticle extends OORedaxo
     return is_object($article) && is_a($article, 'ooarticle');
   }
 
-
-  /*
-   * Object Function:
-   * Returns boolean if teaser
-   */
-  function isTeaser()
-  {
-    if ($this->_teaser == 1) return true;
-    else return false;
-  }
   
   function getValue($value)
   {
