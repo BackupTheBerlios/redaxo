@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.28 2006/10/27 09:21:47 kristinus Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.29 2006/10/27 14:31:24 kristinus Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -70,33 +70,6 @@ class OOArticle extends OORedaxo
     $sql = new rex_sql;
     //              $sql->debugsql = true;
     $sql->setQuery("select ".implode(',', OORedaxo :: getClassVars())." from ".$REX['TABLE_PREFIX']."article where name like '$article_name' AND clang='$clang' $offline $cats");
-    for ($i = 0; $i < $sql->getRows(); $i ++)
-    {
-      foreach (OORedaxo :: getClassVars() as $var)
-      {
-        $article_data[$var] = $sql->getValue($var);
-      }
-      $artlist[] = new OOArticle($article_data, $clang);
-      $sql->next();
-    }
-    return $artlist;
-  }
-
-  /**
-   * CLASS Function:
-   * Return a list of articles which have a certain type.
-   *
-   * Returns an array of OORedaxo objects.
-   */
-  function searchArticlesByType($article_type_id, $ignore_offlines = false, $clang = false)
-  {
-    global $REX;
-    if ($clang === false)
-      $clang = $REX['CUR_CLANG'];
-    $offline = $ignore_offlines ? " and status = 1 " : "";
-    $artlist = array ();
-    $sql = new rex_sql;
-    $sql->setQuery("select ".implode(',', OORedaxo :: getClassVars())." FROM ".$REX['TABLE_PREFIX']."article WHERE type_id = '$article_type_id' AND clang='$clang' $offline");
     for ($i = 0; $i < $sql->getRows(); $i ++)
     {
       foreach (OORedaxo :: getClassVars() as $var)

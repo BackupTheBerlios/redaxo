@@ -3,9 +3,8 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: index.php,v 1.32 2006/09/05 09:37:07 kristinus Exp $ 
+ * @version $Id: index.php,v 1.33 2006/10/27 14:31:24 kristinus Exp $ 
  */ 
-
 
 // ----- ob caching start für output filter
 ob_start();

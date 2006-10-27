@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_other.inc.php,v 1.4 2006/07/27 13:39:12 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.5 2006/10/27 14:31:24 kristinus Exp $
  */
 
 /**
@@ -105,4 +105,19 @@ function _rex_is_writable($item)
 
   return 0;
 }
+
+function rex_getAttributes($name,$content,$default = null)
+{
+	$prop = unserialize($content);
+	if (isset($prop[$name])) return $prop[$name];
+	return $default;
+}
+
+function rex_setAttributes($name,$value,$content)
+{
+	$prop = unserialize($content);
+	$prop[$name] = ($value);
+	return serialize($prop);
+}
+
 ?>
