@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.70 2006/10/30 17:54:59 kills Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.71 2006/10/30 21:58:41 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -1086,8 +1086,8 @@ function rex_generateAddons($ADDONS, $debug = false)
       return 'Konnte Datei "'.$file.'" nicht lesen';
     }
     $fcontent = fread($h, filesize($file));
-    $fcontent = ereg_replace("(\/\/.---.DYN.*\/\/.---.\/DYN)", $content, $fcontent);
     fclose($h);
+    $fcontent = ereg_replace("(\/\/.---.DYN.*\/\/.---.\/DYN)", $content, $fcontent);
 
     if (!$h = fopen($file, "w+"))
     {
