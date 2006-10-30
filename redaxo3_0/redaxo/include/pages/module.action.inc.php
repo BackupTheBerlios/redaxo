@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.16 2006/09/14 19:53:14 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.17 2006/10/30 17:54:59 kills Exp $
  */
 
 $OUT = TRUE;
@@ -85,7 +85,7 @@ if (isset($function) and ($function == "add" or $function == "edit"))
     }else{
       $faction->setValue('updatedate', time());
       $faction->setValue('updateuser', $REX_USER->getValue('login'));
-      $faction->where('id='. $action_id);
+      $faction->setWhere('id='. $action_id);
       $faction->update();
       
       $message = $I18N->msg('action_updated');
