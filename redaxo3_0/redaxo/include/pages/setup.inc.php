@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.52 2006/09/05 11:21:49 kristinus Exp $
+ * @version $Id: setup.inc.php,v 1.53 2006/11/01 10:49:13 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -157,7 +157,6 @@ if ($checkmodus == 1)
     $REX['INCLUDE_PATH'].'/master.inc.php',
     $REX['INCLUDE_PATH'].'/addons.inc.php',
     $REX['INCLUDE_PATH'].'/clang.inc.php',
-    $REX['INCLUDE_PATH'].'/ctype.inc.php',
     $REX['INCLUDE_PATH'].'/generated',
     $REX['INCLUDE_PATH'].'/generated/articles',
     $REX['INCLUDE_PATH'].'/generated/templates',
