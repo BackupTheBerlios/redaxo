@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.69 2006/10/27 14:31:24 kristinus Exp $ 
+ * @version $Id: functions.inc.php,v 1.70 2006/11/10 18:08:39 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -84,6 +84,8 @@ if (!$REX['GG'])
 {
   include_once $REX['INCLUDE_PATH'].'/functions/function_rex_title.inc.php';
   include_once $REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php';
+  include_once $REX['INCLUDE_PATH'].'/classes/class.rex_form.inc.php';
+  include_once $REX['INCLUDE_PATH'].'/classes/class.rex_list.inc.php';
   include_once $REX['INCLUDE_PATH'].'/classes/class.rex_var.inc.php';
   foreach($REX['VARIABLES'] as $key => $value)
   {
