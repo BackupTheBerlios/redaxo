@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.63 2006/11/10 13:12:15 tbaddade Exp $ 
+ * @version $Id: user.inc.php,v 1.64 2006/11/10 13:57:10 tbaddade Exp $ 
  */ 
 
 /*
@@ -647,6 +647,8 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
   <form action="index.php" method="post">
     <fieldset>
       <legend class="rex-lgnd">'.$form_label.'</legend>
+
+      <div class="rex-fldst-wrppr">
       <input type="hidden" name="page" value="user" />
       <input type="hidden" name="save" value="1" />
       '. $add_hidden .'
@@ -753,6 +755,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
 		</div>
 
       '. $add_submit .'
+      </div>
     </fieldset>
   </form>
   </div>

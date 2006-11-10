@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.70 2006/10/27 09:21:47 kristinus Exp $ 
+ * @version $Id: structure.inc.php,v 1.71 2006/11/10 13:57:10 tbaddade Exp $ 
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -227,7 +227,7 @@ elseif (!empty($catadd_function) && $KATPERM && !$REX_USER->hasPerm("editContent
       $template_id = $TMP[$key];
 
     $AART = new rex_sql;
-    // $AART->debugsql = 1;
+    //$AART->debugsql = 1;
     $AART->setTable($REX['TABLE_PREFIX']."article");
     if (!isset ($id) or !$id)
       $id = $AART->setNewId("id");
@@ -490,7 +490,7 @@ if($function == 'add_cat' || $function == 'edit_cat')
 }
 
 echo '
-      <table class="rex-table" summary="'. $I18N->msg('structure_categories_summary', $cat_name) .'">
+      <table class="rex-table rex-table-mrgn" summary="'. $I18N->msg('structure_categories_summary', $cat_name) .'">
         <caption class="rex-hide">'.$I18N->msg('structure_categories_caption', $cat_name).'</caption>
         <colgroup>
           <col width="5%" />

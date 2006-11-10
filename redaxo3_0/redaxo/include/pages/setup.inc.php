@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.54 2006/11/10 08:12:11 tbaddade Exp $
+ * @version $Id: setup.inc.php,v 1.55 2006/11/10 13:57:10 tbaddade Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
