@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.62 2006/10/30 17:54:59 kills Exp $ 
+ * @version $Id: user.inc.php,v 1.63 2006/11/10 13:12:15 tbaddade Exp $ 
  */ 
 
 /*
@@ -797,7 +797,7 @@ if (isset($SHOW) and $SHOW)
     </colgroup>
     <thead>
       <tr>
-        <th><a href="index.php?page=user&amp;FUNC_ADD=1"><img src="pics/user_plus.gif" width="16" height="16" alt="'.$I18N->msg('create_user').'" title="'.$I18N->msg('create_user').'" /></a></th>
+        <th class="rex-icon"><a href="index.php?page=user&amp;FUNC_ADD=1"><img src="pics/user_plus.gif" width="16" height="16" alt="'.$I18N->msg('create_user').'" title="'.$I18N->msg('create_user').'" /></a></th>
         '. $add_th .'
         <th>'.$I18N->msg('name').'</th>
         <th>'.$I18N->msg('login').'</th>
@@ -843,7 +843,7 @@ if (isset($SHOW) and $SHOW)
     
     echo '
       <tr>
-        <td><a href="index.php?page=user&amp;user_id='.$sql->getValue("user_id").'"><img src="pics/user.gif" width="16" height="16" alt="'. $username .'" title="'. $username .'" /></a></td>
+        <td class="rex-icon"><a href="index.php?page=user&amp;user_id='.$sql->getValue("user_id").'"><img src="pics/user.gif" width="16" height="16" alt="'. $username .'" title="'. $username .'" /></a></td>
         '. $add_td .'
         <td><a href="index.php?page=user&amp;user_id='.$sql->getValue("user_id").'">'.$username.'</a></td>
         <td>'.$sql->getValue("login").'</td>
