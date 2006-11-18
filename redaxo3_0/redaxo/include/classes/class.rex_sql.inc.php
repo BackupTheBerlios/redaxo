@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.8 2006/10/26 16:38:09 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.9 2006/11/18 18:36:36 kills Exp $ 
  */
 
 class rex_sql
@@ -31,7 +31,6 @@ class rex_sql
     $this->debugsql = false;
     $this->DBID = $DBID;
     $this->selectDB();
-    $this->zaehler = 0;
     $this->counter = 0;
     
     // MySQL Version bestimmen
@@ -189,15 +188,6 @@ class rex_sql
   }
 
   /**
-   * Setzt den Cursor des Resultsets auf die nächst höhere Stelle
-   * @see #next();
-   */
-  function nextValue()
-  {
-    $this->counter++;
-  }
-
-  /**
    * Setzt den Cursor des Resultsets zurück zum Anfang
    */
   function resetCounter()
@@ -310,6 +300,14 @@ class rex_sql
   function query($qry)
   {
     return $this->setQuery($qry);
+  }
+
+  /**
+   * Setzt den Cursor des Resultsets auf die nächst höhere Stelle
+   */
+  function previous()
+  {
+    $this->counter--;
   }
 
   /**
