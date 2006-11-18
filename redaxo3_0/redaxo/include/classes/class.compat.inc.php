@@ -3,7 +3,7 @@
 /**
  * Klassen zum erhalten der Rückwärtskompatibilität
  * Dieser werden beim nächsten Versionssprung entfallen
- * @version $Id: class.compat.inc.php,v 1.7 2006/10/26 16:38:09 kills Exp $ 
+ * @version $Id: class.compat.inc.php,v 1.8 2006/11/18 18:35:56 kills Exp $ 
  */
 
 // rex_sql -> sql alias
@@ -24,6 +24,15 @@ class sql extends rex_sql{
     return $this->getLastId();
   }
   
+  /**
+   * Setzt den Cursor des Resultsets auf die nächst höhere Stelle
+   * @see #next();
+   */
+  function nextValue()
+  {
+  	$this->next();
+  }
+
   function where($where)
   {
     $this->setWhere($where);
