@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet eine Kategorie im Medienpool ab
  * @package redaxo3
- * @version $Id: class.oomediacategory.inc.php,v 1.28 2006/09/08 11:59:48 kills Exp $
+ * @version $Id: class.oomediacategory.inc.php,v 1.29 2006/11/21 12:15:38 kills Exp $
  */
 
 class OOMediaCategory
@@ -326,7 +326,7 @@ class OOMediaCategory
     $sql = new rex_sql(); //        $sql->debugsql = true;
     //        echo $qry;
     //        return;
-    $sql->query($qry);
+    $sql->setQuery($qry);
     return $sql->getError();
   } /**
             * @access protected
@@ -340,7 +340,7 @@ class OOMediaCategory
     $sql = new rex_sql(); //        $sql->debugsql = true;
     //        echo $qry;
     //        return;
-    $sql->query($qry);
+    $sql->setQuery($qry);
     return $sql->getError();
   } /**
             * @access protected
@@ -387,7 +387,7 @@ class OOMediaCategory
     $sql = new rex_sql(); //        $sql->debugsql = true;
     //        echo $qry;
     //        return;
-    $sql->query($qry);
+    $sql->setQuery($qry);
     return $sql->getError();
   }
 }

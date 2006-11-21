@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.13 2006/10/21 17:29:48 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.14 2006/11/21 12:15:38 kills Exp $
  */
 
 class rex_article
@@ -214,7 +214,7 @@ class rex_article
           $RE_MODUL_ID[$this->CONT->getValue("re_article_slice_id")] = $this->CONT->getValue($REX['TABLE_PREFIX']."modultyp.id");
           $RE_MODUL_NAME[$this->CONT->getValue("re_article_slice_id")] = $this->CONT->getValue($REX['TABLE_PREFIX']."modultyp.name");
           $RE_C[$this->CONT->getValue("re_article_slice_id")] = $i;
-          $this->CONT->nextValue();
+          $this->CONT->next();
         }
 
         // ---------- moduleselect: nur module nehmen auf die der user rechte hat

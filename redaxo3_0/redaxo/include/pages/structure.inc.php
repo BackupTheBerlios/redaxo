@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.71 2006/11/10 13:57:10 tbaddade Exp $ 
+ * @version $Id: structure.inc.php,v 1.72 2006/11/21 12:17:44 kills Exp $ 
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -693,7 +693,7 @@ if ($category_id > -1)
       $TMPL_SEL->add_option($TEMPLATES->getValue("name"), $TEMPLATES->getValue("id"));
     }
     $TEMPLATE_NAME[$TEMPLATES->getValue("id")] = $TEMPLATES->getValue("name");
-    $TEMPLATES->nextValue();
+    $TEMPLATES->next();
   }
   $TEMPLATE_NAME[0] = $I18N->msg("template_default_name");
 

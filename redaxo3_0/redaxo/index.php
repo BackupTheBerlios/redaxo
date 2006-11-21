@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.45 2006/09/05 11:22:04 kristinus Exp $
+ * @version $Id: index.php,v 1.46 2006/11/21 12:17:01 kills Exp $
  */ 
 
 // ----- caching start für output filter
@@ -86,7 +86,7 @@ else
     if ($REX_ULOGIN != "")
     {
         $fvs = new rex_sql;
-        $fvs->query("update ".$REX['TABLE_PREFIX']."user set login_tries=login_tries+1,lasttrydate='".time()."' where login='".$REX_ULOGIN."'");
+        $fvs->setQuery("update ".$REX['TABLE_PREFIX']."user set login_tries=login_tries+1,lasttrydate='".time()."' where login='".$REX_ULOGIN."'");
     }
     
   } else
@@ -96,7 +96,7 @@ else
     if ($REX_ULOGIN != "")
     {
       $fvs = new rex_sql;
-      $fvs->query("update ".$REX['TABLE_PREFIX']."user set login_tries=0,lasttrydate='".time()."' where login='".$REX_ULOGIN."'");
+      $fvs->setQuery("update ".$REX['TABLE_PREFIX']."user set login_tries=0,lasttrydate='".time()."' where login='".$REX_ULOGIN."'");
   		header("Location: index.php?page=structure");
   		exit;
     }

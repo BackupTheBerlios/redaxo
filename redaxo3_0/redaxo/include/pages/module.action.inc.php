@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.19 2006/11/10 13:57:10 tbaddade Exp $
+ * @version $Id: module.action.inc.php,v 1.20 2006/11/21 12:17:44 kills Exp $
  */
 
 $OUT = TRUE;
@@ -30,7 +30,7 @@ if (isset($function) and $function == "delete")
   }
   else
   {
-    $del->query("DELETE FROM ".$REX['TABLE_PREFIX']."action WHERE id='$action_id' LIMIT 1");
+    $del->setQuery("DELETE FROM ".$REX['TABLE_PREFIX']."action WHERE id='$action_id' LIMIT 1");
     $message = $I18N->msg("action_deleted");
   }
 }

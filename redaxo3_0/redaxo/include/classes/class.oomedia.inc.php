@@ -4,7 +4,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.58 2006/09/08 11:59:48 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.59 2006/11/21 12:15:38 kills Exp $
  */
 
 class OOMedia
@@ -835,7 +835,7 @@ class OOMedia
     $qry .= $this->_getSQLSetString();
 
     $sql = new rex_sql();
-    $sql->query($qry);
+    $sql->setQuery($qry);
 
     return $sql->getError();
   }
@@ -851,7 +851,7 @@ class OOMedia
     $qry .= ' WHERE file_id = "'.$this->getId().'" LIMIT 1';
 
     $sql = new rex_sql();
-    $sql->query($qry);
+    $sql->setQuery($qry);
 
     return $sql->getError();
   }
@@ -883,7 +883,7 @@ class OOMedia
     $qry = 'DELETE FROM '.$this->_getTableName().' WHERE file_id = '.$this->getId().' LIMIT 1';
     $sql = new rex_sql();
     //        $sql->debugsql = true;
-    $sql->query($qry);
+    $sql->setQuery($qry);
 
     ### todo - loeschen des files
     unlink($REX['INCLUDE_PATH']."/../../files/".$this->getFileName());
