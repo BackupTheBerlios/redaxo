@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.14 2006/11/21 12:15:38 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.15 2006/12/07 16:34:34 kills Exp $
  */
 
 class rex_article
@@ -31,6 +31,8 @@ class rex_article
   // ----- Konstruktor
   function rex_article($article_id = null, $clang = null)
   {
+  	global $REX;
+  	
     $this->article_id = 0;
     $this->template_id = 0;
     $this->clang = 0;
@@ -48,6 +50,8 @@ class rex_article
 
     if($clang !== null)
       $this->setCLang($clang);
+    else
+      $this->setClang($REX['CUR_CLANG']);
       
     if ($article_id !== null) 
       $this->setArticleId($article_id);
