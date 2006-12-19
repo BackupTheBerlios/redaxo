@@ -4,7 +4,7 @@
 /** 
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.59 2006/11/21 12:15:38 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.60 2006/12/19 15:39:00 kills Exp $
  */
 
 class OOMedia
@@ -747,7 +747,7 @@ class OOMedia
    */
   function toString()
   {
-    return 'OOMedia, "'.$this->getId().'", "'.$this->getName().'"'."<br/>\n";
+    return 'OOMedia, "'.$this->getId().'", "'.$this->getFileName().'"'."<br/>\n";
   }
 
   // new functions by vscope
