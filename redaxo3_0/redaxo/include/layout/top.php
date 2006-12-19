@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: top.php,v 1.38 2006/08/04 17:41:38 kills Exp $
+ * @version $Id: top.php,v 1.39 2006/12/19 21:21:02 kills Exp $
  */
 
 if (!isset ($page_name))
@@ -148,7 +148,7 @@ if (isset ($LOGIN) AND $LOGIN)
       }
       else
       {
-        echo '<li>' . $border . '<a href="javascript:' . $popup . '">' . $name . '</a></li>' . "\n";
+        echo '<li>' . $border . '<a href="' . $popup . '">' . $name . '</a></li>' . "\n";
       }
     }
     next($REX['ADDON']['status']);
