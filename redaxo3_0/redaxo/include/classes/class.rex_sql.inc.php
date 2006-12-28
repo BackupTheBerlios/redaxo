@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.12 2006/12/28 20:07:43 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.13 2006/12/28 20:08:07 kills Exp $ 
  */
 
 class rex_sql
@@ -171,7 +171,7 @@ class rex_sql
    * @param $value Name der Spalte
    * @param [$row] Zeile aus dem ResultSet
    */
-  function getValue($feldname, $row = null, $debug = false)
+  function getValue($feldname, $row = null)
   {
   	if(isset($this->values[$feldname]))
   		return $this->values[$feldname];
