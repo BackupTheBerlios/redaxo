@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.11 2006/11/23 11:34:52 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.12 2006/12/28 20:07:43 kills Exp $ 
  */
 
 class rex_sql
@@ -171,7 +171,7 @@ class rex_sql
    * @param $value Name der Spalte
    * @param [$row] Zeile aus dem ResultSet
    */
-  function getValue($feldname, $row = null)
+  function getValue($feldname, $row = null, $debug = false)
   {
   	if(isset($this->values[$feldname]))
   		return $this->values[$feldname];
@@ -182,7 +182,7 @@ class rex_sql
       $_row = $row;
     }
 
-    return @ mysql_result($this->result, $_row, $feldname);
+    return mysql_result($this->result, $_row, $feldname);
   }
 
   /**
