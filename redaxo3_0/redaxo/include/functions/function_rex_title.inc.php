@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.24 2006/07/24 13:10:18 kills Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.25 2006/12/28 16:30:18 kristinus Exp $
  */ 
  
 /**
@@ -150,8 +150,10 @@ function rex_get_subtitle($subline, $attr = '')
       // Auf der aktiven Seite den Link nicht anzeigen            
       if ($active)
       {
-        $format = '%s';
-        $subtitle[] = sprintf($format, $label);
+        // $format = '%s';
+        // $subtitle[] = sprintf($format, $label);
+        $format = '<a href="?page='. $cur_page .'&amp;subpage=%s"%s>%s</a>';
+        $subtitle[] = sprintf($format, $link, $attr, $label);
       }
       elseif ($link == '')
       {

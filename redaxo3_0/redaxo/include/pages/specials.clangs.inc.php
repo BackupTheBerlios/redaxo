@@ -3,18 +3,19 @@
 /**
  * Verwaltung der Content Sprachen 
  * @package redaxo3
- * @version $Id: specials.clangs.inc.php,v 1.4 2006/09/05 09:36:23 kristinus Exp $
+ * @version $Id: specials.clangs.inc.php,v 1.5 2006/12/28 16:30:18 kristinus Exp $
  */
  
 // -------------- Defaults
 $clang_id = rex_request('clang_id', 'int');
 $clang_name = rex_request('clang_name', 'string');
-
+$func = rex_request('func', 'string');
 
 // -------------- Form Submits
 $add_clang_save = rex_post('add_clang_save', 'string');
 $edit_clang_save = rex_post('edit_clang_save', 'string');
 $del_clang_save = rex_post('del_clang_save', 'string');
+
 
 // ----- delete clang
 if (!empty ($del_clang_save))
@@ -23,7 +24,7 @@ if (!empty ($del_clang_save))
   {
     rex_deleteCLang($clang_id);
     $message = $I18N->msg('clang_deleted');
-    unset ($func);
+    $func = '';
     unset ($clang_id);
   }
 }
@@ -38,7 +39,7 @@ if (!empty ($add_clang_save))
       $message = $I18N->msg('clang_created');
       rex_addCLang($clang_id, $clang_name);
       unset ($clang_id);
-      unset ($func);
+   	  $func = '';
     }
     else
     {
@@ -55,11 +56,11 @@ if (!empty ($add_clang_save))
 }
 elseif (!empty ($edit_clang_save))
 {
-  if ($clang_id > 0)
+  if ($clang_id >= 0)
   {
     rex_editCLang($clang_id, $clang_name);
     $message = $I18N->msg('clang_edited');
-    unset ($func);
+    $func = '';
     unset ($clang_id);
   }
 }

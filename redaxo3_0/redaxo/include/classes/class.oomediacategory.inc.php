@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet eine Kategorie im Medienpool ab
  * @package redaxo3
- * @version $Id: class.oomediacategory.inc.php,v 1.29 2006/11/21 12:15:38 kills Exp $
+ * @version $Id: class.oomediacategory.inc.php,v 1.30 2006/12/28 16:30:18 kristinus Exp $
  */
 
 class OOMediaCategory
@@ -66,7 +66,6 @@ class OOMediaCategory
     $sql = new rex_sql();
     //        $sql->debugsql = true;
     $result = $sql->getArray($query);
-    $result = $result[0];
 
     if (count($result) == 0)
     {
@@ -75,6 +74,7 @@ class OOMediaCategory
       return $return;
     }
 
+    $result = $result[0];
     $cat = & new OOMediaCategory();
 
     $cat->_id = $result['id'];

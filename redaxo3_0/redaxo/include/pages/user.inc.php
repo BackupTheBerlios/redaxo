@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.65 2006/11/21 12:17:44 kills Exp $ 
+ * @version $Id: user.inc.php,v 1.66 2006/12/28 16:30:18 kristinus Exp $ 
  */ 
 
 /*
@@ -572,7 +572,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
         if ($sql->hasPerm($name)) $sel_media->set_selected( $cat_id);
       }
       
-      $sqlmodule->resetCounter();
+      $sqlmodule->reset();
       for ($i=0;$i<$sqlmodule->getRows();$i++)
       {
         $name = "module[".$sqlmodule->getValue("id")."]";
@@ -580,7 +580,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
         $sqlmodule->next();
       }
   
-      $sqlsprachen->resetCounter();
+      $sqlsprachen->reset();
       for ($i=0;$i<$sqlsprachen->getRows();$i++)
       {
         $name = "clang[".$sqlsprachen->getValue("id")."]";

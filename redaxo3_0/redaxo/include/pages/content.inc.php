@@ -4,7 +4,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.96 2006/11/21 12:17:44 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.97 2006/12/28 16:30:18 kristinus Exp $ 
  */
 
 /*
@@ -511,7 +511,7 @@ if ($article->getRows() == 1)
     {
       $tadd = '
                   <ul>
-                    <li>Typen : </li>';
+                    <li>'.$I18N->msg('content_types').': </li>';
       $i = 1;
       foreach ($REX['CTYPE'] as $key => $val)
       {
@@ -519,7 +519,8 @@ if ($article->getRows() == 1)
                         <li>';
         if ($key == $ctype)
         {
-          $tadd .= $val;
+          // $tadd .= $val;
+          $tadd .= '<a href="index.php?page=content&amp;clang=' . $clang . '&amp;ctype=' . $key . '&amp;category_id=' . $category_id . '&amp;article_id=' . $article_id . '" class="active">' . $val . '</a>';
         }
         else
         {
@@ -540,13 +541,15 @@ if ($article->getRows() == 1)
 
     if ($mode == 'edit')
     {
-      $menu_edit = '<span>' . $I18N->msg('edit_mode') . '</span>';
+      // $menu_edit = '<span>' . $I18N->msg('edit_mode') . '</span>';
+      $menu_edit = '<a href="index.php?page=content&amp;article_id=' . $article_id . '&amp;mode=edit&amp;clang=' . $clang . '&amp;ctype=' . $ctype . '" class="active">' . $I18N->msg('edit_mode') . '</a>';
       $menu_meta = '<a href="index.php?page=content&amp;article_id=' . $article_id . '&amp;mode=meta&amp;clang=' . $clang . '&amp;ctype=' . $ctype . '">' . $I18N->msg('metadata') . '</a>';
     }
     else
     {
       $menu_edit = '<a href="index.php?page=content&amp;article_id=' . $article_id . '&amp;mode=edit&amp;clang=' . $clang . '&amp;ctype=' . $ctype . '">' . $I18N->msg('edit_mode') . '</a>';
-      $menu_meta = '<span>' . $I18N->msg('metadata') . '</span>';
+      // $menu_meta = '<span>' . $I18N->msg('metadata') . '</span>';
+      $menu_meta = '<a href="index.php?page=content&amp;article_id=' . $article_id . '&amp;mode=meta&amp;clang=' . $clang . '&amp;ctype=' . $ctype . '" class="active">' . $I18N->msg('metadata') . '</a>';
     }
 
     $menu .= '
