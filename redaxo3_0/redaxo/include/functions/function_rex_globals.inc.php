@@ -3,7 +3,7 @@
  * Getter Funktionen zum Handling von Superglobalen Variablen 
  * 
  * @package redaxo3
- * @version $Id: function_rex_globals.inc.php,v 1.4 2006/09/14 19:52:29 kills Exp $
+ * @version $Id: function_rex_globals.inc.php,v 1.5 2006/12/28 19:40:15 kills Exp $
  */
 
 /**
@@ -162,6 +162,7 @@ function _rex_array_key_cast($haystack, $needle, $vartype, $default = '')
  *  - float
  *  - object
  *  - array
+ *  - '' (nicht casten)
  * 
  * @access private
  */
