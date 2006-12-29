@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: top.php,v 1.40 2006/12/28 09:26:15 kills Exp $
+ * @version $Id: top.php,v 1.41 2006/12/29 12:23:35 kills Exp $
  */
 
 if (!isset ($page_name))
@@ -21,6 +21,7 @@ if ($page_name != '')
   <title><?php echo $page_title ?></title>
   <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $I18N->msg("htmlcharset"); ?>" />
   <meta http-equiv="Content-Language" content="<?php echo $I18N->msg("htmllang"); ?>" />
+	<meta http-equiv="Cache-Control" content="no-cache"> 
   <meta http-equiv="Pragma" content="no-cache" />
   <link rel="stylesheet" type="text/css" href="css/backend.css" media="screen, projection, print" />
   <link rel="stylesheet" type="text/css" href="css/table-old.css" media="screen, projection, print" />
