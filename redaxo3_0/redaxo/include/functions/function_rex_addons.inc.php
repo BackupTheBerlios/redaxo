@@ -4,7 +4,7 @@
 /**
  * Addon Funktionen 
  * @package redaxo3
- * @version $Id: function_rex_addons.inc.php,v 1.3 2006/12/30 19:13:39 kills Exp $
+ * @version $Id: function_rex_addons.inc.php,v 1.4 2007/01/10 18:14:31 kills Exp $
  */
 
 function rex_install_addon($addons, $addonname)
@@ -208,6 +208,11 @@ function rex_read_addons_folder($folder = '')
 
 // ------------------------------------- Helpers
 
+/**
+ * Importiert die gegebene SQL-Datei in die Datenbank
+ * 
+ * @return true bei Erfolg, sonst eine Fehlermeldung 
+ */
 function rex_install_dump($file, $debug = false)
 {
   $sql = new rex_sql();
@@ -224,7 +229,7 @@ function rex_install_dump($file, $debug = false)
     }
   }
 
-  return $error;
+  return $error == '' ? true : $error;
 }
 
 function rex_install_prepare_query($qry)
