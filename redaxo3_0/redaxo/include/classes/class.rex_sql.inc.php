@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.13 2006/12/28 20:08:07 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.14 2007/01/10 18:08:53 kills Exp $ 
  */
 
 class rex_sql
@@ -240,7 +240,7 @@ class rex_sql
    */
   function update()
   {
-    $this->setQuery('UPDATE `' . $this->table . '` SET ' . $this->buildSetQuery() . $this->wherevar);
+    $this->setQuery('UPDATE `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar);
     return $this->getError() === '';
   }
 
@@ -253,7 +253,7 @@ class rex_sql
    */
   function insert()
   {
-    $this->setQuery('INSERT INTO `' . $this->table . '` SET ' . $this->buildSetQuery() . $this->wherevar);
+    $this->setQuery('INSERT INTO `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar);
     return $this->getError() === '';
   }
 
@@ -266,7 +266,7 @@ class rex_sql
    */
   function replace()
   {
-    $this->setQuery('REPLACE INTO `' . $this->table . '` SET ' . $this->buildSetQuery() . $this->wherevar);
+    $this->setQuery('REPLACE INTO `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar);
     return $this->getError() === '';
   }
 
