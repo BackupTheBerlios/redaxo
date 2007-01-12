@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.19 2007/01/12 18:37:25 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.20 2007/01/12 18:55:50 kills Exp $
  */
 
 class rex_article
@@ -235,12 +235,12 @@ class rex_article
           $MODULESELECT = new rex_select;
           $MODULESELECT->setName("module_id");
           $MODULESELECT->setSize("1");
-          $MODULESELECT->setSelectextra("onchange='this.form.submit();'");
+          $MODULESELECT->setAttribute('onchange', 'this.form.submit();');
           $MODULESELECT->addOption("----------------------------  ".$I18N->msg("add_block"),'');
   
           for ($i=0;$i<$MODULE->getRows();$i++)
           {
-            if ($REX_USER->hasPerm("module[".$MODULE->getValue("id")."]") || $REX_USER->hasPerm("admin[]")) $MODULESELECT->add_option($MODULE->getValue("name"),$MODULE->getValue("id"));
+            if ($REX_USER->hasPerm("module[".$MODULE->getValue("id")."]") || $REX_USER->hasPerm("admin[]")) $MODULESELECT->addOption($MODULE->getValue("name"),$MODULE->getValue("id"));
             $MODULE->next();
           }
         }
