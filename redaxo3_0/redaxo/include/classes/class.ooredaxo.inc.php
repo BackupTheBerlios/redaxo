@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.34 2007/01/12 11:57:24 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.35 2007/01/12 18:37:25 kills Exp $
  */
 
 class OORedaxo
@@ -91,10 +91,7 @@ class OORedaxo
       }
 
       // ----- Extension Point
-      $params = rex_register_extension_point('ART_META_PARAMS', array());
-
-      foreach($params as $name => $value)
-        $vars[] = $name;
+      $vars = rex_register_extension_point('ART_META_PARAMS', $vars);
     }
 
     return $vars;
