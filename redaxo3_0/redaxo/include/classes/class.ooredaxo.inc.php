@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.33 2006/12/21 10:56:47 tbaddade Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.34 2007/01/12 11:57:24 kills Exp $
  */
 
 class OORedaxo
@@ -24,7 +24,6 @@ class OORedaxo
   var $_label = "";
   var $_url = "";
   var $_file = "";
-  var $_type_id = "";
   var $_keywords = "";
   var $_description = "";
   var $_attributes = "";
@@ -239,15 +238,6 @@ class OORedaxo
   function getFileMedia()
   {
     return OOMedia :: getMediaByFileName($this->_file);
-  }
-
-  /*
-   * Accessor Method:
-   * returns the Type ID of the article
-   */
-  function getTypeId()
-  {
-    return $this->_type_id;
   }
 
   /*
