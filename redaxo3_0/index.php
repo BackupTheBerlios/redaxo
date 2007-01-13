@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: index.php,v 1.33 2006/10/27 14:31:24 kristinus Exp $ 
+ * @version $Id: index.php,v 1.34 2007/01/13 15:01:53 kills Exp $ 
  */ 
 
 // ----- ob caching start für output filter
@@ -56,8 +56,16 @@ elseif($REX_ARTICLE->setArticleId($REX['NOTFOUND_ARTICLE_ID']))
 }
 else
 {
-  echo 'Kein Startartikel selektiert / No starting Article selected. Please click here to enter <a href="redaxo/index.php">redaxo</a>';
-  $REX['STATS'] = 0;
+	if($REX['SETUP'])
+	{
+		header('Location: redaxo/index.php');
+		exit();
+	}
+	else
+	{
+	  echo 'Kein Startartikel selektiert / No starting Article selected. Please click here to enter <a href="redaxo/index.php">redaxo</a>';
+	  $REX['STATS'] = 0;
+	}
 }
 
 // ----- caching end für output filter
