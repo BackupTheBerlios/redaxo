@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.75 2007/01/12 15:51:37 kills Exp $ 
+ * @version $Id: structure.inc.php,v 1.76 2007/01/17 18:41:25 kristinus Exp $ 
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -407,8 +407,14 @@ elseif (!empty($artedit_function) && $article_id != '' && $KATPERM)
   // ----- EXTENSION POINT
   $amessage = rex_register_extension_point('ART_UPDATED', $amessage, array (
     "id" => $article_id,
-    "status" => $thisArt->getValue("status"
-  ), "name" => $article_name, "re_id" => $category_id, "prior" => $Position_Article, "path" => $KATPATH, "template_id" => $template_id));
+    "status" => $thisArt->getValue("status"), 
+		"name" => $article_name, 
+		"clang" => $clang, 
+		"re_id" => $category_id, 
+		"prior" => $Position_Article, 
+		"path" => $KATPATH, 
+		"template_id" => $template_id)
+		);
 
 }
 elseif ($function == 'artdelete_function' && $article_id != '' && $KATPERM)
