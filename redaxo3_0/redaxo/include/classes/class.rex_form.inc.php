@@ -3,7 +3,7 @@
 /** 
  * Klasse zum erstellen von Listen
  * @package redaxo3 
- * @version $Id: class.rex_form.inc.php,v 1.2 2007/01/12 18:37:38 kills Exp $ 
+ * @version $Id: class.rex_form.inc.php,v 1.3 2007/02/06 15:20:58 kills Exp $ 
  */ 
 
 class rex_form
@@ -154,6 +154,12 @@ class rex_form
 	
 	function &addTextField($name, $value = null, $attributes = array())
 	{
+		return $this->addInputField('text', $name, $value, $attributes);
+	}
+	
+	function &addReadOnlyTextField($name, $value = null, $attributes = array())
+	{
+		$attributes['readonly'] = 'readonly';
 		return $this->addInputField('text', $name, $value, $attributes);
 	}
 	
@@ -402,6 +408,15 @@ class rex_form
 	
 	function save()
 	{
+    // trigger extensions point
+    // Entscheiden zwischen UPDATE <-> CREATE via editMode möglich
+    // Falls die Extension FALSE zurückgibt, nicht speicher, 
+    // um hier die Möglichkeit offen zu haben eigene Validierungen/Speichermechanismen zu implementieren
+    if(rex_register_extension_point('REX_FORM_'.strtoupper($this->getName()).'_SAVE', '', array ('form' => $this)) === false)
+    {
+    	return;
+    }
+		
 		$sql = rex_sql::getInstance();
 		$sql->debugsql =& $this->debug;
 		$sql->setTable($this->tableName);
