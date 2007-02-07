@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: master.inc.php,v 1.26 2007/01/12 19:01:03 kills Exp $ 
+ * @version $Id: master.inc.php,v 1.27 2007/02/07 15:17:01 kills Exp $ 
  */
 
 // -----------------
@@ -34,6 +34,7 @@ $REX['INSTNAME'] = "rex20060101010101";
 $REX['PSWFUNC'] = ""; // wenn erwünscht: md5 / mcrypt ...
 $REX['RELOGINDELAY'] = 5; // bei fehllogin 5 sekunden kein relogin moeglich
 $REX['MAXLOGINS'] = 50; // maximal erlaubte versuche
+$REX['START_PAGE'] = 'structure'; // Page auf die nach dem Login weitergeleitet wird
 
 // ----------------- DB1
 $REX['DB']['1']['HOST'] = "localhost";
