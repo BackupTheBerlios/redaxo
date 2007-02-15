@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.108 2007/01/12 14:09:24 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.109 2007/02/15 12:46:38 kills Exp $ 
  */ 
 
 // TODOS
@@ -940,8 +940,12 @@ if ($subpage=="detail" && $media_method == 'edit_file'){
           $msg .= "<br>".$I18N->msg('pool_file_upload_errortype');
         }
       }
-      $size = @getimagesize($REX['INCLUDE_PATH']."/../../files/$filename");
-
+      if($size = @getimagesize($REX['INCLUDE_PATH']."/../../files/$filename"))
+      {
+				$FILESQL->setValue("width",$size[0]);
+				$FILESQL->setValue("height",$size[1]);
+      }
+			
       $FILESQL->setValue("updatedate",time());
       $FILESQL->setValue("updateuser",$REX_USER->getValue("login"));
       $FILESQL->update();
