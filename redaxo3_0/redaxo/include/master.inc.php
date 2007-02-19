@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: master.inc.php,v 1.27 2007/02/07 15:17:01 kills Exp $ 
+ * @version $Id: master.inc.php,v 1.28 2007/02/19 17:45:48 kristinus Exp $ 
  */
 
 // -----------------
@@ -35,6 +35,9 @@ $REX['PSWFUNC'] = ""; // wenn erwünscht: md5 / mcrypt ...
 $REX['RELOGINDELAY'] = 5; // bei fehllogin 5 sekunden kein relogin moeglich
 $REX['MAXLOGINS'] = 50; // maximal erlaubte versuche
 $REX['START_PAGE'] = 'structure'; // Page auf die nach dem Login weitergeleitet wird
+
+// ----------------- OTHER VARS
+$REX["MEDIAPOOL"]["BLOCKED_EXTENSIONS"] = array(".php",".php3",".php4",".php5",".phtml",".pl",".asp",".aspx",".cfm");
 
 // ----------------- DB1
 $REX['DB']['1']['HOST'] = "localhost";
