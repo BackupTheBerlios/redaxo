@@ -12,7 +12,7 @@
  * 
  * Alle Variablen die mit REX_FILE beginnnen sind als deprecated anzusehen!
  * @package redaxo3
- * @version $Id: class.rex_var_media.inc.php,v 1.7 2006/10/30 17:54:59 kills Exp $
+ * @version $Id: class.rex_var_media.inc.php,v 1.8 2007/02/21 16:55:27 kills Exp $
  */
 
 class rex_var_media extends rex_var
@@ -243,7 +243,6 @@ class rex_var_media extends rex_var
     <a href="#" onclick="javascript:deleteREXMedia(' . $id . ');"><img src="pics/file_del.gif" width="16" height="16" title="Remove Selection" alt="Remove Selection" /></a>
     ';
 
-    $media = $this->stripPHP($media);
     return $media;
   }
 
