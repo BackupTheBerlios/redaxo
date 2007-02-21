@@ -1,19 +1,18 @@
 <?php
 
 /** 
- *  
+ * Layout Kopf des Backends
  * @package redaxo3
- * @version $Id: top.php,v 1.42 2006/12/29 14:13:43 kills Exp $
+ * @version $Id: top.php,v 1.43 2007/02/21 18:12:30 kills Exp $
  */
 
 if (!isset ($page_name))
   $page_name = '';
 
 $page_title = $REX['SERVERNAME'];
+
 if ($page_name != '')
-{
   $page_title .= ' - ' . $page_name;
-}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $I18N->msg("htmllang"); ?>" lang="<?php echo $I18N->msg("htmllang"); ?>">
@@ -34,11 +33,8 @@ if ($page_name != '')
   </script>
 </head>
 <?php
-
 if (isset ($open_header_only) && $open_header_only == true)
-{
   return;
-}
 ?>
 <body onunload="closeAll();">
 <div id="rex-hdr">
@@ -98,35 +94,17 @@ if (isset ($LOGIN) AND $LOGIN)
   {
     $apage = key($REX['ADDON']['status']);
 
-    if (isset ($REX['ADDON']['perm'][$apage]))
-    {
+    $perm = '';
+    if(isset ($REX['ADDON']['perm'][$apage]))
       $perm = $REX['ADDON']['perm'][$apage];
 
-    }
-    else
-    {
-      $perm = '';
-    }
-
-    if (isset ($REX['ADDON']['name'][$apage]))
-    {
+    $name = '';
+    if(isset ($REX['ADDON']['name'][$apage]))
       $name = $REX['ADDON']['name'][$apage];
 
-    }
-    else
-    {
-      $name = '';
-    }
-
-    if (isset ($REX['ADDON']['popup'][$apage]))
-    {
+    $popup = '';
+    if(isset ($REX['ADDON']['popup'][$apage]))
       $popup = $REX['ADDON']['popup'][$apage];
-
-    }
-    else
-    {
-      $popup = '';
-    }
 
     // Leerzeichen durch &nbsp; ersetzen, damit Addonnamen immer in einer Zeile stehen
     $name = str_replace(' ', '&nbsp;', $name);
@@ -142,12 +120,10 @@ if (isset ($LOGIN) AND $LOGIN)
       if ($popup == 1)
       {
         echo '<li>' . $separator . '<a href="javascript:newPoolWindow(\'index.php?page=' . $apage . '\');">' . $name . '</a></li>' . "\n";
-
       }
       elseif ($popup == "" or $popup == 0)
       {
         echo '<li>' . $separator . '<a href="index.php?page=' . $apage . '">' . $name . '</a></li>' . "\n";
-
       }
       else
       {
@@ -156,8 +132,8 @@ if (isset ($LOGIN) AND $LOGIN)
     }
     next($REX['ADDON']['status']);
   }
+  
   echo '</ul>' . "\n";
-
 }
 else
 {
