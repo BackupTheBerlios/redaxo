@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  * 
  * @package redaxo3 
- * @version $Id: class.rex_list.inc.php,v 1.4 2007/01/13 17:48:52 kills Exp $ 
+ * @version $Id: class.rex_list.inc.php,v 1.5 2007/02/21 15:35:50 kills Exp $ 
  */
  
 /*
@@ -86,6 +86,12 @@ class rex_list
 		// --------- Load Env
 	  if($REX['REDAXO'])
 	  	$this->loadBackendConfig();
+	  	
+	  $this->init();
+	}
+	
+	function init()
+	{
 	}
 	
 	// ---------------------- setters/getters
@@ -699,6 +705,10 @@ class rex_list
 				$this->sql->next();
 			}
 			$s .= '    </tbody>'. "\n";
+		}
+		else
+		{
+			$s .= '<tr><td>No Rows Found</td></tr>';
 		}
 		
 		$s .= '  </table>'. "\n";
