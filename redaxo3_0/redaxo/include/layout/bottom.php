@@ -1,4 +1,11 @@
 <?php
+
+/** 
+ * Layout Fuß des Backends
+ * @package redaxo3
+ * @version $Id: bottom.php,v 1.7 2007/02/21 18:12:15 kills Exp $
+ */
+ 
 if (!(isset( $open_header_only) && $open_header_only == true)):
 ?>
 
