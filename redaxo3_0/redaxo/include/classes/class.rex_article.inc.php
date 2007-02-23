@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.21 2007/01/29 17:43:37 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.22 2007/02/23 14:12:50 kills Exp $
  */
 
 class rex_article
@@ -82,9 +82,6 @@ class rex_article
       $qry = "SELECT * FROM ".$REX['TABLE_PREFIX']."article WHERE ".$REX['TABLE_PREFIX']."article.id='$article_id' AND clang='".$this->clang."'";
       $this->ARTICLE = new rex_sql;
       // $this->ARTICLE->debugsql = 1;
-      
-      // ----- EXTENSION POINT
-      $qry = rex_register_extension_point('ART_READ_QUERY', $qry, array('article_id' => $article_id,'clang' => $this->clang));
       
       $this->ARTICLE->setQuery($qry);
 
