@@ -4,7 +4,7 @@
  * Klasse zur Erstellung eines HTML-Pulldown-Menues (Select-Box)
  *   
  * @package redaxo3 
- * @version $Id: class.rex_select.inc.php,v 1.5 2007/01/12 14:09:23 kills Exp $ 
+ * @version $Id: class.rex_select.inc.php,v 1.6 2007/02/23 14:12:14 kills Exp $ 
  */
 
 ################ Class Select
@@ -113,7 +113,17 @@ class rex_select
   ################ selected feld - option value uebergeben
   function setSelected($selected)
   {
-    $this->option_selected[] = $selected;
+  	if(is_array($selected))
+  	{
+  		foreach($selected as $sectvalue)
+  		{
+  			$this->setSelected($sectvalue);
+  		}
+  	}
+  	else
+  	{
+	    $this->option_selected[] = $selected;
+  	}
   }
 
   function resetSelected()
