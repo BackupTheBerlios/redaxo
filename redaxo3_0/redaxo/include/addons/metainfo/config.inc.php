@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.2 2007/02/25 15:10:08 kills Exp $
+ * @version $Id: config.inc.php,v 1.3 2007/03/19 15:10:39 kills Exp $
  */
 
 $mypage = 'metainfo';
@@ -19,7 +19,7 @@ $REX['ADDON']['perm'][$mypage] = 'metainfo[]';
 
 $REX['PERM'][] = 'metainfo[]';
 
-if($REX['REDAXO'])
+if($REX['REDAXO'] && isset($page) && isset($meta))
 {
 	if($page == 'content' && $mode =='meta')
 	{
