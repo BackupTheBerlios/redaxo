@@ -3,11 +3,12 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: index.php,v 1.34 2007/01/13 15:01:53 kills Exp $ 
+ * @version $Id: index.php,v 1.35 2007/03/19 11:06:59 kills Exp $ 
  */ 
 
 // ----- ob caching start für output filter
 ob_start();
+ob_implicit_flush(0);
 
 // --------------------------- ini settings
 

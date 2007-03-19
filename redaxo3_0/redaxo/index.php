@@ -3,12 +3,13 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.47 2007/02/07 15:17:01 kills Exp $
+ * @version $Id: index.php,v 1.48 2007/03/19 11:06:46 kills Exp $
  */ 
 
 // ----- caching start für output filter
 
 ob_start();
+ob_implicit_flush(0);
 
 // ----- REX UNSET
 
