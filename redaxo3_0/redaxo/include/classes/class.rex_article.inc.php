@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.24 2007/03/19 12:32:13 kristinus Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.25 2007/03/19 13:32:53 kristinus Exp $
  */
 
 class rex_article
@@ -246,6 +246,7 @@ class rex_article
         // ---------- SLICE IDS SORTIEREN UND AUSGEBEN
         $I_ID = 0;
         $PRE_ID = 0;
+				$LCTSL_ID = 0;
         $this->CONT->reset();
         $this->article_content = "";
 
