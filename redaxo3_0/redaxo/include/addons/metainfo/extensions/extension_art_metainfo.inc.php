@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_art_metainfo.inc.php,v 1.1 2007/02/23 13:14:45 kills Exp $
+ * @version $Id: extension_art_metainfo.inc.php,v 1.2 2007/03/19 11:04:18 kills Exp $
  */
  
 rex_register_extension('ART_META_FORM', 'rex_a62_metainfo_form');
@@ -26,6 +26,11 @@ function rex_a62_metainfo_form($params)
   
   $params = rex_a62_metainfo_handleSave($params, $fields);
   $article = $params['article'];
+  
+  // Startwert für MEDIABUTTON, MEDIALIST, LINKLIST
+  $media_id = 1;
+  $mlist_id = 1;
+  $link_id  = 1;
   
   for($i = 0; $i < $fields->getRows(); $i++)
   {
@@ -145,8 +150,20 @@ function rex_a62_metainfo_form($params)
   			break;
   		}
   		case 'REX_MEDIA_BUTTON':
+  		{
+  			$field = rex_var_media::getMediaButton($media_id++);
+  			break;
+  		}
   		case 'REX_MEDIALIST_BUTTON':
+  		{
+  			$field = rex_var_media::getMediaListButton($mlist_id++, $value);
+  			break;
+  		}
   		case 'REX_LINK_BUTTON':
+  		{
+  			$field = rex_var_link::getLinkButton($link_id++);
+  			break;
+  		}
   	}
   	
     $s .= '<p>'. "\n";
