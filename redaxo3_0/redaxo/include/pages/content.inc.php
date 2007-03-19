@@ -4,7 +4,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.98 2007/01/12 14:09:24 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.99 2007/03/19 10:16:11 kristinus Exp $ 
  */
 
 /*
@@ -191,9 +191,10 @@ if ($article->getRows() == 1)
 
             if ($REX_ACTION['MSG'] != '')
               $message = $REX_ACTION['MSG'];
-            elseif ($function == 'delete') $message = 'Block konnte nicht gelöscht werden.';
+            elseif ($function == 'delete')
+            	$message = $I18N->msg('slice_deleted_error');
             else
-              $message = 'Eingaben wurde nicht übernommen.';
+              $message = $I18N->msg('slice_saved_error');
 
           }
           else
