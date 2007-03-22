@@ -4,7 +4,7 @@
 /**
  * Abtrackte Basisklasse für REX_VARS innerhalb der Module
  * @package redaxo3
- * @version $Id: class.rex_var.inc.php,v 1.9 2006/10/30 17:54:59 kills Exp $
+ * @version $Id: class.rex_var.inc.php,v 1.10 2007/03/22 10:21:15 kills Exp $
  */
 
 class rex_var
@@ -194,9 +194,7 @@ class rex_var
       foreach ($parts as $part)
       {
         if (empty ($part))
-        {
           continue;
-        }
 
         if ($part == $spacer)
         {
@@ -214,14 +212,15 @@ class rex_var
       $parts = explode(' ', $string);
       foreach ($parts as $part)
       {
+      	if(empty($part))
+      		continue;
+      		
         $variable = explode('=', $part);
         $var_name = $variable[0];
         $var_value = $variable[1];
 
         if (empty ($var_name))
-        {
           continue;
-        }
 
         if ($var_value == $spacer)
         {
