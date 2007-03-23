@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.67 2007/01/12 14:09:24 kills Exp $ 
+ * @version $Id: user.inc.php,v 1.68 2007/03/23 19:55:03 kills Exp $ 
  */ 
 
 /*
@@ -497,6 +497,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
   if (!isset($allcatschecked)) { $allcatschecked = ''; }
   if (!isset($allmcatschecked)) { $allmcatschecked = ''; }
   if (!isset($statuschecked)) { $statuschecked = ''; }
+  if (isset($FUNC_ADD) && $FUNC_ADD) $statuschecked = 'checked';
   
   $add_login_reset_chkbox = '';
   
