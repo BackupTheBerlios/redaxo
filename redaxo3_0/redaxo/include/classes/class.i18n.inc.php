@@ -3,16 +3,8 @@
 /** 
  * Sprachobjekt zur Internationalisierung (I18N)
  * @package redaxo3 
- * @version $Id: class.i18n.inc.php,v 1.19 2006/07/27 09:35:04 kills Exp $ 
+ * @version $Id: class.i18n.inc.php,v 1.20 2007/03/25 17:02:52 kristinus Exp $ 
  */
-
-// class.i18n.inc.php
-// 
-// created 03.04.04 by Carsten Eckelmann, <careck@circle42.com>
-// updated 08.02.06 by Jan Kristinus
-// -- System vereinfacht und Fehlermeldungen vermeiden. 
-//    msg nicht da -> [translate:key]
-
 
 // TODO Kompilierte Sprachfiles bei denen aus ISO Versionen UTF8 generiert werden und Textile möglich ist
  
