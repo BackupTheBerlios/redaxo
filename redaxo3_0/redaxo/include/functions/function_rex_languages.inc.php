@@ -3,7 +3,7 @@
 /** 
  * Dient zur Ausgabe des Sprachen-blocks  
  * @package redaxo3 
- * @version $Id: function_rex_languages.inc.php,v 1.4 2006/06/14 13:37:41 kills Exp $ 
+ * @version $Id: function_rex_languages.inc.php,v 1.5 2007/03/25 17:01:59 kristinus Exp $ 
  */
   
 // rechte einbauen
@@ -20,7 +20,7 @@ if ($num_clang>1)
 <!-- *** OUTPUT OF CLANG-TOOLBAR - START *** -->
    <div id="rex-clang">
      <ul>
-       <li>Sprachen : </li>';
+       <li>'.$I18N->msg("languages").' : </li>';
        
 	$stop = false;
    $i = 1;
