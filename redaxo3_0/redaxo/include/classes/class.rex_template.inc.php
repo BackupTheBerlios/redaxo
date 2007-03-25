@@ -1,10 +1,11 @@
 <?php
+
 /**
  * Template Objekt.
  * Zuständig für die Verarbeitung eines Templates
  * 
  * @package redaxo3
- * @version $Id: class.rex_template.inc.php,v 1.1 2006/10/17 12:22:49 kills Exp $
+ * @version $Id: class.rex_template.inc.php,v 1.2 2007/03/25 17:02:18 kristinus Exp $
  */
  
 class rex_template
@@ -19,6 +20,11 @@ class rex_template
    function getId()
    {
       return $this->id;
+   }
+   
+   function setId($id)
+   {
+      $this->id = (int) $id;
    }
    
    function getTemplate()
