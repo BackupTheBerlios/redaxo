@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.75 2007/03/26 10:35:50 kristinus Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.76 2007/03/26 15:31:11 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -1148,7 +1148,12 @@ function rex_generateTemplate($template_id)
   {
     if($fp = fopen($REX['INCLUDE_PATH']."/generated/templates/".$template_id.".template", "w"))
     {
-      fputs($fp, $sql->getValue('content'));
+    	$content = $sql->getValue('content');
+	  	foreach($REX['VARIABLES'] as $var)
+	  	{
+	  		$content = $var->getTemplate($content);
+	  	}
+      fwrite($fp, $content);
       fclose($fp);
       @ chmod($REX['INCLUDE_PATH']."/generated/templates/". $template_id .".template", $REX['FILEPERM']);
       return true;

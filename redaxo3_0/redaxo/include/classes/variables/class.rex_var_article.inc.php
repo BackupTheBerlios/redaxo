@@ -9,19 +9,24 @@
  * ...
  * 
  * @package redaxo3
- * @version $Id: class.rex_var_article.inc.php,v 1.2 2007/03/26 14:21:43 kills Exp $
+ * @version $Id: class.rex_var_article.inc.php,v 1.3 2007/03/26 15:31:11 kills Exp $
  */
 
 class rex_var_article extends rex_var
 {
   // --------------------------------- Output
   
+  function getTemplate($content)
+  {
+    return $this->matchArticle($content);
+  }
+  
   function getBEOutput(& $sql, $content)
   {
-    $content = $this->matchArticleVar(&$sql, $content);
-    return $this->matchArticle(&$sql, $content);
+    $content = $this->matchArticleVar($content);
+    return $this->matchArticle($content);
   }
-
+  
   function getArticleVarInputParams($content, $varname)
   {
     $matches = array ();
@@ -76,7 +81,7 @@ class rex_var_article extends rex_var
   /**
    * Wert für die Ausgabe
    */
-  function matchArticleVar(& $sql, $content)
+  function matchArticleVar($content)
   {
     global $article_id, $clang;
     
@@ -97,7 +102,7 @@ class rex_var_article extends rex_var
   /**
    * Wert für die Ausgabe
    */
-  function matchArticle(& $sql, $content)
+  function matchArticle($content)
   {
     $var = 'REX_ARTICLE';
     $matches = $this->getArticleInputParams($content, $var);
