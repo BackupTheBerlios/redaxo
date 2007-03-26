@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.74 2007/01/12 18:40:25 kills Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.75 2007/03/26 10:35:50 kristinus Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -312,6 +312,58 @@ function rex_generateLists($re_id)
   }
 
 }
+
+/**
+ * Macht einen Artikel zum Startartikel der eigenen Kategorie
+ * 
+ * @param $aid	Artikel ID
+ */
+function rex_article2startpage($aid){
+
+	global $REX;
+
+	$GAID = array();
+
+	// clang schleife noch einbauen
+	$clang = 0;
+
+  // normalen artikel holen
+	$a1 = new rex_sql;
+	$a1->setQuery("select * from ".$REX['TABLE_PREFIX']."article where id=$aid and startpage=0 and clang=$clang");
+	if ($a1->getRows()!=1) return false;
+
+	// category holen
+	$cat_id = $a1->getValue("re_id");
+
+	// startartikel holen
+	$a2 = new rex_sql;
+	$a2->setQuery("select * from ".$REX['TABLE_PREFIX']."article where id=$cat_id and startpage=1 and clang=$clang");
+	if ($a2->getRows()!=1) return false;
+
+	return true;
+
+	// werte tauschen
+	// catname, catprior, startpage	
+
+
+	
+	// werte anpassen
+	// path, 
+	
+	
+	// umbauen
+	// pfade anpassen
+	// path old und new
+
+	// re/parent ids anpassen
+	
+	
+	// aids speichern und neu generieren.
+	
+	
+	
+}
+
 
 /**
  * Berechnet die Prios der Kategorien in einer Kategorie neu
