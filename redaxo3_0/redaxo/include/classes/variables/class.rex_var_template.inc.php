@@ -4,7 +4,7 @@
  * REX_TEMPLATE[2]
  * 
  * @package redaxo3
- * @version $Id: class.rex_var_template.inc.php,v 1.2 2006/10/21 10:53:45 kills Exp $
+ * @version $Id: class.rex_var_template.inc.php,v 1.3 2007/03/26 15:17:39 kills Exp $
  */
 
 class rex_var_template extends rex_var
@@ -13,7 +13,12 @@ class rex_var_template extends rex_var
   
   function getBEOutput(& $sql, $content)
   {
-    return $this->matchTemplate(&$sql, $content);
+    return $this->matchTemplate($content);
+  }
+  
+  function getTemplate($content)
+  {
+    return $this->matchTemplate($content);
   }
 
   function getInputParams($content, $varname)
@@ -49,7 +54,7 @@ class rex_var_template extends rex_var
   /**
    * Wert für die Ausgabe
    */
-  function matchTemplate(& $sql, $content)
+  function matchTemplate($content)
   {
     $var = 'REX_TEMPLATE';
     $matches = $this->getInputParams($content, $var);

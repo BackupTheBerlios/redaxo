@@ -4,7 +4,7 @@
 /**
  * Abtrackte Basisklasse für REX_VARS innerhalb der Module
  * @package redaxo3
- * @version $Id: class.rex_var.inc.php,v 1.10 2007/03/22 10:21:15 kills Exp $
+ * @version $Id: class.rex_var.inc.php,v 1.11 2007/03/26 15:17:39 kills Exp $
  */
 
 class rex_var
@@ -75,6 +75,14 @@ class rex_var
   function getBEInput(& $sql, $content)
   {
     return $this->getBEOutput($sql, $content);
+  }
+  
+  /**
+   * Ausgabe eines Templates
+   */
+  function getTemplate($content)
+  {
+  	return $content;
   }
 
   /**

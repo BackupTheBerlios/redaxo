@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.25 2007/03/19 13:32:53 kristinus Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.26 2007/03/26 15:17:25 kills Exp $
  */
 
 class rex_article
@@ -512,7 +512,6 @@ class rex_article
       {
         $template_content = $this->getTemplateId()." not found";
       }
-      $template_content = $this->replaceCommonVars( $template_content);
       eval("?>".$template_content);
     }else
     {
@@ -636,13 +635,13 @@ class rex_article
     global $REX;
     
     $tmp = '';
-  	 foreach($REX['VARIABLES'] as $var)
-  	 {
+  	foreach($REX['VARIABLES'] as $var)
+  	{
   		if ($this->mode == 'edit')
   		{
-  		  if (($this->function == 'add' && $sql->getValue($REX['TABLE_PREFIX'].'article_slice.id') == '0') ||
-            ($this->function == 'edit' && $sql->getValue($REX['TABLE_PREFIX'].'article_slice.id') == $this->slice_id))
-  		  {
+  			if (($this->function == 'add' && $sql->getValue($REX['TABLE_PREFIX'].'article_slice.id') == '0') ||
+      			($this->function == 'edit' && $sql->getValue($REX['TABLE_PREFIX'].'article_slice.id') == $this->slice_id))
+  			{
   		  	if (isset($REX['ACTION']['SAVE']) && $REX['ACTION']['SAVE'] === false)
   		  	{
   		  		$sql = new rex_sql();
@@ -671,8 +670,10 @@ class rex_article
   }
 
   // ---- Artikelweite globale variablen werden ersetzt
-  function replaceCommonVars($content) {
-    
+  function replaceCommonVars($content) 
+  {
+  	global $REX;
+  	
     static $user_id = null;
     
     // UserId gibts nur im Backend
