@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.49 2007/03/19 12:27:29 kills Exp $
+ * @version $Id: index.php,v 1.50 2007/03/26 12:41:11 kills Exp $
  */ 
 
 // ----- caching start für output filter
@@ -19,9 +19,9 @@ $REX['HTDOCS_PATH'] = "../";
 $REX['GG'] = false;
 $REX['REDAXO'] = true;
 
-include "include/master.inc.php";
-
 session_start();
+
+include "include/master.inc.php";
 
 // ----- addon/normal page path
 $REX['PAGEPATH'] = "";
@@ -73,7 +73,7 @@ else
   $REX_LOGIN->setUserID($REX['TABLE_PREFIX'].'user.user_id');
   $REX_LOGIN->setUserquery('SELECT * FROM '.$REX['TABLE_PREFIX'].'user WHERE status=1 AND user_id = "USR_UID"');
   $REX_LOGIN->setLoginquery('SELECT * FROM '.$REX['TABLE_PREFIX'].'user WHERE status=1 AND login = "USR_LOGIN" AND psw = "USR_PSW" AND lasttrydate <'. (time()-$REX['RELOGINDELAY']));
-
+  
   if (!$REX_LOGIN->checkLogin())
   {
   	// login failed
