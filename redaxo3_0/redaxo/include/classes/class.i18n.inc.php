@@ -3,7 +3,7 @@
 /** 
  * Sprachobjekt zur Internationalisierung (I18N)
  * @package redaxo3 
- * @version $Id: class.i18n.inc.php,v 1.20 2007/03/25 17:02:52 kristinus Exp $ 
+ * @version $Id: class.i18n.inc.php,v 1.21 2007/03/26 12:40:08 kills Exp $ 
  */
 
 // TODO Kompilierte Sprachfiles bei denen aus ISO Versionen UTF8 generiert werden und Textile möglich ist
@@ -78,7 +78,7 @@ class i18n
   {
     global $REX;
 
-    if (isset ($this->text[$key]))
+    if ($this->hasMsg($key))
     {
       $msg = $this->text[$key];
     }
@@ -99,6 +99,11 @@ class i18n
     }
 
     return preg_replace($patterns, $replacements, $msg);
+  }
+  
+  function hasMsg($key)
+  {
+  	return isset ($this->text[$key]);
   }
   
   /*
