@@ -4,7 +4,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.102 2007/03/26 15:37:51 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.103 2007/03/26 15:40:12 kills Exp $ 
  */
 
 /*
@@ -16,7 +16,6 @@
 unset ($REX_ACTION);
 
 $article = new rex_sql;
-$article->debugsql = true;
 $article->setQuery("
 		SELECT 
 			article.*, template.attributes as template_attributes 
