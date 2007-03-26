@@ -3,7 +3,7 @@
 /** 
  * Klasse zum erstellen von Listen
  * @package redaxo3 
- * @version $Id: class.rex_form.inc.php,v 1.4 2007/02/21 15:35:18 kills Exp $ 
+ * @version $Id: class.rex_form.inc.php,v 1.5 2007/03/26 12:34:23 kills Exp $ 
  */ 
 
 class rex_form
@@ -618,7 +618,7 @@ class rex_form
 		foreach($fieldsets as $fieldsetName => $fieldsetElements)
 		{
 			$s .= '    <fieldset>'. "\n";
-			$s .= '      <legend class="rex-lgnd">'. htmlentities($fieldsetName) .'</legend>'. "\n";
+			$s .= '      <legend class="rex-lgnd">'. htmlspecialchars($fieldsetName) .'</legend>'. "\n";
 			$s .= '      <div class="rex-fldst-wrppr">'. "\n";
 			
 			// Die HeaderElemente nur im 1. Fieldset ganz am Anfang einfügen

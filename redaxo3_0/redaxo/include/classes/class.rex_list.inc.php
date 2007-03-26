@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  * 
  * @package redaxo3 
- * @version $Id: class.rex_list.inc.php,v 1.7 2007/03/19 11:40:04 kills Exp $ 
+ * @version $Id: class.rex_list.inc.php,v 1.8 2007/03/26 12:34:23 kills Exp $ 
  */
  
 /*
@@ -644,7 +644,7 @@ class rex_list
 		
 		if($caption != '')
 		{
-			$s .= '    <caption class="rex-hide">'. $caption .'</caption>'. "\n";
+			$s .= '    <caption class="rex-hide">'. htmlspecialchars($caption) .'</caption>'. "\n";
 		}
 		
 		$s .= '    <thead>'. "\n";
