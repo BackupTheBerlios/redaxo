@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.1 2007/02/23 13:14:45 kills Exp $
+ * @version $Id: index.inc.php,v 1.2 2007/03/28 08:11:30 kristinus Exp $
  */
  
 // Parameter
@@ -22,7 +22,8 @@ include $REX['INCLUDE_PATH'].'/layout/top.php';
 // Build Subnavigation 
 $subpages = array(
 //  array('categories','Kategorien'),
-  array('article','Artikel'),
+  array('articles','Artikel'),
+  array('categories','Kategorien'),
 );
 
 rex_title('Metainformationen erweitern', $subpages);
@@ -30,11 +31,10 @@ rex_title('Metainformationen erweitern', $subpages);
 // Include Current Page
 switch($subpage)
 {
-//	case 'categories' :
-//	  $prefix = 'cat_'; 
-//    break;
-  case '' :
-	case 'article': 
+  case 'categories' :
+    $prefix = 'cat_'; 
+    break;
+  default:
 	  $prefix = 'art_'; 
     break;
 }
