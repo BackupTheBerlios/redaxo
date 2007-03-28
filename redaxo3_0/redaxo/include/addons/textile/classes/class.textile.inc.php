@@ -1,17 +1,19 @@
 <?php
 
-/** 
- * Textile Klasse
- *    
+/**
+ * Textile Addon
+ *  
  * Example: get XHTML from a given Textile-markup string ($string)
  *
  *        $textile = new Textile;
  *        echo $textile->TextileThis($string);
  * 
- * @package redaxo3 
- * @version $Id: class.textile.inc.php,v 1.2 2006/10/30 20:30:57 kills Exp $ 
+ * @author staab[at]public-4u[dot]de Markus Staab
+ * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
+ * @package redaxo3
+ * @version $Id: class.textile.inc.php,v 1.3 2007/03/28 18:07:40 kills Exp $
  */
- 
+
 /*
 $HeadURL: http://svn.textpattern.com/releases/4.0.4/source/textpattern/lib/classTextile.php $
 $LastChangedRevision: 1943 $

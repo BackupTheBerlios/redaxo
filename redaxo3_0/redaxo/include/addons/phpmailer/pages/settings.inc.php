@@ -1,12 +1,13 @@
 <?php
 
-
 /**
- * Addon Framework Classes 
+ * PHPMailer Addon
+ *  
  * @author staab[at]public-4u[dot]de Markus Staab
- * @author <a href="http//www.public-4u.de">www.public-4u.de</a>
+ * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
+ * 
  * @package redaxo3
- * @version $Id class.rex_form.inc.php,v 1.3 2006/09/07 104351 kills Exp $
+ * @version $Id: settings.inc.php,v 1.4 2007/03/28 18:07:40 kills Exp $
  */
 
 $testMailer = new rex_mailer();

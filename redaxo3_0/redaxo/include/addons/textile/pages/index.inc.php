@@ -1,8 +1,12 @@
 <?php
+
 /**
- * 
+ * Textile Addon
+ *  
+ * @author staab[at]public-4u[dot]de Markus Staab
+ * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.1 2006/09/08 14:55:25 kills Exp $
+ * @version $Id: index.inc.php,v 1.2 2007/03/28 18:07:40 kills Exp $
  */
  
 require $REX['INCLUDE_PATH'].'/layout/top.php';

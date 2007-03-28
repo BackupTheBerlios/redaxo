@@ -1,8 +1,13 @@
 <?php
+
 /**
+ * PHPMailer Addon
+ *  
+ * @author staab[at]public-4u[dot]de Markus Staab
+ * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.1 2006/10/31 10:10:49 kills Exp $
+ * @version $Id: index.inc.php,v 1.2 2007/03/28 18:07:40 kills Exp $
  */
  
 // Parameter

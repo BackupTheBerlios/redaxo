@@ -1,4 +1,18 @@
 <?php
+
+/**
+ * TinyMCE Addon
+ *  
+ * @author staab[at]public-4u[dot]de Markus Staab
+ * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
+ * 
+ * @author Dave Holloway
+ * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
+ * 
+ * @package redaxo3
+ * @version $Id: class.pclzip.inc.php,v 1.2 2007/03/28 18:07:40 kills Exp $
+ */
+ 
 // --------------------------------------------------------------------------------
 // PhpConcept Library - Zip Module 2.5
 // --------------------------------------------------------------------------------
@@ -22,7 +36,7 @@
 //   The use of this software is at the risk of the user.
 //
 // --------------------------------------------------------------------------------
-// $Id: class.pclzip.inc.php,v 1.1 2006/08/08 13:50:46 kills Exp $
+// $Id: class.pclzip.inc.php,v 1.2 2007/03/28 18:07:40 kills Exp $
 // --------------------------------------------------------------------------------
 
   // ----- Constants
