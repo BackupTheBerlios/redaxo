@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_art_metainfo.inc.php,v 1.2 2007/03/19 11:04:18 kills Exp $
+ * @version $Id: extension_art_metainfo.inc.php,v 1.3 2007/03/29 15:07:59 kills Exp $
  */
  
 rex_register_extension('ART_META_FORM', 'rex_a62_metainfo_form');
@@ -25,7 +25,7 @@ function rex_a62_metainfo_form($params)
   $fields->setQuery('SELECT * FROM '. $REX['TABLE_PREFIX'] .'62_params p,'. $REX['TABLE_PREFIX'] .'62_type t WHERE `p`.`type` = `t`.`id` AND `p`.`name` LIKE "art_%"');
   
   $params = rex_a62_metainfo_handleSave($params, $fields);
-  $article = $params['article'];
+  $article = new rex_article($params['id'], $params['clang']);
   
   // Startwert für MEDIABUTTON, MEDIALIST, LINKLIST
   $media_id = 1;
@@ -151,17 +151,22 @@ function rex_a62_metainfo_form($params)
   		}
   		case 'REX_MEDIA_BUTTON':
   		{
-  			$field = rex_var_media::getMediaButton($media_id++);
+  			$field = rex_var_media::getMediaButton($media_id);
+  			$field = str_replace('REX_MEDIA['. $media_id .']', $dbvalues[0], $field);
+  			$field = str_replace('MEDIA['. $media_id .']', $name, $field);
+  			$media_id++;
   			break;
   		}
   		case 'REX_MEDIALIST_BUTTON':
   		{
-  			$field = rex_var_media::getMediaListButton($mlist_id++, $value);
+  			$field = rex_var_media::getMediaListButton($mlist_id, implode(',',$dbvalues));
+  			$mlist_id++;
   			break;
   		}
   		case 'REX_LINK_BUTTON':
   		{
-  			$field = rex_var_link::getLinkButton($link_id++);
+  			$field = rex_var_link::getLinkButton($link_id, $dbvalues[0], $article->getValue('category_id'));
+  			$link_id++;
   			break;
   		}
   	}
