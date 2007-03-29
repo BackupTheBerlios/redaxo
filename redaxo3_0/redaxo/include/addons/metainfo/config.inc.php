@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.4 2007/03/29 12:23:28 kills Exp $
+ * @version $Id: config.inc.php,v 1.5 2007/03/29 13:23:59 kills Exp $
  */
 
 $mypage = 'metainfo';
@@ -19,21 +19,25 @@ $REX['ADDON']['perm'][$mypage] = 'metainfo[]';
 
 $REX['PERM'][] = 'metainfo[]';
 
-if($REX['REDAXO'] && isset($page) && isset($mode))
+if($REX['REDAXO'])
 {
-	if($page == 'content' && $mode =='meta')
+	if(isset($page))
 	{
-	  include($REX['INCLUDE_PATH']. '/addons/'. $mypage .'/extensions/extension_art_metainfo.inc.php');
+		if($page == 'content' && isset($mode) && $mode =='meta')
+		{
+		  include($REX['INCLUDE_PATH']. '/addons/'. $mypage .'/extensions/extension_art_metainfo.inc.php');
+		}
+		elseif($page == 'structure')
+		{
+		  include($REX['INCLUDE_PATH']. '/addons/'. $mypage .'/extensions/extension_cat_metainfo.inc.php');
+		}
+		elseif($page == 'import_export')
+		{
+		  include($REX['INCLUDE_PATH']. '/addons/'. $mypage .'/extensions/extension_cleanup.inc.php');
+		}
 	}
-	elseif($page == 'structure')
-	{
-	  include($REX['INCLUDE_PATH']. '/addons/'. $mypage .'/extensions/extension_cat_metainfo.inc.php');
-	}
-	elseif($page == 'import_export')
-	{
-	  include($REX['INCLUDE_PATH']. '/addons/'. $mypage .'/extensions/extension_cleanup.inc.php');
-	}
-	
-  include($REX['INCLUDE_PATH']. '/addons/'. $mypage .'/extensions/extension_oof_metainfo.inc.php');
 }
+
+include($REX['INCLUDE_PATH']. '/addons/'. $mypage .'/extensions/extension_oof_metainfo.inc.php');
+
 ?>
