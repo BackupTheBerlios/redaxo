@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  * 
  * @package redaxo3 
- * @version $Id: class.rex_list.inc.php,v 1.9 2007/03/28 08:11:30 kristinus Exp $ 
+ * @version $Id: class.rex_list.inc.php,v 1.10 2007/03/29 11:51:37 kills Exp $ 
  */
  
 /*
@@ -755,7 +755,7 @@ class rex_list
 		}
 		else
 		{
-			$s .= '<tr><td>No Rows Found</td></tr>';
+			$s .= '<tr><td colspan="'. count($columnNames) .'">No Rows Found</td></tr>';
 		}
 		
 		$s .= '  </table>'. "\n";
