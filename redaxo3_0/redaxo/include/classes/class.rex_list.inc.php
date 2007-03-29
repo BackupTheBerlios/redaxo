@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  * 
  * @package redaxo3 
- * @version $Id: class.rex_list.inc.php,v 1.11 2007/03/29 11:53:00 kills Exp $ 
+ * @version $Id: class.rex_list.inc.php,v 1.12 2007/03/29 11:58:03 kills Exp $ 
  */
  
 /*
@@ -17,7 +17,7 @@ $list = new rex_list('SELECT id,name FROM rex_article');
 $list->setColumnFormat('id', 'date');
 $list->setColumnLabel('name', 'Artikel-Name');
 $list->setColumnSortable('name');
-$list->addColumn('testhead','%id% - %name%',-1);
+$list->addColumn('testhead','###id### - ###name###',-1);
 $list->addColumn('testhead2','testbody2');
 $list->setCaption('thomas macht das geile css');
 $list->show();
@@ -607,7 +607,7 @@ class rex_list
 	
 	function replaceVariable($value, $varname)
 	{
-		return str_replace('%'. $varname .'%', $this->sql->getValue($varname), $value);
+		return str_replace('###'. $varname .'###', $this->sql->getValue($varname), $value);
 	}
 	
 	/**
