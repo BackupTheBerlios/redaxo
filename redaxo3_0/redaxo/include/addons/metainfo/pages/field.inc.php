@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: field.inc.php,v 1.3 2007/03/28 18:01:12 kills Exp $
+ * @version $Id: field.inc.php,v 1.4 2007/03/29 12:13:23 kills Exp $
  */
  
 //------------------------------> Parameter
@@ -30,7 +30,7 @@ if ($func == '')
 	$list->setColumnLabel('field_id', $I18N_META_INFOS->msg('field_label_id'));
 	$list->setColumnLabel('name', $I18N_META_INFOS->msg('field_label_name'));
 	
-	$list->setColumnParams('name', array('func' => 'edit', 'field_id' => '%field_id%'));
+	$list->setColumnParams('name', array('func' => 'edit', 'field_id' => '###field_id###'));
 	
 	$list->show();
 }

@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  * 
  * @package redaxo3 
- * @version $Id: class.rex_list.inc.php,v 1.12 2007/03/29 11:58:03 kills Exp $ 
+ * @version $Id: class.rex_list.inc.php,v 1.13 2007/03/29 12:13:13 kills Exp $ 
  */
  
 /*
@@ -620,7 +620,7 @@ class rex_list
 	 */
 	function replaceVariables($value)
 	{
-		if(strpos($value, '%') === false)
+		if(strpos($value, '###') === false)
 			return $value;
 			
 		$columnNames = $this->getColumnNames();
