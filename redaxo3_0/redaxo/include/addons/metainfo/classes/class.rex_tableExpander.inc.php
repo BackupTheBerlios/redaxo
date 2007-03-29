@@ -4,7 +4,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.2 2007/03/29 12:19:16 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.3 2007/03/29 15:08:09 kills Exp $
  */
  
 require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableManager.inc.php';
@@ -76,7 +76,7 @@ class rex_a62_tableExpander extends rex_form
 	{
 		if($fieldsetName == $this->getFieldsetName() && $fieldName == 'name')
 		{
-			$fieldValue = preg_replace('/[^a-z\_]/','', strtolower($fieldValue));
+			$fieldValue = preg_replace('/[^a-z0-9\_]/','', strtolower($fieldValue));
 			if(substr($fieldValue, 0, strlen($this->metaPrefix)) !== $this->metaPrefix)
 			{
 				// Das name feld mit Prefix versehen
