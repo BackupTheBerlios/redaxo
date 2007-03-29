@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  * 
  * @package redaxo3 
- * @version $Id: class.rex_list.inc.php,v 1.10 2007/03/29 11:51:37 kills Exp $ 
+ * @version $Id: class.rex_list.inc.php,v 1.11 2007/03/29 11:53:00 kills Exp $ 
  */
  
 /*
@@ -189,8 +189,10 @@ class rex_list
 
 	function getColumnLayout($column)
 	{
-		if (!is_array($this->columnLayout[$column])) return $this->defaultColumnLayout;
-		else return $this->columnLayout[$column];
+		if (isset($this->columnLayout[$column]) && is_array($this->columnLayout[$column]))
+			return $this->columnLayout[$column];
+			
+		return $this->defaultColumnLayout;
 	}
 	
 	function getColumnLayouts()
