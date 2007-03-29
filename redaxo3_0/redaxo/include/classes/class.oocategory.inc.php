@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet eine Kategorie der Struktur ab
  * @package redaxo3
- * @version $Id: class.oocategory.inc.php,v 1.22 2006/12/18 11:58:29 kills Exp $
+ * @version $Id: class.oocategory.inc.php,v 1.23 2007/03/29 13:28:30 kills Exp $
  */
 
 class OOCategory extends OORedaxo
@@ -60,20 +60,6 @@ class OOCategory extends OORedaxo
       }
     }
     return $catlist;
-  }
-
-  /**
-   * CLASS Function:
-   * Return a list of categories which names match the
-   * search string. For now the search string can be either
-   * a simple name or a string containing SQL search placeholders
-   * that you would insert into a 'LIKE '%...%' statement.
-   *
-   * Returns an array of OOCategory objects.
-   */
-  function searchArticlesByName($category_name, $ignore_offlines = false, $clang = false)
-  {
-		return searchByName($category_name, $ignore_offlines, $clang, true);
   }
 
   /**

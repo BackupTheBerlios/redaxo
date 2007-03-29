@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.36 2007/03/29 13:25:50 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.37 2007/03/29 13:28:30 kills Exp $
  */
 
 class OORedaxo
@@ -140,57 +140,6 @@ class OORedaxo
     }
     unset ($OORedaxoArray['_article_id']);
     return $OORedaxoArray;
-  }
-
-  /**
-   * CLASS Function:
-   * Return a list of objects which names match the
-   * search string. For now the search string can be either
-   * a simple name or a string containing SQL search placeholders
-   * that you would insert into a 'LIKE '%...%' statement.
-   *
-   * Returns an array of OORedaxo objects.
-   */
-  function searchByName($name, $ignore_offlines = false, $clang = false, $categories = false)
-  {
-    global $REX;
-
-    if ($clang === false)
-      $clang = $REX['CUR_CLANG'];
-
-    $offline = $ignore_offlines ? " AND status = 1 " : "";
-    $cats = '';
-    if (is_array($categories))
-    {
-      $cats = " AND re_id IN (".implode(',', $categories).") ";
-    }
-    elseif (is_string($categories))
-    {
-      $cats = " AND re_id = $categories ";
-    }
-    elseif ($categories === true)
-    {
-      $cats = " AND startpage = 1 ";
-    }
-
-    $list = array ();
-    $sql = new rex_sql;
-    $sql->setQuery("SELECT ".implode(',', OORedaxo :: getClassVars('sql_alias'))." FROM ".$REX['TABLE_PREFIX']."article WHERE name LIKE '$article_name' AND clang='$clang' $offline $cats");
-    for ($i = 0; $i < $sql->getRows(); $i ++)
-    {
-      foreach (OORedaxo :: getClassVars() as $var)
-      {
-        $data[$var] = $sql->getValue($var);
-      }
-
-      if($categories)
-				$list[] = new OOCategory($data, $clang);
-      else
-				$list[] = new OOArticle($data, $clang);
-
-      $sql->next();
-    }
-    return $list;
   }
 
   /*

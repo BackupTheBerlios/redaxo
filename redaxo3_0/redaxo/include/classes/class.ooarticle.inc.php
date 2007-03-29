@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.32 2007/03/22 08:55:33 kills Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.33 2007/03/29 13:28:30 kills Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -35,20 +35,6 @@ class OOArticle extends OORedaxo
       return new OOCategory(OORedaxo :: convertGeneratedArray($REX['ART'][$article_id], $clang));
     else
       return new OOArticle(OORedaxo :: convertGeneratedArray($REX['ART'][$article_id], $clang));
-  }
-
-  /**
-   * CLASS Function:
-   * Return a list of articles which names match the
-   * search string. For now the search string can be either
-   * a simple name or a string containing SQL search placeholders
-   * that you would insert into a 'LIKE '%...%' statement.
-   *
-   * Returns an array of OOArticle objects.
-   */
-  function searchArticlesByName($article_name, $ignore_offlines = false, $clang = false)
-  {
-		return searchByName($article_name, $ignore_offlines, $clang);
   }
 
   /**
