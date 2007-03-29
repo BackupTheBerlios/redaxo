@@ -4,7 +4,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.104 2007/03/28 17:59:04 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.105 2007/03/29 14:59:56 kristinus Exp $ 
  */
 
 /*
@@ -29,20 +29,14 @@ $article->setQuery("
 
 if ($article->getRows() == 1)
 {
+
   // ----- ctype holen
   $attributes = $article->getValue("template_attributes");
-  
-  $REX['CTYPE'] = array();
-  // Attribute sind null, bei Artikeln ohne Template
-  if($attributes != null)
-  {
-	  $REX['CTYPE'] = rex_getAttributes("ctype", $attributes, array ()); // ctypes - aus dem template
-  }
-  
+  $REX['CTYPE'] = rex_getAttributes("ctype", $attributes, array ()); // ctypes - aus dem template
   $ctype = rex_request("ctype", "int");
   if (!array_key_exists($ctype, $REX['CTYPE']))
     $ctype = 1; // default = 1
-    
+
   // ----- Artikel wurde gefunden - Kategorie holen
   if ($article->getValue("startpage") == 1)
     $category_id = $article->getValue("id");
@@ -783,25 +777,20 @@ if ($article->getRows() == 1)
           $lang_a->setId("clang_a");
           $lang_a->setName("clang_a");
           $lang_a->setSize("1");
-
           foreach ($REX['CLANG'] as $val => $key)
           {
             $lang_a->addOption($key, $val);
           }
 
-					// beide sprachen separat anlegen, da bei einem
-					// $lang_a = $lang_b in PHP5 das objekt nicht kopiert würde
-					// http://forum.redaxo.de/sutra32904.html#32904
           $lang_b = new rex_select;
           $lang_b->setId("clang_b");
           $lang_b->setName("clang_b");
           $lang_b->setSize("1");
-
           foreach ($REX['CLANG'] as $val => $key)
           {
             $lang_b->addOption($key, $val);
           }
-          
+
           if (isset ($_REQUEST["clang_a"]))
             $lang_a->setSelected($_REQUEST["clang_a"]);
           if (isset ($_REQUEST["clang_b"]))
