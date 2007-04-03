@@ -4,7 +4,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.3 2007/03/29 15:08:09 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.4 2007/04/03 18:09:00 kills Exp $
  */
  
 require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableManager.inc.php';
@@ -32,8 +32,8 @@ class rex_a62_tableExpander extends rex_form
 		$field =& $this->addTextField('name');
 		$field->setLabel($I18N_META_INFOS->msg('field_label_name'));
 
-		$field =& $this->addTextAreaField('attributes');
-		$field->setLabel($I18N_META_INFOS->msg('field_label_attributes'));
+//		$field =& $this->addTextAreaField('attributes');
+//		$field->setLabel($I18N_META_INFOS->msg('field_label_attributes'));
 		
 		$field =& $this->addSelectField('type');
 		$field->setLabel($I18N_META_INFOS->msg('field_label_type'));
@@ -44,8 +44,8 @@ class rex_a62_tableExpander extends rex_form
 		$field =& $this->addTextField('default');
 		$field->setLabel($I18N_META_INFOS->msg('field_label_default'));
 
-		$field =& $this->addTextAreaField('params');
-		$field->setLabel($I18N_META_INFOS->msg('field_label_params'));
+//		$field =& $this->addTextAreaField('params');
+//		$field->setLabel($I18N_META_INFOS->msg('field_label_params'));
 		
 //		$field =& $this->addTextAreaField('validate');
 //		$field->setLabel($I18N_META_INFOS->msg('field_label_validate'));
