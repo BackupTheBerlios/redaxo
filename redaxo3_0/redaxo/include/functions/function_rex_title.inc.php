@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.25 2006/12/28 16:30:18 kristinus Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.26 2007/04/03 19:16:43 kills Exp $
  */ 
  
 /**
@@ -152,17 +152,17 @@ function rex_get_subtitle($subline, $attr = '')
       {
         // $format = '%s';
         // $subtitle[] = sprintf($format, $label);
-        $format = '<a href="?page='. $cur_page .'&amp;subpage=%s"%s>%s</a>';
+        $format = '<a href="?page='. $cur_page .'&amp;subpage=%s"%s'. rex_tabindex() .'>%s</a>';
         $subtitle[] = sprintf($format, $link, $attr, $label);
       }
       elseif ($link == '')
       {
-        $format = '<a href="?page='. $cur_page .'"%s>%s</a>';
+        $format = '<a href="?page='. $cur_page .'"%s'. rex_tabindex() .'>%s</a>';
         $subtitle[] = sprintf($format, $attr, $label);
       }
       else
       {
-        $format = '<a href="?page='. $cur_page .'&amp;subpage=%s"%s>%s</a>';
+        $format = '<a href="?page='. $cur_page .'&amp;subpage=%s"%s'. rex_tabindex() .'>%s</a>';
         $subtitle[] = sprintf($format, $link, $attr, $label);
       }
     }

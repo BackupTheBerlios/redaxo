@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_other.inc.php,v 1.9 2007/01/13 17:27:25 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.10 2007/04/03 19:11:54 kills Exp $
  */
 
 /**
@@ -119,6 +119,30 @@ function rex_setAttributes($name,$value,$content)
 	$prop[$name] = $value;
 	return serialize($prop);
 }
+
+/**
+ * Gibt den nächsten freien Tabindex zurück.
+ * Der Tabindex ist eine stetig fortlaufende Zahl,
+ * welche die Priorität der Tabulatorsprünge des Browsers regelt. 
+ *  
+ * @return integer nächster freier Tabindex
+ */
+function rex_tabindex($html = true)
+{
+  global $REX;
+
+  if (empty($REX['TABINDEX']))
+  {
+    $REX['TABINDEX'] = 0;
+  }
+  
+  if($html === true)
+  {
+	  return ' tabindex="'. ++$REX['TABINDEX'] .'"';
+  }
+  return ++$REX['TABINDEX'];
+}
+
 
 function array_insert($array, $index, $value)
 {

@@ -3,7 +3,7 @@
 /** 
  * Dient zur Ausgabe des Sprachen-blocks  
  * @package redaxo3 
- * @version $Id: function_rex_languages.inc.php,v 1.5 2007/03/25 17:01:59 kristinus Exp $ 
+ * @version $Id: function_rex_languages.inc.php,v 1.6 2007/04/03 19:11:42 kills Exp $ 
  */
   
 // rechte einbauen
@@ -26,29 +26,29 @@ if ($num_clang>1)
    $i = 1;
    foreach($REX['CLANG'] as $key => $val)
    {
-      echo '<li>';
-		if (!$REX_USER->hasPerm("admin[]") && !$REX_USER->hasPerm("clang[all]") && !$REX_USER->hasPerm("clang[". $key ."]"))
+    echo '<li>';
+    
+		if (!$REX_USER->hasPerm('admin[]') && !$REX_USER->hasPerm('clang[all]') && !$REX_USER->hasPerm('clang['. $key .']'))
 		{
 			echo '<span class="rex-strike">'. $val .'</span>';
          
 			if ($clang == $key) $stop = true;
 		}
-      elseif ($key==$clang) 
-      {
-         echo $val;
-      }
+    elseif ($key==$clang) 
+    {
+       echo $val;
+    }
 		else
-      {
-         echo '<a href="index.php?page='. $page .'&amp;clang='. $key . $sprachen_add .'&amp;ctype='. $ctype .'">'. $val .'</a>';
-      }
-      if($i != $num_clang)
-      {
-         echo ' | ';
-      }
+    {
+       echo '<a href="index.php?page='. $page .'&amp;clang='. $key . $sprachen_add .'&amp;ctype='. $ctype .'"'. rex_tabindex() .'>'. $val .'</a>';
+    }
+    if($i != $num_clang)
+    {
+       echo ' | ';
+    }
          
-      echo '</li>';
-      
-      $i++;
+    echo '</li>';
+    $i++;
 	}
    
 	echo '
