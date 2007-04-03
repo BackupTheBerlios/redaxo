@@ -3,7 +3,7 @@
 /** 
  * Layout Fuﬂ des Backends
  * @package redaxo3
- * @version $Id: bottom.php,v 1.7 2007/02/21 18:12:15 kills Exp $
+ * @version $Id: bottom.php,v 1.8 2007/04/03 19:30:15 kills Exp $
  */
  
 if (!(isset( $open_header_only) && $open_header_only == true)):
@@ -16,9 +16,9 @@ if (!(isset( $open_header_only) && $open_header_only == true)):
 	
 	<div id="rex-ftr">
 		<ul>
-			<li><a href="http://www.pergopa.de" target="_blank" class="black">pergopa kristinus gbr</a> | </li>
-      <li><a href="http://www.redaxo.de" target="_blank" class="black">redaxo.de</a> | </li>
-      <li><a href="http://forum.redaxo.de">?</a></li>
+			<li><a href="http://www.pergopa.de" target="_blank" class="black"<?php echo rex_tabindex() ?>>pergopa kristinus gbr</a> | </li>
+      <li><a href="http://www.redaxo.de" target="_blank" class="black"<?php echo rex_tabindex() ?>>redaxo.de</a> | </li>
+      <li><a href="http://forum.redaxo.de"<?php echo rex_tabindex() ?>>?</a></li>
 		</ul>
 		<p><?php echo showScripttime() ?> sec | <?php echo rex_formatter :: format(time(), 'strftime', 'date'); ?></p>
 	</div>
