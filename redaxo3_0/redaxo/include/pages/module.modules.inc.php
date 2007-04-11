@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.25 2007/01/12 14:09:24 kills Exp $
+ * @version $Id: module.modules.inc.php,v 1.26 2007/04/11 20:43:21 kristinus Exp $
  */
 
 $OUT = TRUE;
@@ -285,7 +285,7 @@ if ($OUT)
     <thead>
       <tr>
         <th class="rex-icon"><a href="index.php?page=module&amp;function=add"><img src="pics/modul_plus.gif" width="16" height="16" alt="'.$I18N->msg("create_module").'" title="'.$I18N->msg("create_module").'" /></a></th>
-        <th>ID</th>
+        <th class="rex-icon">ID</th>
         <th>'.$I18N->msg("module_description").'</th>
         <th>'.$I18N->msg("module_functions").'</th>
       </tr>
@@ -302,7 +302,7 @@ if ($OUT)
     echo '
       <tr>
         <td class="rex-icon"><a href="index.php?page=module&amp;modul_id='.$sql->getValue("id").'&amp;function=edit"><img src="pics/modul.gif" width="16" height="16" alt="'. $sql->getValue("name") .'" title="'. $sql->getValue("name") .'"/></a></td>
-        <td>'.$sql->getValue("id").'</td>
+        <td class="rex-icon">'.$sql->getValue("id").'</td>
         <td><a href="index.php?page=module&amp;modul_id='.$sql->getValue("id").'&amp;function=edit">'.htmlspecialchars($sql->getValue("name")).'</a></td>
         <td><a href="index.php?page=module&amp;modul_id='.$sql->getValue("id").'&amp;function=delete" onclick="return confirm(\''.$I18N->msg('delete').' ?\')">'.$I18N->msg("delete_module").'</a></td>
       </tr>'."\n";
