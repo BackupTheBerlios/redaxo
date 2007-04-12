@@ -4,7 +4,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.110 2007/04/12 19:15:04 tbaddade Exp $ 
+ * @version $Id: content.inc.php,v 1.111 2007/04/12 20:06:26 kills Exp $ 
  */
 
 /*
@@ -532,7 +532,7 @@ if ($article->getRows() == 1)
     // ------------------------------------------ END: MOVE CATEGORY
     
     // ------------------------------------------ START: SAVE METADATA
-    if (rex_post('save','int'))
+    if (rex_post('savemeta', 'string'))
     {
       $meta_sql = new rex_sql;
       $meta_sql->setTable($REX['TABLE_PREFIX'] . "article");
@@ -701,7 +701,7 @@ if ($article->getRows() == 1)
 
       echo '
 								<p>
-								  <input class="rex-sbmt" type="submit" value="' . $I18N->msg("update_metadata") . '"'. rex_tabindex() .' />
+								  <input class="rex-sbmt" type="submit" name="savemeta" value="' . $I18N->msg("update_metadata") . '"'. rex_tabindex() .' />
 								</p>
 	            </div>
 	         </fieldset>';
