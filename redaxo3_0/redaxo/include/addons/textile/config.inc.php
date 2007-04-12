@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.4 2007/03/28 17:59:46 kills Exp $
+ * @version $Id: config.inc.php,v 1.5 2007/04/12 16:51:57 kills Exp $
  */
 
 $mypage = 'textile';
@@ -26,12 +26,10 @@ if ($REX['REDAXO'])
   require_once $REX['INCLUDE_PATH'].'/addons/textile/functions/function_help.inc.php';
   
   // perms laden und hinzufügen
-  /*
   foreach(rex_a79_help_overview_perms() as $perm)
   {
     $REX['EXTRAPERM'][] = $perm;
   }
-  */
 }
  
 ?>
