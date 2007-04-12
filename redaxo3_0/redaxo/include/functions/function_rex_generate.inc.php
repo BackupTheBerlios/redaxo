@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.76 2007/03/26 15:31:11 kills Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.77 2007/04/12 19:15:21 tbaddade Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -159,7 +159,7 @@ function rex_generateArticle($id, $refreshall = true)
 	}
 	
     if ($MSG != '')
-      echo '<p class="rex-warning">'. $MSG .'</p>';
+      echo '<p class="rex-warning"><span>'. $MSG .'</span></p>';
 
     // --------------------------------------------------- Listen generieren
     if ($CONT->getValue("startpage") == 1)

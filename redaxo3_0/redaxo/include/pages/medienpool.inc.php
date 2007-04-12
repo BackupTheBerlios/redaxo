@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.111 2007/03/19 12:47:30 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.112 2007/04/12 19:15:04 tbaddade Exp $ 
  */ 
 
 // TODOS
@@ -195,7 +195,7 @@ echo '
 // *************************************** MESSAGES
 if ($msg != '')
 {
-  echo '<p class="rex-warning">'.$msg.'</p>
+  echo '<p class="rex-warning"><span>'.$msg.'</span></p>
 ';
   $msg = '';
 }
@@ -455,7 +455,7 @@ function rex_mpool_media_form($form_title, $button_title, $rex_file_category, $f
 
   if (isset($msg) and $msg != "")
   {
-    $s .= '<p class="rex-warning">'. $msg .'</p>';
+    $s .= '<p class="rex-warning"><span>'. $msg .'</span></p>';
     $msg = "";
   }
 
@@ -617,7 +617,7 @@ if ($PERMALL && $subpage == "categories")
 
   if ($msg!='')
   {
-    echo '<p class="rex-warning">'. $msg .'</p>';
+    echo '<p class="rex-warning"><span>'. $msg .'</span></p>';
   }
   
   if ($media_method == 'add_cat' || $media_method == 'update_file_cat')
@@ -1037,7 +1037,7 @@ if ($subpage == "detail")
       
     if ($msg != '')
     {
-      echo '<p class="rex-warning">'. $msg .'</p>';
+      echo '<p class="rex-warning"><span>'. $msg .'</span></p>';
       $msg = '';
     }
 
@@ -1435,7 +1435,7 @@ if ($subpage == '')
 
   if (isset($msg) and $msg != '')
   {
-    print '<p class="rex-warning">'. $msg .'</p>';
+    print '<p class="rex-warning"><span>'. $msg .'</span></p>';
     $msg = "";
   }
   

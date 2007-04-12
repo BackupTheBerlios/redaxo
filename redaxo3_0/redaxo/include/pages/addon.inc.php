@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: addon.inc.php,v 1.15 2006/07/25 06:53:22 tbaddade Exp $ 
+ * @version $Id: addon.inc.php,v 1.16 2007/04/12 19:15:05 tbaddade Exp $ 
  */
 
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_other.inc.php";
@@ -93,7 +93,7 @@ if ($SP)
   }
 
   if (isset ($errmsg) and $errmsg != "")
-    echo '<p class="rex-warning">'.$errmsg.'</p>';
+    echo '<p class="rex-warning"><span>'.$errmsg.'</span></p>';
 
   if (!isset ($user_id))
   {

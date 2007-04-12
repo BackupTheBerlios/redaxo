@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: template.inc.php,v 1.35 2006/11/21 12:17:44 kills Exp $ 
+ * @version $Id: template.inc.php,v 1.36 2007/04/12 19:15:04 tbaddade Exp $ 
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -200,7 +200,7 @@ if ($function == "add" or $function == "edit") {
 
 if ($OUT) {
   if (isset ($message) and $message != "") {
-    echo '<p class="rex-warning">' . $message . '</p>';
+    echo '<p class="rex-warning"><span>' . $message . '</span></p>';
   }
 
   // ausgabe templateliste !

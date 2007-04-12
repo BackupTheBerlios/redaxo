@@ -3,7 +3,7 @@
 /** 
  * Klasse zum erstellen von Listen
  * @package redaxo3 
- * @version $Id: class.rex_form.inc.php,v 1.7 2007/03/29 12:02:28 kills Exp $ 
+ * @version $Id: class.rex_form.inc.php,v 1.8 2007/04/12 19:15:35 tbaddade Exp $ 
  */ 
 
 class rex_form
@@ -623,7 +623,7 @@ class rex_form
 		$message = $this->getMessage();
 		if($message != '')
 		{
-			$s .= '  <p class="rex-warning">'. $message .'</p>'. "\n";
+			$s .= '  <p class="rex-warning"><span>'. $message .'</span></p>'. "\n";
 		}
 		
 		$i = 0;

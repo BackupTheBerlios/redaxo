@@ -3,7 +3,7 @@
 /**
  * Verwaltung der Content Sprachen 
  * @package redaxo3
- * @version $Id: specials.clangs.inc.php,v 1.6 2007/01/12 14:09:23 kills Exp $
+ * @version $Id: specials.clangs.inc.php,v 1.7 2007/04/12 19:15:04 tbaddade Exp $
  */
  
 // -------------- Defaults
@@ -77,7 +77,7 @@ foreach (array_diff(range(0, 14), array_keys($REX['CLANG'])) as $clang)
 
 if ($message != '')
 {
-  echo '<p class="rex-warning">'.$message.'</td></tr>';
+  echo '<p class="rex-warning"><span>'.$message.'</span></p>';
   $message = "";
 }
 
@@ -105,7 +105,7 @@ echo '
       </colgroup>
       <thead>
         <tr>
-          <th><a href="index.php?page=specials&amp;subpage=lang&amp;func=addclang#clang" title="'.$I18N->msg('clang_add').'">+</a></th>
+          <th class="rex-icon"><a href="index.php?page=specials&amp;subpage=lang&amp;func=addclang#clang" title="'.$I18N->msg('clang_add').'">+</a></th>
           <th>ID</th>
           <th>'.$I18N->msg('clang_name').'</th>
           <th colspan="2">'.$I18N->msg('clang_function').'</th>

@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: index.inc.php,v 1.37 2006/07/21 13:42:18 kills Exp $ 
+ * @version $Id: index.inc.php,v 1.38 2007/04/12 19:15:49 tbaddade Exp $ 
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -219,7 +219,7 @@ rex_title($I18N_IM_EXPORT->msg("importexport"), "");
 
 if ($msg != '')
 {
-  echo '<p class="rex-warning">'. $msg .'</p>';
+  echo '<p class="rex-warning"><span>'. $msg .'</span></p>';
 }
 
 ?>

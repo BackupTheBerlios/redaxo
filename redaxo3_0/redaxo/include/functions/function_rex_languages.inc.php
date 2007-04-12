@@ -3,7 +3,7 @@
 /** 
  * Dient zur Ausgabe des Sprachen-blocks  
  * @package redaxo3 
- * @version $Id: function_rex_languages.inc.php,v 1.6 2007/04/03 19:11:42 kills Exp $ 
+ * @version $Id: function_rex_languages.inc.php,v 1.7 2007/04/12 19:15:21 tbaddade Exp $ 
  */
   
 // rechte einbauen
@@ -34,14 +34,13 @@ if ($num_clang>1)
          
 			if ($clang == $key) $stop = true;
 		}
-    elseif ($key==$clang) 
-    {
-       echo $val;
-    }
 		else
     {
-       echo '<a href="index.php?page='. $page .'&amp;clang='. $key . $sprachen_add .'&amp;ctype='. $ctype .'"'. rex_tabindex() .'>'. $val .'</a>';
+    	$class = '';
+    	if ($key==$clang) $class = ' class="rex-active"';
+      echo '<a'.$class.' href="index.php?page='. $page .'&amp;clang='. $key . $sprachen_add .'&amp;ctype='. $ctype .'"'. rex_tabindex() .'>'. $val .'</a>';
     }
+    
     if($i != $num_clang)
     {
        echo ' | ';
@@ -61,7 +60,7 @@ if ($num_clang>1)
 	{
 		echo '
 <!-- *** OUTPUT OF CLANG-VALIDATE - START *** -->
-      <p class="rex-warning">You have no permission to this area</p>
+      <p class="rex-warning"><span>You have no permission to this area</span></p>
 <!-- *** OUTPUT OF CLANG-VALIDATE - END *** -->
 ';
 		include $REX['INCLUDE_PATH']."/layout/bottom.php"; 
