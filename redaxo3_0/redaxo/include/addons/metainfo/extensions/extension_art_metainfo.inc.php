@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_art_metainfo.inc.php,v 1.4 2007/04/03 19:07:41 kills Exp $
+ * @version $Id: extension_art_metainfo.inc.php,v 1.5 2007/04/16 20:10:46 kills Exp $
  */
  
 rex_register_extension('ART_META_FORM', 'rex_a62_metainfo_form');
@@ -35,14 +35,19 @@ function rex_a62_metainfo_form($params)
   for($i = 0; $i < $fields->getRows(); $i++)
   {
   	$name = $fields->getValue('name');
-  	$label = htmlspecialchars($name);
-  	$id = preg_replace('/[^a-zA-Z\-0-9_]/', '_', $label);
+  	$title = $fields->getValue('title');
 		$params = $fields->getValue('params');
 		$attr = $fields->getValue('attributes');
-		$attr .= rex_tabindex();
 		$dbvalues = explode('|+|', $article->getValue($name));
-		$labelIt = true;
-		
+  	
+  	if($title != '')
+  		$label = htmlspecialchars($title);
+  	else
+  		$label = htmlspecialchars($name);
+  	
+  	$id = preg_replace('/[^a-zA-Z\-0-9_]/', '_', $label);
+		$attr .= rex_tabindex();
+		$labelIt = true;		
 			
   	$field = '';
   	switch($fields->getValue('label'))

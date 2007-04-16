@@ -4,7 +4,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.5 2007/04/16 19:50:48 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.6 2007/04/16 20:10:46 kills Exp $
  */
  
 require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableManager.inc.php';
@@ -32,6 +32,9 @@ class rex_a62_tableExpander extends rex_form
 		$field =& $this->addTextField('name');
 		$field->setLabel($I18N_META_INFOS->msg('field_label_name'));
 
+		$field =& $this->addTextField('title');
+		$field->setLabel($I18N_META_INFOS->msg('field_label_title'));
+		
 //		$field =& $this->addTextAreaField('attributes');
 //		$field->setLabel($I18N_META_INFOS->msg('field_label_attributes'));
 		
@@ -88,9 +91,10 @@ class rex_a62_tableExpander extends rex_form
 	
 	function save()
 	{
-		// TODO Translate
+		global $I18N_META_INFOS;
+		
 		if(!$this->isEditMode() && $this->getElementPostValue($this->getFieldsetName(), 'name') == '')
-			return 'Bitte Feldnamen eingeben!';
+			return $I18N_META_INFOS->msg('field_error_name');
 			
 		// Da die POST werte erst in parent::save() übernommen werden, 
 		// kann hier noch der vorhergehende Wert abgegriffen werden
@@ -123,8 +127,8 @@ class rex_a62_tableExpander extends rex_form
 				// Spalte in der Tabelle anlegen
 				if($this->tableManager->addColumn($fieldName, $fieldDbType, $fieldDbLength, $fieldDefault))
 				{
-					// TODO Translate
-					return 'Daten erfolgreich gespeichert! Nach ändern der Metafelder muss der Artikelcache neu generiert werden (Specials->'. $I18N->msg('regenerate_article') .')!';
+					// Alles ok, Meldung zurückgeben
+					return $I18N_META_INFOS->msg('field_successfull_saved', $I18N->msg('regenerate_article'));
 				}
 			}
 		}
