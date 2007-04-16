@@ -4,7 +4,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.4 2007/04/03 18:09:00 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.5 2007/04/16 19:50:48 kills Exp $
  */
  
 require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableManager.inc.php';
@@ -98,7 +98,7 @@ class rex_a62_tableExpander extends rex_form
 		
 		if(parent::save())
 		{
-			global $REX;
+			global $REX, $I18N;
 			
 			$fieldName = $this->getFieldValue('name');
 			$fieldType = $this->getFieldValue('type');
@@ -121,7 +121,11 @@ class rex_a62_tableExpander extends rex_form
 			else
 			{
 				// Spalte in der Tabelle anlegen
-				return $this->tableManager->addColumn($fieldName, $fieldDbType, $fieldDbLength, $fieldDefault);
+				if($this->tableManager->addColumn($fieldName, $fieldDbType, $fieldDbLength, $fieldDefault))
+				{
+					// TODO Translate
+					return 'Daten erfolgreich gespeichert! Nach ändern der Metafelder muss der Artikelcache neu generiert werden (Specials->'. $I18N->msg('regenerate_article') .')!';
+				}
 			}
 		}
 		
