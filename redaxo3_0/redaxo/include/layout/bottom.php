@@ -3,10 +3,10 @@
 /** 
  * Layout Fuß des Backends
  * @package redaxo3
- * @version $Id: bottom.php,v 1.8 2007/04/03 19:30:15 kills Exp $
+ * @version $Id: bottom.php,v 1.9 2007/04/24 18:31:08 kristinus Exp $
  */
  
-if (!(isset( $open_header_only) && $open_header_only == true)):
+// if (!(isset( $open_header_only) && $open_header_only == true)):
 ?>
 
 	</div>
@@ -23,7 +23,7 @@ if (!(isset( $open_header_only) && $open_header_only == true)):
 		<p><?php echo showScripttime() ?> sec | <?php echo rex_formatter :: format(time(), 'strftime', 'date'); ?></p>
 	</div>
 <?php
-endif;
+// endif;
 ?>
    </body>
 </html>
