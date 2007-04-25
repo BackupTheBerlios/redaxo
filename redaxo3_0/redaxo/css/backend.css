@@ -1,7 +1,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: backend.css,v 1.22 2007/04/24 20:12:02 tbaddade Exp $
+ * @version $Id: backend.css,v 1.23 2007/04/25 13:44:10 tbaddade Exp $
  */ 
  
 @import 'linkmap.css';
@@ -502,12 +502,17 @@ table.rex-table th {
 
 table.rex-table th.rex-icon, 
 table.rex-table td.rex-icon {
-	width:30px;
 	text-align:center;
 }
+table.rex-table th.rex-icon, 
+table.rex-table td.rex-icon, 
+table.rex-table th.rex-prio, 
+table.rex-table td.rex-prio {
+}
 
-table.rex-table th.rex-colz {
-	width:143px;
+table.rex-table th.rex-colz, 
+table.rex-table td.rex-colz {
+	width:153px;
 }
 
 
@@ -664,7 +669,13 @@ input#Position_New_Article,
 input#Position_Article, 
 input#template_id, 
 input#catname   {
-	width:98%;
+	width:97%;
+}
+input#Position_New_Category, 
+input#Position_Category, 
+input#Position_New_Article, 
+input#Position_Article {
+	width:87%;
 }
 
 
