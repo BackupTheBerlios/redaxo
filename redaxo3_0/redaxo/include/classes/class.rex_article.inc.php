@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.27 2007/04/12 19:15:35 tbaddade Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.28 2007/04/25 16:45:13 kills Exp $
  */
 
 class rex_article
@@ -500,7 +500,8 @@ class rex_article
     if ($this->getTemplateId() == 0 and $this->article_id != 0)
     {
       echo $this->getArticle();
-    }elseif ($this->getTemplateId() != 0 and $this->article_id != 0)
+    }
+    elseif ($this->getTemplateId() != 0 and $this->article_id != 0)
     {
       $template_name = $REX['INCLUDE_PATH']."/generated/templates/".$this->getTemplateId().".template";
       if ($fd = fopen ($template_name, "r"))
@@ -508,12 +509,15 @@ class rex_article
       	$fs = filesize ($template_name);
         if ($fs>0) $template_content = fread ($fd, $fs);
         fclose ($fd);
-      }else
+      }
+      else
       {
         $template_content = $this->getTemplateId()." not found";
       }
+      $template_content = $this->replaceCommonVars($template_content);
       eval("?>".$template_content);
-    }else
+    }
+    else
     {
       echo "no template";
     }
