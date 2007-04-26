@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.78 2007/04/26 11:24:07 kristinus Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.79 2007/04/26 11:27:27 kristinus Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -159,7 +159,7 @@ function rex_generateArticle($id, $refreshall = true)
 	  }
 
     // ----- EXTENSION POINT
-    $MSG = rex_register_extension_point('CLANG_ARTICLE_GENERATED','',array ('id' => $id, 'clang => $clang'));
+    $MSG = rex_register_extension_point('CLANG_ARTICLE_GENERATED','',array ('id' => $id, 'clang' => $clang, 'article' => $CONT));
 	
     if ($MSG != '')
       echo '<p class="rex-warning"><span>'. $MSG .'</span></p>';
