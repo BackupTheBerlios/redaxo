@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.77 2007/04/12 19:15:21 tbaddade Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.78 2007/04/26 11:24:07 kristinus Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -142,9 +142,9 @@ function rex_generateArticle($id, $refreshall = true)
       $MSG = $I18N->msg('article_could_not_be_generated')." ".$I18N->msg('check_rights_in_directory').$REX['INCLUDE_PATH']."/generated/articles/";
     }
 
-  // --------------------------------------------------- Artikelcontent speichern
-	if ($refreshall)
-	{
+    // --------------------------------------------------- Artikelcontent speichern
+  	if ($refreshall)
+	  {
 	    if ($fp = @ fopen($REX['INCLUDE_PATH']."/generated/articles/$id.$clang.content", "w"))
 	    {
 	      $article_content = "?>".$CONT->getArticle();
@@ -156,7 +156,10 @@ function rex_generateArticle($id, $refreshall = true)
 	    {
 	      $MSG = $I18N->msg('article_could_not_be_generated')." ".$I18N->msg('check_rights_in_directory').$REX['INCLUDE_PATH']."/generated/articles/";
 	    }
-	}
+	  }
+
+    // ----- EXTENSION POINT
+    $MSG = rex_register_extension_point('CLANG_ARTICLE_GENERATED','',array ('id' => $id, 'clang => $clang'));
 	
     if ($MSG != '')
       echo '<p class="rex-warning"><span>'. $MSG .'</span></p>';
@@ -175,6 +178,9 @@ function rex_generateArticle($id, $refreshall = true)
     next($CL);
 
   }
+
+  // ----- EXTENSION POINT
+  $MSG = rex_register_extension_point('ARTICLE_GENERATED','',array ('id' => $id));
 
 }
 
