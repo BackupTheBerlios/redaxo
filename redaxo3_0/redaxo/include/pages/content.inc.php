@@ -4,7 +4,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.111 2007/04/12 20:06:26 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.112 2007/04/28 18:09:09 kristinus Exp $ 
  */
 
 /*
@@ -309,7 +309,7 @@ if ($article->getRows() == 1)
             // ----- / POST SAVE ACTION
 
             // Update Button wurde gedrückt?
-            if (rex_post('btn_update', 'string'))
+            if (rex_post('btn_save', 'string'))
             {
               $function = '';
             }
