@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.28 2007/04/25 16:45:13 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.29 2007/04/28 18:11:29 kristinus Exp $
  */
 
 class rex_article
@@ -615,7 +615,7 @@ class rex_article
           '.$RE_MODUL_IN.'
 		  </div>
           <p class="rex-sbmt">
-            <input type="submit" value="'.$I18N->msg('save_block').'" name="btn_save"/>
+            <input type="submit" value="'.$I18N->msg('save_block').'" name="btn_save" />
             <input type="submit" value="'.$I18N->msg('update_block').'" name="btn_update" />
           </p>
         </fieldset>
