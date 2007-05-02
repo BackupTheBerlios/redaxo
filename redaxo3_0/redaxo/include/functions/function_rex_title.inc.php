@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.28 2007/04/24 18:31:09 kristinus Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.29 2007/05/02 09:38:18 tbaddade Exp $
  */ 
  
 /**
@@ -40,12 +40,12 @@ function rex_title($head, $subtitle = '')
   }
   else
   {
-	  $subtitle = rex_get_subtitle( $subtitle);
+	  $subtitle = '<div class="rex-title-row">'.rex_get_subtitle( $subtitle).'</div>';
   }
   
   print '  
 	<div id="rex-title">
-  		<h1>'.$head.'</h1>
+  		<div class="rex-title-row"><h1>'.$head.'</h1></div>
   		'.$subtitle.'
 	</div>
 	
