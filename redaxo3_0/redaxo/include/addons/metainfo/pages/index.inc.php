@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.2 2007/03/28 08:11:30 kristinus Exp $
+ * @version $Id: index.inc.php,v 1.3 2007/05/05 09:40:17 kills Exp $
  */
  
 // Parameter
@@ -27,6 +27,12 @@ $subpages = array(
 );
 
 rex_title('Metainformationen erweitern', $subpages);
+
+$session_msg = rex_session('A62_MESSAGE', 'string');
+if($session_msg != '')
+{
+	echo '<p class="rex-warning"><span>'. $session_msg .'</span></p>';
+}
 
 // Include Current Page
 switch($subpage)

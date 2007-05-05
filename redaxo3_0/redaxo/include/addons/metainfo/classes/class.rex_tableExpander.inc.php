@@ -4,7 +4,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.6 2007/04/16 20:10:46 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.7 2007/05/05 09:39:38 kills Exp $
  */
  
 require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableManager.inc.php';
@@ -116,6 +116,8 @@ class rex_a62_tableExpander extends rex_form
 			// TEXT Spalten dürfen in MySQL keine Defaultwerte haben
 			if($fieldDbType == 'text')
 			  $fieldDefault = null;
+			  
+			rex_set_session('A62_MESSAGE', $I18N_META_INFOS->msg('field_update_notice'));
 			
 			if($this->isEditMode())
 			{
@@ -128,7 +130,7 @@ class rex_a62_tableExpander extends rex_form
 				if($this->tableManager->addColumn($fieldName, $fieldDbType, $fieldDbLength, $fieldDefault))
 				{
 					// Alles ok, Meldung zurückgeben
-					return $I18N_META_INFOS->msg('field_successfull_saved', $I18N->msg('regenerate_article'));
+					return $I18N_META_INFOS->msg('field_successfull_saved');
 				}
 			}
 		}
