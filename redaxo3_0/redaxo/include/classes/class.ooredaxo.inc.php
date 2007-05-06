@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.38 2007/04/12 16:53:05 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.39 2007/05/06 18:08:26 kristinus Exp $
  */
 
 class OORedaxo
@@ -43,10 +43,10 @@ class OORedaxo
       {
         if(is_array($var))
         {
-        	$class_var = '_'. $var[1];
-        	$value = $params[$var[0]];
-        }
-        else
+          $class_var = '_'. $var[1];
+        	  if (isset($params[$var[0]])) $value = $params[$var[0]];
+        	  else $value = '';
+        }else
         {
 	        $class_var = '_'.$var;
 	        $value = $params[$var];
