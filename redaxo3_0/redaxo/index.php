@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.51 2007/04/17 16:21:43 kristinus Exp $
+ * @version $Id: index.php,v 1.52 2007/05/07 09:25:16 kristinus Exp $
  */ 
 
 // ----- caching start für output filter
@@ -72,7 +72,7 @@ else
   if (isset($FORM['logout']) and $FORM['logout'] == 1) $REX_LOGIN->setLogout(true);
   $REX_LOGIN->setUserID($REX['TABLE_PREFIX'].'user.user_id');
   $REX_LOGIN->setUserquery('SELECT * FROM '.$REX['TABLE_PREFIX'].'user WHERE status=1 AND user_id = "USR_UID"');
-  $REX_LOGIN->setLoginquery('SELECT * FROM '.$REX['TABLE_PREFIX'].'user WHERE status=1 AND login = "USR_LOGIN" AND psw = "USR_PSW" AND lasttrydate <'. (time()-$REX['RELOGINDELAY']));
+  $REX_LOGIN->setLoginquery('SELECT * FROM '.$REX['TABLE_PREFIX'].'user WHERE status=1 AND login = "USR_LOGIN" AND psw = "USR_PSW" AND lasttrydate <'. (time()-$REX['RELOGINDELAY']).' AND login_tries<'.$REX['MAXLOGINS']);
   
   if (!$REX_LOGIN->checkLogin())
   {
