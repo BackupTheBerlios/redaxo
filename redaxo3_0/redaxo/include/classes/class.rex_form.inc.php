@@ -3,7 +3,7 @@
 /** 
  * Klasse zum erstellen von Listen
  * @package redaxo3 
- * @version $Id: class.rex_form.inc.php,v 1.8 2007/04/12 19:15:35 tbaddade Exp $ 
+ * @version $Id: class.rex_form.inc.php,v 1.9 2007/05/07 18:40:49 kills Exp $ 
  */ 
 
 class rex_form
@@ -20,6 +20,7 @@ class rex_form
 	var $debug;
 	var $applyUrl;
 	var $message;
+	var $divId;
 	
 	function rex_form($tableName, $fieldset, $whereCondition, $method = 'post', $debug = false)
 	{
@@ -37,6 +38,7 @@ class rex_form
 		$this->params = array();
 		$this->addFieldset($fieldset);
 		$this->whereCondition = $whereCondition;
+		$this->divId = 'rex-addon-editmode';
 		
 		// --------- Load Env
 		if($REX['REDAXO'])
@@ -618,7 +620,7 @@ class rex_form
 		} 
 		
 		$s = "\n";
-		$s .= '<div class="rex-mdl-editmode">';
+		$s .= '<div class="'. $this->divId .'">';
 		
 		$message = $this->getMessage();
 		if($message != '')
