@@ -10,7 +10,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  * 
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.6 2007/03/28 18:07:39 kills Exp $
+ * @version $Id: config.inc.php,v 1.7 2007/05/07 14:06:58 tbaddade Exp $
  */
 
 $mypage = "tinymce";
@@ -19,6 +19,8 @@ $REX['ADDON']['rxid'][$mypage] = "52";
 $REX['ADDON']['page'][$mypage] = $mypage;
 $REX['ADDON']['name'][$mypage] = "TinyMCE";
 $REX['ADDON']['perm'][$mypage] = "tiny_mce[]";
+
+$I18N_A52 = new i18n($REX['LANG'], $REX['INCLUDE_PATH'].'/addons/'.$mypage.'/lang/'); 
 
 // Include tinylib
 if($REX['REDAXO'])
