@@ -7,7 +7,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: example.inc.php,v 1.2 2007/03/28 18:07:40 kills Exp $
+ * @version $Id: example.inc.php,v 1.3 2007/05/07 12:27:07 tbaddade Exp $
  */
 
 $mdl_ex =<<<EOD
@@ -51,8 +51,11 @@ for(\$i = 0; \$i < \$sql->getRows(); \$i++)
 ?>
 EOD;
 
-echo '<p>Ein mögliches Beispiel:</p>';
-
-highlight_string($mdl_ex);
 
 ?>
+<div class="rex-addon-output">
+	<h2><?php echo $I18N_A93->msg('example_headline'); ?></h2>
+	<div class="rex-addon-content">
+		<?php highlight_string($mdl_ex); ?>
+	</div>
+</div>

@@ -7,7 +7,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.2 2007/03/28 18:07:40 kills Exp $
+ * @version $Id: index.inc.php,v 1.3 2007/05/07 12:27:07 tbaddade Exp $
  */
  
 // Parameter
@@ -20,11 +20,11 @@ $func = rex_request('func', 'string');
 include $REX['INCLUDE_PATH'].'/layout/top.php';
 
 $subpages = array(
-  array('','Konfiguration'),
-  array('example','Beispiel'),
+  array('',$I18N_A93->msg('configuration')),
+  array('example',$I18N_A93->msg('example')),
 );
 
-rex_title('PHPMailer', $subpages);
+rex_title($I18N_A93->msg('title'), $subpages);
 
 switch($subpage)
 {
