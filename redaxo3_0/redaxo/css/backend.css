@@ -1,7 +1,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: backend.css,v 1.27 2007/05/07 15:46:52 tbaddade Exp $
+ * @version $Id: backend.css,v 1.28 2007/05/07 15:57:56 tbaddade Exp $
  */ 
 /*
 @import 'linkmap.css';
@@ -1221,8 +1221,11 @@ div.rex-addon-output code {
 /*	Forms */
 div.rex-addon-editmode {
 	clear:both;
-	background-color:#d6e1e4;2
+	background-color:#d6e1e4;
 	background-color:#d7d6d3;
+}
+div.rex-addon-editmode form {
+	clear:both;
 }
 div.rex-addon-editmode p {
 	padding:5px;
