@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.29 2007/04/28 18:11:29 kristinus Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.30 2007/05/08 09:06:59 tbaddade Exp $
  */
 
 class rex_article
@@ -293,7 +293,7 @@ class rex_article
   
                   <p class="rex-slct">
                     '. $MODULESELECT->get() .'
-                    <noscript><input type="submit" class="rex-fsubmit" name="btn_add" value="'. $I18N->msg("add_block") .'" /></noscript>
+                    <noscript><input type="submit" class="rex-sbmt" name="btn_add" value="'. $I18N->msg("add_block") .'" /></noscript>
                   </p>
   
                 </fieldset>
@@ -466,7 +466,7 @@ class rex_article
 
                 <p class="rex-slct">
                   '. $MODULESELECT->get() .'
-                  <noscript><input type="submit" class="rex-fsubmit" name="btn_add" value="'. $I18N->msg("add_block") .'" /></noscript>
+                  <noscript><input type="submit" class="rex-sbmt" name="btn_add" value="'. $I18N->msg("add_block") .'" /></noscript>
                 </p>
 
               </fieldset>
