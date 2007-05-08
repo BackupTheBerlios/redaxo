@@ -4,7 +4,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: index.inc.php,v 1.40 2007/05/07 15:46:40 tbaddade Exp $ 
+ * @version $Id: index.inc.php,v 1.41 2007/05/08 07:26:36 tbaddade Exp $ 
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
