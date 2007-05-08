@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.3 2007/05/07 12:26:21 tbaddade Exp $
+ * @version $Id: index.inc.php,v 1.4 2007/05/08 08:09:11 kills Exp $
  */
  
 require $REX['INCLUDE_PATH'].'/layout/top.php';
@@ -40,7 +40,7 @@ $mdl_help = '<?php rex_a79_help_overview(); ?>';
 	
 		<p><?php echo $I18N_A79->msg('module_intro_help'); ?></p>
 	
-		<code><?php echo htmlspecialchars( $mdl_help); ?></code>
+		<code><?php echo htmlspecialchars($mdl_help); ?></code>
 	</div>
 </div>
 

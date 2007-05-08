@@ -5,12 +5,18 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: function_help.inc.php,v 1.2 2007/03/28 18:07:39 kills Exp $
+ * @version $Id: function_help.inc.php,v 1.3 2007/05/08 08:09:11 kills Exp $
  */
  
 function rex_a79_help_overview()
 {
   global $REX_USER;
+  
+  // check perms
+  if(!$REX_USER->hasPerm('textile[help]'))
+  {
+  	return;
+  }
   
   $formats = rex_a79_help_overview_formats();
 
@@ -40,25 +46,25 @@ function rex_a79_help_overview()
             
     foreach($format[1] as $perm => $formats)
     {
-      if($perm == '' || $REX_USER->hasPerm('admin[]') || $REX_USER->hasPerm('textile['. $perm .']'))
+      foreach($formats as $_format)
       {
-        foreach($formats as $_format)
-        {
-          $desc = $_format[0];
-          $code = $_format[1];
+        $desc = $_format[0];
+        
+        $code = '';
+        if(isset($_format[1]))
+        	$code = $_format[1];
+        
+        if($code == '')
+          $code = $desc;
           
-          if($code == '')
-            $code = $desc;
-            
-          $code = trim(rex_a79_textile($code));
-            
-          echo '<tr>  
-                  <td>'. $code .'</td>  
-                  <td>'. nl2br(htmlspecialchars($desc)) .'</td>  
-                  <td>'. htmlspecialchars($code) .'</td>  
-                </tr>
-                ';
-        }
+        $code = trim(rex_a79_textile($code));
+          
+        echo '<tr>  
+                <td>'. $code .'</td>  
+                <td>'. nl2br(htmlspecialchars($desc)) .'</td>  
+                <td>'. htmlspecialchars($code) .'</td>  
+              </tr>
+              ';
       }
     }
     
@@ -80,23 +86,6 @@ function rex_a79_help_overview_formats()
   );
 }
 
-function rex_a79_help_overview_perms()
-{
-  $perms = array();
-  $formats = rex_a79_help_overview_formats();
-  
-  foreach($formats as $format)
-  {
-    foreach($format[1] as $perm => $formats)
-    {
-      if($perm == '') continue;
-      
-      $perms[] = 'textile['. $perm .']';
-    }
-  }
-  
-  return $perms;  
-}
 function rex_a79_help_headlines()
 {
   return array( 'Überschriften',
