@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_art_metainfo.inc.php,v 1.5 2007/04/16 20:10:46 kills Exp $
+ * @version $Id: extension_art_metainfo.inc.php,v 1.6 2007/05/10 19:07:24 kills Exp $
  */
  
 rex_register_extension('ART_META_FORM', 'rex_a62_metainfo_form');
@@ -217,6 +217,9 @@ function rex_a62_metainfo_handleSave($params, $fields)
 	}
 	
 	$article->update();
+	
+	// Artikel nochmal mit den zusätzlichen Werten neu generieren
+	rex_generateArticle($params['id']);
 	
 	return $params;
 }
