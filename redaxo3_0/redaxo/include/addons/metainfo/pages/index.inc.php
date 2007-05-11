@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.4 2007/05/08 08:51:48 kristinus Exp $
+ * @version $Id: index.inc.php,v 1.5 2007/05/11 16:10:07 kills Exp $
  */
  
 // Parameter
@@ -23,7 +23,7 @@ include $REX['INCLUDE_PATH'].'/layout/top.php';
 $subpages = array(
 //  array('categories','Kategorien'),
   array('','Artikel'),
-  array('categories','Kategorien'),
+//  array('categories','Kategorien'),
 );
 
 rex_title('Metainformationen erweitern', $subpages);
