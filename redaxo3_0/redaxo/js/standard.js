@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.27 2007/05/05 09:41:37 kills Exp $
+ @version $Id: standard.js,v 1.28 2007/05/11 12:18:33 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -403,7 +403,16 @@ function uncheckInput(id)
 // Sonst wird der wert getoggled
 function toggleElement(id,display)
 {
-   var needle = new getObj(id);
+   var needle;
+   
+   if(typeof(id) != 'object')
+   {
+     needle = new getObj(id);
+   }
+   else
+   {
+     needle = id;
+   }
    
    if (typeof(display) == 'undefined')
    {
