@@ -3,7 +3,7 @@
 /** 
  * Klasse zum erstellen von Listen
  * @package redaxo3 
- * @version $Id: class.rex_form.inc.php,v 1.11 2007/05/11 11:59:26 kills Exp $ 
+ * @version $Id: class.rex_form.inc.php,v 1.12 2007/05/11 15:31:01 kills Exp $ 
  */ 
 
 class rex_form
@@ -216,6 +216,11 @@ class rex_form
 	function &addTextAreaField($name, $value = null, $attributes = array())
 	{
 		$attributes['internal::fieldSeparateEnding'] = true;
+		if(!isset($attributes['cols']))
+		  $attributes['cols'] = 50;
+		if(!isset($attributes['rows']))
+			$attributes['rows'] = 6;
+		
 		$field =& $this->addField('textarea', $name, $value, $attributes);
 		return $field;
 	}
