@@ -3,7 +3,7 @@
 /** 
  * Klasse zum erstellen von Listen
  * @package redaxo3 
- * @version $Id: class.rex_form.inc.php,v 1.9 2007/05/07 18:40:49 kills Exp $ 
+ * @version $Id: class.rex_form.inc.php,v 1.10 2007/05/11 11:44:19 kills Exp $ 
  */ 
 
 class rex_form
@@ -988,6 +988,12 @@ class rex_form_select_element extends rex_form_element
 	
 	function formatElement()
 	{
+		// Hier die Attribute des Elements an den Select weitergeben, damit diese angezeigt werden 
+		foreach($this->getAttributes() as $attributeName => $attributeValue)
+		{
+			$this->select->setAttribute($attributeName, $attributeValue);
+		}
+		
 		$this->select->setSelected($this->getValue());
 		return $this->select->get();
 	}
