@@ -3,7 +3,7 @@
 /** 
  * Klasse zum erstellen von Listen
  * @package redaxo3 
- * @version $Id: class.rex_form.inc.php,v 1.12 2007/05/11 15:31:01 kills Exp $ 
+ * @version $Id: class.rex_form.inc.php,v 1.13 2007/05/11 16:11:55 kills Exp $ 
  */ 
 
 class rex_form
@@ -113,10 +113,8 @@ class rex_form
 		*/
 			
 		$abortElement = null;
-		/*
 		if($abortLabel != '')
 			$abortElement = $this->addInputField('submit', 'abort', $abortLabel, array('internal::useArraySyntax' => false), false);
-		*/
 		
 		if($saveElement || $applyElement || $deleteElement || $resetElement || $abortElement)
 			$this->addControlField($saveElement, $applyElement, $deleteElement, $resetElement, $abortElement);
