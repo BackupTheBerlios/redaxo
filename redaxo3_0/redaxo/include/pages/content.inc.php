@@ -4,7 +4,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.112 2007/04/28 18:09:09 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.113 2007/05/13 15:33:51 kristinus Exp $ 
  */
 
 /*
@@ -427,6 +427,8 @@ if ($article->getRows() == 1)
         if (rex_article2startpage($article_id))
         {
           $message = $I18N->msg('content_tostartarticle_ok');
+          header("Location:index.php?page=content&mode=meta&clang=$clang&ctype=$ctype&article_id=$article_id&message=".urlencode($message));
+          exit;
         }
         else
         {
