@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_art_metainfo.inc.php,v 1.8 2007/05/11 17:11:57 kills Exp $
+ * @version $Id: extension_art_metainfo.inc.php,v 1.9 2007/05/14 15:12:47 tbaddade Exp $
  */
  
 rex_register_extension('ART_META_FORM', 'rex_a62_metainfo_form');
@@ -65,7 +65,8 @@ function rex_a62_metainfo_form($params)
   			$name .= '[]';
   		case 'radio':
   		{
-  		  $labelIt = false;
+  			$tag_attr = ' class="rex-chckbx"';
+  		  	$labelIt = false;
   			$values = array();
   			if(strpos($params, '|') !== false)
   			{
@@ -105,7 +106,7 @@ function rex_a62_metainfo_form($params)
 	  			if(in_array($value, $dbvalues))
 	  				$selected = ' checked="checked"';
 	  				
-          $field .= '<label for="'. $id .'">'. htmlspecialchars($key) .'</label>';
+          		$field .= '<label for="'. $id .'">'. htmlspecialchars($key) .'</label>';
 	  			$field .= '<input type="'. $fields->getValue('label') .'" name="'. $name .'" value="'. $value .'" id="'. $id .'" '. $attr . $selected .' />'."\n";
 	  			
   			}
