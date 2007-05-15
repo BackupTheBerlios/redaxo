@@ -7,7 +7,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: class.phpmailer.inc.php,v 1.2 2007/03/28 18:07:40 kills Exp $
+ * @version $Id: class.phpmailer.inc.php,v 1.3 2007/05/15 06:18:28 kristinus Exp $
  */
 
 ////////////////////////////////////////////////////
@@ -468,7 +468,7 @@ class PHPMailer
      * @return bool
      */
     function SmtpSend($header, $body) {
-        include_once($this->PluginDir . "class.smtp.php");
+        include_once($this->PluginDir . "class.smtp.inc.php");
         $error = "";
         $bad_rcpt = array();
 
