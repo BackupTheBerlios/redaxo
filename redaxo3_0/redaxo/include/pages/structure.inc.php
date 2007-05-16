@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.88 2007/05/16 17:15:06 kills Exp $ 
+ * @version $Id: structure.inc.php,v 1.89 2007/05/16 18:26:58 kills Exp $ 
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -522,9 +522,8 @@ echo '
         </thead>
         <tbody>';
 
-if ($category_id != 0)
+if ($category_id != 0 && ($category = OOCategory::getCategoryById($category_id)))
 {
-	$category = OOCategory::getCategoryById($category_id);
   echo '<tr>
           <td></td>
           <td colspan="'. $data_colspan .'"><a href="index.php?page=structure&category_id='. $category->getParentId() .'&clang='. $clang .'">..</a></td>
