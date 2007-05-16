@@ -12,7 +12,7 @@
  * 
  * Alle Variablen die mit REX_FILE beginnnen sind als deprecated anzusehen!
  * @package redaxo3
- * @version $Id: class.rex_var_media.inc.php,v 1.13 2007/05/15 21:05:10 kills Exp $
+ * @version $Id: class.rex_var_media.inc.php,v 1.14 2007/05/16 14:01:03 kills Exp $
  */
 
 class rex_var_media extends rex_var
@@ -299,9 +299,9 @@ class rex_var_media extends rex_var
     $media = '
     <div class="rex-wdgt">
       <div class="rex-wdgt-mdlst">
-        <input type="hidden" name="MEDIALIST['. $id .']" value="'. $value .'" />
+        <input type="hidden" name="MEDIALIST['. $id .']" id="REX_MEDIALIST_'. $id .'" value="'. $value .'" />
         <p class="rex-slct">
-          <select name="MEDIALIST_SELECT_' . $id . '" id="REX_MEDIALIST_SELECT_' . $id . '" size="8"'. rex_tabindex() .'>
+          <select name="MEDIALIST_SELECT[' . $id . ']" id="REX_MEDIALIST_SELECT_' . $id . '" size="8"'. rex_tabindex() .'>
             ' . $options . '
           </select>
         </p>
