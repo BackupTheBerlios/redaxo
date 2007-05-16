@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.119 2007/05/06 18:52:03 kristinus Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.120 2007/05/16 13:38:34 kills Exp $ 
  */ 
 
 // TODOS
@@ -100,14 +100,16 @@ function selectMedialist(filename)
     if (substr($opener_input_field,0,14) == 'REX_MEDIALIST_')
     {
       $id = substr($opener_input_field,14,strlen($opener_input_field));
-      echo 'var medialist = "REX_MEDIALIST_'. $id .'";
+      echo 'var medialist = "REX_MEDIALIST_SELECT_'. $id .'";
 						var needle = new opener.getObj(medialist);
 			
 						var source = needle.obj;
 						var sourcelength = source.options.length;
 			
 						NewOption = new Option(filename,filename,true,true);
-						source.options[sourcelength] = NewOption;';
+						source.options[sourcelength] = NewOption;
+						opener.writeREXMedialist('. $id .');';
+						
     }
   ?>
 }
@@ -256,7 +258,9 @@ function rex_mpool_save_media($FILE,$rex_file_category,$FILEINFOS){
   $message = '';
   
   // ----- neuer filename und extension holen
-  $NFILENAME = strtolower(preg_replace("/[^a-zA-Z0-9.\-\$\+]/","_",$FILENAME));
+  $NFILENAME = strtolower($FILENAME);
+  $NFILENAME = str_replace(array('ä','ö', 'ü', 'ß'),array('ae', 'oe', 'ue', 'ss'),$NFILENAME);
+  $NFILENAME = preg_replace("/[^a-zA-Z0-9.\-\$\+]/","_",$NFILENAME);
   if (strrpos($NFILENAME,".") != "")
   {
     $NFILE_NAME = substr($NFILENAME,0,strlen($NFILENAME)-(strlen($NFILENAME)-strrpos($NFILENAME,".")));
