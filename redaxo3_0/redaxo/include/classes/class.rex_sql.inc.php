@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.14 2007/01/10 18:08:53 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.15 2007/05/17 17:55:52 kills Exp $ 
  */
 
 class rex_sql
@@ -75,6 +75,7 @@ class rex_sql
    */
   function setQuery($qry)
   {
+    $qry = trim($qry);
     $this->counter = 0;
     $this->last_insert_id = 0;
     $this->query = $qry;
