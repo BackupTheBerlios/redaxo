@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.7 2007/05/21 17:26:58 kills Exp $
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.8 2007/05/21 17:57:13 kristinus Exp $
  */
  
 rex_register_extension('CAT_META_FORM_ADD', 'rex_a62_metainfo_form');
@@ -14,6 +14,25 @@ rex_register_extension('CAT_META_FORM_EDIT', 'rex_a62_metainfo_form');
 rex_register_extension('CAT_ADDED', 'rex_a62_metainfo_form');
 rex_register_extension('CAT_UPDATED', 'rex_a62_metainfo_form');
 
+rex_register_extension('CAT_FORM_BUTTON_ADD', 'rex_a62_metainfo_button');
+
+function rex_a62_metainfo_button($params)
+{
+	$params["buttons"] .= '<script><!--
+
+function rex_metainfo_toggle()
+{
+	var trs = getElementsByClass("rex-metainfo-cat");
+	for(i=0;i<trs.length;i++)
+  {
+		toggleElement(trs[i]);
+	}
+}
+
+//--></script><a href=javascript:rex_metainfo_toggle();><img src="pics/file_down.gif" /></a>';
+
+	return $params["buttons"];
+}
 
 /**
  * Erweitert das Meta-Formular um die neuen Meta-Felder  
@@ -228,6 +247,7 @@ function rex_a62_metainfo_form($params)
         $tag_attr = ' class="rex-ptag"';
         
         $field = rex_var_link::getLinkButton($link_id, $dbvalues[0], $article->getValue('category_id'));
+        $field = str_replace('LINK['. $link_id .']', $name, $field);
         $id = 'LINK_'. $link_id;
         
         $link_id++;
@@ -256,19 +276,6 @@ function rex_a62_metainfo_form($params)
    	
     $fields->next();
   }
-  
-  $s .= '<script><!--
-
-function rex_metainfo_toggle()
-{
-	var trs = getElementsByClass("rex-metainfo-cat");
-	for(i=0;i<trs.length;i++)
-  {
-		toggleElement(trs[i]);
-	}
-}
-
-//--></script><a href=javascript:rex_metainfo_toggle();>open</a>';
   
   return $s;
 }
