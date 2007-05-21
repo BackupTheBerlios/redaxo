@@ -1,7 +1,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: backend.css,v 1.34 2007/05/21 09:32:20 kristinus Exp $
+ * @version $Id: backend.css,v 1.35 2007/05/21 18:15:15 kristinus Exp $
  */ 
 /*
 @import 'linkmap.css';
@@ -1379,7 +1379,10 @@ background-color:#f90;
 width:88px;
 }
 
-
+.rex-meta-button {
+float:right;
+line-height:18px;
+}
 
 
 

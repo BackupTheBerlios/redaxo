@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.8 2007/05/21 17:57:13 kristinus Exp $
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.9 2007/05/21 18:15:15 kristinus Exp $
  */
  
 rex_register_extension('CAT_META_FORM_ADD', 'rex_a62_metainfo_form');
@@ -18,7 +18,12 @@ rex_register_extension('CAT_FORM_BUTTON_ADD', 'rex_a62_metainfo_button');
 
 function rex_a62_metainfo_button($params)
 {
-	$params["buttons"] .= '<script><!--
+	global $REX;
+	
+	$fields = new rex_sql();
+  $fields->setQuery('SELECT * FROM '. $REX['TABLE_PREFIX'] .'62_params p,'. $REX['TABLE_PREFIX'] .'62_type t WHERE `p`.`type` = `t`.`id` AND `p`.`name` LIKE "cat_%" LIMIT 1');
+	
+	$return = '<div class="rex-meta-button"><script><!--
 
 function rex_metainfo_toggle()
 {
@@ -29,9 +34,9 @@ function rex_metainfo_toggle()
 	}
 }
 
-//--></script><a href=javascript:rex_metainfo_toggle();><img src="pics/file_down.gif" /></a>';
+//--></script><a href=javascript:rex_metainfo_toggle();><img src="pics/file_down.gif" /></a></div>';
 
-	return $params["buttons"];
+	if ($fields->getRows()==1) return $return;
 }
 
 /**
