@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.120 2007/05/16 13:38:34 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.121 2007/05/21 19:14:37 kristinus Exp $ 
  */ 
 
 // TODOS
@@ -1539,7 +1539,7 @@ if ($subpage == '')
       if (OOMedia::_isImage($file_name) && $thumbs)
       {
         $thumbnail = '<img src="../files/'.$file_name.'" width="80" alt="'. $alt .'" />';
-        if ($thumbsresize) $thumbnail = '<img src="../index.php?rex_resize=80w__'.$file_name.'" width="80" alt="'. $alt .'" />';
+        if ($thumbsresize) $thumbnail = '<img src="../index.php?rex_resize=80a__'.$file_name.'" alt="'. $alt .'" />';
       }
     }
 
