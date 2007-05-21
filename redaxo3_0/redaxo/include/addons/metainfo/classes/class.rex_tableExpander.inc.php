@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.10 2007/05/21 17:41:33 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.11 2007/05/21 18:27:28 kills Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);
@@ -127,6 +127,9 @@ class rex_a62_tableExpander extends rex_form
     $postName = $this->getElementPostValue($this->getFieldsetName(), 'name');
     if(!$this->isEditMode() && $postName == '')
       return $I18N_META_INFOS->msg('field_error_name');
+      
+    if(preg_match('/[^a-z0-9\_]/', $postName))
+      return $I18N_META_INFOS->msg('field_error_chars_name');
       
     $sql = new rex_sql();
     $sql->setQuery('SELECT * FROM '. $this->tableName .' WHERE name="'. $this->metaPrefix . $postName .'" LIMIT 1');
