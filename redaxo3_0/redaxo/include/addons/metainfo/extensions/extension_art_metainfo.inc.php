@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_art_metainfo.inc.php,v 1.11 2007/05/14 18:42:58 kills Exp $
+ * @version $Id: extension_art_metainfo.inc.php,v 1.12 2007/05/21 17:54:31 kills Exp $
  */
  
 rex_register_extension('ART_META_FORM', 'rex_a62_metainfo_form');
@@ -223,6 +223,7 @@ function rex_a62_metainfo_form($params)
         $tag_attr = ' class="rex-ptag"';
         
         $field = rex_var_link::getLinkButton($link_id, $dbvalues[0], $article->getValue('category_id'));
+        $field = str_replace('LINK['. $media_id .']', $name, $field);
         $id = 'LINK_'. $link_id;
         
         $link_id++;
