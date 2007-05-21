@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.9 2007/05/14 18:43:09 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.10 2007/05/21 17:41:33 kills Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);
@@ -124,8 +124,16 @@ class rex_a62_tableExpander extends rex_form
   {
     global $I18N_META_INFOS;
     
-    if(!$this->isEditMode() && $this->getElementPostValue($this->getFieldsetName(), 'name') == '')
+    $postName = $this->getElementPostValue($this->getFieldsetName(), 'name');
+    if(!$this->isEditMode() && $postName == '')
       return $I18N_META_INFOS->msg('field_error_name');
+      
+    $sql = new rex_sql();
+    $sql->setQuery('SELECT * FROM '. $this->tableName .' WHERE name="'. $this->metaPrefix . $postName .'" LIMIT 1');
+    if($sql->getRows() == 1)
+    {
+      return $I18N_META_INFOS->msg('field_error_unique_name');
+    }
       
     // Da die POST werte erst in parent::save() übernommen werden, 
     // kann hier noch der vorhergehende Wert abgegriffen werden
