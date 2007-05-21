@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.89 2007/05/16 18:26:58 kills Exp $ 
+ * @version $Id: structure.inc.php,v 1.90 2007/05/21 09:32:20 kristinus Exp $ 
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -547,6 +547,13 @@ if ($function == 'add_cat' && $KATPERM && !$REX_USER->hasPerm('editContentOnly[]
           <td><input type="text" id="Position_New_Category" name="Position_New_Category" value="100" /></td>
           <td colspan="2"><input type="submit" class="rex-fsubmit" name="catadd_function" value="'. $I18N->msg('add_category') .'" /></td>
         </tr>';
+   
+  // ----- EXTENSION POINT
+  echo rex_register_extension_point('CAT_META_FORM_ADD', "", array (
+      'id' => $category_id,
+      'clang' => $clang,
+      'data_colspan' => ($data_colspan+1),
+		));
 }
 
 // --------------------- KATEGORIE LIST
@@ -604,6 +611,16 @@ for ($i = 0; $i < $KAT->getRows(); $i++)
           <td>'. $add_buttons .'</td>
           <td>'. $kat_status .'</td>
         </tr>';
+        
+      // ----- EXTENSION POINT
+  		echo rex_register_extension_point('CAT_META_FORM_EDIT', "", array (
+      	'id' => $edit_id,
+      	'clang' => $clang,
+      	'catname' => $KAT->getValue("catname"),
+      	'catprior' => $KAT->getValue("catprior"),
+      	'data_colspan' => ($data_colspan+1),
+				));
+        
     }
     else
     {
