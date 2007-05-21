@@ -10,7 +10,7 @@
  * REX_IS_VALUE
  * 
  * @package redaxo3
- * @version $Id: class.rex_var_value.inc.php,v 1.9 2007/03/19 10:29:12 kills Exp $
+ * @version $Id: class.rex_var_value.inc.php,v 1.10 2007/05/21 18:13:22 kills Exp $
  */
 
 class rex_var_value extends rex_var
@@ -28,6 +28,7 @@ class rex_var_value extends rex_var
       $REX_ACTION['VALUE'][$i] = stripslashes($values[$i]);
     }
     $REX_ACTION['PHP'] = stripslashes(rex_request('INPUT_PHP', 'string'));
+    $REX_ACTION['HTML'] = $this->stripPHP(stripslashes(rex_request('INPUT_HTML', 'string')));
     
     return $REX_ACTION;
   }
@@ -43,6 +44,7 @@ class rex_var_value extends rex_var
         $this->setValue($sql, 'value' . $i, $REX_ACTION['VALUE'][$i]);
     }
     $this->setValue($sql, 'php', $REX_ACTION['PHP']);
+    $this->setValue($sql, 'html', $REX_ACTION['HTML']);
   }
 
   // --------------------------------- Output
@@ -78,6 +80,7 @@ class rex_var_value extends rex_var
     $content = $this->matchHtmlValue($sql, $content);
     $content = $this->matchIsValue($sql, $content);
     $content = $this->matchPhpValue($sql, $content);
+    $content = str_replace('REX_HTML', $this->getValue($sql, 'html'), $content);
 
     return $content;
   }
