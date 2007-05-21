@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.91 2007/05/21 11:24:28 kristinus Exp $ 
+ * @version $Id: structure.inc.php,v 1.92 2007/05/21 11:28:35 kristinus Exp $ 
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -267,7 +267,8 @@ elseif (!empty($catadd_function) && $KATPERM && !$REX_USER->hasPerm('editContent
       "name" => $category_name,
       "prior" => $Position_New_Category,
       "path" => $KATPATH,
-      "status" => 0
+      "status" => 0,
+      "article" => $AART,
     ));
 
   }

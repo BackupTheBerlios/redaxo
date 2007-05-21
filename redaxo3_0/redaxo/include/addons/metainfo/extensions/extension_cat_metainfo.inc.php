@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.3 2007/05/21 11:24:28 kristinus Exp $
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.4 2007/05/21 11:28:35 kristinus Exp $
  */
  
 rex_register_extension('CAT_META_FORM_ADD', 'rex_a62_metainfo_form');
@@ -235,6 +235,7 @@ function rex_a62_metainfo_form($params)
       }
     }
     
+    /*
     if($tag != '')
     	$s .= '<'. $tag . $tag_attr  .'>'. "\n";
     
@@ -246,7 +247,13 @@ function rex_a62_metainfo_form($params)
     
     if($tag != '')
     	$s .='</'.$tag.'>'. "\n";
-           
+		*/
+		
+		$s .= '<tr class="rex-trow-actv"><td>&nbsp;</td>';
+		$s .= '<td class="rex-mt-fld">'.$field. "</td>\n";
+		$s .= '<td class="rex-mt-lbl" colspan="3"><label for="'. $id .'">'. $label .'</label></td>'. "\n";
+		$s .= '</tr>';
+   	
     $fields->next();
   }
   
