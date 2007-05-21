@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.4 2007/05/21 11:28:35 kristinus Exp $
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.5 2007/05/21 17:10:50 kristinus Exp $
  */
  
 rex_register_extension('CAT_META_FORM_ADD', 'rex_a62_metainfo_form');
@@ -249,13 +249,27 @@ function rex_a62_metainfo_form($params)
     	$s .='</'.$tag.'>'. "\n";
 		*/
 		
-		$s .= '<tr class="rex-trow-actv"><td>&nbsp;</td>';
+		$s .= '<tr class="rex-trow-actv rex-metainfo-cat" style="display:none;"><td>&nbsp;</td>';
 		$s .= '<td class="rex-mt-fld">'.$field. "</td>\n";
 		$s .= '<td class="rex-mt-lbl" colspan="3"><label for="'. $id .'">'. $label .'</label></td>'. "\n";
 		$s .= '</tr>';
    	
     $fields->next();
   }
+  
+  $s .= '<script><!--
+
+function metainfo_toggle()
+{
+	var trs = getElementsByClass("rex-metainfo-cat");
+	for(i=0;i<trs.length;i++)
+  {
+		if ( trs[i].style.display != "none" ) trs[i].style.display = "none";
+		else trs[i].style.display = "";
+	}
+}
+
+//--></script><a href=javascript:metainfo_toggle();>open</a>';
   
   return $s;
 }
