@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.90 2007/05/21 09:32:20 kristinus Exp $ 
+ * @version $Id: structure.inc.php,v 1.91 2007/05/21 11:24:28 kristinus Exp $ 
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -103,14 +103,16 @@ if (!empty($catedit_function) && $edit_id != '' && $KATPERM)
 
   // ----- EXTENSION POINT
   $message = rex_register_extension_point('CAT_UPDATED', $message, array (
-    "id" => $edit_id,
-    "re_id" => $re_id,
-    "clang" => $clang,
-    "name" => $kat_name,
-    "prior" => $new_prio,
-    "path" => $KATPATH,
-    "status" => $thisCat->getValue('status'
-  )));
+		    "id" => $edit_id,
+		    "re_id" => $re_id,
+		    "clang" => $clang,
+		    "name" => $kat_name,
+		    "prior" => $new_prio,
+		    "path" => $KATPATH,
+		    "status" => $thisCat->getValue('status'),
+		    "article" => $EKAT,
+    	)
+    );
 
 }
 elseif (!empty($catdelete_function) && $edit_id != "" && $KATPERM && !$REX_USER->hasPerm('editContentOnly[]'))
