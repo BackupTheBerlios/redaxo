@@ -11,7 +11,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.textile.inc.php,v 1.3 2007/03/28 18:07:40 kills Exp $
+ * @version $Id: class.textile.inc.php,v 1.4 2007/05/27 19:50:56 kristinus Exp $
  */
 
 /*
@@ -783,7 +783,7 @@ class Textile
         if ((empty($parts['scheme']) or @$parts['scheme'] == 'http') and
              empty($parts['host']) and
              preg_match('/^\w/', @$parts['path']))
-            $url = hu.$url;
+            $url = $url; // hu.$url;
         if ($this->restricted and !empty($parts['scheme']) and
               !in_array($parts['scheme'], $this->url_schemes))
             return '#';
