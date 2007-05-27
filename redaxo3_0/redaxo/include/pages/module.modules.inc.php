@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.27 2007/04/12 19:15:04 tbaddade Exp $
+ * @version $Id: module.modules.inc.php,v 1.28 2007/05/27 20:17:28 kristinus Exp $
  */
 
 $OUT = TRUE;
@@ -111,7 +111,8 @@ if (isset($function) and ($function == 'add' or $function == 'edit'))
               WHERE ".$REX['TABLE_PREFIX']."article_slice.modultyp_id='$modul_id'");
           for ($i=0; $i<$gc->getRows(); $i++)
           {
-            rex_generateArticle($gc->getValue($REX['TABLE_PREFIX']."article.id"));
+          	rex_deleteCacheArticle($gc->getValue($REX['TABLE_PREFIX']."article.id"));
+            // rex_generateArticle($gc->getValue($REX['TABLE_PREFIX']."article.id"));
             $gc->next();
           }
         }

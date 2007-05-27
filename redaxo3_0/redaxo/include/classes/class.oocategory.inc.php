@@ -3,7 +3,7 @@
 /** 
  * Object Oriented Framework: Bildet eine Kategorie der Struktur ab
  * @package redaxo3
- * @version $Id: class.oocategory.inc.php,v 1.23 2007/03/29 13:28:30 kills Exp $
+ * @version $Id: class.oocategory.inc.php,v 1.24 2007/05/27 20:17:28 kristinus Exp $
  */
 
 class OOCategory extends OORedaxo
@@ -36,7 +36,15 @@ class OOCategory extends OORedaxo
     if ($clang === false)
       $clang = $GLOBALS['REX']['CUR_CLANG'];
     $categorylist = $REX['INCLUDE_PATH']."/generated/articles/".$cat_parent_id.".".$clang.".clist";
+
     $catlist = array ();
+
+    if (!file_exists($categorylist))
+    {
+    	include_once ($REX["INCLUDE_PATH"]."/functions/function_rex_generate.inc.php");
+    	rex_generateLists($cat_parent_id);
+    }
+    
     if (file_exists($categorylist))
     {
       include ($categorylist);
@@ -59,6 +67,7 @@ class OOCategory extends OORedaxo
         }
       }
     }
+
     return $catlist;
   }
 
