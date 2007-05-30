@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_art_metainfo.inc.php,v 1.13 2007/05/21 17:56:42 kills Exp $
+ * @version $Id: extension_art_metainfo.inc.php,v 1.14 2007/05/30 19:26:35 kills Exp $
  */
  
 rex_register_extension('ART_META_FORM', 'rex_a62_metainfo_form');
@@ -22,7 +22,7 @@ function rex_a62_metainfo_form($params)
   
   $fields = new rex_sql();
 //  $fields->debugsql = true;
-  $fields->setQuery('SELECT * FROM '. $REX['TABLE_PREFIX'] .'62_params p,'. $REX['TABLE_PREFIX'] .'62_type t WHERE `p`.`type` = `t`.`id` AND `p`.`name` LIKE "art_%"');
+  $fields->setQuery('SELECT * FROM '. $REX['TABLE_PREFIX'] .'62_params p,'. $REX['TABLE_PREFIX'] .'62_type t WHERE `p`.`type` = `t`.`id` AND `p`.`name` LIKE "art_%" ORDER BY prior');
   
   $params = rex_a62_metainfo_handleSave($params, $fields);
   $article = new rex_article($params['id'], $params['clang']);
