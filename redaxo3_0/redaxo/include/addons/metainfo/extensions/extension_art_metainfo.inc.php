@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_art_metainfo.inc.php,v 1.14 2007/05/30 19:26:35 kills Exp $
+ * @version $Id: extension_art_metainfo.inc.php,v 1.15 2007/05/30 19:47:28 kills Exp $
  */
  
 rex_register_extension('ART_META_FORM', 'rex_a62_metainfo_form');
@@ -122,6 +122,8 @@ function rex_a62_metainfo_form($params)
 
         foreach(explode(' ',$attr) as $pair)
         {
+          if(strpos($pair, '=') === false) continue;
+          
           $temp = explode('=', $pair);
           $select->setAttribute($temp[0], str_replace(array('"', "'"),'',$temp[1]));
           
