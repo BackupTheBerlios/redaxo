@@ -3,7 +3,7 @@
 /** 
  * Klasse zum erstellen von Listen
  * @package redaxo3 
- * @version $Id: class.rex_form.inc.php,v 1.16 2007/05/30 18:52:45 kills Exp $ 
+ * @version $Id: class.rex_form.inc.php,v 1.17 2007/05/30 19:09:18 kills Exp $ 
  */ 
 
 class rex_form
@@ -487,8 +487,33 @@ class rex_form
    * Callbackfunktion, damit in subklassen der Value noch beeinflusst werden kann
    * kurz vorm speichern
    */
-  function prepareSave($fieldsetName, $fieldName, $fieldValue)
+  function prepareSave($fieldsetName, $fieldName, $fieldValue, &$saveSql)
   {
+    global $REX_USER;
+    
+    static $setOnce = false;
+    
+    if(!$setOnce)
+    {
+      $fieldnames = $this->sql->getFieldnames();
+      
+      if(in_array('updateuser', $fieldnames))
+        $saveSql->setValue('updateuser', $REX_USER->getValue('login'));
+        
+      if(in_array('updatedate', $fieldnames))
+        $saveSql->setValue('updatedate', time());
+      
+      if(!$this->isEditMode())
+      {
+        if(in_array('createuser', $fieldnames))
+          $saveSql->setValue('createuser', $REX_USER->getValue('login'));
+          
+        if(in_array('createdate', $fieldnames))
+          $saveSql->setValue('createdate', time());
+      }
+      $setOnce = true;
+    }
+    
     return $fieldValue;
   }
   
@@ -541,7 +566,7 @@ class rex_form
       foreach($fieldValues as $fieldName => $fieldValue)
       {
         // Callback, um die Values vor dem Speichern noch beeinflussen zu können
-        $fieldValue = $this->prepareSave($fieldsetName, $fieldName, $fieldValue);
+        $fieldValue = $this->prepareSave($fieldsetName, $fieldName, $fieldValue, $sql);
         
         // Element heraussuchen        
         $element =& $this->getElement($fieldsetName, $fieldName);
