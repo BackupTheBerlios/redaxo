@@ -4,7 +4,7 @@
  * Klasse zur Erstellung eines HTML-Pulldown-Menues (Select-Box)
  *   
  * @package redaxo3 
- * @version $Id: class.rex_select.inc.php,v 1.7 2007/05/11 17:11:25 kills Exp $ 
+ * @version $Id: class.rex_select.inc.php,v 1.8 2007/05/30 19:45:33 kills Exp $ 
  */
 
 ################ Class Select
@@ -154,8 +154,8 @@ class rex_select
   {
     if(is_array($options) && count($options)>0)
     {
-      $grouped = isset ($option[0][2]) && isset ($option[0][3]);
-      foreach ($options as $option)
+      $grouped = isset ($options[0][2]) && isset ($options[0][3]);
+      foreach ($options as $key => $option)
       {
       	$option = (array) $option;
         if ($grouped)
@@ -169,7 +169,7 @@ class rex_select
         else
         {
           if(!isset($option[1]))
-            $option[1] = $option[0];
+            $option[1] = $key;
             
           $this->addOption($option[0], $option[1]);
         }
