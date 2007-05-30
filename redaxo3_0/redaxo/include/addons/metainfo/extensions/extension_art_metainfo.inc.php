@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_art_metainfo.inc.php,v 1.15 2007/05/30 19:47:28 kills Exp $
+ * @version $Id: extension_art_metainfo.inc.php,v 1.16 2007/05/30 20:00:08 kills Exp $
  */
  
 rex_register_extension('ART_META_FORM', 'rex_a62_metainfo_form');
@@ -41,9 +41,13 @@ function rex_a62_metainfo_form($params)
     $name = $fields->getValue('name');
     $title = $fields->getValue('title');
     $params = $fields->getValue('params');
+    $default = $fields->getValue('default');
     $attr = $fields->getValue('attributes');
     $dbvalues = explode('|+|', $article->getValue($name));
     
+    if(count($dbvalues) == 1 && isset($dbvalues[0]) && $dbvalues[0] == '')
+      $dbvalues[0] = $default;
+      
     if($title != '')
       $label = htmlspecialchars($title);
     else
@@ -68,9 +72,21 @@ function rex_a62_metainfo_form($params)
       	$tag = '';
         $labelIt = false;
         $values = array();
-        if(strpos($params, '|') !== false)
+        if(preg_match('/^\s*?(SELECT)/i', $params, $matches))
         {
-          $value_groups = explode('|', $params);
+          $sql = new rex_sql();
+          $value_groups = $sql->getArray($params, MYSQL_NUM);
+          foreach($value_groups as $value_group)
+          {
+            if(isset($value_group[1]))
+              $values[$value_group[1]] = $value_group[0];
+            else
+              $values[$value_group[0]] = $value_group[0];
+          }
+        }
+        else
+        {
+          $value_groups = explode('|', $params. '|');
           foreach($value_groups as $value_group)
           {
             if(strpos($value_group, ':') !== false)
@@ -82,18 +98,6 @@ function rex_a62_metainfo_form($params)
             {
               $values[$value_group] = $value_group;
             }
-          }
-        }
-        else
-        {
-          $sql = new rex_sql();
-          $value_groups = $sql->getArray($params, MYSQL_NUM);
-          foreach($value_groups as $value_group)
-          {
-            if(isset($value_group[1]))
-              $values[$value_group[1]] = $value_group[0];
-            else
-              $values[$value_group[0]] = $value_group[0];
           }
         }
         
@@ -131,10 +135,14 @@ function rex_a62_metainfo_form($params)
             $select->setName($name.'[]');
         }
 
-        if(strpos($params, '|') !== false)
+        if(preg_match('/^\s*?(SELECT)/i', $params, $matches))
+        {
+          $select->addSqlOptions($params);
+        }
+        else
         {
           $values = array();
-          $value_groups = explode('|', $params);
+          $value_groups = explode('|', $params. '|');
           foreach($value_groups as $value_group)
           {
             if(strpos($value_group, ':') !== false)
@@ -148,10 +156,6 @@ function rex_a62_metainfo_form($params)
             }
           }
           $select->addOptions($values);
-        }
-        else
-        {
-          $select->addSqlOptions($params);
         }
         
         
