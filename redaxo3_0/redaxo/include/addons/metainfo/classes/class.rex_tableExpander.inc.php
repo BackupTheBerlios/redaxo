@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.11 2007/05/21 18:27:28 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.12 2007/05/30 16:34:15 kills Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);
@@ -125,7 +125,7 @@ class rex_a62_tableExpander extends rex_form
     global $I18N_META_INFOS;
     
     $postName = $this->getElementPostValue($this->getFieldsetName(), 'name');
-    if(!$this->isEditMode() && $postName == '')
+    if($postName == '')
       return $I18N_META_INFOS->msg('field_error_name');
       
     if(preg_match('/[^a-z0-9\_]/', $postName))
@@ -169,11 +169,7 @@ class rex_a62_tableExpander extends rex_form
       else
       {
         // Spalte in der Tabelle anlegen
-        if($this->tableManager->addColumn($fieldName, $fieldDbType, $fieldDbLength, $fieldDefault))
-        {
-          // Alles ok, Meldung zurückgeben
-          return $I18N_META_INFOS->msg('field_successfull_saved');
-        }
+        return $this->tableManager->addColumn($fieldName, $fieldDbType, $fieldDbLength, $fieldDefault);
       }
     }
     
