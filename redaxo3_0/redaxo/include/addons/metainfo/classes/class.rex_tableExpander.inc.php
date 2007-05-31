@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.16 2007/05/31 11:44:02 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.17 2007/05/31 16:09:03 kills Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);
@@ -267,12 +267,10 @@ class rex_a62_tableExpander extends rex_form
       
     $sql = new rex_sql();
     $sql->debugsql =& $this->debug;
-    $sql->debugsql = true;
     $sql->setQuery('SELECT field_id FROM '. $this->tableName .' WHERE name LIKE "'. $this->metaPrefix .'%" ORDER BY prior, updatedate '. $addsql);
     
     $updateSql = new rex_sql();
     $updateSql->debugsql =& $this->debug;
-    $updateSql->debugsql = true;
     $updateSql->setTable($this->tableName);
     
     for($i = 0; $i < $sql->getRows(); $i++)
