@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: class.rex_tableExpander.inc.php,v 1.14 2007/05/30 19:26:35 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.15 2007/05/31 11:20:48 kills Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);
@@ -124,6 +124,8 @@ class rex_a62_tableExpander extends rex_form
   {
     if(parent::delete())
     {
+      // Prios neu setzen, damit keine lücken entstehen
+      $this->organizePriorities(1,2);
       return $this->tableManager->deleteColumn($this->getFieldValue('name'));
     }
     return false;
