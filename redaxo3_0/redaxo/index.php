@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.53 2007/05/27 19:51:50 kristinus Exp $
+ * @version $Id: index.php,v 1.54 2007/05/31 15:48:06 kills Exp $
  */ 
 
 // ----- caching start für output filter
@@ -20,7 +20,7 @@ unset($REX);
 // Flag ob Inhalte mit Redaxo aufgerufen oder
 // von der Webseite aus
 // Kann wichtig für die Darstellung sein
-// Sollte immer false bleiben
+// Sollte immer true bleiben
 
 $REX['REDAXO'] = true;
 
