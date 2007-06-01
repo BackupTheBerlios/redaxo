@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.82 2007/05/27 20:17:28 kristinus Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.83 2007/06/01 18:15:32 kristinus Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -134,7 +134,7 @@ function rex_generateArticle($id, $refreshall = true)
     $CONT->setCLang($clang);
     $CONT->getContentAsQuery();
     $CONT->setMode("generate"); // keine Ausgabe als eval(CONTENT) sondern nur speichern in datei
-    $CONT->setArticleId($id);
+    if (!$CONT->setArticleId($id)) return false;
 
     // --------------------------------------------------- Artikelparameter speichern
     $params = array(
