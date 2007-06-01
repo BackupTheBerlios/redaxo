@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.6 2007/05/31 17:30:19 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.7 2007/06/01 17:49:15 kristinus Exp $
  */
  
 rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
@@ -114,7 +114,7 @@ function rex_a62_metaFields($sqlFields, $article, $formatCallback)
           }
         }
         
-        $field .= '<span>'. $label .'</span>';
+        // $field .= '<span>'. $label .'</span>';
         $class = $typeLabel == 'radio' ? 'rex-radio' : 'rex-chckbx';
         foreach($values as $key => $value)
         {
