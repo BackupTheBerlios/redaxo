@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.15 2007/05/17 17:55:52 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.16 2007/06/04 20:15:34 kills Exp $ 
  */
 
 class rex_sql
@@ -183,7 +183,14 @@ class rex_sql
       $_row = $row;
     }
 
-    return mysql_result($this->result, $_row, $feldname);
+    $res = mysql_result($this->result, $_row, $feldname);
+    if($res === false && function_exists('debug_backtrace'))
+    {
+      $trace = debug_backtrace();
+      $loc = $trace[0];
+      echo '<b>Warning</b>:  mysql_result(): Error found in file <b>'. $loc['file'] .'</b> on line <b>'. $loc['line'] .'</b><br />';
+    }
+    return $res; 
   }
 
   /**
