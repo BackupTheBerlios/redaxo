@@ -5,13 +5,13 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.10 2007/05/31 11:01:48 kills Exp $
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.11 2007/06/06 19:06:52 kills Exp $
  */
  
-rex_register_extension('CAT_META_FORM_ADD', 'rex_a62_metainfo_form');
+//rex_register_extension('CAT_META_FORM_ADD', 'rex_a62_metainfo_form');
 rex_register_extension('CAT_META_FORM_EDIT', 'rex_a62_metainfo_form');
 
-rex_register_extension('CAT_ADDED', 'rex_a62_metainfo_form');
+//rex_register_extension('CAT_ADDED', 'rex_a62_metainfo_form');
 rex_register_extension('CAT_UPDATED', 'rex_a62_metainfo_form');
 
 rex_register_extension('CAT_FORM_BUTTON_ADD', 'rex_a62_metainfo_button');
@@ -56,11 +56,23 @@ function rex_a62_metainfo_form_item($field, $tag, $tag_attr, $id, $label, $label
 }
 
 /**
- * Erweitert das Meta-Formular um die neuen Meta-Felder  
+ * Erweitert das Meta-Formular um die neuen Meta-Felder
  */
 function rex_a62_metainfo_form($params)
 {
-  return _rex_a62_metainfo_form('cat_', $params);
+  $params['activeItem'] = $params['category'];
+  // Hier die category_id setzen, damit beim klick auf den REX_LINK_BUTTON der Medienpool in der aktuellen Kategorie startet
+  $params['activeItem']->setValue('category_id', $params['id']);
+  
+  $result = _rex_a62_metainfo_form('cat_', $params, '_rex_a62_metainfo_cat_handleSave');
+  
+  // Bei CAT_ADDED und CAT_UPDATED nur speichern und kein Formular zurückgeben
+  if($params['extension_point'] == 'CAT_UPDATED' 
+     //|| $params['extension_point'] == 'CAT_ADDED'
+     )
+    return $params['subject'];
+  else
+    return $result;
 }
 
 ?>

@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.6 2007/05/21 09:32:20 kristinus Exp $
+ * @version $Id: index.inc.php,v 1.7 2007/06/06 19:06:52 kills Exp $
  */
  
 // Parameter
@@ -23,6 +23,7 @@ include $REX['INCLUDE_PATH'].'/layout/top.php';
 $subpages = array(
   array('','Artikel'),
   array('categories','Kategorien'),
+  array('media','Medien'),
 );
 
 rex_title('Metainformationen erweitern', $subpages);
@@ -36,12 +37,25 @@ if($session_msg != '')
 // Include Current Page
 switch($subpage)
 {
+  case 'media' :
+  {
+    $prefix = 'med_'; 
+    $metaTable = $REX['TABLE_PREFIX'] .'file';
+    break;
+  }
+    
   case 'categories' :
+  {
     $prefix = 'cat_'; 
+    $metaTable = $REX['TABLE_PREFIX'] .'article';
     break;
+  }
+  
   default:
+  {
 	  $prefix = 'art_'; 
-    break;
+    $metaTable = $REX['TABLE_PREFIX'] .'article';
+  }
 }
 require $Basedir .'/field.inc.php';
 
