@@ -3,16 +3,16 @@
 /** 
  * Funktionen zur Registrierung von Schnittstellen (EXTENSION_POINTS) 
  * @package redaxo3 
- * @version $Id: function_rex_extension.inc.php,v 1.13 2007/02/06 14:37:12 kills Exp $ 
+ * @version $Id: function_rex_extension.inc.php,v 1.14 2007/06/06 19:03:51 kills Exp $ 
  */
 
 /**
-* Definiert einen Extension Point
-*
-* @param $extensionPoint Name des ExtensionPoints
-* @param $subject Objekt/Variable die beeinflusst werden soll
-* @param $params Parameter für die Callback-Funktion
-*/
+ * Definiert einen Extension Point
+ *
+ * @param $extensionPoint Name des ExtensionPoints
+ * @param $subject Objekt/Variable die beeinflusst werden soll
+ * @param $params Parameter für die Callback-Funktion
+ */
 function rex_register_extension_point($extensionPoint, $subject = '', $params = array (), $read_only = false)
 {
   global $REX;
@@ -22,6 +22,9 @@ function rex_register_extension_point($extensionPoint, $subject = '', $params = 
   {
     $params = array ();
   }
+  
+  // Name des EP als Parameter mit übergeben
+  $params['extension_point'] = $extensionPoint;
 
   if (isset ($REX['EXTENSIONS'][$extensionPoint]) && is_array($REX['EXTENSIONS'][$extensionPoint]))
   {
