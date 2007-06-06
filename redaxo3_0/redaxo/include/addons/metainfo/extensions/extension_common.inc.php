@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.7 2007/06/01 17:49:15 kristinus Exp $
+ * @version $Id: extension_common.inc.php,v 1.8 2007/06/06 15:34:16 kills Exp $
  */
  
 rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
@@ -53,14 +53,10 @@ function rex_a62_metaFields($sqlFields, $article, $formatCallback)
     $name = $sqlFields->getValue('name');
     $title = $sqlFields->getValue('title');
     $params = $sqlFields->getValue('params');
-    $default = $sqlFields->getValue('default');
     $typeLabel = $sqlFields->getValue('label');
     $attr = $sqlFields->getValue('attributes');
     $dbvalues = explode('|+|', $article->getValue($name));
     
-    if(count($dbvalues) == 1 && isset($dbvalues[0]) && $dbvalues[0] == '')
-      $dbvalues[0] = $default;
-      
     if($title != '')
       $label = htmlspecialchars($title);
     else
