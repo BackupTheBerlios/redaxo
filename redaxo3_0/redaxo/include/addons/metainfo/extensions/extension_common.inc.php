@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.9 2007/06/06 19:06:52 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.10 2007/06/06 21:39:56 kills Exp $
  */
  
 rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
@@ -42,7 +42,7 @@ function rex_a62_insertJs($params)
  * @param $activeItem objekt, dass mit getValue() die Werte des akuellen Eintrags zurückgibt
  * @param $formatCallback callback, dem die infos als Array übergeben werden und den formatierten HTML Text zurückgibt
  */
-function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback)
+function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $params)
 {
   $s = '';
   
@@ -117,7 +117,9 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback)
           }
         }
         
-        // $field .= '<span>'. $label .'</span>';
+        if($params['extension_point'] != 'CAT_META_FORM_EDIT')
+          $field .= '<span>'. $label .'</span>';
+          
         $class = $typeLabel == 'radio' ? 'rex-radio' : 'rex-chckbx';
         foreach($values as $key => $value)
         {
@@ -361,7 +363,7 @@ function _rex_a62_metainfo_form($prefix, $params, $saveCallback)
   
   $params = rex_call_func($saveCallback, array($params, $sqlFields), false);
   
-  $s = rex_a62_metaFields($sqlFields, $params['activeItem'], 'rex_a62_metainfo_form_item');
+  $s = rex_a62_metaFields($sqlFields, $params['activeItem'], 'rex_a62_metainfo_form_item', $params);
   
   return $s;
 }
