@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.40 2007/05/21 17:18:27 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.41 2007/06/06 15:04:11 kills Exp $
  */
 
 class OORedaxo
@@ -90,39 +90,63 @@ class OORedaxo
 
     if (empty($vars[$mode]))
     {
-      $class_vars = get_class_vars('OORedaxo');
-
-      foreach ($class_vars as $name => $value)
+      global $REX;
+      
+      $vars[$mode] = array();
+      
+      $file = $REX['INCLUDE_PATH']. '/generated/articles/'.  $REX['START_ARTICLE_ID'] .'.0.article';
+      if($REX['GG'] && file_exists($file))
       {
-        if (substr($name, 0, 1) == '_')
+        // Im GetGenerated Modus, die Spaltennamen aus den generated Dateien holen
+        include_once($file);
+
+        // da getClassVars() eine statische Methode ist, können wir hier nicht mit $this->getId() arbeiten!
+        $genVars = OORedaxo::convertGeneratedArray($REX['ART'][$REX['START_ARTICLE_ID']],0);
+        unset($genVars['article_id']);        
+        unset($genVars['last_update_stamp']);        
+        foreach($genVars as $name => $value)
         {
-          $vars[$mode][] = substr($name, 1);
+          $vars[$mode][] = $name;
         }
       }
-
-      // ----- Extension Point
-      $new_vars = rex_register_extension_point('OOF_META_PARAMS', array());
-      
-      foreach($new_vars as $name)
+      else
       {
-      	if(is_array($name))
-      	{
-      		if($mode === 'sql_alias')
-	      		$vars[$mode][] = $name[0] .' AS '.$name[1];
-      		elseif($mode == 'alias')
-	      		$vars[$mode][] = $name[1];
-      		elseif($mode == 'array')
-	      		$vars[$mode][] = $name;
-      		else
-	      		$vars[$mode][] = $name[0];
-      	}
-      	else
-      	{
-      		$vars[$mode][] = $name;
-      	}
+        // Im Backend die Spalten aus der DB auslesen / via EP holen
+        $class_vars = get_class_vars('OORedaxo');
+  
+        foreach ($class_vars as $name => $value)
+        {
+          if (substr($name, 0, 1) == '_')
+          {
+            $vars[$mode][] = substr($name, 1);
+          }
+        }
+  
+        // ----- Extension Point
+        $new_vars = rex_register_extension_point('OOF_META_PARAMS', array());
+        
+        foreach($new_vars as $name)
+        {
+          if(is_array($name))
+          {
+  //          if($mode === 'sql_alias')
+  //            $vars[$mode][] = $name[0] .' AS '.$name[1];
+  //          elseif($mode == 'alias')
+  //            $vars[$mode][] = $name[1];
+  //          else
+            if($mode == 'array')
+              $vars[$mode][] = $name;
+            else
+              $vars[$mode][] = $name[0];
+          }
+          else
+          {
+            $vars[$mode][] = $name;
+          }
+        }
       }
     }
-
+    
     return $vars[$mode];
   }
 
