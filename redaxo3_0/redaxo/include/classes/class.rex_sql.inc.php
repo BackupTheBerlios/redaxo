@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.16 2007/06/04 20:15:34 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.17 2007/06/06 19:04:51 kills Exp $ 
  */
 
 class rex_sql
@@ -115,7 +115,7 @@ class rex_sql
       $this->errno = mysql_errno($this->identifier);
     }
 
-    if ($this->debugsql)
+    if ($this->debugsql || $this->error != '')
     {
       $this->printError($qry);
     }
