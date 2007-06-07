@@ -9,14 +9,15 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: help.inc.php,v 1.4 2007/05/23 13:14:22 kills Exp $
+ * @version $Id: help.inc.php,v 1.5 2007/06/07 11:07:21 kills Exp $
  */
 ?>
 <pre>
 ################################################################################
 #
-# imageResize Addon 0.2
-# code by vscope new media - www.vscope.at - office@vscope.at
+# imageResize Addon 0.3
+#   code by vscope new media - www.vscope.at - office@vscope.at
+#   update by public-4u - www.public-4u.de - Markus Staab
 #
 ################################################################################
 #
