@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.28 2007/06/07 10:56:57 kristinus Exp $
+ * @version $Id: module.action.inc.php,v 1.29 2007/06/07 13:59:39 kills Exp $
  */
 
 $OUT = TRUE;
@@ -38,7 +38,7 @@ if ($function == "delete")
 
     if ($action_in_use_msg != '')
     {
-      $action_in_use_msg = '<ul>' . $action_in_use_msg . '</ul>';
+      $action_in_use_msg = '<div class="rex-warning-blck"><ul>' . $action_in_use_msg . '</ul></div>';
     }
 
     $message = $I18N->msg("action_cannot_be_deleted", $action_id);
