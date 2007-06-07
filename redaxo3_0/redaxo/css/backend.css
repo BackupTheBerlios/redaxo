@@ -1,7 +1,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: backend.css,v 1.39 2007/06/07 12:50:03 tbaddade Exp $
+ * @version $Id: backend.css,v 1.40 2007/06/07 13:01:44 kristinus Exp $
  */ 
 /*
 @import 'linkmap.css';
@@ -454,6 +454,8 @@ div.rex-cnt-hdr ul li a {
 div.rex-cnt-hdr ul.rex-cnt-nav {
 	float:right;
 	margin-right:153px;
+	padding-right:10px;
+	border-right:1px solid #fff;
 }
 
 
