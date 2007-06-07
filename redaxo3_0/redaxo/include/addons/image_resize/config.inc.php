@@ -10,7 +10,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.29 2007/05/24 10:52:34 kills Exp $
+ * @version $Id: config.inc.php,v 1.30 2007/06/07 10:58:54 kills Exp $
  */
  
 $mypage = 'image_resize';
@@ -130,7 +130,7 @@ if ($rex_resize != '')
 
   if (($mode != 'w') and ($mode != 'h') and ($mode != 'a')and ($mode != 'c'))
   {
-    print 'Error wrong mode - only h,w,a';
+    print 'Error wrong mode - only h,w,a,c';
     exit;
   }
   if ($size == '')
