@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.11 2007/06/07 10:11:27 tbaddade Exp $
+ * @version $Id: extension_common.inc.php,v 1.12 2007/06/07 10:38:12 kills Exp $
  */
 
 rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
@@ -42,7 +42,7 @@ function rex_a62_insertJs($params)
  * @param $activeItem objekt, dass mit getValue() die Werte des akuellen Eintrags zurückgibt
  * @param $formatCallback callback, dem die infos als Array übergeben werden und den formatierten HTML Text zurückgibt
  */
-function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $params)
+function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
 {
   $s = '';
 
@@ -117,7 +117,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $params)
           }
         }
 
-        if($params['extension_point'] != 'CAT_META_FORM_EDIT')
+        if($epParams['extension_point'] != 'CAT_META_FORM_EDIT')
           $field .= '<span>'. $label .'</span>';
 
         $class = $typeLabel == 'radio' ? 'rex-rdo' : 'rex-chckbx';
