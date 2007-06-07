@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: addon.inc.php,v 1.16 2007/04/12 19:15:05 tbaddade Exp $ 
+ * @version $Id: addon.inc.php,v 1.17 2007/06/07 10:56:57 kristinus Exp $ 
  */
 
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_other.inc.php";
@@ -104,10 +104,10 @@ if ($SP)
       <caption class="rex-hide">'.$I18N->msg("addon_caption").'</caption>
       <colgroup>
         <col width="*"/>
-        <col width="19%" />
-        <col width="19%" />
-        <col width="15%" />
-        <col width="15%" />
+        <col width="130" />
+        <col width="130" />
+        <col width="130" />
+        <col width="153" />
       </colgroup>
   	  <thead>
         <tr>

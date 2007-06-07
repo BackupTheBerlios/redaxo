@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.70 2007/04/28 18:11:29 kristinus Exp $ 
+ * @version $Id: user.inc.php,v 1.71 2007/06/07 10:56:57 kristinus Exp $ 
  */ 
 
 /*
@@ -796,12 +796,12 @@ if (isset($SHOW) and $SHOW)
   <table class="rex-table" summary="'.$I18N->msg('user_summary').'">
     <caption class="rex-hide">'.$I18N->msg('user_caption').'</caption>
     <colgroup>
-      <col width="5%" />
+      <col width="40" />
       '. $add_col .'
       <col width="*" />
-      <col width="25%" />
-      <col width="20%" />
-      <col width="15%" />
+      <col width="153" />
+      <col width="153" />
+      <col width="153" />
     </colgroup>
     <thead>
       <tr>

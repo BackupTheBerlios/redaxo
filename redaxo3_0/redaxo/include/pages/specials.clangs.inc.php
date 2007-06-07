@@ -3,7 +3,7 @@
 /**
  * Verwaltung der Content Sprachen 
  * @package redaxo3
- * @version $Id: specials.clangs.inc.php,v 1.8 2007/04/28 18:11:29 kristinus Exp $
+ * @version $Id: specials.clangs.inc.php,v 1.9 2007/06/07 10:56:57 kristinus Exp $
  */
  
 // -------------- Defaults
@@ -98,10 +98,10 @@ echo '
     <table class="rex-table" summary="'.$I18N->msg('clang_summary').'">
       <caption class="rex-hide">'.$I18N->msg('clang_caption').'</caption>
       <colgroup>
-        <col width="5%" />
-        <col width="5%" />
+        <col width="40" />
+        <col width="40" />
         <col width="*" />
-        <col width="40%" />
+        <col width="153" />
       </colgroup>
       <thead>
         <tr>

@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.27 2007/06/07 10:27:19 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.28 2007/06/07 10:56:57 kristinus Exp $
  */
 
 $OUT = TRUE;
@@ -264,13 +264,13 @@ if ($OUT)
     <table class="rex-table" summary="' . $I18N->msg('action_summary') . '">
       <caption class="rex-hide">' . $I18N->msg('action_caption') . '</caption>
       <colgroup>
-        <col width="5%" />
-        <col width="5%" />
+        <col width="40" />
+        <col width="40" />
         <col width="*" />
-        <col width="18%" />
-        <col width="18%" />
-        <col width="18%" />
-        <col width="17%" />
+        <col width="120" />
+        <col width="120" />
+        <col width="120" />
+        <col width="153" />
       </colgroup>
       <thead>
         <tr>
