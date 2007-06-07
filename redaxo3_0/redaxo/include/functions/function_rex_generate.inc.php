@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.83 2007/06/01 18:15:32 kristinus Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.84 2007/06/07 09:53:55 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -70,7 +70,7 @@ function rex_generateAll()
   // **********************
 
   // ----------------------------------------------------------- message
-  $MSG = $I18N->msg('regenerated_all_message');
+  $MSG = $I18N->msg('delete_cache_message');
 
   // ----- EXTENSION POINT
   $MSG = rex_register_extension_point('ALL_GENERATED', $MSG);
