@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: structure.inc.php,v 1.95 2007/06/06 19:07:53 kills Exp $ 
+ * @version $Id: structure.inc.php,v 1.96 2007/06/07 08:51:23 kristinus Exp $ 
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -115,8 +115,6 @@ if (!empty($catedit_function) && $edit_id != '' && $KATPERM)
     'article' => $EKAT,
     )
   );
-  
-  var_dump($message);
 
 }
 elseif (!empty($catdelete_function) && $edit_id != "" && $KATPERM && !$REX_USER->hasPerm('editContentOnly[]'))
