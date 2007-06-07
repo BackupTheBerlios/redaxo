@@ -4,7 +4,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.115 2007/06/07 12:25:01 kristinus Exp $ 
+ * @version $Id: content.inc.php,v 1.116 2007/06/07 12:54:57 kristinus Exp $ 
  */
 
 /*
@@ -613,7 +613,7 @@ if ($article->getRows() == 1)
     }
 
     $menu .= '
-            <ul>
+            <ul class="rex-cnt-nav">
               <li>' . $menu_edit . ' | </li>
               <li>' . $menu_meta . ' | </li>
               <li><a href="../index.php?article_id=' . $article_id . '&amp;clang=' . $clang . '" target="_blank"'. rex_tabindex() .'>' . $I18N->msg('show') . '</a></li>

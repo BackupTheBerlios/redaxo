@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  * 
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.31 2007/05/27 20:17:28 kristinus Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.32 2007/06/07 12:54:57 kristinus Exp $
  */
 
 class rex_article
@@ -402,12 +402,12 @@ class rex_article
               {
                 $slice_content .= '
                 <!-- *** OUTPUT OF MODULE-OUTPUT - START *** -->
-                <div class="rex-cnt-slc-otp">';
+                <div class="rex-cnt-slc-otp"><div class="rex-cnt-slc-otp2">';
                 
                 $slice_content .= $RE_MODUL_OUT[$I_ID];
                 
                 $slice_content .= '
-                </div>
+                </div></div>
                 <!-- *** OUTPUT OF MODULE-OUTPUT - END *** -->
                 ';
               }
@@ -584,9 +584,9 @@ class rex_article
             <p class="rex-cnt-mdl-name">
               '. $I18N->msg("module") .': <span>'. $MOD->getValue("name") .'</span>
             </p>
-            <div class="rex-cnt-slc-ipt">
+            <div class="rex-cnt-slc-ipt"><div class="rex-cnt-slc-ipt2">
               '. $MOD->getValue("eingabe") .'
-            </div>
+            </div></div>
             <p class="rex-sbmt">
               <input type="submit" value="'. $I18N->msg('add_block') .'" />
             </p> 
@@ -640,9 +640,9 @@ class rex_article
           <input type="hidden" name="clang" value="'.$this->clang.'" />
 		  
 		  
-		  <div class="rex-cnt-slc-ipt">
+		  <div class="rex-cnt-slc-ipt"><div class="rex-cnt-slc-ipt2">
           '.$RE_MODUL_IN.'
-		  </div>
+		  </div></div>
           <p class="rex-sbmt">
             <input type="submit" value="'.$I18N->msg('save_block').'" name="btn_save" />
             <input type="submit" value="'.$I18N->msg('update_block').'" name="btn_update" />
