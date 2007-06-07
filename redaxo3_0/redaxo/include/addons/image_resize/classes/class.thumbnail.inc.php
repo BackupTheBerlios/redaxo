@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: class.thumbnail.inc.php,v 1.8 2007/05/24 10:52:33 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.9 2007/06/07 10:12:27 kristinus Exp $
  */
 
 class thumbnail
@@ -88,10 +88,10 @@ class thumbnail
   {
     // --- height
     $this->img['height_thumb'] = $size;
-    if ($this->img['width_thumb'] == 0)
-    {
+    //if ($this->img['width_thumb'] == 0)
+    //{
       $this->img['width_thumb'] = ($this->img['height_thumb'] / $this->img['height']) * $this->img['width'];
-    }
+    //}
   }
 
   function size_width($size)
