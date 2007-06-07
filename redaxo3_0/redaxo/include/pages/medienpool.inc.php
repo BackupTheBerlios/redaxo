@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.122 2007/06/06 19:07:37 kills Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.123 2007/06/07 12:38:04 kristinus Exp $ 
  */ 
 
 // TODOS
@@ -21,7 +21,7 @@
 
 // ----- opener_input_field setzen
 $opener_input_field = rex_get('opener_input_field');
-if($opener_input_field == '' && ($sess_opener_input_field = rex_session('media[opener_input_field]')) != '')
+if(!isset($_REQUEST["opener_input_field"]) && $opener_input_field == '' && ($sess_opener_input_field = rex_session('media[opener_input_field]')) != '')
 {
   $opener_input_field = $sess_opener_input_field;
 }
