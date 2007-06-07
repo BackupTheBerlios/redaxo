@@ -4,7 +4,7 @@
 /** 
  * Verwaltung der Inhalte. EditierModul / Metadaten ... 
  * @package redaxo3 
- * @version $Id: content.inc.php,v 1.114 2007/05/16 14:07:54 kills Exp $ 
+ * @version $Id: content.inc.php,v 1.115 2007/06/07 12:25:01 kristinus Exp $ 
  */
 
 /*
@@ -14,6 +14,8 @@
 */
 
 unset ($REX_ACTION);
+
+$slice_id = rex_request('slice_id', 'int', '');
 
 $article = new rex_sql;
 $article->setQuery("
@@ -255,6 +257,7 @@ if ($article->getRows() == 1)
                     $message .= $I18N->msg('block_added');
                     $slice_id = $last_id;
                   }
+                  $function = "";
                 }
               }
             }
@@ -637,7 +640,7 @@ if ($article->getRows() == 1)
 
     if ($mode == 'edit')
     {
-      $slice_id = rex_request('slice_id', 'int', '');
+      
 
       // ------------------------------------------ START: MODULE EDITIEREN/ADDEN ETC.
       echo '
