@@ -10,7 +10,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.30 2007/06/07 10:58:54 kills Exp $
+ * @version $Id: config.inc.php,v 1.31 2007/06/07 12:47:35 kristinus Exp $
  */
  
 $mypage = 'image_resize';
@@ -21,6 +21,7 @@ $REX['ADDON']['name'][$mypage] = 'Image Resize Addon';
 $REX['ADDON']['perm'][$mypage] = 'image_resize[]';
 $REX['ADDON']['max_size'][$mypage] = 1000;
 $REX['ADDON']['jpeg_quality'][$mypage] = 75;
+$REX['ADDON']['system'][$mypage] = TRUE;
 
 $REX['PERM'][] = 'image_resize[]';
 
