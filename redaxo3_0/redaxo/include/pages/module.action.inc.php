@@ -2,10 +2,12 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.24 2007/04/12 19:15:04 tbaddade Exp $
+ * @version $Id: module.action.inc.php,v 1.25 2007/06/07 08:48:55 kristinus Exp $
  */
 
 $OUT = TRUE;
+
+$action_id = rex_post('action_id','int');;
 
 $action_in_use_msg = '';
 if (isset($function) and $function == "delete")
