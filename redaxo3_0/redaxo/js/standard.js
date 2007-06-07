@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.31 2007/05/21 17:10:50 kristinus Exp $
+ @version $Id: standard.js,v 1.32 2007/06/07 11:49:33 kristinus Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -449,14 +449,11 @@ function toggleElement(id,display)
    
    if (typeof(display) == 'undefined')
    {
-     needle.style.display = needle.style.display == '' ? 'none' : '';
-   }
-   else
-   {
-     needle.style.display = display;
+     display = needle.style.display == '' ? 'none' : '';
    }
    
-   return false;
+   needle.style.display = display;
+   return display;
 }
 
 function getElementsByClass(searchClass,node,tag) {

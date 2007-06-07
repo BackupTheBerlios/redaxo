@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: template.inc.php,v 1.38 2007/06/07 10:56:57 kristinus Exp $ 
+ * @version $Id: template.inc.php,v 1.39 2007/06/07 11:49:33 kristinus Exp $ 
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -180,8 +180,26 @@ if ($function == "add" or $function == "edit") {
     		</fieldset>
     
       		<fieldset>
-        		<legend class="rex-lgnd">ctypes</legend>
-     			<div class="rex-fldst-wrppr">
+        		<legend class="rex-lgnd">
+
+<script><!--
+
+function rex_tplctypes_toggle()
+{
+	var trs = getElementsByClass("rex-tplctypes");
+	for(i=0;i<trs.length;i++)
+  {
+		show = toggleElement(trs[i]);
+	}
+  if (show == "") changeImage("rex-tplctypes-icon","pics/file_del.gif")
+  else changeImage("rex-tplctypes-icon","pics/file_add.gif");
+}
+
+//--></script><a href=javascript:rex_tplctypes_toggle();><img src="pics/file_add.gif" id="rex-tplctypes-icon" /></a>
+ctypes
+</legend>
+
+     			<div class="rex-fldst-wrppr rex-tplctypes" style="display:none">
     				' . $ctypes_out . '
     			</div>
           	</fieldset>

@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.11 2007/06/06 19:06:52 kills Exp $
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.12 2007/06/07 11:49:33 kristinus Exp $
  */
  
 //rex_register_extension('CAT_META_FORM_ADD', 'rex_a62_metainfo_form');
@@ -30,11 +30,13 @@ function rex_metainfo_toggle()
 	var trs = getElementsByClass("rex-metainfo-cat");
 	for(i=0;i<trs.length;i++)
   {
-		toggleElement(trs[i]);
+		show = toggleElement(trs[i]);
 	}
+  if (show == "") changeImage("rex-meta-icon","pics/file_del.gif")
+  else changeImage("rex-meta-icon","pics/file_add.gif");
 }
 
-//--></script><a href=javascript:rex_metainfo_toggle();><img src="pics/file_down.gif" /></a></div>';
+//--></script><a href=javascript:rex_metainfo_toggle();><img src="pics/file_add.gif" id="rex-meta-icon" /></a></div>';
 
 	if ($fields->getRows()==1) return $return;
 }
