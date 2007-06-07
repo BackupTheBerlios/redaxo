@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.32 2007/06/07 11:49:33 kristinus Exp $
+ @version $Id: standard.js,v 1.33 2007/06/07 11:56:13 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -37,10 +37,12 @@ function getObjArray(name)
 
 function changeImage(id,img)
 {
-        if(document.getElementById(id)) {
-                document.getElementById(id).src = img;
-        }
+  var needle = new getObj(id);
+  var img = needle.obj;
 
+  if(img) {
+    img.src = src;
+  }
 }
 
 // -------------------------------------------------------------------------------------------------------------------
