@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.63 2007/06/13 17:21:42 kills Exp $
+ * @version $Id: setup.inc.php,v 1.64 2007/06/14 14:14:25 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -146,7 +146,7 @@ if ($checkmodus == 1)
 
   // -------------------------- VERSIONSCHECK
 
-  if (version_compare(phpversion(), '4.2.0', '<') == 1)
+  if (version_compare(phpversion(), '4.3.2', '<') == 1)
   {
     $MSG['err'] .= '<li>'. $I18N->msg('setup_010', phpversion()).'</li>';
   }
