@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: medienpool.inc.php,v 1.123 2007/06/07 12:38:04 kristinus Exp $ 
+ * @version $Id: medienpool.inc.php,v 1.124 2007/06/23 10:06:21 kristinus Exp $ 
  */ 
 
 // TODOS
@@ -1026,7 +1026,7 @@ if ($subpage == "detail")
         $imgn = 'pics/mime_icons/mime-error.gif';
       }else if ($thumbs && $thumbsresize && $rfwidth>199) 
       {
-        $imgn = '../index.php?rex_resize=200w__'. $fname;
+        $imgn = '../index.php?rex_resize=200a__'. $fname;
       }
             
       $add_image = '<div class="rex-mpl-dtl-img">
