@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.13 2007/06/07 12:13:30 tbaddade Exp $
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.14 2007/06/25 22:31:30 kristinus Exp $
  */
 
 //rex_register_extension('CAT_META_FORM_ADD', 'rex_a62_metainfo_form');
@@ -47,12 +47,14 @@ function rex_metainfo_toggle()
 function rex_a62_metainfo_form_item($field, $tag, $tag_attr, $id, $label, $labelIt)
 {
   $s = '';
-
-  $s .= '<tr class="rex-trow-actv rex-metainfo-cat" style="display:none;">'. "\n";
-  $s .= '  <td>&nbsp;</td>'. "\n";
-  $s .= '  <td class="rex-mt-fld">'.$field. '</td>'. "\n";
-  $s .= '  <td class="rex-mt-lbl" colspan="3"><label for="'. $id .'">'. $label .'</label></td>'. "\n";
-  $s .= '</tr>';
+  $s .= '<tr class="rex-trow-actv rex-metainfo-cat-hdr rex-metainfo-cat" style="display:none;">' .
+  		'<td>&nbsp;</td>' .
+  		'<td colspan="4"><label for="'. $id .'">'. $label .'</label></td>' .
+  		'</tr>';
+  $s .= '<tr class="rex-trow-actv rex-metainfo-cat" style="display:none;">' .
+  		'<td>&nbsp;</td>' .
+  		'<td class="rex-mt-fld" colspan="4">'.$field. '</td>' .
+  		'</tr>';
 
   return $s;
 }
