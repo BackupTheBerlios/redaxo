@@ -2,7 +2,7 @@
 /** 
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.76 2007/05/27 20:17:28 kristinus Exp $ 
+ * @version $Id: functions.inc.php,v 1.77 2007/06/25 21:08:23 kristinus Exp $ 
  */ 
 
 // ----------------- TIMER
@@ -86,9 +86,9 @@ include_once $REX['INCLUDE_PATH'].'/functions/function_rex_other.inc.php';
 
 $page = rex_request('page', 'string');
 $subpage = rex_request('subpage', 'string');
-$clang = rex_request('clang','int');
 
 // ----- SET CLANG
+$clang = rex_request('clang','int');
 include_once $REX['INCLUDE_PATH'].'/clang.inc.php';
 if (empty($REX['CLANG'][$clang]))
 {
@@ -98,6 +98,11 @@ if (empty($REX['CLANG'][$clang]))
 {
   $REX['CUR_CLANG'] = $clang;
 }
+
+$article_id = rex_request('article_id', 'int');
+$category_id = rex_request('category_id', 'int');
+$ctype = rex_request('ctype', 'int');
+
 
 // ----- INCLUDE ADDONS
 include_once $REX['INCLUDE_PATH']."/addons.inc.php";

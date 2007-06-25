@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: index.php,v 1.36 2007/05/27 19:51:50 kristinus Exp $ 
+ * @version $Id: index.php,v 1.37 2007/06/25 21:08:23 kristinus Exp $ 
  */ 
 
 // ----- ob caching start für output filter
@@ -40,7 +40,7 @@ $REX['GG'] = true;
 // setzte pfad und includiere klassen und funktionen
 $REX['HTDOCS_PATH'] = "./";
 include "./redaxo/include/master.inc.php";
-
+echo $article_id;
 // Starte einen neuen Artikel und setzte die aktuelle
 // artikel id. wenn nicht vorhanden, nimm einen
 // speziellen artikel. z.b. fehler seite oder home seite
@@ -51,23 +51,17 @@ $REX_ARTICLE->setCLang($clang);
 if ($REX_ARTICLE->setArticleId($article_id))
 {
   echo $REX_ARTICLE->getArticleTemplate();
-}
-elseif($REX_ARTICLE->setArticleId($REX['NOTFOUND_ARTICLE_ID']))
+}elseif($REX['SETUP'])
+{
+	header('Location: redaxo/index.php');
+	exit();
+}elseif($REX_ARTICLE->setArticleId($REX['NOTFOUND_ARTICLE_ID']))
 {
   echo $REX_ARTICLE->getArticleTemplate();
-}
-else
+}else
 {
-	if($REX['SETUP'])
-	{
-		header('Location: redaxo/index.php');
-		exit();
-	}
-	else
-	{
-	  echo 'Kein Startartikel selektiert / No starting Article selected. Please click here to enter <a href="redaxo/index.php">redaxo</a>';
-	  $REX['STATS'] = 0;
-	}
+  echo 'Kein Startartikel selektiert / No starting Article selected. Please click here to enter <a href="redaxo/index.php">redaxo</a>';
+  $REX['STATS'] = 0;
 }
 
 // ----- caching end für output filter
