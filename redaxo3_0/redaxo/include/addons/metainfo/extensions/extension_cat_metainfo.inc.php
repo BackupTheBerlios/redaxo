@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.14 2007/06/25 22:31:30 kristinus Exp $
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.15 2007/06/26 19:06:00 kills Exp $
  */
 
 //rex_register_extension('CAT_META_FORM_ADD', 'rex_a62_metainfo_form');
@@ -18,7 +18,7 @@ rex_register_extension('CAT_FORM_BUTTON_ADD', 'rex_a62_metainfo_button');
 
 function rex_a62_metainfo_button($params)
 {
-	global $REX;
+	global $REX, $I18N_META_INFOS;
 
 	$fields = new rex_sql();
   $fields->setQuery('SELECT * FROM '. $REX['TABLE_PREFIX'] .'62_params p,'. $REX['TABLE_PREFIX'] .'62_type t WHERE `p`.`type` = `t`.`id` AND `p`.`name` LIKE "cat_%" LIMIT 1');
@@ -36,7 +36,7 @@ function rex_metainfo_toggle()
   else changeImage("rex-meta-icon","pics/file_add.gif");
 }
 
-//--></script><a href=javascript:rex_metainfo_toggle();><img src="pics/file_add.gif" id="rex-meta-icon" /></a></div>';
+//--></script><a href="javascript:rex_metainfo_toggle();"><img src="pics/file_add.gif" id="rex-meta-icon" alt="'. $I18N_META_INFOS->msg('edit_metadata') .'" title="'. $I18N_META_INFOS->msg('edit_metadata') .'" /></a></div>';
 
 	if ($fields->getRows()==1) return $return;
 }

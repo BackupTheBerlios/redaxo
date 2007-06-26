@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.12 2007/06/07 10:38:12 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.13 2007/06/26 19:05:34 kills Exp $
  */
 
 rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
@@ -25,11 +25,13 @@ function rex_a62_insertJs($params)
 	fclose($hdl);
 
   $js ='
+    <!-- Metainfo JS //--> 
 	  <script type="text/javascript">
 	  <!--
 	  '. $jscontent .'
 	  //-->
 	  </script>
+    <!-- End Metainfo JS //--> 
   ';
 
   return str_replace('</head>', $js . '</head>', $content);
