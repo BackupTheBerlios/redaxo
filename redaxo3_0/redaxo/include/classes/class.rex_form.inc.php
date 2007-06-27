@@ -3,7 +3,7 @@
 /** 
  * Klasse zum erstellen von Listen
  * @package redaxo3 
- * @version $Id: class.rex_form.inc.php,v 1.21 2007/06/07 10:49:47 kills Exp $ 
+ * @version $Id: class.rex_form.inc.php,v 1.22 2007/06/27 06:44:57 kills Exp $ 
  */ 
 
 class rex_form
@@ -612,7 +612,7 @@ class rex_form
       foreach($fieldValues as $fieldName => $fieldValue)
       {
         // Callback, um die Values vor dem Löschen noch beeinflussen zu können
-        $fieldValue = $this->preDelete($fieldsetName, $fieldName, $fieldValue, &$deleteSql);
+        $fieldValue = $this->preDelete($fieldsetName, $fieldName, $fieldValue, $deleteSql);
         
         // Element heraussuchen        
         $element =& $this->getElement($fieldsetName, $fieldName);
