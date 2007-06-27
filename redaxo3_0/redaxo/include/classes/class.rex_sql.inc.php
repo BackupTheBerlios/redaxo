@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.17 2007/06/06 19:04:51 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.18 2007/06/27 11:37:26 kills Exp $ 
  */
 
 class rex_sql
@@ -231,7 +231,7 @@ class rex_sql
         if(strpos($fld_name, '.') !== false)
           $fld_name = str_replace('.', '`.`', $fld_name);
           
-        $qry .= '`' . $fld_name . '`=\'' . $value . '\'';
+        $qry .= '`' . $fld_name . '`=' . $this->escape($value);
       }
     }
 
@@ -437,7 +437,7 @@ class rex_sql
     // Quote if not a number or a numeric string
     if (!is_numeric($value))
     {
-      $value = "'" . mysql_real_escape_string($value) . "'";
+      $value = "'" . mysql_real_escape_string($value, $this->identifier) . "'";
     }
     return $value;
   }
