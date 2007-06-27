@@ -4,7 +4,7 @@
 /**
  * Abtrackte Basisklasse für REX_VARS innerhalb der Module
  * @package redaxo3
- * @version $Id: class.rex_var.inc.php,v 1.11 2007/03/26 15:17:39 kills Exp $
+ * @version $Id: class.rex_var.inc.php,v 1.12 2007/06/27 06:46:33 kills Exp $
  */
 
 class rex_var
@@ -38,8 +38,8 @@ class rex_var
   function getACOutput($REX_ACTION, $content)
   {
     $sql = new rex_sql();
-    $this->setACValues(& $sql, $REX_ACTION);
-    return $this->getBEOutput(& $sql, $content);
+    $this->setACValues($sql, $REX_ACTION);
+    return $this->getBEOutput($sql, $content);
   }
 
   // --------------------------------- Ouput
