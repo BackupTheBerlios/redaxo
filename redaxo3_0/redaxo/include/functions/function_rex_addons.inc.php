@@ -4,7 +4,7 @@
 /**
  * Addon Funktionen 
  * @package redaxo3
- * @version $Id: function_rex_addons.inc.php,v 1.6 2007/06/28 09:24:01 kills Exp $
+ * @version $Id: function_rex_addons.inc.php,v 1.7 2007/06/28 09:52:20 kills Exp $
  */
 
 function rex_install_addon($addons, $addonname)
@@ -30,10 +30,10 @@ function rex_install_addon($addons, $addonname)
       // Wurde das "install" Flag gesetzt, oder eine Fehlermeldung ausgegeben? Wenn ja, Abbruch
       if (!OOAddon :: isInstalled($addonname) || !empty( $REX['ADDON']['installmsg'][$addonname]))
       {
-        $state = $I18N->msg("addon_no_install", $addonname)."<br/>";
+        $state = $I18N->msg('addon_no_install', $addonname).'<br />';
         if ($REX['ADDON']['installmsg'][$addonname] == '')
         {
-          $state .= $I18N->msg("addon_no_reason");
+          $state .= $I18N->msg('addon_no_reason');
         }
         else
         {
@@ -52,7 +52,7 @@ function rex_install_addon($addons, $addonname)
         }
         else
         {
-          $state = $I18N->msg("addon_config_not_found");
+          $state = $I18N->msg('addon_config_not_found');
         }
 
 			  if($state === true && is_readable($install_sql))
@@ -70,7 +70,7 @@ function rex_install_addon($addons, $addonname)
     }
     else
     {
-      $state = $I18N->msg("addon_install_not_found");
+      $state = $I18N->msg('addon_install_not_found');
     }
   }
   
