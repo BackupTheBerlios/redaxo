@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: addon.inc.php,v 1.18 2007/06/07 11:20:55 kristinus Exp $ 
+ * @version $Id: addon.inc.php,v 1.19 2007/06/28 09:24:00 kills Exp $ 
  */
 
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_other.inc.php";
@@ -121,12 +121,12 @@ if ($SP)
 
   foreach ($ADDONS as $cur)
   {
-  	if (!isset($REX['ADDON']['system'][$cur]) || !$REX['ADDON']['system'][$cur])
-  	{
-  		$delete = '<a href="index.php?page=addon&amp;addonname='.$cur.'&amp;delete=1" onclick="return confirm(\''.$I18N->msg('delete').' ?\')">'.$I18N->msg("addon_delete").'</a>';
-  	}else
+  	if (in_array($cur, $REX['SYSTEM_ADDONS']))
   	{
   		$delete = ''.$I18N->msg("addon_systemaddon").'';
+  	}else
+  	{
+  		$delete = '<a href="index.php?page=addon&amp;addonname='.$cur.'&amp;delete=1" onclick="return confirm(\''.$I18N->msg('delete').' ?\')">'.$I18N->msg("addon_delete").'</a>';
   	}
 
     if ($REX['ADDON']['install'][$cur] == 1)

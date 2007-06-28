@@ -4,7 +4,7 @@
 /**
  * Addon Funktionen 
  * @package redaxo3
- * @version $Id: function_rex_addons.inc.php,v 1.5 2007/06/28 09:11:30 kills Exp $
+ * @version $Id: function_rex_addons.inc.php,v 1.6 2007/06/28 09:24:01 kills Exp $
  */
 
 function rex_install_addon($addons, $addonname)
@@ -164,7 +164,10 @@ function rex_uninstall_addon($addons, $addonname, $regenerate_addons = true)
 function rex_delete_addon($addons, $addonname)
 {
   global $REX, $I18N;
-  $state = true;
+  
+  // System AddOns dürfen nicht gelöscht werden!
+  if(in_array($addonname, $REX['SYSTEM_ADDONS']))
+    return $I18N->msg('addon_systemaddon_delete_not_allowed');
 
   // zuerst deinstallieren
   $state = rex_uninstall_addon($addons, $addonname, false);

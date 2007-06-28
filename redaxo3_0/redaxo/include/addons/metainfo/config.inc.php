@@ -7,7 +7,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.9 2007/06/07 11:20:55 kristinus Exp $
+ * @version $Id: config.inc.php,v 1.10 2007/06/28 09:24:00 kills Exp $
  */
 
 $mypage = 'metainfo';
@@ -19,7 +19,6 @@ $REX['ADDON']['rxid'][$mypage] = '62';
 $REX['ADDON']['page'][$mypage] = $mypage;
 $REX['ADDON']['name'][$mypage] = 'Meta Infos';
 $REX['ADDON']['perm'][$mypage] = 'metainfo[]';
-$REX['ADDON']['system'][$mypage] = TRUE; // System AddOn - nicht löschbar
 
 $REX['PERM'][] = 'metainfo[]';
 

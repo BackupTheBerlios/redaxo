@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.65 2007/06/27 11:27:41 kills Exp $
+ * @version $Id: setup.inc.php,v 1.66 2007/06/28 09:24:00 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -181,6 +181,23 @@ if ($checkmodus == 1)
         $MSG['err'] .= '</ul>';
       }
     }
+    $MSG['err'] .= '</li>';
+  }
+  
+  $addonErr = '';
+  foreach($REX['SYSTEM_ADDONS'] as $systemAddon)
+  {
+    if(!OOAddon::isAvailable($systemAddon))
+    {
+      $addonErr .= '<li>'. $systemAddon .'</li>';
+    }
+  }
+  
+  if($addonErr != '')
+  {
+    $MSG['err'] .= '<li>';
+    $MSG['err'] .= '<h3>'. $I18N->msg('setup_011', '<span class="rex-error">', '</span>') .'</h3>';
+    $MSG['err'] .= '<ul>'. $addonErr .'</ul>';
     $MSG['err'] .= '</li>';
   }
 }
