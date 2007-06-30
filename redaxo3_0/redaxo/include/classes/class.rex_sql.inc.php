@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.18 2007/06/27 11:37:26 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.19 2007/06/30 19:03:00 kills Exp $ 
  */
 
 class rex_sql
@@ -465,5 +465,11 @@ class rex_sql
 
     return $instance;
   }
+  
+  function disconnect()
+  {
+    if($this->identifier)
+      mysql_close($this->identifier);
+  } 
 }
 ?>
