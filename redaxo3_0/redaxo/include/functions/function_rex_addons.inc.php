@@ -4,7 +4,7 @@
 /**
  * Addon Funktionen 
  * @package redaxo3
- * @version $Id: function_rex_addons.inc.php,v 1.7 2007/06/28 09:52:20 kills Exp $
+ * @version $Id: function_rex_addons.inc.php,v 1.8 2007/06/30 18:25:40 kills Exp $
  */
 
 function rex_install_addon($addons, $addonname)
@@ -245,6 +245,7 @@ function rex_install_prepare_query($qry)
      
   $qry = str_replace('%TIME%', time(), $qry); 
   $qry = str_replace('%TABLE_PREFIX%', $REX['TABLE_PREFIX'], $qry);
+  $qry = str_replace('%TEMP_PREFIX%', $REX['TEMP_PREFIX'], $qry);
   
   return $qry;
 }
