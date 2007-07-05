@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.86 2007/07/05 11:38:44 kills Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.87 2007/07/05 19:36:17 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -1197,6 +1197,9 @@ function rex_generateAddons($ADDONS, $debug = false)
   // Sichergehen, dass die Datei existiert und beschreibbar ist
   if (is_writable($file))
   {
+    // Da dieser Funktion öfter pro request aufgerufen werden kann,
+    // hier die caches löschen
+    clearstatcache();
 
     if (!$h = fopen($file, "r"))
     {
