@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.29 2007/06/07 13:59:39 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.30 2007/07/05 11:04:12 kills Exp $
  */
 
 $OUT = TRUE;
@@ -94,18 +94,18 @@ if ($function == "add" or $function == "edit")
     {
       $faction->setValue('createuser', $REX_USER->getValue('login'));
       $faction->setValue('createdate', time());
-      $faction->insert();
-
-      $message = $I18N->msg('action_added');
+      
+      if($faction->insert())
+        $message = $I18N->msg('action_added');
     }
     else
     {
-      $faction->setValue('updatedate', time());
       $faction->setValue('updateuser', $REX_USER->getValue('login'));
+      $faction->setValue('updatedate', time());
       $faction->setWhere('id=' . $action_id);
-      $faction->update();
-
-      $message = $I18N->msg('action_updated');
+      
+      if($faction->update())
+        $message = $I18N->msg('action_updated');
     }
 
     if (isset ($goon) and $goon != '')
@@ -137,7 +137,7 @@ if ($function == "add" or $function == "edit")
     }
     else
     {
-      $legend = $I18N->msg("action_create");
+      $legend = $I18N->msg('action_create');
     }
 
     $sel_preview_status = new rex_select();
