@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.20 2007/07/05 10:30:01 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.21 2007/07/05 10:48:19 kills Exp $ 
  */
 
 class rex_sql
@@ -83,27 +83,29 @@ class rex_sql
 
     if ($this->result)
     {
-      if (preg_match('/^\s*?(SELECT|SHOW|UPDATE|INSERT)/i', $qry, $matches))
+      if (preg_match('/^\s*?(SELECT|SHOW|UPDATE|INSERT|DELETE|REPLACE)/i', $qry, $matches))
       {
         switch (strtoupper($matches[1]))
         {
           case 'SELECT' :
           case 'SHOW' :
-            {
-              $this->rows = mysql_num_rows($this->result);
-              break;
-            }
+          {
+            $this->rows = mysql_num_rows($this->result);
+            break;
+          }
+          case 'REPLACE' :
+          case 'DELETE' :
           case 'UPDATE' :
-            {
-              $this->rows = mysql_affected_rows($this->identifier);
-              break;
-            }
+          {
+            $this->rows = mysql_affected_rows($this->identifier);
+            break;
+          }
           case 'INSERT' :
-            {
-              $this->rows = mysql_affected_rows($this->identifier);
-              $this->last_insert_id = mysql_insert_id($this->identifier);
-              break;
-            }
+          {
+            $this->rows = mysql_affected_rows($this->identifier);
+            $this->last_insert_id = mysql_insert_id($this->identifier);
+            break;
+          }
         }
       }
       $this->error = '';
