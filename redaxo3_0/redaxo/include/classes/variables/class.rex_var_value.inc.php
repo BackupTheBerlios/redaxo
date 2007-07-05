@@ -10,7 +10,7 @@
  * REX_IS_VALUE
  * 
  * @package redaxo3
- * @version $Id: class.rex_var_value.inc.php,v 1.10 2007/05/21 18:13:22 kills Exp $
+ * @version $Id: class.rex_var_value.inc.php,v 1.11 2007/07/05 12:11:44 kills Exp $
  */
 
 class rex_var_value extends rex_var
@@ -36,6 +36,7 @@ class rex_var_value extends rex_var
   function setACValues(& $sql, $REX_ACTION, $escape = false)
   {
     global $REX;
+    
     for ($i = 1; $i < 21; $i++)
     {
       if ($escape)
@@ -43,8 +44,17 @@ class rex_var_value extends rex_var
       else
         $this->setValue($sql, 'value' . $i, $REX_ACTION['VALUE'][$i]);
     }
-    $this->setValue($sql, 'php', $REX_ACTION['PHP']);
-    $this->setValue($sql, 'html', $REX_ACTION['HTML']);
+    
+    if ($escape)
+    {
+      $this->setValue($sql, 'php', addslashes($REX_ACTION['PHP']));
+      $this->setValue($sql, 'html', addslashes($REX_ACTION['HTML']));
+    }
+    else
+    {
+      $this->setValue($sql, 'php', $REX_ACTION['PHP']);
+      $this->setValue($sql, 'html', $REX_ACTION['HTML']);
+    }
   }
 
   // --------------------------------- Output
