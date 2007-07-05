@@ -4,7 +4,7 @@
 /**
  * Addon Funktionen 
  * @package redaxo3
- * @version $Id: function_rex_addons.inc.php,v 1.9 2007/06/30 18:50:21 kills Exp $
+ * @version $Id: function_rex_addons.inc.php,v 1.10 2007/07/05 11:38:58 kills Exp $
  */
 
 function rex_install_addon($addons, $addonname)
@@ -96,7 +96,7 @@ function rex_activate_addon($addons, $addonname)
   }
   else
   {
-    $state = $I18N->msg("addon_no_activation", $addonname);
+    $state = $I18N->msg('addon_no_activation', $addonname);
   }
 
   if($state !== true)
@@ -111,13 +111,14 @@ function rex_deactivate_addon($addons, $addonname)
   $state = true;
 
   $REX['ADDON']['status'][$addonname] = 0;
+  
   // regenerate Addons file
   $state = rex_generateAddons($addons);
 
   return $state;
 }
 
-function rex_uninstall_addon($addons, $addonname, $regenerate_addons = true)
+function rex_uninstall_addon($addons, $addonname)
 {
   global $REX, $I18N;
 
@@ -155,7 +156,7 @@ function rex_uninstall_addon($addons, $addonname, $regenerate_addons = true)
           $state = 'Error found in uninstall.sql:<br />'. $state;
 			}
 			
-      if ($state === true && $regenerate_addons)
+      if ($state === true)
       {
         // regenerate Addons file
         $state = rex_generateAddons($addons);

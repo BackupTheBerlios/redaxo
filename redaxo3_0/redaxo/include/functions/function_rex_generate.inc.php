@@ -4,7 +4,7 @@
 /** 
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc. 
  * @package redaxo3 
- * @version $Id: function_rex_generate.inc.php,v 1.85 2007/06/23 12:08:11 kristinus Exp $ 
+ * @version $Id: function_rex_generate.inc.php,v 1.86 2007/07/05 11:38:44 kills Exp $ 
  */
 
 // ----------------------------------------- Alles generieren
@@ -1210,7 +1210,6 @@ function rex_generateAddons($ADDONS, $debug = false)
     {
       return 'Konnte Datei "'.$file.'" nicht zum schreiben oeffnen';
     }
-    //if (!fwrite($h, $fcontent, strlen($fcontent))) {
     if (!fwrite($h, $fcontent, strlen($fcontent)))
     {
       return 'Konnte Inhalt nicht in Datei "'.$file.'" schreiben';
