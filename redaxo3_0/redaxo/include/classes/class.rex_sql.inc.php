@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.19 2007/06/30 19:03:00 kills Exp $ 
+ * @version $Id: class.rex_sql.inc.php,v 1.20 2007/07/05 10:30:01 kills Exp $ 
  */
 
 class rex_sql
@@ -231,7 +231,10 @@ class rex_sql
         if(strpos($fld_name, '.') !== false)
           $fld_name = str_replace('.', '`.`', $fld_name);
           
-        $qry .= '`' . $fld_name . '`=' . $this->escape($value);
+        $qry .= '`' . $fld_name . '`="' . $value .'"';
+// Da Werte via POST/GET schon mit magic_quotes escaped werden, 
+// brauchen wir hier nicht mehr escapen
+//        $qry .= '`' . $fld_name . '`=' . $this->escape($value);
       }
     }
 
