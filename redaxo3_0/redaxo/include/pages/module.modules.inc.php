@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.31 2007/07/05 10:59:26 kills Exp $
+ * @version $Id: module.modules.inc.php,v 1.32 2007/07/05 11:02:28 kills Exp $
  */
 
 $OUT = TRUE;
@@ -26,7 +26,6 @@ if (!empty($add_action))
 elseif (isset($function_action) and $function_action == 'delete')
 {
   $action = new rex_sql();
-  $action->debugsql=true;
   $action->setTable($REX['TABLE_PREFIX'].'module_action');
   $action->setWhere('id='. $iaction_id . ' LIMIT 1');
   
