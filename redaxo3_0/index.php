@@ -3,7 +3,7 @@
 /** 
  * 
  * @package redaxo3 
- * @version $Id: index.php,v 1.39 2007/06/30 19:03:00 kills Exp $ 
+ * @version $Id: index.php,v 1.40 2007/07/05 10:23:20 kills Exp $ 
  */ 
 
 // ----- ob caching start für output filter
@@ -76,9 +76,5 @@ rex_register_extension_point( 'OUTPUT_FILTER_CACHE', $CONTENT, '', true);
 
 // ----- inhalt endgueltig ausgeben
 echo $CONTENT;
-
-// DB Verbindung schließen
-$sql = rex_sql::getInstance();
-$sql->disconnect();
 
 ?>
