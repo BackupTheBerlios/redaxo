@@ -1,11 +1,9 @@
 <?php
 
-error_reporting(E_ALL);
-
 /** 
  *  
  * @package redaxo3
- * @version $Id: index.php,v 1.59 2007/07/05 10:23:20 kills Exp $
+ * @version $Id: index.php,v 1.60 2007/07/05 19:03:11 kills Exp $
  */ 
 
 // ----- caching start für output filter
