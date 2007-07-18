@@ -2,7 +2,7 @@
 /** 
  *  
  * @package redaxo3 
- * @version $Id: user.inc.php,v 1.71 2007/06/07 10:56:57 kristinus Exp $ 
+ * @version $Id: user.inc.php,v 1.72 2007/07/18 13:49:54 kills Exp $ 
  */ 
 
 /*
@@ -163,7 +163,7 @@ $sel_module->setName("userperm_module[]");
 $sel_module->setId("userperm_module");
 
 $sqlmodule = new rex_sql;
-$sqlmodule->setQuery("select * from ".$REX['TABLE_PREFIX']."modultyp order by name");
+$sqlmodule->setQuery("select * from ".$REX['TABLE_PREFIX']."module order by name");
 
 for ($i=0;$i<$sqlmodule->getRows();$i++)
 {

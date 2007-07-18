@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.70 2007/07/05 19:43:54 kills Exp $
+ * @version $Id: setup.inc.php,v 1.71 2007/07/18 13:49:54 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -390,7 +390,7 @@ if ($checkmodus == 3 && $send == 1)
     $REX['TABLE_PREFIX'] .'file' => 0,
     $REX['TABLE_PREFIX'] .'file_category' => 0,
     $REX['TABLE_PREFIX'] .'module_action' => 0,
-    $REX['TABLE_PREFIX'] .'modultyp' => 0,
+    $REX['TABLE_PREFIX'] .'module' => 0,
     $REX['TABLE_PREFIX'] .'template' => 0,
     $REX['TABLE_PREFIX'] .'user' => 0
   );

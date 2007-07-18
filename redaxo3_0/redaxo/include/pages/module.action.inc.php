@@ -3,7 +3,7 @@
 /** 
  *  
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.31 2007/07/05 11:10:23 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.32 2007/07/18 13:49:54 kills Exp $
  */
 
 $OUT = TRUE;
@@ -21,7 +21,7 @@ if ($function == "delete")
           FROM 
             '. $REX['TABLE_PREFIX'] .'module_action a 
           LEFT JOIN 
-           '. $REX['TABLE_PREFIX'] .'modultyp m 
+           '. $REX['TABLE_PREFIX'] .'module m 
           ON 
             a.module_id = m.id 
           WHERE 
