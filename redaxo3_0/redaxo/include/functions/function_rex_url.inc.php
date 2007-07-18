@@ -3,7 +3,7 @@
 /**
  * URL Funktionen
  * @package redaxo3
- * @version $Id: function_rex_url.inc.php,v 1.7 2007/07/18 15:03:34 kills Exp $
+ * @version $Id: function_rex_url.inc.php,v 1.8 2007/07/18 15:11:46 kills Exp $
  */
 
 // ----------------------------------------- Parse Article Name for Url
@@ -149,6 +149,6 @@ function rex_apache_rewrite($id, $name, $clang, $params)
     $params = '?'.urlencode(substr($params, strpos($params, '&') + 1));
   }
 
-  return $id.'-'.$clang.'-'.$name.'.html'.$params;
+  return $id.'-'.$clang.'-'.$name.'.htm'.$params;
 }
 ?>
