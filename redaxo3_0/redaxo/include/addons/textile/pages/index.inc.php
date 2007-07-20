@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.7 2007/07/20 09:56:18 kills Exp $
+ * @version $Id: index.inc.php,v 1.8 2007/07/20 11:01:40 kills Exp $
  */
 
 require $REX['INCLUDE_PATH'].'/layout/top.php';
@@ -32,7 +32,7 @@ EOD;
 }
 else
 {
-  echo "<span class="rex-warning">Dieses Modul benötigt das \"textile\" Addon!</span>";
+  echo \'<span class="rex-warning">Dieses Modul benötigt das "textile" Addon!</span>\';
 }
 ?>';
 
