@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: index.php,v 1.62 2007/07/20 09:57:01 kills Exp $
+ * @version $Id: index.php,v 1.63 2007/07/20 10:52:55 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -157,7 +157,7 @@ else
     }
 
     // --- addon page check
-    if (is_array($REX['ADDON']['page']))
+    if (isset($REX['ADDON']['page']) && is_array($REX['ADDON']['page']))
     {
       $as = array_search($page,$REX['ADDON']['page']);
       if ($as !== false)
