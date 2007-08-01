@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.126 2007/07/18 14:11:16 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.127 2007/08/01 15:36:39 kills Exp $
  */
 
 // TODOS
@@ -106,6 +106,7 @@ function selectMedialist(filename)
 
             option = opener.document.createElement("OPTION");
             option.text = filename;
+            option.value = filename;
 
 						source.options.add(option, sourcelength);
 						opener.writeREXMedialist('. $id .');';
