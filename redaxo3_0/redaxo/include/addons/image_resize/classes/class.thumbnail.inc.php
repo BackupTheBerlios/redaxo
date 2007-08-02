@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo3
- * @version $Id: class.thumbnail.inc.php,v 1.10 2007/08/02 11:44:43 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.11 2007/08/02 11:59:31 kills Exp $
  */
 
 class thumbnail
@@ -218,6 +218,8 @@ class thumbnail
 
     header('Content-Type: image/' . $this->img['format']);
     header('Last-Modified: ' . gmdate('r', $lastModified));
+    // caching clientseitig/proxieseitig erlauben
+    header('Cache-Control: public');
     readfile($file);
   }
 
