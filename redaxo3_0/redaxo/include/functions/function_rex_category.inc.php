@@ -4,7 +4,7 @@
  * Regelt die Rechte an den einzelnen Kategorien und gibt den Pfad aus
  * Kategorien = Startartikel und Bezüge  
  * @package redaxo3 
- * @version $Id: function_rex_category.inc.php,v 1.17 2007/04/03 19:20:35 kills Exp $ 
+ * @version $Id: function_rex_category.inc.php,v 1.18 2007/08/04 18:06:27 kristinus Exp $ 
  */
   
 $KATebene = 0; // aktuelle Ebene: default
@@ -20,6 +20,8 @@ $KAT->setQuery("SELECT * FROM ".$REX['TABLE_PREFIX']."article WHERE id=$category
 if ($KAT->getRows()!=1)
 {
 	// kategorie existiert nicht
+	$category_id = 0;
+	$article_id = 0;
 }
 else
 {
