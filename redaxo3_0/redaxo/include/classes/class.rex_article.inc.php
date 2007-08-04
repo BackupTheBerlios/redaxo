@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.34 2007/07/20 10:11:17 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.35 2007/08/04 17:43:24 kristinus Exp $
  */
 
 class rex_article
@@ -527,7 +527,8 @@ class rex_article
     ob_start();
     if ($this->getTemplateId() == 0 and $this->article_id != 0)
     {
-      echo $this->getArticle();
+      // echo $this->getArticle();
+      echo "no template";
     }
     elseif ($this->getTemplateId() != 0 and $this->article_id != 0)
     {
