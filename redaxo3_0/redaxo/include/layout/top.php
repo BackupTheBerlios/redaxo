@@ -3,7 +3,7 @@
 /**
  * Layout Kopf des Backends
  * @package redaxo3
- * @version $Id: top.php,v 1.47 2007/07/20 09:56:43 kills Exp $
+ * @version $Id: top.php,v 1.48 2007/08/05 12:38:21 kills Exp $
  */
 
 if (!isset ($page_name))
@@ -19,8 +19,8 @@ if ($page_name != '')
 <head>
   <title><?php echo $page_title ?></title>
 <?php
-// ----- EXTENSION POINT
-echo rex_register_extension_point( 'PAGE_HEADER', '');
+  // ----- EXTENSION POINT
+  echo rex_register_extension_point('PAGE_HEADER', '');
 ?>
   <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $I18N->msg("htmlcharset"); ?>" />
   <meta http-equiv="Content-Language" content="<?php echo $I18N->msg("htmllang"); ?>" />
@@ -36,10 +36,6 @@ echo rex_register_extension_point( 'PAGE_HEADER', '');
   </script>
 </head>
 <?php
-/*
-if (isset ($open_header_only) && $open_header_only == true)
-  return;
-*/
 
 $body_id = str_replace('_', '-', $page);
 ?>

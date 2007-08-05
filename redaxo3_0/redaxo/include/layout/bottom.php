@@ -1,19 +1,18 @@
 <?php
 
-/** 
+/**
  * Layout Fuß des Backends
  * @package redaxo3
- * @version $Id: bottom.php,v 1.9 2007/04/24 18:31:08 kristinus Exp $
+ * @version $Id: bottom.php,v 1.10 2007/08/05 12:38:21 kills Exp $
  */
- 
-// if (!(isset( $open_header_only) && $open_header_only == true)):
+
 ?>
 
 	</div>
 <!-- *** OUTPUT OF CONTENT - END *** -->
 
 </div><!-- END #rex-wrapper -->
-	
+
 	<div id="rex-ftr">
 		<ul>
 			<li><a href="http://www.pergopa.de" target="_blank" class="black"<?php echo rex_tabindex() ?>>pergopa kristinus gbr</a> | </li>
@@ -22,8 +21,5 @@
 		</ul>
 		<p><?php echo showScripttime() ?> sec | <?php echo rex_formatter :: format(time(), 'strftime', 'date'); ?></p>
 	</div>
-<?php
-// endif;
-?>
    </body>
 </html>
