@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: index.php,v 1.63 2007/07/20 10:52:55 kills Exp $
+ * @version $Id: index.php,v 1.64 2007/08/09 16:04:19 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -240,7 +240,11 @@ $CONTENT = rex_register_extension_point( 'OUTPUT_FILTER', $CONTENT);
 // ----- EXTENSION POINT - keine Manipulation der Ausgaben ab hier (read only)
 rex_register_extension_point( 'OUTPUT_FILTER_CACHE', $CONTENT, '', true);
 
-// ----- inhalt endgueltig ausgeben
+// ----- GZIP
+if($REX['USE_GZIP'] === true || $REX['USE_GZIP'] == 'backend')
+  $CONTENT = rex_send_gzip($CONTENT);
+
+// ----- inhalt ausgeben
 echo $CONTENT;
 
 ?>

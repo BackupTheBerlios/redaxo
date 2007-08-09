@@ -1,9 +1,9 @@
 <?php
-/** 
+/**
  * Bindet nötige Klassen/Funktionen ein
- * @package redaxo3 
- * @version $Id: functions.inc.php,v 1.77 2007/06/25 21:08:23 kristinus Exp $ 
- */ 
+ * @package redaxo3
+ * @version $Id: functions.inc.php,v 1.78 2007/08/09 16:04:51 kills Exp $
+ */
 
 // ----------------- TIMER
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_time.inc.php";
@@ -80,6 +80,7 @@ if (!$REX['GG'])
 
 // ----- FUNCTIONS
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_globals.inc.php';
+include_once $REX['INCLUDE_PATH'].'/functions/function_rex_client_cache.inc.php';
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_url.inc.php';
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_extension.inc.php';
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_other.inc.php';
