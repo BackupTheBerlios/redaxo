@@ -1,9 +1,9 @@
 <?php
 
 /**
- *
+ * Hauptkonfigurationsdatei
  * @package redaxo3
- * @version $Id: master.inc.php,v 1.34 2007/08/09 16:07:46 kills Exp $
+ * @version $Id: master.inc.php,v 1.35 2007/08/09 16:08:05 kills Exp $
  */
 
 // -----------------
