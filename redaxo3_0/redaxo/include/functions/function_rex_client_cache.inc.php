@@ -4,10 +4,10 @@
  * HTTP1.1 Client Cache Features
  *
  * @package redaxo3
- * @version $Id: function_rex_client_cache.inc.php,v 1.1 2007/08/09 16:04:51 kills Exp $
+ * @version $Id: function_rex_client_cache.inc.php,v 1.2 2007/08/14 16:14:14 kills Exp $
  */
 
-
+// Prüft, ob sich dateien geändert haben
 function rex_send_last_modified($REX_ARTICLE)
 {
   $lastModified = date('r', $REX_ARTICLE->getValue('updatedate'));
@@ -26,6 +26,7 @@ function rex_send_last_modified($REX_ARTICLE)
   header('Last-Modified: ' . $lastModified);
 }
 
+// Prüft ob sich der Inhalt einer Seite geändert hat
 function rex_send_etag($CONTENT)
 {
   $cacheKey = md5($CONTENT);
