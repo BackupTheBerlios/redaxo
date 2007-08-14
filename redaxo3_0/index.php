@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: index.php,v 1.43 2007/08/09 16:05:08 kills Exp $
+ * @version $Id: index.php,v 1.44 2007/08/14 16:20:26 kills Exp $
  */
 
 // ----- ob caching start für output filter
@@ -83,7 +83,7 @@ if($REX['USE_ETAG'])
   rex_send_etag($CONTENT);
 
 // ----- GZIP
-if($REX['USE_GZIP'] === true || $REX['USE_GZIP'] == 'frontend')
+if($REX['USE_GZIP'] === 'true' || $REX['USE_GZIP'] == 'frontend')
   $CONTENT = rex_send_gzip($CONTENT);
 
 // ----- inhalt ausgeben
