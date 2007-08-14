@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo3
- * @version $Id: class.thumbnail.inc.php,v 1.11 2007/08/02 11:59:31 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.12 2007/08/14 16:12:46 kills Exp $
  */
 
 class thumbnail
@@ -210,6 +210,8 @@ class thumbnail
     if (!$lastModified)
       $lastModified = time();
 
+    $lastModified = gmdate('r', $lastModified);
+
     if(isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && $_SERVER['HTTP_IF_MODIFIED_SINCE'] == $lastModified)
     {
       header('HTTP/1.1 304 Not Modified');
@@ -217,7 +219,7 @@ class thumbnail
     }
 
     header('Content-Type: image/' . $this->img['format']);
-    header('Last-Modified: ' . gmdate('r', $lastModified));
+    header('Last-Modified: ' . $lastModified);
     // caching clientseitig/proxieseitig erlauben
     header('Cache-Control: public');
     readfile($file);
