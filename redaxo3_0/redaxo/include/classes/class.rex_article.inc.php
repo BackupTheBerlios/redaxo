@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.35 2007/08/04 17:43:24 kristinus Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.36 2007/08/16 16:54:57 kills Exp $
  */
 
 class rex_article
@@ -165,7 +165,7 @@ class rex_article
     else $this->eval = FALSE;
   }
 
-  function getValue($value)
+  function _getValue($value)
   {
     global $REX;
 
@@ -176,8 +176,25 @@ class rex_article
       else $value = "id";
     }
 
+    return $value;
+  }
+
+  function getValue($value)
+  {
+    global $REX;
+    $value = $this->_getValue($value);
+
     if ($REX['GG'] && !$this->viasql) return $REX['ART'][$this->article_id][$value][$this->clang];
     else return $this->ARTICLE->getValue($value);
+  }
+
+  function hasValue($value)
+  {
+    global $REX;
+    $value = $this->_getValue($value);
+
+    if ($REX['GG'] && !$this->viasql) return isset($REX['ART'][$this->article_id][$value][$this->clang]);
+    else return $this->ARTICLE->hasValue($value);
   }
 
   // -----
