@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.24 2007/08/19 14:42:19 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.25 2007/08/19 15:15:45 kills Exp $
  */
 
 class rex_sql
@@ -261,9 +261,9 @@ class rex_sql
    * @see #setValue()
    * @see #where()
    */
-  function update()
+  function update($successMessage = null)
   {
-    return $this->setQuery('UPDATE `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar);
+    return $this->statusQuery('UPDATE `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar, $successMessage);
   }
 
   /**
@@ -273,9 +273,9 @@ class rex_sql
    * @see #setTable()
    * @see #setValue()
    */
-  function insert()
+  function insert($successMessage = null)
   {
-    return $this->setQuery('INSERT INTO `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar);
+    return $this->statusQuery('INSERT INTO `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar, $successMessage);
   }
 
   /**
@@ -285,9 +285,9 @@ class rex_sql
    * @see #setTable()
    * @see #setValue()
    */
-  function replace()
+  function replace($successMessage = null)
   {
-    return $this->setQuery('REPLACE INTO `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar);
+    return $this->statusQuery('REPLACE INTO `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar, $successMessage);
   }
 
   /**
@@ -297,9 +297,51 @@ class rex_sql
    * @see #setTable()
    * @see #where()
    */
-  function delete()
+  function delete($successMessage = null)
   {
-    return $this->setQuery('DELETE FROM `' . $this->table . '` ' . $this->wherevar);
+    return $this->statusQuery('DELETE FROM `' . $this->table . '` ' . $this->wherevar, $successMessage);
+  }
+
+  /**
+   * Setzt den Query $query ab.
+   *
+   * Wenn die Variable $successMessage gefüllt ist, dann wird diese bei
+   * erfolgreichem absetzen von $query zurückgegeben, sonst die MySQL
+   * Fehlermeldung
+   *
+   * Wenn die Variable $successMessage nicht gefüllt ist, verhält sich diese
+   * Methode genauso wie setQuery()
+   *
+   * Beispiel:
+   *
+   * <code>
+   * $sql = new sql();
+   * $message = $sql->statusQuery(
+   *    'INSERT  INTO abc SET a="ab"',
+   *    'Datensatz  erfolgreich eingefügt');
+   * </code>
+   *
+   *  anstatt von
+   *
+   * <code>
+   * $sql = new sql();
+   * if($sql->setQuery('INSERT INTO abc SET a="ab"'))
+   *   $message  = 'Datensatz erfolgreich eingefügt');
+   * else
+   *   $message  = $sql- >getError();
+   * </code>
+   */
+  function statusQuery($query, $successMessage = null)
+  {
+    $res = $this->setQuery($query);
+    if($successMessage)
+    {
+      if($res)
+        return $successMessage;
+      else
+        return $this->getError();
+    }
+    return $res;
   }
 
   /**
