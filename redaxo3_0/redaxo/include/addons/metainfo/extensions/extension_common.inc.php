@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.13 2007/06/26 19:05:34 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.14 2007/08/19 15:52:52 kills Exp $
  */
 
 rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
@@ -25,13 +25,13 @@ function rex_a62_insertJs($params)
 	fclose($hdl);
 
   $js ='
-    <!-- Metainfo JS //--> 
+    <!-- Metainfo JS //-->
 	  <script type="text/javascript">
 	  <!--
 	  '. $jscontent .'
 	  //-->
 	  </script>
-    <!-- End Metainfo JS //--> 
+    <!-- End Metainfo JS //-->
   ';
 
   return str_replace('</head>', $js . '</head>', $content);
@@ -64,7 +64,10 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
     $params = $sqlFields->getValue('params');
     $typeLabel = $sqlFields->getValue('label');
     $attr = $sqlFields->getValue('attributes');
-    $dbvalues = explode('|+|', $activeItem->getValue($name));
+
+    $dbvalues = array('');
+    if($activeItem)
+      $dbvalues = explode('|+|', $activeItem->getValue($name));
 
     if($title != '')
       $label = htmlspecialchars($title);
@@ -355,12 +358,17 @@ function _rex_a62_metainfo_form($prefix, $params, $saveCallback)
             prior';
 
   $sqlFields = new rex_sql();
-//  $fields->debugsql = true;
+  // $sqlFields->debugsql = true;
   $sqlFields->setQuery($qry);
 
   $params = rex_call_func($saveCallback, array($params, $sqlFields), false);
 
-  $s = rex_a62_metaFields($sqlFields, $params['activeItem'], 'rex_a62_metainfo_form_item', $params);
+  // Beim ADD gibts noch kein activeItem
+  $activeItem = null;
+  if(isset($params['activeItem']))
+    $activeItem = $params['activeItem'];
+
+  $s = rex_a62_metaFields($sqlFields, $activeItem, 'rex_a62_metainfo_form_item', $params);
 
   return $s;
 }
