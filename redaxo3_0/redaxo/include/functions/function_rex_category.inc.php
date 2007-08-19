@@ -4,7 +4,7 @@
  * Regelt die Rechte an den einzelnen Kategorien und gibt den Pfad aus
  * Kategorien = Startartikel und Bezüge
  * @package redaxo3
- * @version $Id: function_rex_category.inc.php,v 1.20 2007/08/19 16:21:50 kills Exp $
+ * @version $Id: function_rex_category.inc.php,v 1.21 2007/08/19 16:33:47 kills Exp $
  */
 
 $KATebene = 0; // aktuelle Ebene: default
@@ -80,7 +80,7 @@ else
 $KATout = '
 <!-- *** OUTPUT OF CATEGORY-TOOLBAR - START *** -->
   <ul>
-    <li>'.$I18N->msg('path').' </li>
+    <li>'.$I18N->msg('path').'</li>
     <li>: <a href="index.php?page=structure&amp;category_id=0&amp;clang='. $clang .'"'. rex_tabindex() .'>Homepage</a></li>
     '. $KATout .'
   </ul>
