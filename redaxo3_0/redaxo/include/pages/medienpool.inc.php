@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.129 2007/08/19 15:17:46 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.130 2007/08/19 16:34:44 kills Exp $
  */
 
 // TODOS
@@ -1044,7 +1044,7 @@ if ($subpage == "detail")
                     	</p>';
 
   // ----- EXTENSION POINT
-  echo rex_register_extension_point('MEDIA_FORM_ADD', '', array ('file_id' => $file_id, 'media' => $gf));
+  echo rex_register_extension_point('MEDIA_FORM_EDIT', '', array ('file_id' => $file_id, 'media' => $gf));
 
   echo '
                       '. $add_ext_info .'
