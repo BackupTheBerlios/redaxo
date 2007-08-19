@@ -1,22 +1,19 @@
 <?php
 
-/** 
- *  
+/**
+ *
  * @package redaxo3
- * @version $Id: login.inc.php,v 1.8 2007/08/02 16:46:15 kristinus Exp $
- */ 
+ * @version $Id: login.inc.php,v 1.9 2007/08/19 13:38:52 kills Exp $
+ */
 
-rex_title("Login","");
+rex_title('Login');
 
 if (isset($FORM['loginmessage']) and $FORM['loginmessage'] != "")
 {
   echo '<p class="rex-warning"><span>'.$FORM['loginmessage'].'</span></p>'."\n";
 }
 
-if (!isset($REX_ULOGIN)) 
-{ 
-  $REX_ULOGIN = ''; 
-}
+$REX_ULOGIN = rex_post('REX_ULOGIN', 'string');
 
 echo '
 
@@ -39,14 +36,14 @@ echo '
   </fieldset>
 </form>
 </div>
-<script type="text/javascript"> 
-   <!-- 
+<script type="text/javascript">
+   <!--
    var needle = new getObj("REX_ULOGIN");
    needle.obj.focus();
 
    var needle = new getObj("javascript");
    needle.obj.value = 1;
-   //--> 
+   //-->
 </script>
 <!-- *** OUTPUT OF LOGIN-FORM - END *** -->
 
