@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.22 2007/08/16 16:52:36 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.23 2007/08/19 14:26:52 kills Exp $
  */
 
 class rex_sql
@@ -416,12 +416,14 @@ class rex_sql
    */
   function setNewId($field)
   {
-    if($this->setQuery('SELECT `' . $field . '` FROM `' . $this->table . '` ORDER BY `' . $field . '` DESC LIMIT 1'))
+    // setNewId muss neues sql Objekt verwenden, da sonst bestehende informationen im Objekt überschrieben werden
+    $sql = new rex_sql();
+    if($sql->setQuery('SELECT `' . $field . '` FROM `' . $this->table . '` ORDER BY `' . $field . '` DESC LIMIT 1'))
     {
-      if ($this->getRows() == 0)
+      if ($sql->getRows() == 0)
         $id = 0;
       else
-        $id = mysql_result($this->result, 0, $field);
+        $id = $sql->getValue($field);
 
       $id++;
       $this->setValue($field, $id);
