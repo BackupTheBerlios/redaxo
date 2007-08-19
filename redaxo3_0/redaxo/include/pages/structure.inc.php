@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: structure.inc.php,v 1.101 2007/08/19 15:52:52 kills Exp $
+ * @version $Id: structure.inc.php,v 1.102 2007/08/19 15:59:18 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -592,7 +592,7 @@ if ($function == 'add_cat' && $KATPERM && !$REX_USER->hasPerm('editContentOnly[]
         </tr>';
 
   // ----- EXTENSION POINT
-  echo rex_register_extension_point('CAT_META_FORM_ADD', '', array (
+  echo rex_register_extension_point('CAT_FORM_ADD', '', array (
       'id' => $category_id,
       'clang' => $clang,
       'data_colspan' => ($data_colspan+1),
@@ -660,7 +660,7 @@ for ($i = 0; $i < $KAT->getRows(); $i++)
         </tr>';
 
       // ----- EXTENSION POINT
-  		echo rex_register_extension_point('CAT_META_FORM_EDIT', "", array (
+  		echo rex_register_extension_point('CAT_FORM_EDIT', "", array (
       	'id' => $edit_id,
       	'clang' => $clang,
         'category' => $KAT,
