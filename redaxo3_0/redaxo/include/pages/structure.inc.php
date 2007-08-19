@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: structure.inc.php,v 1.99 2007/08/19 14:39:38 kills Exp $
+ * @version $Id: structure.inc.php,v 1.100 2007/08/19 15:20:17 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -80,9 +80,9 @@ if (!empty($catedit_function) && $edit_id != '' && $KATPERM)
     $ArtSql = new rex_sql();
     $ArtSql->setQuery('SELECT id FROM '.$REX['TABLE_PREFIX'].'article WHERE re_id='.$edit_id .' AND startpage=0 AND clang='.$clang);
 
+    $EART = new rex_sql();
     for($i = 0; $i < $ArtSql->getRows(); $i++)
     {
-      $EART = new rex_sql();
       $EART->setTable($REX['TABLE_PREFIX'].'article');
       $EART->setWhere('id='. $ArtSql->getValue('id') .' AND startpage=0 AND clang='.$clang);
       $EART->setValue('catname', $kat_name);
@@ -364,12 +364,11 @@ elseif (!empty($artadd_function) && $category_id !== '' && $KATPERM &&  !$REX_US
 
   unset ($id);
   reset($REX['CLANG']);
+  $AART = new rex_sql;
   while (list ($key, $val) = each($REX['CLANG']))
   {
-
     // ### erstelle neue prioliste wenn noetig
 
-    $AART = new rex_sql;
     // $AART->debugsql = 1;
     $AART->setTable($REX['TABLE_PREFIX']."article");
     if (!isset ($id) or !$id)

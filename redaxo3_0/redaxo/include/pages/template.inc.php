@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: template.inc.php,v 1.42 2007/07/19 14:23:02 kills Exp $
+ * @version $Id: template.inc.php,v 1.43 2007/08/19 15:20:17 kills Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -95,6 +95,10 @@ if ($function == "add" or $function == "edit") {
 	      $template_id = $TPL->getLastId();
 	      $message = $I18N->msg("template_added");
       }
+      else
+      {
+        $message = $TPL->getError();
+      }
     } else {
       $attributes = rex_setAttributes("ctype", $ctypes, $attributes);
 
@@ -103,11 +107,7 @@ if ($function == "add" or $function == "edit") {
       $TPL->setValue("updatedate", time());
       $TPL->setValue("updateuser", $REX_USER->getValue("login"));
 
-      if($TPL->update())
-      {
-	      $message = $I18N->msg("template_updated");
-      }
-
+      $message = $TPL->update($I18N->msg("template_updated"));
     }
 		// werte werden direkt wieder ausgegeben
     $templatename = stripslashes($templatename);
