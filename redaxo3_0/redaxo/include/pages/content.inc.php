@@ -4,7 +4,7 @@
 /**
  * Verwaltung der Inhalte. EditierModul / Metadaten ...
  * @package redaxo3
- * @version $Id: content.inc.php,v 1.122 2007/08/19 15:17:37 kills Exp $
+ * @version $Id: content.inc.php,v 1.123 2007/08/19 16:34:04 kills Exp $
  */
 
 /*
@@ -16,8 +16,9 @@
 unset ($REX_ACTION);
 
 $slice_id = rex_request('slice_id', 'int', '');
-$function = rex_request('function', 'string', '');
-
+$article_id = rex_request('article_id', 'int');
+$category_id = rex_request('category_id', 'int');
+$function = rex_request('function', 'string');
 
 $article = new rex_sql;
 $article->setQuery("
@@ -664,7 +665,6 @@ if ($article->getRows() == 1)
                   <!-- *** OUTPUT OF ARTICLE-CONTENT-EDIT-MODE - START *** -->
                   <div class="rex-cnt-editmode">
                   ';
-
       $CONT = new rex_article;
       $CONT->message = $message;
       $CONT->setArticleId($article_id);
