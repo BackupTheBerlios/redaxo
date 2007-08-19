@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.23 2007/08/19 14:26:52 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.24 2007/08/19 14:42:19 kills Exp $
  */
 
 class rex_sql
@@ -38,7 +38,6 @@ class rex_sql
     $this->debugsql = false;
     $this->DBID = $DBID;
     $this->selectDB();
-    $this->flush();
 
     // MySQL Version bestimmen
     if ($REX['MYSQL_VERSION'] == '')
@@ -54,6 +53,8 @@ class rex_sql
         exit('Could not identifiy MySQL Version!');
       }
     }
+
+    $this->flush();
   }
 
   /**
