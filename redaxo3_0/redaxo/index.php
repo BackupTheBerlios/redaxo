@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: index.php,v 1.66 2007/08/19 13:38:52 kills Exp $
+ * @version $Id: index.php,v 1.67 2007/08/22 15:56:06 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -89,11 +89,18 @@ else
     $REX_LOGIN->setLogout(true);
 
   $REX_LOGIN->setLogin($REX_ULOGIN, $REX_UPSW);
+  $loginCheck = $REX_LOGIN->checkLogin();
 
-  if (!$REX_LOGIN->checkLogin())
+  if ($loginCheck !== true)
   {
   	// login failed
+
     $FORM['loginmessage'] = $REX_LOGIN->message;
+
+    // Fehlermeldung von der Datenbank
+    if(is_string($loginCheck))
+      $FORM['loginmessage'] = $loginCheck;
+
     $LOGIN = FALSE;
     $page = 'login';
   } else

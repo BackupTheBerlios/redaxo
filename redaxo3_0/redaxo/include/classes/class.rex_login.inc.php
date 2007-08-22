@@ -5,7 +5,7 @@
  * Klasse zum handling des Login/Logout-Mechanismuses
  *
  * @package redaxo3
- * @version $Id: class.rex_login.inc.php,v 1.8 2007/08/19 13:38:52 kills Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.9 2007/08/22 15:55:06 kills Exp $
  */
 
 class rex_login_sql extends rex_sql
@@ -354,6 +354,9 @@ class rex_backend_login extends rex_login
         $fvs->setQuery('UPDATE '.$REX['TABLE_PREFIX'].'user SET login_tries=login_tries+1,lasttrydate='.time().' WHERE login="'. $this->usr_login .'"');
       }
     }
+
+    if($fvs->hasError())
+      return $fvs->getError();
 
     return $check;
   }
