@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.36 2007/08/16 16:54:57 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.37 2007/08/24 17:41:53 kristinus Exp $
  */
 
 class rex_article
@@ -726,15 +726,21 @@ class rex_article
   	global $REX;
 
     static $user_id = null;
+		static $user_login = null;
 
     // UserId gibts nur im Backend
     if($user_id === null)
     {
       global $REX_USER;
       if($REX_USER)
-        $user_id = $REX_USER->getValue('login');
-      else
+      {
+        $user_id = $REX_USER->getValue('user_id');
+        $user_login = $REX_USER->getValue('login');
+      }else
+      {
         $user_id = '';
+        $user_login = '';
+      }
     }
 
     static $search = array(
@@ -742,7 +748,8 @@ class rex_article
        'REX_CATEGORY_ID',
        'REX_CLANG_ID',
        'REX_TEMPLATE_ID',
-       'REX_USER_ID'
+       'REX_USER_ID',
+       'REX_USER_LOGIN'
     );
 
     $replace = array(
@@ -750,7 +757,8 @@ class rex_article
       $this->category_id,
       $this->clang,
       $this->getTemplateId(),
-      $user_id
+      $user_id,
+      $user_login
     );
 
     return str_replace($search, $replace,$content);
