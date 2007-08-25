@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: index.php,v 1.67 2007/08/22 15:56:06 kills Exp $
+ * @version $Id: index.php,v 1.68 2007/08/25 15:04:08 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -78,7 +78,7 @@ else
   header('Pragma: no-cache');
 
   // ---- prepare login
-  $REX_LOGIN = new rex_backend_login();
+  $REX_LOGIN = new rex_backend_login($REX['TABLE_PREFIX'] .'user');
   $REX_ULOGIN = rex_post('REX_ULOGIN', 'string');
   $REX_UPSW = rex_post('REX_UPSW', 'string');
 
