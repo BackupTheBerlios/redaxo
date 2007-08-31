@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo3
- * @version $Id: class.rex_list.inc.php,v 1.17 2007/08/31 08:18:00 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.18 2007/08/31 11:44:57 kills Exp $
  */
 
 /*
@@ -55,7 +55,7 @@ class rex_list
 
   // --------- Table Attributes
   var $tableAttributes;
-  var $tableColumnGroupes;
+  var $tableColumnGroups;
 
   // --------- Pagination Attributes
   var $rowsPerPage;
