@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: index.php,v 1.68 2007/08/25 15:04:08 kills Exp $
+ * @version $Id: index.php,v 1.69 2007/08/31 08:16:15 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -206,6 +206,9 @@ rex_register_extension_point( 'OUTPUT_FILTER_CACHE', $CONTENT, '', true);
 // ----- GZIP
 if($REX['USE_GZIP'] === 'true' || $REX['USE_GZIP'] == 'backend')
   $CONTENT = rex_send_gzip($CONTENT);
+
+// Evtl offene Db Verbindungen schließen
+rex_sql::disconnect(null);
 
 // ----- inhalt ausgeben
 echo $CONTENT;
