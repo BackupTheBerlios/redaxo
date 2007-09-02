@@ -5,9 +5,9 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.7 2007/06/06 19:06:52 kills Exp $
+ * @version $Id: index.inc.php,v 1.8 2007/09/02 13:34:51 kills Exp $
  */
- 
+
 // Parameter
 $Basedir = dirname(__FILE__);
 
@@ -19,7 +19,7 @@ $func = rex_request('func', 'string');
 // Include Header and Navigation
 include $REX['INCLUDE_PATH'].'/layout/top.php';
 
-// Build Subnavigation 
+// Build Subnavigation
 $subpages = array(
   array('','Artikel'),
   array('categories','Kategorien'),
@@ -28,37 +28,31 @@ $subpages = array(
 
 rex_title('Metainformationen erweitern', $subpages);
 
-$session_msg = rex_session('A62_MESSAGE', 'string');
-if($session_msg != '')
-{
-	echo '<p class="rex-warning"><span>'. $session_msg .'</span></p>';
-}
-
 // Include Current Page
 switch($subpage)
 {
   case 'media' :
   {
-    $prefix = 'med_'; 
+    $prefix = 'med_';
     $metaTable = $REX['TABLE_PREFIX'] .'file';
     break;
   }
-    
+
   case 'categories' :
   {
-    $prefix = 'cat_'; 
+    $prefix = 'cat_';
     $metaTable = $REX['TABLE_PREFIX'] .'article';
     break;
   }
-  
+
   default:
   {
-	  $prefix = 'art_'; 
+	  $prefix = 'art_';
     $metaTable = $REX['TABLE_PREFIX'] .'article';
   }
 }
 require $Basedir .'/field.inc.php';
 
-// Include Footer 
+// Include Footer
 include $REX['INCLUDE_PATH'].'/layout/bottom.php';
 ?>
