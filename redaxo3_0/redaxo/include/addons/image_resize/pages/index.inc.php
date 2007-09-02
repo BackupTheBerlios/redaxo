@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.18 2007/06/07 11:05:38 kills Exp $
+ * @version $Id: index.inc.php,v 1.19 2007/09/02 13:15:20 kristinus Exp $
  */
 
 include $REX['INCLUDE_PATH'] . '/layout/top.php';
@@ -46,7 +46,7 @@ $subpages = array (
   
 );
 
-rex_title('Image Resize Addon ', $subpages);
+rex_title('Image Resize', $subpages);
 
 if (isset ($msg) and $msg != '')
   echo '<table border="0" cellpadding="5" cellspacing="1" width="770"><tr><td class="warning">' . $msg . '</td></tr></table><br />';
