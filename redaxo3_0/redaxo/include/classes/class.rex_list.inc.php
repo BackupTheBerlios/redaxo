@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo3
- * @version $Id: class.rex_list.inc.php,v 1.18 2007/08/31 11:44:57 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.19 2007/09/02 13:37:04 kills Exp $
  */
 
 /*
@@ -853,7 +853,7 @@ class rex_list
 
     if($message != '')
     {
-      $s .= '<p class="rex-warning"><span>'. $message .'</span></p>'. "\n";
+      $s .= rex_warning($message). "\n";
     }
 
     if($header != '')

@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.37 2007/08/24 17:41:53 kristinus Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.38 2007/09/02 13:37:19 kills Exp $
  */
 
 class rex_article
@@ -352,7 +352,7 @@ class rex_article
               $msg = '';
               if($this->slice_id == $RE_CONTS[$I_ID] && $this->message != '')
               {
-                $msg = '<p class="rex-warning"><span>'. $this->message .'</span></p>';
+                $msg = rex_warning($this->message);
               }
 
               $mne = '
@@ -581,7 +581,7 @@ class rex_article
     $MOD->setQuery("SELECT * FROM ".$REX['TABLE_PREFIX']."module WHERE id=$module_id");
     if ($MOD->getRows() != 1)
     {
-      $slice_content = '<p class="rex-warning><span>'. $I18N->msg('module_doesnt_exist'). '</span></p>';
+      $slice_content = rex_warning($I18N->msg('module_doesnt_exist'));
     }else
     {
       $slice_content = '
