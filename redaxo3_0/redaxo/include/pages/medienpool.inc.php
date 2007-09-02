@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.132 2007/09/02 13:49:19 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.133 2007/09/02 14:03:48 kills Exp $
  */
 
 // TODOS
@@ -275,7 +275,7 @@ function rex_medienpool_registerFile($physical_filename,$org_filename,$filename,
   $FILESQL = new rex_sql;
   // $FILESQL->debugsql=1;
   $FILESQL->setTable($REX['TABLE_PREFIX']."file");
-  $FILESQL->setValue('filename',$filename);
+  $FILESQL->setValue('filename',strtolower($filename));
   $FILESQL->setValue('originalname',$org_filename);
   $FILESQL->setValue('category_id',$category_id);
   $FILESQL->setValue('title',$title);
