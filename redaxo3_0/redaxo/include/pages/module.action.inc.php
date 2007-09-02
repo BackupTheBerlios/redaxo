@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.33 2007/08/19 15:18:14 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.34 2007/09/02 13:46:41 kills Exp $
  */
 
 $OUT = TRUE;
@@ -180,7 +180,7 @@ if ($function == "add" or $function == "edit")
 
     if (isset ($message) and $message != '')
     {
-      echo '<p class="rex-warning"><span>' . $message . '</span></p>';
+      echo rex_warning($message);
     }
 
     echo '
@@ -262,7 +262,7 @@ if ($OUT)
 {
   if (isset ($message) and $message != "")
   {
-    echo '<p class="rex-warning"><span>' . $message . '</span></p>';
+    echo rex_warning($message);
     echo $action_in_use_msg;
   }
 

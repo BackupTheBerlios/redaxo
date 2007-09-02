@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: structure.inc.php,v 1.102 2007/08/19 15:59:18 kills Exp $
+ * @version $Id: structure.inc.php,v 1.103 2007/09/02 13:46:42 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -487,7 +487,7 @@ elseif ($function == 'artdelete_function' && $article_id != '' && $KATPERM && !$
 // --------------------------------------------- KATEGORIE LISTE
 
 if (isset ($message) and $message != "")
-  echo '<p class="rex-warning"><span>'. $message .'</span></p>';
+  echo rex_warning($message);
 
 $cat_name = 'Homepage';
 if($category_id != '')
@@ -774,7 +774,7 @@ if ($category_id > -1)
 
   if (isset ($amessage) and $amessage != "")
   {
-    echo '<p class="rex-warning"><span>'. $amessage .'</span></p>';
+    echo rex_warning($amessage);
   }
 
   $art_add_link = '';

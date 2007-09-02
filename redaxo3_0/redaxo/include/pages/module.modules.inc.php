@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.34 2007/08/19 15:20:17 kills Exp $
+ * @version $Id: module.modules.inc.php,v 1.35 2007/09/02 13:46:41 kills Exp $
  */
 
 $OUT = TRUE;
@@ -169,7 +169,7 @@ if ($function == 'add' or $function == 'edit')
 
     if (isset($message) and $message != '')
     {
-      echo '<p class="rex-warning"><span>'.$message.'</span></p>';
+      echo rex_warning($message);
     }
 
     echo '
@@ -300,7 +300,7 @@ if ($OUT)
 {
   if (isset($message) and $message != '')
   {
-    echo '<p class="rex-warning"><span>'.$message.'</span></p>';
+    echo rex_warning($message);
   }
 
   // ausgabe modulliste !

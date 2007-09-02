@@ -3,14 +3,14 @@
 /**
  *
  * @package redaxo3
- * @version $Id: login.inc.php,v 1.9 2007/08/19 13:38:52 kills Exp $
+ * @version $Id: login.inc.php,v 1.10 2007/09/02 13:46:42 kills Exp $
  */
 
 rex_title('Login');
 
 if (isset($FORM['loginmessage']) and $FORM['loginmessage'] != "")
 {
-  echo '<p class="rex-warning"><span>'.$FORM['loginmessage'].'</span></p>'."\n";
+  echo rex_warning($FORM['loginmessage'])."\n";
 }
 
 $REX_ULOGIN = rex_post('REX_ULOGIN', 'string');

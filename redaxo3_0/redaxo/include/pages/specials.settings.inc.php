@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: specials.settings.inc.php,v 1.11 2007/08/31 08:06:32 kills Exp $
+ * @version $Id: specials.settings.inc.php,v 1.12 2007/09/02 13:46:41 kills Exp $
  */
 
 if ($func == 'setup')
@@ -121,7 +121,7 @@ $sel_mod_rewrite->addOption('TRUE', 'TRUE');
 $sel_mod_rewrite->addOption('FALSE', 'FALSE');
 
 if ($message != "")
-  echo '<p class="rex-warning"><span>'.$message.'</span></p>';
+  echo rex_warning($message);
 
 echo '
 	<div class="rex-spc-stn">

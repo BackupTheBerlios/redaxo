@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: template.inc.php,v 1.45 2007/09/02 13:31:58 kristinus Exp $
+ * @version $Id: template.inc.php,v 1.46 2007/09/02 13:49:19 kills Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -141,9 +141,8 @@ if ($function == "add" or $function == "edit") {
 
     $tmpl_active_checked = $active == 1 ? ' checked="checked"' : '';
 
-    if (isset ($message) and $message != "") {
-      echo '<p class="rex-warning"><span>' . $message . '</span></p>';
-    }
+    if (isset ($message) and $message != "")
+      echo rex_warning($message);
 
     echo '
     	<div class="rex-tmp-editmode">
@@ -214,7 +213,7 @@ function rex_tplctypes_toggle()
 
 if ($OUT) {
   if (isset ($message) and $message != "") {
-    echo '<p class="rex-warning"><span>' . $message . '</span></p>';
+    echo rex_warning($message);
   }
 
   // ausgabe templateliste !

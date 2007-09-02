@@ -4,7 +4,7 @@
 /**
  * Verwaltung der Inhalte. EditierModul / Metadaten ...
  * @package redaxo3
- * @version $Id: content.inc.php,v 1.123 2007/08/19 16:34:04 kills Exp $
+ * @version $Id: content.inc.php,v 1.124 2007/09/02 13:46:41 kills Exp $
  */
 
 /*
@@ -93,7 +93,7 @@ if ($article->getRows() == 1)
   if (!($KATPERM || $REX_USER->hasPerm('article[' . $article_id . ']')))
   {
     // ----- hat keine rechte an diesem artikel
-    echo '<p class="rex-warning"><span>' . $I18N->msg('no_rights_to_edit') . '</span></p>';
+    echo rex_warning($I18N->msg('no_rights_to_edit'));
 
   }
   else
@@ -649,7 +649,7 @@ if ($article->getRows() == 1)
     // ------------------------------------------ WARNING
     if ($mode != 'edit' && $message != '')
     {
-      echo '<p class="rex-warning"><span>' . $message . '</span></p>';
+      echo rex_warning($message);
     }
 
     echo '
