@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo3
- * @version $Id: class.thumbnail.inc.php,v 1.13 2007/09/02 13:15:20 kristinus Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.14 2007/09/02 15:05:27 kills Exp $
  */
 
 class thumbnail
@@ -236,16 +236,16 @@ class thumbnail
   	global $REX;
   	foreach($this->filters as $filter)
   	{
-  		$file = $REX['INCLUDE_PATH'].'/addons/image_resize/filter/'.$filter.'.inc.php';
+  		$file = $REX['INCLUDE_PATH'].'/addons/image_resize/filters/filter.'.$filter.'.inc.php';
   		if (file_exists($file)) require_once($file);
   		$fname = 'image_resize_'.$filter;
   		if (function_exists($fname))
   		{
-  			$fname(&$this->img['des']);
+  			$fname($this->img['des']);
   		}
   	}
   }
 
-  
+
 }
 ?>
