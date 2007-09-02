@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: template.inc.php,v 1.43 2007/08/19 15:20:17 kills Exp $
+ * @version $Id: template.inc.php,v 1.44 2007/09/02 13:30:03 kristinus Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -192,7 +192,7 @@ function rex_tplctypes_toggle()
 }
 
 //--></script><a href=javascript:rex_tplctypes_toggle();><img src="pics/file_add.gif" id="rex-tmp-ctypes-icon" /></a>
-ctypes
+<a href=javascript:rex_tplctypes_toggle();>'.$I18N->msg("content_types").'</a>
 </legend>
 
      			<div class="rex-fldst-wrppr rex-tmp-ctypes" style="display:none">
