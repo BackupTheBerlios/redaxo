@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.133 2007/09/02 14:03:48 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.134 2007/09/03 06:37:27 tbaddade Exp $
  */
 
 // TODOS
@@ -231,8 +231,8 @@ $cat_out = '<div class="rex-mpl-catslct-frm">
                   <p>
                     <label for="rex_file_category">'. $I18N->msg('pool_kats') .'</label>
                     '. $sel_media->get() .'
-                  </p>
                     <input type="submit" class="rex-sbmt" value="'. $I18N->msg('pool_search') .'" />
+                  </p>
                 </fieldset>
               </form>
             </div>
