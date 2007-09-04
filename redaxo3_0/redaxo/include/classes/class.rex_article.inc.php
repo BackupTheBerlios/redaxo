@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.40 2007/09/04 21:06:48 tbaddade Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.41 2007/09/04 21:20:19 tbaddade Exp $
  */
 
 class rex_article
@@ -375,9 +375,8 @@ class rex_article
                 )
               );
 
-              $mne = '
+              $mne = $msg .'
 			       	<div class="rex-cnt-editmode-slc">
-                '. $msg .'
                 <p class="rex-flLeft" id="slice'. $RE_CONTS[$I_ID] .'">'. $RE_MODUL_NAME[$I_ID] .'</p>
                 <ul class="rex-flRight">
               ';
