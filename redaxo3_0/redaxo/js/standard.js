@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.36 2007/09/04 20:16:00 kills Exp $
+ @version $Id: standard.js,v 1.37 2007/09/04 20:29:12 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -559,9 +559,13 @@ if (!window.addEventListener)
 // --------------- /AddEvent
 
 // Beim Drücken eines Access-Keys weiterleiten
-/*
 addEvent(document, 'keypress', function(e)
 {
+  var activeElement = document.activeElement || e.explicitOriginalTarget;
+  var sTagName = activeElement.tagName.toLowerCase();
+  if(sTagName == 'input' || sTagName == 'textarea' || sTagName == 'select' || sTagName == 'option')
+    return;
+    
   var key = String.fromCharCode(e.keyCode || e.which);
   
   var buttons = document.getElementsByTagName('input');
@@ -586,7 +590,6 @@ addEvent(document, 'keypress', function(e)
     }
   }
 });
-*/
 
 
 function stopEvent(e)
