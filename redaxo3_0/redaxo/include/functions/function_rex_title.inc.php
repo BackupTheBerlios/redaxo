@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.33 2007/08/07 13:01:11 kristinus Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.34 2007/09/04 19:04:15 kills Exp $
  */
 
 /**
@@ -54,7 +54,7 @@ function rex_title($head, $subtitle = '')
   		'.$subtitle.'
 	</div>';
 
-  rex_register_extension_point('PAGE_TITLE_SHOWED', $subtitle, array('category_id' => $category_id, 'article_id' => $article_id, 'page' => $page));
+  rex_register_extension_point('PAGE_TITLE_SHOWN', $subtitle, array('category_id' => $category_id, 'article_id' => $article_id, 'page' => $page));
 
   print '
 <!-- *** OUTPUT OF CONTENT - START *** -->
