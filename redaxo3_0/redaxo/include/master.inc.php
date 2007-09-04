@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo3
- * @version $Id: master.inc.php,v 1.38 2007/09/04 20:16:18 kills Exp $
+ * @version $Id: master.inc.php,v 1.39 2007/09/04 20:23:52 kills Exp $
  */
 
 // -----------------
@@ -93,8 +93,9 @@ $REX['DB']['2']['PERSISTENT'] = false;
 $REX['ACKEY']['SAVE'] = 's';
 $REX['ACKEY']['APPLY'] = 'x';
 $REX['ACKEY']['DELETE'] = 'd';
-$REX['ACKEY']['ART_CREATE'] = 'a';
-$REX['ACKEY']['CAT_CREATE'] = 'c';
+$REX['ACKEY']['ADD'] = 'a';
+// Wenn 2 Add Aktionen auf einer Seite sind (z.b. Struktur)
+$REX['ACKEY']['ADD_2'] = 'y';
 $REX['ACKEY']['LOGOUT'] = 'l';
 
 // ----------------- default values
