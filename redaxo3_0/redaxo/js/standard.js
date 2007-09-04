@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.35 2007/09/04 20:09:14 kills Exp $
+ @version $Id: standard.js,v 1.36 2007/09/04 20:16:00 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -559,6 +559,7 @@ if (!window.addEventListener)
 // --------------- /AddEvent
 
 // Beim Drücken eines Access-Keys weiterleiten
+/*
 addEvent(document, 'keypress', function(e)
 {
   var key = String.fromCharCode(e.keyCode || e.which);
@@ -585,6 +586,7 @@ addEvent(document, 'keypress', function(e)
     }
   }
 });
+*/
 
 
 function stopEvent(e)
