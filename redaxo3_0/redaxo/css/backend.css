@@ -1,7 +1,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: backend.css,v 1.44 2007/09/04 18:02:41 tbaddade Exp $
+ * @version $Id: backend.css,v 1.45 2007/09/04 18:43:59 tbaddade Exp $
  */
 /*
 @import 'linkmap.css';
@@ -673,9 +673,11 @@ div#rex-stp label.rex-lbl-right {
 }
 
 div#rex-stp input,
-div#rex-stp select,
 div#rex-stp textarea {
 	width:300px;
+}
+div#rex-stp select {
+	width:306px;
 }
 
 div#rex-stp select.rex-slct {
@@ -1421,9 +1423,11 @@ div.rex-addon-editmode p {
 div.rex-addon-editmode p label {
 }
 div.rex-addon-editmode p input,
-div.rex-addon-editmode p select,
 div.rex-addon-editmode p textarea {
 	width:500px;
+}
+div.rex-addon-editmode p select {
+	width:506px;
 }
 div.rex-addon-editmode p.rex-rdo input,
 div.rex-addon-editmode p.rex-chckbx input,
