@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
  @package redaxo3 
- @version $Id: standard.js,v 1.37 2007/09/04 20:29:12 kills Exp $
+ @version $Id: standard.js,v 1.38 2007/09/04 20:31:35 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -562,6 +562,10 @@ if (!window.addEventListener)
 addEvent(document, 'keypress', function(e)
 {
   var activeElement = document.activeElement || e.explicitOriginalTarget;
+  
+  if(!activeElement)
+    return;
+    
   var sTagName = activeElement.tagName.toLowerCase();
   if(sTagName == 'input' || sTagName == 'textarea' || sTagName == 'select' || sTagName == 'option')
     return;
