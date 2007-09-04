@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo3
- * @version $Id: master.inc.php,v 1.36 2007/08/31 08:18:10 kills Exp $
+ * @version $Id: master.inc.php,v 1.37 2007/09/04 19:13:56 kills Exp $
  */
 
 // -----------------
@@ -88,6 +88,13 @@ $REX['DB']['2']['LOGIN'] = "";
 $REX['DB']['2']['PSW'] = "";
 $REX['DB']['2']['NAME'] = "";
 $REX['DB']['2']['PERSISTENT'] = false;
+
+// ----------------- Accesskeys
+$REX['ACKEY']['SAVE'] = 'S';
+$REX['ACKEY']['APPLY'] = 'X';
+$REX['ACKEY']['DELETE'] = 'D';
+$REX['ACKEY']['ART_CREATE'] = 'A';
+$REX['ACKEY']['CAT_CREATE'] = 'C';
 
 // ----------------- default values
 if (!isset($REX['NOFUNCTIONS'])) $REX['NOFUNCTIONS'] = false;
