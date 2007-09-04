@@ -1,7 +1,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: backend.css,v 1.43 2007/06/30 13:20:54 tbaddade Exp $
+ * @version $Id: backend.css,v 1.44 2007/09/04 18:02:41 tbaddade Exp $
  */
 /*
 @import 'linkmap.css';
@@ -89,7 +89,6 @@ legend.rex-hidden {
 
 /*	rex-warning */
 div#rex-output .rex-warning {
-	float:left;
 	width:670px;
 	width:100%;
 	margin:0 0 10px 0;
@@ -837,7 +836,7 @@ div.rex-cnt-editmode div.rex-cnt-editmode-slc {
 	float:left;
 	width:100%;
 	background:#ccd7dd;
-	font-size:1em;
+	font-size:1.2em;
 	font-weight:bold;
 }
 div.rex-cnt-editmode div.rex-cnt-editmode-slc p {
