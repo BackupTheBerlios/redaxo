@@ -3,7 +3,7 @@
 /**
  * Klasse zum erstellen von Listen
  * @package redaxo3
- * @version $Id: class.rex_form.inc.php,v 1.23 2007/09/02 13:36:54 kills Exp $
+ * @version $Id: class.rex_form.inc.php,v 1.24 2007/09/04 20:04:31 kills Exp $
  */
 
 class rex_form
@@ -714,13 +714,14 @@ class rex_form
     }
 
     $s = "\n";
-    $s .= '<div class="'. $this->divId .'">';
 
     $message = $this->getMessage();
     if($message != '')
     {
       $s .= '  '. rex_warning($message). "\n";
     }
+
+    $s .= '<div class="'. $this->divId .'">'. "\n";
 
     $i = 0;
     $addHeaders = true;
