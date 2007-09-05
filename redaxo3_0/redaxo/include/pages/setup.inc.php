@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.76 2007/09/04 18:43:34 kills Exp $
+ * @version $Id: setup.inc.php,v 1.77 2007/09/05 15:50:45 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -336,7 +336,7 @@ if ($checkmodus == 2)
     }
 
     $psw_functions = '';
-    foreach(array('', 'sha1', 'md5') as $key => $algo)
+    foreach(array('', 'sha1', 'md5', 'crypt') as $key => $algo)
     {
       $key = $algo;
       if($algo == '') $algo = $I18N->msg('setup_no_encryption');
