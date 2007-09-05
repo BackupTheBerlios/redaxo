@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo3
- * @version $Id: master.inc.php,v 1.40 2007/09/05 15:54:02 kills Exp $
+ * @version $Id: master.inc.php,v 1.41 2007/09/05 15:57:06 kills Exp $
  */
 
 // -----------------
@@ -98,6 +98,9 @@ $REX['ACKEY']['ADD'] = 'a';
 // Wenn 2 Add Aktionen auf einer Seite sind (z.b. Struktur)
 $REX['ACKEY']['ADD_2'] = 'y';
 $REX['ACKEY']['LOGOUT'] = 'l';
+
+// ------ Accesskeys for Addons
+// $REX['ACKEY']['ADDON']['metainfo'] = 'm';
 
 // ----------------- default values
 if (!isset($REX['NOFUNCTIONS'])) $REX['NOFUNCTIONS'] = false;
