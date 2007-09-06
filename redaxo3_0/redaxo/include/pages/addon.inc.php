@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: addon.inc.php,v 1.21 2007/09/04 22:14:31 tbaddade Exp $
+ * @version $Id: addon.inc.php,v 1.22 2007/09/06 19:44:42 tbaddade Exp $
  */
 
 include_once $REX['INCLUDE_PATH']."/functions/function_rex_other.inc.php";
@@ -157,7 +157,7 @@ if ($SP)
 
     echo '
         <tr>
-          <td class="rex-icon"><img src="pics/addon.gif" alt="'. $cur .'" title="'. $cur .'"/></td>
+          <td class="rex-icon"><img src="media/addon.gif" alt="'. $cur .'" title="'. $cur .'"/></td>
           <td>'.$cur.' [<a href="index.php?page=addon&amp;spage=help&amp;addonname='.$cur.'">?</a>]</td>
           <td>'.$install.'</td>
           <td>'.$status.'</td>
