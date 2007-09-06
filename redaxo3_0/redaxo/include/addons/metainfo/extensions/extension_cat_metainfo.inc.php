@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.18 2007/08/19 15:59:18 kills Exp $
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.19 2007/09/06 20:05:11 tbaddade Exp $
  */
 
 rex_register_extension('CAT_FORM_ADD', 'rex_a62_metainfo_form');
@@ -32,11 +32,11 @@ function rex_metainfo_toggle()
   {
 		show = toggleElement(trs[i]);
 	}
-  if (show == "") changeImage("rex-meta-icon","pics/file_del.gif")
-  else changeImage("rex-meta-icon","pics/file_add.gif");
+  if (show == "") changeImage("rex-meta-icon","media/file_del.gif")
+  else changeImage("rex-meta-icon","media/file_add.gif");
 }
 
-//--></script><a href="javascript:rex_metainfo_toggle();"><img src="pics/file_add.gif" id="rex-meta-icon" alt="'. $I18N_META_INFOS->msg('edit_metadata') .'" title="'. $I18N_META_INFOS->msg('edit_metadata') .'" /></a></div>';
+//--></script><a href="javascript:rex_metainfo_toggle();"><img src="media/file_add.gif" id="rex-meta-icon" alt="'. $I18N_META_INFOS->msg('edit_metadata') .'" title="'. $I18N_META_INFOS->msg('edit_metadata') .'" /></a></div>';
 
 	if ($fields->getRows()==1) return $return;
 }
