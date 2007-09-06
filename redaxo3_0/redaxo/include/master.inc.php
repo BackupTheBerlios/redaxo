@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo3
- * @version $Id: master.inc.php,v 1.43 2007/09/06 20:15:59 tbaddade Exp $
+ * @version $Id: master.inc.php,v 1.44 2007/09/06 20:20:21 tbaddade Exp $
  */
 
 // -----------------
@@ -79,8 +79,8 @@ $REX['MEDIAPOOL']['BLOCKED_EXTENSIONS'] = array('.php','.php3','.php4','.php5','
 // ----------------- DB1
 $REX['DB']['1']['HOST'] = "localhost";
 $REX['DB']['1']['LOGIN'] = "root";
-$REX['DB']['1']['PSW'] = "root";
-$REX['DB']['1']['NAME'] = "redaxo-cvs";
+$REX['DB']['1']['PSW'] = "";
+$REX['DB']['1']['NAME'] = "redaxo3_3";
 $REX['DB']['1']['PERSISTENT'] = false;
 
 // ----------------- DB2 - if necessary
