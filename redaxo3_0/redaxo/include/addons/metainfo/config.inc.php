@@ -4,10 +4,9 @@
  * MetaForm Addon
  * 
  * @author staab[at]public-4u[dot]de Markus Staab
- * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.11 2007/07/05 19:48:05 kills Exp $
+ * @version $Id: config.inc.php,v 1.12 2007/09/06 19:06:01 kristinus Exp $
  */
 
 $mypage = 'metainfo';
@@ -19,6 +18,9 @@ $REX['ADDON']['rxid'][$mypage] = '62';
 $REX['ADDON']['page'][$mypage] = $mypage;
 $REX['ADDON']['name'][$mypage] = 'Meta Infos';
 $REX['ADDON']['perm'][$mypage] = 'metainfo[]';
+$REX['ADDON']['version'][$mypage] = "1.0";
+$REX['ADDON']['author'][$mypage] = "Markus Staab, Jan Kristinus";
+// $REX['ADDON']['supportpage'][$mypage] = "";
 
 $REX['PERM'][] = 'metainfo[]';
 

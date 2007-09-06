@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.7 2007/05/08 08:09:11 kills Exp $
+ * @version $Id: config.inc.php,v 1.8 2007/09/06 19:06:01 kristinus Exp $
  */
 
 $mypage = 'textile';
@@ -15,6 +15,9 @@ $REX['ADDON']['rxid'][$mypage] = '79';
 $REX['ADDON']['page'][$mypage] = $mypage;    
 $REX['ADDON']['name'][$mypage] = 'Textile';
 $REX['ADDON']['perm'][$mypage] = 'textile[]';
+$REX['ADDON']['version'][$mypage] = "1.0";
+$REX['ADDON']['author'][$mypage] = "Markus Staab";
+// $REX['ADDON']['supportpage'][$mypage] = "";
 
 $REX['PERM'][] = 'textile[]';
 $REX['EXTPERM'][] = 'textile[help]';

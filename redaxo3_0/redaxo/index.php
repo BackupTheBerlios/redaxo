@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: index.php,v 1.70 2007/09/02 13:47:05 kills Exp $
+ * @version $Id: index.php,v 1.71 2007/09/06 19:05:50 kristinus Exp $
  */
 
 // ----- caching start für output filter
@@ -41,6 +41,7 @@ $REX['PAGEPATH'] = '';
 $withheader = true;
 
 // ----------------- SETUP
+unset($REX_USER);
 if ($REX['SETUP'])
 {
   // ----------------- SET SETUP LANG
@@ -177,6 +178,9 @@ else
     }elseif ($REX['PAGEPATH'] == '' && $page == 'content')
     {
       $page_name = $I18N->msg('content');
+    }elseif ($REX['PAGEPATH'] == '' && $page == 'credits')
+    {
+      $page_name = $I18N->msg('credits');
     }elseif($REX['PAGEPATH'] == '')
     {
       $page = 'structure';
