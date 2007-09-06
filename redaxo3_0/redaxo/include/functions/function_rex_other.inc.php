@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_other.inc.php,v 1.11 2007/09/02 13:38:42 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.12 2007/09/06 18:00:18 kills Exp $
  */
 
 /**
@@ -153,6 +153,11 @@ function array_insert($array, $index, $value)
 function rex_warning($message, $cssClass = 'rex-warning')
 {
   return '<p class="'. $cssClass .'"><span>'. $message .'</span></p>';
+}
+
+function rex_accesskey($title, $key)
+{
+  return ' accesskey="'. $key .'" title="'. $title .' ['. $key .']"';
 }
 
 ?>

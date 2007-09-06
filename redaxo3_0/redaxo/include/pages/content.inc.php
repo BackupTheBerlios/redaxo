@@ -4,7 +4,7 @@
 /**
  * Verwaltung der Inhalte. EditierModul / Metadaten ...
  * @package redaxo3
- * @version $Id: content.inc.php,v 1.126 2007/09/04 21:04:58 tbaddade Exp $
+ * @version $Id: content.inc.php,v 1.127 2007/09/06 18:00:18 kills Exp $
  */
 
 /*
@@ -711,7 +711,7 @@ if ($article->getRows() == 1)
 
       echo '
 								<p>
-								  <input class="rex-sbmt" type="submit" name="savemeta" value="' . $I18N->msg("update_metadata") . '" accesskey="'.$REX['ACKEY']['SAVE'].'"'. rex_tabindex() .' />
+								  <input class="rex-sbmt" type="submit" name="savemeta" value="' . $I18N->msg("update_metadata") . '"'. rex_accesskey($I18N->msg('update_metadata'), $REX['ACKEY']['SAVE']) . rex_tabindex() .' title="' . $I18N->msg("update_metadata") . ' ['.$REX['ACKEY']['SAVE'].']" />
 								</p>
 	            </div>
 	         </fieldset>';

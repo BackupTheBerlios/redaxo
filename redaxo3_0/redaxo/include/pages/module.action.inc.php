@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.36 2007/09/04 21:04:58 tbaddade Exp $
+ * @version $Id: module.action.inc.php,v 1.37 2007/09/06 18:00:18 kills Exp $
  */
 
 $OUT = TRUE;
@@ -176,7 +176,7 @@ if ($function == "add" or $function == "edit")
 
     $btn_update = '';
     if ($function != 'add')
-      $btn_update = '<input type="submit" class="rex-sbmt" name="goon" value="' . $I18N->msg('save_action_and_continue') . '" accesskey="'.$REX['ACKEY']['APPLY'].'" />';
+      $btn_update = '<input type="submit" class="rex-sbmt" name="goon" value="' . $I18N->msg('save_action_and_continue') . '"'. rex_accesskey($I18N->msg('save_action_and_continue'), $REX['ACKEY']['APPLY']) .' />';
 
     if (isset ($message) and $message != '')
     {
@@ -246,7 +246,7 @@ if ($function == "add" or $function == "edit")
             <span>' . $I18N->msg('ctrl') . '</span>
           </p>
           <p>
-            <input class="rex-sbmt" type="submit" value="' . $I18N->msg('save_action_and_quit') . '" accesskey="'.$REX['ACKEY']['SAVE'].'" />
+            <input class="rex-sbmt" type="submit" value="' . $I18N->msg('save_action_and_quit') . '"'. rex_accesskey($I18N->msg('save_action_and_quit'), $REX['ACKEY']['SAVE']) .' />
             ' . $btn_update . '
           </p>
         </div>
@@ -281,7 +281,7 @@ if ($OUT)
       </colgroup>
       <thead>
         <tr>
-          <th class="rex-icon"><a href="index.php?page=module&amp;subpage=actions&amp;function=add" accesskey="'.$REX['ACKEY']['ADD'].'"><img src="pics/modul_plus.gif" alt="' . $I18N->msg('action_create') . '" title="' . $I18N->msg('action_create') . '" /></a></th>
+          <th class="rex-icon"><a href="index.php?page=module&amp;subpage=actions&amp;function=add"'. rex_accesskey($I18N->msg('action_create'), $REX['ACKEY']['ADD']) .'><img src="pics/modul_plus.gif" alt="' . $I18N->msg('action_create') . '" title="' . $I18N->msg('action_create') . '" /></a></th>
           <th class="rex-icon">ID</th>
           <th>' . $I18N->msg('action_name') . '</th>
           <th>Preview-Event(s)</th>

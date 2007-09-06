@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: specials.settings.inc.php,v 1.13 2007/09/04 21:04:58 tbaddade Exp $
+ * @version $Id: specials.settings.inc.php,v 1.14 2007/09/06 18:00:18 kills Exp $
  */
 
 if ($func == 'setup')
@@ -217,7 +217,7 @@ echo '
             '.$sel_mod_rewrite->get().'
           </p>
           <p>
-            <input type="submit" class="rex-sbmt" name="sendit" value="'.$I18N->msg("specials_update").'" accesskey="'.$REX['ACKEY']['SAVE'].'" />
+            <input type="submit" class="rex-sbmt" name="sendit" value="'.$I18N->msg("specials_update").'"'. rex_accesskey($I18N->msg('specials_update'), $REX['ACKEY']['SAVE']) .' />
           </p>
         </fieldset>
       </div>
