@@ -3,7 +3,7 @@
 /**
  * Creditsseite. Auflistung der Credits an die Entwickler von REDAXO und den AddOns.
  * @package redaxo3
- * @version $Id: credits.inc.php,v 1.1 2007/09/06 19:06:49 kristinus Exp $
+ * @version $Id: credits.inc.php,v 1.2 2007/09/06 19:25:03 kristinus Exp $
  */
 
 rex_title($I18N->msg("credits"), "");
@@ -22,7 +22,7 @@ include_once $REX['INCLUDE_PATH']."/functions/function_rex_addons.inc.php";
 
 <b>Jan Kristinus</b>, jan.kristinus@redaxo.de
 Erfinder und Coreentwickler
-Yakamara GmbH & Co KG, <a href="http://www.yakamara.de">www.yakamara.de</a>
+Yakamara Media GmbH & Co KG, <a href="http://www.yakamara.de">www.yakamara.de</a>
 
 <b>Markus Staab</b>, markus.staab@redaxo.de
 Coreentwickler
