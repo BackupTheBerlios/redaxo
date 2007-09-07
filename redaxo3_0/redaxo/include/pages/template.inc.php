@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: template.inc.php,v 1.50 2007/09/06 19:54:53 tbaddade Exp $
+ * @version $Id: template.inc.php,v 1.51 2007/09/07 16:18:50 kills Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -230,7 +230,7 @@ if ($OUT) {
     	</colgroup>
     	<thead>
         <tr>
-          <th class="rex-icon"><a href="index.php?page=template&amp;function=add"'. rex_accesskey($I18N->msg('create_template'), $REX['ACKEY']['ADD']) .'><img src="media/template_plus.gif" alt="' . $I18N->msg("create_template") . '" title="' . $I18N->msg("create_template") . '" /></a></th>
+          <th class="rex-icon"><a href="index.php?page=template&amp;function=add"'. rex_accesskey($I18N->msg('create_template'), $REX['ACKEY']['ADD']) .'><img src="media/template_plus.gif" alt="' . $I18N->msg("create_template") . '" /></a></th>
           <th class="rex-icon">ID</th>
           <th>' . $I18N->msg("header_template_description") . '</th>
           <th>' . $I18N->msg("header_template_active") . '</th>

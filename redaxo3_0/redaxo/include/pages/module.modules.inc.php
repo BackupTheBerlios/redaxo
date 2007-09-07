@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.39 2007/09/06 19:54:53 tbaddade Exp $
+ * @version $Id: module.modules.inc.php,v 1.40 2007/09/07 16:18:50 kills Exp $
  */
 
 $OUT = TRUE;
@@ -315,7 +315,7 @@ if ($OUT)
     </colgroup>
     <thead>
       <tr>
-        <th class="rex-icon"><a href="index.php?page=module&amp;function=add"'. rex_accesskey($I18N->msg('create_module'), $REX['ACKEY']['ADD']) .'"><img src="media/modul_plus.gif" alt="'.$I18N->msg("create_module").'" title="'.$I18N->msg("create_module").'" /></a></th>
+        <th class="rex-icon"><a href="index.php?page=module&amp;function=add"'. rex_accesskey($I18N->msg('create_module'), $REX['ACKEY']['ADD']) .'"><img src="media/modul_plus.gif" alt="'.$I18N->msg("create_module").'" /></a></th>
         <th class="rex-icon">ID</th>
         <th>'.$I18N->msg('module_description').'</th>
         <th>'.$I18N->msg('module_functions').'</th>

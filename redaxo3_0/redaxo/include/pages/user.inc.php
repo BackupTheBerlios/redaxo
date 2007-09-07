@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: user.inc.php,v 1.77 2007/09/06 19:54:53 tbaddade Exp $
+ * @version $Id: user.inc.php,v 1.78 2007/09/07 16:18:50 kills Exp $
  */
 
 /*
@@ -803,7 +803,7 @@ if (isset($SHOW) and $SHOW)
     </colgroup>
     <thead>
       <tr>
-        <th class="rex-icon"><a href="index.php?page=user&amp;FUNC_ADD=1"'. rex_accesskey($I18N->msg('create_user'), $REX['ACKEY']['ADD']) .'><img src="media/user_plus.gif" alt="'.$I18N->msg('create_user').'" title="'.$I18N->msg('create_user').'" /></a></th>
+        <th class="rex-icon"><a href="index.php?page=user&amp;FUNC_ADD=1"'. rex_accesskey($I18N->msg('create_user'), $REX['ACKEY']['ADD']) .'><img src="media/user_plus.gif" alt="'.$I18N->msg('create_user').'" /></a></th>
         '. $add_th .'
         <th>'.$I18N->msg('name').'</th>
         <th>'.$I18N->msg('login').'</th>

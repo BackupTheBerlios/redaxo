@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.38 2007/09/06 19:54:53 tbaddade Exp $
+ * @version $Id: module.action.inc.php,v 1.39 2007/09/07 16:18:50 kills Exp $
  */
 
 $OUT = TRUE;
@@ -281,7 +281,7 @@ if ($OUT)
       </colgroup>
       <thead>
         <tr>
-          <th class="rex-icon"><a href="index.php?page=module&amp;subpage=actions&amp;function=add"'. rex_accesskey($I18N->msg('action_create'), $REX['ACKEY']['ADD']) .'><img src="media/modul_plus.gif" alt="' . $I18N->msg('action_create') . '" title="' . $I18N->msg('action_create') . '" /></a></th>
+          <th class="rex-icon"><a href="index.php?page=module&amp;subpage=actions&amp;function=add"'. rex_accesskey($I18N->msg('action_create'), $REX['ACKEY']['ADD']) .'><img src="media/modul_plus.gif" alt="' . $I18N->msg('action_create') . '" /></a></th>
           <th class="rex-icon">ID</th>
           <th>' . $I18N->msg('action_name') . '</th>
           <th>Preview-Event(s)</th>
