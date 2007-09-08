@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.27 2007/08/31 08:14:50 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.28 2007/09/08 10:37:52 kills Exp $
  */
 
 class rex_sql
@@ -207,6 +207,14 @@ class rex_sql
   function hasValue($feldname)
   {
     return in_array($feldname, $this->getFieldnames());
+  }
+
+  function isNull($feldname)
+  {
+    if($this->hasValue($feldname))
+      return $this->getValue($feldname) === null;
+
+    return null;
   }
 
   /**
