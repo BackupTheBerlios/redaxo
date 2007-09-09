@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.15 2007/09/04 16:27:25 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.16 2007/09/09 13:57:19 kills Exp $
  */
 
 rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
@@ -46,6 +46,8 @@ function rex_a62_insertJs($params)
  */
 function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
 {
+  global $I18N;
+
   $s = '';
 
   // Startwert für MEDIABUTTON, MEDIALIST, LINKLIST
@@ -70,7 +72,14 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
       $dbvalues = explode('|+|', $activeItem->getValue($name));
 
     if($title != '')
-      $label = htmlspecialchars($title);
+    {
+      $tranKey = 'translate:';
+      $transKeyLen = strlen($tranKey);
+      if(substr($title, 0, $transKeyLen) == $tranKey)
+        $label = htmlspecialchars($I18N->msg(substr($title, $transKeyLen)));
+      else
+        $label = htmlspecialchars($title);
+    }
     else
       $label = htmlspecialchars($name);
 
