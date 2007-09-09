@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.62 2007/09/06 20:02:58 tbaddade Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.63 2007/09/09 11:02:20 kills Exp $
  */
 
 class OOMedia
@@ -739,9 +739,8 @@ class OOMedia
     global $REX;
 
     $default_file_icon = "file";
-    $icons_folder = $REX['HTDOCS_PATH'].'redaxo/pics/pool_file_icons/';
+    $icons_folder = $REX['HTDOCS_PATH'].'redaxo/media';
 
-    // get File icons from dir redaxo/pics/pool_file_icons/
     if (!$REX['MEDIA']['ICONS'])
     {
       if ($handle = opendir($icons_folder))
