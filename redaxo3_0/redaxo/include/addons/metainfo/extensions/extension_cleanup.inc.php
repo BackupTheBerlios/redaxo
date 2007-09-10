@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cleanup.inc.php,v 1.3 2007/09/10 17:50:15 kills Exp $
+ * @version $Id: extension_cleanup.inc.php,v 1.4 2007/09/10 17:52:08 kills Exp $
  */
 
 rex_register_extension('A1_BEFORE_DB_IMPORT', 'rex_a62_metainfo_cleanup');
@@ -56,6 +56,8 @@ function rex_a62_metainfo_cleanup($params)
 
   $sql = new rex_sql();
   $sql->setQuery('DELETE FROM '. $REX['TABLE_PREFIX'] .'62_params');
+
+  rex_generateAll();
 }
 
 ?>
