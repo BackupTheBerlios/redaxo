@@ -1,7 +1,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: css_backend.css,v 1.4 2007/09/10 12:09:55 tbaddade Exp $
+ * @version $Id: css_backend.css,v 1.5 2007/09/10 15:53:41 tbaddade Exp $
  */
 *,
 .rex-nospace {
@@ -1302,11 +1302,11 @@ div.rex-lmp-pth ul li {
 	display:inline;
 	font-weight:bold;
 }
-
+/*
 div.rex-linkmap-searchbar {
 	display:none;
 }
-
+*/
 div#rex-lmp {
 	clear:both;
 	width:100%;
