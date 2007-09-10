@@ -25,7 +25,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.80 2007/09/10 18:26:03 kills Exp $
+ * @version $Id: setup.inc.php,v 1.81 2007/09/10 18:37:10 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -492,13 +492,9 @@ if ($checkmodus == 3 && $send == 1)
   if($err_msg == "" && isset($dbanlegen))
   {
     // Prüfen, welche Tabellen bereits vorhanden sind
-    $db = new rex_sql;
-    $db->setQuery('SHOW TABLES');
-
     $existingTables = array();
-    for ($i = 0; $i < $db->getRows(); $i++, $db->next())
+    foreach(rex_sql::showTables() as $tblname)
     {
-      $tblname = $db->getValue('Tables_in_'.$REX['DB']['1']['NAME']);
       if (substr($tblname, 0, strlen($REX['TABLE_PREFIX'])) == $REX['TABLE_PREFIX'])
       {
         $existingTables[] = $tblname;
