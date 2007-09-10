@@ -1,7 +1,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: css_backend.css,v 1.2 2007/09/06 20:09:37 tbaddade Exp $
+ * @version $Id: css_backend.css,v 1.3 2007/09/10 09:03:31 tbaddade Exp $
  */
 *,
 .rex-nospace {
@@ -28,6 +28,12 @@ a:hover {
 body div#rex-output a.rex-active,
 body a.rex-subpage-active {
 	color:#000;
+}
+.rex-lgnd a {
+	color:#32353a;
+}
+.rex-lgnd a:hover {
+	text-decoration:none;
 }
 
 li {
@@ -839,12 +845,12 @@ div.rex-cnt-editmode div.rex-cnt-editmode-slc {
 }
 div.rex-cnt-editmode div.rex-cnt-editmode-slc p {
 	padding:0 7px;
-	line-height:3em;
+	line-height:2.2em;
 }
 div.rex-cnt-editmode div.rex-cnt-editmode-slc ul {
 	padding:0 10px;
 	background:#e4eff2;
-	line-height:3em;
+	line-height:2.2em;
 }
 div.rex-cnt-editmode div.rex-cnt-editmode-slc ul li {
 	display:block;
