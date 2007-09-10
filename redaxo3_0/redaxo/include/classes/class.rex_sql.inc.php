@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.31 2007/09/10 17:33:46 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.32 2007/09/10 17:34:30 kills Exp $
  */
 
 class rex_sql
@@ -542,7 +542,7 @@ class rex_sql
     return $tables;
   }
 
-  function showCOlumns($table, $DBID=1)
+  function showColumns($table, $DBID=1)
   {
     $sql = new rex_sql($DBID);
     $sql->setQuery('SHOW COLUMNS FROM '.$table);
