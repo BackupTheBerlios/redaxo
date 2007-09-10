@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.30 2007/09/10 17:13:48 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.31 2007/09/10 17:33:46 kills Exp $
  */
 
 class rex_sql
@@ -540,6 +540,28 @@ class rex_sql
     }
 
     return $tables;
+  }
+
+  function showCOlumns($table, $DBID=1)
+  {
+    $sql = new rex_sql($DBID);
+    $sql->setQuery('SHOW COLUMNS FROM '.$table);
+
+    $columns = array();
+    for($i = 0; $i < $sql->getRows(); $i++)
+    {
+      $columns [] = array(
+        'name' => $sql->getValue('Field'),
+        'type' => $sql->getValue('Type'),
+        'null' => $sql->getValue('Null'),
+        'key' => $sql->getValue('Key'),
+        'default' => $sql->getValue('Default'),
+        'extra' => $sql->getValue('Extra')
+      );
+      $sql->next();
+    }
+
+    return $columns;
   }
 
   /**
