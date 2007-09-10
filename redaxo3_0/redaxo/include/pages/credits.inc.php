@@ -3,7 +3,7 @@
 /**
  * Creditsseite. Auflistung der Credits an die Entwickler von REDAXO und den AddOns.
  * @package redaxo3
- * @version $Id: credits.inc.php,v 1.6 2007/09/10 08:36:12 kristinus Exp $
+ * @version $Id: credits.inc.php,v 1.7 2007/09/10 16:33:36 tbaddade Exp $
  */
 
 rex_title($I18N->msg("credits"), "");
@@ -24,7 +24,6 @@ Yakamara Media GmbH &amp; Co KG, <a href="http://www.yakamara.de">www.yakamara.d
 
 <b>Markus Staab</b>, markus.staab@redaxo.de
 Kernentwickler
-Public-4u e.K <a href="http://www.public-4u.de">http://www.public-4u.de</a>
 
 <b>Thomas Blum</b>, thomas.blum@redaxo.de
 Layout/Design Entwickler
