@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cleanup.inc.php,v 1.2 2007/09/02 13:34:33 kills Exp $
+ * @version $Id: extension_cleanup.inc.php,v 1.3 2007/09/10 17:50:15 kills Exp $
  */
 
 rex_register_extension('A1_BEFORE_DB_IMPORT', 'rex_a62_metainfo_cleanup');
@@ -19,8 +19,43 @@ function rex_a62_metainfo_cleanup($params)
 {
 	global $REX;
 
-	$sql = new rex_sql();
-	$sql->setQuery('DELETE FROM '. $REX['TABLE_PREFIX'] .'62_params');
+  require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableExpander.inc.php';
+
+  $sql = new rex_sql();
+  $sql->setQuery('SELECT name FROM ' . $REX['TABLE_PREFIX'] . '62_params');
+
+  for ($i = 0; $i < $sql->getRows(); $i++)
+  {
+    if (substr($sql->getValue('name'), 0, 4) == 'med_')
+      $tableManager = new rex_a62_tableManager($REX['TABLE_PREFIX'] . 'file');
+    else
+      $tableManager = new rex_a62_tableManager($REX['TABLE_PREFIX'] . 'article');
+
+    $tableManager->deleteColumn($sql->getValue('name'));
+
+    $sql->next();
+  }
+
+
+  // evtl reste aufräumen
+  $tablePrefixes = array('article' => array('art_', 'cat_'), 'file' => array('med_'));
+  foreach($tablePrefixes as $table => $prefixes)
+  {
+    $table = $REX['TABLE_PREFIX'] .$table;
+    $tableManager = new rex_a62_tableManager($table);
+
+    foreach(rex_sql::showColumns($table) as $column)
+    {
+      $column = $column['name'];
+      if(in_array(substr($column, 0, 4), $prefixes))
+      {
+        $tableManager->deleteColumn($column);
+      }
+    }
+  }
+
+  $sql = new rex_sql();
+  $sql->setQuery('DELETE FROM '. $REX['TABLE_PREFIX'] .'62_params');
 }
 
 ?>
