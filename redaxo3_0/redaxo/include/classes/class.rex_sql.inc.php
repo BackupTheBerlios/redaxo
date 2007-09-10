@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.28 2007/09/08 10:37:52 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.29 2007/09/10 17:13:31 kills Exp $
  */
 
 class rex_sql
@@ -523,6 +523,23 @@ class rex_sql
       $value = "'" . mysql_real_escape_string($value, $this->identifier) . "'";
     }
     return $value;
+  }
+
+  function showTables($DBID)
+  {
+    global $REX;
+
+    $sql = new rex_sql($DBID);
+    $sql->setQuery('SHOW TABLES');
+
+    $tables = array();
+    for($i = 0; $i < $sql->getRows(); $i++)
+    {
+      $tables[] = $sql->getValue('Tables_in_'.$REX['DB'][$DBID]['NAME']);
+      $sql->next();
+    }
+
+    return $tables;
   }
 
   /**
