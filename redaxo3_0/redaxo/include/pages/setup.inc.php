@@ -25,7 +25,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.79 2007/09/09 13:57:19 kills Exp $
+ * @version $Id: setup.inc.php,v 1.80 2007/09/10 18:26:03 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -471,12 +471,12 @@ if ($checkmodus == 3 && $send == 1)
     foreach($requiredTables as $table)
       $db->setQuery('DROP TABLE IF EXISTS `'. $table .'`');
 
-    $err_msg .= rex_setup_addons(true);
     if($err_msg == '')
     {
       $import_sql = $REX['INCLUDE_PATH'].'/install/redaxo3_3.sql';
       $err_msg .= rex_setup_import($import_sql);
     }
+    $err_msg .= rex_setup_addons(true);
   }elseif ($dbanlegen == 0)
   {
     // ----- leere Datenbank neu einrichten
