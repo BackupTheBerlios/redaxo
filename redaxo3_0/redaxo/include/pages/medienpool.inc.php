@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.139 2007/09/09 13:56:52 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.140 2007/09/10 19:12:43 kills Exp $
  */
 
 // TODOS
@@ -269,13 +269,17 @@ function rex_medienpool_registerFile($physical_filename,$org_filename,$filename,
 
   @chmod($abs_file, $REX['FILEPERM']);
 
+  $filename = strtolower($filename);
+  rename($abs_file, $REX['MEDIAFOLDER'].'/'.$filename);
+  $abs_file = $REX['MEDIAFOLDER'].'/'.$filename;
+
   // get widht height
   $size = @getimagesize($abs_file);
 
   $FILESQL = new rex_sql;
   // $FILESQL->debugsql=1;
   $FILESQL->setTable($REX['TABLE_PREFIX']."file");
-  $FILESQL->setValue('filename',strtolower($filename));
+  $FILESQL->setValue('filename',$filename);
   $FILESQL->setValue('originalname',$org_filename);
   $FILESQL->setValue('category_id',$category_id);
   $FILESQL->setValue('title',$title);
