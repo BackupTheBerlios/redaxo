@@ -4,7 +4,7 @@
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
  * @package redaxo3
- * @version $Id: function_rex_generate.inc.php,v 1.91 2007/09/02 13:37:46 kills Exp $
+ * @version $Id: function_rex_generate.inc.php,v 1.92 2007/09/11 15:27:11 kristinus Exp $
  */
 
 // ----------------------------------------- Alles generieren
@@ -24,13 +24,7 @@ function rex_generateAll()
 
   // ----------------------------------------------------------- generiere templates
   rex_deleteDir($REX['INCLUDE_PATH']."/generated/templates", 0);
-  $gt = new rex_sql;
-  $gt->setQuery("select * from ".$REX['TABLE_PREFIX']."template");
-  for ($i = 0; $i < $gt->getRows(); $i ++)
-  {
-    rex_generateTemplate($gt->getValue("id"));
-    $gt->next();
-  }
+
 
   // ----------------------------------------------------------- generiere artikel
   rex_deleteDir($REX['INCLUDE_PATH']."/generated/articles", 0);

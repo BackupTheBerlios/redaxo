@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: template.inc.php,v 1.52 2007/09/10 08:36:12 kristinus Exp $
+ * @version $Id: template.inc.php,v 1.53 2007/09/11 15:27:11 kristinus Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -113,7 +113,8 @@ if ($function == "add" or $function == "edit") {
     $templatename = stripslashes($templatename);
     $content = stripslashes($content);
 
-    rex_generateTemplate($template_id);
+    $TPL = new rex_template($template_id);
+		$TPL->deleteCache();
 
     if (isset ($goon) and $goon != "") {
       $function = "edit";
