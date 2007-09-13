@@ -3,9 +3,9 @@
 /**
  * Template Objekt.
  * Zuständig für die Verarbeitung eines Templates
- * 
+ *
  * @package redaxo3
- * @version $Id: class.rex_template.inc.php,v 1.4 2007/09/11 15:27:11 kristinus Exp $
+ * @version $Id: class.rex_template.inc.php,v 1.5 2007/09/13 19:06:32 kills Exp $
  */
 
 class rex_template
@@ -27,43 +27,47 @@ class rex_template
     $this->id = (int) $id;
   }
 
+  function getFile()
+  {
+    global $REX;
+
+    if($this->getId()<1) return FALSE;
+
+    return $REX['INCLUDE_PATH'] . '/generated/templates/' . $this->getId() . '.template';
+  }
+
   function getTemplate()
   {
     global $REX;
 
 		if($this->getId()<1) return FALSE;
 
-    $file = $REX['INCLUDE_PATH'] . '/generated/templates/' . $this->getId() . '.template';
+    $file = $this->getFile();
     if ($handle = @fopen($file, 'r'))
     {
 	    $fs = filesize($file);
 	    if ($fs>0) $content = fread($handle, filesize($file));
 	    fclose($handle);
-	    return $content;
+	    return '?>'. $content;
     }else
     {
-    	include_once ($REX["INCLUDE_PATH"]."/functions/function_rex_generate.inc.php");
-    	rex_generateTemplate($this->getId());
-	    if ($handle = @fopen($file, 'r'))
-	    {
-		    $fs = filesize($file);
-		    if ($fs>0) $content = fread($handle, filesize($file));
-		    fclose($handle);
-		    return $content;
-	    }else
-	    {
-    		return FALSE;
+    	include_once ($REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php');
+    	if(rex_generateTemplate($this->getId()))
+      {
+        // rekursiv aufrufen, nach dem erfolgreichen generate
+        return $this->getTemplate();
     	}
     }
+		return FALSE;
   }
-  
+
   function deleteCache()
   {
   	global $REX;
 
 		if($this->id<1) return FALSE;
-		
-		$file = $REX['INCLUDE_PATH'] . '/generated/templates/' . $this->getId() . '.template';
+
+		$file = $this->getFile();
     if (@unlink($file)) return TRUE;
     else return FALSE;
   }
