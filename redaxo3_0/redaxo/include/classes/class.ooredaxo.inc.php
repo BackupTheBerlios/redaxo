@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.44 2007/09/14 15:34:57 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.45 2007/09/14 15:37:33 kills Exp $
  */
 
 class OORedaxo
@@ -326,6 +326,15 @@ class OORedaxo
   function getTemplateId()
   {
     return $this->_template_id;
+  }
+
+  /*
+   * Accessor Method:
+   * returns true if article has a template.
+   */
+  function hasTemplate()
+  {
+    return $this->_template_id == 0;
   }
 
   /*
