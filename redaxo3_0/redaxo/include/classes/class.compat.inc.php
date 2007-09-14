@@ -4,7 +4,7 @@
  * Klassen zum erhalten der Rückwärtskompatibilität
  *
  * Dieser werden beim nächsten Versionssprung entfallen
- * @version $Id: class.compat.inc.php,v 1.14 2007/08/16 16:54:57 kills Exp $
+ * @version $Id: class.compat.inc.php,v 1.15 2007/09/14 16:27:10 kills Exp $
  */
 
 // rex_sql -> sql alias
@@ -137,25 +137,6 @@ class article extends rex_article{
   function article($article_id = null, $clang = null)
   {
     parent::rex_article($article_id, $clang);
-  }
-
-  function getValue($value)
-  {
-    // damit alte rex_article felder wie teaser, online_from etc
-    // noch funktionieren
-    // gleicher BC code nochmals in OOREDAXO::getValue
-    if($this->hasValue($value))
-    {
-      return parent::getValue($value);
-    }
-    elseif ($this->hasValue('art_'. $value))
-    {
-      return parent::getValue('art_'. $value);
-    }
-    elseif ($this->hasValue('cat_'. $value))
-    {
-      return parent::getValue('cat_'. $value);
-    }
   }
 }
 
