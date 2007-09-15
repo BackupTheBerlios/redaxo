@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.32 2007/09/10 17:34:30 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.33 2007/09/15 15:59:04 kills Exp $
  */
 
 class rex_sql
@@ -604,7 +604,7 @@ class rex_sql
     {
       $db = rex_sql::getInstance($DBID, false);
 
-      if($db->identifier)
+      if(is_resource($db->identifier))
         mysql_close($db->identifier);
     }
   }
