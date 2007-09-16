@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.145 2007/09/16 16:03:21 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.146 2007/09/16 16:16:57 kills Exp $
  */
 
 // TODOS
@@ -1423,7 +1423,7 @@ if ($subpage == '')
 
     // Eine beschreibende Spalte schätzen
     $alt = '';
-    foreach(array('description') as $col)
+    foreach(array('med_description') as $col)
     {
       if($files->hasValue($col))
       {
