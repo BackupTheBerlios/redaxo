@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.143 2007/09/15 15:12:08 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.144 2007/09/16 15:51:06 kills Exp $
  */
 
 // TODOS
@@ -300,8 +300,14 @@ function rex_medienpool_registerFile($physical_filename,$org_filename,$filename,
 
 function rex_medienpool_addMediacatOptions( &$select, &$mediacat, &$mediacat_ids, $groupName = '')
 {
+  global $REX_USER;
+
   if(empty($mediacat)) return;
+
   $mname = $mediacat->getName();
+  if($REX_USER->hasPerm('advancedMode[]'))
+    $mname .= ' ['. $mediacat->getId() .']';
+
   $mediacat_ids[] = $mediacat->getId();
   $select->addOption($mname,$mediacat->getId(), $mediacat->getId(),$mediacat->getParentId());
   $childs = $mediacat->getChildren();
@@ -318,10 +324,13 @@ function rex_medienpool_addMediacatOptionsWPerm( &$select, &$mediacat, &$mediaca
   global $PERMALL, $REX_USER;
 
   if(empty($mediacat)) return;
-    $mname = $mediacat->getName();
+
+  $mname = $mediacat->getName();
+  if($REX_USER->hasPerm('advancedMode[]'))
+    $mname .= ' ['. $mediacat->getId() .']';
 
   $mediacat_ids[] = $mediacat->getId();
-  if ($PERMALL || $REX_USER->hasPerm("media[".$mediacat->getId()."]"))
+  if ($PERMALL || $REX_USER->hasPerm('media['.$mediacat->getId().']'))
   	$select->addOption($mname,$mediacat->getId(), $mediacat->getId(),$mediacat->getParentId());
 
   $childs = $mediacat->getChildren();
