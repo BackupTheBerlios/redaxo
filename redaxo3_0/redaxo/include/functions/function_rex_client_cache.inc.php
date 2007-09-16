@@ -4,7 +4,7 @@
  * HTTP1.1 Client Cache Features
  *
  * @package redaxo3
- * @version $Id: function_rex_client_cache.inc.php,v 1.4 2007/09/05 15:54:02 kills Exp $
+ * @version $Id: function_rex_client_cache.inc.php,v 1.5 2007/09/16 15:06:06 kills Exp $
  */
 
 /**
@@ -96,7 +96,7 @@ function rex_send_etag($content)
   }
 
   // Sende CacheKey als ETag
-  header('ETag: ' . $cacheKey);
+  header('ETag: "' . $cacheKey .'"');
 }
 
 /**
