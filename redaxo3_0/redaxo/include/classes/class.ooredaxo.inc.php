@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.45 2007/09/14 15:37:33 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.46 2007/09/16 16:10:31 kills Exp $
  */
 
 class OORedaxo
@@ -79,13 +79,13 @@ class OORedaxo
     {
       return $this->$value;
     }
-    elseif ($this->hasValue('art_'. $value))
+    elseif ($this->hasValue('art'. $value))
     {
-      return $this->getValue('art_'. $value);
+      return $this->getValue('art'. $value);
     }
-    elseif ($this->hasValue('cat_'. $value))
+    elseif ($this->hasValue('cat'. $value))
     {
-      return $this->getValue('cat_'. $value);
+      return $this->getValue('cat'. $value);
     }
   }
 
