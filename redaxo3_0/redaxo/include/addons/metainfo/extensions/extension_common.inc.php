@@ -5,10 +5,11 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.16 2007/09/09 13:57:19 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.17 2007/09/16 14:51:21 kills Exp $
  */
 
-rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
+if($page == 'metainfo')
+  rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
 
 /**
  * Fügt den nötigen JS-Code ein
