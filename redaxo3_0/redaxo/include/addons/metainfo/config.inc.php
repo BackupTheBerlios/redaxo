@@ -2,11 +2,11 @@
 
 /**
  * MetaForm Addon
- * 
+ *
  * @author staab[at]public-4u[dot]de Markus Staab
- * 
+ *
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.12 2007/09/06 19:06:01 kristinus Exp $
+ * @version $Id: config.inc.php,v 1.13 2007/09/17 09:24:13 kills Exp $
  */
 
 $mypage = 'metainfo';
@@ -49,7 +49,5 @@ if ($REX['REDAXO'])
     }
   }
 }
-
-require_once ($REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/extensions/extension_oof_metainfo.inc.php');
 
 ?>

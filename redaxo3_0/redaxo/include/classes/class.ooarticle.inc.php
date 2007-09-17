@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.34 2007/05/27 20:17:28 kristinus Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.35 2007/09/17 09:24:13 kills Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -24,14 +24,14 @@ class OOArticle extends OORedaxo
     if ($clang === false)
       $clang = $REX['CUR_CLANG'];
     elseif(!isset($REX['CLANG'][$clang])) $clang = 0;
-    
-    $article_path = $REX['INCLUDE_PATH']."/generated/articles/".$article_id.".".$clang.".article";
+
+    $article_path = $REX['INCLUDE_PATH'].'/generated/articles/'.$article_id.'.'.$clang.'.article';
     if (!file_exists($article_path))
 		{
-			include_once ($REX["INCLUDE_PATH"]."/functions/function_rex_generate.inc.php");
+			include_once ($REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php');
     	$article_id = (int) $article_id;
     	rex_generateArticle($article_id, FALSE);
-		}    
+		}
 
     if (file_exists($article_path))
     {
@@ -78,17 +78,17 @@ class OOArticle extends OORedaxo
   function getArticlesOfCategory($a_category_id, $ignore_offlines = false, $clang = false)
   {
     global $REX;
-    
+
     if ($clang === false)
       $clang = $REX['CUR_CLANG'];
-    
+
     if(!isset($REX['RE_ID'][$a_category_id]))
     {
 	    $articlelist = $REX['INCLUDE_PATH']."/generated/articles/".$a_category_id.".".$clang.".alist";
 	    if (file_exists($articlelist))
 	      include($articlelist);
     }
-    
+
     $artlist = array ();
     if(isset($REX['RE_ID'][$a_category_id]))
     {
@@ -108,10 +108,10 @@ class OOArticle extends OORedaxo
 	      }
 	    }
     }
-    
+
     return $artlist;
   }
-  
+
   /**
    * CLASS Function:
    * Return a list of top-level articles
@@ -151,13 +151,13 @@ class OOArticle extends OORedaxo
     return is_object($article) && is_a($article, 'ooarticle');
   }
 
-  
+
   function getValue($value)
   {
     // alias für re_id -> category_id
     if(in_array($value, array('re_id', '_re_id', 'category_id', '_category_id')))
     {
-      // für die CatId hier den Getter verwenden, 
+      // für die CatId hier den Getter verwenden,
       // da dort je nach ArtikelTyp unterscheidungen getroffen werden müssen
       return $this->getCategoryId();
     }
