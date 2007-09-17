@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.148 2007/09/17 10:46:39 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.149 2007/09/17 10:49:22 kills Exp $
  */
 
 // TODOS
@@ -380,7 +380,7 @@ function rex_medienpool_Mediaform($form_title, $button_title, $rex_file_category
     if($REX_USER->hasPerm('admin[]'))
     {
       $devInfos =
-      '<span>
+      '<span class="rex-notice">
          Uploads: '. (rex_ini_get('file_uploads') == 1 ? 'On' : 'Off') .'<br />
          Max-Upload-Time: '. rex_ini_get('max_input_time') .'s  <br />
          Max-Upload-Size: '. OOMedia::_getFormattedSize(rex_ini_get('upload_max_filesize')) .'<br />
