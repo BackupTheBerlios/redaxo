@@ -4,7 +4,7 @@
 /**
  * Verwaltung der Inhalte. EditierModul / Metadaten ...
  * @package redaxo3
- * @version $Id: content.inc.php,v 1.127 2007/09/06 18:00:18 kills Exp $
+ * @version $Id: content.inc.php,v 1.128 2007/09/18 15:07:05 kills Exp $
  */
 
 /*
@@ -446,14 +446,13 @@ if ($article->getRows() == 1)
         {
           $message = $I18N->msg('content_tostartarticle_failed');
         }
-        $function = '';
       }
     }
     // ------------------------------------------ END: COPY LANG CONTENT
 
 
     // ------------------------------------------ START: COPY LANG CONTENT
-    if ($function == 'copycontent')
+    if (rex_post('copycontent', 'string'))
     {
       if ($REX_USER->hasPerm('admin[]') || $REX_USER->hasPerm('copyContent[]'))
       {
