@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.46 2007/09/17 11:33:13 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.47 2007/09/18 12:07:41 kills Exp $
  */
 
 class rex_article
@@ -169,11 +169,16 @@ class rex_article
   {
     global $REX;
 
-    if ($value == "category_id")
+    if ($value == 'category_id')
     {
-      if ($this->getValue("startpage")!=1) $value = "re_id";
-      else if($REX['GG'] && !$this->viasql) $value = "article_id";
-      else $value = "id";
+      if ($this->getValue('startpage')!=1) $value = 're_id';
+      else if($REX['GG'] && !$this->viasql) $value = 'article_id';
+      else $value = 'id';
+    }
+    // Nicht generated, oder über SQL muss article_id -> id heissen
+    else if ((!$REX['GG'] || $this->viasql) && $value == 'article_id')
+    {
+      $value = 'id';
     }
 
     return $value;
@@ -205,6 +210,7 @@ class rex_article
     {
       return $this->_getValue('cat_'. $value);
     }
+    return '['. $value .' not found]';
   }
 
   function hasValue($value)
