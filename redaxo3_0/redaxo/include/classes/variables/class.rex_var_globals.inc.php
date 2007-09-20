@@ -6,7 +6,7 @@
  * REX_CTYPE_ID
  *
  * @package redaxo3
- * @version $Id: class.rex_var_globals.inc.php,v 1.6 2007/09/20 18:26:38 kills Exp $
+ * @version $Id: class.rex_var_globals.inc.php,v 1.7 2007/09/20 18:32:02 kills Exp $
  */
 
 class rex_var_globals extends rex_var
@@ -33,9 +33,9 @@ class rex_var_globals extends rex_var
 
   function setACValues(& $sql, $REX_ACTION, $escape = false)
   {
-    $this->setValue($sql, 'id', $REX_ACTION['SLICE_ID']);
-    $this->setValue($sql, 'ctype', $REX_ACTION['CTYPE_ID']);
-    $this->setValue($sql, 'modultyp_id', $REX_ACTION['MODULE_ID']);
+    $this->setValue($sql, 'id', $REX_ACTION['SLICE_ID'], $escape);
+    $this->setValue($sql, 'ctype', $REX_ACTION['CTYPE_ID'], $escape);
+    $this->setValue($sql, 'modultyp_id', $REX_ACTION['MODULE_ID'], $escape);
   }
 
   // --------------------------------- Output

@@ -4,7 +4,7 @@
 /**
  * Abtrackte Basisklasse für REX_VARS
  * @package redaxo3
- * @version $Id: class.rex_var.inc.php,v 1.13 2007/09/20 18:26:38 kills Exp $
+ * @version $Id: class.rex_var.inc.php,v 1.14 2007/09/20 18:32:02 kills Exp $
  */
 
 class rex_var
@@ -120,9 +120,13 @@ class rex_var
    * mit MySQL 3.x mit Tabellenprefix angegeben werden muss, da der SQL gleichnamige
    * Spalten unterschiedlicher Tabellen enthält.
    */
-  function setValue(& $sql, $fieldname, $value)
+  function setValue(& $sql, $fieldname, $value, $escape = false)
   {
     global $REX;
+
+    if($escape)
+      return $sql->setValue($REX['TABLE_PREFIX'] . 'article_slice.' . $fieldname, addslashes($value));
+
     return $sql->setValue($REX['TABLE_PREFIX'] . 'article_slice.' . $fieldname, $value);
   }
 
