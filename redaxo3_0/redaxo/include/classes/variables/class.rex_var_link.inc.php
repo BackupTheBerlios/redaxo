@@ -6,7 +6,7 @@
  * REX_LINKLIST
  *
  * @package redaxo3
- * @version $Id: class.rex_var_link.inc.php,v 1.16 2007/09/06 20:02:41 tbaddade Exp $
+ * @version $Id: class.rex_var_link.inc.php,v 1.17 2007/09/20 18:26:38 kills Exp $
  */
 
 class rex_var_link extends rex_var
@@ -23,6 +23,16 @@ class rex_var_link extends rex_var
 
       $REX_ACTION['LINK'][$i] = stripslashes($values[$i]);
     }
+    return $REX_ACTION;
+  }
+
+  function getACDatabaseValues($REX_ACTION, & $sql)
+  {
+    for ($i = 1; $i < 11; $i++)
+    {
+      $REX_ACTION['LINK'][$i] = $this->getValue($sql, 'link'. $i);
+    }
+
     return $REX_ACTION;
   }
 

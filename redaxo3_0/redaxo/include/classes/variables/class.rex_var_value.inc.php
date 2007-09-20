@@ -10,7 +10,7 @@
  * REX_IS_VALUE
  *
  * @package redaxo3
- * @version $Id: class.rex_var_value.inc.php,v 1.12 2007/08/31 11:29:42 kills Exp $
+ * @version $Id: class.rex_var_value.inc.php,v 1.13 2007/09/20 18:26:38 kills Exp $
  */
 
 class rex_var_value extends rex_var
@@ -29,6 +29,18 @@ class rex_var_value extends rex_var
     }
     $REX_ACTION['PHP'] = stripslashes(rex_request('INPUT_PHP', 'string'));
     $REX_ACTION['HTML'] = $this->stripPHP(stripslashes(rex_request('INPUT_HTML', 'string')));
+
+    return $REX_ACTION;
+  }
+
+  function getACDatabaseValues($REX_ACTION, & $sql)
+  {
+    for ($i = 1; $i < 21; $i++)
+    {
+      $REX_ACTION['VALUE'][$i] = $this->getValue($sql, 'value'. $i);
+    }
+    $REX_ACTION['PHP'] = $this->getValue($sql, 'php');
+    $REX_ACTION['HTML'] = $this->getValue($sql, 'html');
 
     return $REX_ACTION;
   }
