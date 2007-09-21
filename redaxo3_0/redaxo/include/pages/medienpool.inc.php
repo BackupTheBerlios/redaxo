@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.149 2007/09/17 10:49:22 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.150 2007/09/21 20:35:59 kills Exp $
  */
 
 // TODOS
@@ -1209,7 +1209,7 @@ if($PERMALL && isset($subpage) and $subpage == 'sync')
     }
 
     echo '<li>
-            <input class="rex-chckbx" type="checkbox" name="checkie" id="checkie" value="0" onClick="SetAllCheckBoxes(\'sync_files[]\',this)" />
+            <input class="rex-chckbx" type="checkbox" name="checkie" id="checkie" value="0" onchange="SetAllCheckBoxes(\'sync_files[]\',this)" />
             <label for="checkie">'. $I18N->msg('pool_select_all') .'</label>
           </li>';
 
