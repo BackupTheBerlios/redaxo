@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_cleanup.inc.php,v 1.4 2007/09/10 17:52:08 kills Exp $
+ * @version $Id: extension_cleanup.inc.php,v 1.5 2007/09/21 12:56:48 kills Exp $
  */
 
 rex_register_extension('A1_BEFORE_DB_IMPORT', 'rex_a62_metainfo_cleanup');
@@ -18,6 +18,13 @@ rex_register_extension('A1_BEFORE_DB_IMPORT', 'rex_a62_metainfo_cleanup');
 function rex_a62_metainfo_cleanup($params)
 {
 	global $REX;
+	
+	// Cleanup nur durchführen, wenn auch die rex_article Tabelle neu angelegt wird
+	if(strpos($params['content'], 'CREATE TABLE `'. $REX['TABLE_PREFIX'] .'article`') === false && 
+	   strpos($params['content'], 'CREATE TABLE '. $REX['TABLE_PREFIX'] .'article') === false)
+  {
+    return;
+  }
 
   require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableExpander.inc.php';
 
