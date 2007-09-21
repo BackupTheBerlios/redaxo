@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.18 2007/09/18 14:55:05 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.19 2007/09/21 17:55:22 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -72,16 +72,9 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
     $dbvalues = array('');
     if($activeItem)
       $dbvalues = explode('|+|', $activeItem->getValue($name));
-
+      
     if($title != '')
-    {
-      $tranKey = 'translate:';
-      $transKeyLen = strlen($tranKey);
-      if(substr($title, 0, $transKeyLen) == $tranKey)
-        $label = htmlspecialchars($I18N->msg(substr($title, $transKeyLen)));
-      else
-        $label = htmlspecialchars($title);
-    }
+      $label = rex_translate($title);
     else
       $label = htmlspecialchars($name);
 

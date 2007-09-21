@@ -3,7 +3,7 @@
 /**
  * Dient zur Ausgabe des Sprachen-blocks
  * @package redaxo3
- * @version $Id: function_rex_languages.inc.php,v 1.8 2007/09/02 13:37:55 kills Exp $
+ * @version $Id: function_rex_languages.inc.php,v 1.9 2007/09/21 17:55:22 kills Exp $
  */
 
 // rechte einbauen
@@ -27,6 +27,8 @@ if ($num_clang>1)
    foreach($REX['CLANG'] as $key => $val)
    {
     echo '<li>';
+    
+    $val = rex_translate($val);
 
 		if (!$REX_USER->hasPerm('admin[]') && !$REX_USER->hasPerm('clang[all]') && !$REX_USER->hasPerm('clang['. $key .']'))
 		{

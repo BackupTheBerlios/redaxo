@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_other.inc.php,v 1.13 2007/09/17 10:46:39 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.14 2007/09/21 17:55:22 kills Exp $
  */
 
 /**
@@ -177,4 +177,25 @@ function rex_ini_get($val)
   return $val;
 }
 
+/**
+ * Übersetzt den text $text, falls dieser mit dem prefix "translate:" beginnt.
+ */
+function rex_translate($text, $I18N_Catalogue = null)
+{
+  if(!$I18N_Catalogue)
+  {
+    global $I18N;
+    
+    return rex_translate($text, $I18N);
+  }
+
+  $tranKey = 'translate:';
+  $transKeyLen = strlen($tranKey);
+  if(substr($text, 0, $transKeyLen) == $tranKey)
+  {
+    return htmlspecialchars($I18N_Catalogue->msg(substr($text, $transKeyLen)));
+  }
+    
+  return htmlspecialchars($text);
+}
 ?>
