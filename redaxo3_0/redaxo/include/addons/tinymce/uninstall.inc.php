@@ -10,10 +10,10 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  * 
  * @package redaxo3
- * @version $Id: uninstall.inc.php,v 1.3 2007/03/28 18:07:40 kills Exp $
+ * @version $Id: uninstall.inc.php,v 1.4 2007/09/21 18:38:26 kills Exp $
  */
 
-rex_deleteDir('../files/tinymce', true);
+rex_deleteDir('../files/tmp_/tinymce', true);
 
 $REX['ADDON']['install']['tinymce'] = 0;
 ?>
