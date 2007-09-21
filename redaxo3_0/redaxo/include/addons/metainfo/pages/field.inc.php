@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: field.inc.php,v 1.10 2007/09/06 20:06:22 tbaddade Exp $
+ * @version $Id: field.inc.php,v 1.11 2007/09/21 20:30:39 kills Exp $
  */
 
 //------------------------------> Parameter
@@ -31,8 +31,10 @@ if ($func == '')
   $list = new rex_list('SELECT field_id, name FROM '. $REX['TABLE_PREFIX'] .'62_params WHERE `name` LIKE "'. $prefix .'%" ORDER BY prior');
 
   $list->setCaption($I18N_META_INFOS->msg('field_list_caption'));
-  $list->addColumn('<a href="'. $list->getUrl(array('func' => 'add')) .'"><img src="media/modul_plus.gif" alt="add" title="add" /></a>', '<img src="media/modul.gif" alt="field" title="field" />', 0, array('<th class="rex-icon">###VALUE###</th>','<td class="rex-icon">###VALUE###</td>'));
-
+  $imgHeader = '<a href="'. $list->getUrl(array('func' => 'add')) .'"><img src="media/modul_plus.gif" alt="add" title="add" /></a>';
+  $list->addColumn($imgHeader, '<img src="media/modul.gif" alt="field" title="field" />', 0, array('<th class="rex-icon">###VALUE###</th>','<td class="rex-icon">###VALUE###</td>'));
+  $list->setColumnParams($imgHeader, array('func' => 'edit', 'field_id' => '###field_id###'));
+  
   $list->setColumnLabel('field_id', $I18N_META_INFOS->msg('field_label_id'));
   $list->setColumnLayout('field_id',  array('<th class="rex-icon">###VALUE###</th>','<td class="rex-icon">###VALUE###</td>'));
 
