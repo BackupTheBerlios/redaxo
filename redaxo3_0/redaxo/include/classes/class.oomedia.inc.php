@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.65 2007/09/16 16:10:31 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.66 2007/09/24 11:00:50 kills Exp $
  */
 
 class OOMedia
@@ -111,7 +111,7 @@ class OOMedia
     $media = new OOMedia();
     foreach($sql->getFieldNames() as $fieldName)
     {
-      if(in_array($fieldName, $aliasMap))
+      if(in_array($fieldName, array_keys($aliasMap)))
         $var_name = '_'. $aliasMap[$fieldName];
       else
         $var_name = '_'. $fieldName;
