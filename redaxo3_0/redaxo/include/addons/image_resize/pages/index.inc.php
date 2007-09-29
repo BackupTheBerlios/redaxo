@@ -11,29 +11,14 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.19 2007/09/02 13:15:20 kristinus Exp $
+ * @version $Id: index.inc.php,v 1.20 2007/09/29 22:25:21 kristinus Exp $
  */
 
 include $REX['INCLUDE_PATH'] . '/layout/top.php';
 
 if (isset ($subpage) and $subpage == 'clear_cache')
 {
-  include_once $REX['INCLUDE_PATH'] . '/addons/' . $page . '/functions/function_folder.inc.php';
-
-  $c = 0;
-  $folder = $REX['INCLUDE_PATH'] . '/generated/files/';
-  $files = readFolderFiles($folder);
-  if (is_array($files))
-  {
-    foreach ($files as $var)
-    {
-      if (eregi('^' . $REX['TEMP_PREFIX'] . 'cache_resize___', $var))
-      {
-        unlink($folder . $var);
-        $c++;
-      }
-    }
-  }
+  $c = thumbnail::deleteCache();
   $msg = 'Cache cleared - ' . $c . ' cachefiles removed';
 }
 
@@ -49,7 +34,7 @@ $subpages = array (
 rex_title('Image Resize', $subpages);
 
 if (isset ($msg) and $msg != '')
-  echo '<table border="0" cellpadding="5" cellspacing="1" width="770"><tr><td class="warning">' . $msg . '</td></tr></table><br />';
+  echo '<p class="rex-warning"><span>' . $msg . '</span></p>';
   
 ?>
 <div class="rex-addon-output">
