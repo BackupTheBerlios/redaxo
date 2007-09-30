@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.153 2007/09/30 14:24:53 kristinus Exp $
+ * @version $Id: medienpool.inc.php,v 1.154 2007/09/30 17:33:50 kristinus Exp $
  */
 
 // TODOS
@@ -169,6 +169,12 @@ function insertHTMLArea(html,filename){
 
 <?php
 
+// *************************************** request vars
+
+$subpage = rex_request('subpage', 'string');
+$msg = rex_request('msg', 'string');
+$media_method = rex_request('media_method', 'string');
+
 $subline = array(
   array('', $I18N->msg('pool_file_list')),
   array('add_file', $I18N->msg('pool_file_insert')),
@@ -180,15 +186,14 @@ if($PERMALL)
   $subline[] = array('sync', $I18N->msg('pool_sync_files'));
 }
 
-rex_title($I18N->msg('pool_media'), $subline);
+$title = $I18N->msg('pool_media').': '.$subline[0][1];
 
+foreach($subline as $c)
+{
+  if ($c[0] == $subpage) $title = $I18N->msg('pool_media').': '.$c[1];
+}
 
-// *************************************** request vars
-
-$subpage = rex_request('subpage', 'string');
-$msg = rex_request('msg', 'string');
-$media_method = rex_request('media_method', 'string');
-
+rex_title($title, $subline);
 
 
 // *************************************** MESSAGES
