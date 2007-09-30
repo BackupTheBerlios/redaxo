@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.43 2007/09/29 22:28:06 kristinus Exp $
+ * @version $Id: index.inc.php,v 1.44 2007/09/30 14:20:52 kristinus Exp $
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -21,7 +21,7 @@ include_once $REX['INCLUDE_PATH'].'/addons/'.$page.'/functions/function_string.i
 // ------------------------------ FUNC
 $msg = "";
 
-$impname = rex_request('$impname', 'string');
+$impname = rex_request('impname', 'string');
 
 if (isset ($impname) && $impname != '')
 {
