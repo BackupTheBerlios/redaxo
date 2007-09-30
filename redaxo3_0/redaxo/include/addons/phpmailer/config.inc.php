@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * 
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.4 2007/09/06 19:06:01 kristinus Exp $
+ * @version $Id: config.inc.php,v 1.5 2007/09/30 12:01:44 kristinus Exp $
  */
 
 $mypage = 'phpmailer';
@@ -16,7 +16,7 @@ $REX['ADDON']['page'][$mypage] = $mypage;
 $REX['ADDON']['name'][$mypage] = 'PHPMailer';
 $REX['ADDON']['perm'][$mypage] = 'phpmailer[]';
 $REX['ADDON']['version'][$mypage] = "1.0";
-$REX['ADDON']['author'][$mypage] = "Markus Staab";
+$REX['ADDON']['author'][$mypage] = "Brent R. Matzelle, Markus Staab";
 // $REX['ADDON']['supportpage'][$mypage] = "";
 
 $REX['PERM'][] = 'phpmailer[]';
