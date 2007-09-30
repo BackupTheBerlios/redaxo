@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.150 2007/09/21 20:35:59 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.151 2007/09/30 12:42:15 kristinus Exp $
  */
 
 // TODOS
@@ -872,7 +872,9 @@ if ($subpage=="detail" && rex_post('btn_update', 'string')){
 
       if($msg == '')
       {
-        $msg .= $I18N->msg('pool_file_infos_updated');
+        $msg = $I18N->msg('pool_file_infos_updated');
+        $ffilename = $gf->getValue('filename');
+        $ffiletype = $gf->getValue('filetype');
         $updated = true;
       }
 
