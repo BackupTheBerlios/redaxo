@@ -13,7 +13,7 @@
  * @author <a href="http://www.yakamara.de">www.yakamara.de</a>
  *
  * @package redaxo3
- * @version $Id: config.inc.php,v 1.35 2007/09/29 22:25:21 kristinus Exp $
+ * @version $Id: config.inc.php,v 1.36 2007/09/30 12:35:31 kristinus Exp $
  */
 
 $mypage = 'image_resize';
@@ -66,7 +66,6 @@ if ($rex_resize != '')
 	{
 		$filters .= $filter;
 	}
-
 
   $cachepath = $REX['INCLUDE_PATH'].'/generated/files/'. $REX['TEMP_PREFIX'] .'cache_resize___'.$filters.$rex_resize;
   $imagepath = $REX['HTDOCS_PATH'].'files/'.$imagefile;
