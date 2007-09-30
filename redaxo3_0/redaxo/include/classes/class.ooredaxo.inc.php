@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.48 2007/09/17 10:23:17 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.49 2007/09/30 17:09:22 kristinus Exp $
  */
 
 class OORedaxo
@@ -303,7 +303,7 @@ class OORedaxo
    */
   function hasTemplate()
   {
-    return $this->_template_id == 0;
+  	return $this->_template_id > 0 ? true : false;
   }
 
   /*
