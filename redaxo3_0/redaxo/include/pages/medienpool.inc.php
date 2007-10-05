@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.154 2007/09/30 17:33:50 kristinus Exp $
+ * @version $Id: medienpool.inc.php,v 1.155 2007/10/05 17:44:04 kills Exp $
  */
 
 // TODOS
@@ -13,7 +13,6 @@
 
 // KOMMT NOCH
 // - only types einbauen (only .gif/.pdf/.xxx ..)
-// - direkt katjump von modulen aus
 // - direktjump bei &action=media_details&file_name=xysd.jpg
 
 
