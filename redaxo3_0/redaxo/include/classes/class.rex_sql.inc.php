@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.34 2007/09/20 18:23:34 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.35 2007/10/06 12:46:29 kills Exp $
  */
 
 class rex_sql
@@ -607,6 +607,26 @@ class rex_sql
       if(is_resource($db->identifier))
         mysql_close($db->identifier);
     }
+  }
+
+  function addGlobalUpdateFields($user = null)
+  {
+    global $REX_USER;
+
+    if(!$user) $user = $REX_USER->getValue('login');
+
+    $this->setValue('updatedate', time());
+    $this->setValue('updateuser', $user);
+  }
+
+  function addGlobalCreateFields($user = null)
+  {
+    global $REX_USER;
+
+    if(!$user) $user = $REX_USER->getValue('login');
+
+    $this->setValue('createdate', time());
+    $this->setValue('createuser', $user);
   }
 
   function isValid($object)
