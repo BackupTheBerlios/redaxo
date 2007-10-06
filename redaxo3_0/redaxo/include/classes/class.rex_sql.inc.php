@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.35 2007/10/06 12:46:29 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.36 2007/10/06 15:51:12 kills Exp $
  */
 
 class rex_sql
@@ -327,7 +327,7 @@ class rex_sql
    * Beispiel:
    *
    * <code>
-   * $sql = new sql();
+   * $sql = new rex_sql();
    * $message = $sql->statusQuery(
    *    'INSERT  INTO abc SET a="ab"',
    *    'Datensatz  erfolgreich eingefügt');
@@ -336,7 +336,7 @@ class rex_sql
    *  anstatt von
    *
    * <code>
-   * $sql = new sql();
+   * $sql = new rex_sql();
    * if($sql->setQuery('INSERT INTO abc SET a="ab"'))
    *   $message  = 'Datensatz erfolgreich eingefügt');
    * else
