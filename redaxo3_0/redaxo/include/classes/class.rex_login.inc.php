@@ -5,7 +5,7 @@
  * Klasse zum handling des Login/Logout-Mechanismuses
  *
  * @package redaxo3
- * @version $Id: class.rex_login.inc.php,v 1.10 2007/08/25 15:04:08 kills Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.11 2007/10/06 13:25:55 kills Exp $
  */
 
 class rex_login_sql extends rex_sql
@@ -166,9 +166,14 @@ class rex_login
     {
 
       // checkLogin schonmal ausgeführt ? gecachte ausgabe erlaubt ?
-      if ($this->cache && $this->login_status > 0)
-        return true;
-      elseif ($this->cache && $this->login_status < 0) return false;
+      if ($this->cache)
+      {
+        // TODO was passiert mit == 0?
+        if($this->login_status > 0)
+          return true;
+        elseif ($this->login_status < 0)
+          return false;
+      }
 
       if ($this->usr_login != "")
       {
