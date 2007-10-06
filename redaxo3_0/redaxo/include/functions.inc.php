@@ -2,7 +2,7 @@
 /**
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo3
- * @version $Id: functions.inc.php,v 1.78 2007/08/09 16:04:51 kills Exp $
+ * @version $Id: functions.inc.php,v 1.79 2007/10/06 12:36:25 kills Exp $
  */
 
 // ----------------- TIMER
@@ -30,6 +30,7 @@ $REX['EXTPERM'][] = 'moveCategory[]';
 $REX['EXTPERM'][] = 'publishArticle[]';
 $REX['EXTPERM'][] = 'publishCategory[]';
 $REX['EXTPERM'][] = 'article2startpage[]';
+$REX['EXTPERM'][] = 'accesskeys[]';
 
 // ----- extras
 $REX['EXTRAPERM'] = array();
