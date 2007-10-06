@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_other.inc.php,v 1.15 2007/10/06 12:36:25 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.16 2007/10/06 19:13:01 kills Exp $
  */
 
 /**
@@ -202,5 +202,26 @@ function rex_translate($text, $I18N_Catalogue = null)
   }
 
   return htmlspecialchars($text);
+}
+
+/**
+ * Leitet auf einen anderen Artikel weiter
+ */
+function rex_redirect($article_id, $clang, $params)
+{
+  global $REX;
+
+  $url = rex_no_rewrite($article_id, $clang, '', rex_param_string($params));
+
+  // Redirects nur im Frontend folgen
+  // Und nur wenn FOLLOW_REDIRECT auf true steht
+  // Somit können Addons wie search_index die Seite indizieren
+  // ohne dass der Indizierungsprozess durch weiterleitungen unterbrochen wird
+  if(!$REX['REDAXO'] && $REX['FOLLOW_REDIRECTS'])
+    header('Location: '. $url);
+  else
+    echo 'Disabled redirect to '. $url;
+
+  exit();
 }
 ?>
