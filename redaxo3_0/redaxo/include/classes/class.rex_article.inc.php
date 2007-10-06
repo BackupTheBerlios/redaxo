@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.48 2007/09/20 18:26:38 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.49 2007/10/06 14:37:30 kills Exp $
  */
 
 class rex_article
@@ -820,7 +820,7 @@ class rex_article
     global $REX;
 
     // -- preg match redaxo://[ARTICLEID]-[CLANG] --
-    preg_match_all("/redaxo:\/\/([0-9]*)\-([0-9]*)\/?/im",$content,$matches,PREG_SET_ORDER);
+    preg_match_all('/redaxo:\/\/([0-9]*)\-([0-9]*)\/?/im',$content,$matches,PREG_SET_ORDER);
     foreach($matches as $match)
     {
       if(empty($match)) continue;
@@ -830,7 +830,7 @@ class rex_article
     }
 
     // -- preg match redaxo://[ARTICLEID] --
-    preg_match_all("/redaxo:\/\/([0-9]*)\/?/im",$content,$matches,PREG_SET_ORDER);
+    preg_match_all('/redaxo:\/\/([0-9]*)\/?/im',$content,$matches,PREG_SET_ORDER);
     foreach($matches as $match)
     {
       if(empty($match)) continue;
