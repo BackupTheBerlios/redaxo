@@ -3,13 +3,13 @@
 /**
  *
  * @package redaxo3
- * @version $Id: addon.inc.php,v 1.22 2007/09/06 19:44:42 tbaddade Exp $
+ * @version $Id: addon.inc.php,v 1.23 2007/10/06 13:11:34 kills Exp $
  */
 
-include_once $REX['INCLUDE_PATH']."/functions/function_rex_other.inc.php";
-include_once $REX['INCLUDE_PATH']."/functions/function_rex_addons.inc.php";
+include_once $REX['INCLUDE_PATH'].'/functions/function_rex_other.inc.php';
+include_once $REX['INCLUDE_PATH'].'/functions/function_rex_addons.inc.php';
 
-rex_title($I18N->msg("addon"), "");
+rex_title($I18N->msg('addon'), '');
 
 $ADDONS = rex_read_addons_folder();
 $addonname = isset ($addonname) && array_search($addonname, $ADDONS) !== false ? $addonname : '';

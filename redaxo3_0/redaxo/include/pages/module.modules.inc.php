@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.41 2007/09/24 11:16:42 kills Exp $
+ * @version $Id: module.modules.inc.php,v 1.42 2007/10/06 13:11:34 kills Exp $
  */
 
 $OUT = TRUE;
@@ -97,8 +97,7 @@ if ($function == 'add' or $function == 'edit')
       $IMOD->setValue('name',$mname);
       $IMOD->setValue('eingabe',$eingabe);
       $IMOD->setValue('ausgabe',$ausgabe);
-      $IMOD->setValue('createdate',time());
-      $IMOD->setValue('createuser',$REX_USER->getValue('login'));
+      $IMOD->addGlobalCreateFields();
 
       $message = $IMOD->insert($I18N->msg('module_added'));
 
@@ -116,8 +115,7 @@ if ($function == 'add' or $function == 'edit')
         $UMOD->setValue('name',$mname);
         $UMOD->setValue('eingabe',$eingabe);
         $UMOD->setValue('ausgabe',$ausgabe);
-        $UMOD->setValue('updatedate',time());
-        $UMOD->setValue('updateuser',$REX_USER->getValue('login'));
+        $UMOD->addGlobalUpdateFields();
 
         $message = $UMOD->update($I18N->msg('module_updated').' | '.$I18N->msg('articel_updated'));
         $new_ausgabe = stripslashes($ausgabe);

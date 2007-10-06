@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.66 2007/09/24 11:00:50 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.67 2007/10/06 13:11:35 kills Exp $
  */
 
 class OOMedia
@@ -779,15 +779,13 @@ class OOMedia
 
     if ($this->getId() !== null)
     {
-      $sql->setValue('updatedate', $this->getUpdateDate(null));
-      $sql->setValue('updateuser', $this->getUpdateUser());
+      $sql->addGlobalUpdateFields();
       $sql->setWhere('file_id='.$this->getId() . ' LIMIT 1');
       return $sql->update();
     }
     else
     {
-      $sql->setValue('createdate', $this->getCreateDate(null));
-      $sql->setValue('createuser', $this->getCreateUser());
+      $sql->addGlobalCreateFields();
       return $sql->insert();
     }
   }

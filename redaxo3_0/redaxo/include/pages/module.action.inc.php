@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.41 2007/09/20 18:26:38 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.42 2007/10/06 13:11:31 kills Exp $
  */
 
 class rex_event_select extends rex_select
@@ -109,8 +109,7 @@ if ($function == "add" or $function == "edit")
 
     if ($function == 'add')
     {
-      $faction->setValue('createuser', $REX_USER->getValue('login'));
-      $faction->setValue('createdate', time());
+      $faction->addGlobalCreateFields();
 
       if($faction->insert())
         $message = $I18N->msg('action_added');
@@ -119,8 +118,7 @@ if ($function == "add" or $function == "edit")
     }
     else
     {
-      $faction->setValue('updateuser', $REX_USER->getValue('login'));
-      $faction->setValue('updatedate', time());
+      $faction->addGlobalUpdateFields();
       $faction->setWhere('id=' . $action_id);
 
       if($faction->update())
