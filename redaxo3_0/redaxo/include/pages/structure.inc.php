@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: structure.inc.php,v 1.113 2007/10/06 15:40:18 kills Exp $
+ * @version $Id: structure.inc.php,v 1.114 2007/10/08 14:09:10 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -351,14 +351,11 @@ elseif (!empty($artadd_function) && $category_id !== '' && $KATPERM &&  !$REX_US
     $Position_New_Article = 1;
 
   // ------- Kategorienamen holen
-  $sql = new rex_sql();
-  $sql->setQuery('SELECT catname FROM '.$REX['TABLE_PREFIX'].'article WHERE id='. $category_id .' and startpage=1 and clang='. $clang);
+  $category = OOCategory::getCategoryById($category_id, $clang);
 
   $category_name = '';
-  if($sql->getRows() == 1)
-  {
-    $category_name = $sql->getValue('catname');
-  }
+  if($category)
+    $category_name = addslashes($category->getName());
 
   $amessage = $I18N->msg("article_added");
 
@@ -490,17 +487,9 @@ if (isset ($message) and $message != "")
   echo rex_warning($message);
 
 $cat_name = 'Homepage';
-if($category_id != '')
-{
-  $sql = new rex_sql();
-//  $sql->debugsql = true;
-  $sql->setQuery('SELECT catname FROM '. $REX['TABLE_PREFIX'] .'article WHERE id='. $category_id .' AND clang='. $clang .' AND startpage=1');
-
-  if($sql->getRows() == 1)
-  {
-    $cat_name = $sql->getValue('catname');
-  }
-}
+$category = OOCategory::getCategoryById($category_id, $clang);
+if($category)
+  $cat_name = $category->getName();
 
 $add_category = '';
 if ($KATPERM && !$REX_USER->hasPerm('editContentOnly[]'))
