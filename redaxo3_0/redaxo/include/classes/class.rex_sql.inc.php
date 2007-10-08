@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.36 2007/10/06 15:51:12 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.37 2007/10/08 10:21:48 kills Exp $
  */
 
 class rex_sql
@@ -40,8 +40,7 @@ class rex_sql
     }
 
     $this->debugsql = false;
-    $this->DBID = $DBID;
-    $this->selectDB();
+    $this->selectDB($DBID);
 
     // MySQL Version bestimmen
     if ($REX['MYSQL_VERSION'] == '')
@@ -64,9 +63,11 @@ class rex_sql
   /**
    * Stellt die Verbindung zur Datenbank her
    */
-  function selectDB()
+  function selectDB($DBID)
   {
     global $REX;
+
+    $this->DBID = $DBID;
 
     if (!@ mysql_select_db($REX['DB'][$this->DBID]['NAME'], $this->identifier))
     {
