@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.50 2007/10/08 23:01:12 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.51 2007/10/08 23:01:45 kills Exp $
  */
 
 class rex_article
@@ -600,8 +600,6 @@ class rex_article
   // ----- Template inklusive Artikel zurückgeben
   function getArticleTemplate()
   {
-    global $REX;
-
     if ($this->getTemplateId() != 0 && $this->article_id != 0)
     {
       ob_start();
