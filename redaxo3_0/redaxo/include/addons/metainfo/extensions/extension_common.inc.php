@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.19 2007/09/21 17:55:22 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.20 2007/10/08 12:56:18 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -72,7 +72,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
     $dbvalues = array('');
     if($activeItem)
       $dbvalues = explode('|+|', $activeItem->getValue($name));
-      
+
     if($title != '')
       $label = rex_translate($title);
     else
@@ -97,10 +97,10 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
         $tag = '';
         $labelIt = false;
         $values = array();
-        if(preg_match('/^\s*?(SELECT)/i', $params, $matches))
+        if(rex_sql::getQueryType($params) == 'SELECT')
         {
           $sql = new rex_sql();
-          $value_groups = $sql->getArray($params, MYSQL_NUM);
+          $value_groups = $sql->getDBArray($params, MYSQL_NUM);
           foreach($value_groups as $value_group)
           {
             if(isset($value_group[1]))
@@ -163,9 +163,9 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
             $select->setName($name.'[]');
         }
 
-        if(preg_match('/^\s*?(SELECT)/i', $params, $matches))
+        if(rex_sql::getQueryType($params) == 'SELECT')
         {
-          $select->addSqlOptions($params);
+          $select->addDBSqlOptions($params);
         }
         else
         {
