@@ -1,10 +1,10 @@
 <?php
 
-/** 
+/**
  * Addonlist
- * @package redaxo3 
- * @version $Id: addons.inc.php,v 1.7 2007/06/28 10:06:15 kills Exp $ 
- */ 
+ * @package redaxo3
+ * @version $Id: addons.inc.php,v 1.8 2007/10/08 09:54:35 kills Exp $
+ */
 
 // ----------------- addons
 if (isset($REX['ADDON']['status'])) {
@@ -23,11 +23,11 @@ if(!isset($REX['ADDON']) || !is_array($REX['ADDON']))
   $REX['ADDON']['install'] = array();
   $REX['ADDON']['status'] = array();
 }
-  
-for($i=0;$i<count($REX['ADDON']['status']);$i++)
+
+foreach($REX['ADDON']['status'] as $addonName => $addonStatus)
 {
-	if (current($REX['ADDON']['status']) == 1) include $REX['INCLUDE_PATH']."/addons/".key($REX['ADDON']['status'])."/config.inc.php";
-	next($REX['ADDON']['status']);
+  if($addonStatus == 1)
+    include $REX['INCLUDE_PATH'].'/addons/'.$addonName.'/config.inc.php';
 }
 
 // ----- all addons configs included
