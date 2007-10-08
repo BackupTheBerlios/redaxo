@@ -25,7 +25,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.83 2007/10/06 13:11:34 kills Exp $
+ * @version $Id: setup.inc.php,v 1.84 2007/10/08 10:08:31 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -710,7 +710,7 @@ if ($checkmodus == 4 && $send == 1)
         $user->setValue('login', $redaxo_user_login);
         $user->setValue('psw', $redaxo_user_pass);
         $user->setValue('rights', '#admin[]#dev[]#import[]#stats[]#moveSlice[]#');
-        $user->addGlobalCreateFields();
+        $user->addGlobalCreateFields('setup');
         $user->setValue('status', '1');
         if (!$user->insert())
         {
