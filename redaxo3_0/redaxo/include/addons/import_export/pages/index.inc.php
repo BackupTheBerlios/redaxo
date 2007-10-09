@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: index.inc.php,v 1.44 2007/09/30 14:20:52 kristinus Exp $
+ * @version $Id: index.inc.php,v 1.45 2007/10/09 15:03:49 kills Exp $
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -233,7 +233,7 @@ if ($msg != '')
       <div class="rex-addon-editmode">
       <form action="index.php" enctype="multipart/form-data" method="post" >
         <fieldset>
-          <legend class="rex-lgnd"><?php echo $I18N_IM_EXPORT->msg('import'); ?></legend>
+          <legend class="rex-lgnd"><?php echo $I18N_IM_EXPORT->msg('database'); ?></legend>
           <input type="hidden" name="page" value="<?php echo $page ?>" />
           <input type="hidden" name="function" value="dbimport" />
           <p class="rex-ftxt">
