@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.39 2007/10/08 13:58:47 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.40 2007/10/09 17:31:53 kristinus Exp $
  */
 
 class rex_sql
@@ -128,7 +128,7 @@ class rex_sql
   {
     if(!$qry)
     {
-      if($this) // Nur bei angelegtem Object
+      if(@$this) // Nur bei angelegtem Object
         $qry = $this->query;
       else
         return null;
