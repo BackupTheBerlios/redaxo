@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.52 2007/10/08 23:08:52 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.53 2007/10/09 17:43:45 kristinus Exp $
  */
 
 class rex_article
@@ -713,8 +713,8 @@ class rex_article
           '.$RE_MODUL_IN.'
 		  </div></div>
           <p class="rex-sbmt">
-            <input type="submit" value="'.$I18N->msg('save_block').'" name="btn_save"'. rex_accesskey($I18N->msg('save_block'), $REX['ACKEY']['SAVE']) .' />
-            <input type="submit" value="'.$I18N->msg('update_block').'" name="btn_update"'. rex_accesskey($I18N->msg('update_block'), $REX['ACKEY']['APPLY']) .' />
+            <input type="submit" value="'.$I18N->msg('save_block').'" name="btn_save" '. rex_accesskey($I18N->msg('save_block'), $REX['ACKEY']['SAVE']) .' />
+            <input type="submit" value="'.$I18N->msg('update_block').'" name="btn_update" '. rex_accesskey($I18N->msg('update_block'), $REX['ACKEY']['APPLY']) .' />
           </p>
         </fieldset>
       </form>';
