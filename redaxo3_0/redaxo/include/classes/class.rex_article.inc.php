@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.53 2007/10/09 17:43:45 kristinus Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.54 2007/10/09 22:12:34 kills Exp $
  */
 
 class rex_article
@@ -836,7 +836,7 @@ class rex_article
     {
       if(empty($match)) continue;
 
-      $url = rex_getURL($match[1], $REX['CUR_CLANG']);
+      $url = rex_getURL($match[1], $this->clang);
       $content = str_replace($match[0],$url,$content);
     }
 
