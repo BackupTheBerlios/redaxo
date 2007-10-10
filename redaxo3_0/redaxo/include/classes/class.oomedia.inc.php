@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.67 2007/10/06 13:11:35 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.68 2007/10/10 08:33:22 kristinus Exp $
  */
 
 class OOMedia
@@ -816,6 +816,7 @@ class OOMedia
       'bmp',
       'css',
       'doc',
+      'eps',
       'gif',
       'gz',
       'jpg',
