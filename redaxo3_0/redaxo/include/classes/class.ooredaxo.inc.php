@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo3
- * @version $Id: class.ooredaxo.inc.php,v 1.49 2007/09/30 17:09:22 kristinus Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.50 2007/10/10 10:01:31 kills Exp $
  */
 
 class OORedaxo
@@ -232,6 +232,16 @@ class OORedaxo
   function getDescription()
   {
     return $this->getValue('art_description');
+  }
+
+  /**
+   * Accessor Method:
+   * returns the article description.
+   * @deprecated 17.09.2007
+   */
+  function getTypeId()
+  {
+    return $this->getValue('art_type_id');
   }
 
   /*
