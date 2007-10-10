@@ -4,7 +4,7 @@
 /**
  * Abtrackte Basisklasse für REX_VARS
  * @package redaxo3
- * @version $Id: class.rex_var.inc.php,v 1.15 2007/09/21 12:36:39 kills Exp $
+ * @version $Id: class.rex_var.inc.php,v 1.16 2007/10/10 08:02:54 kristinus Exp $
  */
 
 class rex_var
@@ -262,7 +262,7 @@ class rex_var
   
   function isEditEvent()
   {
-    return rex_request('btn_update', 'string') != '';
+    return (rex_request('btn_update', 'string') != '' || rex_request('btn_save', 'string') != '');
   }
   
   function isDeleteEvent()
