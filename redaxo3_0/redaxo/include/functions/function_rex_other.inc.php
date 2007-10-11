@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_other.inc.php,v 1.17 2007/10/06 19:15:14 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.18 2007/10/11 16:51:38 kills Exp $
  */
 
 /**
@@ -162,7 +162,7 @@ function rex_accesskey($title, $key)
   if($REX_USER->hasPerm('accesskeys[]'))
     return ' accesskey="'. $key .'" title="'. $title .' ['. $key .']"';
 
-  return 'title="'. $title .'"';
+  return ' title="'. $title .'"';
 }
 
 function rex_ini_get($val)
