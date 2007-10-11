@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.20 2007/10/08 12:56:18 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.21 2007/10/11 16:45:19 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -94,8 +94,6 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
         $name .= '[]';
       case 'radio':
       {
-        $tag = '';
-        $labelIt = false;
         $values = array();
         if(rex_sql::getQueryType($params) == 'SELECT')
         {
@@ -126,10 +124,22 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
           }
         }
 
-        if($epParams['extension_point'] != 'CAT_META_FORM_EDIT')
-          $field .= '<span>'. $label .'</span>';
+//        if($epParams['extension_point'] != 'CAT_META_FORM_EDIT')
+//          $field .= '<span>'. $label .'</span>';
 
         $class = $typeLabel == 'radio' ? 'rex-rdo' : 'rex-chckbx';
+
+        $oneValue = (count($values) == 1);
+
+        if(!$oneValue)
+        {
+          $tag = '';
+          $labelIt = false;
+          $tag = 'div';
+          $tag_attr = ' class="rex-chckbxs rex-ptag"';
+          $field .= '<p>'. $label .'</p>';
+        }
+
         foreach($values as $key => $value)
         {
           $id = preg_replace('/[^a-zA-Z\-0-9_]/', '_', $id . $key);
@@ -138,11 +148,20 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
           if(in_array($key, $dbvalues))
             $selected = ' checked="checked"';
 
-          $field .= '<p class="'. $class .'">'."\n";
-          $field .= '<label for="'. $id .'">'. htmlspecialchars($value) .'</label>';
-          $field .= '<input type="'. $typeLabel .'" name="'. $name .'" value="'. $key .'" id="'. $id .'" '. $attr . $selected .' />'."\n";
-          $field .= '</p>'."\n";
+          if($oneValue)
+          {
+            $field .= '<input type="'. $typeLabel .'" name="'. $name .'" value="'. $key .'" id="'. $id .'" '. $attr . $selected .' />'."\n";
+          }
+          else
+          {
+            $field .= '<p class="'. $class .'">'."\n";
+            $field .= '<label for="'. $id .'">'. htmlspecialchars($value) .'</label>';
+            $field .= '<input type="'. $typeLabel .'" name="'. $name .'" value="'. $key .'" id="'. $id .'" '. $attr . $selected .' />'."\n";
+            $field .= '</p>'."\n";
+          }
+
         }
+
         break;
       }
       case 'select':
