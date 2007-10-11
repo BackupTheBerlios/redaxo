@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.21 2007/10/11 16:45:19 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.22 2007/10/11 16:48:58 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -155,7 +155,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
           else
           {
             $field .= '<p class="'. $class .'">'."\n";
-            $field .= '<label for="'. $id .'">'. htmlspecialchars($value) .'</label>';
+            $field .= '<label for="'. $id .'"><span>'. htmlspecialchars($value) .'</span></label>';
             $field .= '<input type="'. $typeLabel .'" name="'. $name .'" value="'. $key .'" id="'. $id .'" '. $attr . $selected .' />'."\n";
             $field .= '</p>'."\n";
           }
