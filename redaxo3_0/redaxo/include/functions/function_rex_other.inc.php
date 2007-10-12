@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_other.inc.php,v 1.18 2007/10/11 16:51:38 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.19 2007/10/12 23:11:03 koala_s Exp $
  */
 
 /**
@@ -168,7 +168,11 @@ function rex_accesskey($title, $key)
 function rex_ini_get($val)
 {
   $val = trim(ini_get($val));
-  $last = strtolower($val{strlen($val)-1});
+  if ($val != '') {
+    $last = strtolower($val{strlen($val)-1});
+  } else {
+    $last = '';
+  }
   switch($last) {
       // The 'G' modifier is available since PHP 5.1.0
       case 'g':
