@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo3
- * @version $Id: extension_common.inc.php,v 1.23 2007/10/11 16:59:01 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.24 2007/10/12 09:56:41 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -143,6 +143,11 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
         foreach($values as $key => $value)
         {
           $id = preg_replace('/[^a-zA-Z\-0-9_]/', '_', $id . $key);
+
+          // wenn man keine Werte angibt (Boolean Chkbox/Radio)
+          // Dummy Wert annehmen, damit an/aus unterscheidung funktioniert
+          if($oneValue && $key == '')
+            $key = 'true';
 
           $selected = '';
           if(in_array($key, $dbvalues))
