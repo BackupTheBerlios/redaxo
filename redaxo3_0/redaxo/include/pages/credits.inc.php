@@ -3,7 +3,7 @@
 /**
  * Creditsseite. Auflistung der Credits an die Entwickler von REDAXO und den AddOns.
  * @package redaxo3
- * @version $Id: credits.inc.php,v 1.7 2007/09/10 16:33:36 tbaddade Exp $
+ * @version $Id: credits.inc.php,v 1.8 2007/10/12 12:04:05 kristinus Exp $
  */
 
 rex_title($I18N->msg("credits"), "");
@@ -24,6 +24,10 @@ Yakamara Media GmbH &amp; Co KG, <a href="http://www.yakamara.de">www.yakamara.d
 
 <b>Markus Staab</b>, markus.staab@redaxo.de
 Kernentwickler
+
+<b>Wolfgang Hutteger</b>, wolfgang.huttegger@redaxo.de
+Kernentwickler
+vscope new media, <a href="http://www.vscope.at">www.vscope.at</a>
 
 <b>Thomas Blum</b>, thomas.blum@redaxo.de
 Layout/Design Entwickler
