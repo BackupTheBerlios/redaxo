@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.68 2007/10/10 08:33:22 kristinus Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.69 2007/10/12 13:14:35 kills Exp $
  */
 
 class OOMedia
@@ -234,6 +234,24 @@ class OOMedia
   function getTitle()
   {
     return $this->_title;
+  }
+
+  /**
+   * @access public
+   * @deprecated 12.10.2007
+   */
+  function getDescription()
+  {
+    return $this->_description;
+  }
+
+  /**
+   * @access public
+   * @deprecated 12.10.2007
+   */
+  function getCopyright()
+  {
+    return $this->_copyright;
   }
 
   /**
