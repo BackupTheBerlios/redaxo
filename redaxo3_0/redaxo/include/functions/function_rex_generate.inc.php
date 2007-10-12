@@ -4,7 +4,7 @@
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
  * @package redaxo3
- * @version $Id: function_rex_generate.inc.php,v 1.98 2007/10/12 12:35:23 kills Exp $
+ * @version $Id: function_rex_generate.inc.php,v 1.99 2007/10/12 13:49:47 kristinus Exp $
  */
 
 // ----------------------------------------- Alles generieren
@@ -93,10 +93,10 @@ function rex_deleteCacheArticle($id, $clang = null)
   {
     if(!$clang || $clang && $clang == $_clang)
     {
-      @unlink($REX['INCLUDE_PATH'].'/generated/articles/'. $id .'_'. $_clang .'.article');
-      @unlink($REX['INCLUDE_PATH'].'/generated/articles/'. $id .'_'. $_clang .'.content');
-      @unlink($REX['INCLUDE_PATH'].'/generated/articles/'. $id .'_'. $_clang .'.alist');
-      @unlink($REX['INCLUDE_PATH'].'/generated/articles/'. $id .'_'. $_clang .'.clist');
+      @unlink($REX['INCLUDE_PATH'].'/generated/articles/'. $id .'.'. $_clang .'.article');
+      @unlink($REX['INCLUDE_PATH'].'/generated/articles/'. $id .'.'. $_clang .'.content');
+      @unlink($REX['INCLUDE_PATH'].'/generated/articles/'. $id .'.'. $_clang .'.alist');
+      @unlink($REX['INCLUDE_PATH'].'/generated/articles/'. $id .'.'. $_clang .'.clist');
     }
 	}
 }
