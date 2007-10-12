@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.158 2007/10/12 14:04:21 kristinus Exp $
+ * @version $Id: medienpool.inc.php,v 1.159 2007/10/12 14:27:00 kristinus Exp $
  */
 
 // TODOS
@@ -546,7 +546,7 @@ if ($PERMALL && $subpage == "categories")
 	  <div class="rex-mpl-cat">
       <form action="index.php" method="post">
         <fieldset>
-          <legend class="rex-lgnd"><span class="rex-hide">'. $legend .'</span></legend>
+          <!-- <legend class="rex-lgnd"><span class="rex-hide">'. $legend .'</span></legend> -->
           <input type="hidden" name="page" value="medienpool" />
           <input type="hidden" name="subpage" value="categories" />
           <input type="hidden" name="media_method" value="'. $method .'" />
