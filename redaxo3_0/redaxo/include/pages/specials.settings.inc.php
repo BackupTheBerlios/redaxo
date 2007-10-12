@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: specials.settings.inc.php,v 1.15 2007/09/21 08:59:55 kills Exp $
+ * @version $Id: specials.settings.inc.php,v 1.16 2007/10/12 22:44:50 kristinus Exp $
  */
 
 if ($func == 'setup')
@@ -139,7 +139,8 @@ echo '
         <p><a href="index.php?page=specials&amp;func=linkchecker">'.$I18N->msg("link_checker").'</a></p>
         <p>'.$I18N->msg("check_links_text").'</p>
 
-        <p><a href="index.php?page=specials&amp;func=setup">'.$I18N->msg("setup").'</a></p>
+        <p><a href="index.php?page=specials&amp;func=setup" onclick="return confirm(\''.$I18N->msg("setup").'\')";
+>'.$I18N->msg("setup").'</a></p>
         <p>'.$I18N->msg("setup_text").'</p>
       </div>
     </div>
