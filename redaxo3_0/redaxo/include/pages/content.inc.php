@@ -4,7 +4,7 @@
 /**
  * Verwaltung der Inhalte. EditierModul / Metadaten ...
  * @package redaxo3
- * @version $Id: content.inc.php,v 1.132 2007/10/12 10:00:04 kills Exp $
+ * @version $Id: content.inc.php,v 1.133 2007/10/12 10:22:16 kills Exp $
  */
 
 /*
@@ -764,7 +764,7 @@ if ($article->getRows() == 1)
 					else if ($article->getValue('startpage')==1)
 						echo $I18N->msg('content_isstartarticle');
 					else
-						echo '<input class="rex-sbmt" type="submit" name="article2startpage" value="' . $I18N->msg('content_tostartarticle') . '"'. rex_tabindex() .' />';
+						echo '<input class="rex-sbmt" type="submit" name="article2startpage" value="' . $I18N->msg('content_tostartarticle') . '"'. rex_tabindex() .' onclick="return confirm(\'' . $I18N->msg('content_tostartarticle') . '\')"/>';
 
 					echo '
 									  </p>
