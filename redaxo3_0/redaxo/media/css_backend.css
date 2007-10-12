@@ -1,7 +1,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: css_backend.css,v 1.6 2007/10/11 16:56:10 tbaddade Exp $
+ * @version $Id: css_backend.css,v 1.7 2007/10/12 14:27:26 kristinus Exp $
  */
 *,
 .rex-nospace {
@@ -1488,6 +1488,7 @@ div.rex-addon-editmode p input.rex-sbmt {
 
 /*	Addon - Metainfo
 *******************************************************************************/
+body#rex-page-medienpool fieldset p span.rex-notice,
 body#rex-page-metainfo fieldset p span.rex-notice {
 	display:block;
 	clear:both;
