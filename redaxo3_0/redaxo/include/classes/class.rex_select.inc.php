@@ -4,7 +4,7 @@
  * Klasse zur Erstellung eines HTML-Pulldown-Menues (Select-Box)
  *
  * @package redaxo3
- * @version $Id: class.rex_select.inc.php,v 1.11 2007/10/08 12:56:00 kills Exp $
+ * @version $Id: class.rex_select.inc.php,v 1.12 2007/10/12 10:00:20 kristinus Exp $
  */
 
 ################ Class Select
@@ -156,7 +156,7 @@ class rex_select
     {
       // Hier vorher auf is_array abfragen, da bei Strings auch die Syntax mit [] funktioniert
       // $ab = "hallo"; $ab[2] -> "l"
-      $grouped = is_array($options[0]) && isset ($options[0][2]) && isset ($options[0][3]);
+			$grouped = isset($options[0]) && is_array($options[0]) && isset ($options[0][2]) && isset ($options[0][3]);
       foreach ($options as $key => $option)
       {
       	$option = (array) $option;
