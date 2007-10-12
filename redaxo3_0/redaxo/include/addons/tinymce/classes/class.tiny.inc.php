@@ -11,7 +11,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo3
- * @version $Id: class.tiny.inc.php,v 1.14 2007/10/12 12:25:43 kills Exp $
+ * @version $Id: class.tiny.inc.php,v 1.15 2007/10/12 14:00:07 kills Exp $
  */
 
 global $TINY2;
@@ -24,7 +24,7 @@ class rexTiny2Editor
 {
 
 
-  var $editorCSS = '../files/tmp_/tinymce/content.css';
+  var $editorCSS = '../files/tmp_/tinymce/tinymce.css';
   var $advimageCSS = '';
   var $disable = '';
   var $plugins = 'advlink,advimage,emotions,iespell,table,insertdatetime,preview,zoom,flash,searchreplace,print,contextmenu,paste,directionality,fullscreen,redaxo';
