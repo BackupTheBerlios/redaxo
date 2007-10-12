@@ -10,7 +10,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo3
- * @version $Id: install.inc.php,v 1.9 2007/08/03 15:17:54 kills Exp $
+ * @version $Id: install.inc.php,v 1.10 2007/10/12 11:58:46 kills Exp $
  */
 
 require_once $REX['INCLUDE_PATH'] . '/addons/tinymce/functions/function_pclzip.inc.php';
@@ -21,6 +21,8 @@ $I18N_A52 = new i18n($REX['LANG'], $REX['INCLUDE_PATH'].'/addons/tinymce/lang/')
 rex_a52_extract_archive('include/addons/tinymce/js/tinymce.zip', $I18N_A52->msg('install_core'));
 // Install German Language Pack
 rex_a52_extract_archive('include/addons/tinymce/js/tinymce_lang_de.zip', $I18N_A52->msg('install_lang_pakage'));
+// Install Redaxo Plugin
+rex_a52_extract_archive('include/addons/tinymce/js/redaxo_tiny_plugin.zip', $I18N_A52->msg('install_redaxo_plugin'),'../files/tinymce/jscripts/tiny_mce/plugins/');
 
 $REX['ADDON']['install']['tinymce'] = true;
 
