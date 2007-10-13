@@ -9,8 +9,8 @@
  * @author Dave Holloway
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
- * @package redaxo3
- * @version $Id: index.inc.php,v 1.14 2007/10/12 14:00:07 kills Exp $
+ * @package redaxo4
+ * @version $Id: index.inc.php,v 1.15 2007/10/13 13:52:01 kills Exp $
  */
 
 include $REX['INCLUDE_PATH']."/layout/top.php";

@@ -2,8 +2,8 @@
 
 /**
  * URL Funktionen
- * @package redaxo3
- * @version $Id: function_rex_url.inc.php,v 1.12 2007/10/12 10:13:40 kills Exp $
+ * @package redaxo4
+ * @version $Id: function_rex_url.inc.php,v 1.13 2007/10/13 13:52:01 kills Exp $
  */
 
 function rex_parse_article_name($name)

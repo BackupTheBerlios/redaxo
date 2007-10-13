@@ -11,12 +11,12 @@
  *
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
- * @package redaxo3
- * @version $Id: class.textile.inc.php,v 1.5 2007/09/20 19:11:54 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.textile.inc.php,v 1.6 2007/10/13 13:52:01 kills Exp $
  */
 
 /*
-$Id: class.textile.inc.php,v 1.5 2007/09/20 19:11:54 kills Exp $
+$Id: class.textile.inc.php,v 1.6 2007/10/13 13:52:01 kills Exp $
 $LastChangedRevision$
 */
 

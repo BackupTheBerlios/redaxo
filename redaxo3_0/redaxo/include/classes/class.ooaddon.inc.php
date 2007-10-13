@@ -2,8 +2,8 @@
 
 /** 
  * Klasse zum prüfen ob Addons installiert/aktiviert sind
- * @package redaxo3 
- * @version $Id: class.ooaddon.inc.php,v 1.3 2005/12/27 14:38:24 kristinus Exp $ 
+ * @package redaxo4 
+ * @version $Id: class.ooaddon.inc.php,v 1.4 2007/10/13 13:52:00 kills Exp $ 
  */ 
 
 class OOAddon

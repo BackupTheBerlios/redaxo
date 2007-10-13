@@ -3,8 +3,8 @@
 
 /**
  * Abtrackte Basisklasse für REX_VARS
- * @package redaxo3
- * @version $Id: class.rex_var.inc.php,v 1.18 2007/10/12 23:44:59 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.rex_var.inc.php,v 1.19 2007/10/13 13:52:00 kills Exp $
  */
 
 class rex_var

@@ -3,8 +3,8 @@
 
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
- * @package redaxo3
- * @version $Id: class.oomedia.inc.php,v 1.70 2007/10/12 13:49:27 kristinus Exp $
+ * @package redaxo4
+ * @version $Id: class.oomedia.inc.php,v 1.71 2007/10/13 13:52:00 kills Exp $
  */
 
 class OOMedia

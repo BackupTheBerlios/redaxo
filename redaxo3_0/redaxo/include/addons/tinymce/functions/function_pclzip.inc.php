@@ -9,8 +9,8 @@
  * @author Dave Holloway
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
- * @package redaxo3
- * @version $Id: function_pclzip.inc.php,v 1.6 2007/10/13 11:52:45 kills Exp $
+ * @package redaxo4
+ * @version $Id: function_pclzip.inc.php,v 1.7 2007/10/13 13:52:01 kills Exp $
  */
 
 include_once $REX['INCLUDE_PATH'] . '/addons/tinymce/classes/class.pclzip.inc.php';

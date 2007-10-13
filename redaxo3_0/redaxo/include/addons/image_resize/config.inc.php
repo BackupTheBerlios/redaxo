@@ -12,8 +12,8 @@
  * @author jan.kristinus[at]redaxo[dot]de Jan Kristinus
  * @author <a href="http://www.yakamara.de">www.yakamara.de</a>
  *
- * @package redaxo3
- * @version $Id: config.inc.php,v 1.36 2007/09/30 12:35:31 kristinus Exp $
+ * @package redaxo4
+ * @version $Id: config.inc.php,v 1.37 2007/10/13 13:52:01 kills Exp $
  */
 
 $mypage = 'image_resize';

@@ -8,8 +8,8 @@
  * REX_ARTICLE_VAR['category_id']
  * ...
  * 
- * @package redaxo3
- * @version $Id: class.rex_var_article.inc.php,v 1.3 2007/03/26 15:31:11 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.rex_var_article.inc.php,v 1.4 2007/10/13 13:52:01 kills Exp $
  */
 
 class rex_var_article extends rex_var

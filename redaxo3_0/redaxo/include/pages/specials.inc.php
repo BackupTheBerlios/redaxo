@@ -1,8 +1,8 @@
 <?php
 /** 
  *  
- * @package redaxo3 
- * @version $Id: specials.inc.php,v 1.41 2006/10/27 09:21:47 kristinus Exp $ 
+ * @package redaxo4 
+ * @version $Id: specials.inc.php,v 1.42 2007/10/13 13:52:00 kills Exp $ 
  */ 
 
 // -------------- Defaults

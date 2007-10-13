@@ -2,8 +2,8 @@
 
 /**
  *
- * @package redaxo3
- * @version $Id: specials.settings.inc.php,v 1.17 2007/10/12 23:12:23 kills Exp $
+ * @package redaxo4
+ * @version $Id: specials.settings.inc.php,v 1.18 2007/10/13 13:52:00 kills Exp $
  */
 
 if ($func == 'setup')

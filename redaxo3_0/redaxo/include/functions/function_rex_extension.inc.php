@@ -2,8 +2,8 @@
 
 /**
  * Funktionen zur Registrierung von Schnittstellen (EXTENSION_POINTS)
- * @package redaxo3
- * @version $Id: function_rex_extension.inc.php,v 1.15 2007/09/02 13:37:38 kills Exp $
+ * @package redaxo4
+ * @version $Id: function_rex_extension.inc.php,v 1.16 2007/10/13 13:52:01 kills Exp $
  */
 
 /**

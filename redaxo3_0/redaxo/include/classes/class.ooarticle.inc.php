@@ -2,8 +2,8 @@
 
 /**
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
- * @package redaxo3
- * @version $Id: class.ooarticle.inc.php,v 1.35 2007/09/17 09:24:13 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.ooarticle.inc.php,v 1.36 2007/10/13 13:52:00 kills Exp $
  */
 
 class OOArticle extends OORedaxo

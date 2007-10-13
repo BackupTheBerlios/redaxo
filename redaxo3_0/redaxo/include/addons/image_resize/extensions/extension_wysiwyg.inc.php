@@ -8,8 +8,8 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
- * @package redaxo3
- * @version $Id: extension_wysiwyg.inc.php,v 1.1 2007/08/14 16:12:05 kills Exp $
+ * @package redaxo4
+ * @version $Id: extension_wysiwyg.inc.php,v 1.2 2007/10/13 13:52:01 kills Exp $
  */
 
 rex_register_extension('OUTPUT_FILTER', 'rex_resize_wysiwyg_output');

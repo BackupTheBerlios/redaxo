@@ -11,8 +11,8 @@
  * REX_MEDIALIST_BUTTON[1]
  *
  * Alle Variablen die mit REX_FILE beginnnen sind als deprecated anzusehen!
- * @package redaxo3
- * @version $Id: class.rex_var_media.inc.php,v 1.17 2007/09/20 18:32:02 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.rex_var_media.inc.php,v 1.18 2007/10/13 13:52:01 kills Exp $
  */
 
 class rex_var_media extends rex_var

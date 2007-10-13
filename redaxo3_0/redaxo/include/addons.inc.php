@@ -2,8 +2,8 @@
 
 /**
  * Addonlist
- * @package redaxo3
- * @version $Id: addons.inc.php,v 1.9 2007/10/08 10:01:17 kills Exp $
+ * @package redaxo4
+ * @version $Id: addons.inc.php,v 1.10 2007/10/13 13:52:01 kills Exp $
  */
 
 // ----------------- addons

@@ -9,8 +9,8 @@
  * @author Dave Holloway
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  * 
- * @package redaxo3
- * @version $Id: config.inc.php,v 1.8 2007/09/21 18:09:30 kills Exp $
+ * @package redaxo4
+ * @version $Id: config.inc.php,v 1.9 2007/10/13 13:52:01 kills Exp $
  */
 
 $mypage = "tinymce";

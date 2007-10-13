@@ -2,8 +2,8 @@
 
 /** 
  * Funktionen zum handeln von magic_quotes=off  
- * @package redaxo3 
- * @version $Id: function_rex_mquotes.inc.php,v 1.6 2007/05/27 19:51:50 kristinus Exp $ 
+ * @package redaxo4 
+ * @version $Id: function_rex_mquotes.inc.php,v 1.7 2007/10/13 13:52:01 kills Exp $ 
  */
 
 if (!get_magic_quotes_gpc())

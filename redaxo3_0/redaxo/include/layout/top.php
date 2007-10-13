@@ -2,8 +2,8 @@
 
 /**
  * Layout Kopf des Backends
- * @package redaxo3
- * @version $Id: top.php,v 1.54 2007/10/09 14:54:42 kills Exp $
+ * @package redaxo4
+ * @version $Id: top.php,v 1.55 2007/10/13 13:52:01 kills Exp $
  */
 
 if (!isset ($page_name))

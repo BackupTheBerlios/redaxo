@@ -2,8 +2,8 @@
 
 /**
  * Hauptkonfigurationsdatei
- * @package redaxo3
- * @version $Id: master.inc.php,v 1.48 2007/10/13 13:17:44 kills Exp $
+ * @package redaxo4
+ * @version $Id: master.inc.php,v 1.49 2007/10/13 13:52:01 kills Exp $
  */
 
 // -----------------

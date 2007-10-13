@@ -2,8 +2,8 @@
 
 /**
  *
- * @package redaxo3
- * @version $Id: addon.inc.php,v 1.23 2007/10/06 13:11:34 kills Exp $
+ * @package redaxo4
+ * @version $Id: addon.inc.php,v 1.24 2007/10/13 13:52:00 kills Exp $
  */
 
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_other.inc.php';

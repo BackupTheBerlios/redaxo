@@ -4,8 +4,8 @@
  * MetaForm Addon
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
- * @package redaxo3
- * @version $Id: extension_cat_metainfo.inc.php,v 1.19 2007/09/06 20:05:11 tbaddade Exp $
+ * @package redaxo4
+ * @version $Id: extension_cat_metainfo.inc.php,v 1.20 2007/10/13 13:52:01 kills Exp $
  */
 
 rex_register_extension('CAT_FORM_ADD', 'rex_a62_metainfo_form');

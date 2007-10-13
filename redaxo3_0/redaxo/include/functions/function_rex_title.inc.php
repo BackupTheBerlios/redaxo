@@ -1,8 +1,8 @@
 <?php
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
- * @package redaxo3
- * @version $Id: function_rex_title.inc.php,v 1.34 2007/09/04 19:04:15 kills Exp $
+ * @package redaxo4
+ * @version $Id: function_rex_title.inc.php,v 1.35 2007/10/13 13:52:01 kills Exp $
  */
 
 /**

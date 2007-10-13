@@ -9,8 +9,8 @@
  * @author Dave Holloway
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  * 
- * @package redaxo3
- * @version $Id: uninstall.inc.php,v 1.4 2007/09/21 18:38:26 kills Exp $
+ * @package redaxo4
+ * @version $Id: uninstall.inc.php,v 1.5 2007/10/13 13:52:01 kills Exp $
  */
 
 rex_deleteDir('../files/tmp_/tinymce', true);

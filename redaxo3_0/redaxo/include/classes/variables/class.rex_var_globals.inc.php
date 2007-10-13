@@ -5,8 +5,8 @@
  * REX_SLICE_ID,
  * REX_CTYPE_ID
  *
- * @package redaxo3
- * @version $Id: class.rex_var_globals.inc.php,v 1.8 2007/09/21 12:36:39 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.rex_var_globals.inc.php,v 1.9 2007/10/13 13:52:01 kills Exp $
  */
 
 class rex_var_globals extends rex_var

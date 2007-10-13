@@ -2,8 +2,8 @@
 
 /**
  *
- * @package redaxo3
- * @version $Id: template.inc.php,v 1.55 2007/10/06 13:11:34 kills Exp $
+ * @package redaxo4
+ * @version $Id: template.inc.php,v 1.56 2007/10/13 13:52:00 kills Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");

@@ -2,8 +2,8 @@
 
 /**
  * Verwaltung der Content Sprachen
- * @package redaxo3
- * @version $Id: specials.clangs.inc.php,v 1.12 2007/09/06 18:00:18 kills Exp $
+ * @package redaxo4
+ * @version $Id: specials.clangs.inc.php,v 1.13 2007/10/13 13:52:00 kills Exp $
  */
 
 // -------------- Defaults

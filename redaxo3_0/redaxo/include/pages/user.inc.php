@@ -1,8 +1,8 @@
 <?php
 /**
  *
- * @package redaxo3
- * @version $Id: user.inc.php,v 1.82 2007/10/12 09:29:32 kristinus Exp $
+ * @package redaxo4
+ * @version $Id: user.inc.php,v 1.83 2007/10/13 13:52:00 kills Exp $
  */
 
 /*

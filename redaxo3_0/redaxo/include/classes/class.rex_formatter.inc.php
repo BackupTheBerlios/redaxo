@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @package redaxo3
- * @version $Id: class.rex_formatter.inc.php,v 1.2 2007/09/06 17:07:41 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.rex_formatter.inc.php,v 1.3 2007/10/13 13:52:00 kills Exp $
  */
 
 /**

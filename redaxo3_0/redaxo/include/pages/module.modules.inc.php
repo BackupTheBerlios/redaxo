@@ -1,8 +1,8 @@
 <?php
 /**
  *
- * @package redaxo3
- * @version $Id: module.modules.inc.php,v 1.43 2007/10/12 13:10:47 kills Exp $
+ * @package redaxo4
+ * @version $Id: module.modules.inc.php,v 1.44 2007/10/13 13:52:00 kills Exp $
  */
 
 $OUT = TRUE;

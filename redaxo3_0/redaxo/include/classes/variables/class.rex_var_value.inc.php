@@ -9,8 +9,8 @@
  * REX_HTML,
  * REX_IS_VALUE
  *
- * @package redaxo3
- * @version $Id: class.rex_var_value.inc.php,v 1.14 2007/09/20 18:32:02 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.rex_var_value.inc.php,v 1.15 2007/10/13 13:52:01 kills Exp $
  */
 
 class rex_var_value extends rex_var

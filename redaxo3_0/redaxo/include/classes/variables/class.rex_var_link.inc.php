@@ -5,8 +5,8 @@
  * REX_LINKLIST_BUTTON,
  * REX_LINKLIST
  *
- * @package redaxo3
- * @version $Id: class.rex_var_link.inc.php,v 1.18 2007/09/20 18:32:02 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.rex_var_link.inc.php,v 1.19 2007/10/13 13:52:01 kills Exp $
  */
 
 class rex_var_link extends rex_var

@@ -2,8 +2,8 @@
 
 /**
  *
- * @package redaxo3
- * @version $Id: index.php,v 1.46 2007/09/02 13:47:05 kills Exp $
+ * @package redaxo4
+ * @version $Id: index.php,v 1.47 2007/10/13 13:52:01 kills Exp $
  */
 
 // ----- ob caching start für output filter

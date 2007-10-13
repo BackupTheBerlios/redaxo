@@ -3,8 +3,8 @@
 
 /**
  *
- * @package redaxo3
- * @version $Id: index.inc.php,v 1.45 2007/10/09 15:03:49 kills Exp $
+ * @package redaxo4
+ * @version $Id: index.inc.php,v 1.46 2007/10/13 13:52:01 kills Exp $
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.

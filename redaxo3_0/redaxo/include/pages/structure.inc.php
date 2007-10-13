@@ -2,8 +2,8 @@
 
 /**
  *
- * @package redaxo3
- * @version $Id: structure.inc.php,v 1.117 2007/10/12 22:00:56 kristinus Exp $
+ * @package redaxo4
+ * @version $Id: structure.inc.php,v 1.118 2007/10/13 13:52:01 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?

@@ -4,8 +4,8 @@
  * Template Objekt.
  * Zuständig für die Verarbeitung eines Templates
  *
- * @package redaxo3
- * @version $Id: class.rex_template.inc.php,v 1.6 2007/09/13 19:38:17 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.rex_template.inc.php,v 1.7 2007/10/13 13:52:00 kills Exp $
  */
 
 class rex_template

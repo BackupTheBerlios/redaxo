@@ -2,8 +2,8 @@
 
 /**
  *
- * @package redaxo3
- * @version $Id: login.inc.php,v 1.10 2007/09/02 13:46:42 kills Exp $
+ * @package redaxo4
+ * @version $Id: login.inc.php,v 1.11 2007/10/13 13:52:00 kills Exp $
  */
 
 rex_title('Login');

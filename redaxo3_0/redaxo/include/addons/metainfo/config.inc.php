@@ -5,8 +5,8 @@
  *
  * @author staab[at]public-4u[dot]de Markus Staab
  *
- * @package redaxo3
- * @version $Id: config.inc.php,v 1.13 2007/09/17 09:24:13 kills Exp $
+ * @package redaxo4
+ * @version $Id: config.inc.php,v 1.14 2007/10/13 13:52:01 kills Exp $
  */
 
 $mypage = 'metainfo';

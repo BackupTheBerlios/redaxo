@@ -2,8 +2,8 @@
 
 /**
  * Layout Fuß des Backends
- * @package redaxo3
- * @version $Id: bottom.php,v 1.11 2007/09/06 19:06:40 kristinus Exp $
+ * @package redaxo4
+ * @version $Id: bottom.php,v 1.12 2007/10/13 13:52:01 kills Exp $
  */
 
 ?>

@@ -8,8 +8,8 @@
  * Framework for accessing vital parts of your website.
  * This framework can be used in Modules, Templates and PHP-Slices!
  *
- * @package redaxo3
- * @version $Id: class.ooarticleslice.inc.php,v 1.12 2007/06/23 15:08:58 kristinus Exp $
+ * @package redaxo4
+ * @version $Id: class.ooarticleslice.inc.php,v 1.13 2007/10/13 13:52:00 kills Exp $
  */
 
 class OOArticleSlice

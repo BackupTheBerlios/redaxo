@@ -9,8 +9,8 @@
  * @author Dave Holloway
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
- * @package redaxo3
- * @version $Id: help.inc.php,v 1.2 2007/08/01 16:10:29 kills Exp $
+ * @package redaxo4
+ * @version $Id: help.inc.php,v 1.3 2007/10/13 13:52:01 kills Exp $
  */
 
 ?>

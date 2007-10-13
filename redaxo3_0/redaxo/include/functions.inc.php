@@ -1,8 +1,8 @@
 <?php
 /**
  * Bindet nötige Klassen/Funktionen ein
- * @package redaxo3
- * @version $Id: functions.inc.php,v 1.79 2007/10/06 12:36:25 kills Exp $
+ * @package redaxo4
+ * @version $Id: functions.inc.php,v 1.80 2007/10/13 13:52:01 kills Exp $
  */
 
 // ----------------- TIMER

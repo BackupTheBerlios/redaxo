@@ -2,8 +2,8 @@
 
 /**
  * Creditsseite. Auflistung der Credits an die Entwickler von REDAXO und den AddOns.
- * @package redaxo3
- * @version $Id: credits.inc.php,v 1.9 2007/10/12 21:33:25 kristinus Exp $
+ * @package redaxo4
+ * @version $Id: credits.inc.php,v 1.10 2007/10/13 13:52:00 kills Exp $
  */
 
 rex_title($I18N->msg("credits"), "");

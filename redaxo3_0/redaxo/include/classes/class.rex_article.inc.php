@@ -4,8 +4,8 @@
  * Artikel Objekt.
  * Zuständig für die Verarbeitung eines Artikel
  *
- * @package redaxo3
- * @version $Id: class.rex_article.inc.php,v 1.55 2007/10/12 12:57:34 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.rex_article.inc.php,v 1.56 2007/10/13 13:52:00 kills Exp $
  */
 
 class rex_article

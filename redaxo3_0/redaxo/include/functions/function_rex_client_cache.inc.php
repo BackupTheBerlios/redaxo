@@ -3,8 +3,8 @@
 /**
  * HTTP1.1 Client Cache Features
  *
- * @package redaxo3
- * @version $Id: function_rex_client_cache.inc.php,v 1.5 2007/09/16 15:06:06 kills Exp $
+ * @package redaxo4
+ * @version $Id: function_rex_client_cache.inc.php,v 1.6 2007/10/13 13:52:01 kills Exp $
  */
 
 /**

@@ -3,8 +3,8 @@
 
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
- * @package redaxo3
- * @version $Id: function_rex_generate.inc.php,v 1.104 2007/10/13 12:03:23 kristinus Exp $
+ * @package redaxo4
+ * @version $Id: function_rex_generate.inc.php,v 1.105 2007/10/13 13:52:01 kills Exp $
  */
 
 // ----------------------------------------- Alles generieren

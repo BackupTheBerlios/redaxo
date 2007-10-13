@@ -1,7 +1,7 @@
 /* 
  REDAXO JavaScript library
- @package redaxo3 
- @version $Id: standard.js,v 1.2 2007/09/09 10:18:09 kills Exp $
+ @package redaxo4 
+ @version $Id: standard.js,v 1.3 2007/10/13 13:52:01 kills Exp $
  */ 
 
 // -------------------------------------------------------------------------------------------------------------------

@@ -3,8 +3,8 @@
 
 /**
  * Object Oriented Framework: Bildet eine Kategorie im Medienpool ab
- * @package redaxo3
- * @version $Id: class.oomediacategory.inc.php,v 1.32 2007/10/06 13:11:35 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.oomediacategory.inc.php,v 1.33 2007/10/13 13:52:00 kills Exp $
  */
 
 class OOMediaCategory

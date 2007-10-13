@@ -9,8 +9,8 @@
  * @author Dave Holloway
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  * 
- * @package redaxo3
- * @version $Id: class.pclzip.inc.php,v 1.2 2007/03/28 18:07:40 kills Exp $
+ * @package redaxo4
+ * @version $Id: class.pclzip.inc.php,v 1.3 2007/10/13 13:52:01 kills Exp $
  */
  
 // --------------------------------------------------------------------------------
@@ -36,7 +36,7 @@
 //   The use of this software is at the risk of the user.
 //
 // --------------------------------------------------------------------------------
-// $Id: class.pclzip.inc.php,v 1.2 2007/03/28 18:07:40 kills Exp $
+// $Id: class.pclzip.inc.php,v 1.3 2007/10/13 13:52:01 kills Exp $
 // --------------------------------------------------------------------------------
 
   // ----- Constants

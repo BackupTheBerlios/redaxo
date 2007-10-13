@@ -5,8 +5,8 @@
  *  
  * @author staab[at]public-4u[dot]de Markus Staab
  * 
- * @package redaxo3
- * @version $Id: config.inc.php,v 1.5 2007/09/30 12:01:44 kristinus Exp $
+ * @package redaxo4
+ * @version $Id: config.inc.php,v 1.6 2007/10/13 13:52:01 kills Exp $
  */
 
 $mypage = 'phpmailer';

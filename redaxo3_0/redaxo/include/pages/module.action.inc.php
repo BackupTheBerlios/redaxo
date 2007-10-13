@@ -2,8 +2,8 @@
 
 /**
  *
- * @package redaxo3
- * @version $Id: module.action.inc.php,v 1.43 2007/10/11 12:51:54 tbaddade Exp $
+ * @package redaxo4
+ * @version $Id: module.action.inc.php,v 1.44 2007/10/13 13:52:00 kills Exp $
  */
 
 class rex_event_select extends rex_select

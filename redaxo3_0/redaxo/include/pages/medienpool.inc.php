@@ -2,8 +2,8 @@
 
 /**
  *
- * @package redaxo3
- * @version $Id: medienpool.inc.php,v 1.160 2007/10/13 00:37:13 kills Exp $
+ * @package redaxo4
+ * @version $Id: medienpool.inc.php,v 1.161 2007/10/13 13:52:00 kills Exp $
  */
 
 // TODOS
