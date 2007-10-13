@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: addon.inc.php,v 1.25 2007/10/13 19:21:57 kills Exp $
+ * @version $Id: addon.inc.php,v 1.26 2007/10/13 23:20:50 kills Exp $
  */
 
 include_once $REX['INCLUDE_PATH'].'/functions/function_rex_other.inc.php';
@@ -40,13 +40,6 @@ if ($addonname != '')
   if (isset ($install) and $install == 1) // ----------------- ADDON INSTALL
   {
     if (($errmsg = rex_install_addon($ADDONS, $addonname)) === true)
-    {
-      $errmsg = $I18N->msg("addon_installed", $addonname);
-    }
-  }
-  elseif (isset ($reinstall) and $reinstall == 1) // ----------------- ADDON REINSTALL
-  {
-    if (($errmsg = rex_reinstall_addon($ADDONS, $addonname)) === true)
     {
       $errmsg = $I18N->msg("addon_installed", $addonname);
     }
@@ -140,7 +133,7 @@ if ($SP)
 
     if ($REX['ADDON']['install'][$cur] == 1)
     {
-      $install = $I18N->msg("addon_yes").' - <a href="index.php?page=addon&amp;addonname='.$cur.'&amp;reinstall=1">'.$I18N->msg("addon_reinstall").'</a>';
+      $install = $I18N->msg("addon_yes").' - <a href="index.php?page=addon&amp;addonname='.$cur.'&amp;install=1">'.$I18N->msg("addon_reinstall").'</a>';
       $uninstall = '<a href="index.php?page=addon&amp;addonname='.$cur.'&amp;uninstall=1" onclick="return confirm(\''.$I18N->msg("addon_uninstall").' ?\')">'.$I18N->msg("addon_uninstall").'</a>';
     }
     else
