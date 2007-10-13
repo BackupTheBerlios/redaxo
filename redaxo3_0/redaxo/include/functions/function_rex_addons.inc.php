@@ -4,7 +4,7 @@
 /**
  * Addon Funktionen
  * @package redaxo4
- * @version $Id: function_rex_addons.inc.php,v 1.13 2007/10/13 19:20:56 kills Exp $
+ * @version $Id: function_rex_addons.inc.php,v 1.14 2007/10/13 22:12:46 kills Exp $
  */
 
 function rex_install_addon($addons, $addonname, $installDump = true)
@@ -379,7 +379,6 @@ function _rex_install_addon($addons, $addonname, $installDump = true)
 {
   global $REX, $I18N;
   $state = true;
-  clearstatcache();
 
   $install_dir = $REX['INCLUDE_PATH'].'/addons/'. $addonname;
   $install_file = $install_dir.'/install.inc.php';
