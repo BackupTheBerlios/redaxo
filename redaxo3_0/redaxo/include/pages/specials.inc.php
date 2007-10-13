@@ -1,9 +1,9 @@
 <?php
-/** 
- *  
- * @package redaxo4 
- * @version $Id: specials.inc.php,v 1.42 2007/10/13 13:52:00 kills Exp $ 
- */ 
+/**
+ *
+ * @package redaxo4
+ * @version $Id: specials.inc.php,v 1.43 2007/10/13 21:22:04 kills Exp $
+ */
 
 // -------------- Defaults
 
@@ -13,12 +13,12 @@ $func = rex_request('func', 'string');
 
 // -------------- Header
 
-$subline = array( 
-  array( '', $I18N->msg("main_preferences")),
-  array( 'lang', $I18N->msg("languages")),
+$subline = array(
+  array( '', $I18N->msg('main_preferences')),
+  array( 'lang', $I18N->msg('languages')),
 );
 
-rex_title($I18N->msg("specials_title"),$subline);
+rex_title($I18N->msg('specials'),$subline);
 
 switch($subpage)
 {
