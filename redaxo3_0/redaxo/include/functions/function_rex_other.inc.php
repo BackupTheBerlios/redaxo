@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_other.inc.php,v 1.21 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.22 2007/10/13 20:04:36 kills Exp $
  */
 
 /**
@@ -210,7 +210,7 @@ function rex_translate($text, $I18N_Catalogue = null)
 /**
  * Leitet auf einen anderen Artikel weiter
  */
-function rex_redirect($article_id, $clang, $params)
+function rex_redirect($article_id, $clang, $params = array())
 {
   global $REX;
 
