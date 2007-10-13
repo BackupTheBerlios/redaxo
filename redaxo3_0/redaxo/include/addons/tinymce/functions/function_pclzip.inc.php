@@ -10,7 +10,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo3
- * @version $Id: function_pclzip.inc.php,v 1.5 2007/10/12 11:58:46 kills Exp $
+ * @version $Id: function_pclzip.inc.php,v 1.6 2007/10/13 11:52:45 kills Exp $
  */
 
 include_once $REX['INCLUDE_PATH'] . '/addons/tinymce/classes/class.pclzip.inc.php';
@@ -27,22 +27,6 @@ function rex_a52_extract_archive($file, $msg = '', $path='../files/tmp_' )
 	{
 	  die("Error : " . $archive->errorInfo(true));
 	}
-
-	echo '<div style="height:150px;width:770px;overflow:auto;margin-bottom:10px;text-align:center;">';
-
-  if($msg != '')
-	  echo '<h3>'. $msg .'</h3>';
-
-	echo '<table border="1" style="margin:0 auto 0 auto; width: 600px">';
-	echo '<tr><th>Datei</th><th>Gr&ouml;&szlig;e</th>';
-	for ($i = 0; $i < count($list); $i++)
-	{
-	  echo '<tr>';
-	  echo '<td>' . $list[$i]['filename'] . '</td><td>' . $list[$i]['size'] . ' bytes</td>';
-	  echo '</tr>';
-	}
-	echo '</table>';
-	echo '</div>';
 }
 
 ?>
