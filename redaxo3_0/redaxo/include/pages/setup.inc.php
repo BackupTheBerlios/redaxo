@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.88 2007/10/13 10:52:11 kills Exp $
+ * @version $Id: setup.inc.php,v 1.89 2007/10/13 11:27:31 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -509,7 +509,7 @@ if ($checkmodus == 3 && $send == 1)
   {
     // ----- leere Datenbank neu einrichten
 
-    $import_sql = $REX['INCLUDE_PATH'].'/install/redaxo3_3.sql';
+    $import_sql = $REX['INCLUDE_PATH'].'/install/redaxo4_0.sql';
 
     if($err_msg == '')
       $err_msg .= rex_setup_import($import_sql);
