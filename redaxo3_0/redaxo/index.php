@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.php,v 1.73 2007/10/13 21:48:22 kills Exp $
+ * @version $Id: index.php,v 1.74 2007/10/13 22:56:39 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -46,7 +46,7 @@ if ($REX['SETUP'])
 {
   // ----------------- SET SETUP LANG
   $LOGIN = FALSE;
-  $REX['LANG'] = 'en_gb';
+  $REX['LANG'] = 'de_de';
   $I18N = rex_create_lang($REX['LANG']);
   $requestLang = rex_request('lang', 'string');
   foreach ($REX['LOCALES'] as $l) {

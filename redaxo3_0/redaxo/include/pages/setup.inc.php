@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.94 2007/10/13 22:50:40 kills Exp $
+ * @version $Id: setup.inc.php,v 1.95 2007/10/13 22:58:41 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -170,6 +170,10 @@ $export_addon_dir = $REX['INCLUDE_PATH'].'/addons/import_export';
 // ---------------------------------- MODUS 0 | Start
 if (!($checkmodus > 0 && $checkmodus < 10))
 {
+  // TODO keine Sprachauswahl mehr, da nur de_de files als default dabei
+  header('Location: index.php?checkmodus=0.5&lang=de_de');
+  exit();
+
   rex_setup_title('SETUP: SELECT LANGUAGE');
 
   echo '<ul class="rex-stp-language">
