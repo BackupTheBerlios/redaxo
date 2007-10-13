@@ -4,7 +4,7 @@
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
  * @package redaxo3
- * @version $Id: function_rex_generate.inc.php,v 1.102 2007/10/13 10:13:44 kristinus Exp $
+ * @version $Id: function_rex_generate.inc.php,v 1.103 2007/10/13 10:35:50 kristinus Exp $
  */
 
 // ----------------------------------------- Alles generieren
@@ -396,7 +396,6 @@ function rex_article2startpage($neu_id){
 
 	$articles = new rex_sql();
 	$ia = new rex_sql();
-  $ia->debugsql = true;
 	$articles->setQuery("select * from ".$REX['TABLE_PREFIX']."article where path like '%|$alt_id|%'");
 	for($i=0;$i<$articles->getRows();$i++)
   {
