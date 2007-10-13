@@ -3,7 +3,7 @@
 /**
  * Addonlist
  * @package redaxo4
- * @version $Id: addons.inc.php,v 1.10 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: addons.inc.php,v 1.11 2007/10/13 18:28:43 kristinus Exp $
  */
 
 // ----------------- addons
@@ -13,6 +13,9 @@ if (isset($REX['ADDON']['status'])) {
 
 // ----------------- DONT EDIT BELOW THIS
 // --- DYN
+
+$REX['ADDON']['install']['textile'] = 1;
+$REX['ADDON']['status']['textile'] = 1;
 
 // --- /DYN
 // ----------------- /DONT EDIT BELOW THIS
