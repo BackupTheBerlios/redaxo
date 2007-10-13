@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.93 2007/10/13 21:36:26 kills Exp $
+ * @version $Id: setup.inc.php,v 1.94 2007/10/13 22:50:40 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -129,6 +129,9 @@ function rex_setup_addons($uninstallBefore = false, $installDump = true)
   $ADDONS = rex_read_addons_folder();
   foreach($REX['SYSTEM_ADDONS'] as $systemAddon)
   {
+    if($state === true && $uninstallBefore)
+      $state = rex_uninstall_addon($ADDONS, $systemAddon);
+
     if($state === true && !OOAddon::isInstalled($systemAddon))
       $state = rex_install_addon($ADDONS, $systemAddon, $installDump);
 
