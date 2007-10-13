@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo3
- * @version $Id: function_rex_other.inc.php,v 1.19 2007/10/12 23:11:03 koala_s Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.20 2007/10/13 11:43:30 kills Exp $
  */
 
 /**
@@ -71,9 +71,8 @@ function _rex_is_writable_info($is_writable, $item = '')
   {
     $file = '';
     if($item != '')
-    {
-      $file = '<b>'. rex_absPath($item) .'</b>';
-    }
+      $file = '<b>'. $item .'</b>';
+
     $state = $I18N->msg($key, '<span class="rex-error">', '</span>', $file);
   }
 

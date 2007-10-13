@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo3
- * @version $Id: setup.inc.php,v 1.89 2007/10/13 11:27:31 kills Exp $
+ * @version $Id: setup.inc.php,v 1.90 2007/10/13 11:43:30 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -247,7 +247,7 @@ if ($checkmodus == 1)
         $MSG['err'] .= '<ul>';
         foreach($messages as $message)
         {
-          $MSG['err'] .= '<li>'. rex_absPath($message) .'</li>';
+          $MSG['err'] .= '<li>'. $message .'</li>';
         }
         $MSG['err'] .= '</ul>';
       }
