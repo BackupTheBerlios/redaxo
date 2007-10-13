@@ -1,7 +1,7 @@
 /**
  *
  * @package redaxo3
- * @version $Id: css_backend.css,v 1.10 2007/10/12 23:12:23 kills Exp $
+ * @version $Id: css_backend.css,v 1.11 2007/10/13 11:29:25 kristinus Exp $
  */
 *,
 .rex-nospace {
@@ -1538,4 +1538,20 @@ body#rex-page-import-export div.rex-cnt table td {
 /* noch in CC setzen */
 * html div.rex-cnt-editmode div.rex-cnt-editmode-slc ul li a img {
 	padding-top:5px;;
+}
+
+div.rex-cnt-editmode div.rex-cnt-slc-otp h1,
+div.rex-cnt-editmode div.rex-cnt-slc-otp h2,
+div.rex-cnt-editmode div.rex-cnt-slc-otp h3,
+div.rex-cnt-editmode div.rex-cnt-slc-otp h4,
+div.rex-cnt-editmode div.rex-cnt-slc-otp h5,
+div.rex-cnt-editmode div.rex-cnt-slc-otp h6,
+div.rex-cnt-editmode div.rex-cnt-slc-otp p,
+div.rex-cnt-editmode div.rex-cnt-slc-otp ul {
+	margin-bottom:10px;
+}
+
+div.rex-cnt-editmode div.rex-cnt-slc-otp ul li{
+	list-style-type:disc;
+	margin-left:15px;
 }
