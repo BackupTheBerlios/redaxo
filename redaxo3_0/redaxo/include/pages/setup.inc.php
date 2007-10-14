@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.99 2007/10/14 13:44:46 kills Exp $
+ * @version $Id: setup.inc.php,v 1.100 2007/10/14 18:23:34 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -101,12 +101,6 @@ function rex_setup_is_writable($items)
   {
     $is_writable = _rex_is_writable($item);
 
-    // 0 => kein Fehler
-    if($is_writable != 0)
-    {
-      if(@chmod($item, $REX['FILEPERM']))
-        $is_writable = 0;
-    }
     // 0 => kein Fehler
     if($is_writable != 0)
     {
