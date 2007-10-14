@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.100 2007/10/14 18:23:34 kills Exp $
+ * @version $Id: setup.inc.php,v 1.101 2007/10/14 22:54:24 kristinus Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -257,13 +257,13 @@ if ($checkmodus == 1)
     $REX['INCLUDE_PATH'].'/generated/articles',
     $REX['INCLUDE_PATH'].'/generated/templates',
     $REX['INCLUDE_PATH'].'/generated/files',
-    $REX['INCLUDE_PATH'].'/../../files',
-    $REX['INCLUDE_PATH'].'/../../files/_readme.txt',
+    realpath($REX['INCLUDE_PATH'].'/../../files'),
+    realpath($REX['INCLUDE_PATH'].'/../../files').'/_readme.txt',
     $REX['INCLUDE_PATH'].'/addons/import_export/files'
   );
 
   foreach($REX['SYSTEM_ADDONS'] as $system_addon)
-    $WRITEABLE[] = $REX['INCLUDE_PATH'].'/addons/'. $system_addon;
+    $WRITEABLE[] = realpath($REX['INCLUDE_PATH'].'/addons/'. $system_addon);
 
   $res = rex_setup_is_writable($WRITEABLE);
   if(count($res) > 0)
