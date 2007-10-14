@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.php,v 1.47 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: index.php,v 1.48 2007/10/14 13:32:01 kills Exp $
  */
 
 // ----- ob caching start für output filter
@@ -44,6 +44,7 @@ include './redaxo/include/master.inc.php';
 // Starte einen neuen Artikel und setzte die aktuelle
 // artikel id. wenn nicht vorhanden, nimm einen
 // speziellen artikel. z.b. fehler seite oder home seite
+if (!isset($article_id) or $article_id == '') $article_id = $REX['START_ARTICLE_ID'];
 
 $REX_ARTICLE = new rex_article;
 $REX_ARTICLE->setCLang($clang);
