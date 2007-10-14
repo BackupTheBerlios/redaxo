@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.98 2007/10/14 00:32:25 kills Exp $
+ * @version $Id: setup.inc.php,v 1.99 2007/10/14 13:44:46 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -217,18 +217,7 @@ if ($checkmodus == '0.5')
   rex_setup_title('SETUP: START');
 
   $lang = rex_request('lang', '');
-  $master = $REX['INCLUDE_PATH'] .'/master.inc.php';
-
-  $h = fopen($master, 'r');
-  $cont = fread($h, filesize($master));
-  fclose($h);
-
-  $cont = ereg_replace("(REX\['LANG'\].?\=.?)[^;]*", "\\1\"".$lang."\"", $cont);
   $REX['LANG'] = $lang;
-
-  $h = fopen($master, 'w+');
-  fwrite($h, $cont, strlen($cont));
-  fclose($h);
 
   echo $I18N->msg('setup_005', '<h2>', '</h2>');
 
