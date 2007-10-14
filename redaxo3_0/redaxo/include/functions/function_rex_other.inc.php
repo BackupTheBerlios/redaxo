@@ -3,32 +3,35 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_other.inc.php,v 1.22 2007/10/13 20:04:36 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.23 2007/10/14 18:27:03 kills Exp $
  */
 
 /**
  * Berechnet aus einem Relativen Pfad einen Absoluten
  */
-function rex_absPath($rel_path)
+function rex_absPath($rel_path, $rel_to_current = false)
 {
-  $path = realpath('.');
-  $stack = explode(DIRECTORY_SEPARATOR, $path);
+  $stack = array();
+  // Pfad relativ zum aktuellen Verzeichnis?
+  // z.b. ../../files
+  if($rel_to_current)
+  {
+    $path = realpath('.');
+    $stack = explode(DIRECTORY_SEPARATOR, $path);
+  }
 
   foreach (explode('/', $rel_path) as $dir)
   {
-    if ($dir == '.')
-    {
+    // Aktuelles Verzeichnis, oder Ordner ohne Namen
+    if ($dir == '.' || $dir == '')
       continue;
-    }
 
+    // Zum Parent
     if ($dir == '..')
-    {
       array_pop($stack);
-    }
+    // Normaler Ordner
     else
-    {
       array_push($stack, $dir);
-    }
   }
 
   return implode('/', $stack);
@@ -73,7 +76,7 @@ function _rex_is_writable_info($is_writable, $item = '')
     if($item != '')
       $file = '<b>'. $item .'</b>';
 
-    $state = $I18N->msg($key, '<span class="rex-error">', '</span>', $file);
+    $state = $I18N->msg($key, '<span class="rex-error">', '</span>', rex_absPath($file));
   }
 
   return $state;
