@@ -4,7 +4,7 @@
  * Klassen zum erhalten der Rückwärtskompatibilität
  *
  * Dieser werden beim nächsten Versionssprung entfallen
- * @version $Id: class.compat.inc.php,v 1.15 2007/09/14 16:27:10 kills Exp $
+ * @version $Id: class.compat.inc.php,v 1.16 2007/10/15 13:58:19 kills Exp $
  */
 
 // rex_sql -> sql alias
@@ -85,7 +85,7 @@ class select extends rex_select
   {
   	foreach(rex_var::splitString($extra) as $name => $value)
   	{
-  		$this->set_attribute($name, $value);
+  		$this->setAttribute($name, $value);
   	}
   }
 
