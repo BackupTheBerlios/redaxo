@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: medienpool.inc.php,v 1.161 2007/10/13 13:52:00 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.162 2007/10/15 14:18:54 kills Exp $
  */
 
 // TODOS
@@ -44,7 +44,6 @@ $doctypes = OOMedia::getDocTypes();
 $imgtypes = OOMedia::getImageTypes();
 $thumbs = true;
 $thumbsresize = true;
-$backend_mediafolder = str_replace('/redaxo/index.php','',$_SERVER['SCRIPT_NAME']). '/files/';
 if (!OOAddon::isAvailable('image_resize')) $thumbsresize = false;
 
 
