@@ -3,7 +3,7 @@
 /**
  * URL Funktionen
  * @package redaxo4
- * @version $Id: function_rex_url.inc.php,v 1.13 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: function_rex_url.inc.php,v 1.14 2007/10/15 22:37:58 kristinus Exp $
  */
 
 function rex_parse_article_name($name)
@@ -135,6 +135,6 @@ function rex_apache_rewrite($id, $name, $clang, $params)
     $params = '?'.substr($params, strpos($params, '&') + 1);
   }
 
-  return $id.'-'.$clang.'-'.$name.'.htm'.$params;
+  return $id.'-'.$clang.'-'.$name.'.html'.$params;
 }
 ?>
