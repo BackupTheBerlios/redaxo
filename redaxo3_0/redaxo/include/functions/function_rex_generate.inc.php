@@ -4,7 +4,7 @@
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
  * @package redaxo4
- * @version $Id: function_rex_generate.inc.php,v 1.105 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: function_rex_generate.inc.php,v 1.106 2007/10/17 12:32:59 kills Exp $
  */
 
 // ----------------------------------------- Alles generieren
@@ -228,7 +228,7 @@ function rex_deleteArticle($id, $ebene = 0)
 
   if ($id == $REX['START_ARTICLE_ID'])
   {
-    return $I18N->msg("cant_delete_startarticle");
+    return $I18N->msg("cant_delete_sitestartarticle");
   }
 
   $ART = new rex_sql;
