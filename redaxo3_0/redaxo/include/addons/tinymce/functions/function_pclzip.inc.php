@@ -10,13 +10,16 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: function_pclzip.inc.php,v 1.7 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: function_pclzip.inc.php,v 1.8 2007/10/17 08:30:12 kills Exp $
  */
 
 include_once $REX['INCLUDE_PATH'] . '/addons/tinymce/classes/class.pclzip.inc.php';
 
-function rex_a52_extract_archive($file, $msg = '', $path='../files/tmp_' )
+function rex_a52_extract_archive($file, $msg = '', $path=null )
 {
+  global $REX;
+  if(!$path) $path = '../files/'. $REX['TEMP_PREFIX'];
+
 	$archive = new PclZip($file);
 	if ($archive->extract(PCLZIP_OPT_PATH, $path) == 0)
 	{
