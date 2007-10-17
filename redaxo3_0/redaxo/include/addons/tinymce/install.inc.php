@@ -10,7 +10,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: install.inc.php,v 1.14 2007/10/16 13:49:25 kills Exp $
+ * @version $Id: install.inc.php,v 1.15 2007/10/17 07:51:48 kills Exp $
  */
 
 require_once $REX['INCLUDE_PATH'] . '/addons/tinymce/functions/function_pclzip.inc.php';
@@ -29,7 +29,7 @@ if($error == '' && !is_writable($tmpDir))
   $error = 'temp-dir "'. $tmpDir .'" not writable!';
 
 $tinyDir = $tmpDir.'/tinymce';
-if(!is_dir($tinyDir) && !mkdir($tinyDir))
+if($error == '' && !is_dir($tinyDir) && !mkdir($tinyDir))
   $error = 'Could not create tiny-dir "'. $tinyDir .'"!';
 
 if($error == '' && !is_writable($tinyDir))
@@ -49,7 +49,7 @@ if($error == '')
 }
 
 if($error != '')
-  $REX['ADDON']['install']['tinymce'] = $error;
+  $REX['ADDON']['installmsg']['tinymce'] = $error;
 else
   $REX['ADDON']['install']['tinymce'] = true;
 
