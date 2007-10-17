@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.57 2007/10/17 12:14:51 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.58 2007/10/17 12:21:49 kills Exp $
  */
 
 class rex_article
@@ -349,7 +349,7 @@ class rex_article
               $MODULESELECT->setId("module_id". $I_ID);
 
               $slice_content = '
-              <form action="'. $form_url .'" method="get">
+              <form action="'. $form_url .'" method="get" id="slice'. $RE_CONTS[$I_ID] .'">
                 <fieldset>
                   <legend class="rex-lgnd"><span class="rex-hide">'. $I18N->msg("add_block") .'</span></legend>
                   <input type="hidden" name="article_id" value="'. $this->article_id .'" />
@@ -402,7 +402,7 @@ class rex_article
 
               $mne = $msg .'
 			       	<div class="rex-cnt-editmode-slc">
-                <p class="rex-flLeft" id="slice'. $RE_CONTS[$I_ID] .'">'. $RE_MODUL_NAME[$I_ID] .'</p>
+                <p class="rex-flLeft">'. $RE_MODUL_NAME[$I_ID] .'</p>
                 <ul class="rex-flRight">
               ';
 
