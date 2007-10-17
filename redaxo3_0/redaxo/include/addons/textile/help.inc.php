@@ -6,11 +6,18 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: help.inc.php,v 1.6 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: help.inc.php,v 1.7 2007/10/17 08:58:36 kills Exp $
  */
 
 ?>
-<b>Textile Addon</b>
+<p>
+Bringt die Möglichkeit in Modulen Textile Markup zu verwenden
 
 <br /><br />
-Bringt die Möglichkeit in Modulen Textile Markup zu verwenden
+
+<?php
+  $file = dirname( __FILE__) .'/_changelog.txt';
+  if(is_readable($file))
+    echo str_replace( '+', '&nbsp;&nbsp;+', nl2br(file_get_contents($file)));
+?>
+</p>

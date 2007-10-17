@@ -10,11 +10,17 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: help.inc.php,v 1.3 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: help.inc.php,v 1.4 2007/10/17 08:55:46 kills Exp $
  */
 
 ?>
-<b>TinyMCE Addon</b>
-
-<br /><br />
+<p>
 Erweitert REDAXO um den WYSIWYG-Editor, TinyMCE
+<br /><br />
+
+<?php
+  $file = dirname( __FILE__) .'/_changelog.txt';
+  if(is_readable($file))
+    echo str_replace( '+', '&nbsp;&nbsp;+', nl2br(file_get_contents($file)));
+?>
+</p>
