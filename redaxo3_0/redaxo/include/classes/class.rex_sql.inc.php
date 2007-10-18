@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.42 2007/10/12 15:14:59 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.43 2007/10/18 12:34:20 kills Exp $
  */
 
 class rex_sql
@@ -526,6 +526,8 @@ class rex_sql
       $data[] = $row;
     }
 
+    $this->freeResult();
+
     return $data;
   }
 
@@ -690,6 +692,18 @@ class rex_sql
     return $instance;
   }
 
+  /**
+   * Gibt den Speicher wieder frei
+   */
+  function freeResult()
+  {
+    if(is_resource($this->result))
+      mysql_free_result($this->result);
+  }
+
+  /**
+   * Schlieﬂt die Verbindung zum DB Server
+   */
   function disconnect($DBID=1)
   {
     global $REX;
