@@ -10,7 +10,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.15 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: index.inc.php,v 1.16 2007/10/18 18:27:02 kills Exp $
  */
 
 include $REX['INCLUDE_PATH']."/layout/top.php";
@@ -96,15 +96,12 @@ $mdl_3 =<<<EOD
 <?php
 if (REX_IS_VALUE[1])
 {
-  echo '<div class="section">';
 // Diese 3 Zeilen dürfen keine führenden Leerzeichen besitzen!
 \$content =<<<TEXT
 REX_HTML_VALUE[1]
 TEXT;
 
-  if (\$REX['REDAXO'])
-    echo '<link rel="stylesheet" type="text/css" href="../files/tmp_/tinymce/tinymce.css" />';
-
+  echo '<div class="section">';
   echo \$content;
   echo '</div>';
 }
