@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: structure.inc.php,v 1.119 2007/10/18 12:22:04 kills Exp $
+ * @version $Id: structure.inc.php,v 1.120 2007/10/18 18:03:22 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -253,10 +253,8 @@ elseif (!empty($catadd_function) && $KATPERM && !$REX_USER->hasPerm('editContent
     $Position_New_Category = 1;
 
   unset ($id);
-  reset($REX['CLANG']);
-  while (list ($key, $val) = each($REX['CLANG']))
+  foreach($REX['CLANG'] as $key => $val)
   {
-
     // ### erstelle neue prioliste wenn noetig
 
     $template_id = 0;
