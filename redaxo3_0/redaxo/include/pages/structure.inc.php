@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: structure.inc.php,v 1.118 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: structure.inc.php,v 1.119 2007/10/18 12:22:04 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -61,8 +61,6 @@ $catStatusTypes = array(
   array($I18N->msg('status_offline'), 'rex-offline'),
   array($I18N->msg('status_online'), 'rex-online')
 );
-
-$statusTypes;
 
 $artStatusTypes = array(
   // Name, CSS-Class
