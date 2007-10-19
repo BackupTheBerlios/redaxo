@@ -10,7 +10,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.16 2007/10/18 18:27:02 kills Exp $
+ * @version $Id: index.inc.php,v 1.17 2007/10/19 15:37:46 kills Exp $
  */
 
 include $REX['INCLUDE_PATH']."/layout/top.php";
@@ -75,7 +75,7 @@ TEXT;
 \$editor1->editorCSS = '../files/tmp_/tinymce/content.css';
 \$editor1->disable='justifyleft,justifycenter,justifyright,justifyfull';
 \$editor1->buttons3='tablecontrols,separator,search,replace,separator,print';
-\$editor1->add_validhtml='img[myspecialtag]';
+//\$editor1->add_validhtml='img[myspecialtag]';
 \$editor1->show();
 
 // Diese 3 Zeilen dürfen keine führenden Leerzeichen besitzen!
