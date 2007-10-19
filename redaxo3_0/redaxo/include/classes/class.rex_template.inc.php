@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Templates
  *
  * @package redaxo4
- * @version $Id: class.rex_template.inc.php,v 1.9 2007/10/19 15:18:05 kills Exp $
+ * @version $Id: class.rex_template.inc.php,v 1.10 2007/10/19 15:20:24 kills Exp $
  */
 
 class rex_template
@@ -44,7 +44,7 @@ class rex_template
 
     if($template_id<1) return FALSE;
 
-    return $this->getTemplatesDir() .'/' . $template_id . '.template';
+    return rex_template::getTemplatesDir() .'/' . $template_id . '.template';
   }
 
   function getTemplatesDir()
