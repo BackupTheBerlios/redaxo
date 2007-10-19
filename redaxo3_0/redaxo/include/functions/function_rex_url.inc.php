@@ -3,7 +3,7 @@
 /**
  * URL Funktionen
  * @package redaxo4
- * @version $Id: function_rex_url.inc.php,v 1.14 2007/10/15 22:37:58 kristinus Exp $
+ * @version $Id: function_rex_url.inc.php,v 1.15 2007/10/19 16:04:00 kills Exp $
  */
 
 function rex_parse_article_name($name)
@@ -23,8 +23,7 @@ function rex_parse_article_name($name)
       $search = array_map('utf8_encode', $search);
   }
 
-  $name = str_replace($search, $replace, $name);
-  return preg_replace('/[^a-zA-Z\-0-9]/', '', $name);
+  return preg_replace('/[^a-zA-Z\-0-9]/', '', str_replace($search, $replace, $name));
 }
 
 /**
