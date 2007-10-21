@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: class.thumbnail.inc.php,v 1.20 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.21 2007/10/21 12:36:20 kills Exp $
  */
 
 class thumbnail
@@ -252,6 +252,7 @@ class thumbnail
   function deleteCache($filename = '')
   {
   	global $REX;
+
   	require_once $REX['INCLUDE_PATH'] . '/addons/image_resize/functions/function_folder.inc.php';
 
 	  $folders = array();
@@ -266,7 +267,7 @@ class thumbnail
   	  {
   	    foreach ($files as $var)
   	    {
-  	      if (eregi('^' . $REX['TEMP_PREFIX'] . 'cache_resize___', $var))
+  	      if (eregi('^image_resize__', $var))
   	      {
   	      	if ($filename == '' || $filename != '' && $filename == substr($var,strlen($filename) * -1))
   	      	{
