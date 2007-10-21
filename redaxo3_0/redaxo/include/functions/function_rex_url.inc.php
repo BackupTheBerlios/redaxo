@@ -3,7 +3,7 @@
 /**
  * URL Funktionen
  * @package redaxo4
- * @version $Id: function_rex_url.inc.php,v 1.15 2007/10/19 16:04:00 kills Exp $
+ * @version $Id: function_rex_url.inc.php,v 1.16 2007/10/21 12:43:51 kills Exp $
  */
 
 function rex_parse_article_name($name)
@@ -72,9 +72,7 @@ function rex_getUrl($id = '', $clang = '', $params = '', $divider = '&amp;')
   // Wenn eine rexExtension vorhanden ist, immer die clang mitgeben!
   // Die rexExtension muss selbst entscheiden was sie damit macht
   if (strlen($clang) == 0 && (count($REX['CLANG']) > 1 || rex_extension_is_registered( 'URL_REWRITE')))
-  {
     $clang = $REX['CUR_CLANG'];
-  }
 
   // ----- get params
   $param_string = rex_param_string($params, $divider);
@@ -93,7 +91,7 @@ function rex_getUrl($id = '', $clang = '', $params = '', $divider = '&amp;')
     $name = 'NoName';
 
   // ----- EXTENSION POINT
-  $url = rex_register_extension_point('URL_REWRITE', '', array ('id' => $id, 'name' => $name, 'clang' => $clang, 'params' => $param_string));
+  $url = rex_register_extension_point('URL_REWRITE', '', array ('id' => $id, 'name' => $name, 'clang' => $clang, 'params' => $param_string, 'divider' => $divider));
 
   if ($url == '')
   {
