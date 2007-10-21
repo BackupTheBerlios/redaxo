@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.43 2007/10/18 12:34:20 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.44 2007/10/21 13:18:37 kills Exp $
  */
 
 class rex_sql
@@ -525,8 +525,6 @@ class rex_sql
     {
       $data[] = $row;
     }
-
-    $this->freeResult();
 
     return $data;
   }
