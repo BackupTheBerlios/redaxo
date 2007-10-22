@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_other.inc.php,v 1.24 2007/10/18 19:39:06 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.25 2007/10/22 14:12:23 koala_s Exp $
  */
 
 /**
@@ -39,6 +39,10 @@ function rex_absPath($rel_path, $rel_to_current = false)
 
 /**
  * Prüfen ob ein/e Datei/Ordner beschreibbar ist
+ * 
+ * @access public
+ * @param string $item Datei oder Verzeichnis
+ * @return mixed true bei Erfolg, sonst Fehlermeldung
  */
 function rex_is_writable($item)
 {
