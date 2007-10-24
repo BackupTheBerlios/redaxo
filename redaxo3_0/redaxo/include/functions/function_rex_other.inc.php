@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_other.inc.php,v 1.25 2007/10/22 14:12:23 koala_s Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.26 2007/10/24 12:28:51 kills Exp $
  */
 
 /**
@@ -39,7 +39,7 @@ function rex_absPath($rel_path, $rel_to_current = false)
 
 /**
  * Prüfen ob ein/e Datei/Ordner beschreibbar ist
- * 
+ *
  * @access public
  * @param string $item Datei oder Verzeichnis
  * @return mixed true bei Erfolg, sonst Fehlermeldung
@@ -224,7 +224,7 @@ function rex_redirect($article_id, $clang, $params = array())
   // Alle OBs schließen
   while(@ob_end_clean());
 
-  $url = rex_no_rewrite($article_id, $clang, '', rex_param_string($params));
+  $url = rex_no_rewrite($article_id, $clang, '', rex_param_string($params), '&');
 
   // Redirects nur im Frontend folgen
   // Und nur wenn FOLLOW_REDIRECT auf true steht
