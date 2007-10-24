@@ -3,7 +3,7 @@
 /**
  * URL Funktionen
  * @package redaxo4
- * @version $Id: function_rex_url.inc.php,v 1.19 2007/10/24 12:53:08 kills Exp $
+ * @version $Id: function_rex_url.inc.php,v 1.20 2007/10/24 17:13:42 kills Exp $
  */
 
 function rex_parse_article_name($name)
@@ -71,7 +71,7 @@ function rex_getUrl($_id = '', $_clang = '', $_params = '', $_divider = '&amp;')
   // ----- get clang
   // Wenn eine rexExtension vorhanden ist, immer die clang mitgeben!
   // Die rexExtension muss selbst entscheiden was sie damit macht
-  if ($_clang == '' && (count($REX['CLANG']) > 1 || rex_extension_is_registered( 'URL_REWRITE')))
+  if ($_clang === '' && (count($REX['CLANG']) > 1 || rex_extension_is_registered( 'URL_REWRITE')))
     $clang = $REX['CUR_CLANG'];
 
   // ----- get params
