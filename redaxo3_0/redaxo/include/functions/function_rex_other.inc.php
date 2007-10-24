@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_other.inc.php,v 1.26 2007/10/24 12:28:51 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.27 2007/10/24 12:44:15 kills Exp $
  */
 
 /**
@@ -224,7 +224,8 @@ function rex_redirect($article_id, $clang, $params = array())
   // Alle OBs schlieﬂen
   while(@ob_end_clean());
 
-  $url = rex_no_rewrite($article_id, $clang, '', rex_param_string($params), '&');
+  $divider = '&';
+  $url = rex_no_rewrite($article_id, $clang, '', rex_param_string($params, $divider), $divider);
 
   // Redirects nur im Frontend folgen
   // Und nur wenn FOLLOW_REDIRECT auf true steht
