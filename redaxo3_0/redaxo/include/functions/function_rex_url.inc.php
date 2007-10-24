@@ -3,7 +3,7 @@
 /**
  * URL Funktionen
  * @package redaxo4
- * @version $Id: function_rex_url.inc.php,v 1.20 2007/10/24 17:13:42 kills Exp $
+ * @version $Id: function_rex_url.inc.php,v 1.21 2007/10/24 20:12:42 kills Exp $
  */
 
 function rex_parse_article_name($name)
@@ -88,7 +88,7 @@ function rex_getUrl($_id = '', $_clang = '', $_params = '', $_divider = '&amp;')
     $name = 'NoName';
 
   // ----- EXTENSION POINT
-  $url = rex_register_extension_point('URL_REWRITE', '', array ('id' => $id, 'name' => $name, 'clang' => $clang, 'params' => $param_string, 'divider' => $divider));
+  $url = rex_register_extension_point('URL_REWRITE', '', array ('id' => $id, 'name' => $name, 'clang' => $clang, 'params' => $param_string, 'divider' => $_divider));
 
   if ($url == '')
   {
