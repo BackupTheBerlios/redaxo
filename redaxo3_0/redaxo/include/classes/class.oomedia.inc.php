@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo4
- * @version $Id: class.oomedia.inc.php,v 1.73 2007/10/28 17:38:27 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.74 2007/10/28 19:19:51 kills Exp $
  */
 
 class OOMedia
@@ -554,30 +554,13 @@ class OOMedia
   /**
    * @access public
    */
-  function toIcon($iconAttributes = array (), $iconPath = '')
+  function toIcon($iconAttributes = array ())
   {
     global $REX;
 
-    static $icon_src;
-
-    if (!isset ($icon_src))
-    {
-      $icon_src = 'media/';
-    }
-
-    if(!$REX['REDAXO'])
-    {
-      $iconPath .= 'redaxo/';
-    }
-
+    // TODO
     $ext = $this->getExtension();
-    $icon = $iconPath.$icon_src.'mime-'.$ext.'.gif';
-
-    // Dateityp für den kein Icon vorhanden ist
-    if (!file_exists($icon))
-    {
-      $icon = $icon_src.'mime-error.gif';
-    }
+    $icon = $this->getIcon();
 
     if(!isset($iconAttributes['alt']))
     {
@@ -734,46 +717,22 @@ class OOMedia
   /**
    * @access public
    */
-  function getIcon()
+  function getIcon($useDefaultIcon = true)
   {
     global $REX;
 
-    $default_file_icon = "file";
-    $icons_folder = $REX['HTDOCS_PATH'].'redaxo/media/';
+    $ext = $this->getExtension();
+    $folder = $REX['HTDOCS_PATH'] .'redaxo/media/';
+    $icon = $folder .'mime-'.$ext.'.gif';
 
-    if (!$REX['MEDIA']['ICONS'])
+    // Dateityp für den kein Icon vorhanden ist
+    if (!file_exists($icon))
     {
-      if ($handle = opendir($icons_folder))
-      {
-        while (false !== ($file = readdir($handle)))
-        {
-          if ($file != "." && $file != "..")
-          {
-            $REX['MEDIA']['ICONS'][] = str_replace(".gif", "", $file);
-          }
-        }
-        closedir($handle);
-      }
+      if($useDefaultIcon)
+        $icon = $folder.'mime-default.gif';
       else
-      {
-        trigger_error('File Icons Folder "'.$icons_folder.'" unavailable!', E_USER_ERROR);
-        return false;
-      }
+        $icon = $folder.'mime-error.gif';
     }
-
-    // get File extension
-    $extension = $this->getExtension();
-
-    // get right Icon for Extension
-    if ($key = array_search($extension, $REX['MEDIA']['ICONS']))
-    {
-      $icon = $icons_folder.$REX['MEDIA']['ICONS'][$key].".gif";
-    }
-    else
-    {
-      $icon = $icons_folder.$default_file_icon.".gif";
-    }
-
     return $icon;
   }
 
