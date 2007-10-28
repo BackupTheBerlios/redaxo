@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.102 2007/10/28 08:34:13 kills Exp $
+ * @version $Id: setup.inc.php,v 1.103 2007/10/28 12:07:25 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -245,6 +245,15 @@ if ($checkmodus == 1)
   if (version_compare(phpversion(), '4.3.2', '<') == 1)
   {
     $MSG['err'] .= '<li>'. $I18N->msg('setup_010', phpversion()).'</li>';
+  }
+
+  // -------------------------- EXTENSION CHECK
+
+  $requiredExtensions = array('session', 'mysql', 'pcre');
+  foreach($requiredExtensions as $extension)
+  {
+    if(!extension_loaded($extension))
+      $MSG['err'] .= '<li>'. $I18N->msg('setup_010_1', $extension).'</li>';
   }
 
   // -------------------------- SCHREIBRECHTE
