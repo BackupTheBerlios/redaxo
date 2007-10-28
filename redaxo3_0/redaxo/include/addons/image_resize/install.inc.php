@@ -9,20 +9,14 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: install.inc.php,v 1.11 2007/10/17 07:54:43 kills Exp $
+ * @version $Id: install.inc.php,v 1.12 2007/10/28 12:11:24 kills Exp $
  */
 
 $error = '';
 
 if (!extension_loaded('gd'))
 {
-  if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
-    $ext_loaded = @ dl('gd.dll');
-  else
-    $ext_loaded = @ dl('gd.so');
-
-  if (!$ext_loaded)
-    $error = 'GD-LIB-extension not available! See <a href="http://www.php.net/gd">http://www.php.net/gd</a>';
+  $error = 'GD-LIB-extension not available! See <a href="http://www.php.net/gd">http://www.php.net/gd</a>';
 }
 
 if ($error != '')
