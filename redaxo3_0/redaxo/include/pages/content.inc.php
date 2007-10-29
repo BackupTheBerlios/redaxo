@@ -4,7 +4,7 @@
 /**
  * Verwaltung der Inhalte. EditierModul / Metadaten ...
  * @package redaxo4
- * @version $Id: content.inc.php,v 1.135 2007/10/13 13:52:00 kills Exp $
+ * @version $Id: content.inc.php,v 1.136 2007/10/29 16:13:21 kills Exp $
  */
 
 /*
@@ -183,9 +183,9 @@ if ($article->getRows() == 1)
               $iaction = $obj->getACOutput($REX_ACTION, $iaction);
             }
 
-            eval ("?>" . $iaction);
-            if ($REX_ACTION['MSG'] != "")
-              $message .= $REX_ACTION['MSG'] . " | ";
+            eval ('?>' . $iaction);
+            if ($REX_ACTION['MSG'] != '')
+              $message .= $REX_ACTION['MSG'] . ' | ';
             $ga->next();
           }
 
