@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: medienpool.inc.php,v 1.162 2007/10/15 14:18:54 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.163 2007/10/29 18:28:34 kills Exp $
  */
 
 // TODOS
@@ -255,7 +255,7 @@ function rex_medienpool_registerFile($physical_filename,$org_filename,$filename,
 
   @chmod($abs_file, $REX['FILEPERM']);
 
-  $filename = rex_medienpool_filename($filename);
+  $filename = rex_medienpool_filename($filename, false);
   $org_filename = strtolower($org_filename);
 
   // Ggf Alte Datei umbennen
