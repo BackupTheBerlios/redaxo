@@ -3,7 +3,7 @@
 /** 
  * Funktionen zum handeln von magic_quotes=off  
  * @package redaxo4 
- * @version $Id: function_rex_mquotes.inc.php,v 1.7 2007/10/13 13:52:01 kills Exp $ 
+ * @version $Id: function_rex_mquotes.inc.php,v 1.8 2007/10/31 19:34:19 kristinus Exp $ 
  */
 
 if (!get_magic_quotes_gpc())
@@ -46,6 +46,17 @@ if (!get_magic_quotes_gpc())
 			$$Akey = $AVal;
 		}
 	}
+	
+	if (is_array($_REQUEST))
+	{
+	    addSlashesOnArray($_REQUEST);
+	    
+		while(list($Akey,$AVal)=each($_REQUEST))
+		{
+			$$Akey = $AVal;
+		}
+	}
+	
 }
 
 // ----------------- REGISTER GLOBALS CHECK
