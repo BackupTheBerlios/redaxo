@@ -2,15 +2,25 @@
 
 /**
  * PHPMailer Addon
- *  
+ *
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
- * 
+ *
  * @package redaxo4
- * @version $Id: install.inc.php,v 1.3 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: install.inc.php,v 1.4 2007/10/31 18:27:12 kills Exp $
  */
 
-$REX['ADDON']['install']['phpmailer'] = 1;
-// ERRMSG IN CASE: $REX['ADDON']['installmsg']['phpmailer'] = 'Error occured while installation';
+$error = '';
+
+$I18N_A93 = new i18n($REX['LANG'], $REX['INCLUDE_PATH'].'/addons/phpmailer/lang/');
+$settings_file = $REX['INCLUDE_PATH'] .'/addons/phpmailer/classes/class.rex_mailer.inc.php';
+
+if(!rex_is_writable($settings_file))
+  $error = $I18N_A93->msg('config_file_not_writable');
+
+if ($error != '')
+  $REX['ADDON']['installmsg']['phpmailer'] = $error;
+else
+  $REX['ADDON']['install']['phpmailer'] = true;
 
 ?>
