@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo4
- * @version $Id: class.oomedia.inc.php,v 1.74 2007/10/28 19:19:51 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.75 2007/11/01 15:39:39 kills Exp $
  */
 
 class OOMedia
@@ -98,7 +98,7 @@ class OOMedia
 
     $result = $result[0];
     $aliasMap = array(
-      'field_id' => 'id',
+      'file' => 'id',
       're_file_id' => 'parent_id',
       'category_id' => 'cat_id',
       'catname' => 'cat_name',
