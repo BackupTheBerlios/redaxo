@@ -5,7 +5,7 @@
  * Klasse zum handling des Login/Logout-Mechanismuses
  *
  * @package redaxo4
- * @version $Id: class.rex_login.inc.php,v 1.14 2007/10/13 13:52:00 kills Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.15 2007/11/06 21:38:28 kills Exp $
  */
 
 class rex_login_sql extends rex_sql
@@ -338,7 +338,7 @@ class rex_backend_login extends rex_login
 
     $this->setSqlDb(1);
     $this->setSysID($REX['INSTNAME']);
-    $this->setSessiontime(3000);
+    $this->setSessiontime($REX['SESSION_DURATION']);
     $this->setUserID($tableName .'.user_id');
     $this->setUserquery('SELECT * FROM '. $tableName .' WHERE status=1 AND user_id = "USR_UID"');
     $this->setLoginquery('SELECT * FROM '.$tableName .' WHERE status=1 AND login = "USR_LOGIN" AND psw = "USR_PSW" AND lasttrydate <'. (time()-$REX['RELOGINDELAY']).' AND login_tries<'.$REX['MAXLOGINS']);
