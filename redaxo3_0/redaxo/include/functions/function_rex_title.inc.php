@@ -2,7 +2,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_title.inc.php,v 1.35 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: function_rex_title.inc.php,v 1.36 2007/11/08 14:28:36 kills Exp $
  */
 
 /**
@@ -76,8 +76,8 @@ function rex_get_subtitle($subline, $attr = '')
 
   $subtitle_str = $subline;
   $subtitle = $subline;
-  $cur_subpage = empty($_REQUEST['subpage']) ? '' : $_REQUEST['subpage'];
-  $cur_page    = empty($_REQUEST['page']) ? '' : $_REQUEST['page'];
+  $cur_subpage = rex_request('subpage', 'string');
+  $cur_page    = rex_request('page', 'string');
 
   if (is_array($subline) && count( $subline) > 0)
   {
