@@ -9,10 +9,8 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_wysiwyg.inc.php,v 1.2 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: extension_wysiwyg.inc.php,v 1.3 2007/11/09 14:14:47 kills Exp $
  */
-
-rex_register_extension('OUTPUT_FILTER', 'rex_resize_wysiwyg_output');
 
 // Resize WYSIWYG Editor Images
 function rex_resize_wysiwyg_output($params)
