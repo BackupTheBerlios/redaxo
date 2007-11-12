@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.45 2007/10/22 12:37:12 koala_s Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.46 2007/11/12 11:03:40 kills Exp $
  */
 
 class rex_sql
@@ -497,7 +497,7 @@ class rex_sql
   /**
    * Lädt das komplette Resultset in ein Array und gibt dieses zurück und
    * wechselt die DBID falls vorhanden
-   * 
+   *
    * @access public
    * @param string $sql Abfrage
    * @param string $fetch_type Default: MYSQL_ASSOC; weitere: MYSQL_NUM, MYSQL_BOTH
@@ -510,7 +510,7 @@ class rex_sql
 
   /**
    * Lädt das komplette Resultset in ein Array und gibt dieses zurück
-   * 
+   *
    * @access public
    * @param string $sql Abfrage
    * @param string $fetch_type Default: MYSQL_ASSOC; weitere: MYSQL_NUM, MYSQL_BOTH
@@ -641,13 +641,17 @@ class rex_sql
 
   /**
    * Escaped den übergeben Wert für den DB Query
+   *
+   * @param $value den zu escapenden Wert
+   * @param [$delimiter] Delimiter der verwendet wird, wenn es sich bei $value
+   * um einen String handelt
    */
-  function escape($value)
+  function escape($value, $delimiter = '\'')
   {
     // Quote if not a number or a numeric string
     if (!is_numeric($value))
     {
-      $value = "'" . mysql_real_escape_string($value, $this->identifier) . "'";
+      $value = $delimiter . mysql_real_escape_string($value, $this->identifier) . $delimiter;
     }
     return $value;
   }
