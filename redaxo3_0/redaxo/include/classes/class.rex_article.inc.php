@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.61 2007/11/17 14:33:06 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.62 2007/11/17 14:34:11 kills Exp $
  */
 
 class rex_article
@@ -474,13 +474,11 @@ class rex_article
               }
               else
               {
+                // Modulinhalt ausgeben
                 $slice_content .= '
                 <!-- *** OUTPUT OF MODULE-OUTPUT - START *** -->
-                <div class="rex-cnt-slc-otp"><div class="rex-cnt-slc-otp2">';
-
-                $slice_content .= $RE_MODUL_OUT[$I_ID];
-
-                $slice_content .= '
+                <div class="rex-cnt-slc-otp"><div class="rex-cnt-slc-otp2">
+                  '. $RE_MODUL_OUT[$I_ID] .'
                 </div></div>
                 <!-- *** OUTPUT OF MODULE-OUTPUT - END *** -->
                 ';
