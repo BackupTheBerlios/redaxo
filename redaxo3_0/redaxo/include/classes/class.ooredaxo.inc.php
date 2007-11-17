@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo4
- * @version $Id: class.ooredaxo.inc.php,v 1.54 2007/10/13 13:52:00 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.55 2007/11/17 15:23:10 kills Exp $
  */
 
 class OORedaxo
@@ -366,7 +366,11 @@ class OORedaxo
 
     if ($this->_path)
     {
-      $explode = explode('|', $this->_path.$this->_id.'|');
+      if($this->isStartArticle())
+        $explode = explode('|', $this->_path);
+      else
+        $explode = explode('|', $this->_path.$this->_id.'|');
+
       if (is_array($explode))
       {
         foreach ($explode as $var)
