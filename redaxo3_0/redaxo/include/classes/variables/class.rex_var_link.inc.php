@@ -8,7 +8,7 @@
  * REX_LINKLIST
  *
  * @package redaxo4
- * @version $Id: class.rex_var_link.inc.php,v 1.20 2007/10/23 18:33:13 kills Exp $
+ * @version $Id: class.rex_var_link.inc.php,v 1.21 2007/11/17 15:49:19 kristinus Exp $
  */
 
 class rex_var_link extends rex_var
@@ -179,7 +179,10 @@ class rex_var_link extends rex_var
 
       if ($id > 0 && $id < 11)
       {
-        $replace = rex_getUrl($this->getValue($sql, 'link' . $id));
+      	$replace = '';
+      	if ($this->getValue($sql, 'link' . $id)!="") 
+      		$replace = rex_getUrl($this->getValue($sql, 'link' . $id));
+      		
         $content = str_replace($var . '[' . $param_str . ']', $replace, $content);
       }
     }
