@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo4
- * @version $Id: master.inc.php,v 1.50 2007/11/06 21:38:28 kills Exp $
+ * @version $Id: master.inc.php,v 1.51 2007/11/17 16:07:13 kills Exp $
  */
 
 // -----------------
@@ -23,7 +23,6 @@ $REX['ERROR_EMAIL'] = "jan.kristinus@redaxo.de";
 $REX['FILEPERM'] = octdec(755); // oktaler wert
 $REX['INSTNAME'] = "rex20071013171717";
 $REX['SESSION_DURATION'] = 3000;
-$REX['FOLLOW_REDIRECTS'] = true;
 
 // Is set first time SQL Object ist initialised
 $REX['MYSQL_VERSION'] = "";
