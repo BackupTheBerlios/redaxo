@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Bildet eine Kategorie der Struktur ab
  * @package redaxo4
- * @version $Id: class.oocategory.inc.php,v 1.27 2007/10/13 13:52:00 kills Exp $
+ * @version $Id: class.oocategory.inc.php,v 1.28 2007/11/17 15:09:26 kristinus Exp $
  */
 
 class OOCategory extends OORedaxo
@@ -73,6 +73,15 @@ class OOCategory extends OORedaxo
     }
 
     return $catlist;
+  }
+
+  /*
+   * Accessor Method:
+   * returns the article priority
+   */
+  function getPriority()
+  {
+    return $this->_catprior;
   }
 
   /**
