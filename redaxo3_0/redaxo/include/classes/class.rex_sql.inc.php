@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.46 2007/11/12 11:03:40 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.47 2007/11/17 14:27:17 kills Exp $
  */
 
 class rex_sql
@@ -448,7 +448,7 @@ class rex_sql
    */
   function flush()
   {
-    $this->values = array ();
+    $this->flushValues();
     $this->fieldnames = array ();
 
     $this->table = '';
@@ -461,6 +461,17 @@ class rex_sql
     $this->error = '';
     $this->errno = '';
   }
+
+  /**
+   * Stellt alle Values, die mit setValue() gesetzt wurden, zurück
+   *
+   * @see #setValue(), #getValue()
+   */
+  function flushValues()
+  {
+    $this->values = array ();
+  }
+
 
   /**
    * Setzt den Cursor des Resultsets auf die nächst niedrigere Stelle
