@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.27 2007/10/23 19:11:58 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.28 2007/11/19 17:37:38 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -227,7 +227,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
         $yearStyle = 'class="rex-fdatey"';
 
         $yearSelect = new rex_select();
-        $yearSelect->addOptions(range(2005,date('Y')+2), true);
+        $yearSelect->addOptions(range(2005,date('Y')+10), true);
         $yearSelect->setName($name.'[year]');
         $yearSelect->setSize(1);
         $yearSelect->setId($id);
