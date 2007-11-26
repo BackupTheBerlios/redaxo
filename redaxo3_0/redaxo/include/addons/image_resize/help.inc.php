@@ -9,7 +9,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: help.inc.php,v 1.8 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: help.inc.php,v 1.9 2007/11/26 20:34:50 kills Exp $
  */
 ?>
 <h3>Version: 0.3</h1>
@@ -30,6 +30,13 @@ c = crop        (cut image part to certain length and height)<br />
 a = automatic   (longest side will be used)
 </p>
 
+<h3>Default-Filters:</h3>
+<p>
+blur<br />
+brand<br />
+sepia<br />
+sharpen
+</p>
 <h3>Examples:</h3>
 
 <p>
