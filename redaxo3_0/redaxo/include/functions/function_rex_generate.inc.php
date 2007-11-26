@@ -4,7 +4,7 @@
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
  * @package redaxo4
- * @version $Id: function_rex_generate.inc.php,v 1.110 2007/11/17 16:30:21 kills Exp $
+ * @version $Id: function_rex_generate.inc.php,v 1.111 2007/11/26 15:33:59 kills Exp $
  */
 
 // ----------------------------------------- Alles generieren
@@ -942,10 +942,9 @@ function rex_deleteDir($file, $delete_folders = false)
           continue;
         }
 
-        if (($state = rex_deleteDir($file."/".$filename, $delete_folders)) !== true)
+        if (!rex_deleteDir($file.'/'.$filename, $delete_folders) && $state === true)
         {
-          // Schleife abbrechen, dir_hanlde schließen und danach erst false zurückgeben
-          break;
+          $state = false;
         }
       }
       closedir($handle);
