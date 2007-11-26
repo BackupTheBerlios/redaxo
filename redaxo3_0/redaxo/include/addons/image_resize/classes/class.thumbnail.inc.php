@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: class.thumbnail.inc.php,v 1.23 2007/11/08 15:49:37 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.24 2007/11/26 20:21:45 kills Exp $
  */
 
 class thumbnail
@@ -79,11 +79,6 @@ class thumbnail
       $this->img['quality'] = 75;
       $this->filters = array();
     }
-  }
-
-  function showWarning()
-  {
-
   }
 
   function size_height($size)
@@ -295,5 +290,9 @@ class thumbnail
 	  return $c;
   }
 
+  function getImage()
+  {
+    return $this->img['src'];
+  }
 }
 ?>
