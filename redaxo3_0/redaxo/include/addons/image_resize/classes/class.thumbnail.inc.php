@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: class.thumbnail.inc.php,v 1.24 2007/11/26 20:21:45 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.25 2007/11/26 20:29:26 kills Exp $
  */
 
 class thumbnail
@@ -293,6 +293,21 @@ class thumbnail
   function getImage()
   {
     return $this->img['src'];
+  }
+
+  function getImageWidth()
+  {
+    return $this->img['width'];
+  }
+
+  function getImageHeight()
+  {
+    return $this->img['height'];
+  }
+
+  function destroyImage()
+  {
+    imagedestroy($this->getImage());
   }
 }
 ?>
