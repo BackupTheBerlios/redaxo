@@ -13,17 +13,22 @@
  * @author <a href="http://www.yakamara.de">www.yakamara.de</a>
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.40 2007/11/09 14:14:47 kills Exp $
+ * @version $Id: config.inc.php,v 1.41 2007/11/27 15:16:12 kills Exp $
  */
 
 $mypage = 'image_resize';
 
+/* User Parameter */
+$REX['ADDON']['max_size'][$mypage] = 1000;
+$REX['ADDON']['jpeg_quality'][$mypage] = 75;
+// $REX['ADDON']['default_filters'][$mypage] = array('brand');
+$REX['ADDON']['default_filters'][$mypage] = array();
+
+/* Addon Parameter */
 $REX['ADDON']['rxid'][$mypage] = 'REX_IMAGE_RESIZE';
 $REX['ADDON']['page'][$mypage] = $mypage;
 $REX['ADDON']['name'][$mypage] = 'Image Resize';
 $REX['ADDON']['perm'][$mypage] = 'image_resize[]';
-$REX['ADDON']['max_size'][$mypage] = 1000;
-$REX['ADDON']['jpeg_quality'][$mypage] = 75;
 $REX['ADDON']['system'][$mypage] = true;
 $REX['ADDON']['version'][$mypage] = '1.0';
 $REX['ADDON']['author'][$mypage] = 'Wolfgang Hutteger, Markus Staab, Jan Kristinus';
@@ -150,6 +155,10 @@ if ($rex_resize != '')
     $thumb->size_auto($size);
   }
 
+  // Add Default Filters
+  $rex_filter = array_merge($rex_filter,$REX['ADDON']['default_filters'][$mypage]);
+
+  // Add Filters
   foreach($rex_filter as $filter)
   {
     $thumb->addFilter($filter);
