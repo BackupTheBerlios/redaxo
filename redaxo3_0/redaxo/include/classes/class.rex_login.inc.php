@@ -5,7 +5,7 @@
  * Klasse zum handling des Login/Logout-Mechanismuses
  *
  * @package redaxo4
- * @version $Id: class.rex_login.inc.php,v 1.16 2007/12/06 14:05:31 kills Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.17 2007/12/06 14:17:45 kills Exp $
  */
 
 class rex_login_sql extends rex_sql
@@ -319,7 +319,15 @@ class rex_login
    */
   function sessionFixation()
   {
-    session_regenerate_id(true);
+    // 1. parameter ist erst seit php5.1 verfügbar
+    if (version_compare(phpversion(), '5.1.0', '>=') == 1)
+    {
+      session_regenerate_id(true);
+    }
+    else
+    {
+      session_regenerate_id();
+    }
   }
 }
 
