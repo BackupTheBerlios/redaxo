@@ -11,7 +11,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: class.tiny.inc.php,v 1.16 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: class.tiny.inc.php,v 1.17 2007/12/07 09:54:54 kills Exp $
  */
 
 global $TINY2;
@@ -423,8 +423,12 @@ class rexTiny2Editor
     echo ' var win=tinyMCE.getWindowArg("window");'."\n";
     echo ' win.document.forms[0].src.value=imageUrl;'."\n";
     echo ' win.document.forms[0].title.value=title;'."\n";
-    echo ' win.resetImageData();'."\n";
-    echo ' win.showPreviewImage(imageUrl, false);'."\n";
+    // Hier Fehler behandeln
+    // siehe http://trac.symfony-project.com/ticket/2625
+    echo ' try {'."\n";
+    echo '   win.resetImageData();'."\n";
+    echo '   win.showPreviewImage(imageUrl, false);'."\n";
+    echo ' } catch (ex) {}'."\n";
     echo '}' . "\n";
 
     echo 'function insertFileLink(fileUrl,title){' . "\n";
