@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: medienpool.inc.php,v 1.163 2007/10/29 18:28:34 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.164 2007/12/07 13:31:44 kills Exp $
  */
 
 // TODOS
@@ -726,7 +726,7 @@ if ($subpage == "add_file")
 
 // *************************************** Subpage: Detail
 
-if ($subpage=="detail" && rex_post('btn_delete', 'string'))
+if ($subpage=='detail' && rex_post('btn_delete', 'string'))
 {
 
   $file_id = rex_request('file_id', 'int');
@@ -736,10 +736,10 @@ if ($subpage=="detail" && rex_post('btn_delete', 'string'))
 
   if ($gf->getRows()==1)
   {
-    if ($PERMALL || $REX_USER->hasPerm("media[".$gf->getValue("category_id")."]"))
+    if ($PERMALL || $REX_USER->hasPerm('media['.$gf->getValue('category_id').']'))
     {
 
-      $file_name = $gf->getValue("filename");
+      $file_name = $gf->getValue('filename');
 
       // check if file is in an article slice
       $file_search = '';
