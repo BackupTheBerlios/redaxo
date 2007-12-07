@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: structure.inc.php,v 1.121 2007/12/07 13:52:38 kills Exp $
+ * @version $Id: structure.inc.php,v 1.122 2007/12/07 14:05:45 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -752,7 +752,7 @@ if ($category_id > -1)
   {
     if ($TEMPLATES->getValue('active') == 1)
     {
-      $TMPL_SEL->addOption(rex_translate($TEMPLATES->getValue('name')), $TEMPLATES->getValue('id'));
+      $TMPL_SEL->addOption(rex_translate($TEMPLATES->getValue('name'), null, false), $TEMPLATES->getValue('id'));
     }
     $TEMPLATE_NAME[$TEMPLATES->getValue('id')] = rex_translate($TEMPLATES->getValue('name'));
     $TEMPLATES->next();

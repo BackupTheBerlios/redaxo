@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: module.action.inc.php,v 1.44 2007/10/13 13:52:00 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.45 2007/12/07 14:04:23 kills Exp $
  */
 
 class rex_event_select extends rex_select
@@ -337,7 +337,7 @@ if ($OUT)
 
     echo '
           <tr>
-            <td class="rex-icon"><a href="index.php?page=module&amp;subpage=actions&amp;action_id=' . $sql->getValue("id") . '&amp;function=edit"><img src="media/action.gif" alt="' . $sql->getValue("name") . '" title="' . $sql->getValue("name") . '" /></a></td>
+            <td class="rex-icon"><a href="index.php?page=module&amp;subpage=actions&amp;action_id=' . $sql->getValue("id") . '&amp;function=edit"><img src="media/action.gif" alt="' . htmlspecialchars($sql->getValue("name")) . '" title="' . htmlspecialchars($sql->getValue("name")) . '" /></a></td>
             <td class="rex-icon">' . $sql->getValue("id") . '</td>
             <td><a href="index.php?page=module&amp;subpage=actions&amp;action_id=' . $sql->getValue("id") . '&amp;function=edit">' . htmlspecialchars($sql->getValue("name")) . '</a></td>
             <td>' . implode('/', $previewmode) . '</td>
