@@ -12,11 +12,11 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: class.textile.inc.php,v 1.6 2007/10/13 13:52:01 kills Exp $
+ * @version $Id: class.textile.inc.php,v 1.7 2007/12/10 16:15:41 kills Exp $
  */
 
 /*
-$Id: class.textile.inc.php,v 1.6 2007/10/13 13:52:01 kills Exp $
+$Id: class.textile.inc.php,v 1.7 2007/12/10 16:15:41 kills Exp $
 $LastChangedRevision$
 */
 
@@ -487,8 +487,15 @@ class Textile
   function fList($m)
   {
     $text = preg_split('/\n(?=[*#])/m', $m[0]);
+    // PHP 5.2.4 Bug
+    // http://forum.redaxo.de/sutra46200.html#46200
+    // with
+    /*
     foreach($text as $line) {
       $nextline = next($text);
+    */
+    foreach($text as $nr => $line) {
+      $nextline = isset($text[$nr+1]) ? $text[$nr+1] : false;
       if (preg_match("/^([#*]+)($this->a$this->c) (.*)$/s", $line, $m)) {
         list(, $tl, $atts, $content) = $m;
         $nl = '';
