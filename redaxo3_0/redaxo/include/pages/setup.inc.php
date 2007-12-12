@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.103 2007/10/28 12:07:25 kills Exp $
+ * @version $Id: setup.inc.php,v 1.104 2007/12/12 16:10:35 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -325,6 +325,10 @@ if ($checkmodus == 2 && $send == 1)
   $h = @ fopen($REX['INCLUDE_PATH'].'/master.inc.php', 'r');
   $cont = fread($h, filesize('include/master.inc.php'));
   fclose($h);
+
+  $serveraddress             = str_replace("\'", "'", rex_post('serveraddress', 'string'));
+  $serverbezeichnung         = str_replace("\'", "'", rex_post('serverbezeichnung', 'string'));
+  $error_email               = str_replace("\'", "'", rex_post('error_email', 'string'));
 
   $cont = ereg_replace("(REX\['SERVER'\].?\=.?\")[^\"]*", "\\1".$serveraddress, $cont);
   $cont = ereg_replace("(REX\['SERVERNAME'\].?\=.?\")[^\"]*", "\\1".$serverbezeichnung, $cont);
