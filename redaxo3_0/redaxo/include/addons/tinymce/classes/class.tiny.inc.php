@@ -11,7 +11,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: class.tiny.inc.php,v 1.17 2007/12/07 09:54:54 kills Exp $
+ * @version $Id: class.tiny.inc.php,v 1.18 2007/12/12 16:26:13 kills Exp $
  */
 
 global $TINY2;
@@ -404,11 +404,11 @@ class rexTiny2Editor
     echo '});' . "\n";
 
     echo 'function fileBrowserCallBack(field_name, url, type, win) {' . "\n";
-    echo 'newWindow( "rexmediapopup", sDocumentBase+"redaxo/index.php?page=medienpool&opener_input_field=TINYIMG",660,500,",status=yes,resizable=yes");' . "\n";
+    echo 'newPoolWindow( sDocumentBase+"redaxo/index.php?page=medienpool&opener_input_field=TINYIMG");' . "\n";
     echo '}' . "\n";
 
     echo 'function linkBrowserCallBack(href, target){' . "\n";
-    echo 'newWindow( "rexlinkpopup", sDocumentBase+"redaxo/index.php?page=linkmap&opener_input_field=TINY",660,500,",status=yes,resizable=yes");' . "\n";
+    echo 'newLinkMapWindow(sDocumentBase+"redaxo/index.php?page=linkmap&opener_input_field=TINY");' . "\n";
     echo '}' . "\n";
 
     echo '//redaxo default callback functions' . "\n";
