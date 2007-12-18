@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.47 2007/11/17 14:27:17 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.48 2007/12/18 18:21:20 kills Exp $
  */
 
 class rex_sql
@@ -296,6 +296,12 @@ class rex_sql
     return in_array($feldname, $this->getFieldnames());
   }
 
+  /**
+   * Prüft, ob das Feld mit dem Namen $feldname Null ist.
+   *
+   * Falls das Feld nicht vorhanden ist,
+   * wird Null zurückgegeben, sonst True/False
+   */
   function isNull($feldname)
   {
     if($this->hasValue($feldname))
