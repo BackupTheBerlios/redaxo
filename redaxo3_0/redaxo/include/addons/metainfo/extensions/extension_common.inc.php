@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.31 2007/12/18 18:35:55 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.32 2007/12/19 12:28:46 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -69,7 +69,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
     $typeLabel = $sqlFields->getValue('label');
     $attr = $sqlFields->getValue('attributes');
 
-    $dbvalues = array($sqlFields->getValue('default'));
+    $dbvalues = array(htmlspecialchars($sqlFields->getValue('default')));
     if($activeItem)
     {
       $dbvalues = explode('|+|', $activeItem->getValue($name));
