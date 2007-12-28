@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_other.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.3 2007/12/28 23:17:02 kristinus Exp $
  */
 
 /**
@@ -325,4 +325,33 @@ function rex_replace_dynamic_contents($path, $content)
   }
   return false;
 }
+
+
+// ------------------------------------- Allgemeine PHP Functions
+
+/* PHP5 Functions */
+
+if (!function_exists("htmlspecialchars_decode"))
+{
+  function htmlspecialchars_decode($string, $quote_style = ENT_COMPAT) {
+    return strtr($string, array_flip(get_html_translation_table(HTML_SPECIALCHARS, $quote_style)));
+  }
+}
+
+if (!function_exists('file_put_contents'))
+{
+  function file_put_contents($path, $content)
+  {
+    $fp = @fopen($path, 'wb');
+    if ($fp)
+    {
+      $writtenBytes = fwrite($fp, $content, strlen($content));
+
+      if(fclose($fp))
+        return $writtenBytes;
+    }
+    return false;
+  }
+}
+
 ?>
