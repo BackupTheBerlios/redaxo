@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo4
- * @version $Id: master.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
+ * @version $Id: master.inc.php,v 1.3 2007/12/28 11:15:48 kristinus Exp $
  */
 
 // -----------------
@@ -13,7 +13,7 @@ if (!$REX['GG']) $REX['GG'] = false;
 // ----------------- SERVER VARS
 
 // Setupservicestatus - if everything ok -> false; if problem set to true;
-$REX['SETUP'] = false;
+$REX['SETUP'] = true;
 $REX['SERVER'] = "redaxo.de";
 $REX['SERVERNAME'] = "REDAXO";
 $REX['VERSION'] = "4";
@@ -85,7 +85,7 @@ $REX['MEDIAPOOL']['BLOCKED_EXTENSIONS'] = array('.php','.php3','.php4','.php5','
 $REX['DB']['1']['HOST'] = "localhost";
 $REX['DB']['1']['LOGIN'] = "root";
 $REX['DB']['1']['PSW'] = "";
-$REX['DB']['1']['NAME'] = "redaxo_4_0_1";
+$REX['DB']['1']['NAME'] = "redaxo_4";
 $REX['DB']['1']['PERSISTENT'] = false;
 
 // ----------------- DB2 - if necessary
