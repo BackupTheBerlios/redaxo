@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.3 2007/12/28 12:07:10 tbaddade Exp $
  */
 
 class rex_article
@@ -389,8 +389,8 @@ class rex_article
                 $moveDown = $I18N->msg('move_slice_down');
                 // upd stamp übergeben, da sonst ein block nicht mehrfach hintereindander verschoben werden kann
                 // (Links wären sonst gleich und der Browser lässt das klicken auf den gleichen Link nicht zu)
-                $listElements[] = '<a href="'. sprintf($sliceUrl, '&amp;upd='. time() .'&amp;function=moveup') .'" title="'. $moveUp .'" class="green12b"><img src="media/file_up.gif" width="16" height="16" alt="'. $moveUp .'" /> <span class="rex-hide">'. $RE_MODUL_NAME[$I_ID] .'</span></a>';
-                $listElements[] = '<a href="'. sprintf($sliceUrl, '&amp;upd='. time() .'&amp;function=movedown') .'" title="'. $moveDown .'" class="green12b"><img src="media/file_down.gif" width="16" height="16" alt="'. $moveDown .'" /> <span class="rex-hide">'. $RE_MODUL_NAME[$I_ID] .'</span></a>';
+                $listElements[] = '<a href="'. sprintf($sliceUrl, '&amp;upd='. time() .'&amp;function=moveup') .'" title="'. $moveUp .'"><img src="media/file_up.gif" width="16" height="16" alt="'. $moveUp .'" /> <span class="rex-hide">'. $RE_MODUL_NAME[$I_ID] .'</span></a>';
+                $listElements[] = '<a href="'. sprintf($sliceUrl, '&amp;upd='. time() .'&amp;function=movedown') .'" title="'. $moveDown .'"><img src="media/file_down.gif" width="16" height="16" alt="'. $moveDown .'" /> <span class="rex-hide">'. $RE_MODUL_NAME[$I_ID] .'</span></a>';
               }
 
               // ----- EXTENSION POINT
