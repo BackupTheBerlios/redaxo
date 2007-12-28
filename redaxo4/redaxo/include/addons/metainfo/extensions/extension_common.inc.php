@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.2 2007/12/28 10:46:32 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -60,14 +60,15 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
   for($i = 0; $i < $sqlFields->getRows(); $i++)
   {
     // Umschliessendes Tag von Label und Formularelement
-    $tag = 'p';
+    $tag      = 'p';
     $tag_attr = '';
 
-    $name = $sqlFields->getValue('name');
-    $title = $sqlFields->getValue('title');
-    $params = $sqlFields->getValue('params');
+    $name      = $sqlFields->getValue('name');
+    $title     = $sqlFields->getValue('title');
+    $params    = $sqlFields->getValue('params');
     $typeLabel = $sqlFields->getValue('label');
-    $attr = $sqlFields->getValue('attributes');
+    $attr      = $sqlFields->getValue('attributes');
+    $dblength  = $sqlFields->getValue('dblength');
 
     $dbvalues = array(htmlspecialchars($sqlFields->getValue('default')));
     if($activeItem)
@@ -90,7 +91,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
     {
       case 'text':
       {
-        $field = '<input type="'. $sqlFields->getValue('label') .'" name="'. $name .'" value="'. $dbvalues_esc[0] .'" id="'. $id .'" '. $attr .' />';
+        $field = '<input type="'. $sqlFields->getValue('label') .'" name="'. $name .'" value="'. $dbvalues_esc[0] .'" id="'. $id .' "maxlength="'. $dblength .'" '. $attr .' />';
         break;
       }
       case 'checkbox':
@@ -275,7 +276,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
       }
       case 'textarea':
       {
-        $field = '<textarea name="'. $name .'" id="'. $id .'" '. $attr .' cols="50" rows="6">'. $dbvalues_esc[0] .'</textarea>';
+        $field = '<textarea name="'. $name .'" id="'. $id .'" cols="50" rows="6" '. $attr .'>'. $dbvalues_esc[0] .'</textarea>';
         break;
       }
       case 'REX_MEDIA_BUTTON':
