@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo4
- * @version $Id: class.ooredaxo.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.2 2007/12/28 11:02:33 kills Exp $
  */
 
 class OORedaxo
@@ -413,6 +413,16 @@ class OORedaxo
   {
     global $REX;
     return $this->_id == $REX['START_ARTICLE_ID'];
+  }
+
+  /**
+   *  Accessor Method:
+   *  returns  true if this Article is the not found article
+   */
+  function isNotFoundArticle()
+  {
+    global $REX;
+    return $this->_id == $REX['NOTFOUND_ARTICLE_ID'];
   }
 
   /*
