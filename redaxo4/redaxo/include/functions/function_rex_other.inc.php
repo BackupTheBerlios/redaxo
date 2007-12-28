@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_other.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
  */
 
 /**
@@ -298,5 +298,31 @@ function rex_split_string($string)
     }
   }
   return $result;
+}
+
+function rex_put_file_contents($path, $content)
+{
+  global $REX;
+
+  $writtenBytes = file_put_contents($path, $content);
+  @ chmod($path, $REX['FILEPERM']);
+
+  return $writtenBytes;
+}
+
+function rex_get_file_contents($path)
+{
+  return file_get_contents($path);
+}
+
+function rex_replace_dynamic_contents($path, $content)
+{
+  if($fcontent = rex_get_file_contents($path))
+  {
+    $content = "// --- DYN\r\n\r\n". trim($content) ."\r\n// --- /DYN";
+    $fcontent = ereg_replace("(\/\/.---.DYN.*\/\/.---.\/DYN)", $content, $fcontent);
+    return rex_put_file_contents($path, $fcontent);
+  }
+  return false;
 }
 ?>

@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
  */
 
 class rex_article
@@ -243,11 +243,10 @@ class rex_article
       if ($this->article_id != 0)
       {
         $this->contents = '';
-        $filename = $REX['INCLUDE_PATH'].'/generated/articles/'.$this->article_id.'.'.$this->clang.'.content';
-        if ($fd = @fopen ($filename, "r"))
+        $article_content_file = $REX['INCLUDE_PATH'].'/generated/articles/'.$this->article_id.'.'.$this->clang.'.content';
+        if($cont = rex_get_file_contents($article_content_file))
         {
-          $this->contents = fread ($fd, filesize ($filename));
-          fclose ($fd);
+          $this->contents = $cont;
           eval($this->contents);
         }
       }

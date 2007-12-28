@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: index.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -197,10 +197,8 @@ elseif (isset ($function) && $function == "export")
         $filename .= $ext;
       }
 
-      if (is_writable($dir_filename) && $fp = fopen($filename, "w"))
+      if (rex_put_file_contents($dir_filename, $content))
       {
-        fputs($fp, $content);
-        fclose($fp);
         $msg = $I18N_IM_EXPORT->msg('file_generated_in').' '.strtr($filename, '\\', '/');
       }
       else

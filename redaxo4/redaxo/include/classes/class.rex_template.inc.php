@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Templates
  *
  * @package redaxo4
- * @version $Id: class.rex_template.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.rex_template.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
  */
 
 class rex_template
@@ -55,13 +55,9 @@ class rex_template
 		if($this->getId()<1) return FALSE;
 
     $file = $this->getFilePath($this->getId());
-    if ($handle = @fopen($file, 'r'))
+    if (file_exists($file))
     {
-      $content = '';
-	    $fs = filesize($file);
-	    if ($fs>0) $content = fread($handle, filesize($file));
-	    fclose($handle);
-	    return $content;
+      return rex_get_file_contents($file);
     }else
     {
     	if($this->generate())

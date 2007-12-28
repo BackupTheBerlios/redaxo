@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.2 2007/12/28 10:46:32 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.3 2007/12/28 11:04:45 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -21,9 +21,7 @@ function rex_a62_insertJs($params)
 	$content = $params['subject'];
 
 	$jsfile = $REX['INCLUDE_PATH'] .'/addons/metainfo/js/metainfo.js';
-	$hdl = fopen($jsfile, 'r');
-	$jscontent = fread($hdl, filesize($jsfile));
-	fclose($hdl);
+  $jscontent = rex_get_file_contents($jsfile);
 
   $js ='
     <!-- Metainfo JS //-->
