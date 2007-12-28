@@ -12,7 +12,7 @@
  *
  * Alle Variablen die mit REX_FILE beginnnen sind als deprecated anzusehen!
  * @package redaxo4
- * @version $Id: class.rex_var_media.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.rex_var_media.inc.php,v 1.2 2007/12/28 12:01:32 kills Exp $
  */
 
 class rex_var_media extends rex_var
@@ -269,6 +269,7 @@ class rex_var_media extends rex_var
           <a href="#" onclick="addREXMedia(' . $id . ');return false;"'. rex_tabindex() .'><img src="media/file_add.gif" width="16" height="16" title="Add New Media" alt="Add New Media" /></a>
           <a href="#" onclick="deleteREXMedia(' . $id . ');return false;"'. rex_tabindex() .'><img src="media/file_del.gif" width="16" height="16" title="Remove Selection" alt="Remove Selection" /></a>
         </p>
+        <div class="rex-clearer"></div>
       </div>
     </div>
     ';
