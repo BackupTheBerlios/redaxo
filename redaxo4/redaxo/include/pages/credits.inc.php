@@ -3,7 +3,7 @@
 /**
  * Creditsseite. Auflistung der Credits an die Entwickler von REDAXO und den AddOns.
  * @package redaxo4
- * @version $Id: credits.inc.php,v 1.2 2007/12/28 11:13:33 tbaddade Exp $
+ * @version $Id: credits.inc.php,v 1.3 2007/12/28 12:07:56 tbaddade Exp $
  */
 
 rex_title($I18N->msg("credits"), "");
@@ -14,6 +14,7 @@ include_once $REX['INCLUDE_PATH']."/functions/function_rex_addons.inc.php";
 ?>
 <div class="rex-page-output rex-mrgn">
 	<h2>REDAXO</h2>
+	
 	<div class="rex-page-content">
 
 	<p>
