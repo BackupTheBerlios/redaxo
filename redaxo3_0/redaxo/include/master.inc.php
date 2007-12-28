@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo4
- * @version $Id: master.inc.php,v 1.51 2007/11/17 16:07:13 kills Exp $
+ * @version $Id: master.inc.php,v 1.52 2007/12/28 10:41:44 kills Exp $
  */
 
 // -----------------
@@ -18,7 +18,7 @@ $REX['SERVER'] = "redaxo.de";
 $REX['SERVERNAME'] = "REDAXO";
 $REX['VERSION'] = "4";
 $REX['SUBVERSION'] = "0";
-$REX['MINORVERSION'] = "0";
+$REX['MINORVERSION'] = "1";
 $REX['ERROR_EMAIL'] = "jan.kristinus@redaxo.de";
 $REX['FILEPERM'] = octdec(755); // oktaler wert
 $REX['INSTNAME'] = "rex20071013171717";
