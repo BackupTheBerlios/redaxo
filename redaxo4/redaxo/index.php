@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: index.php,v 1.2 2007/12/28 15:58:47 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -123,7 +123,9 @@ else
     // --- addon page check
     if (isset($REX['ADDON']['page']) && is_array($REX['ADDON']['page']))
     {
-      $as = array_search($page,$REX['ADDON']['page']);
+      include_once $REX['INCLUDE_PATH'].'/functions/function_rex_addons.inc.php';
+
+      $as = rex_search_addon_page($page);
       if ($as !== false)
       {
         // --- addon gefunden

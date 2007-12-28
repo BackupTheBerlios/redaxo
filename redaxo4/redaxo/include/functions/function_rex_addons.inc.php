@@ -4,7 +4,7 @@
 /**
  * Addon Funktionen
  * @package redaxo4
- * @version $Id: function_rex_addons.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: function_rex_addons.inc.php,v 1.2 2007/12/28 15:58:47 kills Exp $
  */
 
 function rex_install_addon($addons, $addonname, $installDump = true)
@@ -435,6 +435,38 @@ function rex_read_sql_dump($file)
     }
 
     return $ret;
+  }
+
+  return false;
+}
+
+/**
+ * Sucht innerhalb des $REX['ADDON']['page'] Array rekursiv nach der page
+ * $needle
+ *
+ * Gibt bei erfolgreicher Suche den Namen des Addons zurück, indem die page
+ * gefuden wurde, sonst false
+ */
+function rex_search_addon_page($needle, $haystack = null)
+{
+  global $REX;
+
+  if($haystack === null)
+    $haystack = $REX['ADDON']['page'];
+
+  foreach($haystack as $key => $value)
+  {
+    if(is_array($value))
+    {
+      $found = rex_search_addon_page($needle, $value);
+    }
+    else
+    {
+      $found = $needle == $value;
+    }
+
+    if($found !== false)
+      return $key;
   }
 
   return false;
