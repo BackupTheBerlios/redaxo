@@ -5,11 +5,11 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.4 2007/12/29 12:02:50 tbaddade Exp $
+ * @version $Id: extension_common.inc.php,v 1.5 2007/12/29 17:44:20 kills Exp $
  */
 
 if($page == 'metainfo')
-  rex_register_extension('OUTPUT_FILTER', 'rex_a62_insertJs');
+  rex_register_extension('PAGE_HEADER', 'rex_a62_insertJs');
 
 /**
  * Fügt den nötigen JS-Code ein
@@ -33,7 +33,7 @@ function rex_a62_insertJs($params)
     <!-- End Metainfo JS //-->
   ';
 
-  return str_replace('</head>', $js . '</head>', $content);
+  return $content . $js;
 }
 
 /**
