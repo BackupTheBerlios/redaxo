@@ -4,7 +4,7 @@
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
  * @package redaxo4
- * @version $Id: function_rex_generate.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
+ * @version $Id: function_rex_generate.inc.php,v 1.3 2007/12/29 18:14:14 kills Exp $
  */
 
 // ----------------------------------------- Alles generieren
@@ -792,7 +792,7 @@ function rex_copyArticle($id, $to_cat_id)
  */
 function rex_copyCategory($from_cat, $to_cat)
 {
-  // TODO
+  // TODO rex_copyCategory implementieren
 }
 
 /**
