@@ -4,7 +4,7 @@
  * Klasse zur Erstellung eines HTML-Pulldown-Menues (Select-Box)
  *
  * @package redaxo4
- * @version $Id: class.rex_select.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.rex_select.inc.php,v 1.2 2007/12/29 17:51:05 kills Exp $
  */
 
 ################ Class Select
@@ -308,4 +308,52 @@ class rex_select
   }
 }
 
+################ Class Kategorie Select
+class rex_category_select extends rex_select
+{
+  var $ignore_offlines;
+  var $clang;
+  var $check_perms;
+
+  function rex_category_select($ignore_offlines = false, $clang = false, $check_perms = true)
+  {
+    $this->ignore_offlines = $ignore_offlines;
+    $this->clang = $clang;
+    $this->check_perms = $check_perms;
+
+    $this->addOption('Homepage', 0);
+    if ($cats = OOCategory :: getRootCategories($ignore_offlines, $clang))
+    {
+      foreach ($cats as $cat)
+      {
+        $this->addCatOption($cat);
+      }
+    }
+
+    parent::rex_select();
+  }
+
+  function addCatOption($cat)
+  {
+    global $REX_USER;
+    if (empty ($cat))
+    {
+      return;
+    }
+
+    if(!$this->check_perms ||
+        $this->check_perms && $REX_USER->hasPerm('admin[]') || $REX_USER->hasPerm('csw[0]') || $REX_USER->hasPerm('csr[' . $cat->getId() . ']') || $REX_USER->hasPerm('csw[' . $cat->getId() . ']'))
+    {
+      $this->addOption($cat->getName(), $cat->getId(), $cat->getId(), $cat->getParentId());
+      $childs = $cat->getChildren($this->ignore_offlines, $this->clang);
+      if (is_array($childs))
+      {
+        foreach ($childs as $child)
+        {
+          $this->addCatOption($child);
+        }
+      }
+    }
+  }
+}
 ?>
