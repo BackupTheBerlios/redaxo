@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.3 2007/12/28 12:07:10 tbaddade Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.4 2007/12/29 17:26:16 kills Exp $
  */
 
 class rex_article
@@ -481,8 +481,9 @@ class rex_article
                 </div></div>
                 <!-- *** OUTPUT OF MODULE-OUTPUT - END *** -->
                 ';
+
+                $slice_content = $this->replaceVars($this->CONT, $slice_content);
               }
-              $slice_content = $this->replaceVars($this->CONT, $slice_content);
 
             }else
             {
