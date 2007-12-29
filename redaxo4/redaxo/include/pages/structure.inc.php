@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: structure.inc.php,v 1.1 2007/12/28 10:45:09 kills Exp $
+ * @version $Id: structure.inc.php,v 1.2 2007/12/29 17:55:59 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -514,6 +514,13 @@ if ($REX_USER->hasPerm('advancedMode[]'))
   $add_col = '<col width="40" />';
   $data_colspan = 5;
 }
+
+echo rex_register_extension_point('PAGE_STRUCTURE_HEADER', '',
+  array(
+    'category_id' => $category_id,
+    'clang' => $clang
+  )
+);
 
 echo '
 <!-- *** OUTPUT CATEGORIES - START *** -->';
