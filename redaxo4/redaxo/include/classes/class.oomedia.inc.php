@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo4
- * @version $Id: class.oomedia.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.2 2007/12/29 18:12:22 kills Exp $
  */
 
 class OOMedia
@@ -558,7 +558,6 @@ class OOMedia
   {
     global $REX;
 
-    // TODO
     $ext = $this->getExtension();
     $icon = $this->getIcon();
 
