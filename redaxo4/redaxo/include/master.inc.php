@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo4
- * @version $Id: master.inc.php,v 1.6 2007/12/28 11:41:30 kristinus Exp $
+ * @version $Id: master.inc.php,v 1.7 2007/12/29 18:15:04 kills Exp $
  */
 
 // -----------------
@@ -78,7 +78,7 @@ $REX['MAXLOGINS'] = 50;
 $REX['START_PAGE'] = 'structure';
 
 // ----------------- OTHER STUFF
-$REX['SYSTEM_ADDONS'] = array('import_export','metainfo');
+$REX['SYSTEM_ADDONS'] = array('import_export', 'metainfo', 'be_search');
 $REX['MEDIAPOOL']['BLOCKED_EXTENSIONS'] = array('.php','.php3','.php4','.php5','.php6','.phtml','.pl','.asp','.aspx','.cfm','.jsp');
 
 // ----------------- DB1
