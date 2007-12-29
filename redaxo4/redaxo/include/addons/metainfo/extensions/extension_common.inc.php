@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.3 2007/12/28 11:04:45 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.4 2007/12/29 12:02:50 tbaddade Exp $
  */
 
 if($page == 'metainfo')
@@ -183,7 +183,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
 
           $select->setAttribute($attr_name, $attr_value);
 
-          if($attr_name[0] == 'multiple')
+          if($attr_name == 'multiple')
             $select->setName($name.'[]');
         }
 
