@@ -10,7 +10,7 @@
  * REX_IS_VALUE
  *
  * @package redaxo4
- * @version $Id: class.rex_var_value.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.rex_var_value.inc.php,v 1.2 2007/12/29 17:26:52 kills Exp $
  */
 
 class rex_var_value extends rex_var
@@ -132,7 +132,6 @@ class rex_var_value extends rex_var
   function _matchValue(& $sql, $content, $var, $escape = false, $nl2br = false, $stripPHP = false, $booleanize = false)
   {
     $matches = $this->getInputParams($content, $var);
-
 
     foreach ($matches as $match)
     {
