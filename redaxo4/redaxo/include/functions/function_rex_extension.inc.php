@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Registrierung von Schnittstellen (EXTENSION_POINTS)
  * @package redaxo4
- * @version $Id: function_rex_extension.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: function_rex_extension.inc.php,v 1.2 2007/12/29 18:02:21 kills Exp $
  */
 
 /**
@@ -139,7 +139,7 @@ function rex_call_func($function, $params, $parseParamsAsArray = true)
     }
     else
     {
-      trigger_error('rexCallFunc: Function "'.$function.'" not found!');
+      trigger_error('rexCallFunc: Function "'.$function.'" not found!', E_USER_ERROR);
     }
   }
   // object->method call
