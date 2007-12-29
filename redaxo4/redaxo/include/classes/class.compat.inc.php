@@ -4,7 +4,7 @@
  * Klassen zum erhalten der Rückwärtskompatibilität
  *
  * Dieser werden beim nächsten Versionssprung entfallen
- * @version $Id: class.compat.inc.php,v 1.2 2007/12/28 11:50:39 kills Exp $
+ * @version $Id: class.compat.inc.php,v 1.3 2007/12/29 17:28:28 kills Exp $
  */
 
 // rex_sql -> sql alias
@@ -162,27 +162,6 @@ function title($head, $subtitle = '', $styleclass = "grey", $width = '770px')
 function rex_parseArticleName($name)
 {
   return rex_parse_article_name($name);
-}
-
-// ------------------------------------- Allgemeine PHP Functions
-
-/**
- * Für Installationen mit PHP4.x
- */
-if (!function_exists('file_put_contents'))
-{
-  function file_put_contents($path, $content)
-  {
-    $fp = @fopen($path, 'wb');
-    if ($fp)
-    {
-      $writtenBytes = fwrite($fp, $content, strlen($content));
-
-      if(fclose($fp))
-        return $writtenBytes;
-    }
-    return false;
-  }
 }
 
 ?>
