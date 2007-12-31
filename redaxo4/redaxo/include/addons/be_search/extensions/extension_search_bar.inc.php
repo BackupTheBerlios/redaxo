@@ -6,7 +6,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_bar.inc.php,v 1.1 2007/12/29 17:57:05 kills Exp $
+ * @version $Id: extension_search_bar.inc.php,v 1.2 2007/12/31 13:21:46 tbaddade Exp $
  */
 
 function rex_a256_search_bar($params)
@@ -67,26 +67,30 @@ function rex_a256_search_bar($params)
 
   $category_select = new rex_category_select();
   $category_select->setName('category_id');
-  $category_select->setId('rex-a256_category_id');
+  $category_select->setId('rex-a256-category-id');
   $category_select->setSize('1');
   $category_select->setSelected($category_id);
 
   $form =
    '  <form method="post">
-        <input type="hidden" name="a256_clang" id="rex-a256-article_id" value="'. $clang .'" />
+        <input type="hidden" name="a256_clang" id="rex-a256-article-clang" value="'. $clang .'" />
 
-        <label for="rex-a256-article_name">'. $I18N_BE_SEARCH->msg('search_article_name') .'</label>
-        <input type="text" name="a256_article_name" id="rex-a256-article_name" />
+		<div class="rex-f-lft">
+	        <label for="rex-a256-article-name">'. $I18N_BE_SEARCH->msg('search_article_name') .'</label>
+    	    <input type="text" name="a256_article_name" id="rex-a256-article-name" />
 
-        <label for="rex-a256-article_id">'. $I18N_BE_SEARCH->msg('search_article_id') .'</label>
-        <input type="text" name="a256_article_id" id="rex-a256-article_id" />
-        <input type="submit" name="" value="'. $I18N_BE_SEARCH->msg('search_start') .'" />
-
-        <label for="rex-a256_category_id">'. $I18N_BE_SEARCH->msg('search_quick_navi') .'</label>
-        '. $category_select->get() . '
-        <noscript>
-          <input type="submit" name="" value="'. $I18N_BE_SEARCH->msg('search_jump_to_category') .'" />
-        </noscript>
+        	<label for="rex-a256-article-id">'. $I18N_BE_SEARCH->msg('search_article_id') .'</label>
+	        <input type="text" name="a256_article_id" id="rex-a256-article-id" />
+    	    <input type="submit" name="" value="'. $I18N_BE_SEARCH->msg('search_start') .'" />
+		</div>
+		
+		<div class="rex-f-rght">
+			<label for="rex-a256-category-id">'. $I18N_BE_SEARCH->msg('search_quick_navi') .'</label>
+			'. $category_select->get() . '
+			<noscript>
+			  <input type="submit" name="" value="'. $I18N_BE_SEARCH->msg('search_jump_to_category') .'" />
+			</noscript>
+        </div>
       </form>';
 
   $search_bar =
