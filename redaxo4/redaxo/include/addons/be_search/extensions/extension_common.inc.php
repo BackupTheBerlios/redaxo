@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.1 2007/12/29 17:57:05 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.2 2007/12/31 12:09:05 kills Exp $
  */
 
 rex_register_extension('PAGE_HEADER', 'rex_a256_insertCss');
@@ -25,11 +25,11 @@ function rex_a256_insertCss($params)
 
   $css ='
     <!-- Backend Search CSS //-->
-	  <script type="text/javascript">
+	  <style type="text/css">
 	  <!--
 	  '. $cssContent .'
 	  //-->
-	  </script>
+	  </style>
     <!-- End Backend Search CSS //-->
   ';
 
