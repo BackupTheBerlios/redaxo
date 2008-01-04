@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.4 2007/12/31 11:38:18 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.5 2008/01/04 12:09:16 kills Exp $
  */
 
 /*
@@ -825,6 +825,10 @@ class rex_list
   {
     if(!is_array($format))
       return $value;
+
+    // Callbackfunktion -> Alle Werte übergeben
+    if($format[0] == 'custom')
+      $value = $this->sql;
 
     return rex_formatter::format($value, $format[0], $format[1]);
   }

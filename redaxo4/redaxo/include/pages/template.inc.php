@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: template.inc.php,v 1.2 2007/12/31 11:43:57 kills Exp $
+ * @version $Id: template.inc.php,v 1.3 2008/01/04 12:10:04 kills Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -241,7 +241,7 @@ if ($OUT) {
   $list->setColumnParams('name', array('function' => 'edit', 'template_id' => '###id###'));
 
   $list->setColumnLabel('active', $I18N->msg('header_template_active'));
-  $list->setColumnFormat('active', 'custom', create_function('$active', 'global $I18N; return $active == 1 ? $I18N->msg("yes") : $I18N->msg("no");'));
+  $list->setColumnFormat('active', 'custom', create_function('$row', 'global $I18N; return $row->getValue("active") == 1 ? $I18N->msg("yes") : $I18N->msg("no");'));
 
   $list->addColumn($I18N->msg('header_template_functions'), $I18N->msg('delete_template'));
   $list->setColumnParams($I18N->msg('header_template_functions'), array('function' => 'delete', 'template_id' => '###id###'));
