@@ -11,7 +11,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: class.tiny.inc.php,v 1.1 2007/12/28 10:45:09 kills Exp $
+ * @version $Id: class.tiny.inc.php,v 1.2 2008/01/10 14:52:16 kills Exp $
  */
 
 global $TINY2;
@@ -312,21 +312,12 @@ class rexTiny2Editor
   {
     global $REX;
 
-    if (isset ($_SERVER['SCRIPT_URL']))
-    {
-      $address = $_SERVER['SCRIPT_URL'];
-    }
-    elseif (isset ($_SERVER['SCRIPT_FILENAME']))
-    {
-      $address = $_SERVER['SCRIPT_FILENAME'];
-    }
-
-
     $this->address = dirname(dirname($_SERVER['PHP_SELF']));
-
     $splitURL = split('/redaxo/', $this->address);
-
     $this->address = $splitURL[0];
+
+    if($this->address != '/' && $this->address != '\\')
+      $this->address .= '/';
 
     if ($GLOBALS['TINY2']['script'] != 1)
     {
@@ -366,7 +357,7 @@ class rexTiny2Editor
     }
 
     echo "\n" . '<script language="javascript" type="text/javascript">' . "\n";
-    echo 'var sDocumentBase = "' . $this->address . '/"' . ';' . "\n";
+    echo 'var sDocumentBase = "' . $this->address . '"' . ';' . "\n";
 
     echo 'tinyMCE.init({' . "\n";
     echo 'document_base_url: sDocumentBase,' . "\n";
