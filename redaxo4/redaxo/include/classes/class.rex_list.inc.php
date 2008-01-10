@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.5 2008/01/04 12:09:16 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.6 2008/01/10 14:48:09 kills Exp $
  */
 
 /*
@@ -46,6 +46,7 @@ class rex_list
   var $columnAttributes;
   var $columnLayouts;
   var $columnParams;
+  var $columnDisabled;
 
   // --------- Layout, Default
   var $defaultColumnLayout;
@@ -96,6 +97,7 @@ class rex_list
     $this->columnOptions = array();
     $this->columnAttributes = array();
     $this->columnLayouts = array();
+    $this->columnDisabled = array();
 
     // --------- Default
     $this->defaultColumnLayout = array('<th>###VALUE###</th>','<td>###VALUE###</td>');
@@ -239,10 +241,12 @@ class rex_list
     $this->setColumnLayout($columnHead, $columnLayout);
   }
 
+  /**
+   * Entfernt eine Spalte aus der Anzeige
+   */
   function removeColumn($column)
   {
-    $key = array_search($column, $this->columnNames);
-    unset($this->columnNames[$key]);
+    $this->columnDisabled[] = $column;
   }
 
   /**
@@ -865,7 +869,7 @@ class rex_list
 
     // Columns vars
     $columnFormates = array();
-    $columnNames = $this->getColumnNames();
+    $columnNames = array_diff($this->getColumnNames(), $this->columnDisabled);
 
     // List vars
     $sortColumn = $this->getSortColumn();
