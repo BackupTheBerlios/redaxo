@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Templates
  *
  * @package redaxo4
- * @version $Id: class.rex_template.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
+ * @version $Id: class.rex_template.inc.php,v 1.3 2008/01/11 13:40:32 kills Exp $
  */
 
 class rex_template
@@ -32,6 +32,8 @@ class rex_template
     // Generated Datei erzeugen
     if($this->generate())
       return $this->getFilePath($this->getId());
+
+    trigger_error('Unable to generate rexTemplate with id "'. $this->getId() . '"', E_USER_ERROR);
 
     return FALSE;
   }
