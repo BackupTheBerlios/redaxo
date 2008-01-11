@@ -9,7 +9,7 @@
  * ...
  *
  * @package redaxo4
- * @version $Id: class.rex_var_article.inc.php,v 1.2 2008/01/11 14:02:29 kills Exp $
+ * @version $Id: class.rex_var_article.inc.php,v 1.3 2008/01/11 14:57:08 kills Exp $
  */
 
 class rex_var_article extends rex_var
@@ -18,13 +18,13 @@ class rex_var_article extends rex_var
 
   function getTemplate($content)
   {
+    $content = $this->matchArticleVar($content);
     return $this->matchArticle($content);
   }
 
   function getBEOutput(& $sql, $content)
   {
-    $content = $this->matchArticleVar($content);
-    return $this->matchArticle($content);
+    return $this->getTemplate($content);
   }
 
   function getArticleVarInputParams($content, $varname)
