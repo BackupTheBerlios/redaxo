@@ -6,7 +6,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_bar.inc.php,v 1.4 2007/12/31 13:58:28 kills Exp $
+ * @version $Id: extension_search_bar.inc.php,v 1.5 2008/01/11 09:38:57 kills Exp $
  */
 
 function rex_a256_search_bar($params)
@@ -60,6 +60,10 @@ function rex_a256_search_bar($params)
         $search->next();
       }
       $search_result .= '</ul>';
+    }
+    else
+    {
+      $search_result .= rex_warning($I18N_BE_SEARCH->msg('search_no_results'));
     }
   }
 
