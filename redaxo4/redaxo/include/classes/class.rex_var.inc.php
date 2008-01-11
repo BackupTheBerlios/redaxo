@@ -4,7 +4,7 @@
 /**
  * Abtrackte Basisklasse für REX_VARS
  * @package redaxo4
- * @version $Id: class.rex_var.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.rex_var.inc.php,v 1.2 2008/01/11 14:00:19 kills Exp $
  */
 
 class rex_var
@@ -177,7 +177,7 @@ class rex_var
   {
     $result = array ();
 
-    if (preg_match_all('/' . $varname . '\[([^\]]*)\]/ms', $content, $matches))
+    if (preg_match_all('/' . preg_quote($varname, '/') . '\[([^\]]*)\]/ms', $content, $matches))
     {
       foreach ($matches[1] as $match)
       {
