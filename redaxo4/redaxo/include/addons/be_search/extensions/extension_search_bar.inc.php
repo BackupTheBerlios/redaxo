@@ -6,13 +6,14 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_bar.inc.php,v 1.5 2008/01/11 09:38:57 kills Exp $
+ * @version $Id: extension_search_bar.inc.php,v 1.6 2008/01/11 15:16:33 kills Exp $
  */
 
 function rex_a256_search_bar($params)
 {
   global $REX, $I18N_BE_SEARCH, $category_id, $clang;
 
+  $message = '';
   $search_result = '';
   $editUrl = 'index.php?page=content&article_id=%s&mode=edit&clang=%s';
 
@@ -63,7 +64,7 @@ function rex_a256_search_bar($params)
     }
     else
     {
-      $search_result .= rex_warning($I18N_BE_SEARCH->msg('search_no_results'));
+      $message = rex_warning($I18N_BE_SEARCH->msg('search_no_results'));
     }
   }
 
@@ -98,7 +99,7 @@ function rex_a256_search_bar($params)
 
       </form>';
 
-  $search_bar =
+  $search_bar = $message.
   '<div id="rex-a256-searchbar">
      '. $form .'
      '. $search_result .'
