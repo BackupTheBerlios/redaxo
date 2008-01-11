@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.8 2008/01/11 19:23:05 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.9 2008/01/11 19:25:10 kills Exp $
  */
 
 /*
@@ -69,7 +69,7 @@ class rex_list
    * @param $rowsPerPage Anzahl der Elemente pro Zeile
    * @param $listName Name der Liste
    */
-  function rex_list($query, $rowsPerPage = 3, $listName = null, $debug = false)
+  function rex_list($query, $rowsPerPage = 30, $listName = null, $debug = false)
   {
     global $REX;
 
