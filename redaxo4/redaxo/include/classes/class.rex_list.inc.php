@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.11 2008/01/14 14:03:51 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.12 2008/01/14 14:20:46 kills Exp $
  */
 
 /*
@@ -611,7 +611,7 @@ class rex_list
       if(strpos(strtoupper($query), 'ORDER BY') === false)
         $query .= ' ORDER BY '. $sortColumn .' '. $sortType;
       else
-        $query = preg_replace('/ORDER BY ([^ ]*)(,[asc|desc])?/', 'ORDER BY '. $sortColumn .' '. $sortType, $query);
+        $query = preg_replace('/ORDER BY [^ ]* (asc|desc)?/i', 'ORDER BY '. $sortColumn .' '. $sortType, $query);
     }
 
     $query .= ' LIMIT '. $startRow .','. $rowsPerPage;
