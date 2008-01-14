@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.10 2008/01/14 13:28:50 tbaddade Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.11 2008/01/14 14:03:51 kills Exp $
  */
 
 /*
@@ -561,12 +561,11 @@ class rex_list
 //    {
 //      $params['items'] = $this->getRowsPerPage();
 //    }
-// aendern der sortierung pro spalte aktuell nicht vorgesehen
-//    if(!isset($params['sort']))
-//    {
-//      $params['sort'] = $this->getSortColumn();
-//      $params['sorttype'] = $this->getSortType();
-//    }
+    if(!isset($params['sort']))
+    {
+      $params['sort'] = $this->getSortColumn();
+      $params['sorttype'] = $this->getSortType();
+    }
 
     $paramString = '';
     foreach($params as $name => $value)
@@ -608,7 +607,12 @@ class rex_list
     $sortType = $this->getSortType();
 
     if($sortColumn != '')
-      $query .= ' ORDER BY '. $sortColumn .' '. $sortType;
+    {
+      if(strpos(strtoupper($query), 'ORDER BY') === false)
+        $query .= ' ORDER BY '. $sortColumn .' '. $sortType;
+      else
+        $query = preg_replace('/ORDER BY ([^ ]*)(,[asc|desc])?/', 'ORDER BY '. $sortColumn .' '. $sortType, $query);
+    }
 
     $query .= ' LIMIT '. $startRow .','. $rowsPerPage;
 
@@ -932,9 +936,9 @@ class rex_list
         $columnName = $columnName[0];
 
       $columnHead = $this->getColumLabel($columnName);
-      if($columnName != $sortColumn && $this->hasColumnOption($columnName, REX_LIST_OPT_SORT))
+      if($this->hasColumnOption($columnName, REX_LIST_OPT_SORT))
       {
-        $columnSortType = $sortType == 'desc' ? 'asc' : 'desc';
+        $columnSortType = $columnName == $sortColumn && $sortType == 'desc' ? 'asc' : 'desc';
         $columnHead = '<a href="'. $this->getUrl(array('start' => $this->getStartRow(),'sort' => $columnName, 'sorttype' => $columnSortType)) .'">'. $columnHead .'</a>';
       }
 
