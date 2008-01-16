@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.13 2008/01/15 19:14:04 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.14 2008/01/16 16:15:32 tbaddade Exp $
  */
 
 /*
@@ -739,15 +739,19 @@ class rex_list
         '<span class="rex-list-msg">'. $I18N->msg('list_rows_found', $this->getRows()) .'</span>'.
       '</p>';
     */
-
+/*
     $s = "\n".
       '<p class="rex-list-mnu">'.
         '<a href="'. $this->getUrl(array('start' => $start - $rowsPerPage)) .'"><img src="media/back.gif" alt="'. $I18N->msg('list_previous') .'" title="'. $I18N->msg('list_previous') .'" /></a>'. "\n".
       '</p>';
+*/
+
+    $s = '<ul class="rex-list-pgnt">'. "\n";
+    $s .= '<li class="rex-list-pgnt-img"><a href="'. $this->getUrl(array('start' => $start - $rowsPerPage)) .'"><img src="media/back.gif" alt="'. $I18N->msg('list_previous') .'" title="'. $I18N->msg('list_previous') .'" /></a></li>';
 
     if($pages > 1)
     {
-      $s .= '<ul class="rex-list-pgnt">'. "\n";
+      //$s .= '<ul class="rex-list-pgnt">'. "\n";
       for($i = 1; $i <= $pages; $i++)
       {
         $first = ($i - 1) * $rowsPerPage;
@@ -758,19 +762,24 @@ class rex_list
 
         $pageLink = $i;
         if($start != $first)
-          $pageLink = '<a href="'. $this->getUrl(array('start' => $first)) .'">'. $pageLink .'</a>';
+          $pageLink = '<a href="'. $this->getUrl(array('start' => $first)) .'"><span>'. $pageLink .'</span></a>';
+        else
+          $pageLink = '<span><span>'.$pageLink.'</span></span>';
 
-        $s .= '<li>'. $pageLink .'</li>';
+        $s .= '<li class="rex-list-pgnt-page">'. $pageLink .'</li>';
       }
-      $s .= '</ul>'. "\n";
+      //$s .= '</ul>'. "\n";
     }
-
+    $s .= '<li class="rex-list-pgnt-img"><a href="'. $this->getUrl(array('start' => $start + $rowsPerPage)) .'"><img src="media/forward.gif" alt="'. $I18N->msg('list_next') .'" title="'. $I18N->msg('list_next') .'" /></a></li>';
+    $s .= '<li class="rex-list-msg"><span>'. $I18N->msg('list_rows_found', $this->getRows()) .'</span></li>';
+    $s .= '</ul>'. "\n";
+/*
     $s .= "\n".
       '<p class="rex-list-mnu">'.
         '<a href="'. $this->getUrl(array('start' => $start + $rowsPerPage)) .'"><img src="media/forward.gif" alt="'. $I18N->msg('list_next') .'" title="'. $I18N->msg('list_next') .'" /></a>'. "\n".
         '<span class="rex-list-msg">'. $I18N->msg('list_rows_found', $this->getRows()) .'</span>'.
       '</p>';
-
+*/
     return '<div class="rex-list-navi">'.$s.'</div>';
   }
 
