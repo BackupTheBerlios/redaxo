@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.16 2008/01/17 13:47:35 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.17 2008/01/17 13:51:31 kills Exp $
  */
 
 /*
@@ -21,6 +21,24 @@ $list->addColumn('testhead','###id### - ###name###',-1);
 $list->addColumn('testhead2','testbody2');
 $list->setCaption('thomas macht das css');
 $list->show();
+
+
+Beispiel für Custom Callbacks mit Parametern:
+
+function abc($params)
+{
+  // $params['subject']  ist das SQL Objekt der aktuellen Zeile
+  // $params['params']   sind die Parameter die du selbst angibst
+
+  return $xyz; // Rückgabewert = Wert der in der liste erscheint - kein htmlspechialchars!
+}
+
+$list->setColumnFormat('id', 'custom',
+  array(
+    'abc',
+    array('xy' => 'abc', '123' => '45')
+  )
+);
 
 */
 
