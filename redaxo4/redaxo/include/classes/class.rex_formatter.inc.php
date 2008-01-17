@@ -2,7 +2,7 @@
 
 /**
  * @package redaxo4
- * @version $Id: class.rex_formatter.inc.php,v 1.2 2008/01/17 13:47:13 kills Exp $
+ * @version $Id: class.rex_formatter.inc.php,v 1.3 2008/01/17 14:06:39 kills Exp $
  */
 
 /**
@@ -234,7 +234,7 @@ class rex_formatter
       }
     }
     // Protokoll
-    if (!preg_match('@(http|https|ftp|ftps|telnet|redaxo)://@', $value))
+    if (!preg_match('@((ht|f)tps?|telnet|redaxo)://@', $value))
     {
       $value = 'http://'.$value;
     }
