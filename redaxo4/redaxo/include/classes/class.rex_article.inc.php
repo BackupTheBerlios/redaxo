@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.4 2007/12/29 17:26:16 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.5 2008/01/19 10:43:06 kristinus Exp $
  */
 
 class rex_article
@@ -513,6 +513,23 @@ class rex_article
             $slice_content = $this->replaceVars($this->CONT, $slice_content);
           }
           // --------------- ENDE EINZELNER SLICE
+
+					// --------------- EP: SLICE_SHOW
+
+					$slice_content = rex_register_extension_point(
+						'SLICE_SHOW',
+						$slice_content,
+							array(
+								'article_id' => $this->article_id,
+								'clang' => $this->clang,
+								'ctype' => $this->ctype,
+								'module_id' => $RE_MODUL_ID[$I_ID],
+								'slice_id' => $RE_CONTS[$I_ID],
+								'function' => $this->function,
+								'function_slice_id' => $this->slice_id
+							)
+					);
+
 
           // ---------- slice in ausgabe speichern wenn ctype richtig
             if ($this->ctype == -1 or $this->ctype == $RE_CONTS_CTYPE[$I_ID])
