@@ -9,7 +9,7 @@
  * This framework can be used in Modules, Templates and PHP-Slices!
  *
  * @package redaxo4
- * @version $Id: class.ooarticleslice.inc.php,v 1.2 2008/01/21 12:51:51 kills Exp $
+ * @version $Id: class.ooarticleslice.inc.php,v 1.3 2008/01/21 13:16:58 kills Exp $
  */
 
 class OOArticleSlice
@@ -127,6 +127,11 @@ class OOArticleSlice
   function getNextSlice()
   {
     return OOArticleSlice::getSliceWhere('re_article_slice_id = '. $this->_id .' AND clang = '. $this->_clang);
+  }
+
+  function getPrevSlice()
+  {
+    return OOArticleSlice::getSliceWhere('id = '. $this->_re_article_slice_id .' AND clang = '. $this->_clang);
   }
 
   function getSliceWhere($whereCluase, $default = null)
