@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.7 2008/01/23 15:34:20 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.8 2008/01/23 16:23:03 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -375,10 +375,9 @@ function _rex_a62_metainfo_handleSave(&$params, &$sqlSave, $sqlFields)
         $saveValue = '|'. implode('|', $postValue) .'|';
       }
       // Type 3 => select
-      // Type 4 => radio
       // Type 5 => checkbox
       else if($fieldType == '3' && strpos($fieldAttributes, 'multiple') !== false ||
-              $fieldType == '4' || $fieldType == '5')
+              $fieldType == '5')
       {
         // Mehrwertiges Feld, aber nur ein Wert ausgewählt
         $saveValue = '|'. $postValue[0] .'|';
