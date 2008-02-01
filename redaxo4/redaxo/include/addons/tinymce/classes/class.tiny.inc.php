@@ -11,7 +11,7 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: class.tiny.inc.php,v 1.3 2008/01/30 14:14:07 kills Exp $
+ * @version $Id: class.tiny.inc.php,v 1.4 2008/02/01 09:59:07 kills Exp $
  */
 
 global $TINY2;
@@ -404,13 +404,13 @@ class rexTiny2Editor
     echo '//redaxo default callback functions' . "\n";
 
     echo 'function insertLink(link,name){' . "\n";
-    echo ' var win=tinyMCE.getWindowArg("window");'."\n";
+    echo ' var win=tinyMCEPopup.getWindowArg("window");'."\n";
     echo ' win.document.forms[0].href.value=link;'."\n";
     echo ' win.document.forms[0].title.value=name;'."\n";
     echo '}' . "\n";
 
     echo 'function insertImage(imageUrl,title){' . "\n";
-    echo ' var win=tinyMCE.getWindowArg("window");'."\n";
+    echo ' var win=tinyMCEPopup.getWindowArg("window");'."\n";
     echo ' win.document.forms[0].src.value=imageUrl;'."\n";
     echo ' win.document.forms[0].title.value=title;'."\n";
     // Hier Fehler behandeln
