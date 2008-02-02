@@ -4,7 +4,7 @@
  * HTTP1.1 Client Cache Features
  *
  * @package redaxo4
- * @version $Id: function_rex_client_cache.inc.php,v 1.2 2007/12/28 10:48:37 kills Exp $
+ * @version $Id: function_rex_client_cache.inc.php,v 1.3 2008/02/02 14:06:17 kills Exp $
  */
 
 /**
@@ -119,6 +119,9 @@ function rex_send_etag($REX_ARTICLE, $content)
  */
 function rex_send_gzip($content)
 {
+  $supportsGzip = false;
+  $enc = '';
+
   // Check if it supports gzip
   if (isset($_SERVER['HTTP_ACCEPT_ENCODING']))
     $encodings = explode(',', strtolower(preg_replace('/\s+/', '', $_SERVER['HTTP_ACCEPT_ENCODING'])));
