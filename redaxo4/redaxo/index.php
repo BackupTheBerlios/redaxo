@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.php,v 1.2 2007/12/28 15:58:47 kills Exp $
+ * @version $Id: index.php,v 1.3 2008/02/03 19:16:04 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -139,6 +139,9 @@ else
         {
           $withheader = false;
           $REX['PAGEPATH'] = $addon_page;
+
+          if(isset($REX['ADDON']['name'][$page]))
+            $page_name = $REX['ADDON']['name'][$page];
         }
         else
         {
@@ -150,6 +153,9 @@ else
           {
             $withheader = false;
             $REX['PAGEPATH'] = $addon_page;
+
+            if(isset($REX['ADDON']['name'][$as]))
+              $page_name = $REX['ADDON']['name'][$as];
           }
         }
       }
