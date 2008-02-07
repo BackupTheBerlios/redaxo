@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo4
- * @version $Id: class.oomedia.inc.php,v 1.2 2007/12/29 18:12:22 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.3 2008/02/07 11:28:19 kills Exp $
  */
 
 class OOMedia
@@ -792,6 +792,7 @@ class OOMedia
       'bmp',
       'css',
       'doc',
+      'docx',
       'eps',
       'gif',
       'gz',
@@ -802,6 +803,9 @@ class OOMedia
       'pdf',
       'png',
       'ppt',
+      'pptx',
+      'pps',
+      'ppsx',
       'rar',
       'rtf',
       'swf',
@@ -810,6 +814,7 @@ class OOMedia
       'txt',
       'wma',
       'xls',
+      'xlsx',
       'zip'
     );
     return $docTypes;
