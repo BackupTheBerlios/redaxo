@@ -6,7 +6,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_bar.inc.php,v 1.6 2008/01/11 15:16:33 kills Exp $
+ * @version $Id: extension_search_bar.inc.php,v 1.7 2008/02/08 19:16:15 kills Exp $
  */
 
 function rex_a256_search_bar($params)
@@ -74,6 +74,7 @@ function rex_a256_search_bar($params)
   $category_select->setName('category_id');
   $category_select->setId('rex-a256-category-id');
   $category_select->setSize('1');
+  $category_select->setAttribute('onchange', 'this.form.submit();');
   $category_select->setSelected($category_id);
 
   $form =
@@ -96,7 +97,6 @@ function rex_a256_search_bar($params)
     			  <input type="submit" name="" value="'. $I18N_BE_SEARCH->msg('search_jump_to_category') .'" />
     			</noscript>
         </div>
-
       </form>';
 
   $search_bar = $message.
