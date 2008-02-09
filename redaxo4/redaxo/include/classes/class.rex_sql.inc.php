@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.4 2008/01/11 13:39:23 kristinus Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.5 2008/02/09 22:14:17 kills Exp $
  */
 
 class rex_sql
@@ -348,7 +348,11 @@ class rex_sql
         if(strpos($fld_name, '.') !== false)
           $fld_name = str_replace('.', '`.`', $fld_name);
 
-        $qry .= '`' . $fld_name . '`="' . $value .'"';
+        if($value === null)
+          $qry .= '`' . $fld_name . '`= NULL';
+        else
+          $qry .= '`' . $fld_name . '`="' . $value .'"';
+
 // Da Werte via POST/GET schon mit magic_quotes escaped werden,
 // brauchen wir hier nicht mehr escapen
 //        $qry .= '`' . $fld_name . '`=' . $this->escape($value);
@@ -380,7 +384,7 @@ class rex_sql
    */
   function insert($successMessage = null)
   {
-    return $this->statusQuery('INSERT INTO `' . $this->table . '` SET ' . $this->buildSetQuery() .' '. $this->wherevar, $successMessage);
+    return $this->statusQuery('INSERT INTO `' . $this->table . '` SET ' . $this->buildSetQuery(), $successMessage);
   }
 
   /**
