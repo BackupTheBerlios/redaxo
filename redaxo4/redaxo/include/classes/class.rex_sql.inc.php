@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.5 2008/02/09 22:14:17 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.6 2008/02/09 22:23:16 kills Exp $
  */
 
 class rex_sql
@@ -277,12 +277,12 @@ class rex_sql
       $_row = $row;
     }
 
-    $res = @mysql_result($this->result, $_row, $feldname);
+    $res = mysql_result($this->result, $_row, $feldname);
     if($res === false && function_exists('debug_backtrace'))
     {
       $trace = debug_backtrace();
       $loc = $trace[0];
-      if ($this->debugsql) echo '<b>Warning</b>:  mysql_result('. $feldname .'): Initial error found in file <b>'. $loc['file'] .'</b> on line <b>'. $loc['line'] .'</b><br />';
+      echo '<b>Warning</b>:  mysql_result('. $feldname .'): Initial error found in file <b>'. $loc['file'] .'</b> on line <b>'. $loc['line'] .'</b><br />';
     }
     return $res;
   }
