@@ -9,10 +9,10 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: help.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: help.inc.php,v 1.2 2008/02/10 16:11:56 kristinus Exp $
  */
 ?>
-<h3>Version: 0.3</h1>
+<h3>Version: 1.0</h1>
 
 <h3>Features:</h3>
 
