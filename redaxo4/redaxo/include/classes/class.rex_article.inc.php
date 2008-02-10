@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.6 2008/01/25 17:06:43 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.7 2008/02/10 16:33:49 kristinus Exp $
  */
 
 class rex_article
@@ -306,7 +306,7 @@ class rex_article
 
           for ($i=0;$i<$MODULE->getRows();$i++)
           {
-            if ($REX_USER->hasPerm('module['.$MODULE->getValue('id').']') || $REX_USER->hasPerm('admin[]')) $MODULESELECT->addOption(rex_translate($MODULE->getValue('name')),$MODULE->getValue('id'));
+            if ($REX_USER->hasPerm('module['.$MODULE->getValue('id').']') || $REX_USER->hasPerm('admin[]')) $MODULESELECT->addOption(rex_translate($MODULE->getValue('name'),NULL,FALSE),$MODULE->getValue('id'));
             $MODULE->next();
           }
         }

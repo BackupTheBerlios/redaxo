@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.17 2008/01/17 13:51:31 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.18 2008/02/10 16:33:49 kristinus Exp $
  */
 
 /*
@@ -999,7 +999,7 @@ class rex_list
           else
           {
             // Spalten aus dem ResultSet
-            $columnValue = $this->formatValue($this->sql->getValue($columnName), $columnFormates[$columnName], true);
+            $columnValue = htmlspecialchars($this->formatValue($this->sql->getValue($columnName), $columnFormates[$columnName], true));
           }
 
 
