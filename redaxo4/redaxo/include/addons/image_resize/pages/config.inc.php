@@ -8,7 +8,7 @@
  * @author jan.kristinus[at]yakmara[dot]de Jan Kristinus
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.2 2008/02/11 20:13:38 kills Exp $
+ * @version $Id: config.inc.php,v 1.3 2008/02/11 20:18:10 kills Exp $
  */
 
 // rex_request();
@@ -80,7 +80,7 @@ echo '
             <input type="text" id="max_filters" name="max_filters" value="'. htmlspecialchars($REX['ADDON']['image_resize']['max_filters']).'" />
           </p>
           <p>
-            <label for="max_resizekb">Maximale Gr&ouml;sse einer Datei, die &uuml;ber Image-Resize umgewandelt werden darf</label>
+            <label for="max_resizekb">Maximale Gr&ouml;sse einer Datei in Kilobyte, die &uuml;ber Image-Resize umgewandelt werden darf</label>
             <input type="text" id="max_resizekb" name="max_resizekb" value="'. htmlspecialchars($REX['ADDON']['image_resize']['max_resizekb']).'" />
           </p>
           <p>
