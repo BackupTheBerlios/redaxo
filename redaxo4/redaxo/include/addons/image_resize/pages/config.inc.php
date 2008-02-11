@@ -2,13 +2,13 @@
 
 /**
  * Image-Resize Addon
- * 
+ *
  * @author office[at]vscope[dot]at Wolfgang Hutteger
- * @author marcus.staab[at]redaxo[dot]de Markus Staab
+ * @author markus.staab[at]redaxo[dot]de Markus Staab
  * @author jan.kristinus[at]yakmara[dot]de Jan Kristinus
- * 
+ *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.1 2008/02/10 16:10:02 kristinus Exp $
+ * @version $Id: config.inc.php,v 1.2 2008/02/11 20:13:38 kills Exp $
  */
 
 // rex_request();
@@ -22,13 +22,13 @@ $max_resizepixel = rex_request('max_resizepixel', 'int');
 
 if ($func == "update")
 {
-	
+
 	$REX['ADDON']['image_resize']['max_cachefiles'] = $max_cachefiles;
 	$REX['ADDON']['image_resize']['max_filters'] = $max_filters;
 	$REX['ADDON']['image_resize']['max_resizekb'] = $max_resizekb;
 	$REX['ADDON']['image_resize']['max_resizepixel'] = $max_resizepixel;
 	$REX['ADDON']['image_resize']['jpg_quality'] = $jpg_quality;
-	
+
 	$content = '$REX[\'ADDON\'][\'image_resize\'][\'max_cachefiles\'] = '.$max_cachefiles.';
 $REX[\'ADDON\'][\'image_resize\'][\'max_filters\'] = '.$max_filters.';
 $REX[\'ADDON\'][\'image_resize\'][\'max_resizekb\'] = '.$max_resizekb.';
