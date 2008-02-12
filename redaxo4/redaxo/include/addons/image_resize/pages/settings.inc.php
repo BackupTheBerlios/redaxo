@@ -8,7 +8,7 @@
  * @author jan.kristinus[at]yakmara[dot]de Jan Kristinus
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.3 2008/02/11 20:18:10 kills Exp $
+ * @version $Id: settings.inc.php,v 1.1 2008/02/12 07:09:16 kristinus Exp $
  */
 
 // rex_request();
@@ -67,7 +67,7 @@ echo '
 
   <form action="index.php" method="post">
     <input type="hidden" name="page" value="image_resize" />
-    <input type="hidden" name="subpage" value="config" />
+    <input type="hidden" name="subpage" value="settings" />
     <input type="hidden" name="func" value="update" />
 
         <fieldset>

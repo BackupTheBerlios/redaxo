@@ -8,7 +8,7 @@
  * @author jan.kristinus[at]yakmara[dot]de Jan Kristinus
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.3 2008/02/11 20:13:38 kills Exp $
+ * @version $Id: index.inc.php,v 1.4 2008/02/12 07:09:16 kristinus Exp $
  */
 
 include $REX['INCLUDE_PATH'] . '/layout/top.php';
@@ -22,7 +22,7 @@ if (isset ($subpage) and $subpage == 'clear_cache')
 // Build Subnavigation
 $subpages = array (
   	array ('','Erkl&auml;rung'),
-  	array ('config','Konfiguration'),
+  	array ('settings','Konfiguration'),
   	array ('clear_cache','Resize Cache l&ouml;schen'),
 	);
 
@@ -31,7 +31,7 @@ rex_title('Image Resize', $subpages);
 // Include Current Page
 switch($subpage)
 {
-  case 'config' :
+  case 'settings' :
   {
     break;
   }
