@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Templates
  *
  * @package redaxo4
- * @version $Id: class.rex_template.inc.php,v 1.3 2008/01/11 13:40:32 kills Exp $
+ * @version $Id: class.rex_template.inc.php,v 1.4 2008/02/13 09:44:29 kills Exp $
  */
 
 class rex_template
@@ -64,6 +64,9 @@ class rex_template
     {
     	if($this->generate())
       {
+        // Dateicache löschen, damit file_exists jetzt ein neuer ergebnis liefert
+        clearstatcache();
+
         // rekursiv aufrufen, nach dem erfolgreichen generate
         return $this->getTemplate();
     	}
