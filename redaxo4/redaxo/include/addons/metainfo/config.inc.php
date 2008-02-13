@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.2 2008/02/13 10:07:03 kills Exp $
+ * @version $Id: config.inc.php,v 1.3 2008/02/13 20:30:26 kills Exp $
  */
 
 $mypage = 'metainfo';
@@ -39,7 +39,7 @@ if ($REX['REDAXO'])
     {
       require_once ($REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/extensions/extension_cat_metainfo.inc.php');
     }
-    elseif ($page == 'medienpool' && isset ($subpage) && $subpage == 'detail')
+    elseif ($page == 'medienpool')
     {
       require_once ($REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/extensions/extension_med_metainfo.inc.php');
     }
