@@ -12,7 +12,7 @@
  * @author <a href="http://www.yakamara.de">www.yakamara.de</a>
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.4 2008/02/11 20:18:33 kills Exp $
+ * @version $Id: config.inc.php,v 1.5 2008/02/13 10:07:03 kills Exp $
  */
 
 $mypage = 'image_resize';
@@ -24,7 +24,7 @@ $REX['ADDON']['name'][$mypage] = 'Image Resize';
 $REX['ADDON']['perm'][$mypage] = 'image_resize[]';
 $REX['ADDON']['version'][$mypage] = '1.0';
 $REX['ADDON']['author'][$mypage] = 'Wolfgang Hutteger, Markus Staab, Jan Kristinus';
-// $REX['ADDON']['supportpage'][$mypage] = '';
+$REX['ADDON']['supportpage'][$mypage] = 'forum.redaxo.de';
 $REX['PERM'][] = 'image_resize[]';
 
 /* User Parameter */

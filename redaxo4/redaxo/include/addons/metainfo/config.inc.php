@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: config.inc.php,v 1.2 2008/02/13 10:07:03 kills Exp $
  */
 
 $mypage = 'metainfo';
@@ -20,7 +20,7 @@ $REX['ADDON']['name'][$mypage] = 'Meta Infos';
 $REX['ADDON']['perm'][$mypage] = 'metainfo[]';
 $REX['ADDON']['version'][$mypage] = "1.0";
 $REX['ADDON']['author'][$mypage] = "Markus Staab, Jan Kristinus";
-// $REX['ADDON']['supportpage'][$mypage] = "";
+$REX['ADDON']['supportpage'][$mypage] = 'forum.redaxo.de';
 
 $REX['PERM'][] = 'metainfo[]';
 

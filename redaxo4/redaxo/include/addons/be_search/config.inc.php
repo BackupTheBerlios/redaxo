@@ -7,7 +7,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.1 2007/12/29 17:57:05 kills Exp $
+ * @version $Id: config.inc.php,v 1.2 2008/02/13 10:07:03 kills Exp $
  */
 
 $mypage = 'be_search';
@@ -19,7 +19,7 @@ $REX['ADDON']['page'][$mypage] = $mypage;
 //$REX['ADDON']['perm'][$mypage] = 'be_search[]';
 $REX['ADDON']['version'][$mypage] = '1.0';
 $REX['ADDON']['author'][$mypage] = 'Markus Staab';
-// $REX['ADDON']['supportpage'][$mypage] = '';
+$REX['ADDON']['supportpage'][$mypage] = 'forum.redaxo.de';
 //$REX['PERM'][] = 'be_search[]';
 
 if ($REX['REDAXO'])
