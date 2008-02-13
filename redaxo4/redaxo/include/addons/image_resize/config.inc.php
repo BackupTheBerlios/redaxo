@@ -12,7 +12,7 @@
  * @author <a href="http://www.yakamara.de">www.yakamara.de</a>
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.5 2008/02/13 10:07:03 kills Exp $
+ * @version $Id: config.inc.php,v 1.6 2008/02/13 19:37:46 kills Exp $
  */
 
 $mypage = 'image_resize';
@@ -59,7 +59,7 @@ if ($REX['GG'])
 $rex_resize = rex_get('rex_resize', 'string');
 if ($rex_resize != '')
 {
-	rex_thumbnail::prepareImage($rex_resize);
+	rex_thumbnail::createFromUrl($rex_resize);
 }
 
 ?>

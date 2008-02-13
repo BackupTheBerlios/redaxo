@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: class.thumbnail.inc.php,v 1.4 2008/02/13 19:37:26 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.5 2008/02/13 19:37:46 kills Exp $
  */
 
 class rex_thumbnail
@@ -329,7 +329,7 @@ class rex_thumbnail
     imagedestroy($this->getImage());
   }
 
-  function prepareImage($rex_resize)
+  function createFromUrl($rex_resize)
   {
     global $REX;
 
