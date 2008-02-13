@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.7 2008/02/10 16:33:49 kristinus Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.8 2008/02/13 20:45:54 kills Exp $
  */
 
 class rex_article
@@ -407,7 +407,7 @@ class rex_article
               $mne = $msg .'
 			       	<div class="rex-cnt-editmode-slc">
                 <p class="rex-flLeft">'. $RE_MODUL_NAME[$I_ID] .'</p>
-                <ul class="rex-flRight">
+                <ul class="rex-flRight" id="rex-slc-mnu">
               ';
 
               foreach($listElements as $listElement)

@@ -4,7 +4,7 @@
 /**
  * Verwaltung der Inhalte. EditierModul / Metadaten ...
  * @package redaxo4
- * @version $Id: content.inc.php,v 1.4 2008/02/08 19:00:50 kills Exp $
+ * @version $Id: content.inc.php,v 1.5 2008/02/13 20:47:57 kills Exp $
  */
 
 /*
@@ -621,7 +621,7 @@ if ($article->getRows() == 1)
         )
       );
 
-      $ctype_menu .= "\n".'<ul>';
+      $ctype_menu .= "\n".'<ul id="rex-ctype-menu">';
       foreach($listElements as $listElement)
       {
         $ctype_menu .= $listElement;
