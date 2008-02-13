@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_med_metainfo.inc.php,v 1.2 2008/02/13 20:30:26 kills Exp $
+ * @version $Id: extension_med_metainfo.inc.php,v 1.3 2008/02/13 20:51:43 kills Exp $
  */
 
 
@@ -56,6 +56,11 @@ function rex_a62_metainfo_form($params)
     if($sql->getRows() == 1)
     {
       $params['file_id'] = $sql->getValue('file_id');
+    }
+    else
+    {
+      trigger_error('Error occured during file upload', E_USER_ERROR);
+      exit();
     }
   }
 
