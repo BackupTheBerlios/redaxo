@@ -4,7 +4,7 @@
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
  * @package redaxo4
- * @version $Id: function_rex_generate.inc.php,v 1.5 2008/02/09 13:29:33 kills Exp $
+ * @version $Id: function_rex_generate.inc.php,v 1.6 2008/02/13 20:28:49 kills Exp $
  */
 
 // ----------------------------------------- Alles generieren
@@ -1298,8 +1298,13 @@ function rex_medienpool_saveMedia($FILE, $rex_file_category, $FILEINFOS, $userlo
     $FILESQL->setValue('filename',$NFILENAME);
     $FILESQL->setValue('originalname',$FILENAME);
     $FILESQL->setValue('filesize',$FILESIZE);
-    $FILESQL->setValue('width',$size[0]);
-    $FILESQL->setValue('height',$size[1]);
+
+    if($size)
+    {
+      $FILESQL->setValue('width',$size[0]);
+      $FILESQL->setValue('height',$size[1]);
+    }
+
     $FILESQL->setValue('category_id',$rex_file_category);
     // TODO Create + Update zugleich?
     $FILESQL->addGlobalCreateFields($userlogin);
@@ -1311,13 +1316,17 @@ function rex_medienpool_saveMedia($FILE, $rex_file_category, $FILEINFOS, $userlo
   }
 
   $RETURN['title'] = $FILEINFOS['title'];
-  $RETURN['width'] = $size[0];
-  $RETURN['height'] = $size[1];
   $RETURN['type'] = $FILETYPE;
   $RETURN['msg'] = $message;
   $RETURN['ok'] = $ok;
   $RETURN['filename'] = $NFILENAME;
   $RETURN['old_filename'] = $FILENAME;
+
+  if($size)
+  {
+    $RETURN['width'] = $size[0];
+    $RETURN['height'] = $size[1];
+  }
 
   return $RETURN;
 }
