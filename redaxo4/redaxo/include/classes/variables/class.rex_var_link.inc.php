@@ -8,7 +8,7 @@
  * REX_LINKLIST
  *
  * @package redaxo4
- * @version $Id: class.rex_var_link.inc.php,v 1.2 2007/12/29 18:13:39 kills Exp $
+ * @version $Id: class.rex_var_link.inc.php,v 1.3 2008/02/14 15:21:22 kills Exp $
  */
 
 class rex_var_link extends rex_var
@@ -20,10 +20,12 @@ class rex_var_link extends rex_var
     $values = rex_request('LINK', 'array');
     for ($i = 1; $i < 11; $i++)
     {
-      if (!isset ($values[$i]))
-        $values[$i] = '';
-
-      $REX_ACTION['LINK'][$i] = stripslashes($values[$i]);
+      // Nur Werte die urspruenglich gepostet wurden auch uebernehmen
+      // siehe http://forum.redaxo.de/ftopic8174.html
+      if (isset ($values[$i]))
+      {
+        $REX_ACTION['LINK'][$i] = stripslashes($values[$i]);
+      }
     }
     return $REX_ACTION;
   }
@@ -44,7 +46,12 @@ class rex_var_link extends rex_var
 
     for ($i = 1; $i < 11; $i++)
     {
-      $this->setValue($sql, 'link'. $i, $REX_ACTION['LINK'][$i], $escape);
+      // Nur Werte die urspruenglich gepostet wurden auch uebernehmen
+      // siehe http://forum.redaxo.de/ftopic8174.html
+      if (isset ($REX_ACTION['LINK'][$i]))
+      {
+        $this->setValue($sql, 'link'. $i, $REX_ACTION['LINK'][$i], $escape);
+      }
     }
   }
 

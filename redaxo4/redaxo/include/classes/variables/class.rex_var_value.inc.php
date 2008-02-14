@@ -10,7 +10,7 @@
  * REX_IS_VALUE
  *
  * @package redaxo4
- * @version $Id: class.rex_var_value.inc.php,v 1.2 2007/12/29 17:26:52 kills Exp $
+ * @version $Id: class.rex_var_value.inc.php,v 1.3 2008/02/14 15:21:22 kills Exp $
  */
 
 class rex_var_value extends rex_var
@@ -22,10 +22,12 @@ class rex_var_value extends rex_var
     $values = rex_request('VALUE', 'array');
     for ($i = 1; $i < 21; $i++)
     {
-      if (!isset ($values[$i]))
-        $values[$i] = '';
-
-      $REX_ACTION['VALUE'][$i] = stripslashes($values[$i]);
+      // Nur Werte die urspruenglich gepostet wurden auch uebernehmen
+      // siehe http://forum.redaxo.de/ftopic8174.html
+      if (isset ($values[$i]))
+      {
+        $REX_ACTION['VALUE'][$i] = stripslashes($values[$i]);
+      }
     }
     $REX_ACTION['PHP'] = stripslashes(rex_request('INPUT_PHP', 'string'));
     $REX_ACTION['HTML'] = $this->stripPHP(stripslashes(rex_request('INPUT_HTML', 'string')));
@@ -51,7 +53,12 @@ class rex_var_value extends rex_var
 
     for ($i = 1; $i < 21; $i++)
     {
-      $this->setValue($sql, 'value' . $i, $REX_ACTION['VALUE'][$i], $escape);
+      // Nur Werte die urspruenglich gepostet wurden auch uebernehmen
+      // siehe http://forum.redaxo.de/ftopic8174.html
+      if(isset($REX_ACTION['VALUE'][$i]))
+      {
+        $this->setValue($sql, 'value' . $i, $REX_ACTION['VALUE'][$i], $escape);
+      }
     }
 
     $this->setValue($sql, 'php', $REX_ACTION['PHP'], $escape);
