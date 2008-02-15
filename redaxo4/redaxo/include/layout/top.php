@@ -3,7 +3,7 @@
 /**
  * Layout Kopf des Backends
  * @package redaxo4
- * @version $Id: top.php,v 1.2 2008/02/13 20:44:47 kills Exp $
+ * @version $Id: top.php,v 1.3 2008/02/15 14:30:02 kills Exp $
  */
 
 if (!isset ($page_name))
@@ -24,10 +24,6 @@ if (!isset($open_header_only)) $bodyAttr .= ' onunload="closeAll();"';
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $I18N->msg('htmllang'); ?>" lang="<?php echo $I18N->msg('htmllang'); ?>">
 <head>
   <title><?php echo $page_title ?></title>
-<?php
-  // ----- EXTENSION POINT
-  echo rex_register_extension_point('PAGE_HEADER', '');
-?>
   <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $I18N->msg('htmlcharset'); ?>" />
   <meta http-equiv="Content-Language" content="<?php echo $I18N->msg('htmllang'); ?>" />
   <meta http-equiv="Cache-Control" content="no-cache" />
@@ -40,6 +36,10 @@ if (!isset($open_header_only)) $bodyAttr .= ' onunload="closeAll();"';
   var redaxo = true;
   //-->
   </script>
+<?php
+  // ----- EXTENSION POINT
+  echo rex_register_extension_point('PAGE_HEADER', '');
+?>
 </head>
 <body <?php echo $bodyAttr; ?>>
 
