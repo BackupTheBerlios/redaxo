@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: structure.inc.php,v 1.2 2007/12/29 17:55:59 kills Exp $
+ * @version $Id: structure.inc.php,v 1.3 2008/02/17 15:30:52 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -813,14 +813,6 @@ if ($category_id > -1)
         ORDER BY
           prior, name');
 
-
-  $col_status = ' width="153"';
-  // tbody nur anzeigen, wenn später auch inhalt drinnen stehen wird
-  if($sql->getRows() > 0 && $function != 'edit_art')
-  {
-	  $col_status = ' width="51" span="3"';
-  }
-
   echo '
       <table class="rex-table" summary="'. htmlspecialchars($I18N->msg('structure_articles_summary', $cat_name)) .'">
         <caption class="rex-hide">'. htmlspecialchars($I18N->msg('structure_articles_caption', $cat_name)).'</caption>
@@ -832,8 +824,7 @@ if ($category_id > -1)
           <col width="105" />
           <col width="105" />
           <col width="105" />
-          <col'.$col_status.' />
-
+          <col width="51" span="3" />
         </colgroup>
         <thead>
           <tr>
