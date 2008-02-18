@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: medienpool.inc.php,v 1.3 2008/02/13 20:29:18 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.4 2008/02/18 15:50:38 kills Exp $
  */
 
 // TODOS
@@ -950,7 +950,7 @@ if ($subpage == "detail")
         $imgn = 'media/mime-error.gif';
       }else if ($thumbs && $thumbsresize && $rfwidth>199)
       {
-        $imgn = '../index.php?rex_resize=200a__'. $fname;
+        $imgn = '../index.php?rex_resize=200a__'. urlencode($fname);
       }
 
       $add_image = '<div class="rex-mpl-dtl-img">
