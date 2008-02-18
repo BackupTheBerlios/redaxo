@@ -3,7 +3,7 @@
 /**
  * Klasse zum erstellen von Listen
  * @package redaxo4
- * @version $Id: class.rex_form.inc.php,v 1.5 2008/02/18 11:00:33 kills Exp $
+ * @version $Id: class.rex_form.inc.php,v 1.6 2008/02/18 11:01:56 kills Exp $
  */
 
 class rex_form
@@ -716,7 +716,7 @@ class rex_form
           // Falls ein Fehler auftritt, das Formular wieder anzeigen mit der Meldung
           $this->setMessage($result);
         else
-          $this->redirect($I18N->msg('form_save_error'));
+          $this->setMessage($I18N->msg('form_save_error'));
       }
       elseif($controlElement->applied())
       {
