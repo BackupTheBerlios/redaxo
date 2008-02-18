@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: class.rex_tableExpander.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.2 2008/02/18 11:02:23 kills Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);
@@ -69,6 +69,7 @@ class rex_a62_tableExpander extends rex_form
 
     $field =& $this->addTextField('title');
     $field->setLabel($I18N_META_INFOS->msg('field_label_title'));
+    $field->setNotice($I18N_META_INFOS->msg('field_notice_title'));
 
     $field =& $this->addSelectField('type');
     $field->setLabel($I18N_META_INFOS->msg('field_label_type'));
@@ -191,7 +192,7 @@ class rex_a62_tableExpander extends rex_form
     return $string;
   }
 
-  function save()
+  function validate()
   {
     global $I18N_META_INFOS;
 
@@ -213,6 +214,11 @@ class rex_a62_tableExpander extends rex_form
       }
     }
 
+    return parent::validate();
+  }
+
+  function save()
+  {
     // Den alten Wert aus der DB holen
     // Dies muss hier geschehen, da in parent::save() die Werte für die DB mit den
     // POST werten überschrieben werden!
