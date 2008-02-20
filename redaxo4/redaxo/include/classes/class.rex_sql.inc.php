@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.6 2008/02/09 22:23:16 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.7 2008/02/20 18:29:50 kills Exp $
  */
 
 class rex_sql
@@ -138,7 +138,7 @@ class rex_sql
     // DBID aus dem Query herausschneiden, falls vorhanden
     rex_sql::stripQueryDBID($qry);
 
-    if(preg_match('/(SELECT|SHOW|UPDATE|INSERT|DELETE|REPLACE)/i', $qry, $matches))
+    if(preg_match('/^(SELECT|SHOW|UPDATE|INSERT|DELETE|REPLACE)/i', $qry, $matches))
       return strtoupper($matches[1]);
 
     return false;
