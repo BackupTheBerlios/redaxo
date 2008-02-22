@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: class.thumbnail.inc.php,v 1.7 2008/02/22 16:10:33 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.8 2008/02/22 16:11:30 kills Exp $
  */
 
 class rex_thumbnail
@@ -149,11 +149,11 @@ class rex_thumbnail
 
     if (function_exists('ImageCreateTrueColor'))
     {
-      $this->img['des'] = ImageCreateTrueColor($this->img['width_thumb'], $this->img['height_thumb']);
+      $this->img['des'] = @ImageCreateTrueColor($this->img['width_thumb'], $this->img['height_thumb']);
     }
     else
     {
-      $this->img['des'] = ImageCreate($this->img['width_thumb'], $this->img['height_thumb']);
+      $this->img['des'] = @ImageCreate($this->img['width_thumb'], $this->img['height_thumb']);
     }
 
     if(!$this->img['des'])
