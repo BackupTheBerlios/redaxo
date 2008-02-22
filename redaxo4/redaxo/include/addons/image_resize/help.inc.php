@@ -9,10 +9,10 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: help.inc.php,v 1.5 2008/02/22 20:02:14 kills Exp $
+ * @version $Id: help.inc.php,v 1.3 2008/02/22 20:00:49 kills Exp $
  */
 ?>
-<h2>Version: <?php echo $REX['ADDON']['version']['image_resize'] ?></h2>
+<h3>Version: 1.0</h1>
 
 <h3>Features:</h3>
 
@@ -37,8 +37,8 @@ brand<br />
 sepia<br />
 sharpen
 </p>
-
 <h3>Examples:</h3>
+
 <p>
 resize image to a length of 100px and calculate heigt to match ratio<br />
 <b>index.php?rex_resize=100w__imagefile</b>
