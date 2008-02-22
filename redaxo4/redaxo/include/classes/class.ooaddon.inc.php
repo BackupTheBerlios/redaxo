@@ -3,7 +3,7 @@
 /**
  * Klasse zum prüfen ob Addons installiert/aktiviert sind
  * @package redaxo4
- * @version $Id: class.ooaddon.inc.php,v 1.3 2008/02/22 16:27:58 kills Exp $
+ * @version $Id: class.ooaddon.inc.php,v 1.4 2008/02/22 19:12:47 kills Exp $
  */
 
 class OOAddon
@@ -54,6 +54,8 @@ class OOAddon
     }
     else
     {
+      $REX['ADDON'] = array();
+      $REX['ADDON']['install'] = array();
       $REX['ADDON']['status'] = array();
       $addons = array();
     }
