@@ -3,7 +3,7 @@
 /**
  * Klasse zum prüfen ob Addons installiert/aktiviert sind
  * @package redaxo4
- * @version $Id: class.ooaddon.inc.php,v 1.2 2008/02/13 10:08:12 kills Exp $
+ * @version $Id: class.ooaddon.inc.php,v 1.3 2008/02/22 16:27:58 kills Exp $
  */
 
 class OOAddon
@@ -41,6 +41,31 @@ class OOAddon
   function getSupportPage($addon, $default = null)
   {
     return OOAddon::_getProperty($addon, 'supportpage', $default);
+  }
+
+  function getAvailableAddons()
+  {
+    global $REX;
+
+    if(isset($REX['ADDON']) && is_array($REX['ADDON']) &&
+       isset($REX['ADDON']['status']) && is_array($REX['ADDON']['status']))
+    {
+      $addons = $REX['ADDON']['status'];
+    }
+    else
+    {
+      $REX['ADDON']['status'] = array();
+      $addons = array();
+    }
+
+    $avail = array();
+    foreach($addons as $addonName => $addonStatus)
+    {
+      if($addonStatus == 1)
+        $avail[] = $addonName;
+    }
+
+    return $avail;
   }
 
   function _getProperty($addon, $property, $default = null)
