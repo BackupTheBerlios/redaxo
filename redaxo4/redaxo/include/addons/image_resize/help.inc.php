@@ -9,10 +9,10 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: help.inc.php,v 1.2 2008/02/10 16:11:56 kristinus Exp $
+ * @version $Id: help.inc.php,v 1.5 2008/02/22 20:02:14 kills Exp $
  */
 ?>
-<h3>Version: 1.0</h1>
+<h2>Version: <?php echo $REX['ADDON']['version']['image_resize'] ?></h2>
 
 <h3>Features:</h3>
 
@@ -37,8 +37,8 @@ brand<br />
 sepia<br />
 sharpen
 </p>
-<h3>Examples:</h3>
 
+<h3>Examples:</h3>
 <p>
 resize image to a length of 100px and calculate heigt to match ratio<br />
 <b>index.php?rex_resize=100w__imagefile</b>
@@ -58,6 +58,14 @@ resize image to a width of 100px and a heigt of 200px<br />
 <br /><br />
 resize inner image part to a width of 100px and a heigt of 200px<br />
 <b>index.php?rex_resize=100c__200h__imagefile</b>
+
+<br /><br />
+resize inner image part to a width of 100px and a heigt of 200px with an offset of 50px<br />
+<b>index.php?rex_resize=100c__200h__50o__imagefile</b>
+
+<br /><br />
+resize inner image part to a width of 100px and a heigt of 200px with an offset of -150px<br />
+<b>index.php?rex_resize=100c__200h__-150o__imagefile</b>
 
 <br /><br />
 add filter/s: here blur and sepia<br />
