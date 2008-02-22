@@ -11,7 +11,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: class.thumbnail.inc.php,v 1.5 2008/02/13 19:37:46 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.6 2008/02/22 14:47:35 kills Exp $
  */
 
 class rex_thumbnail
@@ -27,6 +27,8 @@ class rex_thumbnail
 
   function rex_thumbnail($imgfile)
   {
+    global $REX;
+
     // ----- imagepfad speichern
     $this->imgfile = $imgfile;
 
@@ -73,7 +75,7 @@ class rex_thumbnail
       $this->img['height_offset_thumb'] = 0;
 
       // --- default quality jpeg
-      $this->img['quality'] = 75;
+      $this->img['quality'] = $REX['ADDON']['image_resize']['jpg_quality'];
       $this->filters = array();
     }
   }
@@ -456,10 +458,6 @@ class rex_thumbnail
 	  {
 	    $thumb->addFilter($filter);
 	  }
-
-	  // jpeg quality
-	  $thumb->jpeg_quality($REX['ADDON']['image_resize']['jpg_quality']);
-
 
 	  // save cache
 	  $thumb->generateImage($cachepath);
