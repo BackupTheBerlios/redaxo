@@ -3,7 +3,7 @@
 /**
  * Sprachobjekt zur Internationalisierung (I18N)
  * @package redaxo4
- * @version $Id: class.i18n.inc.php,v 1.2 2007/12/29 18:05:09 kills Exp $
+ * @version $Id: class.i18n.inc.php,v 1.3 2008/02/23 15:02:15 kristinus Exp $
  */
 
 class i18n
@@ -21,8 +21,9 @@ class i18n
    * the locale must of the common form, eg. de_DE, en_US or just plain en, de.
    * the searchpath is where the language files are located
    */
-  function i18n($locale, $searchpath)
+  function i18n($locale = "de_de", $searchpath)
   {
+  	
     $this->searchpath = $searchpath;
 
     $this->text = array ();
@@ -192,7 +193,7 @@ class i18n
 }
 
 // Funktion zum Anlegen eines Sprache-Objekts
-function rex_create_lang($locale, $searchpath = '')
+function rex_create_lang($locale = "de_de", $searchpath = '')
 {
   global $REX;
 

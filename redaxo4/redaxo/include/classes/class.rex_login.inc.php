@@ -5,7 +5,7 @@
  * Klasse zum handling des Login/Logout-Mechanismuses
  *
  * @package redaxo4
- * @version $Id: class.rex_login.inc.php,v 1.3 2008/02/23 13:16:08 kills Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.4 2008/02/23 15:02:15 kristinus Exp $
  */
 
 class rex_login_sql extends rex_sql
@@ -170,6 +170,9 @@ class rex_login
   function checkLogin()
   {
     global $REX, $I18N;
+    
+    if (!is_object($I18N)) $I18N = rex_create_lang();
+    
     // wenn logout dann header schreiben und auf error seite verweisen
     // message schreiben
 
