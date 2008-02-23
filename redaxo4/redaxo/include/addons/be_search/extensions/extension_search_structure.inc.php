@@ -6,12 +6,17 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_structure.inc.php,v 1.2 2008/02/23 15:01:01 kills Exp $
+ * @version $Id: extension_search_structure.inc.php,v 1.3 2008/02/23 15:13:46 kills Exp $
  */
 
 function rex_a256_search_structure($params)
 {
   global $REX, $REX_USER, $I18N_BE_SEARCH, $category_id, $clang;
+
+  if(!($REX_USER->isAdmin() || $REX_USER->hasPerm('be_search[structure]')))
+  {
+    return $params['subject'];
+  }
 
   $message = '';
   $search_result = '';
