@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: medienpool.inc.php,v 1.9 2008/02/23 14:35:59 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.10 2008/02/23 14:55:35 kills Exp $
  */
 
 // TODOS
@@ -1434,7 +1434,6 @@ if ($subpage == '')
   // ----- EXTENSION POINT
   $qry = rex_register_extension_point('MEDIA_LIST_QUERY', $qry,
     array(
-      'subpage' => $subpage,
       'category_id' => $rex_file_category
     )
   );
