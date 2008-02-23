@@ -7,7 +7,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.5 2008/02/23 13:53:12 kills Exp $
+ * @version $Id: config.inc.php,v 1.6 2008/02/23 14:28:25 kills Exp $
  */
 
 $mypage = 'be_search';
@@ -40,8 +40,8 @@ if ($REX['REDAXO'])
   elseif ($page == 'medienpool')
   {
     require $REX['INCLUDE_PATH'].'/addons/be_search/extensions/extension_search_mpool.inc.php';
-    rex_register_extension('PAGE_MEDIENPOOL_MENU', 'rex_a256_search_mpool_menu');
-    rex_register_extension('PAGE_MEDIENPOOL_HEADER', 'rex_a256_search_mpool');
+    rex_register_extension('MEDIA_LIST_TOOLBAR', 'rex_a256_search_mpool');
+    rex_register_extension('MEDIA_LIST_QUERY', 'rex_a256_search_mpool_query');
   }
 }
 ?>

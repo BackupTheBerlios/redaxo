@@ -6,64 +6,37 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_mpool.inc.php,v 1.2 2008/02/23 13:53:12 kills Exp $
+ * @version $Id: extension_search_mpool.inc.php,v 1.3 2008/02/23 14:28:25 kills Exp $
  */
-
-function rex_a256_search_mpool_menu($params)
-{
-  global $I18N_BE_SEARCH, $I18N;
-
-  $subline = $params['subject'];
-
-  $newSubline = array();
-  foreach($subline as $entry)
-  {
-    $newSubline[] = $entry;
-    if($entry[1] == $I18N->msg('pool_file_list'))
-    {
-      $newSubline[] = array('search', $I18N_BE_SEARCH->msg('search_mpool_search'));
-    }
-  }
-
-  return $newSubline;
-}
 
 function rex_a256_search_mpool($params)
 {
   global $I18N_BE_SEARCH;
 
-  if(rex_request('subpage', 'string') != 'search') return $params['subject'];
+  $media_name = rex_request('a256_media_name', 'string');
+  if(rex_request('subpage', 'string') != '') return $params['subject'];
 
   $subject = $params['subject'];
 
-  $form =
-   '  <form method="post">
-        <input type="hidden" name="a256_clang" id="rex-a256-article-clang" value="'. $clang .'" />
+  $search_form = '
+  <p>
+    <label for="a256_media_name">'. $I18N_BE_SEARCH->msg('search_mpool_media') .'</label>
+    <input type="text" name="a256_media_name" id="a256_media_name" value="'. $media_name .'" />
+  </p>';
 
-        <div class="rex-f-lft">
-          <label for="rex-a256-article-name">'. $I18N_BE_SEARCH->msg('search_article_name') .'</label>
-          <input type="text" name="a256_article_name" id="rex-a256-article-name" />
+  $subject = str_replace('</p>', '</p>'. $search_form, $subject);
 
-          <label for="rex-a256-article-id">'. $I18N_BE_SEARCH->msg('search_article_id') .'</label>
-          <input type="text" name="a256_article_id" id="rex-a256-article-id" />
-          <input type="submit" name="" value="'. $I18N_BE_SEARCH->msg('search_start') .'" />
-        </div>
-
-        <div class="rex-f-rght">
-          <label for="rex-a256-category-id">'. $I18N_BE_SEARCH->msg('search_quick_navi') .'</label>
-          <noscript>
-            <input type="submit" name="" value="'. $I18N_BE_SEARCH->msg('search_jump_to_category') .'" />
-          </noscript>
-        </div>
-      </form>';
-
-  $search_bar = $message.
-  '<div id="rex-a256-searchbar">
-     '. $form .'
-     '. $search_result .'
-   </div>
-   <div class="rex-clearer"></div>';
-
-  return $search_bar . $subject;
+  return $subject;
 }
+
+function rex_a256_search_mpool_query($params)
+{
+  $media_name = rex_request('a256_media_name', 'string');
+  if($media_name == '') return $params['subject'];
+
+  $subject = $params['subject'];
+  $subject = preg_replace('/WHERE/', 'WHERE (filename LIKE "%'. $media_name .'%" OR title LIKE "%'. $media_name .'%") AND', $subject);
+  return $subject;
+}
+
 ?>
