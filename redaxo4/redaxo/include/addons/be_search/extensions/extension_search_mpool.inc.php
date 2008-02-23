@@ -6,11 +6,10 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_modules.inc.php,v 1.2 2007/12/29 18:00:53 kills Exp $
+ * @version $Id: extension_search_mpool.inc.php,v 1.1 2008/02/23 13:29:11 kills Exp $
  */
 
-function rex_a256_search_modules()
+function rex_a256_search_mpool()
 {
-  // TODO Implementierung fehlt noch komplett
 }
 ?>
