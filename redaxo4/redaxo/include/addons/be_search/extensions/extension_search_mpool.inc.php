@@ -6,7 +6,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_mpool.inc.php,v 1.6 2008/02/23 15:13:46 kills Exp $
+ * @version $Id: extension_search_mpool.inc.php,v 1.7 2008/02/23 15:38:10 tbaddade Exp $
  */
 
 function rex_a256_search_mpool($params)
@@ -24,14 +24,8 @@ function rex_a256_search_mpool($params)
   $subject = $params['subject'];
 
   $search_form = '
-  <p>
-    <label for="a256_media_name">'. $I18N_BE_SEARCH->msg('search_mpool_media') .'</label>
-    <input type="text" name="a256_media_name" id="a256_media_name" value="'. $media_name .'" />
-  </p>';
   
-  $search_form = '
-  
-    <label for="a256_media_name">'. $I18N_BE_SEARCH->msg('search_mpool_media') .'</label>
+    <label class="rex-hide" for="a256_media_name">'. $I18N_BE_SEARCH->msg('search_mpool_media') .'</label>
     <input type="text" name="a256_media_name" id="a256_media_name" value="'. $media_name .'" />
   ';
 

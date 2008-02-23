@@ -6,7 +6,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_structure.inc.php,v 1.3 2008/02/23 15:13:46 kills Exp $
+ * @version $Id: extension_search_structure.inc.php,v 1.4 2008/02/23 15:38:10 tbaddade Exp $
  */
 
 function rex_a256_search_structure($params)
@@ -110,7 +110,7 @@ function rex_a256_search_structure($params)
 
         	<label for="rex-a256-article-id">'. $I18N_BE_SEARCH->msg('search_article_id') .'</label>
 	        <input type="text" name="a256_article_id" id="rex-a256-article-id" />
-    	    <input type="submit" name="" value="'. $I18N_BE_SEARCH->msg('search_start') .'" />
+    	    <input class="rex-sbmt" type="submit" name="" value="'. $I18N_BE_SEARCH->msg('search_start') .'" />
 		    </div>
 
     		<div class="rex-f-rght">
