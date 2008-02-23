@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: user.inc.php,v 1.3 2008/02/18 15:06:10 kills Exp $
+ * @version $Id: user.inc.php,v 1.4 2008/02/23 13:00:18 kills Exp $
  */
 
 /*
@@ -756,7 +756,7 @@ if (isset($SHOW) and $SHOW)
 
   $list->addColumn('funcs', $I18N->msg('user_delete'));
   $list->setColumnLabel('funcs', $I18N->msg('user_functions'));
-  $list->setColumnParams('funcs', array('func' => 'delete', 'user_id' => '###user_id###'));
+  $list->setColumnParams('funcs', array('FUNC_DELETE' => '1', 'user_id' => '###user_id###'));
   $list->setColumnFormat('funcs', 'custom',
     create_function(
       '$params',
