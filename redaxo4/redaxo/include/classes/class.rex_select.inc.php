@@ -4,7 +4,7 @@
  * Klasse zur Erstellung eines HTML-Pulldown-Menues (Select-Box)
  *
  * @package redaxo4
- * @version $Id: class.rex_select.inc.php,v 1.4 2008/01/11 14:33:29 kills Exp $
+ * @version $Id: class.rex_select.inc.php,v 1.5 2008/02/23 13:16:17 kills Exp $
  */
 
 ################ Class Select
@@ -342,7 +342,7 @@ class rex_category_select extends rex_select
     }
 
     if(!$this->check_perms ||
-        $this->check_perms && $REX_USER->hasPerm('admin[]') || $REX_USER->hasPerm('csw[0]') || $REX_USER->hasPerm('csr[' . $cat->getId() . ']') || $REX_USER->hasPerm('csw[' . $cat->getId() . ']'))
+        $this->check_perms && $REX_USER->hasCategoryPerm($cat->getId()))
     {
       $this->addOption($cat->getName(), $cat->getId(), $cat->getId(), $cat->getParentId());
       $childs = $cat->getChildren($this->ignore_offlines, $this->clang);

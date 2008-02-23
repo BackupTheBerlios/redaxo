@@ -5,7 +5,7 @@
  * Klasse zum handling des Login/Logout-Mechanismuses
  *
  * @package redaxo4
- * @version $Id: class.rex_login.inc.php,v 1.2 2008/01/14 11:00:10 kills Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.3 2008/02/23 13:16:08 kills Exp $
  */
 
 class rex_login_sql extends rex_sql
@@ -28,6 +28,11 @@ class rex_login_sql extends rex_sql
   function hasPerm($perm)
   {
     return $this->isValueOf('rights', $perm);
+  }
+
+  function hasCategoryPerm($category_id)
+  {
+    return $this->hasPerm('admin[]') || $this->hasPerm('csw[0]') || $this->hasPerm('csr[' . $category_id . ']') || $this->hasPerm('csw[' . $category_id . ']');
   }
 }
 
