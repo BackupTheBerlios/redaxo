@@ -2,7 +2,7 @@
 
 /**
  * @package redaxo4
- * @version $Id: class.rex_formatter.inc.php,v 1.4 2008/02/18 15:05:42 kills Exp $
+ * @version $Id: class.rex_formatter.inc.php,v 1.5 2008/02/23 11:49:23 kills Exp $
  */
 
 /**
@@ -49,11 +49,6 @@ class rex_formatter
   function format($value, $format_type, $format)
   {
     global $I18N, $REX;
-
-    if($value === null || $value == '')
-    {
-      return '';
-    }
 
     // Stringformatierung mit sprintf()
     if ($format_type == 'sprintf')
