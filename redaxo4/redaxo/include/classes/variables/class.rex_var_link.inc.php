@@ -8,7 +8,7 @@
  * REX_LINKLIST
  *
  * @package redaxo4
- * @version $Id: class.rex_var_link.inc.php,v 1.3 2008/02/14 15:21:22 kills Exp $
+ * @version $Id: class.rex_var_link.inc.php,v 1.4 2008/02/23 14:32:14 tbaddade Exp $
  */
 
 class rex_var_link extends rex_var
@@ -264,12 +264,15 @@ class rex_var_link extends rex_var
     $media = '
 	<div class="rex-wdgt">
 		<div class="rex-wdgt-lnk">
-			<p>
+          <p class="rex-wdgt-fld">
   			<input type="hidden" name="LINK[' . $id . ']" id="LINK_' . $id . '" value="'. $article_id .'" />
   			<input type="text" size="30" name="LINK_NAME[' . $id . ']" value="' . $art_name . '" id="LINK_' . $id . '_NAME" readonly="readonly" />
-  			<a href="#" onclick="openLinkMap(\'LINK_' . $id . '\', \'' . $open_params . '\');return false;"'. rex_tabindex() .'><img src="media/file_open.gif" width="16" height="16" alt="Open Linkmap" title="Open Linkmap" /></a>
- 				<a href="#" onclick="deleteREXLink(' . $id . ');return false;"'. rex_tabindex() .'><img src="media/file_del.gif" width="16" height="16" title="Remove Selection" alt="Remove Selection" /></a>
- 			</p>
+  		  </p>
+          <p class="rex-wdgt-icons">
+          	<a href="#" onclick="openLinkMap(\'LINK_' . $id . '\', \'' . $open_params . '\');return false;"'. rex_tabindex() .'><img src="media/file_open.gif" width="16" height="16" alt="Open Linkmap" title="Open Linkmap" /></a>
+ 			<a href="#" onclick="deleteREXLink(' . $id . ');return false;"'. rex_tabindex() .'><img src="media/file_del.gif" width="16" height="16" title="Remove Selection" alt="Remove Selection" /></a>
+ 		  </p>
+ 		  <div class="rex-clearer"></div>
  		</div>
  	</div>';
 
