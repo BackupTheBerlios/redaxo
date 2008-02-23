@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: class.rex_tableExpander.inc.php,v 1.2 2008/02/18 11:02:23 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.3 2008/02/23 12:15:15 kills Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);
@@ -219,6 +219,8 @@ class rex_a62_tableExpander extends rex_form
 
   function save()
   {
+    $fieldName = $this->getFieldValue('name');
+
     // Den alten Wert aus der DB holen
     // Dies muss hier geschehen, da in parent::save() die Werte für die DB mit den
     // POST werten überschrieben werden!
