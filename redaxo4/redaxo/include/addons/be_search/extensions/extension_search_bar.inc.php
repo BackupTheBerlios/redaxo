@@ -6,7 +6,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_bar.inc.php,v 1.8 2008/02/17 16:45:34 kills Exp $
+ * @version $Id: extension_search_bar.inc.php,v 1.9 2008/02/23 13:16:32 kills Exp $
  */
 
 function rex_a256_search_bar($params)
@@ -54,7 +54,7 @@ function rex_a256_search_bar($params)
     // Suche ergab nur einen Treffer => Direkt auf den Treffer weiterleiten
     if($foundRows == 1)
     {
-      header('Location:'. sprintf($editUrl, $search->getValue('id'), $a256_clang));
+      header('Location:'. sprintf($editUrl, $search->getValue('re_id'), $a256_clang));
       exit();
     }
     // Mehrere Suchtreffer, Liste anzeigen
@@ -66,10 +66,13 @@ function rex_a256_search_bar($params)
         $OOArt = OOArticle::getArticleById($search->getValue('id'), $a256_clang);
         $label = $OOArt->getName();
 
-        if($REX_USER->hasPerm('advancedMode[]'))
-          $label .= ' ['. $search->getValue('id') .']';
+        if($REX_USER->hasCategoryPerm($OOArt->getCategoryId()))
+        {
+          if($REX_USER->hasPerm('advancedMode[]'))
+            $label .= ' ['. $search->getValue('id') .']';
 
-        $search_result .= '<li><a href="'. sprintf($editUrl, $search->getValue('id'), $a256_clang) .'">'. $label .'</a></li>';
+          $search_result .= '<li><a href="'. sprintf($editUrl, $search->getValue('id'), $a256_clang) .'">'. $label .'</a></li>';
+        }
         $search->next();
       }
       $search_result .= '</ul>';
