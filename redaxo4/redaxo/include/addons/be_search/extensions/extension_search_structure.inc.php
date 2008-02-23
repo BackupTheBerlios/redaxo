@@ -6,7 +6,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: extension_search_structure.inc.php,v 1.1 2008/02/23 13:29:11 kills Exp $
+ * @version $Id: extension_search_structure.inc.php,v 1.2 2008/02/23 15:01:01 kills Exp $
  */
 
 function rex_a256_search_structure($params)
@@ -45,6 +45,9 @@ function rex_a256_search_structure($params)
         name LIKE "%'. $a256_article_name .'%" OR
         catname LIKE "%'. $a256_article_name .'%"
       )';
+
+    if($category_id != 0)
+      $qry .= ' AND path LIKE "%|'. $category_id .'|%"';
 
     $search = new rex_sql();
 //    $search->debugsql = true;
