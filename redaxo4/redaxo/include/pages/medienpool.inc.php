@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: medienpool.inc.php,v 1.7 2008/02/23 12:15:06 kristinus Exp $
+ * @version $Id: medienpool.inc.php,v 1.8 2008/02/23 12:19:59 kristinus Exp $
  */
 
 // TODOS
@@ -1520,7 +1520,7 @@ if ($subpage == '')
             </td>
             <td>';
 
-    echo rex_register_extension_point('MEDIA_FILELIST_FUNCTIONS',$opener_link, 
+    echo rex_register_extension_point('MEDIA_LIST_FUNCTIONS',$opener_link, 
     	array(
 				"file_id" => $files->getValue('file_id'),
 				"file_name" => $files->getValue('filename'),
