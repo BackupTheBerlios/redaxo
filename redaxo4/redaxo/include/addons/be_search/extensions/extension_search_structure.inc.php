@@ -1,12 +1,12 @@
 <?php
+
 /**
  * Backend Search Addon
  *
- * @author staab[at]public-4u[dot]de Markus Staab
- * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: extension_search_structure.inc.php,v 1.4 2008/02/23 15:38:10 tbaddade Exp $
+ * @version $Id: extension_search_structure.inc.php,v 1.5 2008/02/24 16:17:31 kills Exp $
  */
 
 function rex_a256_search_structure($params)
