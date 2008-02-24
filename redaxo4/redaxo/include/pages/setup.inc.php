@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
+ * @version $Id: setup.inc.php,v 1.3 2008/02/24 16:17:12 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -504,15 +504,15 @@ if ($checkmodus == 3 && $send == 1)
   {
     // ----- vorhandenen Export importieren
 
-    $import_sql = $export_addon_dir.'/files/'.$import_name.'.sql';
-    $import_archiv = $export_addon_dir.'/files/'.$import_name.'.tar.gz';
-
     if(empty($import_name))
     {
       $err_msg .= '<p>'.$I18N->msg('setup_03701').'</p>';
     }
     else
     {
+      $import_sql = $export_addon_dir.'/files/'.$import_name.'.sql';
+      $import_archiv = $export_addon_dir.'/files/'.$import_name.'.tar.gz';
+
       // Nur hier zuerst die Addons installieren
       // Da sonst Daten aus dem eingespielten Export
       // Überschrieben würden
