@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.4 2008/02/02 13:37:21 kills Exp $
+ * @version $Id: index.inc.php,v 1.5 2008/02/25 09:49:30 kills Exp $
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -214,7 +214,7 @@ elseif (isset ($function) && $function == 'export')
   }
 }
 
-include $REX['INCLUDE_PATH']."/layout/top.php";
+require $REX['INCLUDE_PATH']."/layout/top.php";
 
 rex_title($I18N_IM_EXPORT->msg("importexport"), "");
 
@@ -438,4 +438,4 @@ else
 
 </div>
 
-<?php include $REX['INCLUDE_PATH']."/layout/bottom.php"; ?>
+<?php require $REX['INCLUDE_PATH']."/layout/bottom.php"; ?>

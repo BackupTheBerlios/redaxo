@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: index.inc.php,v 1.2 2008/02/25 09:49:41 kills Exp $
  */
 
 // Parameter
@@ -17,7 +17,7 @@ $func = rex_request('func', 'string');
 
 
 // Include Header and Navigation
-include $REX['INCLUDE_PATH'].'/layout/top.php';
+require $REX['INCLUDE_PATH'].'/layout/top.php';
 
 // Build Subnavigation
 $subpages = array(
@@ -54,5 +54,5 @@ switch($subpage)
 require $Basedir .'/field.inc.php';
 
 // Include Footer
-include $REX['INCLUDE_PATH'].'/layout/bottom.php';
+require $REX['INCLUDE_PATH'].'/layout/bottom.php';
 ?>

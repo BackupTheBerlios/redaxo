@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: structure.inc.php,v 1.4 2008/02/23 15:28:44 kristinus Exp $
+ * @version $Id: structure.inc.php,v 1.5 2008/02/25 09:52:51 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -45,14 +45,14 @@ $category_id = rex_request('category_id', 'int');
 
 // --------------------------------------------- KATEGORIE PFAD UND RECHTE WERDEN ÜBERPRÜFT
 
-include $REX['INCLUDE_PATH'].'/functions/function_rex_category.inc.php';
+require $REX['INCLUDE_PATH'].'/functions/function_rex_category.inc.php';
 
 // --------------------------------------------- TITLE
 
 rex_title($I18N->msg('title_structure'), $KATout);
 
 $sprachen_add = '&amp;category_id='. $category_id;
-include $REX['INCLUDE_PATH'].'/functions/function_rex_languages.inc.php';
+require $REX['INCLUDE_PATH'].'/functions/function_rex_languages.inc.php';
 
 // -------------- STATUS_TYPE Map
 

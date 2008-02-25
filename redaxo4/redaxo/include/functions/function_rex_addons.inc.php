@@ -4,7 +4,7 @@
 /**
  * Addon Funktionen
  * @package redaxo4
- * @version $Id: function_rex_addons.inc.php,v 1.2 2007/12/28 15:58:47 kills Exp $
+ * @version $Id: function_rex_addons.inc.php,v 1.3 2008/02/25 09:51:18 kills Exp $
  */
 
 function rex_install_addon($addons, $addonname, $installDump = true)
@@ -25,7 +25,7 @@ function rex_install_addon($addons, $addonname, $installDump = true)
   {
     if (is_readable($install_file))
     {
-      include $install_file;
+      require $install_file;
 
       // Wurde das "install" Flag gesetzt, oder eine Fehlermeldung ausgegeben? Wenn ja, Abbruch
       if (!OOAddon :: isInstalled($addonname) || !empty( $REX['ADDON']['installmsg'][$addonname]))
@@ -47,7 +47,7 @@ function rex_install_addon($addons, $addonname, $installDump = true)
         {
           if (!OOAddon :: isActivated($addonname))
           {
-            include $config_file;
+            require $config_file;
           }
         }
         else
@@ -129,7 +129,7 @@ function rex_uninstall_addon($addons, $addonname)
 
   if (is_readable($uninstall_file))
   {
-    include $uninstall_file;
+    require $uninstall_file;
 
     // Wurde das "uninstall" Flag gesetzt, oder eine Fehlermeldung ausgegeben? Wenn ja, Abbruch
     if (OOAddon :: isInstalled($addonname) || !empty($REX['ADDON']['installmsg'][$addonname]))

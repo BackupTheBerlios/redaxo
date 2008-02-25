@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: specials.inc.php,v 1.1 2007/12/28 10:45:09 kills Exp $
+ * @version $Id: specials.inc.php,v 1.2 2008/02/25 09:52:30 kills Exp $
  */
 
 // -------------- Defaults
@@ -26,6 +26,6 @@ switch($subpage)
   default : $file = 'specials.settings.inc.php'; break;
 }
 
-include $REX['INCLUDE_PATH'].'/pages/'.$file;
+require $REX['INCLUDE_PATH'].'/pages/'.$file;
 
 ?>

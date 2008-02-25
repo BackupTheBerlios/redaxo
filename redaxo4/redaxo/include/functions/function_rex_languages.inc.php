@@ -3,7 +3,7 @@
 /**
  * Dient zur Ausgabe des Sprachen-blocks
  * @package redaxo4
- * @version $Id: function_rex_languages.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: function_rex_languages.inc.php,v 1.2 2008/02/25 09:51:24 kills Exp $
  */
 
 // rechte einbauen
@@ -65,7 +65,7 @@ if ($num_clang>1)
       '. rex_warning('You have no permission to this area') .'
 <!-- *** OUTPUT OF CLANG-VALIDATE - END *** -->
 ';
-		include $REX['INCLUDE_PATH']."/layout/bottom.php";
+		require $REX['INCLUDE_PATH']."/layout/bottom.php";
 		exit;
 	}
 }

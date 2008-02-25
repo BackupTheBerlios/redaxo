@@ -10,10 +10,10 @@
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: index.inc.php,v 1.2 2008/02/25 09:50:27 kills Exp $
  */
 
-include $REX['INCLUDE_PATH']."/layout/top.php";
+require $REX['INCLUDE_PATH']."/layout/top.php";
 
 $subline = '
 <ul>
@@ -165,6 +165,6 @@ EOD;
 
 <?php
 
-include $REX['INCLUDE_PATH']."/layout/bottom.php";
+require $REX['INCLUDE_PATH']."/layout/bottom.php";
 
 ?>

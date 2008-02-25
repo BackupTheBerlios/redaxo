@@ -4,7 +4,7 @@
  * REX_TEMPLATE[2]
  *
  * @package redaxo4
- * @version $Id: class.rex_var_template.inc.php,v 1.2 2008/01/11 14:01:40 kills Exp $
+ * @version $Id: class.rex_var_template.inc.php,v 1.3 2008/02/25 09:51:11 kills Exp $
  */
 
 class rex_var_template extends rex_var
@@ -69,7 +69,7 @@ class rex_var_template extends rex_var
       $tpl = '<?php
       '. $varname .' = new rex_template();
       '. $varname .'->setId('. $template_id .');
-      include '. $varname .'->getFile();
+      require '. $varname .'->getFile();
       ?>';
 
       $template = new rex_template($template_id);

@@ -8,10 +8,10 @@
  * @author jan.kristinus[at]yakmara[dot]de Jan Kristinus
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.4 2008/02/12 07:09:16 kristinus Exp $
+ * @version $Id: index.inc.php,v 1.5 2008/02/25 09:49:02 kills Exp $
  */
 
-include $REX['INCLUDE_PATH'] . '/layout/top.php';
+require $REX['INCLUDE_PATH'] . '/layout/top.php';
 
 if (isset ($subpage) and $subpage == 'clear_cache')
 {
@@ -44,8 +44,8 @@ switch($subpage)
   }
 }
 
-include $REX['INCLUDE_PATH'] . '/addons/image_resize/pages/'.$subpage.'.inc.php';
+require $REX['INCLUDE_PATH'] . '/addons/image_resize/pages/'.$subpage.'.inc.php';
 
-include $REX['INCLUDE_PATH'] . '/layout/bottom.php';
+require $REX['INCLUDE_PATH'] . '/layout/bottom.php';
 
 ?>
