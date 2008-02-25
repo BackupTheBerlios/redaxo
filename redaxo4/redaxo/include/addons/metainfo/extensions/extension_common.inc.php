@@ -5,7 +5,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.10 2008/02/23 14:40:10 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.11 2008/02/25 10:02:14 kills Exp $
  */
 
 if($page == 'metainfo')
@@ -394,7 +394,7 @@ function _rex_a62_metainfo_handleSave(&$params, &$sqlSave, $sqlFields)
     $sqlSave->setValue($fieldName, $saveValue);
 
     // Werte im aktuellen Objekt speichern, dass zur Anzeige verwendet wird
-    if($params['activeItem'])
+    if(isset($params['activeItem']))
       $params['activeItem']->setValue($fieldName, stripslashes($saveValue));
 
     $sqlFields->next();
