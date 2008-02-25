@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: extension_search_structure.inc.php,v 1.5 2008/02/24 16:17:31 kills Exp $
+ * @version $Id: extension_search_structure.inc.php,v 1.6 2008/02/25 10:21:24 kills Exp $
  */
 
 function rex_a256_search_structure($params)
@@ -62,8 +62,12 @@ function rex_a256_search_structure($params)
     // Suche ergab nur einen Treffer => Direkt auf den Treffer weiterleiten
     if($foundRows == 1)
     {
-      header('Location:'. sprintf($editUrl, $search->getValue('re_id'), $a256_clang));
-      exit();
+      $OOArt = OOArticle::getArticleById($search->getValue('id'), $a256_clang);
+      if($REX_USER->hasCategoryPerm($OOArt->getCategoryId()))
+      {
+        header('Location:'. sprintf($editUrl, $OOArt->getCategoryId(), $a256_clang));
+        exit();
+      }
     }
     // Mehrere Suchtreffer, Liste anzeigen
     else if($foundRows > 0)
