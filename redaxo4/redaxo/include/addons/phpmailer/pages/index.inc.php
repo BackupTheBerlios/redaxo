@@ -7,7 +7,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.1 2007/12/28 10:45:09 kills Exp $
+ * @version $Id: index.inc.php,v 1.2 2008/02/25 09:50:13 kills Exp $
  */
  
 // Parameter
@@ -17,7 +17,7 @@ $page = rex_request('page', 'string');
 $subpage = rex_request('subpage', 'string');
 $func = rex_request('func', 'string');
 
-include $REX['INCLUDE_PATH'].'/layout/top.php';
+require $REX['INCLUDE_PATH'].'/layout/top.php';
 
 $subpages = array(
   array('',$I18N_A93->msg('configuration')),
@@ -35,6 +35,6 @@ switch($subpage)
         require $Basedir .'/settings.inc.php';
 }
 
-include $REX['INCLUDE_PATH'].'/layout/bottom.php';
+require $REX['INCLUDE_PATH'].'/layout/bottom.php';
 
 ?>
