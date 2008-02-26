@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.php,v 1.1 2007/12/28 10:45:09 kills Exp $
+ * @version $Id: index.php,v 1.2 2008/02/26 18:33:43 kills Exp $
  */
 
 // ----- ob caching start für output filter
@@ -70,6 +70,6 @@ $CONTENT = ob_get_contents();
 ob_end_clean();
 
 // ----- inhalt ausgeben
-rex_send_content($REX_ARTICLE, $CONTENT, 'frontend');
+rex_send_article($REX_ARTICLE, $CONTENT, 'frontend');
 
 ?>
