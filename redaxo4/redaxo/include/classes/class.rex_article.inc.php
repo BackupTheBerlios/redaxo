@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.11 2008/02/26 10:50:02 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.12 2008/02/26 10:52:57 kills Exp $
  */
 
 class rex_article
@@ -621,7 +621,9 @@ class rex_article
 
     	$TEMPLATE = new rex_template();
     	$TEMPLATE->setId($this->getTemplateId());
-			eval("?>".$TEMPLATE->getTemplate());
+      $tplContent = $TEMPLATE->getTemplate();
+      $tplContent = $this->replaceCommonVars($tplContent);
+			eval("?>".$tplContent);
 
       $CONTENT = ob_get_contents();
       ob_end_clean();
