@@ -5,7 +5,7 @@
  * Zuständig für die Verarbeitung eines Artikel
  *
  * @package redaxo4
- * @version $Id: class.rex_article.inc.php,v 1.10 2008/02/24 16:16:00 kills Exp $
+ * @version $Id: class.rex_article.inc.php,v 1.11 2008/02/26 10:50:02 kills Exp $
  */
 
 class rex_article
@@ -71,7 +71,7 @@ class rex_article
     $this->slice_id = $value;
   }
 
-  function setCLang($value)
+  function setClang($value)
   {
     global $REX;
     if (!isset($REX['CLANG'][$value]) || $REX['CLANG'][$value] == "") $value = $REX['CUR_CLANG'];
