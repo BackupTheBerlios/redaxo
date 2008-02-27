@@ -12,7 +12,7 @@
  * @author <a href="http://www.yakamara.de">www.yakamara.de</a>
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.9 2008/02/27 09:23:34 kills Exp $
+ * @version $Id: config.inc.php,v 1.10 2008/02/27 09:33:30 kills Exp $
  */
 
 $mypage = 'image_resize';
@@ -32,7 +32,6 @@ $REX['PERM'][] = 'image_resize[]';
 $REX['ADDON']['image_resize']['default_filters'] = array();
 
 // --- DYN
-
 $REX['ADDON']['image_resize']['max_cachefiles'] = 5;
 $REX['ADDON']['image_resize']['max_filters'] = 5;
 $REX['ADDON']['image_resize']['max_resizekb'] = 300;
