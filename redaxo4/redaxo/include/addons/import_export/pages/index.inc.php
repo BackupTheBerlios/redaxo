@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.6 2008/02/27 09:52:04 kills Exp $
+ * @version $Id: index.inc.php,v 1.7 2008/02/27 12:36:11 kills Exp $
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -13,6 +13,7 @@
 
 // ------- Addon Includes
 include_once $REX['INCLUDE_PATH'].'/addons/'.$page.'/classes/class.tar.inc.php';
+include_once $REX['INCLUDE_PATH'].'/addons/'.$page.'/classes/class.rex_tar.inc.php';
 include_once $REX['INCLUDE_PATH'].'/addons/'.$page.'/functions/function_import_export.inc.php';
 include_once $REX['INCLUDE_PATH'].'/addons/'.$page.'/functions/function_folder.inc.php';
 include_once $REX['INCLUDE_PATH'].'/addons/'.$page.'/functions/function_import_folder.inc.php';
