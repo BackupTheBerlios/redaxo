@@ -12,7 +12,7 @@
  * @author <a href="http://www.yakamara.de">www.yakamara.de</a>
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.8 2008/02/24 16:17:31 kills Exp $
+ * @version $Id: config.inc.php,v 1.9 2008/02/27 09:23:34 kills Exp $
  */
 
 $mypage = 'image_resize';
@@ -37,7 +37,7 @@ $REX['ADDON']['image_resize']['max_cachefiles'] = 5;
 $REX['ADDON']['image_resize']['max_filters'] = 5;
 $REX['ADDON']['image_resize']['max_resizekb'] = 300;
 $REX['ADDON']['image_resize']['max_resizepixel'] = 500;
-$REX['ADDON']['image_resize']['jpg_quality'] = 100;
+$REX['ADDON']['image_resize']['jpg_quality'] = 75;
 // --- /DYN
 
 include_once ($REX['INCLUDE_PATH'].'/addons/image_resize/classes/class.thumbnail.inc.php');
