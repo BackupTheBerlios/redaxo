@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.3 2008/02/24 16:17:12 kills Exp $
+ * @version $Id: setup.inc.php,v 1.4 2008/02/27 15:50:13 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -63,6 +63,7 @@ function rex_setup_import($import_sql, $import_archiv = null)
 
       require $export_addon_dir.'/config.inc.php';
       require_once $export_addon_dir.'/classes/class.tar.inc.php';
+      require_once $export_addon_dir.'/classes/class.rex_tar.inc.php';
       require_once $export_addon_dir.'/functions/function_folder.inc.php';
       require_once $export_addon_dir.'/functions/function_import_export.inc.php';
 
