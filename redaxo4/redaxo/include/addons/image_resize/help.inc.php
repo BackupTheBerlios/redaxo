@@ -9,7 +9,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: help.inc.php,v 1.6 2008/02/27 14:00:02 kills Exp $
+ * @version $Id: help.inc.php,v 1.7 2008/02/27 14:00:49 kills Exp $
  */
 ?>
 <h3>Features:</h3>
@@ -18,7 +18,7 @@
 
 <h3>Usage:</h3>
 <p>call an image that way <b>index.php?rex_resize=100w__imagefile</b>
-= to resize the imagefile to width = 100</p>
+ to resize the imagefile to a width of 100</p>
 
 <h3>Methods:</h3>
 <p>
