@@ -5,36 +5,8 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.11 2008/02/25 10:02:14 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.12 2008/02/27 11:02:36 kills Exp $
  */
-
-if($page == 'metainfo')
-  rex_register_extension('PAGE_HEADER', 'rex_a62_insertJs');
-
-/**
- * Fügt den nötigen JS-Code ein
- */
-function rex_a62_insertJs($params)
-{
-	global $REX;
-
-	$content = $params['subject'];
-
-	$jsfile = $REX['INCLUDE_PATH'] .'/addons/metainfo/js/metainfo.js';
-  $jscontent = rex_get_file_contents($jsfile);
-
-  $js ='
-    <!-- Metainfo JS //-->
-	  <script type="text/javascript">
-	  <!--
-	  '. $jscontent .'
-	  //-->
-	  </script>
-    <!-- End Metainfo JS //-->
-  ';
-
-  return $content . $js;
-}
 
 /**
  * Erstellt den nötigen HTML Code um ein Formular zu erweitern
