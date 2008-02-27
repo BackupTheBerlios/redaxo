@@ -4,7 +4,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.5 2008/02/25 09:49:30 kills Exp $
+ * @version $Id: index.inc.php,v 1.6 2008/02/27 09:52:04 kills Exp $
  */
 
 // Für größere Exports den Speicher für PHP erhöhen.
@@ -185,29 +185,24 @@ elseif (isset ($function) && $function == 'export')
         // aendern filename
         // speicher content in files
 
-        $dir_filename = $REX['INCLUDE_PATH']."/addons/$page/files/";
-        $filename = $dir_filename.$filename;
+        $export_path = $REX['INCLUDE_PATH']."/addons/$page/files/";
 
-        if (file_exists($filename.$ext))
+        if (file_exists($export_path . $filename . $ext))
         {
           $i = 1;
-          while(file_exists($filename .'_'. $i . $ext))
+          while(file_exists($export_path . $filename .'_'. $i . $ext))
             $i++;
 
-          $filename = $filename .'_'. $i . $ext;
-        }
-        else
-        {
-          $filename .= $ext;
+          $filename = $filename .'_'. $i;
         }
 
-        if (rex_put_file_contents($dir_filename, $content))
+        if (rex_put_file_contents($export_path . $filename . $ext, $content))
         {
-          $msg = $I18N_IM_EXPORT->msg('file_generated_in').' '.strtr($filename, '\\', '/');
+          $msg = $I18N_IM_EXPORT->msg('file_generated_in').' '.strtr($filename . $ext, '\\', '/');
         }
         else
         {
-          $msg = $I18N_IM_EXPORT->msg('file_could_not_be_generated').' '.$I18N->msg('check_rights_in_directory').' '.$dir_filename;
+          $msg = $I18N_IM_EXPORT->msg('file_could_not_be_generated').' '.$I18N->msg('check_rights_in_directory').' '.$export_path;
         }
       }
     }
