@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.2 2008/02/28 13:58:17 kristinus Exp $
+ * @version $Id: index.inc.php,v 1.3 2008/02/28 15:05:21 kristinus Exp $
  */
 
 require $REX['INCLUDE_PATH'].'/layout/top.php';
@@ -23,7 +23,7 @@ if(OOAddon::isAvailable("textile"))
   if(REX_IS_VALUE[1])
   {
     $textile = htmlspecialchars_decode("REX_VALUE[1]");
-    $textile = str_replace("<br />","\n",$textile);
+    $textile = str_replace("<br />","",$textile);
     echo rex_a79_textile($textile);
   }
 }
