@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: index.inc.php,v 1.2 2008/02/28 13:58:17 kristinus Exp $
  */
 
 require $REX['INCLUDE_PATH'].'/layout/top.php';
@@ -22,11 +22,8 @@ if(OOAddon::isAvailable("textile"))
 {
   if(REX_IS_VALUE[1])
   {
-// Diese 3 Zeilen dürfen keine führenden Leerzeichen besitzen!
-$textile =<<<EOD
-REX_HTML_VALUE[1]
-EOD;
-
+    $textile = htmlspecialchars_decode("REX_VALUE[1]");
+    $textile = str_replace("<br />","\n",$textile);
     echo rex_a79_textile($textile);
   }
 }
