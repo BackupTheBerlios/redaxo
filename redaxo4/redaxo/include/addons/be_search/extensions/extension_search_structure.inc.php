@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: extension_search_structure.inc.php,v 1.8 2008/02/28 13:51:55 kills Exp $
+ * @version $Id: extension_search_structure.inc.php,v 1.9 2008/02/28 14:00:26 kills Exp $
  */
 
 function rex_a256_search_structure($params)
@@ -117,7 +117,7 @@ function rex_a256_search_structure($params)
 
 		    <div class="rex-f-lft">
 	        <label for="rex-a256-article-name">'. $I18N_BE_SEARCH->msg('search_article_name') .'</label>
-    	    <input type="text" name="a256_article_name" id="rex-a256-article-name" value="'. htmlspecialchars($a256_article_name) .'" />
+    	    <input type="text" name="a256_article_name" id="rex-a256-article-name" value="'. htmlspecialchars(stripslashes($a256_article_name)) .'" />
 
         	<label for="rex-a256-article-id">'. $I18N_BE_SEARCH->msg('search_article_id') .'</label>
 	        <input type="text" name="a256_article_id" id="rex-a256-article-id" />
