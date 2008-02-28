@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo4
- * @version $Id: master.inc.php,v 1.9 2008/02/23 15:04:23 kristinus Exp $
+ * @version $Id: master.inc.php,v 1.10 2008/02/28 16:45:23 kristinus Exp $
  */
 
 // -----------------
@@ -21,7 +21,7 @@ $REX['SUBVERSION'] = "1";
 $REX['MINORVERSION'] = "0";
 $REX['ERROR_EMAIL'] = "jan.kristinus@yakamara.de";
 $REX['FILEPERM'] = octdec(755); // oktaler wert
-$REX['INSTNAME'] = "rex20071228124024";
+$REX['INSTNAME'] = "rex20080228000000";
 $REX['SESSION_DURATION'] = 3000;
 
 // Is set first time SQL Object ist initialised
