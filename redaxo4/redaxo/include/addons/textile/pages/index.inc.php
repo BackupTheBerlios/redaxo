@@ -6,7 +6,7 @@
  * @author staab[at]public-4u[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.3 2008/02/28 15:05:21 kristinus Exp $
+ * @version $Id: index.inc.php,v 1.4 2008/02/29 15:04:03 kills Exp $
  */
 
 require $REX['INCLUDE_PATH'].'/layout/top.php';
@@ -29,7 +29,7 @@ if(OOAddon::isAvailable("textile"))
 }
 else
 {
-  echo rex_warning(\'Dieses Modul benötigt das "textile" Addon!\');
+  echo rex_warning(\'Dieses Modul ben&ouml;tigt das "textile" Addon!\');
 }
 ?>';
 
