@@ -9,7 +9,7 @@
  * This framework can be used in Modules, Templates and PHP-Slices!
  *
  * @package redaxo4
- * @version $Id: class.ooarticleslice.inc.php,v 1.3 2008/01/21 13:16:58 kills Exp $
+ * @version $Id: class.ooarticleslice.inc.php,v 1.4 2008/02/29 16:06:21 kills Exp $
  */
 
 class OOArticleSlice
@@ -141,7 +141,7 @@ class OOArticleSlice
     $table = $REX['TABLE_PREFIX'].'article_slice';
 
     $sql = new rex_sql;
-    $sql->debugsql = true;
+    // $sql->debugsql = true;
     $query = '
       SELECT
         id,article_id,clang,ctype,modultyp_id,
