@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.10 2008/02/27 09:23:12 kills Exp $
+ * @version $Id: config.inc.php,v 1.11 2008/03/03 10:11:07 kills Exp $
  */
 
 $mypage = 'be_search';
@@ -25,15 +25,15 @@ $REX['EXTPERM'][] = 'be_search[structure]';
 
 if ($REX['REDAXO'])
 {
-  if(rex_get('css', 'string') == 'addons/be_search')
+  if(rex_get('css', 'string') == 'addons/'. $mypage)
   {
-    $cssfile = $REX['INCLUDE_PATH'] .'/addons/be_search/css/be_search.css';
+    $cssfile = $REX['INCLUDE_PATH'] .'/addons/'. $mypage .'/css/be_search.css';
     rex_send_file($cssfile, 'text/css');
     exit();
   }
 
   rex_register_extension('PAGE_HEADER',
-    create_function('$params', 'return \'  <link rel="stylesheet" type="text/css" href="index.php?css=addons/be_search" />\';')
+    create_function('$params', 'return $params[\'subject\'] .\'  <link rel="stylesheet" type="text/css" href="index.php?css=addons/'. $mypage .'" />\'."\n";')
   );
 
   $I18N_BE_SEARCH = new i18n($REX['LANG'], $REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/lang');

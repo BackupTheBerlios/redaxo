@@ -12,7 +12,7 @@
  * @author <a href="http://www.yakamara.de">www.yakamara.de</a>
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.11 2008/03/03 10:07:11 kills Exp $
+ * @version $Id: config.inc.php,v 1.12 2008/03/03 10:11:07 kills Exp $
  */
 
 $mypage = 'image_resize';
@@ -74,7 +74,7 @@ if($REX['REDAXO'])
   }
 
   rex_register_extension('PAGE_HEADER',
-    create_function('$params', 'return \'  <link rel="stylesheet" type="text/css" href="index.php?css=addons/'. $mypage .'" />\';')
+    create_function('$params', 'return $params[\'subject\'] .\'  <link rel="stylesheet" type="text/css" href="index.php?css=addons/'. $mypage .'" />\'."\n";')
   );
 }
 
