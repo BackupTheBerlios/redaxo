@@ -4,7 +4,7 @@
  * HTTP1.1 Client Cache Features
  *
  * @package redaxo4
- * @version $Id: function_rex_client_cache.inc.php,v 1.5 2008/02/27 09:03:05 kills Exp $
+ * @version $Id: function_rex_client_cache.inc.php,v 1.6 2008/03/03 10:29:28 kills Exp $
  */
 
 /**
@@ -24,6 +24,7 @@ function rex_send_file($file, $contentType, $environment = 'backend')
   $REX['USE_LAST_MODIFIED'] = true;
 
   header('Content-Type: '. $contentType);
+  header('Content-Disposition: inline; filename="'.$file.'"');
 
   $content = rex_get_file_contents($file);
   $cacheKey = md5($content . $file . $contentType . $environment);
