@@ -9,7 +9,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: help.inc.php,v 1.8 2008/02/27 14:00:59 kills Exp $
+ * @version $Id: help.inc.php,v 1.9 2008/03/03 10:01:35 kills Exp $
  */
 ?>
 <h3>Features:</h3>
@@ -67,6 +67,6 @@ resize inner image part to a width of 100px and a heigt of 200px with an offset 
 
 <br /><br />
 add filter/s: here blur and sepia<br />
-<b>index.php?rex_resize=200a__imagefile&rex_filter[]=blur&rex_filter[]=sepia</b>
+<b>index.php?rex_resize=200a__imagefile&amp;rex_filter[]=blur&amp;rex_filter[]=sepia</b>
 
 </p>
