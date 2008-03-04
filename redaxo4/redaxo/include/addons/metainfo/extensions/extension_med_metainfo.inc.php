@@ -2,10 +2,10 @@
 
 /**
  * MetaForm Addon
- * @author staab[at]public-4u[dot]de Markus Staab
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: extension_med_metainfo.inc.php,v 1.3 2008/02/13 20:51:43 kills Exp $
+ * @version $Id: extension_med_metainfo.inc.php,v 1.4 2008/03/04 15:01:08 kills Exp $
  */
 
 

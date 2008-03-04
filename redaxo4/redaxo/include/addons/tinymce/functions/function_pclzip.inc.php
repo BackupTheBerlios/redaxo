@@ -3,14 +3,14 @@
 /**
  * TinyMCE Addon
  *
- * @author staab[at]public-4u[dot]de Markus Staab
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @author Dave Holloway
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: function_pclzip.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: function_pclzip.inc.php,v 1.2 2008/03/04 15:01:08 kills Exp $
  */
 
 include_once $REX['INCLUDE_PATH'] . '/addons/tinymce/classes/class.pclzip.inc.php';

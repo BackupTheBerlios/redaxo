@@ -3,10 +3,10 @@
 /**
  * PHPMailer Addon
  *
- * @author staab[at]public-4u[dot]de Markus Staab
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.3 2008/02/17 12:45:00 kills Exp $
+ * @version $Id: config.inc.php,v 1.4 2008/03/04 15:01:08 kills Exp $
  */
 
 $mypage = 'phpmailer';

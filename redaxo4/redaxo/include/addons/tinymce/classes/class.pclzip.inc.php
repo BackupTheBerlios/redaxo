@@ -3,14 +3,14 @@
 /**
  * TinyMCE Addon
  *  
- * @author staab[at]public-4u[dot]de Markus Staab
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * 
  * @author Dave Holloway
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  * 
  * @package redaxo4
- * @version $Id: class.pclzip.inc.php,v 1.1 2007/12/28 10:45:09 kills Exp $
+ * @version $Id: class.pclzip.inc.php,v 1.2 2008/03/04 15:01:08 kills Exp $
  */
  
 // --------------------------------------------------------------------------------
@@ -36,7 +36,7 @@
 //   The use of this software is at the risk of the user.
 //
 // --------------------------------------------------------------------------------
-// $Id: class.pclzip.inc.php,v 1.1 2007/12/28 10:45:09 kills Exp $
+// $Id: class.pclzip.inc.php,v 1.2 2008/03/04 15:01:08 kills Exp $
 // --------------------------------------------------------------------------------
 
   // ----- Constants

@@ -3,11 +3,11 @@
 /**
  * PHPMailer Addon
  *
- * @author staab[at]public-4u[dot]de Markus Staab
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: class.smtp.php,v 1.1 2008/02/17 12:44:15 kills Exp $
+ * @version $Id: class.smtp.php,v 1.2 2008/03/04 15:01:08 kills Exp $
  */
 
 /*~ class.smtp.php

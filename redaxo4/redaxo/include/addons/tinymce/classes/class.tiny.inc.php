@@ -4,14 +4,14 @@
 /**
  * TinyMCE Addon
  *
- * @author staab[at]public-4u[dot]de Markus Staab
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @author Dave Holloway
  * @author <a href="http://www.GN2-Netwerk.de">www.GN2-Netwerk.de</a>s
  *
  * @package redaxo4
- * @version $Id: class.tiny.inc.php,v 1.6 2008/02/23 15:26:30 kills Exp $
+ * @version $Id: class.tiny.inc.php,v 1.7 2008/03/04 15:01:08 kills Exp $
  */
 
 global $TINY2;

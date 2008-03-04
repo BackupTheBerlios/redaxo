@@ -2,10 +2,10 @@
 /**
  * MetaForm Addon
  *
- * @author staab[at]public-4u[dot]de Markus Staab
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: class.rex_tableExpander.inc.php,v 1.3 2008/02/23 12:15:15 kills Exp $
+ * @version $Id: class.rex_tableExpander.inc.php,v 1.4 2008/03/04 15:01:08 kills Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);

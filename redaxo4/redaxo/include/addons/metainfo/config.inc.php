@@ -3,10 +3,10 @@
 /**
  * MetaForm Addon
  *
- * @author staab[at]public-4u[dot]de Markus Staab
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.4 2008/02/27 11:02:36 kills Exp $
+ * @version $Id: config.inc.php,v 1.5 2008/03/04 15:01:08 kills Exp $
  */
 
 $mypage = 'metainfo';
