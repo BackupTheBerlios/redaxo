@@ -9,7 +9,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: install.inc.php,v 1.3 2008/03/04 15:01:08 kills Exp $
+ * @version $Id: install.inc.php,v 1.4 2008/03/04 17:31:50 kills Exp $
  */
 
 $error = '';
@@ -21,9 +21,17 @@ if (!extension_loaded('gd'))
 
 if($error == '')
 {
-  $settings_file = $REX['INCLUDE_PATH'] .'/addons/image_resize/config.inc.php';
+  $file = $REX['INCLUDE_PATH'] .'/addons/image_resize/config.inc.php';
 
-  if(($state = rex_is_writable($settings_file)) !== true)
+  if(($state = rex_is_writable($file)) !== true)
+    $error = $state;
+}
+
+if($error == '')
+{
+  $file = $REX['INCLUDE_PATH'] .'/generated/files';
+
+  if(($state = rex_is_writable($file)) !== true)
     $error = $state;
 }
 
