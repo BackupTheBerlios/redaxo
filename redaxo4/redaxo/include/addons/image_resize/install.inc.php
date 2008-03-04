@@ -9,7 +9,7 @@
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  *
  * @package redaxo4
- * @version $Id: install.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: install.inc.php,v 1.2 2008/03/04 14:52:51 kills Exp $
  */
 
 $error = '';
@@ -19,8 +19,17 @@ if (!extension_loaded('gd'))
   $error = 'GD-LIB-extension not available! See <a href="http://www.php.net/gd">http://www.php.net/gd</a>';
 }
 
+if($error == '')
+{
+  $settings_file = $REX['INCLUDE_PATH'] .'/addons/image_resize/config.inc.php';
+
+  if(($state = rex_is_writable($settings_file)) !== true)
+    $error = $state;
+}
+
 if ($error != '')
   $REX['ADDON']['installmsg']['image_resize'] = $error;
 else
   $REX['ADDON']['install']['image_resize'] = true;
+
 ?>
