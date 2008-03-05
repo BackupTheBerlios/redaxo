@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: structure.inc.php,v 1.5 2008/02/25 09:52:51 kills Exp $
+ * @version $Id: structure.inc.php,v 1.6 2008/03/05 17:35:06 kills Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -571,9 +571,9 @@ if ($category_id != 0 && ($category = OOCategory::getCategoryById($category_id))
   if ($REX_USER->hasPerm('advancedMode[]'))
   {
     echo '<td class="rex-icon">-</td>';
-  }  
+  }
 
-	echo '<td><a href="index.php?page=structure&category_id='. $category->getParentId() .'&clang='. $clang .'">..</a></td>';
+	echo '<td><a href="index.php?page=structure&amp;category_id='. $category->getParentId() .'&amp;clang='. $clang .'">..</a></td>';
 	echo '<td>&nbsp;</td>';
 	echo '<td>&nbsp;</td>';
 	echo '<td>&nbsp;</td>';
