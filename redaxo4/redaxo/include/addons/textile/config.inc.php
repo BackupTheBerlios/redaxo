@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.3 2008/03/04 15:01:08 kills Exp $
+ * @version $Id: config.inc.php,v 1.4 2008/03/05 20:47:32 kills Exp $
  */
 
 $mypage = 'textile';
@@ -30,6 +30,17 @@ require_once $REX['INCLUDE_PATH']. '/addons/textile/functions/function_textile.i
 if ($REX['REDAXO'])
 {
   require_once $REX['INCLUDE_PATH'].'/addons/textile/functions/function_help.inc.php';
+
+  if(rex_get('css', 'string') == 'addons/'. $mypage)
+  {
+    $cssfile = $REX['INCLUDE_PATH'] .'/addons/'. $mypage .'/css/textile.css';
+    rex_send_file($cssfile, 'text/css');
+    exit();
+  }
+
+  rex_register_extension('PAGE_HEADER',
+    create_function('$params', 'return $params[\'subject\'] .\'  <link rel="stylesheet" type="text/css" href="index.php?css=addons/'. $mypage .'" />\'."\n";')
+  );
 }
 
 ?>
