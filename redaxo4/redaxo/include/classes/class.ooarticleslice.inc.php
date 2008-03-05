@@ -9,7 +9,7 @@
  * This framework can be used in Modules, Templates and PHP-Slices!
  *
  * @package redaxo4
- * @version $Id: class.ooarticleslice.inc.php,v 1.5 2008/02/29 17:05:10 kills Exp $
+ * @version $Id: class.ooarticleslice.inc.php,v 1.6 2008/03/05 10:58:37 kills Exp $
  */
 
 class OOArticleSlice
@@ -223,7 +223,7 @@ class OOArticleSlice
     return $this->_ctype;
   }
 
-  function getModulTyp()
+  function getModulId()
   {
     return $this->_modultyp_id;
   }
@@ -278,5 +278,15 @@ class OOArticleSlice
   {
     return $this->_php;
   }
+
+  /**
+   * Alter Alias aus BC Gruenden
+   * @deprecated 4.1 - 05.03.2008
+   */
+  function getModulTyp()
+  {
+    return $this->getModulId();
+  }
+
 }
 ?>
