@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: template.inc.php,v 1.6 2008/03/06 09:58:40 kills Exp $
+ * @version $Id: template.inc.php,v 1.7 2008/03/06 10:19:42 kills Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -130,11 +130,11 @@ if ($function == "add" or $function == "edit") {
     $i = 1;
     if (is_array($ctypes)) {
       foreach ($ctypes as $id => $name) {
-        $ctypes_out .= '<p><label for="ctype'.$i.'">CTYPE ' . $i . '</label> <input id="ctype'.$i.'" type="text" name="ctype[' . $i . ']" value="' . htmlspecialchars($name) . '" /></p>';
+        $ctypes_out .= '<p><label for="ctype'.$i.'">CTYPE ID ' . $i . '</label> <input id="ctype'.$i.'" type="text" name="ctype[' . $i . ']" value="' . htmlspecialchars($name) . '" /></p>';
         $i++;
       }
     }
-    $ctypes_out .= '<p><label for="ctype'.$i.'">CTYPE ' . $i . '</label> <input id="ctype'.$i.'" type="text" name="ctype[' . $i . ']" value="" /></p>';
+    $ctypes_out .= '<p><label for="ctype'.$i.'">CTYPE ID ' . $i . '</label> <input id="ctype'.$i.'" type="text" name="ctype[' . $i . ']" value="" /></p>';
 
     $tmpl_active_checked = $active == 1 ? ' checked="checked"' : '';
 
