@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: user.inc.php,v 1.4 2008/02/23 13:00:18 kills Exp $
+ * @version $Id: user.inc.php,v 1.5 2008/03/06 10:10:16 kills Exp $
  */
 
 /*
@@ -722,7 +722,7 @@ if (isset($SHOW) and $SHOW)
 
   if (!$REX_USER->hasPerm('advancedMode[]'))
   {
-    $list->removeColumn('id');
+    $list->removeColumn('user_id');
     $list->addTableColumnGroup(array(40, '*', 153, 153, 153));
   }
   else
