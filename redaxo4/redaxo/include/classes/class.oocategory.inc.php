@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Bildet eine Kategorie der Struktur ab
  * @package redaxo4
- * @version $Id: class.oocategory.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.oocategory.inc.php,v 1.2 2008/03/07 17:51:09 kills Exp $
  */
 
 class OOCategory extends OORedaxo
@@ -225,6 +225,9 @@ class OOCategory extends OORedaxo
     return null;
   }
 
+  /*
+   * Static Method: Returns boolean if is category
+   */
   function isValid($category)
   {
     return is_object($category) && is_a($category, 'oocategory');

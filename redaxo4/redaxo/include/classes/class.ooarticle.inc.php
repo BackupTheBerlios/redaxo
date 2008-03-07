@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Bildet einen Artikel der Struktur ab
  * @package redaxo4
- * @version $Id: class.ooarticle.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: class.ooarticle.inc.php,v 1.2 2008/03/07 17:51:08 kills Exp $
  */
 
 class OOArticle extends OORedaxo
@@ -143,8 +143,7 @@ class OOArticle extends OORedaxo
   }
 
   /*
-   * Object Function:
-   * Returns boolean if is article
+   * Static Method: Returns boolean if is article
    */
   function isValid($article)
   {
