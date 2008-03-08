@@ -2,7 +2,7 @@
 /**
  * Bindet nötige Klassen/Funktionen ein
  * @package redaxo4
- * @version $Id: functions.inc.php,v 1.2 2007/12/28 11:04:45 kills Exp $
+ * @version $Id: functions.inc.php,v 1.3 2008/03/08 15:06:47 kills Exp $
  */
 
 // ----------------- TIMER
@@ -64,6 +64,7 @@ if (!$REX['GG'])
 {
   include_once $REX['INCLUDE_PATH'].'/functions/function_rex_title.inc.php';
   include_once $REX['INCLUDE_PATH'].'/functions/function_rex_generate.inc.php';
+  include_once $REX['INCLUDE_PATH'].'/functions/function_rex_medienpool.inc.php';
   include_once $REX['INCLUDE_PATH'].'/classes/class.rex_formatter.inc.php';
   include_once $REX['INCLUDE_PATH'].'/classes/class.rex_form.inc.php';
   include_once $REX['INCLUDE_PATH'].'/classes/class.rex_list.inc.php';
