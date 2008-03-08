@@ -5,7 +5,7 @@
  * Klasse zum handling des Login/Logout-Mechanismuses
  *
  * @package redaxo4
- * @version $Id: class.rex_login.inc.php,v 1.6 2008/02/23 15:04:26 kills Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.7 2008/03/08 13:26:48 kills Exp $
  */
 
 class rex_login_sql extends rex_sql
@@ -337,7 +337,7 @@ class rex_login
     {
       session_regenerate_id(true);
     }
-    else
+    else if (function_exists('session_regenerate_id'))
     {
       session_regenerate_id();
     }
