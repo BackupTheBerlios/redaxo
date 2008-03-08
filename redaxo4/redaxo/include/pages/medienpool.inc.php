@@ -3,11 +3,10 @@
 /**
  *
  * @package redaxo4
- * @version $Id: medienpool.inc.php,v 1.11 2008/02/29 11:26:14 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.12 2008/03/08 14:59:12 kills Exp $
  */
 
 // TODOS
-// - mediensuche
 // - wysiwyg image pfade anschauen und kontrollieren
 // - import checken
 // - mehrere ebenen in kategorienedit  einbauen
