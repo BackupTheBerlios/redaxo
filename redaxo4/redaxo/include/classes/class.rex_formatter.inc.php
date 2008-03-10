@@ -2,7 +2,7 @@
 
 /**
  * @package redaxo4
- * @version $Id: class.rex_formatter.inc.php,v 1.6 2008/03/10 10:19:15 kills Exp $
+ * @version $Id: class.rex_formatter.inc.php,v 1.7 2008/03/10 10:20:25 kills Exp $
  */
 
 /**
@@ -129,6 +129,8 @@ class rex_formatter
   function _formatStrftime($value, $format)
   {
     global $I18N;
+
+    if (!is_object($I18N)) $I18N = rex_create_lang();
 
     if (empty ($value))
     {
