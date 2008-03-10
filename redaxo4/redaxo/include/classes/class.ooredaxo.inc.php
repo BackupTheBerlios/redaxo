@@ -3,7 +3,7 @@
 /**
  * Object Oriented Framework: Basisklasse für die Strukturkomponenten
  * @package redaxo4
- * @version $Id: class.ooredaxo.inc.php,v 1.2 2007/12/28 11:02:33 kills Exp $
+ * @version $Id: class.ooredaxo.inc.php,v 1.3 2008/03/10 10:12:48 kills Exp $
  */
 
 class OORedaxo
@@ -209,7 +209,7 @@ class OORedaxo
   /**
    * Accessor Method:
    * returns the name of the article
-   * @deprecated 17.09.2007
+   * @deprecated 4.0 17.09.2007
    */
   function getFile()
   {
@@ -219,7 +219,7 @@ class OORedaxo
   /**
    * Accessor Method:
    * returns the name of the article
-   * @deprecated 17.09.2007
+   * @deprecated 4.0 17.09.2007
    */
   function getFileMedia()
   {
@@ -229,7 +229,7 @@ class OORedaxo
   /**
    * Accessor Method:
    * returns the article description.
-   * @deprecated 17.09.2007
+   * @deprecated 4.0 17.09.2007
    */
   function getDescription()
   {
@@ -239,7 +239,7 @@ class OORedaxo
   /**
    * Accessor Method:
    * returns the Type ID of the article.
-   * @deprecated 17.09.2007
+   * @deprecated 4.0 17.09.2007
    */
   function getTypeId()
   {
