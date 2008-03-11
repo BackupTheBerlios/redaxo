@@ -10,13 +10,12 @@
  *        echo $textile->TextileThis($string);
  *
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
- * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
  * @package redaxo4
- * @version $Id: class.textile.inc.php,v 1.2 2008/03/04 15:01:08 kills Exp $
+ * @version $Id: class.textile.inc.php,v 1.3 2008/03/11 16:04:32 kills Exp $
  */
 
 /*
-$Id: class.textile.inc.php,v 1.2 2008/03/04 15:01:08 kills Exp $
+$Id: class.textile.inc.php,v 1.3 2008/03/11 16:04:32 kills Exp $
 $LastChangedRevision$
 */
 

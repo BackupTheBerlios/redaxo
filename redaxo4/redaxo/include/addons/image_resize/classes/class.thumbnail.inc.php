@@ -8,10 +8,10 @@
  * @author <a href="http://www.vscope.at">www.vscope.at</a>
  *
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
- * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
+ * 
  *
  * @package redaxo4
- * @version $Id: class.thumbnail.inc.php,v 1.12 2008/03/04 15:01:08 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.13 2008/03/11 16:02:59 kills Exp $
  */
 
 class rex_thumbnail

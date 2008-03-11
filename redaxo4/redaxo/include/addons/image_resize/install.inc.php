@@ -6,10 +6,10 @@
  * @author <a href="http://www.vscope.at">www.vscope.at</a>
  *
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
- * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
+ * 
  *
  * @package redaxo4
- * @version $Id: install.inc.php,v 1.4 2008/03/04 17:31:50 kills Exp $
+ * @version $Id: install.inc.php,v 1.5 2008/03/11 16:02:59 kills Exp $
  */
 
 $error = '';

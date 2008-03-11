@@ -4,9 +4,9 @@
  * Textile Addon
  *
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
- * @author <a href="http://www.public-4u.de">www.public-4u.de</a>
+ * 
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.4 2008/03/05 20:47:32 kills Exp $
+ * @version $Id: config.inc.php,v 1.5 2008/03/11 16:04:25 kills Exp $
  */
 
 $mypage = 'textile';
