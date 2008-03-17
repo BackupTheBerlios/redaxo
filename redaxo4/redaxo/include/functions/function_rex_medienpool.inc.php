@@ -4,7 +4,7 @@
  * Funktionensammlung für den Medienpool
  *
  * @package redaxo4
- * @version $Id: function_rex_medienpool.inc.php,v 1.1 2008/03/08 15:06:47 kills Exp $
+ * @version $Id: function_rex_medienpool.inc.php,v 1.2 2008/03/17 09:44:12 kills Exp $
  */
 
 /**
@@ -88,7 +88,7 @@ function rex_medienpool_saveMedia($FILE, $rex_file_category, $FILEINFOS, $userlo
 
   // ----- dateiupload
   $upload = true;
-  if(!@move_uploaded_file($FILE['tmp_name'],$dstFile) && !@copy($FILE['tmp_name'],$dstFile))
+  if(!@move_uploaded_file($FILE['tmp_name'],$dstFile))
   {
     $message .= $I18N->msg("pool_file_movefailed");
     $ok = 0;
