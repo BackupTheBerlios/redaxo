@@ -28,7 +28,7 @@ if (!isset($REX))
 /**
  *
  * @package redaxo4
- * @version $Id: setup.inc.php,v 1.6 2008/03/07 18:41:06 kills Exp $
+ * @version $Id: setup.inc.php,v 1.7 2008/03/17 10:45:24 kills Exp $
  */
 
 // --------------------------------------------- SETUP FUNCTIONS
@@ -257,7 +257,7 @@ if ($checkmodus == 1)
 
   // -------------------------- SCHREIBRECHTE
 
-  $WRITEABLE = array (
+  $WRITEABLES = array (
     $REX['INCLUDE_PATH'].'/master.inc.php',
     $REX['INCLUDE_PATH'].'/addons.inc.php',
     $REX['INCLUDE_PATH'].'/clang.inc.php',
@@ -271,9 +271,9 @@ if ($checkmodus == 1)
   );
 
   foreach($REX['SYSTEM_ADDONS'] as $system_addon)
-    $WRITEABLE[] = realpath($REX['INCLUDE_PATH'].'/addons/'. $system_addon);
+    $WRITEABLES[] = $REX['INCLUDE_PATH'].'/addons/'. $system_addon;
 
-  $res = rex_setup_is_writable($WRITEABLE);
+  $res = rex_setup_is_writable($WRITEABLES);
   if(count($res) > 0)
   {
     $MSG['err'] .= '<li>';
