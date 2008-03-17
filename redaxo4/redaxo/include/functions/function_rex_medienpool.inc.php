@@ -4,7 +4,7 @@
  * Funktionensammlung für den Medienpool
  *
  * @package redaxo4
- * @version $Id: function_rex_medienpool.inc.php,v 1.2 2008/03/17 09:44:12 kills Exp $
+ * @version $Id: function_rex_medienpool.inc.php,v 1.3 2008/03/17 10:12:31 kills Exp $
  */
 
 /**
@@ -83,24 +83,37 @@ function rex_medienpool_saveMedia($FILE, $rex_file_category, $FILEINFOS, $userlo
   $NFILENAME = rex_medienpool_filename($FILENAME);
   $message = '';
 
-  // ----- neuer filename
+  // ----- alter/neuer filename
+  $srcFile = $REX['MEDIAFOLDER'].'/'.$FILENAME;
   $dstFile = $REX['MEDIAFOLDER'].'/'.$NFILENAME;
 
-  // ----- dateiupload
-  $upload = true;
-  if(!@move_uploaded_file($FILE['tmp_name'],$dstFile))
+  $success = true;
+  if(isset($FILE['tmp_name'])) // Fileupload?
   {
-    $message .= $I18N->msg("pool_file_movefailed");
-    $ok = 0;
-    $upload = false;
+    if(!@move_uploaded_file($FILE['tmp_name'],$dstFile))
+    {
+      $message .= $I18N->msg("pool_file_movefailed");
+      $success = false;
+    }
+  }
+  else // Filesync?
+  {
+    if(!@rename($srcFile,$dstFile))
+    {
+      $message .= $I18N->msg("pool_file_movefailed");
+      $success = false;
+    }
   }
 
-  if($upload)
+  if($success)
   {
     chmod($dstFile, $REX['FILEPERM']);
 
     // get widht height
     $size = @getimagesize($dstFile);
+
+    if($FILETYPE == '' && isset($size['mime']))
+      $FILETYPE = $size['mime'];
 
     $FILESQL = new rex_sql;
     $FILESQL->setTable($REX['TABLE_PREFIX'].'file');
@@ -121,7 +134,6 @@ function rex_medienpool_saveMedia($FILE, $rex_file_category, $FILEINFOS, $userlo
     $FILESQL->addGlobalCreateFields($userlogin);
     $FILESQL->addGlobalUpdateFields($userlogin);
     $FILESQL->insert();
-    $ok = 1;
 
     $message .= $I18N->msg("pool_file_added");
   }
@@ -129,7 +141,8 @@ function rex_medienpool_saveMedia($FILE, $rex_file_category, $FILEINFOS, $userlo
   $RETURN['title'] = $FILEINFOS['title'];
   $RETURN['type'] = $FILETYPE;
   $RETURN['msg'] = $message;
-  $RETURN['ok'] = $ok;
+  // Aus BC gruenden hier mit int 1/0
+  $RETURN['ok'] = $success ? 1 : 0;
   $RETURN['filename'] = $NFILENAME;
   $RETURN['old_filename'] = $FILENAME;
 
@@ -138,6 +151,10 @@ function rex_medienpool_saveMedia($FILE, $rex_file_category, $FILEINFOS, $userlo
     $RETURN['width'] = $size[0];
     $RETURN['height'] = $size[1];
   }
+
+  // ----- EXTENSION POINT
+  if ($success)
+    rex_register_extension_point('MEDIA_ADDED','',$RETURN);
 
   return $RETURN;
 }
