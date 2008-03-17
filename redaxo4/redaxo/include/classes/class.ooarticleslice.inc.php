@@ -9,7 +9,7 @@
  * This framework can be used in Modules, Templates and PHP-Slices!
  *
  * @package redaxo4
- * @version $Id: class.ooarticleslice.inc.php,v 1.8 2008/03/07 18:44:37 kills Exp $
+ * @version $Id: class.ooarticleslice.inc.php,v 1.9 2008/03/17 14:27:32 kills Exp $
  */
 
 class OOArticleSlice
@@ -315,6 +315,15 @@ class OOArticleSlice
   function getFileList($index)
   {
     return $this->_filelists[$index-1];
+  }
+
+  /**
+   * Alter Alias aus BC Gruenden
+   * @deprecated 4.1 - 05.03.2008
+   */
+  function getModulId()
+  {
+    return $this->_modultyp_id;
   }
 
   /**
