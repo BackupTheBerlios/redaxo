@@ -3,9 +3,9 @@
 /**
  * MetaForm Addon
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
- * 
+ *
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.14 2008/03/11 16:03:32 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.15 2008/03/17 10:09:53 kills Exp $
  */
 
 /**
@@ -452,7 +452,7 @@ function _rex_a62_metainfo_art_handleSave($params, $sqlFields)
  */
 function _rex_a62_metainfo_med_handleSave($params, $sqlFields)
 {
-  if($_SERVER['REQUEST_METHOD'] != 'POST') return $params;
+  if($_SERVER['REQUEST_METHOD'] != 'POST' || !isset($params['file_id'])) return $params;
 
   global $REX;
 
