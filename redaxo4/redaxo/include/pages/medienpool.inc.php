@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: medienpool.inc.php,v 1.14 2008/03/13 18:24:45 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.15 2008/03/17 09:19:18 kills Exp $
  */
 
 // TODOS
@@ -290,8 +290,12 @@ function rex_medienpool_registerFile($physical_filename,$org_filename,$filename,
   $FILESQL->setValue('title',$title);
   $FILESQL->setValue('filesize',$filesize);
   $FILESQL->setValue('filetype',$filetype);
-  $FILESQL->setValue('width',$size[0]);
-  $FILESQL->setValue('height',$size[1]);
+
+  if($size)
+  {
+    $FILESQL->setValue('width',$size[0]);
+    $FILESQL->setValue('height',$size[1]);
+  }
 
   // TODO Hier Update + Create zugleich?
   $FILESQL->addGlobalUpdateFields();
