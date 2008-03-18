@@ -4,7 +4,7 @@
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
  * @package redaxo4
- * @version $Id: function_rex_generate.inc.php,v 1.8 2008/03/17 09:11:45 kills Exp $
+ * @version $Id: function_rex_generate.inc.php,v 1.9 2008/03/18 09:44:35 kills Exp $
  */
 
 // ----------------------------------------- Alles generieren
@@ -1193,6 +1193,11 @@ function rex_generateTemplate($template_id)
         trigger_error('directory "'. $templatesDir .'" is not writable!', E_USER_ERROR);
     }
   }
+  else
+  {
+    trigger_error('Template with id "'. $template_id .'" does not exist!', E_USER_ERROR);
+  }
+
   return false;
 }
 
