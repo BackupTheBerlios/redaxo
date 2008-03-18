@@ -3,7 +3,7 @@
 /**
  * Hauptkonfigurationsdatei
  * @package redaxo4
- * @version $Id: master.inc.php,v 1.10 2008/02/28 16:45:23 kristinus Exp $
+ * @version $Id: master.inc.php,v 1.11 2008/03/18 11:29:00 kills Exp $
  */
 
 // -----------------
@@ -60,10 +60,13 @@ $REX['USE_LAST_MODIFIED'] = "false"; // String: "true"/"false"/"fronted"/"backen
 $REX['USE_MD5'] = "false"; // String: "true"/"false"/"fronted"/"backend"
 
 // versch. Pfade
-$REX['INCLUDE_PATH'] = realpath($REX['HTDOCS_PATH']."redaxo/include");
-$REX['MEDIAFOLDER'] = realpath($REX['HTDOCS_PATH']."files");
-$REX['TABLE_PREFIX'] = "rex_";
-$REX['TEMP_PREFIX'] = "tmp_";
+$REX['INCLUDE_PATH']  = realpath($REX['HTDOCS_PATH'].'redaxo/include');
+$REX['FRONTEND_PATH'] = realpath($REX['HTDOCS_PATH']);
+$REX['MEDIAFOLDER']   = realpath($REX['HTDOCS_PATH'].'files');
+
+// Prefixes
+$REX['TABLE_PREFIX']  = 'rex_';
+$REX['TEMP_PREFIX']   = 'tmp_';
 
 // Passwortverschlüsselung, z.B: md5 / mcrypt ...
 $REX['PSWFUNC'] = "";
