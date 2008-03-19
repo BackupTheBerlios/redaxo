@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: module.action.inc.php,v 1.7 2008/03/19 11:14:56 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.8 2008/03/19 12:09:06 kills Exp $
  */
 
 class rex_event_select extends rex_select
@@ -57,7 +57,6 @@ if ($function == 'delete')
 
     if ($action_in_use_msg != '')
     {
-//      $action_in_use_msg = '<div class="rex-message-blck rex-warning-blck"><ul>' . $action_in_use_msg . '</ul></div>';
       $action_in_use_msg = rex_warning_block('<ul>' . $action_in_use_msg . '</ul>');
     }
 
