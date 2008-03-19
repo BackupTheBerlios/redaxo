@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.22 2008/03/19 10:02:10 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.23 2008/03/19 10:05:27 kills Exp $
  */
 
 /*
@@ -158,6 +158,7 @@ class rex_list
 
   function init()
   {
+    // nichts tun
   }
 
   // ---------------------- setters/getters
