@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: module.action.inc.php,v 1.3 2008/03/19 10:43:17 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.4 2008/03/19 10:59:18 kills Exp $
  */
 
 class rex_event_select extends rex_select
@@ -46,10 +46,9 @@ if ($function == 'delete')
   $del->setQuery($qry); // module mit dieser aktion vorhanden ?
   if ($del->getRows() > 0)
   {
-    $modulname = htmlspecialchars($del->getValue('a.module_id'));
     for ($i = 0; $i < $del->getRows(); $i++)
     {
-      $action_in_use_msg .= '<li><a href="index.php?page=module&amp;function=edit&amp;modul_id=' . $del->getValue('a.module_id') . '">'. $del->getValue('m.name') . ' ['. $del->getValue('a.module_id') . ']</a></li>';
+      $action_in_use_msg .= '<li><a href="index.php?page=module&amp;function=edit&amp;modul_id=' . $del->getValue('a.module_id') . '">'. htmlspecialchars($del->getValue('m.name')) . ' ['. $del->getValue('a.module_id') . ']</a></li>';
       $del->next();
     }
 
