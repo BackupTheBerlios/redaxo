@@ -5,7 +5,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.15 2008/03/17 10:09:53 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.16 2008/03/19 15:17:25 kills Exp $
  */
 
 /**
@@ -74,7 +74,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
     {
       case 'text':
       {
-        $field = '<input type="'. $sqlFields->getValue('label') .'" name="'. $name .'" value="'. $dbvalues_esc[0] .'" id="'. $id .' "maxlength="'. $dblength .'" '. $attr .' />';
+        $field = '<input type="'. $typeLabel .'" name="'. $name .'" value="'. $dbvalues_esc[0] .'" id="'. $id .' "maxlength="'. $dblength .'" '. $attr .' />';
         break;
       }
       case 'checkbox':
@@ -302,6 +302,12 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
 
         $link_id++;
         break;
+      }
+      default :
+      {
+        // ----- EXTENSION POINT
+        list($field, $tag, $tag_attr, $id, $label, $labelIt) =
+          rex_register_extension_point( 'A62_CUSTOM_FIELD', array($field, $tag, $tag_attr, $id, $label, $labelIt, 'type' => $typeLabel, 'sql' => $sqlFields));
       }
     }
 
