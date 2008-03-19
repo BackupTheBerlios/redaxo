@@ -3,9 +3,9 @@
 /**
  * MetaForm Addon
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
- * 
+ *
  * @package redaxo4
- * @version $Id: field.inc.php,v 1.3 2008/03/11 16:03:48 kills Exp $
+ * @version $Id: field.inc.php,v 1.4 2008/03/19 10:02:10 kills Exp $
  */
 
 //------------------------------> Parameter
@@ -28,7 +28,7 @@ $field_id = rex_request('field_id', 'int');
 //------------------------------> Eintragsliste
 if ($func == '')
 {
-  $list = new rex_list('SELECT field_id, name FROM '. $REX['TABLE_PREFIX'] .'62_params WHERE `name` LIKE "'. $prefix .'%" ORDER BY prior');
+  $list = rex_list::factory('SELECT field_id, name FROM '. $REX['TABLE_PREFIX'] .'62_params WHERE `name` LIKE "'. $prefix .'%" ORDER BY prior');
 
   $list->setCaption($I18N_META_INFOS->msg('field_list_caption'));
   $imgHeader = '<a href="'. $list->getUrl(array('func' => 'add')) .'"><img src="media/metainfo_plus.gif" alt="add" title="add" /></a>';

@@ -3,7 +3,7 @@
 /**
  * Klasse zum erstellen von Listen
  * @package redaxo4
- * @version $Id: class.rex_form.inc.php,v 1.6 2008/02/18 11:01:56 kills Exp $
+ * @version $Id: class.rex_form.inc.php,v 1.7 2008/03/19 10:05:42 kills Exp $
  */
 
 class rex_form
@@ -71,6 +71,19 @@ class rex_form
   function init()
   {
     // nichts tun
+  }
+
+  function factory($tableName, $fieldset, $whereCondition, $method = 'post', $debug = false)
+  {
+    static $class = null;
+
+    if(!$class)
+    {
+      // ----- EXTENSION POINT
+      $class = rex_register_extension_point('REX_FORM_CLASSNAME', 'rex_form');
+    }
+
+    return new $class($tableName, $fieldset, $whereCondition, $method, $debug);
   }
 
   function loadBackendConfig()

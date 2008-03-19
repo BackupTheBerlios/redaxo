@@ -7,13 +7,13 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.21 2008/02/23 11:50:21 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.22 2008/03/19 10:02:10 kills Exp $
  */
 
 /*
 Beispiel:
 
-$list = new rex_list('SELECT id,name FROM rex_article');
+$list = rex_list::factory('SELECT id,name FROM rex_article');
 $list->setColumnFormat('id', 'date');
 $list->setColumnLabel('name', 'Artikel-Name');
 $list->setColumnSortable('name');
@@ -141,6 +141,19 @@ class rex_list
       $this->loadBackendConfig();
 
     $this->init();
+  }
+
+  function factory($query, $rowsPerPage = 30, $listName = null, $debug = false)
+  {
+    static $class = null;
+
+    if(!$class)
+    {
+      // ----- EXTENSION POINT
+      $class = rex_register_extension_point('REX_LIST_CLASSNAME', 'rex_list');
+    }
+
+    return new $class($query, $rowsPerPage, $listName, $debug);
   }
 
   function init()

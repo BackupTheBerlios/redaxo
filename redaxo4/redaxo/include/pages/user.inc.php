@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: user.inc.php,v 1.5 2008/03/06 10:10:16 kills Exp $
+ * @version $Id: user.inc.php,v 1.6 2008/03/19 10:02:10 kills Exp $
  */
 
 /*
@@ -716,7 +716,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
 
 if (isset($SHOW) and $SHOW)
 {
-  $list = new rex_list('SELECT user_id, name, login, lasttrydate FROM '.$REX['TABLE_PREFIX'].'user ORDER BY name');
+  $list = rex_list::factory('SELECT user_id, name, login, lasttrydate FROM '.$REX['TABLE_PREFIX'].'user ORDER BY name');
   $list->setCaption($I18N->msg('user_caption'));
   $list->addTableAttribute('summary', $I18N->msg('user_summary'));
 

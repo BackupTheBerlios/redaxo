@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: module.modules.inc.php,v 1.2 2007/12/31 11:43:32 kills Exp $
+ * @version $Id: module.modules.inc.php,v 1.3 2008/03/19 10:02:10 kills Exp $
  */
 
 $OUT = TRUE;
@@ -309,7 +309,7 @@ if ($OUT)
     echo rex_warning($message);
   }
 
-  $list = new rex_list('SELECT id, name FROM '.$REX['TABLE_PREFIX'].'module ORDER BY name');
+  $list = rex_list::factory('SELECT id, name FROM '.$REX['TABLE_PREFIX'].'module ORDER BY name');
   $list->setCaption($I18N->msg('module_caption'));
   $list->addTableAttribute('summary', $I18N->msg('module_summary'));
 

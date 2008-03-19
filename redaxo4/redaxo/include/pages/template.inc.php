@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: template.inc.php,v 1.7 2008/03/06 10:19:42 kills Exp $
+ * @version $Id: template.inc.php,v 1.8 2008/03/19 10:02:10 kills Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -214,7 +214,7 @@ if ($OUT) {
     echo rex_warning($message);
   }
 
-  $list = new rex_list('SELECT id, name, active FROM '.$REX['TABLE_PREFIX'].'template ORDER BY name');
+  $list = rex_list::factory('SELECT id, name, active FROM '.$REX['TABLE_PREFIX'].'template ORDER BY name');
   $list->setCaption($I18N->msg('header_template_caption'));
   $list->addTableAttribute('summary', $I18N->msg('header_template_summary'));
 
