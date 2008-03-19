@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: extension_search_mpool.inc.php,v 1.8 2008/02/24 16:17:31 kills Exp $
+ * @version $Id: extension_search_mpool.inc.php,v 1.9 2008/03/19 13:19:06 kills Exp $
  */
 
 function rex_a256_search_mpool($params)
@@ -18,8 +18,8 @@ function rex_a256_search_mpool($params)
     return $params['subject'];
   }
 
-  $media_name = rex_request('a256_media_name', 'string');
   if(rex_request('subpage', 'string') != '') return $params['subject'];
+  $media_name = rex_request('a256_media_name', 'string');
 
   $subject = $params['subject'];
 
