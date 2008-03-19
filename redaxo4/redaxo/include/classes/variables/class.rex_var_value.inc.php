@@ -10,7 +10,7 @@
  * REX_IS_VALUE
  *
  * @package redaxo4
- * @version $Id: class.rex_var_value.inc.php,v 1.3 2008/02/14 15:21:22 kills Exp $
+ * @version $Id: class.rex_var_value.inc.php,v 1.4 2008/03/19 12:54:08 kristinus Exp $
  */
 
 class rex_var_value extends rex_var
@@ -81,7 +81,7 @@ class rex_var_value extends rex_var
   function getBEInput(& $sql, $content)
   {
     $content = $this->getOutput($sql, $content);
-    $content = str_replace('REX_PHP', htmlspecialchars($this->getValue($sql, 'php')), $content);
+    $content = str_replace('REX_PHP', htmlspecialchars($this->getValue($sql, 'php'),ENT_QUOTES), $content);
     return $content;
   }
 
@@ -155,7 +155,7 @@ class rex_var_value extends rex_var
         {
           if ($escape)
           {
-            $replace = htmlspecialchars($replace);
+            $replace = htmlspecialchars($replace,ENT_QUOTES);
           }
 
           if ($nl2br)
