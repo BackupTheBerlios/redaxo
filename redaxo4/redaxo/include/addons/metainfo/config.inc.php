@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.5 2008/03/04 15:01:08 kills Exp $
+ * @version $Id: config.inc.php,v 1.6 2008/03/20 12:35:27 kills Exp $
  */
 
 $mypage = 'metainfo';
@@ -39,7 +39,7 @@ if ($REX['REDAXO'])
     if($page == 'metainfo')
     {
       rex_register_extension('PAGE_HEADER',
-        create_function('$params', 'return \'  <script src="index.php?js=addons/metainfo" type="text/javascript"></script>\';')
+        create_function('$params', 'return $params[\'subject\'] .\'  <script src="index.php?js=addons/metainfo" type="text/javascript"></script>\'."\n";')
       );
     }
 
