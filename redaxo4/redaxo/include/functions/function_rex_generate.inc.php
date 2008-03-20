@@ -4,7 +4,7 @@
 /**
  * Funktionensammlung für die generierung der Artikel/Templates/Kategorien/Metainfos.. etc.
  * @package redaxo4
- * @version $Id: function_rex_generate.inc.php,v 1.10 2008/03/19 19:36:14 kills Exp $
+ * @version $Id: function_rex_generate.inc.php,v 1.11 2008/03/20 09:07:48 kristinus Exp $
  */
 
 // ----------------------------------------- Alles generieren
@@ -758,13 +758,14 @@ function rex_copyArticle($id, $to_cat_id)
         $art_sql->setValue('re_id', $to_cat_id);
         $art_sql->setValue('path', $path);
         $art_sql->setValue('catname', $catname);
+        $art_sql->setValue('catprior', 0);
         $art_sql->setValue('prior', 99999); // Artikel als letzten Artikel in die neue Kat einfügen
         $art_sql->setValue('status', 0); // Kopierter Artikel offline setzen
         $art_sql->setValue('startpage', 0);
         $art_sql->addGlobalCreateFields();
 
         // schon gesetzte Felder nicht wieder überschreiben
-        $dont_copy = array ('id', 'pid', 're_id', 'catname', 'path', 'prior', 'status', 'createdate', 'createuser', 'startpage');
+        $dont_copy = array ('id', 'pid', 're_id', 'catname', 'catprior', 'path', 'prior', 'status', 'createdate', 'createuser', 'startpage');
 
         foreach (array_diff($from_sql->getFieldnames(), $dont_copy) as $fld_name)
         {
