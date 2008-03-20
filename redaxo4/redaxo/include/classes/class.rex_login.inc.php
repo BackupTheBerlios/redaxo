@@ -5,7 +5,7 @@
  * Klasse zum handling des Login/Logout-Mechanismuses
  *
  * @package redaxo4
- * @version $Id: class.rex_login.inc.php,v 1.7 2008/03/08 13:26:48 kills Exp $
+ * @version $Id: class.rex_login.inc.php,v 1.8 2008/03/20 11:14:47 kills Exp $
  */
 
 class rex_login_sql extends rex_sql
@@ -23,6 +23,11 @@ class rex_login_sql extends rex_sql
       else
         return strpos($this->getValue($feld), $prop) !== false;
     }
+  }
+
+  function getUserLogin()
+  {
+    return $this->getValue('login');
   }
 
   function isAdmin()
