@@ -8,7 +8,7 @@
  * @author jan.kristinus[at]yakmara[dot]de Jan Kristinus
  *
  * @package redaxo4
- * @version $Id: settings.inc.php,v 1.3 2008/03/03 10:07:11 kills Exp $
+ * @version $Id: settings.inc.php,v 1.4 2008/03/20 18:13:13 kills Exp $
  */
 
 // rex_request();
@@ -41,8 +41,7 @@ $REX[\'ADDON\'][\'image_resize\'][\'jpg_quality\'] = '.$jpg_quality.';
 	$file = $REX['INCLUDE_PATH']."/addons/image_resize/config.inc.php";
   rex_replace_dynamic_contents($file, $content);
 
-  echo '<p class="rex-warning"><span>' . 'Konfiguration wurde aktualisiert' . '</span></p>';
-
+  echo rex_warning('Konfiguration wurde aktualisiert');
 }
 
 echo '

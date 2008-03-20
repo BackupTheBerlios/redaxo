@@ -8,7 +8,7 @@
  * @author jan.kristinus[at]yakmara[dot]de Jan Kristinus
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.5 2008/02/25 09:49:02 kills Exp $
+ * @version $Id: index.inc.php,v 1.6 2008/03/20 18:13:13 kills Exp $
  */
 
 require $REX['INCLUDE_PATH'] . '/layout/top.php';
@@ -39,7 +39,8 @@ switch($subpage)
   default:
   {
   	if (isset ($msg) and $msg != '')
-		  echo '<p class="rex-warning"><span>' . $msg . '</span></p>';
+		  echo rex_warning($msg);
+
 	  $subpage = 'overview';
   }
 }
