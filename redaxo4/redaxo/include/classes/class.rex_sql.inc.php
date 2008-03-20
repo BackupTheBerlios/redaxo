@@ -2,7 +2,7 @@
 
 /**
  * Klasse zur Verbindung und Interatkion mit der Datenbank
- * @version $Id: class.rex_sql.inc.php,v 1.8 2008/02/23 10:12:53 kills Exp $
+ * @version $Id: class.rex_sql.inc.php,v 1.9 2008/03/20 12:38:26 kills Exp $
  */
 
 class rex_sql
@@ -321,6 +321,15 @@ class rex_sql
   function getRows()
   {
     return $this->rows;
+  }
+
+  /**
+   * Gibt die Zeilennummer zurück, auf der sich gerade der
+   * interne Zähler befindet
+   */
+  function getCounter()
+  {
+    return $this->counter;
   }
 
   /**
