@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: structure.inc.php,v 1.6 2008/03/05 17:35:06 kills Exp $
+ * @version $Id: structure.inc.php,v 1.7 2008/03/21 19:45:17 kristinus Exp $
  */
 
 // --------------------------------------------- EXISTIERT DIESER ZU EDITIERENDE ARTIKEL ?
@@ -833,7 +833,9 @@ if ($category_id > -1)
           <col width="105" />
           <col width="105" />
           <col width="105" />
-          <col width="51" span="3" />
+          <col width="51" />
+          <col width="51" />
+          <col width="51" />
         </colgroup>
         <thead>
           <tr>
