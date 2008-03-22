@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: extension_search_structure.inc.php,v 1.15 2008/03/22 16:34:52 kills Exp $
+ * @version $Id: extension_search_structure.inc.php,v 1.16 2008/03/22 16:49:34 kills Exp $
  */
 
 function rex_a256_search_structure($params)
@@ -108,7 +108,14 @@ function rex_a256_search_structure($params)
             $s .= '<li>'. $prefix .'<a href="'. sprintf($structureUrl, $treeItem->getId(), $a256_clang, urlencode($a256_article_name)) .'">'. htmlspecialchars($treeLabel) .'</a></li>';
           }
 
-          $s .= '<li>: <a href="'. sprintf($editUrl, $search->getValue('id'), $a256_clang, urlencode($a256_article_name)) .'">'. htmlspecialchars($label) .'</a></li>';
+          $prefix = ': ';
+          if($first)
+          {
+            $prefix = '';
+            $first = false;
+          }
+
+          $s .= '<li>'. $prefix .'<a href="'. sprintf($editUrl, $search->getValue('id'), $a256_clang, urlencode($a256_article_name)) .'">'. htmlspecialchars($label) .'</a></li>';
 
           $search_result .= '<li><ul class="a256-search-hit">'. $s .'</ul></li>';
         }
