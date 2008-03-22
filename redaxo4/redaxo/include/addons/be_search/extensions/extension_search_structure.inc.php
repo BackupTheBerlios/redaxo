@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: extension_search_structure.inc.php,v 1.13 2008/03/19 13:10:33 kills Exp $
+ * @version $Id: extension_search_structure.inc.php,v 1.14 2008/03/22 16:16:04 kills Exp $
  */
 
 function rex_a256_search_structure($params)
@@ -70,7 +70,7 @@ function rex_a256_search_structure($params)
       $OOArt = OOArticle::getArticleById($search->getValue('id'), $a256_clang);
       if($REX_USER->hasCategoryPerm($OOArt->getCategoryId()))
       {
-        header('Location:'. sprintf($editUrl, $OOArt->getCategoryId(), $a256_clang, urlencode($a256_article_name)));
+        header('Location:'. sprintf($editUrl, $search->getValue('id'), $a256_clang, urlencode($a256_article_name)));
         exit();
       }
     }
