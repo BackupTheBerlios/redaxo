@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: template.inc.php,v 1.11 2008/03/22 15:28:40 kristinus Exp $
+ * @version $Id: template.inc.php,v 1.12 2008/03/22 16:13:19 kristinus Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -253,6 +253,8 @@ if ($OUT) {
   $list->addColumn($I18N->msg('header_template_functions'), $I18N->msg('delete_template'));
   $list->setColumnParams($I18N->msg('header_template_functions'), array('function' => 'delete', 'template_id' => '###id###'));
   $list->addLinkAttribute($I18N->msg('header_template_functions'), 'onclick', 'return confirm(\''.$I18N->msg('delete').' ?\')');
+
+	$list->setNoRowsMessage($I18N->msg('templates_not_found'));
 
   $list->show();
 }

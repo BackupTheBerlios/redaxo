@@ -5,7 +5,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: field.inc.php,v 1.4 2008/03/19 10:02:10 kills Exp $
+ * @version $Id: field.inc.php,v 1.5 2008/03/22 16:13:19 kristinus Exp $
  */
 
 //------------------------------> Parameter
@@ -40,6 +40,8 @@ if ($func == '')
 
   $list->setColumnLabel('name', $I18N_META_INFOS->msg('field_label_name'));
   $list->setColumnParams('name', array('func' => 'edit', 'field_id' => '###field_id###'));
+
+  $list->setNoRowsMessage($I18N_META_INFOS->msg('metainfos_not_found'));
 
   $list->show();
 }

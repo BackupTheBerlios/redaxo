@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: module.modules.inc.php,v 1.4 2008/03/19 12:14:17 kills Exp $
+ * @version $Id: module.modules.inc.php,v 1.5 2008/03/22 16:13:19 kristinus Exp $
  */
 
 $OUT = TRUE;
@@ -339,6 +339,8 @@ if ($OUT)
   $list->addColumn($I18N->msg('module_functions'), $I18N->msg('delete_module'));
   $list->setColumnParams($I18N->msg('module_functions'), array('function' => 'delete', 'modul_id' => '###id###'));
   $list->addLinkAttribute($I18N->msg('module_functions'), 'onclick', 'return confirm(\''.$I18N->msg('delete').' ?\')');
+
+	$list->setNoRowsMessage($I18N->msg('modules_not_found'));
 
   $list->show();
 }
