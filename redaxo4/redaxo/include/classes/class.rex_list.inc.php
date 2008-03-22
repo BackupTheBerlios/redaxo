@@ -7,7 +7,7 @@ define('REX_LIST_OPT_SORT', 0);
  * Klasse zum erstellen von Listen
  *
  * @package redaxo4
- * @version $Id: class.rex_list.inc.php,v 1.23 2008/03/19 10:05:27 kills Exp $
+ * @version $Id: class.rex_list.inc.php,v 1.24 2008/03/22 16:06:09 kills Exp $
  */
 
 /*
@@ -47,6 +47,7 @@ class rex_list
   var $query;
   var $sql;
   var $debug;
+  var $noRowsMessage;
 
   // --------- List Attributes
   var $name;
@@ -89,7 +90,7 @@ class rex_list
    */
   function rex_list($query, $rowsPerPage = 30, $listName = null, $debug = false)
   {
-    global $REX;
+    global $REX, $I18N;
 
     // --------- Validation
     if(!$listName) $listName = md5($query);
@@ -104,6 +105,7 @@ class rex_list
     $this->rows = 0;
     $this->params = array();
     $this->tableAttributes = array();
+    $this->noRowsMessage = $I18N->msg('list_no_rows');
 
     // --------- Form Attributes
     $this->formAttributes = array();
@@ -202,6 +204,16 @@ class rex_list
   function getCaption()
   {
     return $this->caption;
+  }
+
+  function setNoRowsMessage($msg)
+  {
+    $this->noRowsMessage = $msg;
+  }
+
+  function getNoRowsMessage()
+  {
+    return $this->noRowsMessage;
   }
 
   function addParam($name, $value)
@@ -1055,7 +1067,7 @@ class rex_list
     }
     else
     {
-      $s .= '<tr><td colspan="'. count($columnNames) .'">'. $I18N->msg('list_no_rows') .'</td></tr>';
+      $s .= '<tr><td colspan="'. count($columnNames) .'">'. $this->getNoRowsMessage() .'</td></tr>';
     }
 
     $s .= '  </table>'. "\n";
