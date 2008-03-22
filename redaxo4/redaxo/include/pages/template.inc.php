@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: template.inc.php,v 1.8 2008/03/19 10:02:10 kills Exp $
+ * @version $Id: template.inc.php,v 1.9 2008/03/22 13:41:08 kills Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -232,7 +232,7 @@ if ($OUT) {
   $imgAdd = '<img src="media/template_plus.gif" alt="'.$I18N->msg('create_template').'" title="'.$I18N->msg('create_template').'" />';
   $imgHeader = '<a href="'. $list->getUrl(array('function' => 'add')) .'"'. rex_accesskey($I18N->msg('create_template'), $REX['ACKEY']['ADD']) .'>'. $imgAdd .'</a>';
   $list->addColumn($imgHeader, $img, 0, array('<th class="rex-icon">###VALUE###</th>','<td class="rex-icon">###VALUE###</td>'));
-  $list->setColumnParams($imgHeader, array('function' => 'edit', 'modul_id' => '###id###'));
+  $list->setColumnParams($imgHeader, array('function' => 'edit', 'template_id' => '###id###'));
 
   $list->setColumnLabel('id', 'ID');
   $list->setColumnLayout('id',  array('<th class="rex-icon">###VALUE###</th>','<td class="rex-icon">###VALUE###</td>'));
