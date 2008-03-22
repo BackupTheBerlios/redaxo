@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: template.inc.php,v 1.9 2008/03/22 13:41:08 kills Exp $
+ * @version $Id: template.inc.php,v 1.10 2008/03/22 13:46:46 kills Exp $
  */
 
 rex_title($I18N->msg("title_templates"), "");
@@ -36,10 +36,17 @@ if ($function == "delete") {
 
   $hole = new rex_sql;
   $hole->setQuery("SELECT * FROM " . $REX['TABLE_PREFIX'] . "template WHERE id = '$template_id'");
-  $templatename = $hole->getValue("name");
-  $content = $hole->getValue("content");
-  $active = $hole->getValue("active");
-  $attributes = $hole->getValue("attributes");
+  if($hole->getRows() == 1)
+  {
+    $templatename = $hole->getValue("name");
+    $content = $hole->getValue("content");
+    $active = $hole->getValue("active");
+    $attributes = $hole->getValue("attributes");
+  }
+  else
+  {
+    $function = '';
+  }
 
 } else {
 
