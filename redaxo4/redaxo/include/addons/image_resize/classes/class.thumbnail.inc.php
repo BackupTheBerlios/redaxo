@@ -11,7 +11,7 @@
  *
  *
  * @package redaxo4
- * @version $Id: class.thumbnail.inc.php,v 1.14 2008/03/12 13:30:54 kills Exp $
+ * @version $Id: class.thumbnail.inc.php,v 1.15 2008/03/24 11:41:28 kills Exp $
  */
 
 class rex_thumbnail
@@ -316,14 +316,18 @@ class rex_thumbnail
   	$c = 0;
     foreach($folders as $folder)
     {
-	    foreach (glob($folder .'image_resize__*') as $var)
-	    {
-      	if ($filename == '' || $filename != '' && $filename == substr($var,strlen($filename) * -1))
-      	{
-      		unlink($var);
-      		$c++;
-      	}
-	    }
+      $glob = glob($folder .'image_resize__*');
+      if($glob)
+      {
+  	    foreach ($glob as $var)
+  	    {
+        	if ($filename == '' || $filename != '' && $filename == substr($var,strlen($filename) * -1))
+        	{
+        		unlink($var);
+        		$c++;
+        	}
+  	    }
+      }
     }
 
 	  return $c;
