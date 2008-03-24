@@ -3,9 +3,9 @@
 /**
  * MetaForm Addon
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
- * 
+ *
  * @package redaxo4
- * @version $Id: extension_cleanup.inc.php,v 1.3 2008/03/11 16:03:32 kills Exp $
+ * @version $Id: extension_cleanup.inc.php,v 1.4 2008/03/24 12:30:57 kills Exp $
  */
 
 rex_register_extension('A1_BEFORE_DB_IMPORT', 'rex_a62_metainfo_cleanup');
@@ -27,7 +27,7 @@ function rex_a62_metainfo_cleanup($params)
     return;
   }
 
-  require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableExpander.inc.php';
+  require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_table_expander.inc.php';
 
   $sql = new rex_sql();
   $sql->setQuery('SELECT name FROM ' . $REX['TABLE_PREFIX'] . '62_params');
