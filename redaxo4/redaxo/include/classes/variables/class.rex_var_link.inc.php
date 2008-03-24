@@ -8,7 +8,7 @@
  * REX_LINKLIST
  *
  * @package redaxo4
- * @version $Id: class.rex_var_link.inc.php,v 1.5 2008/03/24 20:15:40 kills Exp $
+ * @version $Id: class.rex_var_link.inc.php,v 1.6 2008/03/24 20:25:49 kills Exp $
  */
 
 class rex_var_link extends rex_var
@@ -318,7 +318,7 @@ class rex_var_link extends rex_var
   <div class="rex-wdgt">
     <div class="rex-wdgt-mdlst">
       <input type="hidden" name="LINKLIST['. $id .']" id="REX_LINKLIST_'. $id .'" value="'. $value .'" />
-      <p class="rex-slct">
+      <p class="rex-wdgt-fld">
         <select name="LINKLIST_SELECT[' . $id . ']" id="REX_LINKLIST_SELECT_' . $id . '" size="8"'. rex_tabindex() .'>
           ' . $options . '
         </select>
