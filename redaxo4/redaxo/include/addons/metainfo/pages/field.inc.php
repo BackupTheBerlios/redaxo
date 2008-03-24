@@ -5,7 +5,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: field.inc.php,v 1.5 2008/03/22 16:13:19 kristinus Exp $
+ * @version $Id: field.inc.php,v 1.6 2008/03/24 12:24:14 kristinus Exp $
  */
 
 //------------------------------> Parameter
@@ -48,7 +48,7 @@ if ($func == '')
 //------------------------------> Formular
 elseif ($func == 'edit' || $func == 'add')
 {
-  require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableExpander.inc.php';
+  require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_table_expander.inc.php';
 
   $form = new rex_a62_tableExpander($prefix, $metaTable, $REX['TABLE_PREFIX'] .'62_params', $I18N_META_INFOS->msg('field_fieldset'),'field_id='. $field_id);
 

@@ -5,7 +5,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: class.rex_tableExpander.inc.php,v 1.6 2008/03/19 15:17:25 kills Exp $
+ * @version $Id: class.rex_table_expander.inc.php,v 1.1 2008/03/24 12:24:14 kristinus Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);
@@ -19,7 +19,7 @@ define('REX_A62_FIELD_REX_LINK_BUTTON',      8);
 
 define('REX_A62_FIELD_COUNT',                8);
 
-require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_tableManager.inc.php';
+require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_table_manager.inc.php';
 
 class rex_a62_tableExpander extends rex_form
 {
