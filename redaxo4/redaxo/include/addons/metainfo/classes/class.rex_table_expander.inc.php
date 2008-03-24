@@ -1,11 +1,12 @@
 <?php
+
 /**
  * MetaForm Addon
  *
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: class.rex_table_expander.inc.php,v 1.1 2008/03/24 12:24:14 kristinus Exp $
+ * @version $Id: class.rex_table_expander.inc.php,v 1.2 2008/03/24 12:31:25 kills Exp $
  */
 
 define('REX_A62_FIELD_TEXT',                 1);
