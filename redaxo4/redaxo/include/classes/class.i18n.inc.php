@@ -3,7 +3,7 @@
 /**
  * Sprachobjekt zur Internationalisierung (I18N)
  * @package redaxo4
- * @version $Id: class.i18n.inc.php,v 1.3 2008/02/23 15:02:15 kristinus Exp $
+ * @version $Id: class.i18n.inc.php,v 1.4 2008/03/24 14:22:23 kills Exp $
  */
 
 class i18n
@@ -23,7 +23,7 @@ class i18n
    */
   function i18n($locale = "de_de", $searchpath)
   {
-  	
+
     $this->searchpath = $searchpath;
 
     $this->text = array ();
@@ -210,6 +210,15 @@ function rex_create_lang($locale = "de_de", $searchpath = '')
   {
     $REX['LOCALES'] = $lang_object->getLocales($searchpath);
   }
+
+  $locale = trim($lang_object->msg('setlocale'));
+  $charset = trim($lang_object->msg('htmlcharset'));
+  $charset_alt = str_replace('iso-','iso',$charset);
+
+  $setted = setlocale(LC_ALL,
+    $locale.'.'.$charset,
+    $locale.'.'.$charset_alt,
+    $locale);
 
   return $lang_object;
 
