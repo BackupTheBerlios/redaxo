@@ -3,8 +3,14 @@
 /**
  *
  * @package redaxo4
- * @version $Id: module.action.inc.php,v 1.9 2008/03/25 11:16:20 kills Exp $
+ * @version $Id: module.action.inc.php,v 1.10 2008/03/25 11:20:31 kills Exp $
  */
+
+$PREPOST[0] = 'PRE';
+$PREPOST[1] = 'POST';
+$ASTATUS[0] = 'ADD';
+$ASTATUS[1] = 'EDIT';
+$ASTATUS[2] = 'DELETE';
 
 class rex_event_select extends rex_select
 {
