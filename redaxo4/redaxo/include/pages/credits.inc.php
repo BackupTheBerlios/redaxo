@@ -3,7 +3,7 @@
 /**
  * Creditsseite. Auflistung der Credits an die Entwickler von REDAXO und den AddOns.
  * @package redaxo4
- * @version $Id: credits.inc.php,v 1.5 2008/02/29 15:55:10 kills Exp $
+ * @version $Id: credits.inc.php,v 1.6 2008/03/25 10:13:16 kills Exp $
  */
 
 rex_title($I18N->msg("credits"), "");
@@ -70,7 +70,7 @@ include_once $REX['INCLUDE_PATH']."/functions/function_rex_addons.inc.php";
 
     	if ($isActive) $cl = 'rex-clr-grn';
     	else $cl = 'rex-clr-red';
-    	echo '<tr><td><span class="'.$cl.'">'.$cur.'</span> [<a href="index.php?page=addon&amp;spage=help&amp;addonname='.$cur.'">?</a>]</td><td class="'.$cl.'">';
+    	echo '<tr><td><span class="'.$cl.'">'.$cur.'</span> [<a href="index.php?page=addon&amp;subpage=help&amp;addonname='.$cur.'">?</a>]</td><td class="'.$cl.'">';
 
 
     	if ($version) echo '['.$version.']';
