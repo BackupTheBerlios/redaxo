@@ -5,7 +5,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: extension_common.inc.php,v 1.17 2008/03/24 20:15:40 kills Exp $
+ * @version $Id: extension_common.inc.php,v 1.18 2008/03/25 16:53:41 kills Exp $
  */
 
 /**
@@ -308,7 +308,7 @@ function rex_a62_metaFields($sqlFields, $activeItem, $formatCallback, $epParams)
       {
         $tag = 'div';
         $tag_attr = ' class="rex-ptag"';
-    
+
         $category = '';
         if($activeItem)
           $category = $activeItem->getValue('category_id');
@@ -408,7 +408,6 @@ function _rex_a62_metainfo_form($prefix, $params, $saveCallback)
 {
   global $REX;
 
-  $s = '';
   $debug = false;
 
   $qry = 'SELECT
@@ -433,9 +432,7 @@ function _rex_a62_metainfo_form($prefix, $params, $saveCallback)
   if(isset($params['activeItem']))
     $activeItem = $params['activeItem'];
 
-  $s = rex_a62_metaFields($sqlFields, $activeItem, 'rex_a62_metainfo_form_item', $params);
-
-  return $s;
+  return rex_a62_metaFields($sqlFields, $activeItem, 'rex_a62_metainfo_form_item', $params);
 }
 
 /**
