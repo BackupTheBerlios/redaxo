@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: template.inc.php,v 1.15 2008/03/25 13:21:19 kills Exp $
+ * @version $Id: template.inc.php,v 1.16 2008/03/25 13:38:50 kills Exp $
  */
 
 rex_title($I18N->msg('title_templates'), '');
@@ -216,13 +216,16 @@ if ($function == "add" or $function == "edit") {
         });
 
         $("#ctype-fldst legend a").click(function() {
-          $("#ctype-fldst .rex-tmp-ctypes").toggle();
-
+          var ctypes = $("#ctype-fldst .rex-tmp-ctypes");
           var img = $("img", this);
-          if(img.attr("src") == "media/file_del.gif")
-            img.attr("src", "media/file_add.gif");
-          else
+
+          if (ctypes.is(":hidden")) {
+            ctypes.slideDown("slow");
             img.attr("src", "media/file_del.gif");
+          } else {
+            img.attr("src", "media/file_add.gif");
+            ctypes.slideUp("slow");
+          }
 
           return false;
         });
