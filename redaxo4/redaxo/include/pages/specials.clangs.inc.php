@@ -3,7 +3,7 @@
 /**
  * Verwaltung der Content Sprachen
  * @package redaxo4
- * @version $Id: specials.clangs.inc.php,v 1.2 2008/03/25 09:57:29 kills Exp $
+ * @version $Id: specials.clangs.inc.php,v 1.3 2008/03/25 10:01:41 kills Exp $
  */
 
 // -------------- Defaults
@@ -23,7 +23,7 @@ $info = '';
 // ----- delete clang
 if (!empty ($del_clang_save))
 {
-  if ($clang_id > 0)
+  if (array_key_exists($clang_id, $REX['CLANG']))
   {
     rex_deleteCLang($clang_id);
     $info = $I18N->msg('clang_deleted');
@@ -59,7 +59,7 @@ if (!empty ($add_clang_save))
 }
 elseif (!empty ($edit_clang_save))
 {
-  if ($clang_id >= 0)
+  if (array_key_exists($clang_id, $REX['CLANG']))
   {
     rex_editCLang($clang_id, $clang_name);
     $info = $I18N->msg('clang_edited');
