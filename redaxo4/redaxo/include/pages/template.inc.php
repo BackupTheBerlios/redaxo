@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: template.inc.php,v 1.14 2008/03/25 13:15:47 kills Exp $
+ * @version $Id: template.inc.php,v 1.15 2008/03/25 13:21:19 kills Exp $
  */
 
 rex_title($I18N->msg('title_templates'), '');
@@ -226,6 +226,9 @@ if ($function == "add" or $function == "edit") {
 
           return false;
         });
+
+        if($("#active").attr("checked") == undefined)
+          $("#ctype-fldst").hide();
 
       });
 
