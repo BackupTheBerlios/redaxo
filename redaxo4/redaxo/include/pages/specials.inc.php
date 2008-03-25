@@ -2,12 +2,11 @@
 /**
  *
  * @package redaxo4
- * @version $Id: specials.inc.php,v 1.2 2008/02/25 09:52:30 kills Exp $
+ * @version $Id: specials.inc.php,v 1.3 2008/03/25 10:02:17 kills Exp $
  */
 
 // -------------- Defaults
 
-$message = rex_request('message', 'string');
 $subpage = rex_request('subpage', 'string');
 $func = rex_request('func', 'string');
 
