@@ -4,7 +4,7 @@
  * Funktionensammlung für den Medienpool
  *
  * @package redaxo4
- * @version $Id: function_rex_medienpool.inc.php,v 1.4 2008/03/26 13:51:02 kills Exp $
+ * @version $Id: function_rex_medienpool.inc.php,v 1.5 2008/03/26 14:40:59 kills Exp $
  */
 
 /**
@@ -109,7 +109,7 @@ function rex_medienpool_saveMedia($FILE, $rex_file_category, $FILEINFOS, $userlo
 
   if($success)
   {
-    chmod($dstFile, $REX['FILEPERM']);
+    @chmod($dstFile, $REX['FILEPERM']);
 
     // get widht height
     $size = @getimagesize($dstFile);
