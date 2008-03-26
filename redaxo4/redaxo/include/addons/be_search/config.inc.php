@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.12 2008/03/22 19:31:03 kills Exp $
+ * @version $Id: config.inc.php,v 1.13 2008/03/26 21:06:37 kills Exp $
  */
 
 $mypage = 'be_search';
@@ -19,6 +19,12 @@ $REX['ADDON']['page'][$mypage] = $mypage;
 $REX['ADDON']['version'][$mypage] = '1.0';
 $REX['ADDON']['author'][$mypage] = 'Markus Staab';
 $REX['ADDON']['supportpage'][$mypage] = 'forum.redaxo.de';
+
+// Suchmodus
+// global => Es werden immer alle Kategorien durchsucht
+// local => Es werden immer die aktuelle+Unterkategorien durchsucht
+// $REX['ADDON']['searchmode'][$mypage] = 'global';
+$REX['ADDON']['searchmode'][$mypage] = 'local';
 
 $REX['EXTPERM'][] = 'be_search[medienpool]';
 $REX['EXTPERM'][] = 'be_search[structure]';
