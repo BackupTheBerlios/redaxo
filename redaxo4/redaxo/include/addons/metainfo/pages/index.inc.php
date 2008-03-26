@@ -3,9 +3,9 @@
 /**
  * MetaForm Addon
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
- * 
+ *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.4 2008/03/11 16:03:48 kills Exp $
+ * @version $Id: index.inc.php,v 1.5 2008/03/26 18:54:34 kills Exp $
  */
 
 // Parameter
@@ -34,23 +34,21 @@ switch($subpage)
   case 'media' :
   {
     $prefix = 'med_';
-    $metaTable = $REX['TABLE_PREFIX'] .'file';
     break;
   }
-
   case 'categories' :
   {
     $prefix = 'cat_';
-    $metaTable = $REX['TABLE_PREFIX'] .'article';
     break;
   }
-
   default:
   {
 	  $prefix = 'art_';
-    $metaTable = $REX['TABLE_PREFIX'] .'article';
   }
 }
+
+$metaTable = a62_meta_table($prefix);
+
 require $Basedir .'/field.inc.php';
 
 // Include Footer

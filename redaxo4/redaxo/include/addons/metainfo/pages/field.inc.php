@@ -5,18 +5,18 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: field.inc.php,v 1.6 2008/03/24 12:24:14 kristinus Exp $
+ * @version $Id: field.inc.php,v 1.7 2008/03/26 18:54:34 kills Exp $
  */
 
 //------------------------------> Parameter
 
-if(!isset($prefix))
+if(empty($prefix))
 {
   trigger_error('Fehler: Prefix nicht definiert!', E_USER_ERROR);
   exit();
 }
 
-if(!isset($metaTable))
+if(empty($metaTable))
 {
   trigger_error('Fehler: metaTable nicht definiert!', E_USER_ERROR);
   exit();

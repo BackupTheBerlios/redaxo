@@ -6,7 +6,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: config.inc.php,v 1.6 2008/03/20 12:35:27 kills Exp $
+ * @version $Id: config.inc.php,v 1.7 2008/03/26 18:54:34 kills Exp $
  */
 
 $mypage = 'metainfo';
@@ -21,6 +21,12 @@ $REX['ADDON']['perm'][$mypage] = 'metainfo[]';
 $REX['ADDON']['version'][$mypage] = "1.0";
 $REX['ADDON']['author'][$mypage] = "Markus Staab, Jan Kristinus";
 $REX['ADDON']['supportpage'][$mypage] = 'forum.redaxo.de';
+$REX['ADDON']['prefixes'][$mypage] = array('art_', 'cat_', 'med_');
+$REX['ADDON']['metaTables'][$mypage] = array(
+  'art_' => $REX['TABLE_PREFIX'] .'article',
+  'cat_' => $REX['TABLE_PREFIX'] .'article',
+  'med_' => $REX['TABLE_PREFIX'] .'file',
+);
 
 $REX['PERM'][] = 'metainfo[]';
 
@@ -43,6 +49,8 @@ if ($REX['REDAXO'])
       );
     }
 
+    require_once ($REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/classes/class.rex_table_manager.inc.php');
+    require_once ($REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/functions/function_metainfo.inc.php');
     require_once ($REX['INCLUDE_PATH'] . '/addons/' . $mypage . '/extensions/extension_common.inc.php');
 
     if ($page == 'content' && isset ($mode) && $mode == 'meta')
