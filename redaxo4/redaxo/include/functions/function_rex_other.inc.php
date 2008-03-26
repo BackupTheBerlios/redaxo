@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_other.inc.php,v 1.8 2008/03/19 11:04:33 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.9 2008/03/26 18:53:20 kills Exp $
  */
 
 /**
@@ -357,6 +357,30 @@ function rex_replace_dynamic_contents($path, $content)
     return rex_put_file_contents($path, $fcontent);
   }
   return false;
+}
+
+/**
+ * Allgemeine funktion die eine Datenbankspalte fortlaufend durchnummeriert.
+ * Dies ist z.B. nützlich beim Umgang mit einer Prioritäts-Spalte
+ */
+function rex_organize_priorities($tableName, $priorColumnName, $whereCondition = '', $orderBy = '', $startBy = 1)
+{
+  // Datenbankvariable initialisieren
+  $qry = 'SET @count='. ($startBy - 1);
+  $sql = rex_sql::getInstance();
+  $sql->setQuery($qry);
+
+  // Spalte updaten
+  $qry = 'UPDATE '. $tableName .' SET '. $priorColumnName .' = ( SELECT @count := @count +1 )';
+
+  if($whereCondition != '')
+    $qry .= ' WHERE '. $whereCondition;
+
+  if($orderBy != '')
+    $qry .= ' ORDER BY '. $orderBy;
+
+  $sql = rex_sql::getInstance();
+  $sql->setQuery($qry);
 }
 
 
