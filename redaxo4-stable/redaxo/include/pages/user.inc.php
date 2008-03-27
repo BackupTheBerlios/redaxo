@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: user.inc.php,v 1.1 2008/03/26 13:34:13 kills Exp $
+ * @version $Id: user.inc.php,v 1.2 2008/03/27 22:38:45 kills Exp $
  */
 
 /*
@@ -361,8 +361,24 @@ if ((isset($FUNC_UPDATE) && $FUNC_UPDATE != '') || (isset($FUNC_APPLY) and $FUNC
 
     // userperm_cat
     if (isset($userperm_cat)) {
-      foreach($userperm_cat as $_perm)
-        $perm .= '#csw['.$_perm.']';
+      foreach($userperm_cat as $ccat)
+      {
+        $gp = new rex_sql;
+        $gp->setQuery("select * from ".$REX['TABLE_PREFIX']."article where id='$ccat' and clang=0");
+        if ($gp->getRows()==1)
+        {
+          // Alle Eltern-Kategorien im Pfad bis zu ausgewählten, mit
+          // Lesendem zugriff versehen, damit man an die aktuelle Kategorie drann kommt
+          foreach (explode('|',$gp->getValue('path')) as $a)
+            if ($a!='')$userperm_cat_read[$a] = $a;
+        }
+        $perm .= '#csw['. $ccat .']';
+      }
+    }
+
+    if (isset($userperm_cat_read)) {
+      foreach($userperm_cat_read as $_perm)
+        $perm .= '#csr['. $_perm .']';
     }
 
     // userperm_media
@@ -385,9 +401,9 @@ if ((isset($FUNC_UPDATE) && $FUNC_UPDATE != '') || (isset($FUNC_APPLY) and $FUNC
   } else
   {
 
-    if ($useradmin == 1) $adminchecked = ' checked="checked"';
-    if ($allcats == 1) $allcatschecked = ' checked="checked"';
-    if ($allmcats == 1) $allmcatschecked = ' checked="checked"';
+    if ($useradmin == 1) $adminchecked = 'checked="checked"';
+    if ($allcats == 1) $allcatschecked = 'checked="checked"';
+    if ($allmcats == 1) $allmcatschecked = 'checked="checked"';
 
 
     // userperm_all
@@ -448,7 +464,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
   if (!isset($allcatschecked)) { $allcatschecked = ''; }
   if (!isset($allmcatschecked)) { $allmcatschecked = ''; }
   if (!isset($statuschecked)) { $statuschecked = ''; }
-  if (isset($FUNC_ADD) && $FUNC_ADD) $statuschecked = 'checked';
+  if (isset($FUNC_ADD) && $FUNC_ADD) $statuschecked = 'checked="checked"';
 
   $add_login_reset_chkbox = '';
 
@@ -470,16 +486,16 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
     if ($sql->getRows()==1)
     {
       // ----- EINLESEN DER PERMS
-      if ($sql->hasPerm('admin[]')) $adminchecked = 'checked';
+      if ($sql->hasPerm('admin[]')) $adminchecked = 'checked="checked"';
       else $adminchecked = '';
 
-      if ($sql->hasPerm('csw[0]')) $allcatschecked = 'checked';
+      if ($sql->hasPerm('csw[0]')) $allcatschecked = 'checked="checked"';
       else $allcatschecked = '';
 
-      if ($sql->hasPerm('media[0]')) $allmcatschecked = 'checked';
+      if ($sql->hasPerm('media[0]')) $allmcatschecked = 'checked="checked"';
       else $allmcatschecked = '';
 
-      if ($sql->getValue($REX['TABLE_PREFIX'].'user.status') == 1) $statuschecked = 'checked';
+      if ($sql->getValue($REX['TABLE_PREFIX'].'user.status') == 1) $statuschecked = 'checked="checked"';
       else $statuschecked = '';
 
       // Allgemeine Permissions setzen
@@ -592,7 +608,6 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
 
       '. $add_login_reset_chkbox .'
 
-
         <div>
           <p class="rex-cnt-col2">
             <label for="userlogin">'. htmlspecialchars($I18N->msg('login_name')).'</label>
@@ -603,7 +618,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
             <input type="text" id="userpsw" name="userpsw" value="'.htmlspecialchars($userpsw).'" />
             '. ($REX['PSWFUNC']!='' ? '<span>'. $I18N->msg('psw_encrypted') .'</span>' : '') .'
           </p>
-		</div>
+		    </div>
 
         <div>
           <p class="rex-cnt-col2">
@@ -614,7 +629,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
             <label for="userdesc">'.$I18N->msg('description').'</label>
             <input type="text" id="userdesc" name="userdesc" value="'.htmlspecialchars($userdesc).'" />
           </p>
-		</div>
+    		</div>
 
         <div>
           <p class="rex-cnt-col2">
@@ -625,7 +640,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
             '. $add_status_chkbox .'
             <label class="rex-lbl-rght" for="userstatus">'.$I18N->msg('user_status').'</label>
           </p>
-		</div>
+    		</div>
 
         <div>
           <p class="rex-cnt-col2">
@@ -639,7 +654,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
             '.$sel_mylang->get().'
           </p>
           -->
-		</div>
+		    </div>
 
         <div>
           <p class="rex-cnt-col2">
@@ -652,7 +667,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
             '. $sel_ext->get() .'
             <span>'. $I18N->msg('ctrl') .'</span>
           </p>
-		</div>
+		    </div>
 
         <div>
           <p class="rex-cnt-col2">
@@ -663,7 +678,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
             <input class="rex-chckbx" type="checkbox" id="allmcats" name="allmcats" value="1" '.$allmcatschecked.' />
             <label class="rex-lbl-rght" for="allmcats">'.$I18N->msg('all_mediafolder').'</label>
           </p>
-		</div>
+		    </div>
 
         <div>
           <p class="rex-cnt-col2">
@@ -676,7 +691,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
             '. $sel_media->get() .'
             <span>'. $I18N->msg('ctrl') .'</span>
           </p>
-		</div>
+		    </div>
 
         <div>
           <p class="rex-cnt-col2">
@@ -689,7 +704,7 @@ if (isset($FUNC_ADD) && $FUNC_ADD || (isset($user_id) && $user_id != ""))
             '. $sel_extra->get() .'
             <span>'. $I18N->msg('ctrl') .'</span>
           </p>
-		</div>
+		    </div>
 
       '. $add_submit .'
       </div>
