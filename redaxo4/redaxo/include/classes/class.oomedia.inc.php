@@ -4,7 +4,7 @@
 /**
  * Object Oriented Framework: Bildet ein Medium des Medienpools ab
  * @package redaxo4
- * @version $Id: class.oomedia.inc.php,v 1.3 2008/02/07 11:28:19 kills Exp $
+ * @version $Id: class.oomedia.inc.php,v 1.4 2008/03/27 22:39:21 kills Exp $
  */
 
 class OOMedia
@@ -470,7 +470,7 @@ class OOMedia
       {
         unset ($params['resize']);
         // Resize Addon installiert?
-        if (isset ($REX['ADDON']['status']['image_resize']) && $REX['ADDON']['status']['image_resize'] == 1)
+        if (OOAddon::isAvailable('image_resize'))
         {
           $resize = true;
           if (isset ($params['width']))
@@ -485,10 +485,16 @@ class OOMedia
             $resizeParam = $params['height'];
             unset ($params['height']);
           }
+          elseif (isset ($params['crop']))
+          {
+            $resizeMode = 'c';
+            $resizeParam = $params['crop'];
+            unset ($params['crop']);
+          }
           else
           {
             $resizeMode = 'a';
-            $resizeParam = 0;
+            $resizeParam = 100;
           }
 
           // Evtl. Größeneinheiten entfernen
