@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.php,v 1.8 2008/03/28 16:27:56 kills Exp $
+ * @version $Id: index.php,v 1.9 2008/03/28 19:00:10 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -136,7 +136,7 @@ else
           $REX['PAGEPATH'] = $addon_page;
 
           if(isset($REX['ADDON']['name'][$page]))
-            $pagename = rex_translate($REX['ADDON']['name'][$page]);
+            $page_name = rex_translate($REX['ADDON']['name'][$page]);
         }
         else
         {
