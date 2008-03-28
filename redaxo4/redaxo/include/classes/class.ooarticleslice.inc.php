@@ -9,7 +9,7 @@
  * This framework can be used in Modules, Templates and PHP-Slices!
  *
  * @package redaxo4
- * @version $Id: class.ooarticleslice.inc.php,v 1.9 2008/03/17 14:27:32 kills Exp $
+ * @version $Id: class.ooarticleslice.inc.php,v 1.10 2008/03/28 15:28:23 kills Exp $
  */
 
 class OOArticleSlice
@@ -106,6 +106,30 @@ class OOArticleSlice
                                            (a.re_article_slice_id=0 AND a.ctype=1 AND a.id = b.id)
                                             OR
                                            (b.ctype=2 AND a.ctype=1 AND b.id = a.re_article_slice_id)
+                                          )',
+                                          $REX['TABLE_PREFIX'].'article_slice a, '. $REX['TABLE_PREFIX'].'article_slice b',
+                                          'a.*'
+                                          );
+  }
+
+  /*
+   * CLASS Function:
+   * Returns the first slice of the given ctype of an article
+   */
+  function getFirstSlicesForCtype($ctype, $an_article_id, $clang = false)
+  {
+    global $REX;
+
+    if ($clang === false)
+      $clang = $REX['CUR_CLANG'];
+
+    return OOArticleSlice::_getSliceWhere('a.article_id='. $an_article_id .' AND
+                                          a.clang='. $clang .' AND
+                                          a.ctype='. $ctype .' AND
+                                          (
+                                           (a.re_article_slice_id=0  AND a.id = b.id)
+                                            OR
+                                           (b.ctype != a.ctype AND b.id = a.re_article_slice_id)
                                           )',
                                           $REX['TABLE_PREFIX'].'article_slice a, '. $REX['TABLE_PREFIX'].'article_slice b',
                                           'a.*'
