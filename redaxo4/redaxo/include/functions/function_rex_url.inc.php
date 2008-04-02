@@ -3,7 +3,7 @@
 /**
  * URL Funktionen
  * @package redaxo4
- * @version $Id: function_rex_url.inc.php,v 1.1 2007/12/28 10:45:10 kills Exp $
+ * @version $Id: function_rex_url.inc.php,v 1.2 2008/04/02 17:44:33 kills Exp $
  */
 
 function rex_parse_article_name($name)
@@ -19,7 +19,7 @@ function rex_parse_article_name($name)
     $firstCall = false;
 
     // Wenn die Seite auf UTF-8 läuft, müssen wir auch nach UTF-8 Umlauten suchen
-    if(strpos($REX['LANG'], 'utf8') !== false)
+    if(rex_lang_is_utf8())
       $search = array_map('utf8_encode', $search);
   }
 

@@ -3,7 +3,7 @@
 /**
  * Funktionen zur Ausgabe der Titel Leiste und Subnavigation
  * @package redaxo4
- * @version $Id: function_rex_other.inc.php,v 1.10 2008/03/28 14:47:59 kills Exp $
+ * @version $Id: function_rex_other.inc.php,v 1.11 2008/04/02 17:44:33 kills Exp $
  */
 
 /**
@@ -386,6 +386,11 @@ function rex_organize_priorities($tableName, $priorColumnName, $whereCondition =
   $sql->setQuery($qry);
 }
 
+function rex_lang_is_utf8()
+{
+  global $REX;
+  return strpos($REX['LANG'], 'utf8') !== false;
+}
 
 // ------------------------------------- Allgemeine PHP Functions
 
