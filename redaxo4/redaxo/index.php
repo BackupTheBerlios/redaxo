@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: index.php,v 1.9 2008/03/28 19:00:10 kills Exp $
+ * @version $Id: index.php,v 1.10 2008/04/02 18:12:39 kills Exp $
  */
 
 // ----- caching start für output filter
@@ -186,6 +186,9 @@ else
     }elseif ($REX['PAGEPATH'] == '' && $page == 'credits')
     {
       $page_name = $I18N->msg('credits');
+    }elseif ($REX['PAGEPATH'] == '' && $page == 'profile')
+    {
+      $page_name = $I18N->msg('profile');
     }elseif($REX['PAGEPATH'] == '')
     {
       $page = 'structure';
