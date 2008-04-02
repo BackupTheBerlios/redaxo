@@ -3,7 +3,7 @@
 /**
  * Layout Kopf des Backends
  * @package redaxo4
- * @version $Id: top.php,v 1.6 2008/04/02 18:12:39 kills Exp $
+ * @version $Id: top.php,v 1.7 2008/04/02 19:58:00 kills Exp $
  */
 
 if (!isset ($page_name))
@@ -35,6 +35,11 @@ if (!isset($open_header_only)) $bodyAttr .= ' onunload="closeAll();"';
   <script type="text/javascript">
   <!--
   var redaxo = true;
+
+  // jQuery is now removed from the $ namespace
+  // to use the $ shorthand, use (function($){ ... })(jQuery);
+  // and for the onload handler: jQuery(function($){ ... });
+  jQuery.noConflict();
   //-->
   </script>
 <?php
