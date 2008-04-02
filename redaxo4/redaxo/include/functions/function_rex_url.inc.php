@@ -3,24 +3,27 @@
 /**
  * URL Funktionen
  * @package redaxo4
- * @version $Id: function_rex_url.inc.php,v 1.2 2008/04/02 17:44:33 kills Exp $
+ * @version $Id: function_rex_url.inc.php,v 1.3 2008/04/02 18:28:27 kills Exp $
  */
 
 function rex_parse_article_name($name)
 {
   static $firstCall = true;
-  static $search  = array('Ä' , 'Ö' , 'Ü' , 'ä' , 'ö' , 'ü' , 'ß' , ' - ', ' ', '.');
-  static $replace = array('Ae', 'Oe', 'Ue', 'ae', 'oe', 'ue', 'ss', '-'  , '-', '-');
+  static $search, $replace;
 
   if($firstCall)
   {
-    global $REX;
+    global $REX, $I18N;
+
+    // Im Frontend gibts kein I18N
+    if(!$I18N)
+      $I18N = rex_create_lang($REX['LANG']);
+
+    // Sprachspezifische Sonderzeichen Filtern
+    $search = explode('|', $I18N->msg('special_chars'));
+    $replace = explode('|', $I18N->msg('special_chars_rewrite'));
 
     $firstCall = false;
-
-    // Wenn die Seite auf UTF-8 läuft, müssen wir auch nach UTF-8 Umlauten suchen
-    if(rex_lang_is_utf8())
-      $search = array_map('utf8_encode', $search);
   }
 
   return preg_replace('/[^a-zA-Z\-0-9]/', '', str_replace($search, $replace, $name));
@@ -77,15 +80,13 @@ function rex_getUrl($_id = '', $_clang = '', $_params = '', $_divider = '&amp;')
   // ----- get params
   $param_string = rex_param_string($_params, $_divider);
 
+  $name = 'NoName';
   if ($id != 0)
   {
     $ooa = OOArticle :: getArticleById($id, $clang);
     if ($ooa)
       $name = rex_parse_article_name($ooa->getName());
   }
-
-  if (!isset ($name) or $name == '')
-    $name = 'NoName';
 
   // ----- EXTENSION POINT
   $url = rex_register_extension_point('URL_REWRITE', '', array ('id' => $id, 'name' => $name, 'clang' => $clang, 'params' => $param_string, 'divider' => $_divider));
