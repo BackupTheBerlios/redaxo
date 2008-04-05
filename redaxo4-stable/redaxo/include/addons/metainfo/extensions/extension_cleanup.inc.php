@@ -5,7 +5,7 @@
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo4
- * @version $Id: extension_cleanup.inc.php,v 1.1 2008/03/26 13:34:13 kills Exp $
+ * @version $Id: extension_cleanup.inc.php,v 1.2 2008/04/05 08:08:44 kills Exp $
  */
 
 rex_register_extension('A1_BEFORE_DB_IMPORT', 'rex_a62_metainfo_cleanup');
@@ -27,7 +27,7 @@ function rex_a62_metainfo_cleanup($params)
     return;
   }
 
-  require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_table_expander.inc.php';
+  require_once $REX['INCLUDE_PATH'].'/addons/metainfo/classes/class.rex_table_manager.inc.php';
 
   $sql = new rex_sql();
   $sql->setQuery('SELECT name FROM ' . $REX['TABLE_PREFIX'] . '62_params');
