@@ -8,22 +8,28 @@
  * @author jan.kristinus[at]yakmara[dot]de Jan Kristinus
  *
  * @package redaxo4
- * @version $Id: index.inc.php,v 1.6 2008/03/20 18:13:13 kills Exp $
+ * @version $Id: index.inc.php,v 1.7 2008/04/12 08:04:07 kills Exp $
  */
+
+$page = rex_request('page', 'string');
+$subpage = rex_request('subpage', 'string');
+$func = rex_request('func', 'string');
+$msg = '';
 
 require $REX['INCLUDE_PATH'] . '/layout/top.php';
 
-if (isset ($subpage) and $subpage == 'clear_cache')
+
+if ($subpage == 'clear_cache')
 {
   $c = rex_thumbnail::deleteCache();
-  $msg = 'Cache cleared - ' . $c . ' cachefiles removed';
+  $msg = $I18N_IMG_RES->msg('cache_files_removed', $c);
 }
 
 // Build Subnavigation
 $subpages = array (
-  	array ('','Erkl&auml;rung'),
-  	array ('settings','Konfiguration'),
-  	array ('clear_cache','Resize Cache l&ouml;schen'),
+  	array ('', $I18N_IMG_RES->msg('subpage_desc')),
+  	array ('settings', $I18N_IMG_RES->msg('subpage_config')),
+  	array ('clear_cache', $I18N_IMG_RES->msg('subpage_clear_cache')),
 	);
 
 rex_title('Image Resize', $subpages);
@@ -38,15 +44,14 @@ switch($subpage)
 
   default:
   {
-  	if (isset ($msg) and $msg != '')
-		  echo rex_warning($msg);
+  	if ($msg != '')
+		  echo rex_info($msg);
 
 	  $subpage = 'overview';
   }
 }
 
 require $REX['INCLUDE_PATH'] . '/addons/image_resize/pages/'.$subpage.'.inc.php';
-
 require $REX['INCLUDE_PATH'] . '/layout/bottom.php';
 
 ?>

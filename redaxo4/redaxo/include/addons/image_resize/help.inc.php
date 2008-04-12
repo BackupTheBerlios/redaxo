@@ -6,10 +6,10 @@
  * @author <a href="http://www.vscope.at">www.vscope.at</a>
  *
  * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
- * 
+ *
  *
  * @package redaxo4
- * @version $Id: help.inc.php,v 1.11 2008/03/11 16:02:59 kills Exp $
+ * @version $Id: help.inc.php,v 1.12 2008/04/12 08:04:07 kills Exp $
  */
 ?>
 <h3>Features:</h3>
@@ -28,7 +28,7 @@ c = crop        (cut image part to certain length and height)<br />
 a = automatic   (longest side will be used)
 </p>
 
-<h3>Default-Filters:</h3>
+<h3>Filters:</h3>
 <p>
 blur<br />
 brand<br />
