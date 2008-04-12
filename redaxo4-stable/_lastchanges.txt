@@ -23,6 +23,8 @@ Wichtige Änderungen:
 
 Version 4.1.1 (2008-XX-XX)
   Bugfixes:
+  * BackendSearch: Nach editieren wurde in den Root gesprungen [Markus.Staab]
+    - http://forum.redaxo.de/ftopic8679.html 
   * Import/Export: Dateinamenvaliderung beim import von Dateien [Markus.Staab]
   * MetaInfo: Cleanup funktionierte nicht richtig [Markus.Staab]
     - http://forum.redaxo.de/ftopic8758.html
