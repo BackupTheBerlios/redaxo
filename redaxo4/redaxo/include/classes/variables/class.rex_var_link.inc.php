@@ -8,7 +8,7 @@
  * REX_LINKLIST
  *
  * @package redaxo4
- * @version $Id: class.rex_var_link.inc.php,v 1.6 2008/03/24 20:25:49 kills Exp $
+ * @version $Id: class.rex_var_link.inc.php,v 1.7 2008/04/13 14:37:47 kills Exp $
  */
 
 class rex_var_link extends rex_var
@@ -29,7 +29,7 @@ class rex_var_link extends rex_var
       }
       if (isset ($listvalues[$i]))
       {
-        $REX_ACTION['LINK'][$i] = stripslashes($listvalues[$i]);
+        $REX_ACTION['LINKLIST'][$i] = stripslashes($listvalues[$i]);
       }
     }
     return $REX_ACTION;
