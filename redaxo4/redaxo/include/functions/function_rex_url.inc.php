@@ -3,7 +3,7 @@
 /**
  * URL Funktionen
  * @package redaxo4
- * @version $Id: function_rex_url.inc.php,v 1.3 2008/04/02 18:28:27 kills Exp $
+ * @version $Id: function_rex_url.inc.php,v 1.4 2008/04/15 15:44:50 kills Exp $
  */
 
 function rex_parse_article_name($name)
@@ -107,7 +107,9 @@ function rex_getUrl($_id = '', $_clang = '', $_params = '', $_divider = '&amp;')
 
 // ----------------------------------------- Rewrite functions
 
-// Kein Rewrite wird durchgeführt
+/**
+ * Standard Rewriter, gibt normale Urls zurück
+ */
 function rex_no_rewrite($id, $name, $clang, $param_string, $divider)
 {
   global $REX;
@@ -121,7 +123,11 @@ function rex_no_rewrite($id, $name, $clang, $param_string, $divider)
   return 'index.php?article_id='.$id .$url.$param_string;
 }
 
-// Rewrite für mod_rewrite
+/**
+ * Standard Rewriter, gibt umschrieben Urls im Format
+ *
+ * <id>-<clang>-<name>.html[?<params>]
+ */
 function rex_apache_rewrite($id, $name, $clang, $params, $divider)
 {
   if ($params != '')
