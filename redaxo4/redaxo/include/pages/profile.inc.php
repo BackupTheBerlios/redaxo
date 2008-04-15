@@ -2,7 +2,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: profile.inc.php,v 1.1 2008/04/02 18:12:39 kills Exp $
+ * @version $Id: profile.inc.php,v 1.2 2008/04/15 15:50:28 kills Exp $
  */
 
 $info = '';
@@ -15,7 +15,7 @@ rex_title($I18N->msg('profile_title'),'');
 
 // --------------------------------- FUNCTIONS
 
-if ((isset($FUNC_UPDATE) && $FUNC_UPDATE != ''))
+if (rex_post('upd_profile_button', 'string'))
 {
   $updateuser = new rex_sql;
   $updateuser->setTable($REX['TABLE_PREFIX'].'user');
@@ -47,7 +47,7 @@ $sql = new rex_login_sql;
 $sql->setQuery('select * from '. $REX['TABLE_PREFIX'] .'user where user_id='. $user_id);
 if ($sql->getRows()!=1)
 {
-  echo rex_warning('You have no permission to this area');
+  echo rex_warning('You have no permission to this area!');
 }
 else
 {
@@ -88,7 +88,7 @@ else
       		</div>
 
           <div>
-            <p class="rex-cnt-col2"><input type="submit" class="rex-sbmt" name="FUNC_UPDATE" value="'.$I18N->msg('profile_save').'" '. rex_accesskey($I18N->msg('user_save'), $REX['ACKEY']['SAVE']) .' /></p>
+            <p class="rex-cnt-col2"><input type="submit" class="rex-sbmt" name="upd_profile_button" value="'.$I18N->msg('profile_save').'" '. rex_accesskey($I18N->msg('user_save'), $REX['ACKEY']['SAVE']) .' /></p>
           </div>
         </div>
       </fieldset>
