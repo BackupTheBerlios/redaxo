@@ -3,7 +3,7 @@
 /**
  *
  * @package redaxo4
- * @version $Id: medienpool.inc.php,v 1.1 2008/03/26 13:34:13 kills Exp $
+ * @version $Id: medienpool.inc.php,v 1.2 2008/04/16 19:50:12 kills Exp $
  */
 
 // TODOS
@@ -843,7 +843,7 @@ if ($subpage=="detail" && rex_post('btn_update', 'string')){
               $FILESQL->setValue('width',$size[0]);
               $FILESQL->setValue('height',$size[1]);
             }
-            chmod($REX['MEDIAFOLDER'].'/'. $filename, $REX['FILEPERM']);
+            @chmod($REX['MEDIAFOLDER'].'/'. $filename, $REX['FILEPERM']);
             $updated = true;
           }else
           {
